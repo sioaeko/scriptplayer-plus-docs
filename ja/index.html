@@ -275,7 +275,7 @@
 <h2 id="install-linux">Linux<a aria-label="この項目へのリンク" class="anchor" href="#install-linux">#</a></h2>
 <p>Ubuntu / Kubuntu 24.04 以降では <strong>DEB パッケージの使用を推奨</strong>します。これらのバージョンは非特権ユーザー名前空間を制限しており、Chromium のサンドボックスが動くには実行ファイル単位の AppArmor プロファイルが必要で、それは DEB パッケージにのみ含まれています。</p>
 <ul>
-<li><strong>DEB</strong> — AppArmor プロファイルも一緒にインストールします。24.04 以降ではもっとも安全な選択です。</li>
+<li><strong>DEB</strong> — AppArmorプロファイルを一緒にインストールするため、Ubuntu / Kubuntu 24.04以降で推奨します。</li>
 <li><strong>AppImage</strong> — v0.6.0 から静的ランタイムになり、<code>libfuse.so.2</code> は不要になりました。</li>
 <li><strong>アーカイブ版</strong> — ユーザー名前空間が利用できるディストリビューションで使えます。</li>
 </ul>
@@ -299,10 +299,10 @@
 <!-- ============================================ 03 QUICKSTART -->
 <article class="page" data-group="はじめに" data-title="クイックスタート" id="page-quickstart">
 <h1>クイックスタート</h1>
-<p class="lede">インストールが終わったらここからです。5つのステップで映像が再生され、スクリプトが読み込まれ、デバイスが動きます。</p>
+<p class="lede">以下の手順でメディアを開き、スクリプトを読み込み、デバイスを設定します。機器ごとの準備は接続ガイドも確認してください。</p>
 <figure>
 <div class="shot"><img alt="ScriptPlayer+ の初回起動画面" loading="lazy" src="../assets/img/ui-firstrun.webp"/></div>
-<figcaption>初回起動時はこの空の画面が表示されます。「Open a folder or drag a video or audio file to start」が出発点です。</figcaption>
+<figcaption>初回起動時の画面です。フォルダーを開くか、動画・音声ファイルをウィンドウにドラッグして始めます。</figcaption>
 </figure>
 <h2 id="qs-steps">5つのステップ<a aria-label="この項目へのリンク" class="anchor" href="#qs-steps">#</a></h2>
 <ol class="steps">
@@ -336,7 +336,7 @@
 </ul>
 </div>
 <h2 id="qs-library">フォルダーの代わりにライブラリを使う<a aria-label="この項目へのリンク" class="anchor" href="#qs-library">#</a></h2>
-<p>毎回フォルダーを開く代わりに、よく使うフォルダーを<strong>ライブラリ</strong>に登録しておけばサムネイルカードで一覧できます。左レール最下部の<strong>ライブラリ</strong>アイコンから始めます。詳しくは<a href="#library">ライブラリ</a>をご覧ください。</p>
+<p>よく使うフォルダーを<a href="#library">ライブラリ</a>に登録すると、サムネイルカードでファイルを探せます。左の縦メニューから<strong>ライブラリ</strong>を選んでください。</p>
 <figure>
 <div class="shot">
 <video aria-label="ライブラリ画面のデモ" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video>
@@ -347,7 +347,7 @@
 <!-- ============================================ 04 INTERFACE -->
 <article class="page" data-group="はじめに" data-title="画面の見かた" id="page-interface">
 <h1>画面の見かた</h1>
-<p class="lede">ScriptPlayer+ の画面は大きく<strong>左レール・サイドバー・プレーヤー・再生バー</strong>の4つに分かれます。なかでも再生バーの短い英字ボタンは最初わかりにくいので、下にすべて書き出しました。</p>
+<p class="lede">画面は左の縦メニュー（レール）、サイドバー、再生画面、再生バーに分かれます。各領域の役割と再生バーの英語の略称を以下で説明します。</p>
 <figure>
 <div class="shot"><img alt="ScriptPlayer+ のウィンドウ構成" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
 <figcaption>左からレール・サイドバー・プレーヤー、そして下にヒートマップ・タイムライン・再生バーが並びます。</figcaption>
@@ -401,7 +401,7 @@
 <div class="legend-row"><span aria-label="シャッフルのアイコン" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"></path><path d="m18 2 4 4-4 4"></path><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"></path><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"></path><path d="m18 14 4 4-4 4"></path></svg></span><span class="legend-desc"><b>シャッフル</b> — 一覧をランダムな順で再生します。</span></div>
 <div class="legend-row"><span class="legend-key">EXT</span><span class="legend-desc"><b>外部プレーヤー（External）</b> — mpv・VLC などの外部プレーヤーでこのファイルを開きます。 → <a href="#external">外部プレーヤー</a></span></div>
 <div class="legend-row"><span class="legend-key">TL</span><span class="legend-desc"><b>タイムライン（Timeline）</b> — スクリプトのグラフを表示・非表示します。</span></div>
-<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>ヒートマップ（Heatmap）</b> — ファイル全体の強弱を色の帯で示します。</span></div>
+<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>ヒートマップ（Heatmap）</b> — スクリプト全体の動きの速さを色の帯で表示します。</span></div>
 <div class="legend-row"><span class="legend-key">AV</span><span class="legend-desc"><b>音声・字幕トラック</b> — 内蔵の音声トラックと字幕トラックを選びます。 → <a href="#audio">音声と字幕</a></span></div>
 <div class="legend-row"><span aria-label="評価のアイコン" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11.5 3.3a.6.6 0 0 1 1 0l2.2 4.5 4.9.7c.5.1.7.7.3 1l-3.5 3.5.8 4.9c.1.5-.4.9-.9.6L12 16.3l-4.4 2.3c-.4.2-1-.1-.9-.6l.8-4.9-3.5-3.5c-.4-.3-.2-.9.3-1l4.9-.7 2.3-4.6Z"></path></svg></span><span class="legend-desc"><b>評価</b> — 再生画面のままスコアを付けられます。ライブラリの並べ替えや絞り込みに使われます。</span></div>
 <div class="legend-row"><span class="legend-key">FIT</span><span class="legend-desc"><b>フィット</b> — 映像全体が見えるように合わせます。黒い余白が出ることがあります。</span></div>
@@ -447,7 +447,7 @@
 </div>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>NAS を使う場合</div>
-<p>ローカルと NAS の一覧はキャッシュ上で統合され、重複なく1つに見えます。起動時はまずキャッシュの内容を表示し、そのあとフォルダーを<strong>1つずつ順番に</strong>更新します。複数のフォルダーを同時に読まないため、起動時にディスクやネットワークへ負荷が集中しにくくなります。</p>
+<p>ローカルとNASの一覧はキャッシュを基にまとめて表示します。起動時は保存済みの一覧を先に表示し、フォルダーを順番に更新してディスクとネットワークへの同時アクセスを抑えます。</p>
 </div>
 <h2 id="lib-filter">絞り込みと並べ替え<a aria-label="この項目へのリンク" class="anchor" href="#lib-filter">#</a></h2>
 <p>フィルターは<strong>保存され</strong>、次に開いたときも維持されます。</p>
@@ -568,7 +568,7 @@
 <figcaption>常に手前に表示をオンにした状態です。</figcaption>
 </figure>
 <h2 id="pb-recovery">やり直しと復旧<a aria-label="この項目へのリンク" class="anchor" href="#pb-recovery">#</a></h2>
-<p>設定をいろいろ触って分からなくなったら、<strong>設定 → 復旧</strong>で初期状態に戻せます。全体リセットではキャッシュした再生時間、ストローク範囲、プレーヤー・ライブラリ・ワークスペース・最近のメディア・サイドバーの状態もまとめて片付けられます。</p>
+<p>設定変更後に問題が起きた場合は、<strong>設定 → 復旧</strong>で初期化できます。設定、オフセット、ストローク範囲、再生時間のキャッシュ、画面の状態が消去されます。メディアファイルは削除されません。範囲は<a href="#settings">設定ガイド</a>で確認してください。</p>
 <figure>
 <div class="shot"><video aria-label="復旧メニューのデモ" data-src="../assets/video/recovery.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>設定 → 復旧のメニューです。</figcaption>
@@ -577,8 +577,8 @@
 <!-- ============================================ 07 SCRIPTS -->
 <article class="page" data-group="基本の使いかた" data-title="スクリプトを扱う" id="page-scripts">
 <h1>スクリプトを扱う</h1>
-<p class="lede">スクリプトが自動で認識されない、認識されたがタイミングが合わない、動きが強すぎる——そんなときにどこを触るかをまとめました。このページだけでスクリプト関連の問題はほとんど解決します。</p>
-<h2 id="sc-match">スクリプトはどう見つかるのか<a aria-label="この項目へのリンク" class="anchor" href="#sc-match">#</a></h2>
+<p class="lede">スクリプトの検索と読み込みから、タイミングや動作範囲の調整まで説明します。自動で読み込まれない場合や動きが想定と異なる場合は、該当する項目を確認してください。</p>
+<h2 id="sc-match">スクリプトの自動検索<a aria-label="この項目へのリンク" class="anchor" href="#sc-match">#</a></h2>
 <p>ScriptPlayer+ は次の順で一致するスクリプトを探します。</p>
 <ol class="steps">
 <li>
@@ -615,7 +615,7 @@
 </figure>
 </div>
 <h2 id="sc-duration">再生時間で探す<a aria-label="この項目へのリンク" class="anchor" href="#sc-duration">#</a></h2>
-<p>名前がまったく違うのに内容は合っているスクリプトを探したいことがあります。v0.6.0 で入った<strong>再生時間ベースの検索</strong>は、スクリプトのタイムライン長が映像の長さにどれだけ近いかで候補を順位付けします。</p>
+<p>名前が異なるスクリプトは<strong>再生時間による検索</strong>で探せます。動画と長さが近い順に候補を表示します。別の動画用の場合もあるため、適用後に内容とタイミングを確認してください。</p>
 <ul>
 <li>映像があるフォルダー、指定したスクリプトフォルダー、ライブラリがインデックスしたスクリプトをすべて候補にします。</li>
 <li>長さが近い順に並ぶので、上の候補から試せばよいです。</li>
@@ -624,8 +624,7 @@
 <div class="shot"><video aria-label="再生時間ベースのスクリプト検索デモ" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>長さが近い順に候補を並べます。</figcaption>
 </figure>
-<h2 id="sc-offset">タイミングが合わないとき — スクリプトオフセット<a aria-label="この項目へのリンク" class="anchor" href="#sc-offset">#</a></h2><p><strong>正の値（+）は動きを早め、負の値（-）は遅らせます。</strong>動きが映像より約0.2秒遅い場合は現在の値に<code>0.2秒</code>を加え、約0.2秒早い場合は<code>0.2秒</code>を引いてください。入力欄の単位は秒です（<code>0.2秒 = 200ms</code>）。</p>
-<p>映像より動きが少し早い、または遅いときに使います。再生バーの <code>+0ms</code> ボタンから調整します。</p>
+<h2 id="sc-offset">タイミングが合わないとき — スクリプトオフセット<a aria-label="この項目へのリンク" class="anchor" href="#sc-offset">#</a></h2><p>映像より動きが少し早い、または遅いときに使います。再生バーの <code>+0ms</code> ボタンから調整します。</p><p><strong>正の値（+）は動きを早め、負の値（-）は遅らせます。</strong>動きが映像より約0.2秒遅い場合は現在の値に<code>0.2秒</code>を加え、約0.2秒早い場合は<code>0.2秒</code>を引いてください。入力欄の単位は秒です（<code>0.2秒 = 200ms</code>）。</p>
 <ul>
 <li>範囲は <strong><code>-60秒</code>から<code>+60秒</code></strong>までです。</li>
 <li>小数秒単位で<strong>直接入力</strong>でき、微調整ボタンで少しずつ動かすこともできます。</li>
@@ -638,7 +637,7 @@
 </figure>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>合わせるコツ</div>
-<p>目立つ動きがある地点へ移動しておき、再生しながらオフセットを少しずつ動かしてみてください。タイムラインのグラフの山と画面の動きが重なる地点が正解です。</p>
+<p>映像の動きが分かりやすい区間を繰り返し再生し、オフセットを少しずつ調整します。映像とデバイスの動きが合っているか確認してください。</p>
 </div>
 <h2 id="sc-stroke">動きが強すぎるとき — ストローク範囲<a aria-label="この項目へのリンク" class="anchor" href="#sc-stroke">#</a></h2>
 <p>再生バーの <code>STR</code> でデバイスが実際に動く範囲を調整します。スクリプトを編集せずに強さを下げたり上げたりできます。</p>
@@ -718,7 +717,7 @@
 <!-- ============================================ 08 TIMELINE -->
 <article class="page" data-group="基本の使いかた" data-title="タイムラインとヒートマップ" id="page-timeline">
 <h1>タイムラインとヒートマップ</h1>
-<p class="lede">スクリプトを目で確かめる2つの方法です。タイムラインはいまこの瞬間を、ヒートマップはファイル全体を示します。</p>
+<p class="lede">タイムラインは現在の再生位置付近のスクリプトの動きをグラフで表示します。ヒートマップはスクリプト全体の動きの速さを色で要約します。</p>
 <figure>
 <div class="shot"><img alt="多軸タイムラインの画面" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
 <figcaption>上の緑の帯がヒートマップ、下のグラフが多軸タイムラインです。</figcaption>
@@ -779,7 +778,7 @@
 </figure>
 </div>
 <h2 id="au-boost">音量ブースト 150%<a aria-label="この項目へのリンク" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">実験的機能</span></h2>
-<p>録音が小さくて聞き取りにくい音源のために、<strong>最大150%まで</strong>音量を上げられます。ピークリミッターが同時に働き、急に大きく跳ねるのを防ぎます。</p>
+<p>録音音量が小さいファイルは最大150%まで増幅できます。ピークリミッターが出力信号の最大レベルを制限します。増幅を有効にする前に再生音量を下げてください。</p>
 <figure>
 <div class="shot"><video aria-label="音量ブーストのデモ" data-src="../assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>150% の音量ブーストをオンにした様子です。</figcaption>
@@ -812,7 +811,7 @@
 <!-- ============================================ 10 VR -->
 <article class="page" data-group="基本の使いかた" data-title="VR・360度映像" id="page-vr">
 <h1>VR・360度映像</h1>
-<p class="lede">VR180 や360度映像を開くと、画面が不自然に伸びたり2つに割れて見えたりします。投影方式を指定すれば正しく見られます。 <span class="pill pill--new">v0.6.0</span></p>
+<p class="lede">VR180や360度の動画は平面モードでは引き伸ばされたり、二つに分かれて見えたりすることがあります。動画に合った投影方式と元の配置を選んでください。</p>
 <figure>
 <div class="shot"><video aria-label="VR180 再生のデモ" data-src="../assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>VR180 映像を投影モードで再生し、ドラッグして視点を動かす様子です。</figcaption>
@@ -839,7 +838,7 @@
 <h2 id="vr-control">見る操作<a aria-label="この項目へのリンク" class="anchor" href="#vr-control">#</a></h2>
 <ul>
 <li><strong>ドラッグ</strong> — マウスで引いて視点を回します。</li>
-<li><strong>拡大 / 縮小</strong> — 引き寄せたり押し出したりして視野角を調整します。</li>
+<li><strong>拡大・縮小</strong> — マウスホイールで視野角を調整します。</li>
 </ul>
 <div class="note">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>知っておきたい制限</div>
@@ -847,7 +846,7 @@
 <li>デスクトップ画面では、SBS・上下分割の映像は<strong>片眼のみ</strong>表示します。</li>
 <li>ヘッドセットへ送る WebXR の立体出力には対応していません。</li>
 <li>デュアル魚眼の360度映像をつなぎ合わせる機能と、レンズ別の魚眼補正は含まれていません。</li>
-<li>投影を適用できない映像は自動的に<strong>平面再生へ戻ります。</strong>表示が壊れることはありません。</li>
+<li>投影を適用できない場合は<strong>平面再生に戻ります。</strong>元の分割画面や歪みがそのまま見えることがあります。</li>
 </ul>
 </div>
 </article>
@@ -859,7 +858,7 @@
 <ol class="steps">
 <li>
 <h3>接続キーを確認する</h3>
-<p>The Handy 本体の画面またはアプリで接続キー（Connection Key）を確認します。</p>
+<p>The HandyをWi-Fiに接続し、機器の設定に使うアプリまたはWeb設定画面で<strong>接続キー（Connection Key）</strong>を確認します。</p>
 </li>
 <li>
 <h3>設定 → デバイスに入力する</h3>
@@ -880,7 +879,7 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>アップロードが終わったら自動で再生する</div>
 <p><strong>設定 → 再生</strong>の <strong>Auto Play After Handy Sync</strong> をオンにすると、アップロードと HSSP 同期が終わった瞬間に再生が始まります。毎回同期の完了を待って再生ボタンを押す必要がなくなります。</p>
 </div>
-<p>全体的に動きが少し早い、または遅いときは<strong>時間オフセット</strong>で補正します。特定の映像だけずれる場合はスクリプト側の問題である可能性が高いので、代わりに<a href="#scripts">スクリプトオフセット</a>を使ってください。</p>
+<p>すべての動画で動きが一定に早い、または遅い場合は、デバイスの<strong>時間オフセット</strong>を確認してください。特定のスクリプトだけがずれる場合は<a href="#sc-offset">スクリプトオフセット</a>を調整します。</p>
 <h2 id="hd-diag">ネットワーク診断<a aria-label="この項目へのリンク" class="anchor" href="#hd-diag">#</a></h2>
 <p><strong>設定 → Handy ネットワーク診断</strong>で接続品質を実際に測定できます。動きがよく途切れたり遅れたりするなら、ここから確認してください。</p>
 <div class="table-wrap">
@@ -888,7 +887,7 @@
 <thead><tr><th>項目</th><th>意味</th></tr></thead>
 <tbody>
 <tr><td class="col-key"><strong>中央値レイテンシ</strong></td><td>通常時の往復時間です。低いほど良好です。</td></tr>
-<tr><td class="col-key"><strong>P95 レイテンシ</strong></td><td>遅い側5%のレイテンシです。この値が大きいと、ときどき大きく跳ねるという意味です。</td></tr>
+<tr><td class="col-key"><strong>P95 レイテンシ</strong></td><td>測定したリクエストの95%がこの値以下の遅延だったことを示します。中央値より大幅に高い場合、一部のリクエストで大きな遅延が発生しています。</td></tr>
 <tr><td class="col-key"><strong>ジッター</strong></td><td>レイテンシのばらつきです。大きいほど同期が不安定になります。</td></tr>
 <tr><td class="col-key"><strong>成功率</strong></td><td>リクエストが正しくやり取りされた割合です。</td></tr>
 <tr><td class="col-key"><strong>サーバー時計の誤差</strong></td><td>自分のパソコンの時計とサーバーの時計の差です。</td></tr>
@@ -974,10 +973,10 @@
 <p>そのために<strong>ハンドオフ</strong>機能があります。Intiface Device Manager の <strong>Allow FapTap / external app</strong> ボタンを押すと、エンジンは動いたままで ScriptPlayer+ だけが接続を手放します。その間に FapTap のような別のクライアントが同じアドレスへ接続でき、そのアプリが切断すると ScriptPlayer+ が再接続します。</p>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>順番が大切です</div>
-<p>ほかのアプリを先に立ち上げてから ScriptPlayer+ を接続しようとすると失敗します。<strong>まず ScriptPlayer+ 側で接続を手放してから</strong>、ほかのアプリを接続してください。</p>
+<p>内蔵エンジンに別のアプリが接続中の場合、ScriptPlayer+が接続できないことがあります。<strong>現在制御しているアプリの接続を解除してから</strong>、使いたいアプリを接続してください。</p>
 </div>
 <h2 id="if-watchdog">デバイスごとのウォッチドッグ<a aria-label="この項目へのリンク" class="anchor" href="#if-watchdog">#</a></h2>
-<p>デバイスを複数使うとき、1つが遅くなったり失敗を繰り返したりすると、ほかのデバイスまで引きずられて止まることがありました。v0.6.0 からは<strong>デバイスごとに独立したウォッチドッグ</strong>が付き、問題のある1台のせいで残りの出力が止まることはありません。</p>
+<p>各デバイスには応答の遅延やエラーを監視する<strong>ウォッチドッグ</strong>があります。一台の問題が他のデバイスの出力を妨げないように処理します。</p>
 <h2 id="if-limits">Windows 内蔵エンジンの範囲<a aria-label="この項目へのリンク" class="anchor" href="#if-limits">#</a></h2>
 <p>Windows 用の内蔵エンジンが扱える接続は次のとおりです。</p>
 <ul>
@@ -1003,7 +1002,7 @@
 </ol>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>ポートが一時的に見えなくても</div>
-<p>起動時に検索結果が空でも、<strong>保存した COM パスは維持されます。</strong>デバイスを後から挿しても設定が失われません。</p>
+<p>起動時の検索結果が空でも<strong>保存済みのポートパスは保持されます。</strong>後から機器を接続してもポート設定は消えません。</p>
 </div>
 <h2 id="fo-tune">出力の調整<a aria-label="この項目へのリンク" class="anchor" href="#fo-tune">#</a></h2>
 <p><strong>設定 → デバイス</strong>で次を調整します。</p>
@@ -1049,8 +1048,8 @@
 <h2 id="fo-pause">一時停止と再開<a aria-label="この項目へのリンク" class="anchor" href="#fo-pause">#</a></h2>
 <p>シリアル送信が遅れたあとに再生を再開すると、遅れた分を一気に取り戻そうとしてデバイスが大きく跳ねることがあります。v0.5.1 と v0.6.0 でこの部分が強化されました。</p>
 <ul>
-<li>再開への移行は、設定した<strong>安全開始時間</strong>が過ぎれば確実に完了します。</li>
-<li>遅れた進行量は<strong>上限を設けて</strong>取り戻すため、大きな飛びは起きません。</li>
+<li>再開時の移行動作は、設定した<strong>安全開始時間</strong>に従って完了します。</li>
+<li>遅延後に追いつく動作量に<strong>上限を設け</strong>、急な大きい動きを抑えます。</li>
 <li>安全移行の状態に留まってスクリプトへ戻れなくなる問題が解決されました。</li>
 </ul>
 </article>
@@ -1077,7 +1076,7 @@
 <p>リモートの画面に出た<strong>6桁のペアリングコード</strong>を入力し、<strong>Pair</strong> を押します。</p>
 </li>
 </ol>
-<p>ペアリングが終わると状態・ファームウェア・バッテリー・トークンの情報が表示されます。一度接続したリモートは次回から<strong>自動的に再接続</strong>されます。</p>
+<p>ペアリング後は、接続状態、機器が提供するファームウェア・バッテリー情報、ペアリング情報の保存状態を確認できます。以前接続したリモコンが利用可能になると、自動再接続を試みます。</p>
 <h2 id="rm-buttons">ボタンの割り当て<a aria-label="この項目へのリンク" class="anchor" href="#rm-buttons">#</a></h2>
 <p>A・B・C の3つのボタンに、それぞれ<strong>クリック・ダブルクリック・長押し</strong>の動作を個別に割り当てられます。既定値は次のとおりです。</p>
 <div class="table-wrap">
@@ -1097,7 +1096,7 @@
 <h2 id="rm-apps">アプリとファームウェア<a aria-label="この項目へのリンク" class="anchor" href="#rm-apps">#</a></h2>
 <ul>
 <li><strong>Get Android app</strong> — スマートフォンをリモコンとして使うアプリへ移動します。</li>
-<li><strong>Open flasher</strong> — リモート機器のファームウェアを書き込むツールを開きます。</li>
+<li><strong>Open flasher</strong> — 専用リモコンにファームウェアをインストールするツールを開きます。</li>
 </ul>
 </article>
 <!-- ============================================ 15 SAFETY -->
@@ -1118,14 +1117,14 @@
 <p>このボタンは<strong>デバイスが接続されているとき</strong>にタイトルバーと全画面に現れます。表示するかどうかは<strong>設定 → デバイス</strong>の <strong>Show E-Stop button</strong> でオフにできます。</p>
 <div class="note note--danger">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>ボタンを隠す前に</div>
-<p>隠していても<strong>Intiface 管理画面の停止コントロールはそのまま残ります。</strong>ただしそちらは画面を一度移動しないと届きません。隠す前にその場所を必ず確認しておいてください。</p>
+<p>ボタンを隠しても<strong>Intiface管理画面の停止機能</strong>は残ります。ただしIntiface機器用であり、全体の緊急停止とは対象が異なります。他の接続方式では、ボタンを隠す前に機器の停止方法を確認してください。</p>
 </div>
 <figure>
 <div class="shot"><img alt="設定・デバイスタブの Show E-Stop button 項目" loading="lazy" src="../assets/img/settings-device-stroke.webp"/></div>
 <figcaption>設定 → デバイスの最上部に <strong>Show E-Stop button</strong> があります。</figcaption>
 </figure>
 <h2 id="sf-limits">あらかじめ設定する制限<a aria-label="この項目へのリンク" class="anchor" href="#sf-limits">#</a></h2>
-<p>事故を防ぐいちばんの方法は、そもそも強く動かないようにしておくことです。</p>
+<p>初めて使うデバイスやスクリプトでは、動作範囲と速度を低く設定して反応を確認してください。</p>
 <dl class="deflist">
 <div>
 <dt>ストローク範囲</dt>
@@ -1137,7 +1136,7 @@
 </div>
 <div>
 <dt>Playback Start Safety</dt>
-<dd>再生を始めるとすぐ全速力にはならず、指定した時間をかけてスクリプトの位置までゆっくり移動します。</dd>
+<dd>FunOSR / SR機器は指定した時間をかけてスクリプトの開始位置に移動し、その後通常の出力を始めます。0に設定するとこの移行を無効にします。</dd>
 </div>
 <div>
 <dt>中心を保つ範囲</dt>
@@ -1154,14 +1153,14 @@
 <ul>
 <li>新しいスクリプトを初めて再生するときは、<strong>範囲を狭く</strong>してどんな動きかを先に確かめます。</li>
 <li>ヒートマップで<strong>赤い区間</strong>がどこかを先に確認します。 → <a href="#timeline">タイムラインとヒートマップ</a></li>
-<li>E-Stop ボタンの位置を手に覚えさせておきます。</li>
+<li>再生前にE-Stopボタンの位置と操作方法を確認します。</li>
 <li>デバイスを動かしたまま席を離れないでください。</li>
 </ul>
 </article>
 <!-- ============================================ 16 EXTERNAL -->
 <article class="page" data-group="拡張機能" data-title="外部プレーヤー" id="page-external">
 <h1>外部プレーヤー</h1>
-<p class="lede">ScriptPlayer+ 内でうまく再生できないファイルを、すでに使っているほかのプレーヤーで開きながら、デバイス出力はそのまま維持する機能です。 <span class="pill pill--exp">実験的機能</span></p>
+<p class="lede">メディアを別のプレイヤーで開く機能です。<strong>mpvとVLC</strong>はScriptPlayer+から再生を制御できます。デバイスと同期して使う場合は、以下の対応範囲を確認してください。<span class="pill pill--exp">実験的機能</span></p>
 <h2 id="ex-support">対応するプレーヤー<a aria-label="この項目へのリンク" class="anchor" href="#ex-support">#</a></h2>
 <ul>
 <li>JAVPlayer</li>
@@ -1197,7 +1196,7 @@
 <figcaption>再生できない映像を開くと、こうした案内が出ます。</figcaption>
 </figure>
 <h2 id="ff-install">用意する方法<a aria-label="この項目へのリンク" class="anchor" href="#ff-install">#</a></h2>
-<p>ScriptPlayer+ は次の順で FFmpeg を探します。いずれか1つを満たせば十分です。</p>
+<p>以下のいずれかの方法でFFmpegを用意してください。インストール済みでも検出されない場合は、設定で実行ファイルを指定できます。</p>
 <ol class="steps">
 <li>
 <h3>設定から自動インストール <span class="pill">もっとも簡単</span></h3>
@@ -1221,7 +1220,7 @@
 <figcaption>設定 → 再生の <strong>FFmpeg 設定と状態</strong>の領域です。FFmpeg が見つかるとバージョンとパスが緑で表示され、<strong>Test connection</strong> で確認できます。</figcaption>
 </figure>
 <h2 id="ff-mode">互換モードを選ぶ<a aria-label="この項目へのリンク" class="anchor" href="#ff-mode">#</a></h2>
-<p><strong>設定 → 再生</strong>の <strong>Video Compatibility Mode</strong> で、どこまで介入するかを決めます。症状に応じて選んでください。</p>
+<p><strong>設定 → 再生 → Video Compatibility Mode</strong>でFFmpegが処理する範囲を選びます。以下の症状に合ったモードを選んでください。</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>症状</th><th>選ぶもの</th></tr></thead>
@@ -1241,7 +1240,7 @@
 <figcaption>互換再生が動いている様子です。</figcaption>
 </figure>
 <div class="note">
-<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>パッケージに含まれない理由</div>
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>FFmpegの別途インストール</div>
 <p>ScriptPlayer+ のリリースパッケージには FFmpeg の実行ファイルも FFmpeg のソースも入っていません。互換再生・サムネイルの代替生成・モーション解析は<strong>すべて外部の実行ファイルのみ</strong>を使います。</p>
 </div>
 </article>
@@ -1253,7 +1252,7 @@
 <p><code>.funplugin</code> ファイルは<strong>JSON マニフェストにすぎません</strong>。どこでスクリプトを探すかという情報だけが入っており、実行コードは含まれていません。</p>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>コードは実行しません</div>
-<p>ScriptPlayer+ はプラグインのコードをアプリ内で実行しません。データ専用のマニフェストだけを読むため、プラグインがアプリを勝手に操作することはできません。</p>
+<p>ScriptPlayer+はプラグインの実行コードを実行せず、データ形式のマニフェストを読み込みます。インストール時に表示される権限と発行元情報を確認してください。</p>
 </div>
 <h2 id="pl-install">インストールと管理<a aria-label="この項目へのリンク" class="anchor" href="#pl-install">#</a></h2>
 <p>左レールの<strong>プラグイン</strong>アイコンで管理します。インストール時に次が検証されます。</p>
@@ -1270,7 +1269,7 @@
 <!-- ============================================ 19 SHORTCUTS -->
 <article class="page" data-group="リファレンス" data-title="キーボードショートカット" id="page-shortcuts">
 <h1>キーボードショートカット</h1>
-<p class="lede">既定のショートカット一覧と、好きなキーに変える方法です。すべての動作は<strong>設定 → キーボードショートカット</strong>で再割り当てできます。</p>
+<p class="lede">標準のショートカットと変更方法を説明します。ショートカットに対応する操作は<strong>設定 → キーボードショートカット</strong>で変更できます。</p>
 <h2 id="ks-default">既定のショートカット<a aria-label="この項目へのリンク" class="anchor" href="#ks-default">#</a></h2>
 <div class="table-wrap">
 <table>
@@ -1391,7 +1390,7 @@
 <p><strong>復旧</strong>タブの全体リセットは、設定だけでなくキャッシュした再生時間、ストローク範囲、プレーヤー・ライブラリ・ワークスペース・最近のメディア・サイドバーの状態までまとめて整理します。</p>
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>注意</div>
-<p>リセットするとメディアごとに合わせたオフセットとストローク範囲も消えます。実際のファイルは削除されません。</p>
+<p>初期化すると、保存済みのスクリプト・メディア別オフセットやストローク範囲も削除されます。メディアファイル自体は削除されません。</p>
 </div>
 </article>
 <!-- ============================================ 21 FORMATS -->
@@ -1449,7 +1448,7 @@
 ├─ 作品B.mp4
 ├─ 作品B.L0.funscript       ← 多軸: リニア軸
 └─ 作品B.R0.funscript       ← 多軸: 回転軸</code></pre>
-<p>名前が違っていても、<a href="#scripts">再生時間で探す</a>や<a href="#scripts">スクリプトバリアントパネル</a>で結び付けられます。</p>
+<p>ファイル名が異なる場合は<a href="#sc-duration">再生時間による検索</a>や<a href="#sc-variants">スクリプトのバリエーションパネル</a>で候補を確認します。選択後に映像と動きが合っているか確認してください。</p>
 </article>
 <!-- ============================================ 22 TROUBLESHOOTING -->
 <article class="page" data-group="リファレンス" data-title="トラブルシューティング" id="page-troubleshooting">
@@ -1470,9 +1469,9 @@
 <li>それでもだめなら<a href="#external">外部プレーヤー</a>で開いてみます。</li>
 </ol>
 <h3 id="ts-vrsplit">VR映像が2つに割れて見えます</h3>
-<p>左右分割（SBS）の映像が平面で再生されている状態です。投影方式を <strong>VR180 正距円筒</strong>に、元の配置を<strong>左右分割</strong>に指定してください。 → <a href="#vr">VR・360度映像</a></p>
+<p>SBSや上下分割の動画が平面モードで表示されている可能性があります。動画に合った<strong>元の配置</strong>と投影方式を選んでください。すべての分割動画がVR180とは限りません。→ <a href="#vr">VR・360度動画</a></p>
 <h3 id="ts-nothumb">サムネイルが作られません</h3>
-<p>Chromium がその映像をデコードできない場合です。<a href="#ffmpeg">FFmpeg</a> があれば代替の方法でサムネイルを作ります。</p>
+<p>FFmpegが認識されているか確認し、サムネイルを再生成してください。Chromiumが動画をデコードできない場合は、FFmpegによる代替生成が必要なことがあります。→ <a href="#ffmpeg">FFmpeg互換再生</a></p>
 <h2 id="ts-scripts">スクリプト<a aria-label="この項目へのリンク" class="anchor" href="#ts-scripts">#</a></h2>
 <h3 id="ts-noscript">スクリプトが自動で認識されません</h3>
 <ol>
@@ -1496,7 +1495,7 @@
 </ol>
 <h3 id="ts-stutter">動きが途切れる、または遅れます</h3>
 <ul>
-<li><strong>The Handy</strong> — <a href="#handy">ネットワーク診断</a>を実行してレイテンシとジッターを確認します。値が悪ければ有線接続や別のネットワークを試してください。</li>
+<li><strong>The Handy</strong> — <a href="#hd-diag">ネットワーク診断</a>で遅延とジッターを確認します。PCの接続とHandyのWi-Fi信号を確認し、ダウンロードなどの通信量を減らして再測定してください。</li>
 <li><strong>FunOSR</strong> — 更新レートを下げてみます。高すぎるとかえって不安定になります。</li>
 <li><strong>Intiface</strong> — デバイスを複数使っているなら、1台だけにして試します。</li>
 </ul>
@@ -1505,11 +1504,9 @@
 <h3 id="ts-faptap">ほかのアプリが Intiface デバイスを認識できません</h3>
 <p>内蔵の Intiface エンジンは<strong>クライアントを1つだけ</strong>受け付けます。Intiface 管理画面の<strong>ハンドオフ</strong>コントロールで制御権を渡してください。 → <a href="#intiface">Intiface / Buttplug</a></p>
 <h2 id="ts-reset">それでも解決しないとき<a aria-label="この項目へのリンク" class="anchor" href="#ts-reset">#</a></h2>
-<ol>
-<li><strong>設定 → 復旧</strong>でリセットを試します。 → <a href="#playback">再生</a></li>
-<li>最新バージョンか確認します。 → <a href="#install">インストール</a></li>
+<ol><li>最新バージョンか確認します。 → <a href="#install">インストール</a></li>
 <li><a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>へお問い合わせください。デバイスの問題なら<a href="#handy">診断情報をコピーして</a>一緒に載せると、ぐっと早く進みます。</li>
-</ol>
+<li>前の方法で解決しない場合は<strong>設定 → 復旧</strong>での初期化を検討してください。設定、オフセット、ストローク範囲が削除されるため、先に<a href="#settings">初期化の範囲</a>を確認してください。</li></ol>
 </article>
 <!-- ============================================ 23 RELEASES -->
 <article class="page" data-group="リファレンス" data-title="変更履歴" id="page-releases">
@@ -1581,7 +1578,7 @@
 <p>ScriptPlayer+ は <strong>ScriptPlayer+ End User License Agreement（EULA）</strong>の条件で配布される専有ソフトウェアです。商用利用、再配布、改変、プロジェクトメディアの再利用には、著作権者の<strong>個別の書面による許可</strong>が必要です。</p>
 <p>パッケージには EULA とサードパーティ表記がアプリケーションアーカイブの外に同梱されており、Windows のインストーラーはインストール前に EULA を表示します。</p>
 <h2 id="ab-source">ソース公開の範囲<a aria-label="この項目へのリンク" class="anchor" href="#ab-source">#</a></h2>
-<p>ScriptPlayer+ は署名済みまたはパッケージ化されたデスクトップバイナリとして配布されます。公開リポジトリは<strong>リリース・アップデートのメタデータ・ドキュメント・課題管理</strong>に使われ、アプリケーション全体のソースは公開配布していません。</p>
+<p>ScriptPlayer+はOSごとのインストーラーと実行パッケージで配布されます。公開リポジトリは<strong>リリース、更新情報、文書、Issue管理</strong>に使い、アプリケーション全体のソースは公開していません。</p>
 <h2 id="ab-links">リンク<a aria-label="この項目へのリンク" class="anchor" href="#ab-links">#</a></h2>
 <div class="jump">
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank"><span class="num">↓</span><span><b>最新バージョンをダウンロード</b><span class="d">Windows · macOS · Linux パッケージ</span></span></a>

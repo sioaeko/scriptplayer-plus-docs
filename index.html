@@ -225,516 +225,467 @@
 </article>
 
           <!-- ============================================ 02 INSTALL -->
-          <article class="page" id="page-install" data-title="설치하기" data-group="시작하기">
-            <h1>설치하기</h1>
-            <p class="lede">
+          <article class="page" data-group="시작하기" data-title="설치하기" id="page-install">
+<h1>설치하기</h1>
+<p class="lede">
               ScriptPlayer+는 Windows, macOS, Linux용 패키지를 GitHub Releases에서 내려받아 설치합니다.
               처음 실행할 때 운영체제가 보안 경고를 띄우는 경우가 있는데, 아래에 해결 방법을 함께 적어 두었습니다.
             </p>
-
-            <h2 id="install-get">내려받기<a class="anchor" href="#install-get" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              모든 빌드는 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" target="_blank" rel="noopener noreferrer">GitHub Releases 최신 페이지</a>에 올라옵니다.
+<h2 id="install-get">내려받기<a aria-label="이 항목 링크" class="anchor" href="#install-get">#</a></h2>
+<p>
+              모든 빌드는 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releases 최신 페이지</a>에 올라옵니다.
               사용하는 운영체제에 맞는 파일을 고르세요.
             </p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>플랫폼</th><th>패키지</th><th>참고</th></tr></thead>
-                <tbody>
-                  <tr>
-                    <td class="col-key"><span class="pill pill--win">Windows x64</span></td>
-                    <td>설치 파일(<code>.exe</code>) 또는 포터블 <code>.zip</code></td>
-                    <td>설치 없이 쓰려면 포터블 ZIP을 받아 압축만 풀면 됩니다.</td>
-                  </tr>
-                  <tr>
-                    <td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
-                    <td><code>.dmg</code> 또는 <code>.zip</code></td>
-                    <td>Apple Silicon과 Intel용 파일이 따로 있습니다. 본인 기기에 맞는 쪽을 받으세요.</td>
-                  </tr>
-                  <tr>
-                    <td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
-                    <td><code>.deb</code> · <code>AppImage</code> · 압축 패키지</td>
-                    <td>Ubuntu / Kubuntu 24.04 이상은 <strong>DEB 권장</strong>입니다.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h2 id="install-windows">Windows<a class="anchor" href="#install-windows" aria-label="이 항목 링크">#</a></h2>
-            <ol class="steps">
-              <li>
-                <h3>설치 파일 실행</h3>
-                <p>내려받은 <code>.exe</code>를 실행하면 먼저 사용권 계약(EULA)이 표시됩니다. 내용을 확인하고 동의하면 설치가 진행됩니다.</p>
-              </li>
-              <li>
-                <h3>SmartScreen 경고가 뜨면</h3>
-                <p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>플랫폼</th><th>패키지</th><th>참고</th></tr></thead>
+<tbody>
+<tr>
+<td class="col-key"><span class="pill pill--win">Windows x64</span></td>
+<td>설치 파일(<code>.exe</code>) 또는 포터블 <code>.zip</code></td>
+<td>설치 없이 쓰려면 포터블 ZIP을 받아 압축만 풀면 됩니다.</td>
+</tr>
+<tr>
+<td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
+<td><code>.dmg</code> 또는 <code>.zip</code></td>
+<td>Apple Silicon과 Intel용 파일이 따로 있습니다. 본인 기기에 맞는 쪽을 받으세요.</td>
+</tr>
+<tr>
+<td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
+<td><code>.deb</code> · <code>AppImage</code> · 압축 패키지</td>
+<td>Ubuntu / Kubuntu 24.04 이상은 <strong>DEB 권장</strong>입니다.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="install-windows">Windows<a aria-label="이 항목 링크" class="anchor" href="#install-windows">#</a></h2>
+<ol class="steps">
+<li>
+<h3>설치 파일 실행</h3>
+<p>내려받은 <code>.exe</code>를 실행하면 먼저 사용권 계약(EULA)이 표시됩니다. 내용을 확인하고 동의하면 설치가 진행됩니다.</p>
+</li>
+<li>
+<h3>SmartScreen 경고가 뜨면</h3>
+<p>
                   Windows 패키지에는 Authenticode 서명이 들어 있지 않습니다. 그래서 Microsoft Defender SmartScreen이
                   <strong>“Windows의 PC 보호”</strong> 같은 안내를 띄울 수 있습니다.
                   <strong>추가 정보</strong> → <strong>실행</strong>을 누르면 설치를 이어갈 수 있습니다.
                 </p>
-              </li>
-              <li>
-                <h3>포터블 ZIP을 쓸 경우</h3>
-                <p>압축을 푼 폴더 안의 실행 파일을 바로 실행합니다. 설정과 캐시는 사용자 폴더에 저장됩니다.</p>
-              </li>
-            </ol>
-
-            <figure>
-              <div class="shot"><img src="assets/img/install-windows.webp" alt="Windows 설치 마법사 화면" loading="lazy" /></div>
-              <figcaption>Windows 설치 마법사. 설치 전에 EULA를 먼저 보여 줍니다.</figcaption>
-            </figure>
-
-            <h2 id="install-macos">macOS<a class="anchor" href="#install-macos" aria-label="이 항목 링크">#</a></h2>
-            <div class="note note--warn">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-warn"/></svg>최소 버전</div>
-              <p>v0.6.0부터 Electron 런타임이 올라가면서 필요한 최소 macOS 버전이 <strong>Big Sur 11에서 Monterey 12</strong>로 올라갔습니다. Big Sur에서는 v0.6 이상을 쓸 수 없습니다.</p>
-            </div>
-            <ol class="steps">
-              <li>
-                <h3>DMG를 열고 앱을 옮기기</h3>
-                <p><code>.dmg</code>를 연 뒤 ScriptPlayer+ 아이콘을 <strong>응용 프로그램</strong> 폴더로 끌어다 놓습니다.</p>
-              </li>
-              <li>
-                <h3>“열 수 없습니다” 경고가 뜨면</h3>
-                <p>
+</li>
+<li>
+<h3>포터블 ZIP을 쓸 경우</h3>
+<p>압축을 푼 폴더 안의 실행 파일을 바로 실행합니다. 설정과 캐시는 사용자 폴더에 저장됩니다.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="Windows 설치 마법사 화면" loading="lazy" src="assets/img/install-windows.webp"/></div>
+<figcaption>Windows 설치 마법사. 설치 전에 EULA를 먼저 보여 줍니다.</figcaption>
+</figure>
+<h2 id="install-macos">macOS<a aria-label="이 항목 링크" class="anchor" href="#install-macos">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>최소 버전</div>
+<p>v0.6.0부터 Electron 런타임이 올라가면서 필요한 최소 macOS 버전이 <strong>Big Sur 11에서 Monterey 12</strong>로 올라갔습니다. Big Sur에서는 v0.6 이상을 쓸 수 없습니다.</p>
+</div>
+<ol class="steps">
+<li>
+<h3>DMG를 열고 앱을 옮기기</h3>
+<p><code>.dmg</code>를 연 뒤 ScriptPlayer+ 아이콘을 <strong>응용 프로그램</strong> 폴더로 끌어다 놓습니다.</p>
+</li>
+<li>
+<h3>“열 수 없습니다” 경고가 뜨면</h3>
+<p>
                   Gatekeeper가 개발자를 확인하지 못했다는 경고를 띄울 수 있습니다.
                   <strong>시스템 설정 → 개인정보 보호 및 보안</strong>으로 들어가 아래쪽에 나타난
                   <strong>“확인 없이 열기”</strong> 버튼을 누르면 실행됩니다.
                 </p>
-              </li>
-            </ol>
-
-            <div class="media-grid cols-2">
-              <figure>
-                <div class="shot"><img src="assets/img/install-mac-dmg.webp" alt="macOS DMG 설치 창" loading="lazy" /></div>
-                <figcaption>DMG를 열고 응용 프로그램 폴더로 끌어다 놓습니다.</figcaption>
-              </figure>
-              <figure>
-                <div class="shot"><img src="assets/img/install-mac-warning.webp" alt="macOS 보안 경고" loading="lazy" /></div>
-                <figcaption>처음 실행 시 나타나는 Gatekeeper 경고입니다.</figcaption>
-              </figure>
-            </div>
-            <figure>
-              <div class="shot"><img src="assets/img/install-mac-security.webp" alt="macOS 개인정보 보호 및 보안 설정" loading="lazy" /></div>
-              <figcaption>개인정보 보호 및 보안 화면에서 “확인 없이 열기”를 누르면 다음부터는 바로 실행됩니다.</figcaption>
-            </figure>
-
-            <h2 id="install-linux">Linux<a class="anchor" href="#install-linux" aria-label="이 항목 링크">#</a></h2>
-            <p>
+</li>
+</ol>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="macOS DMG 설치 창" loading="lazy" src="assets/img/install-mac-dmg.webp"/></div>
+<figcaption>DMG를 열고 응용 프로그램 폴더로 끌어다 놓습니다.</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="macOS 보안 경고" loading="lazy" src="assets/img/install-mac-warning.webp"/></div>
+<figcaption>처음 실행 시 나타나는 Gatekeeper 경고입니다.</figcaption>
+</figure>
+</div>
+<figure>
+<div class="shot"><img alt="macOS 개인정보 보호 및 보안 설정" loading="lazy" src="assets/img/install-mac-security.webp"/></div>
+<figcaption>개인정보 보호 및 보안 화면에서 “확인 없이 열기”를 누르면 다음부터는 바로 실행됩니다.</figcaption>
+</figure>
+<h2 id="install-linux">Linux<a aria-label="이 항목 링크" class="anchor" href="#install-linux">#</a></h2>
+<p>
               Ubuntu / Kubuntu 24.04 이상은 <strong>DEB 패키지를 쓰는 것을 권장</strong>합니다.
               이 버전들은 권한 없는 사용자 네임스페이스를 제한하는데, Chromium 샌드박스가 동작하려면
               실행 파일 전용 AppArmor 프로필이 필요하고 그 프로필은 DEB 패키지에만 들어 있습니다.
             </p>
-            <ul>
-              <li><strong>DEB</strong> — AppArmor 프로필을 함께 설치합니다. 24.04 이상에서 가장 안전한 선택입니다.</li>
-              <li><strong>AppImage</strong> — v0.6.0부터 정적 런타임으로 바뀌어 <code>libfuse.so.2</code>가 더 이상 필요 없습니다.</li>
-              <li><strong>압축 패키지</strong> — 사용자 네임스페이스가 열려 있는 배포판에서 쓸 수 있습니다.</li>
-            </ul>
-            <div class="note note--danger">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-danger"/></svg>샌드박스를 끄지 않습니다</div>
-              <p>
+<ul>
+<li><strong>DEB</strong> — AppArmor 프로필을 함께 설치하므로 Ubuntu / Kubuntu 24.04 이상에서 권장합니다.</li>
+<li><strong>AppImage</strong> — v0.6.0부터 정적 런타임으로 바뀌어 <code>libfuse.so.2</code>가 더 이상 필요 없습니다.</li>
+<li><strong>압축 패키지</strong> — 사용자 네임스페이스가 열려 있는 배포판에서 쓸 수 있습니다.</li>
+</ul>
+<div class="note note--danger">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>샌드박스를 끄지 않습니다</div>
+<p>
                 ScriptPlayer+는 시스템 차원의 네임스페이스 제한을 만났을 때 <code>--no-sandbox</code>로 자동 우회하지 않습니다.
                 포터블 AppImage나 압축 패키지가 실행되지 않는다면 DEB 패키지를 설치하세요.
               </p>
-            </div>
-
-            <h2 id="install-update">업데이트<a class="anchor" href="#install-update" aria-label="이 항목 링크">#</a></h2>
-            <p>
+</div>
+<h2 id="install-update">업데이트<a aria-label="이 항목 링크" class="anchor" href="#install-update">#</a></h2>
+<p>
               새 버전이 나오면 앱 안에서 알림이 뜹니다. 알림에서 바로 내려받아 설치할 수 있고,
               같은 버전으로 나온 핫픽스도 감지해 설치할 수 있습니다.
               업데이트 확인 동작은 <strong>설정 → 일반</strong>에서 조정합니다.
             </p>
-            <div class="media-grid cols-2">
-              <figure>
-                <div class="shot"><img src="assets/img/update-notice.webp" alt="업데이트 알림" loading="lazy" /></div>
-                <figcaption>새 버전 알림. 릴리스 노트를 앱 안에서 미리 볼 수 있습니다.</figcaption>
-              </figure>
-              <figure>
-                <div class="shot"><img src="assets/img/update-setting.webp" alt="업데이트 설정" loading="lazy" /></div>
-                <figcaption>설정 → 일반에서 업데이트 확인 방식을 바꿉니다.</figcaption>
-              </figure>
-            </div>
-          </article>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="업데이트 알림" loading="lazy" src="assets/img/update-notice.webp"/></div>
+<figcaption>새 버전 알림. 릴리스 노트를 앱 안에서 미리 볼 수 있습니다.</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="업데이트 설정" loading="lazy" src="assets/img/update-setting.webp"/></div>
+<figcaption>설정 → 일반에서 업데이트 확인 방식을 바꿉니다.</figcaption>
+</figure>
+</div>
+</article>
 
           <!-- ============================================ 03 QUICKSTART -->
-          <article class="page" id="page-quickstart" data-title="빠르게 시작하기" data-group="시작하기">
-            <h1>빠르게 시작하기</h1>
-            <p class="lede">
-              설치를 끝냈다면 여기서부터입니다. 다섯 단계만 따라 하면 영상이 재생되고, 스크립트가 붙고, 장치가 움직입니다.
-            </p>
-
-            <figure>
-              <div class="shot"><img src="assets/img/ui-firstrun.webp" alt="ScriptPlayer+ 첫 실행 화면" loading="lazy" /></div>
-              <figcaption>처음 실행하면 이런 빈 화면이 뜹니다. “Open a folder or drag a video or audio file to start”가 출발점입니다.</figcaption>
-            </figure>
-
-            <h2 id="qs-steps">다섯 단계<a class="anchor" href="#qs-steps" aria-label="이 항목 링크">#</a></h2>
-            <ol class="steps">
-              <li>
-                <h3>미디어가 있는 폴더를 엽니다</h3>
-                <p>
+          <article class="page" data-group="시작하기" data-title="빠르게 시작하기" id="page-quickstart">
+<h1>빠르게 시작하기</h1>
+<p class="lede">아래 순서에 따라 미디어를 열고 스크립트를 연결한 다음, 사용하는 장치를 설정합니다. 장치별 준비 과정은 연결 안내를 함께 확인하세요.</p>
+<figure>
+<div class="shot"><img alt="ScriptPlayer+ 첫 실행 화면" loading="lazy" src="assets/img/ui-firstrun.webp"/></div>
+<figcaption>처음 실행했을 때의 화면입니다. 폴더를 열거나 영상·음원 파일을 창으로 끌어다 놓아 시작합니다.</figcaption>
+</figure>
+<h2 id="qs-steps">다섯 단계<a aria-label="이 항목 링크" class="anchor" href="#qs-steps">#</a></h2>
+<ol class="steps">
+<li>
+<h3>미디어가 있는 폴더를 엽니다</h3>
+<p>
                   왼쪽 위 <strong>Folder</strong> 버튼을 눌러 영상이 들어 있는 폴더를 고릅니다.
                   파일 하나만 빠르게 보고 싶다면 창 안으로 <strong>끌어다 놓아도(드래그 앤 드롭)</strong> 됩니다.
                 </p>
-              </li>
-              <li>
-                <h3>목록에서 영상을 고릅니다</h3>
-                <p>
+</li>
+<li>
+<h3>목록에서 영상을 고릅니다</h3>
+<p>
                   사이드바 파일 목록에서 파일을 클릭하면 바로 재생이 시작됩니다.
                   파일 이름 오른쪽에 <strong>초록색 문서 아이콘</strong>이 있으면 짝이 맞는 펀스크립트를 찾았다는 뜻입니다.
                 </p>
-              </li>
-              <li>
-                <h3>스크립트가 잘 붙었는지 확인합니다</h3>
-                <p>
+</li>
+<li>
+<h3>스크립트가 잘 붙었는지 확인합니다</h3>
+<p>
                   영상 아래 <strong>히트맵 띠</strong>와 <strong>타임라인 그래프</strong>가 보이면 스크립트가 정상적으로 읽힌 것입니다.
                   안 보인다면 재생바의 <code>HM</code>·<code>TL</code> 버튼을 눌러 켜 보세요.
                 </p>
-              </li>
-              <li>
-                <h3>장치를 연결합니다</h3>
-                <p>
+</li>
+<li>
+<h3>장치를 연결합니다</h3>
+<p>
                   왼쪽 레일의 <strong>디바이스</strong> 아이콘을 눌러 사용하는 장치를 고르고 연결합니다.
                   장치별 자세한 설정은 <a href="#handy">The Handy</a>, <a href="#intiface">Intiface</a>,
                   <a href="#funosr">FunOSR</a> 문서를 참고하세요.
                 </p>
-              </li>
-              <li>
-                <h3>재생하고 세기를 맞춥니다</h3>
-                <p>
-                  <kbd>Space</kbd>로 재생합니다. 움직임이 너무 세거나 약하면 재생바의 <code>STR</code>에서 스트로크 범위를 줄이거나 늘립니다.
+</li>
+<li>
+<h3>재생하고 세기를 맞춥니다</h3>
+<p>
+<kbd>Space</kbd>로 재생합니다. 움직임이 너무 세거나 약하면 재생바의 <code>STR</code>에서 스트로크 범위를 줄이거나 늘립니다.
                   타이밍이 어긋나면 <code>+0ms</code> 버튼에서 오프셋을 조정합니다.
                 </p>
-              </li>
-            </ol>
-
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>먼저 확인하면 좋은 것</div>
-              <ul>
-                <li>스크립트 파일은 보통 영상과 <strong>같은 폴더에 같은 이름</strong>으로 두면 자동으로 잡힙니다. (<code>영상.mp4</code> ↔ <code>영상.funscript</code>)</li>
-                <li>스크립트를 따로 모아 둔 폴더가 있다면 설정에서 <strong>스크립트 폴더</strong>로 지정해 두세요.</li>
-                <li>장치를 처음 쓸 때는 <strong>스트로크 범위를 좁게</strong> 잡고 시작하는 편이 안전합니다.</li>
-              </ul>
-            </div>
-
-            <h2 id="qs-library">폴더 대신 라이브러리로 쓰기<a class="anchor" href="#qs-library" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              매번 폴더를 여는 대신, 자주 쓰는 폴더들을 <strong>라이브러리</strong>에 등록해 두면 썸네일 카드로 한눈에 볼 수 있습니다.
-              왼쪽 레일 맨 아래 <strong>라이브러리</strong> 아이콘에서 시작합니다. 자세한 내용은 <a href="#library">라이브러리</a>를 보세요.
-            </p>
-            <figure>
-              <div class="shot">
-                <video data-src="assets/video/library-thumbnail.mp4" muted loop playsinline preload="none" aria-label="라이브러리 화면 데모"></video>
-              </div>
-              <figcaption>라이브러리 화면. 여러 폴더를 등록해 두고 카드로 훑어볼 수 있습니다.</figcaption>
-            </figure>
-          </article>
+</li>
+</ol>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>먼저 확인하면 좋은 것</div>
+<ul>
+<li>스크립트 파일은 보통 영상과 <strong>같은 폴더에 같은 이름</strong>으로 두면 자동으로 잡힙니다. (<code>영상.mp4</code> ↔ <code>영상.funscript</code>)</li>
+<li>스크립트를 따로 모아 둔 폴더가 있다면 설정에서 <strong>스크립트 폴더</strong>로 지정해 두세요.</li>
+<li>장치를 처음 쓸 때는 <strong>스트로크 범위를 좁게</strong> 잡고 시작하는 편이 안전합니다.</li>
+</ul>
+</div>
+<h2 id="qs-library">폴더 대신 라이브러리로 쓰기<a aria-label="이 항목 링크" class="anchor" href="#qs-library">#</a></h2>
+<p>자주 쓰는 폴더를 <a href="#library">라이브러리</a>에 등록하면 썸네일 카드로 파일을 찾아볼 수 있습니다. 왼쪽 세로 메뉴의 <strong>라이브러리</strong> 아이콘을 선택하세요.</p>
+<figure>
+<div class="shot">
+<video aria-label="라이브러리 화면 데모" data-src="assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>라이브러리 화면. 여러 폴더를 등록해 두고 카드로 훑어볼 수 있습니다.</figcaption>
+</figure>
+</article>
 
           <!-- ============================================ 04 INTERFACE -->
-          <article class="page" id="page-interface" data-title="화면 둘러보기" data-group="시작하기">
-            <h1>화면 둘러보기</h1>
-            <p class="lede">
-              ScriptPlayer+ 화면은 크게 <strong>왼쪽 레일 · 사이드바 · 플레이어 · 재생바</strong> 네 부분으로 나뉩니다.
-              특히 재생바의 짧은 영문 버튼들은 처음 보면 헷갈리기 쉬워, 아래에 전부 풀어 두었습니다.
-            </p>
-
-            <figure>
-              <div class="shot"><img src="assets/img/ui-player-multiaxis.webp" alt="ScriptPlayer+ 전체 화면 구성" loading="lazy" /></div>
-              <figcaption>왼쪽부터 레일 · 사이드바 · 플레이어, 그리고 아래쪽에 히트맵 · 타임라인 · 재생바가 놓입니다.</figcaption>
-            </figure>
-
-            <figure>
-              <div class="shot">
-                <video data-src="assets/video/overview.mp4" muted loop playsinline preload="none" aria-label="화면 구성 둘러보기"></video>
-              </div>
-              <figcaption>각 영역을 실제로 오가는 모습입니다.</figcaption>
-            </figure>
-
-            <h2 id="ui-rail">왼쪽 레일<a class="anchor" href="#ui-rail" aria-label="이 항목 링크">#</a></h2>
-            <p>화면 맨 왼쪽의 좁은 세로 띠입니다. 사이드바에 무엇을 보여 줄지 고르는 곳으로, 위에서부터 순서대로 다음과 같습니다.</p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th><span class="vh">아이콘</span></th><th>이름</th><th>하는 일</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-video"/></svg></td><td><strong>파일</strong></td><td>폴더를 열고 파일 목록을 보는 기본 화면입니다. 최근 재생 목록도 여기 있습니다.</td></tr>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-search"/></svg></td><td><strong>스크립트</strong></td><td>현재 미디어에 맞는 스크립트를 찾고 바꾸는 도구입니다.</td></tr>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-puzzle"/></svg></td><td><strong>플러그인</strong></td><td>직접 설치한 스크립트 공급자 플러그인을 관리합니다. → <a href="#plugins">플러그인</a></td></tr>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-plug"/></svg></td><td><strong>디바이스</strong></td><td>The Handy · FunOSR 등 장치 연결과 출력 설정입니다. → <a href="#handy">The Handy</a></td></tr>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-sliders"/></svg></td><td><strong>Intiface</strong></td><td>Intiface / Buttplug 전용 작업 공간입니다. → <a href="#intiface">Intiface / Buttplug</a></td></tr>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-book"/></svg></td><td><strong>라이브러리</strong></td><td>썸네일 카드로 보는 미디어 라이브러리입니다. → <a href="#library">라이브러리</a></td></tr>
-                  <tr><td class="col-icon"><svg class="rail-ico" width="19" height="19" aria-hidden="true"><use href="#i-gear"/></svg></td><td><strong>설정</strong></td><td>레일 맨 아래에 있습니다. <kbd>Ctrl</kbd>&nbsp;<kbd>,</kbd> 로도 열립니다. → <a href="#settings">설정 안내</a></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>사이드바 접기</div>
-              <p>이미 선택된 레일 아이콘을 한 번 더 누르면 사이드바가 접히면서 영상이 넓어집니다. 다시 누르면 펼쳐집니다.</p>
-            </div>
-
-            <h2 id="ui-sidebar">사이드바<a class="anchor" href="#ui-sidebar" aria-label="이 항목 링크">#</a></h2>
-            <p><strong>파일</strong> 화면을 기준으로 위에서 아래로 이렇게 구성됩니다.</p>
-            <ul>
-              <li><strong>Folder</strong> — 미디어 폴더를 엽니다. 옆의 작은 버튼들로 스크립트 폴더 지정, 스크립트 불러오기·저장, 다시 검사를 합니다.</li>
-              <li><strong>Recent Media</strong> — 최근에 연 파일 목록입니다. 항목 옆 <code>×</code>로 하나씩, 휴지통 아이콘으로 전체를 지웁니다.</li>
-              <li><strong>Filter files…</strong> — 파일 이름으로 걸러 냅니다. 오른쪽 숫자는 현재 보이는 파일 개수입니다.</li>
-              <li><strong>Show multi-axis files only</strong> — 다축 스크립트가 있는 파일만 봅니다.</li>
-              <li><strong>Show rated files only</strong> — 별점을 매긴 파일만 봅니다.</li>
-              <li><strong>정렬</strong> — <code>Path</code>(경로) 기준을 비롯해 이름·별점·재생 시간·수정 시간으로 정렬하고, <code>Asc</code>/<code>Desc</code>로 방향을 바꿉니다.</li>
-              <li><strong>Script Variants</strong> — 지금 미디어에 맞는 스크립트가 여러 개일 때 고르는 패널입니다. → <a href="#scripts">스크립트 다루기</a></li>
-              <li><strong>파일 목록</strong> — 스크립트가 있는 파일에는 초록색 문서 아이콘이 붙습니다.</li>
-            </ul>
-
-            <h2 id="ui-playbar">재생바 버튼 사전<a class="anchor" href="#ui-playbar" aria-label="이 항목 링크">#</a></h2>
-            <p>
+          <article class="page" data-group="시작하기" data-title="화면 둘러보기" id="page-interface">
+<h1>화면 둘러보기</h1>
+<p class="lede">화면은 크게 왼쪽 세로 메뉴(레일), 사이드바, 재생 화면, 재생바로 나뉩니다. 각 영역의 역할과 재생바에 표시되는 영문 약자를 아래에서 확인할 수 있습니다.</p>
+<figure>
+<div class="shot"><img alt="ScriptPlayer+ 전체 화면 구성" loading="lazy" src="assets/img/ui-player-multiaxis.webp"/></div>
+<figcaption>왼쪽부터 레일 · 사이드바 · 플레이어, 그리고 아래쪽에 히트맵 · 타임라인 · 재생바가 놓입니다.</figcaption>
+</figure>
+<figure>
+<div class="shot">
+<video aria-label="화면 구성 둘러보기" data-src="assets/video/overview.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>각 영역을 실제로 오가는 모습입니다.</figcaption>
+</figure>
+<h2 id="ui-rail">왼쪽 레일<a aria-label="이 항목 링크" class="anchor" href="#ui-rail">#</a></h2>
+<p>화면 맨 왼쪽의 좁은 세로 띠입니다. 사이드바에 무엇을 보여 줄지 고르는 곳으로, 위에서부터 순서대로 다음과 같습니다.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th><span class="vh">아이콘</span></th><th>이름</th><th>하는 일</th></tr></thead>
+<tbody>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-video"></use></svg></td><td><strong>파일</strong></td><td>폴더를 열고 파일 목록을 보는 기본 화면입니다. 최근 재생 목록도 여기 있습니다.</td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-search"></use></svg></td><td><strong>스크립트</strong></td><td>현재 미디어에 맞는 스크립트를 찾고 바꾸는 도구입니다.</td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-puzzle"></use></svg></td><td><strong>플러그인</strong></td><td>직접 설치한 스크립트 공급자 플러그인을 관리합니다. → <a href="#plugins">플러그인</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-plug"></use></svg></td><td><strong>디바이스</strong></td><td>The Handy · FunOSR 등 장치 연결과 출력 설정입니다. → <a href="#handy">The Handy</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-sliders"></use></svg></td><td><strong>Intiface</strong></td><td>Intiface / Buttplug 전용 작업 공간입니다. → <a href="#intiface">Intiface / Buttplug</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-book"></use></svg></td><td><strong>라이브러리</strong></td><td>썸네일 카드로 보는 미디어 라이브러리입니다. → <a href="#library">라이브러리</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-gear"></use></svg></td><td><strong>설정</strong></td><td>레일 맨 아래에 있습니다. <kbd>Ctrl</kbd> <kbd>,</kbd> 로도 열립니다. → <a href="#settings">설정 안내</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>사이드바 접기</div>
+<p>이미 선택된 레일 아이콘을 한 번 더 누르면 사이드바가 접히면서 영상이 넓어집니다. 다시 누르면 펼쳐집니다.</p>
+</div>
+<h2 id="ui-sidebar">사이드바<a aria-label="이 항목 링크" class="anchor" href="#ui-sidebar">#</a></h2>
+<p><strong>파일</strong> 화면을 기준으로 위에서 아래로 이렇게 구성됩니다.</p>
+<ul>
+<li><strong>Folder</strong> — 미디어 폴더를 엽니다. 옆의 작은 버튼들로 스크립트 폴더 지정, 스크립트 불러오기·저장, 다시 검사를 합니다.</li>
+<li><strong>Recent Media</strong> — 최근에 연 파일 목록입니다. 항목 옆 <code>×</code>로 하나씩, 휴지통 아이콘으로 전체를 지웁니다.</li>
+<li><strong>Filter files…</strong> — 파일 이름으로 걸러 냅니다. 오른쪽 숫자는 현재 보이는 파일 개수입니다.</li>
+<li><strong>Show multi-axis files only</strong> — 다축 스크립트가 있는 파일만 봅니다.</li>
+<li><strong>Show rated files only</strong> — 별점을 매긴 파일만 봅니다.</li>
+<li><strong>정렬</strong> — <code>Path</code>(경로) 기준을 비롯해 이름·별점·재생 시간·수정 시간으로 정렬하고, <code>Asc</code>/<code>Desc</code>로 방향을 바꿉니다.</li>
+<li><strong>Script Variants</strong> — 지금 미디어에 맞는 스크립트가 여러 개일 때 고르는 패널입니다. → <a href="#scripts">스크립트 다루기</a></li>
+<li><strong>파일 목록</strong> — 스크립트가 있는 파일에는 초록색 문서 아이콘이 붙습니다.</li>
+</ul>
+<h2 id="ui-playbar">재생바 버튼 사전<a aria-label="이 항목 링크" class="anchor" href="#ui-playbar">#</a></h2>
+<p>
               화면 맨 아래 줄입니다. 왼쪽은 재생 제어, 오른쪽은 화면·스크립트 관련 토글입니다.
               짧은 영문 약자들은 다음과 같은 뜻입니다.
             </p>
-            <div class="legend">
-              <div class="legend-row"><span class="legend-key">1x</span><span class="legend-desc"><b>재생 속도</b> — 양옆의 <code>−</code> <code>+</code>로 배속을 조절합니다.</span></div>
-              <div class="legend-row"><span class="legend-key">STR</span><span class="legend-desc"><b>스트로크(Stroke)</b> — 장치가 움직이는 범위를 그 자리에서 좁히거나 넓힙니다. 반전 토글도 여기 있습니다.</span></div>
-              <div class="legend-row"><span class="legend-key">+0ms</span><span class="legend-desc"><b>스크립트 오프셋</b> — 영상과 움직임의 시간 차를 밀거나 당깁니다. <code>-60초 ~ +60초</code> 범위로 조정할 수 있습니다.</span></div>
-              <div class="legend-row"><span class="legend-key">AB</span><span class="legend-desc"><b>구간 반복</b> — A 지점과 B 지점을 찍어 그 사이만 반복 재생합니다.</span></div>
-              <div class="legend-row"><span class="legend-key legend-key--icon" role="img" aria-label="반복 아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><span class="legend-desc"><b>반복</b> — 지금 재생 중인 파일 하나만 반복합니다. 다음 파일로 자동으로 넘어가는 건 <code>Auto Next Play</code> 설정입니다.</span></div>
-              <div class="legend-row"><span class="legend-key legend-key--icon" role="img" aria-label="랜덤 재생 아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></svg></span><span class="legend-desc"><b>랜덤 재생</b> — 목록을 무작위 순서로 재생합니다.</span></div>
-              <div class="legend-row"><span class="legend-key">EXT</span><span class="legend-desc"><b>외부 플레이어(External)</b> — mpv·VLC 같은 외부 플레이어로 이 파일을 엽니다. → <a href="#external">외부 플레이어</a></span></div>
-              <div class="legend-row"><span class="legend-key">TL</span><span class="legend-desc"><b>타임라인(Timeline)</b> — 스크립트 그래프를 켜고 끕니다.</span></div>
-              <div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>히트맵(Heatmap)</b> — 영상 전체의 강약을 색 띠로 보여 줍니다.</span></div>
-              <div class="legend-row"><span class="legend-key">AV</span><span class="legend-desc"><b>오디오·자막 트랙</b> — 내장 오디오 트랙과 자막 트랙을 고릅니다. → <a href="#audio">오디오와 자막</a></span></div>
-              <div class="legend-row"><span class="legend-key legend-key--icon" role="img" aria-label="별점 아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.5 3.3a.6.6 0 0 1 1 0l2.2 4.5 4.9.7c.5.1.7.7.3 1l-3.5 3.5.8 4.9c.1.5-.4.9-.9.6L12 16.3l-4.4 2.3c-.4.2-1-.1-.9-.6l.8-4.9-3.5-3.5c-.4-.3-.2-.9.3-1l4.9-.7 2.3-4.6Z"/></svg></span><span class="legend-desc"><b>별점</b> — 재생 화면에서 바로 점수를 매깁니다. 라이브러리 정렬·필터에 쓰입니다.</span></div>
-              <div class="legend-row"><span class="legend-key">FIT</span><span class="legend-desc"><b>맞춤</b> — 영상 전체가 보이도록 화면에 맞춥니다. 검은 여백이 생길 수 있습니다.</span></div>
-              <div class="legend-row"><span class="legend-key">FILL</span><span class="legend-desc"><b>채움</b> — 여백 없이 화면을 채웁니다. 영상 일부가 잘릴 수 있습니다.</span></div>
-              <div class="legend-row"><span class="legend-key legend-key--icon" role="img" aria-label="전체화면 아이콘"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></span><span class="legend-desc"><b>전체화면</b> — <kbd>F</kbd> 키와 같습니다.</span></div>
-            </div>
-
-            <div class="note">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-info"/></svg>참고</div>
-              <p>
+<div class="legend">
+<div class="legend-row"><span class="legend-key">1x</span><span class="legend-desc"><b>재생 속도</b> — 양옆의 <code>−</code> <code>+</code>로 배속을 조절합니다.</span></div>
+<div class="legend-row"><span class="legend-key">STR</span><span class="legend-desc"><b>스트로크(Stroke)</b> — 장치가 움직이는 범위를 그 자리에서 좁히거나 넓힙니다. 반전 토글도 여기 있습니다.</span></div>
+<div class="legend-row"><span class="legend-key">+0ms</span><span class="legend-desc"><b>스크립트 오프셋</b> — 영상과 움직임의 시간 차를 밀거나 당깁니다. <code>-60초 ~ +60초</code> 범위로 조정할 수 있습니다.</span></div>
+<div class="legend-row"><span class="legend-key">AB</span><span class="legend-desc"><b>구간 반복</b> — A 지점과 B 지점을 찍어 그 사이만 반복 재생합니다.</span></div>
+<div class="legend-row"><span aria-label="반복 아이콘" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></span><span class="legend-desc"><b>반복</b> — 지금 재생 중인 파일 하나만 반복합니다. 다음 파일로 자동으로 넘어가는 건 <code>Auto Next Play</code> 설정입니다.</span></div>
+<div class="legend-row"><span aria-label="랜덤 재생 아이콘" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"></path><path d="m18 2 4 4-4 4"></path><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"></path><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"></path><path d="m18 14 4 4-4 4"></path></svg></span><span class="legend-desc"><b>랜덤 재생</b> — 목록을 무작위 순서로 재생합니다.</span></div>
+<div class="legend-row"><span class="legend-key">EXT</span><span class="legend-desc"><b>외부 플레이어(External)</b> — mpv·VLC 같은 외부 플레이어로 이 파일을 엽니다. → <a href="#external">외부 플레이어</a></span></div>
+<div class="legend-row"><span class="legend-key">TL</span><span class="legend-desc"><b>타임라인(Timeline)</b> — 스크립트 그래프를 켜고 끕니다.</span></div>
+<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>히트맵(Heatmap)</b> — 스크립트 전체의 움직임 속도를 색 띠로 보여 줍니다.</span></div>
+<div class="legend-row"><span class="legend-key">AV</span><span class="legend-desc"><b>오디오·자막 트랙</b> — 내장 오디오 트랙과 자막 트랙을 고릅니다. → <a href="#audio">오디오와 자막</a></span></div>
+<div class="legend-row"><span aria-label="별점 아이콘" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11.5 3.3a.6.6 0 0 1 1 0l2.2 4.5 4.9.7c.5.1.7.7.3 1l-3.5 3.5.8 4.9c.1.5-.4.9-.9.6L12 16.3l-4.4 2.3c-.4.2-1-.1-.9-.6l.8-4.9-3.5-3.5c-.4-.3-.2-.9.3-1l4.9-.7 2.3-4.6Z"></path></svg></span><span class="legend-desc"><b>별점</b> — 재생 화면에서 바로 점수를 매깁니다. 라이브러리 정렬·필터에 쓰입니다.</span></div>
+<div class="legend-row"><span class="legend-key">FIT</span><span class="legend-desc"><b>맞춤</b> — 영상 전체가 보이도록 화면에 맞춥니다. 검은 여백이 생길 수 있습니다.</span></div>
+<div class="legend-row"><span class="legend-key">FILL</span><span class="legend-desc"><b>채움</b> — 여백 없이 화면을 채웁니다. 영상 일부가 잘릴 수 있습니다.</span></div>
+<div class="legend-row"><span aria-label="전체화면 아이콘" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></span><span class="legend-desc"><b>전체화면</b> — <kbd>F</kbd> 키와 같습니다.</span></div>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>참고</div>
+<p>
                 VR·360 영상을 열면 재생바에 <strong>투영 방식 버튼</strong>이 함께 나타납니다. → <a href="#vr">VR · 360 영상</a>
-              </p>
-            </div>
-
-            <h2 id="ui-titlebar">제목 표시줄<a class="anchor" href="#ui-titlebar" aria-label="이 항목 링크">#</a></h2>
-            <p>
+</p>
+</div>
+<h2 id="ui-titlebar">제목 표시줄<a aria-label="이 항목 링크" class="anchor" href="#ui-titlebar">#</a></h2>
+<p>
               창 맨 위에는 앱 이름과 버전이 표시되고, 오른쪽에 <strong>Stop all devices</strong> 버튼이 있습니다.
               연결된 모든 장치를 한 번에 멈추는 비상 정지 버튼입니다. → <a href="#safety">안전과 비상 정지</a>
-            </p>
-            <figure>
-              <div class="shot"><img src="assets/img/ui-estop.webp" alt="제목 표시줄의 Stop all devices 버튼" loading="lazy" /></div>
-              <figcaption>오른쪽 위 <strong>Stop all devices</strong>가 전역 비상 정지입니다. 설정에서 숨길 수도 있습니다.</figcaption>
-            </figure>
-          </article>
+</p>
+<figure>
+<div class="shot"><img alt="제목 표시줄의 Stop all devices 버튼" loading="lazy" src="assets/img/ui-estop.webp"/></div>
+<figcaption>오른쪽 위 <strong>Stop all devices</strong>가 전역 비상 정지입니다. 설정에서 숨길 수도 있습니다.</figcaption>
+</figure>
+</article>
 
           <!-- ============================================ 05 LIBRARY -->
-          <article class="page" id="page-library" data-title="라이브러리" data-group="기본 사용법">
-            <h1>라이브러리</h1>
-            <p class="lede">
+          <article class="page" data-group="기본 사용법" data-title="라이브러리" id="page-library">
+<h1>라이브러리</h1>
+<p class="lede">
               파일이 많아지면 폴더를 하나씩 여는 게 번거로워집니다. 라이브러리는 자주 쓰는 폴더들을 등록해 두고
               썸네일 카드로 한 번에 훑어볼 수 있게 해 줍니다.
             </p>
-
-            <figure>
-              <div class="shot">
-                <video data-src="assets/video/library.mp4" muted loop playsinline preload="none" aria-label="라이브러리 데모"></video>
-              </div>
-              <figcaption>라이브러리 화면 위쪽. 검색창과 <strong>Library folders</strong> 버튼으로 폴더를 관리합니다.</figcaption>
-            </figure>
-
-            <h2 id="lib-sources">여러 폴더 등록하기<a class="anchor" href="#lib-sources" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<figure>
+<div class="shot">
+<video aria-label="라이브러리 데모" data-src="assets/video/library.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>라이브러리 화면 위쪽. 검색창과 <strong>Library folders</strong> 버튼으로 폴더를 관리합니다.</figcaption>
+</figure>
+<h2 id="lib-sources">여러 폴더 등록하기<a aria-label="이 항목 링크" class="anchor" href="#lib-sources">#</a></h2>
+<p>
               v0.6.0부터 <strong>이름을 붙인 라이브러리 폴더를 여러 개</strong> 등록할 수 있습니다.
               <strong>설정 → 일반</strong>의 <strong>Library folders</strong>에서 관리합니다.
               각 폴더는 독립적으로 다루어져서, 하나를 꺼도 나머지는 그대로 남습니다.
             </p>
-            <ul>
-              <li><strong>Add folder</strong> — 폴더를 추가합니다. 선택 창에서 여러 개를 한 번에 고를 수 있습니다.</li>
-              <li><strong>이름</strong> — 경로 대신 <code>Local Library</code>, <code>NAS Library</code>처럼 알아보기 쉬운 이름을 붙입니다.</li>
-              <li><strong>토글</strong> — 잠시 빼고 싶을 때 끕니다. <strong>꺼 둔 폴더는 설정이 그대로 저장되고 검사 대상에서만 빠집니다.</strong></li>
-              <li><strong>휴지통</strong> — 등록만 해제할 뿐, 실제 파일은 지우지 않습니다.</li>
-            </ul>
-            <figure>
-              <div class="shot"><img src="assets/img/settings-general.webp" alt="설정 일반 탭의 라이브러리 폴더 목록" loading="lazy" /></div>
-              <figcaption>설정 → 일반. 폴더마다 이름과 켜기/끄기 상태가 따로 있습니다. 아래쪽에 <strong>Script Storage Folder</strong>도 함께 있습니다.</figcaption>
-            </figure>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>스크립트 폴더도 여기서</div>
-              <p>
+<ul>
+<li><strong>Add folder</strong> — 폴더를 추가합니다. 선택 창에서 여러 개를 한 번에 고를 수 있습니다.</li>
+<li><strong>이름</strong> — 경로 대신 <code>Local Library</code>, <code>NAS Library</code>처럼 알아보기 쉬운 이름을 붙입니다.</li>
+<li><strong>토글</strong> — 잠시 빼고 싶을 때 끕니다. <strong>꺼 둔 폴더는 설정이 그대로 저장되고 검사 대상에서만 빠집니다.</strong></li>
+<li><strong>휴지통</strong> — 등록만 해제할 뿐, 실제 파일은 지우지 않습니다.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="설정 일반 탭의 라이브러리 폴더 목록" loading="lazy" src="assets/img/settings-general.webp"/></div>
+<figcaption>설정 → 일반. 폴더마다 이름과 켜기/끄기 상태가 따로 있습니다. 아래쪽에 <strong>Script Storage Folder</strong>도 함께 있습니다.</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>스크립트 폴더도 여기서</div>
+<p>
                 내려받은 스크립트를 모아 둘 <strong>Script Storage Folder</strong>도 같은 화면에서 지정합니다.
                 여기를 지정해 두면 스크립트 자동 매칭과 플러그인 내려받기가 모두 이 폴더를 씁니다. → <a href="#scripts">스크립트 다루기</a>
-              </p>
-            </div>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>NAS를 쓰는 경우</div>
-              <p>
-                로컬과 NAS 목록은 캐시에서 합쳐져 중복 없이 하나로 보입니다.
-                시작할 때는 캐시된 내용을 먼저 보여 주고, 그다음 폴더들을 <strong>순서대로 하나씩</strong> 갱신합니다.
-                여러 폴더를 동시에 읽지 않기 때문에 시작할 때 디스크·네트워크가 한꺼번에 몰리는 일이 줄어듭니다.
-              </p>
-            </div>
-
-            <h2 id="lib-filter">거르기와 정렬<a class="anchor" href="#lib-filter" aria-label="이 항목 링크">#</a></h2>
-            <p>필터는 <strong>저장되어</strong> 다음에 열 때도 유지됩니다.</p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>기능</th><th>설명</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>검색</strong></td><td>제목과 경로로 찾습니다.</td></tr>
-                  <tr><td class="col-key"><strong>미디어 종류</strong></td><td>영상만 / 음원만 보기로 나눕니다.</td></tr>
-                  <tr><td class="col-key"><strong>스크립트 분류</strong></td><td>단일 축 스크립트와 다축 스크립트를 따로 걸러 볼 수 있습니다.</td></tr>
-                  <tr><td class="col-key"><strong>별점</strong></td><td>점수를 매긴 항목만 봅니다.</td></tr>
-                  <tr><td class="col-key"><strong>정렬</strong></td><td>경로 · 파일명 · 별점 · 재생 시간 · 수정 시간 기준으로 정렬합니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p>
+</p>
+</div>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>NAS를 쓰는 경우</div>
+<p>로컬 폴더와 NAS의 목록은 캐시를 바탕으로 합쳐서 보여 줍니다. 시작할 때 저장된 목록을 먼저 표시하고 폴더를 순서대로 갱신해, 디스크와 네트워크에 작업이 한꺼번에 몰리는 것을 줄입니다.</p>
+</div>
+<h2 id="lib-filter">거르기와 정렬<a aria-label="이 항목 링크" class="anchor" href="#lib-filter">#</a></h2>
+<p>필터는 <strong>저장되어</strong> 다음에 열 때도 유지됩니다.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>기능</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>검색</strong></td><td>제목과 경로로 찾습니다.</td></tr>
+<tr><td class="col-key"><strong>미디어 종류</strong></td><td>영상만 / 음원만 보기로 나눕니다.</td></tr>
+<tr><td class="col-key"><strong>스크립트 분류</strong></td><td>단일 축 스크립트와 다축 스크립트를 따로 걸러 볼 수 있습니다.</td></tr>
+<tr><td class="col-key"><strong>별점</strong></td><td>점수를 매긴 항목만 봅니다.</td></tr>
+<tr><td class="col-key"><strong>정렬</strong></td><td>경로 · 파일명 · 별점 · 재생 시간 · 수정 시간 기준으로 정렬합니다.</td></tr>
+</tbody>
+</table>
+</div>
+<p>
               재생 시간 정렬을 쓰려면 길이를 먼저 알아야 하는데, 이는 백그라운드에서 자동으로 검사합니다.
               파일이 많으면 처음에는 일부만 표시되다가 점점 채워집니다.
             </p>
-
-            <h2 id="lib-cards">카드 다루기<a class="anchor" href="#lib-cards" aria-label="이 항목 링크">#</a></h2>
-            <ul>
-              <li><strong>카드 크기</strong> — 슬라이더로 한 화면에 보이는 개수를 조절합니다.</li>
-              <li><strong>썸네일 메뉴</strong> — 카드에서 바로 대표 이미지를 바꾸거나 다시 만들 수 있습니다.</li>
-              <li><strong>별점</strong> — 카드에서 점수를 매기고, 재생 중에도 재생바 <code>☆</code>로 바꿀 수 있습니다.</li>
-            </ul>
-            <figure>
-              <div class="shot"><video data-src="assets/video/library-thumbnail.mp4" muted loop playsinline preload="none" aria-label="라이브러리 썸네일 생성 데모"></video></div>
-              <figcaption>썸네일은 백그라운드에서 만들어져 카드에 차례로 채워집니다. 파일이 많으면 처음에는 비어 있다가 점점 채워집니다.</figcaption>
-            </figure>
-            <div class="media-grid cols-2">
-              <figure>
-                <div class="shot"><video data-src="assets/video/thumbnail-menu.mp4" muted loop playsinline preload="none" aria-label="썸네일 메뉴 데모"></video></div>
-                <figcaption>썸네일 메뉴에서 대표 이미지를 관리합니다.</figcaption>
-              </figure>
-              <figure>
-                <div class="shot"><video data-src="assets/video/rating.mp4" muted loop playsinline preload="none" aria-label="별점 데모"></video></div>
-                <figcaption>재생 화면에서 바로 별점을 매길 수 있습니다.</figcaption>
-              </figure>
-            </div>
-
-            <h2 id="lib-hover">호버 미리보기<a class="anchor" href="#lib-hover" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<h2 id="lib-cards">카드 다루기<a aria-label="이 항목 링크" class="anchor" href="#lib-cards">#</a></h2>
+<ul>
+<li><strong>카드 크기</strong> — 슬라이더로 한 화면에 보이는 개수를 조절합니다.</li>
+<li><strong>썸네일 메뉴</strong> — 카드에서 바로 대표 이미지를 바꾸거나 다시 만들 수 있습니다.</li>
+<li><strong>별점</strong> — 카드에서 점수를 매기고, 재생 중에도 재생바 <code>☆</code>로 바꿀 수 있습니다.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="라이브러리 썸네일 생성 데모" data-src="assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>썸네일은 백그라운드에서 만들어져 카드에 차례로 채워집니다. 파일이 많으면 처음에는 비어 있다가 점점 채워집니다.</figcaption>
+</figure>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><video aria-label="썸네일 메뉴 데모" data-src="assets/video/thumbnail-menu.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>썸네일 메뉴에서 대표 이미지를 관리합니다.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="별점 데모" data-src="assets/video/rating.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>재생 화면에서 바로 별점을 매길 수 있습니다.</figcaption>
+</figure>
+</div>
+<h2 id="lib-hover">호버 미리보기<a aria-label="이 항목 링크" class="anchor" href="#lib-hover">#</a></h2>
+<p>
               파일 목록에서 항목 위에 마우스를 올려 두면 <strong>파일을 열지 않고도</strong> 짧은 영상 미리보기가 재생됩니다.
               어떤 영상인지 확인하려고 하나씩 열어 볼 필요가 줄어듭니다.
             </p>
-            
-          </article>
+</article>
 
           <!-- ============================================ 06 PLAYBACK -->
-          <article class="page" id="page-playback" data-title="재생 다루기" data-group="기본 사용법">
-            <h1>재생 다루기</h1>
-            <p class="lede">
+          <article class="page" data-group="기본 사용법" data-title="재생 다루기" id="page-playback">
+<h1>재생 다루기</h1>
+<p class="lede">
               재생·탐색 같은 기본 동작과, 반복·구간 반복·화면 맞춤처럼 자주 쓰게 되는 기능들을 모았습니다.
             </p>
-
-            <h2 id="pb-basic">기본 조작<a class="anchor" href="#pb-basic" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>동작</th><th>방법</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key">재생 / 일시정지</td><td><kbd>Space</kbd> 또는 <kbd>K</kbd>, 재생바의 ▶ 버튼</td></tr>
-                  <tr><td class="col-key">5초 이동</td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
-                  <tr><td class="col-key">10초 이동</td><td><kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd></td></tr>
-                  <tr><td class="col-key">이전 / 다음 파일</td><td>재생바의 ⏮ ⏭ 버튼</td></tr>
-                  <tr><td class="col-key">볼륨</td><td><kbd>↑</kbd> <kbd>↓</kbd> (5%씩)</td></tr>
-                  <tr><td class="col-key">음소거</td><td><kbd>M</kbd></td></tr>
-                  <tr><td class="col-key">전체화면</td><td><kbd>F</kbd></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p>전체 목록과 변경 방법은 <a href="#shortcuts">키보드 단축키</a>에 있습니다.</p>
-
-            <h2 id="pb-repeat">반복 · 자동 다음 재생 · 랜덤<a class="anchor" href="#pb-repeat" aria-label="이 항목 링크">#</a></h2>
-            <p>비슷해 보이지만 서로 다른 세 가지입니다. 처음에 헷갈리기 쉬운 부분이라 나눠 설명합니다.</p>
-            <div class="cards cols-3">
-              <div class="card">
-                <h4>반복 <code>🔁</code></h4>
-                <p>지금 재생 중인 <strong>이 파일 하나만</strong> 계속 반복합니다.</p>
-              </div>
-              <div class="card">
-                <h4>Auto Next Play</h4>
-                <p>파일이 끝나면 <strong>다음 파일로 자동으로 넘어갑니다.</strong> 설정에서 켭니다.</p>
-              </div>
-              <div class="card">
-                <h4>랜덤 <code>🔀</code></h4>
-                <p>목록을 <strong>무작위 순서</strong>로 재생합니다.</p>
-              </div>
-            </div>
-            <figure>
-              <div class="shot"><video data-src="assets/video/auto-next.mp4" muted loop playsinline preload="none" aria-label="자동 다음 재생 데모"></video></div>
-              <figcaption>Auto Next Play를 켜면 파일이 끝날 때 다음 파일로 이어집니다.</figcaption>
-            </figure>
-
-            <h2 id="pb-ab">AB 구간 반복<a class="anchor" href="#pb-ab" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<h2 id="pb-basic">기본 조작<a aria-label="이 항목 링크" class="anchor" href="#pb-basic">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>동작</th><th>방법</th></tr></thead>
+<tbody>
+<tr><td class="col-key">재생 / 일시정지</td><td><kbd>Space</kbd> 또는 <kbd>K</kbd>, 재생바의 ▶ 버튼</td></tr>
+<tr><td class="col-key">5초 이동</td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
+<tr><td class="col-key">10초 이동</td><td><kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd></td></tr>
+<tr><td class="col-key">이전 / 다음 파일</td><td>재생바의 ⏮ ⏭ 버튼</td></tr>
+<tr><td class="col-key">볼륨</td><td><kbd>↑</kbd> <kbd>↓</kbd> (5%씩)</td></tr>
+<tr><td class="col-key">음소거</td><td><kbd>M</kbd></td></tr>
+<tr><td class="col-key">전체화면</td><td><kbd>F</kbd></td></tr>
+</tbody>
+</table>
+</div>
+<p>전체 목록과 변경 방법은 <a href="#shortcuts">키보드 단축키</a>에 있습니다.</p>
+<h2 id="pb-repeat">반복 · 자동 다음 재생 · 랜덤<a aria-label="이 항목 링크" class="anchor" href="#pb-repeat">#</a></h2>
+<p>비슷해 보이지만 서로 다른 세 가지입니다. 처음에 헷갈리기 쉬운 부분이라 나눠 설명합니다.</p>
+<div class="cards cols-3">
+<div class="card">
+<h4>반복 <code>🔁</code></h4>
+<p>지금 재생 중인 <strong>이 파일 하나만</strong> 계속 반복합니다.</p>
+</div>
+<div class="card">
+<h4>Auto Next Play</h4>
+<p>파일이 끝나면 <strong>다음 파일로 자동으로 넘어갑니다.</strong> 설정에서 켭니다.</p>
+</div>
+<div class="card">
+<h4>랜덤 <code>🔀</code></h4>
+<p>목록을 <strong>무작위 순서</strong>로 재생합니다.</p>
+</div>
+</div>
+<figure>
+<div class="shot"><video aria-label="자동 다음 재생 데모" data-src="assets/video/auto-next.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Auto Next Play를 켜면 파일이 끝날 때 다음 파일로 이어집니다.</figcaption>
+</figure>
+<h2 id="pb-ab">AB 구간 반복<a aria-label="이 항목 링크" class="anchor" href="#pb-ab">#</a></h2>
+<p>
               영상의 특정 구간만 계속 돌려 보고 싶을 때 씁니다.
               시작점(A)과 끝점(B)을 찍으면 그 사이만 반복됩니다.
             </p>
-            <ol>
-              <li>반복하고 싶은 구간의 <strong>시작</strong> 위치에서 A 지점을 지정합니다.</li>
-              <li>구간의 <strong>끝</strong> 위치에서 B 지점을 지정합니다.</li>
-              <li>구간 반복이 시작됩니다. 편집기를 열면 지점을 정확한 값으로 다듬을 수 있습니다.</li>
-            </ol>
-            <p>A·B 지정과 편집기 열기는 모두 단축키로 지정할 수 있습니다. (<a href="#shortcuts">키보드 단축키</a>)</p>
-            <figure>
-              <div class="shot"><video data-src="assets/video/section-repeat.mp4" muted loop playsinline preload="none" aria-label="구간 반복 데모"></video></div>
-              <figcaption>구간 반복 동작 예시입니다.</figcaption>
-            </figure>
-
-            <h2 id="pb-fit">화면 맞춤 — FIT과 FILL<a class="anchor" href="#pb-fit" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<ol>
+<li>반복하고 싶은 구간의 <strong>시작</strong> 위치에서 A 지점을 지정합니다.</li>
+<li>구간의 <strong>끝</strong> 위치에서 B 지점을 지정합니다.</li>
+<li>구간 반복이 시작됩니다. 편집기를 열면 지점을 정확한 값으로 다듬을 수 있습니다.</li>
+</ol>
+<p>A·B 지정과 편집기 열기는 모두 단축키로 지정할 수 있습니다. (<a href="#shortcuts">키보드 단축키</a>)</p>
+<figure>
+<div class="shot"><video aria-label="구간 반복 데모" data-src="assets/video/section-repeat.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>구간 반복 동작 예시입니다.</figcaption>
+</figure>
+<h2 id="pb-fit">화면 맞춤 — FIT과 FILL<a aria-label="이 항목 링크" class="anchor" href="#pb-fit">#</a></h2>
+<p>
               영상 비율과 창 비율이 다를 때 어느 쪽을 우선할지 고르는 버튼입니다.
             </p>
-            <ul>
-              <li><strong>FIT</strong> — 영상이 전부 보이게 맞춥니다. 위아래나 좌우에 검은 여백이 생길 수 있습니다.</li>
-              <li><strong>FILL</strong> — 화면을 꽉 채웁니다. 영상 가장자리가 잘릴 수 있습니다.</li>
-            </ul>
-            <figure>
-              <div class="shot"><video data-src="assets/video/fit-fill.mp4" muted loop playsinline preload="none" aria-label="FIT / FILL 데모"></video></div>
-              <figcaption>같은 영상을 FIT과 FILL로 봤을 때의 차이입니다.</figcaption>
-            </figure>
-
-            <h2 id="pb-fullscreen">전체화면<a class="anchor" href="#pb-fullscreen" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              <kbd>F</kbd>로 전체화면에 들어갑니다. 전체화면에서도 사이드바를 불러올 수 있어 파일을 바꾸려고 나올 필요가 없습니다.
+<ul>
+<li><strong>FIT</strong> — 영상이 전부 보이게 맞춥니다. 위아래나 좌우에 검은 여백이 생길 수 있습니다.</li>
+<li><strong>FILL</strong> — 화면을 꽉 채웁니다. 영상 가장자리가 잘릴 수 있습니다.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="FIT / FILL 데모" data-src="assets/video/fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>같은 영상을 FIT과 FILL로 봤을 때의 차이입니다.</figcaption>
+</figure>
+<h2 id="pb-fullscreen">전체화면<a aria-label="이 항목 링크" class="anchor" href="#pb-fullscreen">#</a></h2>
+<p>
+<kbd>F</kbd>로 전체화면에 들어갑니다. 전체화면에서도 사이드바를 불러올 수 있어 파일을 바꾸려고 나올 필요가 없습니다.
             </p>
-            <p>v0.6.0부터 전체화면 컨트롤의 표시 방식을 설정에서 바꿀 수 있습니다.</p>
-            <ul>
-              <li><strong>아래쪽에서만 나타나게</strong> 하기 — 화면 아무 데나 마우스를 움직여도 컨트롤이 뜨지 않게 합니다.</li>
-              <li><strong>배경 투명도</strong> — 컨트롤 뒤 배경을 더 진하게 또는 옅게 합니다.</li>
-              <li><strong>세로 위치</strong> — 컨트롤이 뜨는 높이를 조정합니다.</li>
-            </ul>
-            <figure>
-              <div class="shot"><video data-src="assets/video/fullscreen-sidebar.mp4" muted loop playsinline preload="none" aria-label="전체화면 사이드바 데모"></video></div>
-              <figcaption>전체화면 상태에서 사이드바를 불러오는 모습입니다.</figcaption>
-            </figure>
-
-            <h2 id="pb-ontop">항상 위에 두기<a class="anchor" href="#pb-ontop" aria-label="이 항목 링크">#</a></h2>
-            <p>다른 창을 쓰면서도 재생 화면을 계속 보고 싶을 때, 창을 항상 맨 앞에 고정할 수 있습니다.</p>
-            <figure>
-              <div class="shot"><img src="assets/img/always-on-top.webp" alt="항상 위 설정" loading="lazy" /></div>
-              <figcaption>항상 위 옵션을 켠 상태입니다.</figcaption>
-            </figure>
-
-            <h2 id="pb-recovery">되돌리기 · 복구<a class="anchor" href="#pb-recovery" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              설정을 이것저것 만지다 꼬였다면 <strong>설정 → 복구</strong>에서 초기 상태로 되돌릴 수 있습니다.
-              전체 초기화를 하면 캐시된 재생 시간, 스트로크 범위, 플레이어·라이브러리·작업 공간·최근 미디어·사이드바 상태가 함께 정리됩니다.
-            </p>
-            <figure>
-              <div class="shot"><video data-src="assets/video/recovery.mp4" muted loop playsinline preload="none" aria-label="복구 메뉴 데모"></video></div>
-              <figcaption>설정 → 복구 메뉴입니다.</figcaption>
-            </figure>
-          </article>
+<p>v0.6.0부터 전체화면 컨트롤의 표시 방식을 설정에서 바꿀 수 있습니다.</p>
+<ul>
+<li><strong>아래쪽에서만 나타나게</strong> 하기 — 화면 아무 데나 마우스를 움직여도 컨트롤이 뜨지 않게 합니다.</li>
+<li><strong>배경 투명도</strong> — 컨트롤 뒤 배경을 더 진하게 또는 옅게 합니다.</li>
+<li><strong>세로 위치</strong> — 컨트롤이 뜨는 높이를 조정합니다.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="전체화면 사이드바 데모" data-src="assets/video/fullscreen-sidebar.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>전체화면 상태에서 사이드바를 불러오는 모습입니다.</figcaption>
+</figure>
+<h2 id="pb-ontop">항상 위에 두기<a aria-label="이 항목 링크" class="anchor" href="#pb-ontop">#</a></h2>
+<p>다른 창을 쓰면서도 재생 화면을 계속 보고 싶을 때, 창을 항상 맨 앞에 고정할 수 있습니다.</p>
+<figure>
+<div class="shot"><img alt="항상 위 설정" loading="lazy" src="assets/img/always-on-top.webp"/></div>
+<figcaption>항상 위 옵션을 켠 상태입니다.</figcaption>
+</figure>
+<h2 id="pb-recovery">되돌리기 · 복구<a aria-label="이 항목 링크" class="anchor" href="#pb-recovery">#</a></h2>
+<p>설정을 바꾼 뒤 문제가 생겼다면 <strong>설정 → 복구</strong>에서 초기화할 수 있습니다. 전체 초기화는 저장된 설정, 오프셋과 스트로크 범위, 캐시된 재생 시간과 화면 상태를 함께 지웁니다. 미디어 파일은 삭제하지 않습니다. 초기화 범위는 <a href="#settings">설정 안내</a>에서 확인하세요.</p>
+<figure>
+<div class="shot"><video aria-label="복구 메뉴 데모" data-src="assets/video/recovery.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>설정 → 복구 메뉴입니다.</figcaption>
+</figure>
+</article>
 
           <!-- ============================================ 07 SCRIPTS -->
           <article class="page" data-group="기본 사용법" data-title="스크립트 다루기" id="page-scripts">
 <h1>스크립트 다루기</h1>
-<p class="lede">
-              스크립트가 자동으로 안 잡히거나, 잡혔는데 타이밍이 안 맞거나, 움직임이 너무 셀 때
-              어디를 만져야 하는지 정리했습니다. 이 문서 하나면 스크립트 관련 문제는 대부분 해결됩니다.
-            </p>
-<h2 id="sc-match">스크립트는 어떻게 찾아지나<a aria-label="이 항목 링크" class="anchor" href="#sc-match">#</a></h2>
+<p class="lede">스크립트를 찾고 연결하는 방법부터 타이밍과 움직임 범위 조절까지 설명합니다. 자동으로 연결되지 않거나 원하는 움직임과 다를 때 해당 항목을 확인하세요.</p>
+<h2 id="sc-match">스크립트 자동 검색<a aria-label="이 항목 링크" class="anchor" href="#sc-match">#</a></h2>
 <p>ScriptPlayer+는 다음 순서로 짝이 맞는 스크립트를 찾습니다.</p>
 <ol class="steps">
 <li>
@@ -778,11 +729,7 @@
 </figure>
 </div>
 <h2 id="sc-duration">재생 시간으로 찾기<a aria-label="이 항목 링크" class="anchor" href="#sc-duration">#</a></h2>
-<p>
-              이름이 전혀 다른데 내용은 맞는 스크립트를 찾아야 할 때가 있습니다.
-              v0.6.0에 들어온 <strong>재생 시간 기반 검색</strong>은 스크립트 타임라인의 길이가
-              영상 길이와 얼마나 비슷한지로 후보의 순위를 매깁니다.
-            </p>
+<p>이름이 다른 스크립트를 찾을 때는 <strong>재생 시간 기반 검색</strong>을 사용할 수 있습니다. 스크립트 길이가 영상 길이와 비슷한 순서로 후보를 보여 줍니다. 길이가 비슷해도 다른 영상용일 수 있으므로, 적용한 뒤 내용과 타이밍을 확인하세요.</p>
 <ul>
 <li>영상이 있는 폴더, 지정한 스크립트 폴더, 라이브러리가 색인한 스크립트를 모두 후보로 봅니다.</li>
 <li>길이가 비슷한 순서로 정렬해 보여 주므로, 위쪽 후보부터 시도하면 됩니다.</li>
@@ -791,11 +738,10 @@
 <div class="shot"><video aria-label="재생 시간 기반 스크립트 검색 데모" data-src="assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>길이가 가까운 순으로 후보를 정렬해 줍니다.</figcaption>
 </figure>
-<h2 id="sc-offset">타이밍이 안 맞을 때 — 스크립트 오프셋<a aria-label="이 항목 링크" class="anchor" href="#sc-offset">#</a></h2><p><strong>양수(+)는 움직임을 앞당기고, 음수(-)는 늦춥니다.</strong> 움직임이 영상보다 약 0.2초 늦으면 현재 값에 <code>0.2초</code>를 더하고, 약 0.2초 빠르면 <code>0.2초</code>를 빼 보세요. 입력란은 초 단위이며 <code>0.2초 = 200ms</code>입니다.</p>
-<p>
+<h2 id="sc-offset">타이밍이 안 맞을 때 — 스크립트 오프셋<a aria-label="이 항목 링크" class="anchor" href="#sc-offset">#</a></h2><p>
               영상보다 움직임이 조금 빠르거나 느릴 때 씁니다.
               재생바의 <code>+0ms</code> 버튼을 눌러 조정합니다.
-            </p>
+            </p><p><strong>양수(+)는 움직임을 앞당기고, 음수(-)는 늦춥니다.</strong> 움직임이 영상보다 약 0.2초 늦으면 현재 값에 <code>0.2초</code>를 더하고, 약 0.2초 빠르면 <code>0.2초</code>를 빼 보세요. 입력란은 초 단위이며 <code>0.2초 = 200ms</code>입니다.</p>
 <ul>
 <li>범위는 <strong><code>-60초</code>부터 <code>+60초</code></strong>까지입니다.</li>
 <li>소수점 초 단위로 <strong>직접 입력</strong>할 수 있고, 미세 조정 버튼으로 조금씩 옮길 수도 있습니다.</li>
@@ -808,10 +754,7 @@
 </figure>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>맞추는 요령</div>
-<p>
-                눈에 띄는 동작이 있는 지점으로 이동해 두고, 재생하면서 오프셋을 조금씩 옮겨 보세요.
-                타임라인 그래프의 봉우리와 화면 속 움직임이 겹치는 지점이 정답입니다.
-              </p>
+<p>영상에서 확인하기 쉬운 동작이 있는 구간을 반복 재생하며 오프셋을 조금씩 조정하세요. 화면 속 동작과 장치의 움직임이 맞는지 확인합니다.</p>
 </div>
 <h2 id="sc-stroke">움직임이 너무 셀 때 — 스트로크 범위<a aria-label="이 항목 링크" class="anchor" href="#sc-stroke">#</a></h2>
 <p>
@@ -906,489 +849,438 @@
 </article>
 
           <!-- ============================================ 08 TIMELINE -->
-          <article class="page" id="page-timeline" data-title="타임라인과 히트맵" data-group="기본 사용법">
-            <h1>타임라인과 히트맵</h1>
-            <p class="lede">
-              스크립트를 눈으로 확인하는 두 가지 방법입니다. 타임라인은 지금 이 순간을, 히트맵은 영상 전체를 보여 줍니다.
-            </p>
-
-            <figure>
-              <div class="shot"><img src="assets/img/ui-player-multiaxis.webp" alt="다축 타임라인 화면" loading="lazy" /></div>
-              <figcaption>위쪽 초록색 띠가 히트맵, 아래쪽 그래프가 다축 타임라인입니다.</figcaption>
-            </figure>
-
-            <h2 id="tl-timeline">타임라인 <code>TL</code><a class="anchor" href="#tl-timeline" aria-label="이 항목 링크">#</a></h2>
-            <p>
+          <article class="page" data-group="기본 사용법" data-title="타임라인과 히트맵" id="page-timeline">
+<h1>타임라인과 히트맵</h1>
+<p class="lede">타임라인은 현재 재생 위치 주변의 스크립트 움직임을 그래프로 보여 줍니다. 히트맵은 스크립트 전체의 움직임 속도를 색으로 요약합니다.</p>
+<figure>
+<div class="shot"><img alt="다축 타임라인 화면" loading="lazy" src="assets/img/ui-player-multiaxis.webp"/></div>
+<figcaption>위쪽 초록색 띠가 히트맵, 아래쪽 그래프가 다축 타임라인입니다.</figcaption>
+</figure>
+<h2 id="tl-timeline">타임라인 <code>TL</code><a aria-label="이 항목 링크" class="anchor" href="#tl-timeline">#</a></h2>
+<p>
               재생 위치를 따라 흐르는 실시간 그래프입니다. 재생바의 <code>TL</code> 버튼으로 켜고 끕니다.
             </p>
-
-            <h3 id="tl-axes">축 고르기</h3>
-            <p>다축 스크립트를 열면 타임라인 위에 <strong>AXES</strong> 줄이 나타납니다.</p>
-            <ul>
-              <li><strong>All</strong> — 모든 축을 한 번에 겹쳐 봅니다.</li>
-              <li><strong>축 버튼</strong>(<code>L0</code>, <code>L1</code>, <code>R0</code>, <code>R1</code> …) — 눌러서 개별로 켜고 끕니다. 버튼 옆 숫자는 지금 그 축의 값입니다.</li>
-              <li><strong>더블클릭</strong> — 그 축만 남기고 나머지를 숨깁니다. 한 축만 자세히 볼 때 편합니다.</li>
-            </ul>
-            <figure>
-              <div class="shot"><video data-src="assets/video/multiaxis-all.mp4" muted loop playsinline preload="none" aria-label="다축 전체 표시 데모"></video></div>
-              <figcaption>모든 축을 동시에 표시한 모습입니다.</figcaption>
-            </figure>
-
-            <h3 id="tl-height">높이 조절</h3>
-            <p>
+<h3 id="tl-axes">축 고르기</h3>
+<p>다축 스크립트를 열면 타임라인 위에 <strong>AXES</strong> 줄이 나타납니다.</p>
+<ul>
+<li><strong>All</strong> — 모든 축을 한 번에 겹쳐 봅니다.</li>
+<li><strong>축 버튼</strong>(<code>L0</code>, <code>L1</code>, <code>R0</code>, <code>R1</code> …) — 눌러서 개별로 켜고 끕니다. 버튼 옆 숫자는 지금 그 축의 값입니다.</li>
+<li><strong>더블클릭</strong> — 그 축만 남기고 나머지를 숨깁니다. 한 축만 자세히 볼 때 편합니다.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="다축 전체 표시 데모" data-src="assets/video/multiaxis-all.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>모든 축을 동시에 표시한 모습입니다.</figcaption>
+</figure>
+<h3 id="tl-height">높이 조절</h3>
+<p>
               영상과 타임라인 사이 경계를 <strong>위아래로 끌면</strong> 타임라인 높이가 바뀝니다.
               축이 많을 때 넓게 펴 두면 훨씬 보기 좋습니다.
             </p>
-            <figure>
-              <div class="shot"><video data-src="assets/video/multiaxis-height.mp4" muted loop playsinline preload="none" aria-label="타임라인 높이 조절 데모"></video></div>
-              <figcaption>경계를 끌어 타임라인 높이를 조절합니다.</figcaption>
-            </figure>
-
-            <h2 id="tl-heatmap">히트맵 <code>HM</code><a class="anchor" href="#tl-heatmap" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<figure>
+<div class="shot"><video aria-label="타임라인 높이 조절 데모" data-src="assets/video/multiaxis-height.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>경계를 끌어 타임라인 높이를 조절합니다.</figcaption>
+</figure>
+<h2 id="tl-heatmap">히트맵 <code>HM</code><a aria-label="이 항목 링크" class="anchor" href="#tl-heatmap">#</a></h2>
+<p>
               영상 전체를 하나의 가로 띠로 압축해 보여 줍니다.
               <strong>색이 속도를 뜻합니다</strong> — 초록 쪽이 느리고, 노랑을 지나 빨강으로 갈수록 빠릅니다.
             </p>
-            <p>
+<p>
               어디가 격한 구간인지 재생하기 전에 알 수 있어서, 원하는 지점으로 바로 건너뛸 때 유용합니다.
             </p>
-            <div class="note">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-info"/></svg>참고</div>
-              <p>라이브러리 목록과 카드에는 히트맵이 표시되지 않습니다. 히트맵은 재생 화면에서만 볼 수 있습니다.</p>
-            </div>
-
-            <h2 id="tl-settings">타임라인 설정<a class="anchor" href="#tl-settings" aria-label="이 항목 링크">#</a></h2>
-            <p><strong>설정 → 타임라인</strong>에서 다음을 조정할 수 있습니다.</p>
-            <ul>
-              <li>표시 대비 — 그래프를 더 진하게 또는 옅게</li>
-              <li>속도 색상 표시 켜기 / 끄기</li>
-              <li>기본 높이</li>
-            </ul>
-          </article>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>참고</div>
+<p>라이브러리 목록과 카드에는 히트맵이 표시되지 않습니다. 히트맵은 재생 화면에서만 볼 수 있습니다.</p>
+</div>
+<h2 id="tl-settings">타임라인 설정<a aria-label="이 항목 링크" class="anchor" href="#tl-settings">#</a></h2>
+<p><strong>설정 → 타임라인</strong>에서 다음을 조정할 수 있습니다.</p>
+<ul>
+<li>표시 대비 — 그래프를 더 진하게 또는 옅게</li>
+<li>속도 색상 표시 켜기 / 끄기</li>
+<li>기본 높이</li>
+</ul>
+</article>
 
           <!-- ============================================ 09 AUDIO -->
-          <article class="page" id="page-audio" data-title="오디오와 자막" data-group="기본 사용법">
-            <h1>오디오와 자막</h1>
-            <p class="lede">
+          <article class="page" data-group="기본 사용법" data-title="오디오와 자막" id="page-audio">
+<h1>오디오와 자막</h1>
+<p class="lede">
               음원 파일 재생, 볼륨 증폭, 자막 불러오기와 내장 트랙 선택까지 소리·자막에 관한 내용입니다.
             </p>
-
-            <h2 id="au-audio">음원 파일 재생<a class="anchor" href="#au-audio" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<h2 id="au-audio">음원 파일 재생<a aria-label="이 항목 링크" class="anchor" href="#au-audio">#</a></h2>
+<p>
               MP3·FLAC 같은 음원도 영상과 똑같이 스크립트를 붙여 재생할 수 있습니다.
               영상이 없으므로 대신 <strong>커버 아트</strong>를 화면에 띄웁니다.
             </p>
-            <p>커버 아트는 다음 순서로 찾습니다.</p>
-            <ul>
-              <li>음원 파일 안에 들어 있는 메타데이터 이미지</li>
-              <li>같은 작품 폴더 안의 이미지 파일</li>
-            </ul>
-            <div class="media-grid cols-2">
-              <figure>
-                <div class="shot"><img src="assets/img/audio-mode.webp" alt="오디오 재생 화면" loading="lazy" /></div>
-                <figcaption>음원 재생 화면. 커버 아트가 표시됩니다.</figcaption>
-              </figure>
-              <figure>
-                <div class="shot"><video data-src="assets/video/av-audio.mp4" muted loop playsinline preload="none" aria-label="오디오 트랙 데모"></video></div>
-                <figcaption>오디오 트랙 선택 동작입니다.</figcaption>
-              </figure>
-            </div>
-
-            <h2 id="au-boost">볼륨 증폭 150%<a class="anchor" href="#au-boost" aria-label="이 항목 링크">#</a> <span class="pill pill--exp">실험 기능</span></h2>
-            <p>
-              녹음이 작아 잘 안 들리는 음원을 위해 <strong>최대 150%까지</strong> 볼륨을 올릴 수 있습니다.
-              피크 리미터가 함께 동작해 갑자기 크게 튀는 것을 막아 줍니다.
-            </p>
-            <figure>
-              <div class="shot"><video data-src="assets/video/volume-boost.mp4" muted loop playsinline preload="none" aria-label="볼륨 증폭 데모"></video></div>
-              <figcaption>150% 볼륨 증폭을 켠 모습입니다.</figcaption>
-            </figure>
-            <div class="note note--warn">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-warn"/></svg>주의</div>
-              <p>이어폰을 쓰고 있다면 증폭을 켜기 전에 볼륨을 먼저 낮추세요.</p>
-            </div>
-
-            <h2 id="au-subs">자막<a class="anchor" href="#au-subs" aria-label="이 항목 링크">#</a></h2>
-            <h3 id="au-subs-ext">외부 자막 파일</h3>
-            <p>
-              <code>.srt</code>, <code>.vtt</code>, <code>.txt</code> 파일을 지원합니다.
+<p>커버 아트는 다음 순서로 찾습니다.</p>
+<ul>
+<li>음원 파일 안에 들어 있는 메타데이터 이미지</li>
+<li>같은 작품 폴더 안의 이미지 파일</li>
+</ul>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="오디오 재생 화면" loading="lazy" src="assets/img/audio-mode.webp"/></div>
+<figcaption>음원 재생 화면. 커버 아트가 표시됩니다.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="오디오 트랙 데모" data-src="assets/video/av-audio.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>오디오 트랙 선택 동작입니다.</figcaption>
+</figure>
+</div>
+<h2 id="au-boost">볼륨 증폭 150%<a aria-label="이 항목 링크" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">실험 기능</span></h2>
+<p>녹음 음량이 작은 파일은 볼륨을 최대 150%까지 증폭할 수 있습니다. 피크 리미터는 출력 신호의 최대 레벨을 제한합니다. 증폭을 켜기 전에는 재생 볼륨을 낮춰 두세요.</p>
+<figure>
+<div class="shot"><video aria-label="볼륨 증폭 데모" data-src="assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>150% 볼륨 증폭을 켠 모습입니다.</figcaption>
+</figure>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>주의</div>
+<p>이어폰을 쓰고 있다면 증폭을 켜기 전에 볼륨을 먼저 낮추세요.</p>
+</div>
+<h2 id="au-subs">자막<a aria-label="이 항목 링크" class="anchor" href="#au-subs">#</a></h2>
+<h3 id="au-subs-ext">외부 자막 파일</h3>
+<p>
+<code>.srt</code>, <code>.vtt</code>, <code>.txt</code> 파일을 지원합니다.
               영상과 이름이 같으면 <strong>자동으로 찾아 붙습니다.</strong> 자동으로 안 잡히면 직접 불러올 수도 있습니다.
             </p>
-
-            <h3 id="au-subs-emb">내장 자막</h3>
-            <p>
+<h3 id="au-subs-emb">내장 자막</h3>
+<p>
               영상 파일 안에 들어 있는 텍스트 자막 트랙도 쓸 수 있습니다.
               재생바의 <code>AV</code> 버튼에서 고릅니다. 다만 <strong>외부 FFmpeg가 설치되어 있어야 합니다.</strong>
-            </p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>자막 종류</th><th>지원 여부</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key">SRT, ASS/SSA, WebVTT, mov_text</td><td>지원 — 텍스트 기반 트랙입니다.</td></tr>
-                  <tr><td class="col-key">PGS, DVD 자막</td><td><strong>목록에는 보이지만 표시할 수 없습니다.</strong> 이미지 기반 자막이라 렌더링하지 않습니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <figure>
-              <div class="shot"><video data-src="assets/video/av-subtitles.mp4" muted loop playsinline preload="none" aria-label="자막 선택 데모"></video></div>
-              <figcaption><code>AV</code> 버튼에서 자막 트랙을 고릅니다.</figcaption>
-            </figure>
-
-            <h2 id="au-tracks">오디오 트랙 고르기<a class="anchor" href="#au-tracks" aria-label="이 항목 링크">#</a></h2>
-            <p>
+</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>자막 종류</th><th>지원 여부</th></tr></thead>
+<tbody>
+<tr><td class="col-key">SRT, ASS/SSA, WebVTT, mov_text</td><td>지원 — 텍스트 기반 트랙입니다.</td></tr>
+<tr><td class="col-key">PGS, DVD 자막</td><td><strong>목록에는 보이지만 표시할 수 없습니다.</strong> 이미지 기반 자막이라 렌더링하지 않습니다.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><video aria-label="자막 선택 데모" data-src="assets/video/av-subtitles.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><code>AV</code> 버튼에서 자막 트랙을 고릅니다.</figcaption>
+</figure>
+<h2 id="au-tracks">오디오 트랙 고르기<a aria-label="이 항목 링크" class="anchor" href="#au-tracks">#</a></h2>
+<p>
               여러 언어 오디오가 들어 있는 파일이면 <code>AV</code> 버튼에서 트랙을 고를 수 있습니다.
               이 기능도 외부 FFmpeg가 필요합니다. → <a href="#ffmpeg">FFmpeg 호환 재생</a>
-            </p>
-          </article>
+</p>
+</article>
 
           <!-- ============================================ 10 VR -->
-          <article class="page" id="page-vr" data-title="VR · 360 영상" data-group="기본 사용법">
-            <h1>VR · 360 영상</h1>
-            <p class="lede">
-              VR180이나 360도 영상을 열면 화면이 이상하게 늘어나거나 두 개로 갈라져 보입니다.
-              투영 방식을 지정해 주면 정상적으로 볼 수 있습니다. <span class="pill pill--new">v0.6.0</span>
-            </p>
-
-            <figure>
-              <div class="shot"><video data-src="assets/video/vr180.mp4" muted loop playsinline preload="none" aria-label="VR180 재생 데모"></video></div>
-              <figcaption>VR180 영상을 투영 모드로 재생하고 드래그해 시점을 옮기는 모습입니다.</figcaption>
-            </figure>
-
-            <h2 id="vr-modes">지원하는 투영 방식<a class="anchor" href="#vr-modes" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>방식</th><th>어떤 영상인가</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>360° 등장방형</strong><br />(Equirectangular)</td><td>사방이 다 찍힌 전방위 영상입니다. 펼쳐 놓으면 세계지도처럼 보입니다.</td></tr>
-                  <tr><td class="col-key"><strong>VR180 등장방형</strong></td><td>앞쪽 180도만 찍힌 영상입니다. VR 영상에서 가장 흔합니다.</td></tr>
-                  <tr><td class="col-key"><strong>180° 등거리 어안</strong><br />(Fisheye)</td><td>가운데가 볼록한 원형으로 찍힌 영상입니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h2 id="vr-layout">원본 배치 고르기<a class="anchor" href="#vr-layout" aria-label="이 항목 링크">#</a></h2>
-            <p>같은 투영 방식이라도 두 눈 영상이 어떻게 담겨 있는지가 다릅니다.</p>
-            <ul>
-              <li><strong>모노(Mono)</strong> — 한 화면에 하나의 영상만 들어 있습니다.</li>
-              <li><strong>좌우 분할(SBS)</strong> — 왼쪽·오른쪽에 각각 한 눈씩 들어 있습니다. 지정하지 않으면 두 개로 갈라져 보입니다.</li>
-              <li><strong>상하 분할(Top-and-Bottom)</strong> — 위·아래에 각각 한 눈씩 들어 있습니다.</li>
-            </ul>
-            <p>SBS나 상하 분할 영상은 <strong>어느 쪽 눈을 볼지</strong> 고를 수 있습니다.</p>
-
-            <h2 id="vr-control">보는 방법<a class="anchor" href="#vr-control" aria-label="이 항목 링크">#</a></h2>
-            <ul>
-              <li><strong>드래그</strong> — 마우스로 끌어 시점을 돌립니다.</li>
-              <li><strong>확대 / 축소</strong> — 화면을 당기거나 밀어 시야각을 조절합니다.</li>
-            </ul>
-            <div class="note">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-info"/></svg>알아 두면 좋은 한계</div>
-              <ul>
-                <li>데스크톱 화면에서는 SBS·상하 분할 영상의 <strong>한쪽 눈만</strong> 표시합니다.</li>
-                <li>헤드셋으로 보내는 WebXR 입체 출력은 지원하지 않습니다.</li>
-                <li>듀얼 어안 360도 영상을 이어 붙이는 기능과 렌즈별 어안 보정은 들어 있지 않습니다.</li>
-                <li>투영을 적용할 수 없는 영상은 자동으로 <strong>평면 재생으로 되돌아갑니다.</strong> 화면이 깨지지는 않습니다.</li>
-              </ul>
-            </div>
-          </article>
+          <article class="page" data-group="기본 사용법" data-title="VR · 360 영상" id="page-vr">
+<h1>VR · 360 영상</h1>
+<p class="lede">VR180이나 360도 영상은 평면 모드에서 늘어나거나 두 개로 나뉘어 보일 수 있습니다. 영상에 맞는 투영 방식과 원본 배치를 선택하세요.</p>
+<figure>
+<div class="shot"><video aria-label="VR180 재생 데모" data-src="assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>VR180 영상을 투영 모드로 재생하고 드래그해 시점을 옮기는 모습입니다.</figcaption>
+</figure>
+<h2 id="vr-modes">지원하는 투영 방식<a aria-label="이 항목 링크" class="anchor" href="#vr-modes">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>방식</th><th>어떤 영상인가</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>360° 등장방형</strong><br/>(Equirectangular)</td><td>사방이 다 찍힌 전방위 영상입니다. 펼쳐 놓으면 세계지도처럼 보입니다.</td></tr>
+<tr><td class="col-key"><strong>VR180 등장방형</strong></td><td>앞쪽 180도만 찍힌 영상입니다. VR 영상에서 가장 흔합니다.</td></tr>
+<tr><td class="col-key"><strong>180° 등거리 어안</strong><br/>(Fisheye)</td><td>가운데가 볼록한 원형으로 찍힌 영상입니다.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="vr-layout">원본 배치 고르기<a aria-label="이 항목 링크" class="anchor" href="#vr-layout">#</a></h2>
+<p>같은 투영 방식이라도 두 눈 영상이 어떻게 담겨 있는지가 다릅니다.</p>
+<ul>
+<li><strong>모노(Mono)</strong> — 한 화면에 하나의 영상만 들어 있습니다.</li>
+<li><strong>좌우 분할(SBS)</strong> — 왼쪽·오른쪽에 각각 한 눈씩 들어 있습니다. 지정하지 않으면 두 개로 갈라져 보입니다.</li>
+<li><strong>상하 분할(Top-and-Bottom)</strong> — 위·아래에 각각 한 눈씩 들어 있습니다.</li>
+</ul>
+<p>SBS나 상하 분할 영상은 <strong>어느 쪽 눈을 볼지</strong> 고를 수 있습니다.</p>
+<h2 id="vr-control">보는 방법<a aria-label="이 항목 링크" class="anchor" href="#vr-control">#</a></h2>
+<ul>
+<li><strong>드래그</strong> — 마우스로 끌어 시점을 돌립니다.</li>
+<li><strong>확대 / 축소</strong> — 마우스 휠을 굴려 시야각을 조절합니다.</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>알아 두면 좋은 한계</div>
+<ul>
+<li>데스크톱 화면에서는 SBS·상하 분할 영상의 <strong>한쪽 눈만</strong> 표시합니다.</li>
+<li>헤드셋으로 보내는 WebXR 입체 출력은 지원하지 않습니다.</li>
+<li>듀얼 어안 360도 영상을 이어 붙이는 기능과 렌즈별 어안 보정은 들어 있지 않습니다.</li>
+<li>투영을 적용할 수 없는 영상은 <strong>평면 재생으로 되돌아갑니다.</strong> 이때는 원본 영상의 분할 화면이나 왜곡이 그대로 보일 수 있습니다.</li>
+</ul>
+</div>
+</article>
 
           <!-- ============================================ 11 HANDY -->
-          <article class="page" id="page-handy" data-title="The Handy" data-group="디바이스 연결">
-            <h1>The Handy</h1>
-            <p class="lede">
+          <article class="page" data-group="디바이스 연결" data-title="The Handy" id="page-handy">
+<h1>The Handy</h1>
+<p class="lede">
               The Handy는 인터넷을 거쳐 동작합니다. 스크립트를 서버에 올리고 재생 시각을 맞추는 방식이라,
               연결 품질이 체감에 직접 영향을 줍니다.
             </p>
-
-            <h2 id="hd-connect">연결하기<a class="anchor" href="#hd-connect" aria-label="이 항목 링크">#</a></h2>
-            <ol class="steps">
-              <li>
-                <h3>연결 키 확인</h3>
-                <p>The Handy 기기 화면 또는 앱에서 연결 키(Connection Key)를 확인합니다.</p>
-              </li>
-              <li>
-                <h3>설정 → 디바이스에 입력</h3>
-                <p>ScriptPlayer+의 <strong>설정 → 디바이스</strong>에서 The Handy를 고르고 연결 키를 넣습니다.</p>
-              </li>
-              <li>
-                <h3>연결 확인</h3>
-                <p>연결되면 상태 표시가 바뀝니다. 영상을 재생하면 스크립트가 자동으로 올라가고 동기화됩니다.</p>
-              </li>
-            </ol>
-            <figure>
-              <div class="shot"><video data-src="assets/video/device-tab.mp4" muted loop playsinline preload="none" aria-label="디바이스 탭 데모"></video></div>
-              <figcaption>디바이스 화면에서 장치를 고르고 연결합니다.</figcaption>
-            </figure>
-
-            <h2 id="hd-sync">동기화와 시간 오프셋<a class="anchor" href="#hd-sync" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<h2 id="hd-connect">연결하기<a aria-label="이 항목 링크" class="anchor" href="#hd-connect">#</a></h2>
+<ol class="steps">
+<li>
+<h3>연결 키 확인</h3>
+<p>The Handy를 Wi-Fi에 연결한 뒤, 기기 설정에 사용하는 앱이나 웹 설정 화면에서 <strong>연결 키(Connection Key)</strong>를 확인합니다.</p>
+</li>
+<li>
+<h3>설정 → 디바이스에 입력</h3>
+<p>ScriptPlayer+의 <strong>설정 → 디바이스</strong>에서 The Handy를 고르고 연결 키를 넣습니다.</p>
+</li>
+<li>
+<h3>연결 확인</h3>
+<p>연결되면 상태 표시가 바뀝니다. 영상을 재생하면 스크립트가 자동으로 올라가고 동기화됩니다.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="디바이스 탭 데모" data-src="assets/video/device-tab.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>디바이스 화면에서 장치를 고르고 연결합니다.</figcaption>
+</figure>
+<h2 id="hd-sync">동기화와 시간 오프셋<a aria-label="이 항목 링크" class="anchor" href="#hd-sync">#</a></h2>
+<p>
               The Handy는 API v2로 동작합니다. 재생을 시작하면 스크립트를 업로드하고 서버 시계에 맞춰 재생 위치를 동기화합니다.
             </p>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>업로드가 끝나면 자동으로 재생하기</div>
-              <p>
-                <strong>설정 → 재생</strong>의 <strong>Auto Play After Handy Sync</strong>를 켜면,
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>업로드가 끝나면 자동으로 재생하기</div>
+<p>
+<strong>설정 → 재생</strong>의 <strong>Auto Play After Handy Sync</strong>를 켜면,
                 업로드와 HSSP 동기화가 끝나는 즉시 재생이 시작됩니다.
                 매번 동기화가 끝나기를 기다렸다가 재생 버튼을 누를 필요가 없습니다.
               </p>
-            </div>
-            <p>
-              전체적으로 움직임이 조금 이르거나 늦다면 <strong>시간 오프셋</strong>으로 보정합니다.
-              특정 영상만 어긋난다면 그건 스크립트 쪽 문제일 가능성이 크니
-              <a href="#scripts">스크립트 오프셋</a>을 대신 쓰세요.
-            </p>
-
-            <h2 id="hd-diag">네트워크 진단<a class="anchor" href="#hd-diag" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              <strong>설정 → Handy 네트워크 진단</strong>에서 연결 품질을 직접 측정할 수 있습니다.
+</div>
+<p>모든 영상에서 움직임이 일정하게 빠르거나 늦으면 장치의 <strong>시간 오프셋</strong>을 확인하세요. 특정 스크립트에서만 어긋난다면 <a href="#sc-offset">스크립트 오프셋</a>을 조정합니다.</p>
+<h2 id="hd-diag">네트워크 진단<a aria-label="이 항목 링크" class="anchor" href="#hd-diag">#</a></h2>
+<p>
+<strong>설정 → Handy 네트워크 진단</strong>에서 연결 품질을 직접 측정할 수 있습니다.
               움직임이 자꾸 끊기거나 밀린다면 여기서부터 확인하세요.
             </p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>항목</th><th>의미</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>중간값 지연</strong></td><td>보통 상태에서의 왕복 시간입니다. 낮을수록 좋습니다.</td></tr>
-                  <tr><td class="col-key"><strong>P95 지연</strong></td><td>느린 쪽 5%의 지연입니다. 이 값이 크면 가끔씩 크게 튄다는 뜻입니다.</td></tr>
-                  <tr><td class="col-key"><strong>지터</strong></td><td>지연이 얼마나 들쭉날쭉한지입니다. 클수록 동기화가 불안정합니다.</td></tr>
-                  <tr><td class="col-key"><strong>성공률</strong></td><td>요청이 제대로 오간 비율입니다.</td></tr>
-                  <tr><td class="col-key"><strong>서버 시계 오차</strong></td><td>내 컴퓨터 시계와 서버 시계의 차이입니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <figure>
-              <div class="shot"><video data-src="assets/video/handy-diagnostics.mp4" muted loop playsinline preload="none" aria-label="Handy 네트워크 진단 데모"></video></div>
-              <figcaption>네트워크 진단 화면입니다.</figcaption>
-            </figure>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>진단 결과 공유하기</div>
-              <p>진단 결과는 복사해서 문의할 때 첨부할 수 있습니다. 문제 상황을 설명하기 훨씬 수월해집니다.</p>
-            </div>
-            <figure class="figure-compact">
-              <div class="shot"><img src="assets/img/device-diagnostics.webp" alt="디바이스 진단 정보 복사" loading="lazy" /></div>
-              <figcaption>진단 정보를 복사하는 버튼입니다.</figcaption>
-            </figure>
-
-            <h2 id="hd-compat">호환 모드<a class="anchor" href="#hd-compat" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>항목</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>중간값 지연</strong></td><td>보통 상태에서의 왕복 시간입니다. 낮을수록 좋습니다.</td></tr>
+<tr><td class="col-key"><strong>P95 지연</strong></td><td>측정한 요청의 95%가 이 값 이하의 지연을 보였다는 뜻입니다. 중앙값보다 크게 높으면 일부 요청에서 지연이 크게 발생한 것입니다.</td></tr>
+<tr><td class="col-key"><strong>지터</strong></td><td>지연이 얼마나 들쭉날쭉한지입니다. 클수록 동기화가 불안정합니다.</td></tr>
+<tr><td class="col-key"><strong>성공률</strong></td><td>요청이 제대로 오간 비율입니다.</td></tr>
+<tr><td class="col-key"><strong>서버 시계 오차</strong></td><td>내 컴퓨터 시계와 서버 시계의 차이입니다.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><video aria-label="Handy 네트워크 진단 데모" data-src="assets/video/handy-diagnostics.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>네트워크 진단 화면입니다.</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>진단 결과 공유하기</div>
+<p>진단 결과는 복사해서 문의할 때 첨부할 수 있습니다. 문제 상황을 설명하기 훨씬 수월해집니다.</p>
+</div>
+<figure class="figure-compact">
+<div class="shot"><img alt="디바이스 진단 정보 복사" loading="lazy" src="assets/img/device-diagnostics.webp"/></div>
+<figcaption>진단 정보를 복사하는 버튼입니다.</figcaption>
+</figure>
+<h2 id="hd-compat">호환 모드<a aria-label="이 항목 링크" class="anchor" href="#hd-compat">#</a></h2>
+<p>
               구형 하드웨어나 반응이 느린 기기를 위한 호환 모드가 있습니다.
               기본 설정으로 동작이 불안정하면 이 모드를 켜 보세요.
             </p>
-            <figure>
-              <div class="shot"><img src="assets/img/handy-compat.webp" alt="Handy 호환 모드 설정" loading="lazy" /></div>
-              <figcaption>Handy 호환 모드 옵션입니다.</figcaption>
-            </figure>
-          </article>
+<figure>
+<div class="shot"><img alt="Handy 호환 모드 설정" loading="lazy" src="assets/img/handy-compat.webp"/></div>
+<figcaption>Handy 호환 모드 옵션입니다.</figcaption>
+</figure>
+</article>
 
           <!-- ============================================ 12 INTIFACE -->
-          <article class="page" id="page-intiface" data-title="Intiface / Buttplug" data-group="디바이스 연결">
-            <h1>Intiface / Buttplug</h1>
-            <p class="lede">
+          <article class="page" data-group="디바이스 연결" data-title="Intiface / Buttplug" id="page-intiface">
+<h1>Intiface / Buttplug</h1>
+<p class="lede">
               Intiface는 여러 제조사의 장치를 하나의 규격으로 묶어 주는 중계 소프트웨어입니다.
               v0.6.0부터 ScriptPlayer+ 안에 <strong>전용 작업 공간</strong>이 생겨, 별도 창을 오가지 않고 다룰 수 있습니다.
             </p>
-
-            <h2 id="if-mode">두 가지 연결 방식<a class="anchor" href="#if-mode" aria-label="이 항목 링크">#</a></h2>
-            <div class="cards cols-2">
-              <div class="card">
-                <h4>내장 엔진</h4>
-                <p>ScriptPlayer+ 안에 들어 있는 경량 엔진을 씁니다. <strong>따로 설치할 게 없어</strong> 가장 간편합니다.</p>
-              </div>
-              <div class="card">
-                <h4>외부 Intiface Central</h4>
-                <p>이미 쓰고 있는 Intiface Central에 연결합니다. 더 많은 장치와 설정을 다룰 수 있습니다.</p>
-              </div>
-            </div>
-
-            <h2 id="if-connect">연결하기<a class="anchor" href="#if-connect" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<h2 id="if-mode">두 가지 연결 방식<a aria-label="이 항목 링크" class="anchor" href="#if-mode">#</a></h2>
+<div class="cards cols-2">
+<div class="card">
+<h4>내장 엔진</h4>
+<p>ScriptPlayer+ 안에 들어 있는 경량 엔진을 씁니다. <strong>따로 설치할 게 없어</strong> 가장 간편합니다.</p>
+</div>
+<div class="card">
+<h4>외부 Intiface Central</h4>
+<p>이미 쓰고 있는 Intiface Central에 연결합니다. 더 많은 장치와 설정을 다룰 수 있습니다.</p>
+</div>
+</div>
+<h2 id="if-connect">연결하기<a aria-label="이 항목 링크" class="anchor" href="#if-connect">#</a></h2>
+<p>
               왼쪽 레일의 <strong>Intiface</strong> 아이콘을 누르면 <strong>Intiface Device Manager</strong>가 열립니다.
               화면 위쪽에 <strong>1 Connect → 2 Find device → 3 Configure → 4 Playback</strong> 네 단계가 표시되고,
               지금 어느 단계인지와 다음에 무엇을 할지를 함께 알려 줍니다.
             </p>
-            <figure>
-              <div class="shot"><img src="assets/img/intiface-manager.webp" alt="Intiface Device Manager 화면" loading="lazy" /></div>
-              <figcaption>Intiface Device Manager. 오른쪽 위에 엔진 · 서버 · 검색 · 출력 상태가 한 줄로 나옵니다.</figcaption>
-            </figure>
-            <ol class="steps">
-              <li>
-                <h3>Connect — 연결 방식 고르기</h3>
-                <p>
-                  <strong>Built-in engine</strong>과 <strong>External Central</strong> 중 하나를 고릅니다.
+<figure>
+<div class="shot"><img alt="Intiface Device Manager 화면" loading="lazy" src="assets/img/intiface-manager.webp"/></div>
+<figcaption>Intiface Device Manager. 오른쪽 위에 엔진 · 서버 · 검색 · 출력 상태가 한 줄로 나옵니다.</figcaption>
+</figure>
+<ol class="steps">
+<li>
+<h3>Connect — 연결 방식 고르기</h3>
+<p>
+<strong>Built-in engine</strong>과 <strong>External Central</strong> 중 하나를 고릅니다.
                   내장 엔진을 쓰면 주소(<code>ws://127.0.0.1:…</code>)가 표시되고, 외부를 고르면 접속할 주소를 넣습니다.
                 </p>
-              </li>
-              <li>
-                <h3>Find device — 장치 검색</h3>
-                <p>
+</li>
+<li>
+<h3>Find device — 장치 검색</h3>
+<p>
                   스캔을 시작하면 Bluetooth · HID · 설정된 시리얼 장치를 찾습니다.
                   <strong>장치 전원을 켜고 페어링 대기 상태로</strong> 둔 채 기다리세요. 여러 장치를 동시에 선택할 수 있습니다.
                 </p>
-              </li>
-              <li>
-                <h3>Configure — 출력 매핑</h3>
-                <p><strong>Output mapping</strong>에서 장치를 고르고, 쓸 수 있는 기능을 각각 어느 스크립트 축에 붙일지 지정합니다.</p>
-              </li>
-              <li>
-                <h3>Playback — 재생</h3>
-                <p>영상을 재생하면 매핑한 축으로 출력이 나갑니다. 배터리 잔량도 이 화면에서 확인할 수 있습니다.</p>
-              </li>
-            </ol>
-            <p>연결 상태는 레일 아이콘에도 <strong>연결 안 됨 · 작업 중 · 연결됨 · 오류</strong>로 표시됩니다.</p>
-            <figure>
-              <div class="shot"><video data-src="assets/video/more-devices.mp4" muted loop playsinline preload="none" aria-label="여러 장치 연결 데모"></video></div>
-              <figcaption>여러 장치를 동시에 선택해 쓸 수 있습니다.</figcaption>
-            </figure>
-
-            <h2 id="if-mapping">기능 매핑<a class="anchor" href="#if-mapping" aria-label="이 항목 링크">#</a></h2>
-            <p>Buttplug 장치는 기능이 세 갈래로 나뉩니다. 각각을 원하는 축에 붙일 수 있습니다.</p>
-            <ul>
-              <li><strong>선형(Linear)</strong> — 앞뒤로 움직이는 동작. 보통 <code>L0</code> 축을 연결합니다.</li>
-              <li><strong>회전(Rotate)</strong> — 돌아가는 동작. 보통 <code>R0</code> 축을 연결합니다.</li>
-              <li><strong>스칼라(Scalar)</strong> — 진동 세기처럼 크기 하나로 표현되는 동작입니다.</li>
-            </ul>
-            <p>
+</li>
+<li>
+<h3>Configure — 출력 매핑</h3>
+<p><strong>Output mapping</strong>에서 장치를 고르고, 쓸 수 있는 기능을 각각 어느 스크립트 축에 붙일지 지정합니다.</p>
+</li>
+<li>
+<h3>Playback — 재생</h3>
+<p>영상을 재생하면 매핑한 축으로 출력이 나갑니다. 배터리 잔량도 이 화면에서 확인할 수 있습니다.</p>
+</li>
+</ol>
+<p>연결 상태는 레일 아이콘에도 <strong>연결 안 됨 · 작업 중 · 연결됨 · 오류</strong>로 표시됩니다.</p>
+<figure>
+<div class="shot"><video aria-label="여러 장치 연결 데모" data-src="assets/video/more-devices.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>여러 장치를 동시에 선택해 쓸 수 있습니다.</figcaption>
+</figure>
+<h2 id="if-mapping">기능 매핑<a aria-label="이 항목 링크" class="anchor" href="#if-mapping">#</a></h2>
+<p>Buttplug 장치는 기능이 세 갈래로 나뉩니다. 각각을 원하는 축에 붙일 수 있습니다.</p>
+<ul>
+<li><strong>선형(Linear)</strong> — 앞뒤로 움직이는 동작. 보통 <code>L0</code> 축을 연결합니다.</li>
+<li><strong>회전(Rotate)</strong> — 돌아가는 동작. 보통 <code>R0</code> 축을 연결합니다.</li>
+<li><strong>스칼라(Scalar)</strong> — 진동 세기처럼 크기 하나로 표현되는 동작입니다.</li>
+</ul>
+<p>
               스크립트에 없는 축이 필요하다면 <strong>축 소스 연동</strong>으로 다른 축에서 값을 끌어올 수 있습니다.
               예를 들어 <code>L0</code>의 움직임을 <code>R0</code> 출력으로 쓰는 식입니다.
             </p>
-
-            <h2 id="if-handoff">다른 앱과 함께 쓰기<a class="anchor" href="#if-handoff" aria-label="이 항목 링크">#</a></h2>
-            <div class="note note--warn">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-warn"/></svg>내장 엔진은 한 번에 하나만</div>
-              <p>
+<h2 id="if-handoff">다른 앱과 함께 쓰기<a aria-label="이 항목 링크" class="anchor" href="#if-handoff">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>내장 엔진은 한 번에 하나만</div>
+<p>
                 내장 Intiface 엔진은 <strong>Buttplug 클라이언트를 하나만</strong> 받습니다.
                 ScriptPlayer+와 다른 앱이 동시에 제어할 수 없습니다.
               </p>
-            </div>
-            <p>
+</div>
+<p>
               그래서 <strong>핸드오프</strong> 기능이 있습니다. Intiface Device Manager의
               <strong>Allow FapTap / external app</strong> 버튼을 누르면, 엔진은 계속 돌아가는 상태로 두고
               ScriptPlayer+만 연결을 놓아 줍니다. 그 사이에 FapTap 같은 다른 클라이언트가 같은 주소로 붙을 수 있고,
               그 앱이 끊으면 ScriptPlayer+가 다시 연결합니다.
             </p>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>순서가 중요합니다</div>
-              <p>
-                다른 앱을 먼저 띄우고 나서 ScriptPlayer+를 붙이려 하면 실패합니다.
-                <strong>ScriptPlayer+에서 먼저 연결을 놓아 준 다음</strong> 다른 앱을 연결하세요.
-              </p>
-            </div>
-
-            <h2 id="if-watchdog">장치별 워치독<a class="anchor" href="#if-watchdog" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              장치를 여러 개 쓸 때, 한 장치가 느려지거나 계속 실패하면 다른 장치까지 끌려가 멈추는 일이 있었습니다.
-              v0.6.0부터는 <strong>장치마다 독립적인 워치독</strong>이 붙어, 문제가 있는 장치 하나 때문에 나머지 출력이 막히지 않습니다.
-            </p>
-
-            <h2 id="if-limits">Windows 내장 엔진의 범위<a class="anchor" href="#if-limits" aria-label="이 항목 링크">#</a></h2>
-            <p>Windows용 내장 엔진이 다룰 수 있는 연결은 다음과 같습니다.</p>
-            <ul>
-              <li>Bluetooth LE</li>
-              <li>HID</li>
-              <li>명시적으로 지정한 <strong>Bluetooth RFCOMM COM 포트 하나</strong> — TCode v0.3, 115200 baud로 매핑됩니다.</li>
-            </ul>
-            <div class="note">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-info"/></svg>이 시리얼 경로의 한계</div>
-              <p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>순서가 중요합니다</div>
+<p>내장 엔진에 다른 앱이 이미 연결되어 있으면 ScriptPlayer+가 연결되지 않을 수 있습니다. <strong>제어 중인 앱의 연결을 해제한 뒤</strong> 사용할 앱을 연결하세요.</p>
+</div>
+<h2 id="if-watchdog">장치별 워치독<a aria-label="이 항목 링크" class="anchor" href="#if-watchdog">#</a></h2>
+<p>각 장치에는 응답 지연과 오류를 감시하는 <strong>워치독</strong>이 따로 동작합니다. 한 장치의 문제가 다른 장치의 출력을 막지 않도록 처리합니다.</p>
+<h2 id="if-limits">Windows 내장 엔진의 범위<a aria-label="이 항목 링크" class="anchor" href="#if-limits">#</a></h2>
+<p>Windows용 내장 엔진이 다룰 수 있는 연결은 다음과 같습니다.</p>
+<ul>
+<li>Bluetooth LE</li>
+<li>HID</li>
+<li>명시적으로 지정한 <strong>Bluetooth RFCOMM COM 포트 하나</strong> — TCode v0.3, 115200 baud로 매핑됩니다.</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>이 시리얼 경로의 한계</div>
+<p>
                 이 경로는 FunOSR SR1이 쓰는 <strong>단일 선형 축 정의</strong>만 노출합니다.
                 USB 시리얼 어댑터나 SR6의 전체 다축 시리얼 매핑이 필요하면
                 <a href="#funosr">FunOSR 공급자</a>를 직접 쓰거나 외부 Intiface Central을 쓰세요.
               </p>
-            </div>
-          </article>
+</div>
+</article>
 
           <!-- ============================================ 13 FUNOSR -->
-          <article class="page" id="page-funosr" data-title="FunOSR" data-group="디바이스 연결">
-            <h1>FunOSR</h1>
-            <p class="lede">
+          <article class="page" data-group="디바이스 연결" data-title="FunOSR" id="page-funosr">
+<h1>FunOSR</h1>
+<p class="lede">
               FunOSR는 시리얼(COM) 포트로 직접 신호를 보내는 방식입니다.
               중계 소프트웨어를 거치지 않아 지연이 적고, 다축 매핑을 세밀하게 다룰 수 있습니다.
             </p>
-
-            <h2 id="fo-connect">포트 고르기<a class="anchor" href="#fo-connect" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              <strong>설정 → 디바이스</strong>에서 FunOSR를 고르고 COM 포트를 지정합니다.
+<h2 id="fo-connect">포트 고르기<a aria-label="이 항목 링크" class="anchor" href="#fo-connect">#</a></h2>
+<p>
+<strong>설정 → 디바이스</strong>에서 FunOSR를 고르고 COM 포트를 지정합니다.
               v0.6.0부터 포트 인식이 개선되어, 다음 순서로 알맞은 포트를 먼저 제안합니다.
             </p>
-            <ol>
-              <li>FunOSR로 명확히 식별되는 포트</li>
-              <li>CH340 / CH341 어댑터</li>
-              <li>USB 식별자 <code>1A86:7523</code></li>
-            </ol>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>포트가 잠깐 안 보여도</div>
-              <p>
-                시작할 때 검색 결과가 비어 있어도 <strong>저장해 둔 COM 경로는 유지됩니다.</strong>
-                장치를 늦게 꽂았을 때 설정이 날아가지 않습니다.
-              </p>
-            </div>
-
-            <h2 id="fo-tune">출력 조정<a class="anchor" href="#fo-tune" aria-label="이 항목 링크">#</a></h2>
-            <p><strong>설정 → 디바이스</strong>에서 다음을 조정합니다.</p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>항목</th><th>설명</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>업데이트 레이트</strong></td><td>초당 몇 번 명령을 보낼지 정합니다. 너무 높이면 오히려 불안정해질 수 있습니다.</td></tr>
-                  <tr><td class="col-key"><strong>축 매핑</strong></td><td>스크립트 축을 장치의 실제 축에 연결합니다.</td></tr>
-                  <tr><td class="col-key"><strong>모션 스무딩</strong></td><td>움직임을 부드럽게 다듬습니다.</td></tr>
-                  <tr><td class="col-key"><strong>Custom speed limit</strong></td><td>축별 최대 속도를 <strong>spm</strong>(분당 전체 스트로크 횟수) 단위로 제한합니다. 전역 제한을 쓸지 축마다 따로 쓸지도 고를 수 있습니다.</td></tr>
-                  <tr><td class="col-key"><strong>Pause / Stop Behavior</strong></td><td>재생이 멈추거나 미디어가 바뀔 때 장치가 어떻게 할지 정합니다. (예: <code>Return home</code> — 원위치로 돌아가기)</td></tr>
-                  <tr><td class="col-key"><strong>Home Return Speed</strong></td><td>원위치로 돌아가는 속도입니다. 값을 키우면 더 천천히 돌아갑니다.</td></tr>
-                  <tr><td class="col-key"><strong>Playback Start Safety</strong></td><td>재생을 시작할 때 FunOSR / SR 장치가 스크립트 위치까지 <strong>이 시간에 걸쳐 천천히</strong> 이동한 뒤 정상 출력에 들어갑니다. <code>0</code>으로 두면 끕니다.</td></tr>
-                  <tr><td class="col-key"><strong>재연결</strong></td><td>연결이 끊겼을 때 자동으로 다시 붙습니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <figure>
-              <div class="shot"><img src="assets/img/settings-device-funosr.webp" alt="설정 디바이스 탭의 FunOSR 관련 항목" loading="lazy" /></div>
-              <figcaption>속도 제한 · Twist 조용 모드 · 정지 동작 · 안전 시작 시간이 한 화면에 모여 있습니다.</figcaption>
-            </figure>
-            <figure>
-              <div class="shot"><video data-src="assets/video/speed-limit.mp4" muted loop playsinline preload="none" aria-label="속도 제한 데모"></video></div>
-              <figcaption>속도 제한을 적용한 모습입니다.</figcaption>
-            </figure>
-
-            <h2 id="fo-test">축 테스트와 중앙 정렬<a class="anchor" href="#fo-test" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<ol>
+<li>FunOSR로 명확히 식별되는 포트</li>
+<li>CH340 / CH341 어댑터</li>
+<li>USB 식별자 <code>1A86:7523</code></li>
+</ol>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>포트가 잠깐 안 보여도</div>
+<p>시작할 때 검색 결과가 비어 있어도 <strong>저장된 포트 경로는 유지됩니다.</strong> 장치를 나중에 연결해도 포트 설정이 사라지지 않습니다.</p>
+</div>
+<h2 id="fo-tune">출력 조정<a aria-label="이 항목 링크" class="anchor" href="#fo-tune">#</a></h2>
+<p><strong>설정 → 디바이스</strong>에서 다음을 조정합니다.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>항목</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>업데이트 레이트</strong></td><td>초당 몇 번 명령을 보낼지 정합니다. 너무 높이면 오히려 불안정해질 수 있습니다.</td></tr>
+<tr><td class="col-key"><strong>축 매핑</strong></td><td>스크립트 축을 장치의 실제 축에 연결합니다.</td></tr>
+<tr><td class="col-key"><strong>모션 스무딩</strong></td><td>움직임을 부드럽게 다듬습니다.</td></tr>
+<tr><td class="col-key"><strong>Custom speed limit</strong></td><td>축별 최대 속도를 <strong>spm</strong>(분당 전체 스트로크 횟수) 단위로 제한합니다. 전역 제한을 쓸지 축마다 따로 쓸지도 고를 수 있습니다.</td></tr>
+<tr><td class="col-key"><strong>Pause / Stop Behavior</strong></td><td>재생이 멈추거나 미디어가 바뀔 때 장치가 어떻게 할지 정합니다. (예: <code>Return home</code> — 원위치로 돌아가기)</td></tr>
+<tr><td class="col-key"><strong>Home Return Speed</strong></td><td>원위치로 돌아가는 속도입니다. 값을 키우면 더 천천히 돌아갑니다.</td></tr>
+<tr><td class="col-key"><strong>Playback Start Safety</strong></td><td>재생을 시작할 때 FunOSR / SR 장치가 스크립트 위치까지 <strong>이 시간에 걸쳐 천천히</strong> 이동한 뒤 정상 출력에 들어갑니다. <code>0</code>으로 두면 끕니다.</td></tr>
+<tr><td class="col-key"><strong>재연결</strong></td><td>연결이 끊겼을 때 자동으로 다시 붙습니다.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="설정 디바이스 탭의 FunOSR 관련 항목" loading="lazy" src="assets/img/settings-device-funosr.webp"/></div>
+<figcaption>속도 제한 · Twist 조용 모드 · 정지 동작 · 안전 시작 시간이 한 화면에 모여 있습니다.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="속도 제한 데모" data-src="assets/video/speed-limit.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>속도 제한을 적용한 모습입니다.</figcaption>
+</figure>
+<h2 id="fo-test">축 테스트와 중앙 정렬<a aria-label="이 항목 링크" class="anchor" href="#fo-test">#</a></h2>
+<p>
               축이 제대로 연결됐는지 확인하려고 영상을 재생할 필요는 없습니다.
               설정 → 디바이스 맨 아래의 <strong>Device Test Panel</strong>에서
               <code>L0</code> · <code>V0</code> · <code>V1</code> · <code>R0</code> 버튼을 눌러
               해당 축에 짧은 명령을 직접 보내 볼 수 있습니다. <code>Stop</code>으로 즉시 멈추고,
               <strong>중앙 위치 명령</strong>으로 가운데로 되돌립니다.
             </p>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>축 순서가 뒤바뀌었는지 확인할 때</div>
-              <p>
-                <code>L0</code>를 눌렀는데 회전이 움직이면 축 매핑이 잘못된 것입니다.
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>축 순서가 뒤바뀌었는지 확인할 때</div>
+<p>
+<code>L0</code>를 눌렀는데 회전이 움직이면 축 매핑이 잘못된 것입니다.
                 이 패널로 하나씩 눌러 보면 어느 축이 어디에 연결됐는지 바로 알 수 있습니다.
               </p>
-            </div>
-            <p>
+</div>
+<p>
               스크립트가 실제로 어떤 파일에서 어떻게 읽혔는지 확인하려면
               <strong>Show Script Debug Info</strong>를 켜세요. 재생 화면에 스크립트 경로 · 출처 · 축 목록 ·
               저장된 오프셋이 표시됩니다.
             </p>
-            <figure>
-              <div class="shot"><video data-src="assets/video/device-test.mp4" muted loop playsinline preload="none" aria-label="장치 테스트 데모"></video></div>
-              <figcaption>축을 직접 움직여 연결을 확인합니다.</figcaption>
-            </figure>
-
-            <h2 id="fo-sr1">SR1 관련 옵션<a class="anchor" href="#fo-sr1" aria-label="이 항목 링크">#</a></h2>
-            <ul>
-              <li><strong>Bluetooth COM 출력</strong> — 25Hz 상한과 TCode 보간을 적용해 더 매끄럽게 내보냅니다. 쉴 때는 유지 신호를 보내지 않습니다.</li>
-              <li><strong>SR1 2.0 Twist 조용 모드</strong> — R0 회전 속도 상한을 조절해 소음을 줄입니다.</li>
-            </ul>
-
-            <h2 id="fo-pause">일시정지와 재개<a class="anchor" href="#fo-pause" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<figure>
+<div class="shot"><video aria-label="장치 테스트 데모" data-src="assets/video/device-test.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>축을 직접 움직여 연결을 확인합니다.</figcaption>
+</figure>
+<h2 id="fo-sr1">SR1 관련 옵션<a aria-label="이 항목 링크" class="anchor" href="#fo-sr1">#</a></h2>
+<ul>
+<li><strong>Bluetooth COM 출력</strong> — 25Hz 상한과 TCode 보간을 적용해 더 매끄럽게 내보냅니다. 쉴 때는 유지 신호를 보내지 않습니다.</li>
+<li><strong>SR1 2.0 Twist 조용 모드</strong> — R0 회전 속도 상한을 조절해 소음을 줄입니다.</li>
+</ul>
+<h2 id="fo-pause">일시정지와 재개<a aria-label="이 항목 링크" class="anchor" href="#fo-pause">#</a></h2>
+<p>
               시리얼 전송이 지연된 뒤 재생을 재개하면, 밀린 만큼을 한꺼번에 따라잡느라 장치가 크게 튈 수 있습니다.
               v0.5.1과 v0.6.0에서 이 부분이 보강되었습니다.
             </p>
-            <ul>
-              <li>재개 전환은 설정한 <strong>안전 시작 시간</strong>이 지나면 확실히 끝납니다.</li>
-              <li>밀린 진행량은 <strong>상한을 두고</strong> 따라잡으므로 큰 점프가 생기지 않습니다.</li>
-              <li>안전 전환 상태에 갇혀 스크립트로 돌아오지 못하던 문제가 해결되었습니다.</li>
-            </ul>
-          </article>
+<ul>
+<li>설정한 <strong>안전 시작 시간</strong>에 따라 재개 시의 전환 동작을 마칩니다.</li>
+<li>지연된 명령을 따라잡는 양에 <strong>상한을 두어</strong>, 갑작스러운 큰 움직임을 줄입니다.</li>
+<li>안전 전환 상태에 갇혀 스크립트로 돌아오지 못하던 문제가 해결되었습니다.</li>
+</ul>
+</article>
 
           <!-- ============================================ 14 REMOTE -->
           <article class="page" data-group="디바이스 연결" data-title="모바일 리모트" id="page-remote">
@@ -1416,10 +1308,7 @@
 <p>리모트 화면에 뜬 <strong>6자리 페어링 코드</strong>를 입력하고 <strong>Pair</strong>를 누릅니다.</p>
 </li>
 </ol>
-<p>
-              페어링이 끝나면 상태 · 펌웨어 · 배터리 · 토큰 정보가 표시됩니다.
-              한 번 연결한 리모트는 다음부터 <strong>자동으로 다시 연결</strong>됩니다.
-            </p>
+<p>페어링 후에는 연결 상태와 기기가 제공하는 펌웨어·배터리 정보, 페어링 정보의 저장 여부를 확인할 수 있습니다. 연결했던 리모트가 다시 사용 가능한 상태가 되면 앱이 자동 재연결을 시도합니다.</p>
 <h2 id="rm-buttons">버튼 매핑<a aria-label="이 항목 링크" class="anchor" href="#rm-buttons">#</a></h2>
 <p>
               A · B · C 세 버튼에 각각 <strong>클릭 · 더블클릭 · 길게 누르기</strong> 동작을 따로 지정할 수 있습니다.
@@ -1442,98 +1331,88 @@
 <h2 id="rm-apps">앱과 펌웨어<a aria-label="이 항목 링크" class="anchor" href="#rm-apps">#</a></h2>
 <ul>
 <li><strong>Get Android app</strong> — 휴대폰을 리모컨으로 쓰는 앱으로 이동합니다.</li>
-<li><strong>Open flasher</strong> — 리모트 기기 펌웨어를 굽는 도구를 엽니다.</li>
+<li><strong>Open flasher</strong> — 전용 리모컨에 펌웨어를 설치하는 도구를 엽니다.</li>
 </ul>
 </article>
 
           <!-- ============================================ 15 SAFETY -->
-          <article class="page" id="page-safety" data-title="안전과 비상 정지" data-group="디바이스 연결">
-            <h1>안전과 비상 정지</h1>
-            <p class="lede">
+          <article class="page" data-group="디바이스 연결" data-title="안전과 비상 정지" id="page-safety">
+<h1>안전과 비상 정지</h1>
+<p class="lede">
               장치를 쓰는 이상 언제든 즉시 멈출 수 있어야 합니다. 이 문서는 그 방법과, 미리 걸어 둘 수 있는 제한들을 다룹니다.
               <strong>장치를 처음 쓴다면 이 문서를 먼저 읽어 주세요.</strong>
-            </p>
-
-            <h2 id="sf-estop">전역 비상 정지 (E-Stop)<a class="anchor" href="#sf-estop" aria-label="이 항목 링크">#</a> <span class="pill pill--new">v0.6.0</span></h2>
-            <p>
+</p>
+<h2 id="sf-estop">전역 비상 정지 (E-Stop)<a aria-label="이 항목 링크" class="anchor" href="#sf-estop">#</a> <span class="pill pill--new">v0.6.0</span></h2>
+<p>
               창 오른쪽 위의 <strong>Stop all devices</strong> 버튼입니다.
               지금 어떤 공급자를 쓰고 있는지와 <strong>상관없이</strong>, 연결된 모든 장치에 정지 요청을 보냅니다.
             </p>
-            <ul>
-              <li>재생을 멈추고, Handy · Intiface · FunOSR <strong>모두</strong>에게 정지 명령을 보냅니다.</li>
-              <li>정지 요청에는 제한 시간이 있어 무한정 기다리지 않습니다.</li>
-              <li>실패하거나 시간이 초과된 장치는 <strong>목록에 남아</strong> 다시 시도할 수 있습니다.</li>
-            </ul>
-            <figure>
-              <div class="shot"><img src="assets/img/ui-estop.webp" alt="Stop all devices 버튼" loading="lazy" /></div>
-              <figcaption>오른쪽 위 <strong>Stop all devices</strong>가 전역 비상 정지 버튼입니다.</figcaption>
-            </figure>
-            <p>
+<ul>
+<li>재생을 멈추고, Handy · Intiface · FunOSR <strong>모두</strong>에게 정지 명령을 보냅니다.</li>
+<li>정지 요청에는 제한 시간이 있어 무한정 기다리지 않습니다.</li>
+<li>실패하거나 시간이 초과된 장치는 <strong>목록에 남아</strong> 다시 시도할 수 있습니다.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Stop all devices 버튼" loading="lazy" src="assets/img/ui-estop.webp"/></div>
+<figcaption>오른쪽 위 <strong>Stop all devices</strong>가 전역 비상 정지 버튼입니다.</figcaption>
+</figure>
+<p>
               이 버튼은 <strong>장치가 연결되어 있을 때</strong> 제목 표시줄과 전체화면에 나타납니다.
               표시 여부는 <strong>설정 → 디바이스</strong>의 <strong>Show E-Stop button</strong>에서 끌 수 있습니다.
             </p>
-            <div class="note note--danger">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-danger"/></svg>버튼을 숨기기 전에</div>
-              <p>
-                숨겨 두더라도 <strong>Intiface 관리 화면의 정지 컨트롤은 그대로 남아</strong> 있습니다.
-                하지만 그쪽은 화면을 한 번 옮겨야 닿습니다. 숨기기 전에 그 위치를 반드시 확인해 두세요.
-              </p>
-            </div>
-            <figure>
-              <div class="shot"><img src="assets/img/settings-device-stroke.webp" alt="설정 디바이스 탭의 Show E-Stop button 항목" loading="lazy" /></div>
-              <figcaption>설정 → 디바이스 맨 위에 <strong>Show E-Stop button</strong>이 있습니다.</figcaption>
-            </figure>
-
-            <h2 id="sf-limits">미리 걸어 두는 제한<a class="anchor" href="#sf-limits" aria-label="이 항목 링크">#</a></h2>
-            <p>사고를 막는 가장 좋은 방법은 애초에 세게 움직이지 않도록 해 두는 것입니다.</p>
-            <dl class="deflist">
-              <div>
-                <dt>스트로크 범위</dt>
-                <dd>재생바 <code>STR</code>에서 움직임 폭을 좁힙니다. 처음에는 좁게 시작하세요. → <a href="#sc-stroke">스크립트 다루기</a></dd>
-              </div>
-              <div>
-                <dt>Custom speed limit</dt>
-                <dd>축별로 최대 속도를 <code>spm</code> 단위로 제한합니다. FunOSR에서 특히 유용합니다. → <a href="#fo-tune">FunOSR</a></dd>
-              </div>
-              <div>
-                <dt>Playback Start Safety</dt>
-                <dd>재생을 시작할 때 곧바로 전속력으로 가지 않고, 지정한 시간에 걸쳐 스크립트 위치까지 천천히 이동합니다.</dd>
-              </div>
-              <div>
-                <dt>중심 유지 범위</dt>
-                <dd>회전축처럼 가운데가 기준인 축은 중심을 지키며 폭만 줄입니다.</dd>
-              </div>
-            </dl>
-
-            <h2 id="sf-oneprovider">한 번에 하나의 공급자<a class="anchor" href="#sf-oneprovider" aria-label="이 항목 링크">#</a></h2>
-            <div class="note note--warn">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-warn"/></svg>현재 제한</div>
-              <p>
+<div class="note note--danger">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>버튼을 숨기기 전에</div>
+<p>버튼을 숨겨도 <strong>Intiface 관리 화면의 정지 기능</strong>은 남아 있습니다. 이는 Intiface 장치용이므로 전역 비상 정지와 범위가 다릅니다. 다른 연결 방식을 사용한다면 버튼을 숨기기 전에 해당 장치를 멈추는 방법을 확인하세요.</p>
+</div>
+<figure>
+<div class="shot"><img alt="설정 디바이스 탭의 Show E-Stop button 항목" loading="lazy" src="assets/img/settings-device-stroke.webp"/></div>
+<figcaption>설정 → 디바이스 맨 위에 <strong>Show E-Stop button</strong>이 있습니다.</figcaption>
+</figure>
+<h2 id="sf-limits">미리 걸어 두는 제한<a aria-label="이 항목 링크" class="anchor" href="#sf-limits">#</a></h2>
+<p>장치를 처음 사용하거나 새 스크립트를 재생할 때는 움직임 범위와 속도를 낮게 설정하고 반응을 확인하세요.</p>
+<dl class="deflist">
+<div>
+<dt>스트로크 범위</dt>
+<dd>재생바 <code>STR</code>에서 움직임 폭을 좁힙니다. 처음에는 좁게 시작하세요. → <a href="#sc-stroke">스크립트 다루기</a></dd>
+</div>
+<div>
+<dt>Custom speed limit</dt>
+<dd>축별로 최대 속도를 <code>spm</code> 단위로 제한합니다. FunOSR에서 특히 유용합니다. → <a href="#fo-tune">FunOSR</a></dd>
+</div>
+<div>
+<dt>Playback Start Safety</dt>
+<dd>FunOSR / SR 장치가 지정한 시간에 걸쳐 스크립트의 시작 위치로 이동한 뒤 정상 출력을 시작합니다. 0으로 설정하면 이 전환을 사용하지 않습니다.</dd>
+</div>
+<div>
+<dt>중심 유지 범위</dt>
+<dd>회전축처럼 가운데가 기준인 축은 중심을 지키며 폭만 줄입니다.</dd>
+</div>
+</dl>
+<h2 id="sf-oneprovider">한 번에 하나의 공급자<a aria-label="이 항목 링크" class="anchor" href="#sf-oneprovider">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>현재 제한</div>
+<p>
                 장치 출력은 <strong>한 번에 하나의 공급자만</strong> 사용합니다.
                 Handy와 Intiface / FunOSR를 동시에 내보내는 것은 아직 지원하지 않습니다.
               </p>
-            </div>
-            <p>
+</div>
+<p>
               공급자를 바꿀 때는 이전 연결이 정리된 뒤에 새 연결이 붙습니다.
               v0.6.0에서 FunOSR에서 Handy나 Intiface로 넘어갈 때 정리 작업에 걸려 전환이 막히던 문제가 해결되었습니다.
             </p>
-
-            <h2 id="sf-habits">권장 습관<a class="anchor" href="#sf-habits" aria-label="이 항목 링크">#</a></h2>
-            <ul>
-              <li>새 스크립트를 처음 재생할 때는 <strong>범위를 좁게</strong> 두고 어떤 움직임인지 먼저 봅니다.</li>
-              <li>히트맵에서 <strong>빨간 구간</strong>이 어디인지 미리 확인합니다. → <a href="#timeline">타임라인과 히트맵</a></li>
-              <li>E-Stop 버튼 위치를 손이 기억하게 해 둡니다.</li>
-              <li>장치를 켜 둔 채 자리를 비우지 않습니다.</li>
-            </ul>
-          </article>
+<h2 id="sf-habits">권장 습관<a aria-label="이 항목 링크" class="anchor" href="#sf-habits">#</a></h2>
+<ul>
+<li>새 스크립트를 처음 재생할 때는 <strong>범위를 좁게</strong> 두고 어떤 움직임인지 먼저 봅니다.</li>
+<li>히트맵에서 <strong>빨간 구간</strong>이 어디인지 미리 확인합니다. → <a href="#timeline">타임라인과 히트맵</a></li>
+<li>재생하기 전에 E-Stop 버튼의 위치와 누르는 방법을 확인합니다.</li>
+<li>장치를 켜 둔 채 자리를 비우지 않습니다.</li>
+</ul>
+</article>
 
           <!-- ============================================ 16 EXTERNAL -->
           <article class="page" data-group="확장 기능" data-title="외부 플레이어" id="page-external">
 <h1>외부 플레이어</h1>
-<p class="lede">
-              ScriptPlayer+ 안에서 재생이 잘 안 되는 파일을, 이미 쓰고 있는 다른 플레이어로 열면서
-              장치 출력은 그대로 유지하는 기능입니다. <span class="pill pill--exp">실험 기능</span>
-</p>
+<p class="lede">다른 플레이어로 미디어를 여는 기능입니다. <strong>mpv와 VLC</strong>는 ScriptPlayer+의 재생 제어와 연동할 수 있습니다. 장치와 동기화해 사용하려면 아래 지원 범위를 확인하세요. <span class="pill pill--exp">실험 기능</span></p>
 <h2 id="ex-support">지원하는 플레이어<a aria-label="이 항목 링크" class="anchor" href="#ex-support">#</a></h2>
 <ul>
 <li>JAVPlayer</li>
@@ -1545,7 +1424,6 @@
 </ul>
 <p>설정은 <strong>설정 → 외부 플레이어</strong>에서 합니다. 재생 중에는 재생바의 <code>EXT</code> 버튼으로 바로 넘길 수 있습니다.</p>
 <h2 id="ex-limits">플레이어마다 다른 점<a aria-label="이 항목 링크" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">표를 좌우로 밀면 모든 열을 볼 수 있습니다.</p><div class="table-wrap"><table><thead><tr><th>플레이어</th><th>재생·일시정지</th><th>재생 위치·속도 제어</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>지원</td><td>지원 — ScriptPlayer+에서 조작</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windows에서 키 입력 방식으로 지원</td><td>지원하지 않음</td></tr><tr><td>사용자 지정 실행 파일</td><td>실행만 지원</td><td>지원하지 않음</td></tr></tbody></table></div><p>v0.6.1 기준입니다. 동기화가 필요하면 <strong>mpv 또는 VLC</strong>를 선택하고 ScriptPlayer+에서 재생·일시정지·탐색을 조작하세요. 외부 플레이어에서 직접 바꾼 상태가 역으로 반영된다고 가정하지 마세요. 키 입력 방식은 외부 앱의 단축키 설정과 창 상태에 따라 동작이 달라질 수 있습니다.</p>
-
 <p>
               mpv나 VLC를 지정해 두었다면, Chromium 재생이 실패했을 때 자동으로 그 플레이어를 열어 줍니다.
               타임라인을 끌어 위치를 옮긴 경우, 드래그가 <strong>끝났을 때 한 번만</strong> 동기화합니다.
@@ -1553,214 +1431,190 @@
 </article>
 
           <!-- ============================================ 17 FFMPEG -->
-          <article class="page" id="page-ffmpeg" data-title="FFmpeg 호환 재생" data-group="확장 기능">
-            <h1>FFmpeg 호환 재생</h1>
-            <p class="lede">
+          <article class="page" data-group="확장 기능" data-title="FFmpeg 호환 재생" id="page-ffmpeg">
+<h1>FFmpeg 호환 재생</h1>
+<p class="lede">
               일부 기능은 외부 FFmpeg 실행 파일이 있어야 동작합니다.
               FFmpeg는 ScriptPlayer+에 <strong>포함되어 있지 않으므로</strong> 따로 준비해야 합니다.
               <span class="pill pill--exp">실험 기능</span>
-            </p>
-
-            <h2 id="ff-why">언제 필요한가<a class="anchor" href="#ff-why" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>기능</th><th>FFmpeg가 하는 일</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>호환 재생</strong></td><td>브라우저 엔진이 못 여는 코덱의 영상을 재생합니다.</td></tr>
-                  <tr><td class="col-key"><strong>내장 자막</strong></td><td>영상 안의 텍스트 자막 트랙을 꺼내 옵니다. → <a href="#audio">오디오와 자막</a></td></tr>
-                  <tr><td class="col-key"><strong>오디오 트랙 선택</strong></td><td>여러 오디오 트랙 중 하나를 고릅니다.</td></tr>
-                  <tr><td class="col-key"><strong>썸네일 대체 생성</strong></td><td>Chromium이 디코딩하지 못하는 영상의 썸네일·호버 미리보기를 만듭니다.</td></tr>
-                  <tr><td class="col-key"><strong>모션 분석</strong></td><td>영상에서 스크립트를 만들 때 씁니다. → <a href="#scripts">스크립트 다루기</a></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <figure>
-              <div class="shot"><img src="assets/img/video-warning.webp" alt="영상 호환 경고" loading="lazy" /></div>
-              <figcaption>재생할 수 없는 영상을 열면 이런 안내가 나옵니다.</figcaption>
-            </figure>
-
-            <h2 id="ff-install">준비하는 방법<a class="anchor" href="#ff-install" aria-label="이 항목 링크">#</a></h2>
-            <p>ScriptPlayer+는 다음 순서로 FFmpeg를 찾습니다. 어느 하나만 충족하면 됩니다.</p>
-            <ol class="steps">
-              <li>
-                <h3>설정에서 자동 설치 <span class="pill">가장 쉬움</span></h3>
-                <p>
+</p>
+<h2 id="ff-why">언제 필요한가<a aria-label="이 항목 링크" class="anchor" href="#ff-why">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>기능</th><th>FFmpeg가 하는 일</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>호환 재생</strong></td><td>브라우저 엔진이 못 여는 코덱의 영상을 재생합니다.</td></tr>
+<tr><td class="col-key"><strong>내장 자막</strong></td><td>영상 안의 텍스트 자막 트랙을 꺼내 옵니다. → <a href="#audio">오디오와 자막</a></td></tr>
+<tr><td class="col-key"><strong>오디오 트랙 선택</strong></td><td>여러 오디오 트랙 중 하나를 고릅니다.</td></tr>
+<tr><td class="col-key"><strong>썸네일 대체 생성</strong></td><td>Chromium이 디코딩하지 못하는 영상의 썸네일·호버 미리보기를 만듭니다.</td></tr>
+<tr><td class="col-key"><strong>모션 분석</strong></td><td>영상에서 스크립트를 만들 때 씁니다. → <a href="#scripts">스크립트 다루기</a></td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="영상 호환 경고" loading="lazy" src="assets/img/video-warning.webp"/></div>
+<figcaption>재생할 수 없는 영상을 열면 이런 안내가 나옵니다.</figcaption>
+</figure>
+<h2 id="ff-install">준비하는 방법<a aria-label="이 항목 링크" class="anchor" href="#ff-install">#</a></h2>
+<p>아래 방법 중 하나로 FFmpeg를 준비하세요. 설치되어 있어도 자동으로 찾지 못하면 설정에서 실행 파일을 직접 지정할 수 있습니다.</p>
+<ol class="steps">
+<li>
+<h3>설정에서 자동 설치 <span class="pill">가장 쉬움</span></h3>
+<p>
                   설정 화면의 버튼으로 운영체제 패키지 관리자를 통해 설치할 수 있습니다.
                   Windows는 <code>winget</code>, macOS는 <code>Homebrew</code>, Linux는 지원되는 패키지 관리자를 씁니다.
                   <strong>사용자가 직접 눌렀을 때만</strong> 실행됩니다.
                 </p>
-              </li>
-              <li>
-                <h3>환경 변수 <code>FFMPEG_PATH</code></h3>
-                <p>실행 파일 경로를 이 환경 변수에 지정해 두면 그것을 씁니다.</p>
-              </li>
-              <li>
-                <h3>일반 설치 경로 또는 시스템 <code>PATH</code></h3>
-                <p>이미 FFmpeg가 설치되어 있다면 대개 자동으로 찾습니다.</p>
-              </li>
-              <li>
-                <h3>직접 고르기</h3>
-                <p>설정에서 FFmpeg 실행 파일을 직접 지정합니다. 자동 검색이 실패했을 때 확실한 방법입니다.</p>
-              </li>
-            </ol>
-            <figure>
-              <div class="shot"><img src="assets/img/settings-playback.webp" alt="설정 재생 탭의 FFmpeg 설정" loading="lazy" /></div>
-              <figcaption>
+</li>
+<li>
+<h3>환경 변수 <code>FFMPEG_PATH</code></h3>
+<p>실행 파일 경로를 이 환경 변수에 지정해 두면 그것을 씁니다.</p>
+</li>
+<li>
+<h3>일반 설치 경로 또는 시스템 <code>PATH</code></h3>
+<p>이미 FFmpeg가 설치되어 있다면 대개 자동으로 찾습니다.</p>
+</li>
+<li>
+<h3>직접 고르기</h3>
+<p>설정에서 FFmpeg 실행 파일을 직접 지정합니다. 자동 검색이 실패했을 때 확실한 방법입니다.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="설정 재생 탭의 FFmpeg 설정" loading="lazy" src="assets/img/settings-playback.webp"/></div>
+<figcaption>
                 설정 → 재생의 <strong>FFmpeg 설정 및 상태</strong> 영역입니다.
                 FFmpeg를 찾으면 버전과 경로가 초록색으로 표시되고, <strong>Test connection</strong>으로 확인할 수 있습니다.
               </figcaption>
-            </figure>
-
-            <h2 id="ff-mode">호환 모드 고르기<a class="anchor" href="#ff-mode" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              <strong>설정 → 재생</strong>의 <strong>Video Compatibility Mode</strong>에서 얼마나 개입할지 정합니다.
-              증상에 따라 고르세요.
-            </p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>증상</th><th>고를 것</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key">잘 재생됨</td><td><code>Auto</code> — 필요할 때만 알아서 개입합니다. 기본값입니다.</td></tr>
-                  <tr><td class="col-key"><strong>화면은 나오는데 소리가 안 남</strong></td><td>오디오 호환 모드 — 소리만 FFmpeg로 처리합니다.</td></tr>
-                  <tr><td class="col-key"><strong>화면이 검거나 아예 안 열림</strong></td><td>전체 호환 모드 — 영상까지 FFmpeg로 처리합니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="note note--warn">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-warn"/></svg>바꾼 뒤에는 다시 열어야 합니다</div>
-              <p>호환 모드를 바꾸면 <strong>영상을 닫고 다시 열어야</strong> 적용됩니다.</p>
-            </div>
-            <figure>
-              <div class="shot"><video data-src="assets/video/ffmpeg-compat.mp4" muted loop playsinline preload="none" aria-label="FFmpeg 호환 재생 데모"></video></div>
-              <figcaption>호환 재생이 동작하는 모습입니다.</figcaption>
-            </figure>
-
-            <div class="note">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-info"/></svg>패키지에 포함되지 않는 이유</div>
-              <p>
+</figure>
+<h2 id="ff-mode">호환 모드 고르기<a aria-label="이 항목 링크" class="anchor" href="#ff-mode">#</a></h2>
+<p><strong>설정 → 재생 → Video Compatibility Mode</strong>에서 FFmpeg로 처리할 범위를 선택합니다. 아래 증상에 맞는 모드를 고르세요.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>증상</th><th>고를 것</th></tr></thead>
+<tbody>
+<tr><td class="col-key">잘 재생됨</td><td><code>Auto</code> — 필요할 때만 알아서 개입합니다. 기본값입니다.</td></tr>
+<tr><td class="col-key"><strong>화면은 나오는데 소리가 안 남</strong></td><td>오디오 호환 모드 — 소리만 FFmpeg로 처리합니다.</td></tr>
+<tr><td class="col-key"><strong>화면이 검거나 아예 안 열림</strong></td><td>전체 호환 모드 — 영상까지 FFmpeg로 처리합니다.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>바꾼 뒤에는 다시 열어야 합니다</div>
+<p>호환 모드를 바꾸면 <strong>영상을 닫고 다시 열어야</strong> 적용됩니다.</p>
+</div>
+<figure>
+<div class="shot"><video aria-label="FFmpeg 호환 재생 데모" data-src="assets/video/ffmpeg-compat.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>호환 재생이 동작하는 모습입니다.</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>FFmpeg 별도 설치</div>
+<p>
                 ScriptPlayer+ 릴리스 패키지에는 FFmpeg 실행 파일이나 FFmpeg 소스가 들어 있지 않습니다.
                 호환 재생·썸네일 대체·모션 분석은 <strong>모두 외부 실행 파일만</strong> 사용합니다.
               </p>
-            </div>
-          </article>
+</div>
+</article>
 
           <!-- ============================================ 18 PLUGINS -->
-          <article class="page" id="page-plugins" data-title="플러그인" data-group="확장 기능">
-            <h1>플러그인</h1>
-            <p class="lede">
+          <article class="page" data-group="확장 기능" data-title="플러그인" id="page-plugins">
+<h1>플러그인</h1>
+<p class="lede">
               스크립트 공급자를 직접 추가하는 기능입니다.
               <strong>기본으로 포함되거나 추천되는 공급자는 하나도 없습니다.</strong> 필요할 때 직접 설치해서 씁니다.
             </p>
-
-            <h2 id="pl-what">.funplugin이란<a class="anchor" href="#pl-what" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              <code>.funplugin</code> 파일은 <strong>JSON 매니페스트일 뿐</strong>입니다.
+<h2 id="pl-what">.funplugin이란<a aria-label="이 항목 링크" class="anchor" href="#pl-what">#</a></h2>
+<p>
+<code>.funplugin</code> 파일은 <strong>JSON 매니페스트일 뿐</strong>입니다.
               어디에서 스크립트를 찾을지에 대한 정보만 담겨 있고, 실행 코드는 들어 있지 않습니다.
             </p>
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>코드를 실행하지 않습니다</div>
-              <p>
-                ScriptPlayer+는 플러그인의 코드를 앱 안에서 실행하지 않습니다.
-                데이터 전용 매니페스트만 읽기 때문에, 플러그인이 앱을 마음대로 조작할 수 없습니다.
-              </p>
-            </div>
-
-            <h2 id="pl-install">설치와 관리<a class="anchor" href="#pl-install" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>코드를 실행하지 않습니다</div>
+<p>ScriptPlayer+는 플러그인에 포함된 실행 코드를 실행하지 않고, 데이터 형식의 매니페스트를 읽습니다. 설치할 때 표시되는 권한과 게시자 정보를 확인하세요.</p>
+</div>
+<h2 id="pl-install">설치와 관리<a aria-label="이 항목 링크" class="anchor" href="#pl-install">#</a></h2>
+<p>
               왼쪽 레일의 <strong>플러그인</strong> 아이콘에서 관리합니다.
               설치할 때 다음이 검증됩니다.
             </p>
-            <ul>
-              <li><strong>매니페스트 검사</strong> — 형식이 올바른지 엄격하게 확인합니다.</li>
-              <li><strong>권한 확인</strong> — 무엇을 요구하는지 표시합니다.</li>
-              <li><strong>서명</strong> — 게시자 서명이 있으면 확인합니다. (선택 사항)</li>
-              <li><strong>신뢰 정보 표시</strong> — 위 결과를 사용자가 볼 수 있게 보여 줍니다.</li>
-            </ul>
-
-            <h2 id="pl-download">내려받은 스크립트<a class="anchor" href="#pl-download" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<ul>
+<li><strong>매니페스트 검사</strong> — 형식이 올바른지 엄격하게 확인합니다.</li>
+<li><strong>권한 확인</strong> — 무엇을 요구하는지 표시합니다.</li>
+<li><strong>서명</strong> — 게시자 서명이 있으면 확인합니다. (선택 사항)</li>
+<li><strong>신뢰 정보 표시</strong> — 위 결과를 사용자가 볼 수 있게 보여 줍니다.</li>
+</ul>
+<h2 id="pl-download">내려받은 스크립트<a aria-label="이 항목 링크" class="anchor" href="#pl-download">#</a></h2>
+<p>
               플러그인으로 받은 스크립트는 지정해 둔 <strong>스크립트 폴더</strong>에 저장됩니다.
               지정하지 않았다면 앱이 관리하는 폴더에 저장됩니다.
               내려받기가 끝나면 지금 재생 중인 미디어에 <strong>즉시 적용</strong>됩니다.
             </p>
-            <p>여러 개를 동시에 받을 때는 각각의 진행률이 따로 표시됩니다.</p>
-          </article>
+<p>여러 개를 동시에 받을 때는 각각의 진행률이 따로 표시됩니다.</p>
+</article>
 
           <!-- ============================================ 19 SHORTCUTS -->
-          <article class="page" id="page-shortcuts" data-title="키보드 단축키" data-group="레퍼런스">
-            <h1>키보드 단축키</h1>
-            <p class="lede">
-              기본 단축키 목록과, 원하는 키로 바꾸는 방법입니다.
-              모든 동작은 <strong>설정 → 키보드 단축키</strong>에서 재지정할 수 있습니다.
-            </p>
-
-            <h2 id="ks-default">기본 단축키<a class="anchor" href="#ks-default" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>키</th><th>동작</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><kbd>Space</kbd> / <kbd>K</kbd></td><td>재생 / 일시정지</td></tr>
-                  <tr><td class="col-key"><kbd>←</kbd> / <kbd>→</kbd></td><td>5초 뒤로 / 앞으로</td></tr>
-                  <tr><td class="col-key"><kbd>Shift</kbd> + <kbd>←</kbd> / <kbd>→</kbd></td><td>10초 뒤로 / 앞으로</td></tr>
-                  <tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>볼륨 5% 올리기 / 내리기</td></tr>
-                  <tr><td class="col-key"><kbd>F</kbd></td><td>전체화면 전환</td></tr>
-                  <tr><td class="col-key"><kbd>M</kbd></td><td>음소거 전환</td></tr>
-                  <tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>설정 열기</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <figure>
-              <div class="shot"><img src="assets/img/shortcuts.webp" alt="키보드 단축키 설정 화면" loading="lazy" /></div>
-              <figcaption>설정 → 키보드 단축키 화면입니다.</figcaption>
-            </figure>
-
-            <h2 id="ks-all">단축키를 지정할 수 있는 동작<a class="anchor" href="#ks-all" aria-label="이 항목 링크">#</a></h2>
-            <p>
+          <article class="page" data-group="레퍼런스" data-title="키보드 단축키" id="page-shortcuts">
+<h1>키보드 단축키</h1>
+<p class="lede">기본 단축키와 변경 방법을 설명합니다. 단축키를 지원하는 동작은 <strong>설정 → 키보드 단축키</strong>에서 원하는 키로 바꿀 수 있습니다.</p>
+<h2 id="ks-default">기본 단축키<a aria-label="이 항목 링크" class="anchor" href="#ks-default">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>키</th><th>동작</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><kbd>Space</kbd> / <kbd>K</kbd></td><td>재생 / 일시정지</td></tr>
+<tr><td class="col-key"><kbd>←</kbd> / <kbd>→</kbd></td><td>5초 뒤로 / 앞으로</td></tr>
+<tr><td class="col-key"><kbd>Shift</kbd> + <kbd>←</kbd> / <kbd>→</kbd></td><td>10초 뒤로 / 앞으로</td></tr>
+<tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>볼륨 5% 올리기 / 내리기</td></tr>
+<tr><td class="col-key"><kbd>F</kbd></td><td>전체화면 전환</td></tr>
+<tr><td class="col-key"><kbd>M</kbd></td><td>음소거 전환</td></tr>
+<tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>설정 열기</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="키보드 단축키 설정 화면" loading="lazy" src="assets/img/shortcuts.webp"/></div>
+<figcaption>설정 → 키보드 단축키 화면입니다.</figcaption>
+</figure>
+<h2 id="ks-all">단축키를 지정할 수 있는 동작<a aria-label="이 항목 링크" class="anchor" href="#ks-all">#</a></h2>
+<p>
               위 기본값 외에도 다음 동작들에 원하는 키를 붙일 수 있습니다.
               자주 쓰는 기능은 손이 편한 키로 옮겨 두면 훨씬 빨라집니다.
             </p>
-
-            <h3 id="ks-play">재생</h3>
-            <ul>
-              <li>재생 / 일시정지</li>
-              <li>5초 뒤로 · 5초 앞으로</li>
-              <li>10초 뒤로 · 10초 앞으로</li>
-              <li>이전 영상 · 다음 영상</li>
-              <li>맨 앞으로 · 맨 뒤로</li>
-              <li>구간 반복 시작점 지정 · 끝점 지정 · 편집기 열기</li>
-            </ul>
-
-            <h3 id="ks-sound">소리</h3>
-            <ul>
-              <li>볼륨 올리기 · 내리기</li>
-              <li>음소거 전환</li>
-            </ul>
-
-            <h3 id="ks-screen">화면</h3>
-            <ul>
-              <li>전체화면 전환</li>
-            </ul>
-
-            <h3 id="ks-script">스크립트</h3>
-            <ul>
-              <li>스트로크 범위 줄이기 · 늘리기</li>
-              <li>스크립트 오프셋 줄이기 · 늘리기 · 초기화</li>
-            </ul>
-
-            <h3 id="ks-app">앱</h3>
-            <ul>
-              <li>폴더 열기</li>
-              <li>설정 열기</li>
-            </ul>
-
-            <div class="note note--tip">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-bulb"/></svg>추천</div>
-              <p>
+<h3 id="ks-play">재생</h3>
+<ul>
+<li>재생 / 일시정지</li>
+<li>5초 뒤로 · 5초 앞으로</li>
+<li>10초 뒤로 · 10초 앞으로</li>
+<li>이전 영상 · 다음 영상</li>
+<li>맨 앞으로 · 맨 뒤로</li>
+<li>구간 반복 시작점 지정 · 끝점 지정 · 편집기 열기</li>
+</ul>
+<h3 id="ks-sound">소리</h3>
+<ul>
+<li>볼륨 올리기 · 내리기</li>
+<li>음소거 전환</li>
+</ul>
+<h3 id="ks-screen">화면</h3>
+<ul>
+<li>전체화면 전환</li>
+</ul>
+<h3 id="ks-script">스크립트</h3>
+<ul>
+<li>스트로크 범위 줄이기 · 늘리기</li>
+<li>스크립트 오프셋 줄이기 · 늘리기 · 초기화</li>
+</ul>
+<h3 id="ks-app">앱</h3>
+<ul>
+<li>폴더 열기</li>
+<li>설정 열기</li>
+</ul>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>추천</div>
+<p>
                 장치를 쓴다면 <strong>스트로크 범위 줄이기/늘리기</strong>를 키보드에 붙여 두세요.
                 재생 중에 마우스를 옮기지 않고 세기를 바로 조절할 수 있습니다.
               </p>
-            </div>
-          </article>
+</div>
+</article>
 
           <!-- ============================================ 20 SETTINGS -->
           <article class="page" data-group="레퍼런스" data-title="설정 안내" id="page-settings">
@@ -1853,78 +1707,70 @@
             </p>
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>주의</div>
-<p>초기화하면 미디어별로 맞춰 둔 오프셋과 스트로크 범위도 사라집니다. 실제 파일은 지워지지 않습니다.</p>
+<p>초기화하면 저장된 스크립트·미디어별 오프셋과 스트로크 범위도 삭제됩니다. 실제 미디어 파일은 삭제하지 않습니다.</p>
 </div>
 </article>
 
           <!-- ============================================ 21 FORMATS -->
-          <article class="page" id="page-formats" data-title="지원 파일 형식" data-group="레퍼런스">
-            <h1>지원 파일 형식</h1>
-            <p class="lede">어떤 파일을 열 수 있는지 정리했습니다.</p>
-
-            <h2 id="fm-media">미디어<a class="anchor" href="#fm-media" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>종류</th><th>확장자</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>영상</strong></td><td><code>mp4</code> · <code>mkv</code> · <code>avi</code> · <code>webm</code> · <code>mov</code> · <code>wmv</code></td></tr>
-                  <tr><td class="col-key"><strong>오디오</strong></td><td><code>mp3</code> · <code>wav</code> · <code>flac</code> · <code>m4a</code> · <code>aac</code> · <code>ogg</code> · <code>opus</code> · <code>wma</code></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="note">
-              <div class="note-title"><svg class="note-ico" width="15" height="15" aria-hidden="true"><use href="#i-info"/></svg>확장자가 맞아도 안 열릴 수 있습니다</div>
-              <p>
+          <article class="page" data-group="레퍼런스" data-title="지원 파일 형식" id="page-formats">
+<h1>지원 파일 형식</h1>
+<p class="lede">어떤 파일을 열 수 있는지 정리했습니다.</p>
+<h2 id="fm-media">미디어<a aria-label="이 항목 링크" class="anchor" href="#fm-media">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>종류</th><th>확장자</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>영상</strong></td><td><code>mp4</code> · <code>mkv</code> · <code>avi</code> · <code>webm</code> · <code>mov</code> · <code>wmv</code></td></tr>
+<tr><td class="col-key"><strong>오디오</strong></td><td><code>mp3</code> · <code>wav</code> · <code>flac</code> · <code>m4a</code> · <code>aac</code> · <code>ogg</code> · <code>opus</code> · <code>wma</code></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>확장자가 맞아도 안 열릴 수 있습니다</div>
+<p>
                 컨테이너 확장자가 같아도 안에 든 코덱은 다를 수 있습니다.
                 재생이 안 되면 <a href="#ffmpeg">FFmpeg 호환 재생</a>을 준비해 보세요.
               </p>
-            </div>
-
-            <h2 id="fm-scripts">스크립트<a class="anchor" href="#fm-scripts" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>형식</th><th>설명</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><code>.funscript</code></td><td>가장 일반적인 펀스크립트 형식입니다.</td></tr>
-                  <tr><td class="col-key"><code>.json</code></td><td>펀스크립트와 같은 구조의 JSON 파일입니다.</td></tr>
-                  <tr><td class="col-key"><code>.csv</code></td><td>표 형태로 저장된 스크립트입니다.</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h3 id="fm-multiaxis">다축 번들</h3>
-            <ul>
-              <li>한 파일에 <code>axes[]</code>로 축을 담은 형식</li>
-              <li>한 파일에 <code>channels{}</code>로 축을 담은 형식</li>
-              <li>축마다 파일이 나뉜 형식 — 예: <code>영상.L0.funscript</code>, <code>영상.R0.funscript</code></li>
-            </ul>
-
-            <h2 id="fm-subs">자막<a class="anchor" href="#fm-subs" aria-label="이 항목 링크">#</a></h2>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>종류</th><th>지원</th></tr></thead>
-                <tbody>
-                  <tr><td class="col-key"><strong>외부 자막 파일</strong></td><td><code>.srt</code> · <code>.vtt</code> · <code>.txt</code></td></tr>
-                  <tr><td class="col-key"><strong>내장 텍스트 자막</strong></td><td>SRT · ASS/SSA · WebVTT · mov_text — <strong>외부 FFmpeg 필요</strong></td></tr>
-                  <tr><td class="col-key"><strong>이미지 기반 자막</strong></td><td>PGS · DVD 자막은 목록에 보이지만 <strong>표시할 수 없습니다.</strong></td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <h2 id="fm-naming">파일 이름 규칙<a class="anchor" href="#fm-naming" aria-label="이 항목 링크">#</a></h2>
-            <p>자동 매칭이 가장 잘 되는 배치는 이렇습니다.</p>
-            <pre><code>내 영상 폴더/
+</div>
+<h2 id="fm-scripts">스크립트<a aria-label="이 항목 링크" class="anchor" href="#fm-scripts">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>형식</th><th>설명</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><code>.funscript</code></td><td>가장 일반적인 펀스크립트 형식입니다.</td></tr>
+<tr><td class="col-key"><code>.json</code></td><td>펀스크립트와 같은 구조의 JSON 파일입니다.</td></tr>
+<tr><td class="col-key"><code>.csv</code></td><td>표 형태로 저장된 스크립트입니다.</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="fm-multiaxis">다축 번들</h3>
+<ul>
+<li>한 파일에 <code>axes[]</code>로 축을 담은 형식</li>
+<li>한 파일에 <code>channels{}</code>로 축을 담은 형식</li>
+<li>축마다 파일이 나뉜 형식 — 예: <code>영상.L0.funscript</code>, <code>영상.R0.funscript</code></li>
+</ul>
+<h2 id="fm-subs">자막<a aria-label="이 항목 링크" class="anchor" href="#fm-subs">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>종류</th><th>지원</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>외부 자막 파일</strong></td><td><code>.srt</code> · <code>.vtt</code> · <code>.txt</code></td></tr>
+<tr><td class="col-key"><strong>내장 텍스트 자막</strong></td><td>SRT · ASS/SSA · WebVTT · mov_text — <strong>외부 FFmpeg 필요</strong></td></tr>
+<tr><td class="col-key"><strong>이미지 기반 자막</strong></td><td>PGS · DVD 자막은 목록에 보이지만 <strong>표시할 수 없습니다.</strong></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="fm-naming">파일 이름 규칙<a aria-label="이 항목 링크" class="anchor" href="#fm-naming">#</a></h2>
+<p>자동 매칭이 가장 잘 되는 배치는 이렇습니다.</p>
+<pre><code>내 영상 폴더/
 ├─ 작품A.mp4
 ├─ 작품A.funscript          ← 자동으로 잡힙니다
 ├─ 작품A.srt                ← 자막도 자동으로 잡힙니다
 ├─ 작품B.mp4
 ├─ 작품B.L0.funscript       ← 다축: 선형 축
 └─ 작품B.R0.funscript       ← 다축: 회전 축</code></pre>
-            <p>
-              이름이 다르더라도 <a href="#scripts">재생 시간으로 찾기</a>나
-              <a href="#scripts">스크립트 변형 패널</a>로 연결할 수 있습니다.
-            </p>
-          </article>
+<p>파일 이름이 다르면 <a href="#sc-duration">재생 시간으로 찾기</a>나 <a href="#sc-variants">스크립트 변형 패널</a>에서 후보를 확인하세요. 연결한 뒤 영상과 움직임이 맞는지 확인합니다.</p>
+</article>
 
           <!-- ============================================ 22 TROUBLESHOOTING -->
           <article class="page" data-group="레퍼런스" data-title="문제 해결" id="page-troubleshooting">
@@ -1955,15 +1801,9 @@
 <li>그래도 안 되면 <a href="#external">외부 플레이어</a>로 열어 봅니다.</li>
 </ol>
 <h3 id="ts-vrsplit">VR 영상이 두 개로 갈라져 보입니다</h3>
-<p>
-              좌우 분할(SBS) 영상인데 평면으로 재생되고 있는 것입니다.
-              투영 방식을 <strong>VR180 등장방형</strong>으로, 원본 배치를 <strong>좌우 분할</strong>로 지정하세요. → <a href="#vr">VR · 360 영상</a>
-</p>
+<p>좌우 분할(SBS)이나 상하 분할 영상이 평면 모드로 표시되고 있을 수 있습니다. <strong>원본 배치</strong>와 투영 방식을 영상 형식에 맞게 선택하세요. 모든 분할 영상이 VR180인 것은 아닙니다. → <a href="#vr">VR · 360 영상</a></p>
 <h3 id="ts-nothumb">썸네일이 안 만들어집니다</h3>
-<p>
-              Chromium이 그 영상을 디코딩하지 못하는 경우입니다.
-              <a href="#ffmpeg">FFmpeg</a>가 있으면 대체 방식으로 썸네일을 만들어 줍니다.
-            </p>
+<p>FFmpeg가 인식되는지 확인하고 썸네일을 다시 생성해 보세요. Chromium이 영상을 디코딩하지 못하는 경우에는 FFmpeg를 이용한 대체 생성이 필요할 수 있습니다. → <a href="#ffmpeg">FFmpeg 호환 재생</a></p>
 <h2 id="ts-scripts">스크립트<a aria-label="이 항목 링크" class="anchor" href="#ts-scripts">#</a></h2>
 <h3 id="ts-noscript">스크립트가 자동으로 안 잡힙니다</h3>
 <ol>
@@ -1987,7 +1827,7 @@
 </ol>
 <h3 id="ts-stutter">움직임이 끊기거나 밀립니다</h3>
 <ul>
-<li><strong>The Handy</strong> — <a href="#handy">네트워크 진단</a>을 돌려 지연과 지터를 확인합니다. 값이 나쁘면 유선 연결이나 다른 네트워크를 시도하세요.</li>
+<li><strong>The Handy</strong> — <a href="#hd-diag">네트워크 진단</a>으로 지연과 지터를 확인합니다. PC의 네트워크 연결과 Handy의 Wi-Fi 신호 상태를 확인하고, 다운로드 등 다른 네트워크 사용량을 줄여 다시 측정하세요.</li>
 <li><strong>FunOSR</strong> — 업데이트 레이트를 낮춰 봅니다. 너무 높으면 오히려 불안정해집니다.</li>
 <li><strong>Intiface</strong> — 장치를 여러 개 쓰고 있다면 하나만 남기고 시험해 봅니다.</li>
 </ul>
@@ -2002,14 +1842,14 @@
               Intiface 관리 화면의 <strong>핸드오프</strong> 컨트롤로 제어권을 넘겨주세요. → <a href="#intiface">Intiface / Buttplug</a>
 </p>
 <h2 id="ts-reset">그래도 안 될 때<a aria-label="이 항목 링크" class="anchor" href="#ts-reset">#</a></h2>
-<ol>
-<li><strong>설정 → 복구</strong>에서 초기화를 시도합니다. → <a href="#playback">재생 다루기</a></li>
-<li>최신 버전인지 확인합니다. → <a href="#install">설치하기</a></li>
+<ol><li>최신 버전인지 확인합니다. → <a href="#install">설치하기</a></li>
+
+
 <li>
 <a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>에 문의합니다.
                 장치 문제라면 <a href="#handy">진단 정보를 복사해</a> 함께 올리면 훨씬 빠릅니다.
               </li>
-</ol>
+<li>앞의 방법으로 해결되지 않을 때 <strong>설정 → 복구</strong>에서 초기화를 검토하세요. 저장된 설정과 오프셋·스트로크 범위가 삭제되므로 먼저 <a href="#settings">초기화 범위</a>를 확인하세요.</li></ol>
 </article>
 
           <!-- ============================================ 23 RELEASES -->
@@ -2091,81 +1931,70 @@
           </article>
 
           <!-- ============================================ 24 ABOUT -->
-          <article class="page" id="page-about" data-title="라이선스와 링크" data-group="레퍼런스">
-            <h1>라이선스와 링크</h1>
-            <p class="lede">배포 조건과 도움을 받을 수 있는 곳입니다.</p>
-
-            <h2 id="ab-license">라이선스<a class="anchor" href="#ab-license" aria-label="이 항목 링크">#</a></h2>
-            <p>
+          <article class="page" data-group="레퍼런스" data-title="라이선스와 링크" id="page-about">
+<h1>라이선스와 링크</h1>
+<p class="lede">배포 조건과 도움을 받을 수 있는 곳입니다.</p>
+<h2 id="ab-license">라이선스<a aria-label="이 항목 링크" class="anchor" href="#ab-license">#</a></h2>
+<p>
               ScriptPlayer+는 <strong>ScriptPlayer+ End User License Agreement(EULA)</strong> 조건으로 배포되는 독점 소프트웨어입니다.
               상업적 사용, 재배포, 수정, 프로젝트 미디어 재사용에는 저작권자의 <strong>별도 서면 허가</strong>가 필요합니다.
             </p>
-            <p>
+<p>
               패키지에는 EULA와 서드파티 고지가 애플리케이션 아카이브 바깥에 함께 들어 있고,
               Windows 설치 프로그램은 설치 전에 EULA를 먼저 보여 줍니다.
             </p>
-
-            <h2 id="ab-source">소스 공개 범위<a class="anchor" href="#ab-source" aria-label="이 항목 링크">#</a></h2>
-            <p>
-              ScriptPlayer+는 서명되거나 패키징된 데스크톱 바이너리로 배포됩니다.
-              공개 저장소는 <strong>릴리스 · 업데이트 메타데이터 · 문서 · 이슈 추적</strong>에 쓰이며,
-              전체 애플리케이션 소스는 공개 배포하지 않습니다.
-            </p>
-
-            <h2 id="ab-links">링크<a class="anchor" href="#ab-links" aria-label="이 항목 링크">#</a></h2>
-            <div class="jump">
-              <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" target="_blank" rel="noopener noreferrer">
-                <span class="num">↓</span><span><b>최신 버전 내려받기</b><span class="d">Windows · macOS · Linux 패키지</span></span>
-              </a>
-              <a href="https://github.com/sioaeko/scriptplayer-plus/issues" target="_blank" rel="noopener noreferrer">
-                <span class="num">?</span><span><b>GitHub Issues</b><span class="d">버그 신고와 기능 제안</span></span>
-              </a>
-              <a href="https://github.com/sioaeko/scriptplayer-plus" target="_blank" rel="noopener noreferrer">
-                <span class="num">◇</span><span><b>GitHub 저장소</b><span class="d">릴리스와 문서</span></span>
-              </a>
-              <a href="https://www.patreon.com/c/sioaeko0" target="_blank" rel="noopener noreferrer">
-                <span class="num">♥</span><span><b>Patreon</b><span class="d">개발 소식과 후원</span></span>
-              </a>
-            </div>
-
-            <h2 id="ab-thanks">감사의 말<a class="anchor" href="#ab-thanks" aria-label="이 항목 링크">#</a></h2>
-            <p>
+<h2 id="ab-source">소스 공개 범위<a aria-label="이 항목 링크" class="anchor" href="#ab-source">#</a></h2>
+<p>ScriptPlayer+는 운영체제별 설치 파일과 실행 패키지로 배포됩니다. 공개 저장소는 <strong>릴리스·업데이트 정보·문서·이슈 관리</strong>에 사용하며, 전체 애플리케이션 소스는 공개하지 않습니다.</p>
+<h2 id="ab-links">링크<a aria-label="이 항목 링크" class="anchor" href="#ab-links">#</a></h2>
+<div class="jump">
+<a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">
+<span class="num">↓</span><span><b>최신 버전 내려받기</b><span class="d">Windows · macOS · Linux 패키지</span></span>
+</a>
+<a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">
+<span class="num">?</span><span><b>GitHub Issues</b><span class="d">버그 신고와 기능 제안</span></span>
+</a>
+<a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">
+<span class="num">◇</span><span><b>GitHub 저장소</b><span class="d">릴리스와 문서</span></span>
+</a>
+<a href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank">
+<span class="num">♥</span><span><b>Patreon</b><span class="d">개발 소식과 후원</span></span>
+</a>
+</div>
+<h2 id="ab-thanks">감사의 말<a aria-label="이 항목 링크" class="anchor" href="#ab-thanks">#</a></h2>
+<p>
               FunOSR 시리얼 장치 하드웨어는 제조사 <strong>FunOSR</strong>에서 제공해 주셨습니다.
               개발 중 테스트에 쓰인 장비를 지원해 주셔서 감사합니다.
             </p>
-
-            <h2 id="ab-tech">기술 스택<a class="anchor" href="#ab-tech" aria-label="이 항목 링크">#</a></h2>
-            <p>Electron · React · TypeScript · Tailwind CSS · Vite</p>
-
-            <h2 id="ab-credits">이 문서에 쓰인 것<a class="anchor" href="#ab-credits" aria-label="이 항목 링크">#</a></h2>
-            <dl class="deflist">
-              <div>
-                <dt>아이콘</dt>
-                <dd>
-                  <a href="https://github.com/Disarto/disarto-icons" target="_blank" rel="noopener noreferrer">Disarto Icons</a>
+<h2 id="ab-tech">기술 스택<a aria-label="이 항목 링크" class="anchor" href="#ab-tech">#</a></h2>
+<p>Electron · React · TypeScript · Tailwind CSS · Vite</p>
+<h2 id="ab-credits">이 문서에 쓰인 것<a aria-label="이 항목 링크" class="anchor" href="#ab-credits">#</a></h2>
+<dl class="deflist">
+<div>
+<dt>아이콘</dt>
+<dd>
+<a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
                   — MIT 라이선스, © Disarto.
                 </dd>
-              </div>
-              <div>
-                <dt>본문 글꼴</dt>
-                <dd>
-                  <a href="https://sunn.us/suit/" target="_blank" rel="noopener noreferrer">SUIT</a>
+</div>
+<div>
+<dt>본문 글꼴</dt>
+<dd>
+<a href="https://sunn.us/suit/" rel="noopener noreferrer" target="_blank">SUIT</a>
                   — SIL Open Font License 1.1, © SUNN.
                 </dd>
-              </div>
-              <div>
-                <dt>화면과 영상</dt>
-                <dd>ScriptPlayer+ 실제 화면을 녹화·캡처한 것입니다. 재사용에는 저작권자의 허가가 필요합니다.</dd>
-              </div>
-            </dl>
-
-            <h2 id="ab-docs">이 문서에 대해<a class="anchor" href="#ab-docs" aria-label="이 항목 링크">#</a></h2>
-            <p>
+</div>
+<div>
+<dt>화면과 영상</dt>
+<dd>ScriptPlayer+ 실제 화면을 녹화·캡처한 것입니다. 재사용에는 저작권자의 허가가 필요합니다.</dd>
+</div>
+</dl>
+<h2 id="ab-docs">이 문서에 대해<a aria-label="이 항목 링크" class="anchor" href="#ab-docs">#</a></h2>
+<p>
               이 사이트는 ScriptPlayer+ v0.6 계열을 기준으로 작성되었습니다.
               앱이 업데이트되면 화면과 설명이 다를 수 있으니, 최신 변경 사항은
               <a href="#releases">버전 기록</a>과 GitHub Releases를 함께 확인해 주세요.
             </p>
-          </article>
+</article>
 
           <!-- pager gets injected here -->
           <nav class="pager" id="pager" aria-label="이전/다음 문서"></nav>

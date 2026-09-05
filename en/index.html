@@ -283,7 +283,7 @@
               Those releases restrict unprivileged user namespaces, and the Chromium sandbox needs an
               executable-scoped AppArmor profile to work — a profile that ships only in the DEB.</p>
 <ul>
-<li><strong>DEB</strong> — installs the AppArmor profile with it. The safest choice on 24.04 and newer.</li>
+<li><strong>DEB</strong> — installs the AppArmor profile and is recommended for Ubuntu / Kubuntu 24.04 or later.</li>
 <li><strong>AppImage</strong> — moved to a static runtime in v0.6.0, so <code>libfuse.so.2</code> is no longer required.</li>
 <li><strong>Archive package</strong> — for distributions where unprivileged user namespaces are available.</li>
 </ul>
@@ -310,10 +310,10 @@
 <!-- ============================================ 03 QUICKSTART -->
 <article class="page" data-group="Getting started" data-title="Quick start" id="page-quickstart">
 <h1>Quick start</h1>
-<p class="lede">Once it is installed, start here. Five steps and you have video playing, a script attached and a device moving.</p>
+<p class="lede">Follow these steps to open media, load a script and set up your device. See the device connection guide for any preparation it requires.</p>
 <figure>
 <div class="shot"><img alt="ScriptPlayer+ on first launch" loading="lazy" src="../assets/img/ui-firstrun.webp"/></div>
-<figcaption>This empty window is what you get on first launch. “Open a folder or drag a video or audio file to start” is the starting point.</figcaption>
+<figcaption>The screen on first launch. Open a folder or drag a video or audio file into the window to begin.</figcaption>
 </figure>
 <h2 id="qs-steps">The five steps<a aria-label="Link to this section" class="anchor" href="#qs-steps">#</a></h2>
 <ol class="steps">
@@ -353,8 +353,7 @@
 </ul>
 </div>
 <h2 id="qs-library">Using the library instead of opening folders<a aria-label="Link to this section" class="anchor" href="#qs-library">#</a></h2>
-<p>Rather than opening a folder every time, register the folders you use often in the <strong>library</strong> and browse them as thumbnail cards.
-              Start from the <strong>Library</strong> icon at the bottom of the left rail. See <a href="#library">Library</a> for the details.</p>
+<p>Add frequently used folders to the <a href="#library">library</a> to browse files as thumbnail cards. Select <strong>Library</strong> in the left navigation rail.</p>
 <figure>
 <div class="shot">
 <video aria-label="Library screen demo" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video>
@@ -365,8 +364,7 @@
 <!-- ============================================ 04 INTERFACE -->
 <article class="page" data-group="Getting started" data-title="Tour of the window" id="page-interface">
 <h1>Tour of the window</h1>
-<p class="lede">The ScriptPlayer+ window has four parts: the <strong>left rail, the sidebar, the player and the playback bar</strong>.
-              The short lettered buttons on the playback bar are the easiest thing to misread, so every one of them is spelled out below.</p>
+<p class="lede">The interface has four main areas: the left navigation rail, sidebar, playback area and playback bar. The following sections explain each area and the abbreviations on the playback bar.</p>
 <figure>
 <div class="shot"><img alt="The ScriptPlayer+ window layout" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
 <figcaption>Left to right: rail, sidebar, player — with the heatmap, timeline and playback bar along the bottom.</figcaption>
@@ -421,7 +419,7 @@
 <div class="legend-row"><span aria-label="Shuffle icon" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"></path><path d="m18 2 4 4-4 4"></path><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"></path><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"></path><path d="m18 14 4 4-4 4"></path></svg></span><span class="legend-desc"><b>Shuffle</b> — plays the list in random order.</span></div>
 <div class="legend-row"><span class="legend-key">EXT</span><span class="legend-desc"><b>External</b> — opens this file in an outside player such as mpv or VLC. → <a href="#external">External player</a></span></div>
 <div class="legend-row"><span class="legend-key">TL</span><span class="legend-desc"><b>Timeline</b> — shows or hides the script graph.</span></div>
-<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>Heatmap</b> — colours the intensity of the whole file as a band.</span></div>
+<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>Heatmap</b> — shows movement speed across the script as a colored strip.</span></div>
 <div class="legend-row"><span class="legend-key">AV</span><span class="legend-desc"><b>Audio and subtitle tracks</b> — picks the embedded audio and subtitle track. → <a href="#audio">Audio and subtitles</a></span></div>
 <div class="legend-row"><span aria-label="Rating icon" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11.5 3.3a.6.6 0 0 1 1 0l2.2 4.5 4.9.7c.5.1.7.7.3 1l-3.5 3.5.8 4.9c.1.5-.4.9-.9.6L12 16.3l-4.4 2.3c-.4.2-1-.1-.9-.6l.8-4.9-3.5-3.5c-.4-.3-.2-.9.3-1l4.9-.7 2.3-4.6Z"></path></svg></span><span class="legend-desc"><b>Rating</b> — score the file without leaving playback. Used by library sorting and filters.</span></div>
 <div class="legend-row"><span class="legend-key">FIT</span><span class="legend-desc"><b>Fit</b> — scales the video so all of it is visible. Black bars may appear.</span></div>
@@ -472,9 +470,7 @@
 </div>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>If you use a NAS</div>
-<p>Local and NAS catalogues are merged from cache into one deduplicated list.
-                On startup the cached contents appear first, then each folder is refreshed <strong>one after another</strong>.
-                Because folders are not read in parallel, the disk and network are not hammered all at once at launch.</p>
+<p>Local and NAS listings are combined from cached data. Saved listings appear first at startup, then folders are refreshed in sequence to reduce simultaneous disk and network activity.</p>
 </div>
 <h2 id="lib-filter">Filtering and sorting<a aria-label="Link to this section" class="anchor" href="#lib-filter">#</a></h2>
 <p>Filters are <strong>remembered</strong> and still applied next time you open the library.</p>
@@ -598,8 +594,7 @@
 <figcaption>With always-on-top switched on.</figcaption>
 </figure>
 <h2 id="pb-recovery">Resetting and recovery<a aria-label="Link to this section" class="anchor" href="#pb-recovery">#</a></h2>
-<p>If you have changed enough settings to tangle things up, <strong>Settings → Recovery</strong> puts them back.
-              A full reset also clears cached durations, stroke ranges, and the player, library, workspace, recent-media and sidebar state.</p>
+<p>If a settings change causes a problem, you can reset it in <strong>Settings → Recovery</strong>. A full reset clears saved settings, offsets, stroke ranges, cached durations and interface state. It does not delete media files. See the <a href="#settings">settings guide</a> for the reset scope.</p>
 <figure>
 <div class="shot"><video aria-label="Recovery menu demo" data-src="../assets/video/recovery.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>The Settings → Recovery menu.</figcaption>
@@ -608,9 +603,8 @@
 <!-- ============================================ 07 SCRIPTS -->
 <article class="page" data-group="Everyday use" data-title="Working with scripts" id="page-scripts">
 <h1>Working with scripts</h1>
-<p class="lede">What to reach for when a script is not detected, or is detected but out of sync, or drives the device too hard.
-              This one page covers most script problems.</p>
-<h2 id="sc-match">How a script gets found<a aria-label="Link to this section" class="anchor" href="#sc-match">#</a></h2>
+<p class="lede">Learn how to find and load scripts, adjust timing and control the movement range. Check the relevant section if a script is not matched automatically or movement differs from what you expect.</p>
+<h2 id="sc-match">Automatic script matching<a aria-label="Link to this section" class="anchor" href="#sc-match">#</a></h2>
 <p>ScriptPlayer+ looks for a matching script in this order.</p>
 <ol class="steps">
 <li>
@@ -649,9 +643,7 @@
 </figure>
 </div>
 <h2 id="sc-duration">Matching by duration<a aria-label="Link to this section" class="anchor" href="#sc-duration">#</a></h2>
-<p>Sometimes the right script has an entirely different name.
-              The <strong>duration-based search</strong> added in v0.6.0 ranks candidates by how closely the
-              script's timeline length matches the video's.</p>
+<p>Use <strong>duration-based search</strong> to find scripts with different names. Candidates are ranked by how closely their length matches the video. Similar lengths do not guarantee a match, so check content and timing after applying one.</p>
 <ul>
 <li>It considers the media folder, the configured script folder and everything the library has indexed.</li>
 <li>Results are ordered by how close the lengths are, so work down from the top.</li>
@@ -660,9 +652,8 @@
 <div class="shot"><video aria-label="Duration-based script search demo" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>Candidates ranked by closest duration.</figcaption>
 </figure>
-<h2 id="sc-offset">When the timing is off — script offset<a aria-label="Link to this section" class="anchor" href="#sc-offset">#</a></h2><p><strong>Positive (+) values advance movement; negative (-) values delay it.</strong> If movement is about 0.2 seconds late, add <code>0.2 seconds</code> to the current value. If it is about 0.2 seconds early, subtract <code>0.2 seconds</code>. The input uses seconds: <code>0.2 seconds = 200ms</code>.</p>
-<p>Use this when the motion runs slightly ahead of or behind the video.
-              Adjust it from the <code>+0ms</code> button on the playback bar.</p>
+<h2 id="sc-offset">When the timing is off — script offset<a aria-label="Link to this section" class="anchor" href="#sc-offset">#</a></h2><p>Use this when the motion runs slightly ahead of or behind the video.
+              Adjust it from the <code>+0ms</code> button on the playback bar.</p><p><strong>Positive (+) values advance movement; negative (-) values delay it.</strong> If movement is about 0.2 seconds late, add <code>0.2 seconds</code> to the current value. If it is about 0.2 seconds early, subtract <code>0.2 seconds</code>. The input uses seconds: <code>0.2 seconds = 200ms</code>.</p>
 <ul>
 <li>The range is <strong><code>-60s</code> to <code>+60s</code></strong>.</li>
 <li>You can <strong>type a value</strong> in decimal seconds, or nudge it with the fine-step buttons.</li>
@@ -675,8 +666,7 @@
 </figure>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>How to land it</div>
-<p>Seek to a moment with an obvious movement, then nudge the offset while it plays.
-                You have it when the peaks in the timeline line up with what you see on screen.</p>
+<p>Repeat a section with an easy-to-recognize action and adjust the offset in small increments. Check whether device movement matches the action on screen.</p>
 </div>
 <h2 id="sc-stroke">When the motion is too strong — stroke range<a aria-label="Link to this section" class="anchor" href="#sc-stroke">#</a></h2>
 <p><code>STR</code> on the playback bar sets how far the device actually travels.
@@ -762,7 +752,7 @@
 <!-- ============================================ 08 TIMELINE -->
 <article class="page" data-group="Everyday use" data-title="Timeline and heatmap" id="page-timeline">
 <h1>Timeline and heatmap</h1>
-<p class="lede">Two ways to see a script. The timeline shows this moment; the heatmap shows the whole file.</p>
+<p class="lede">The timeline graphs script movement around the current playback position. The heatmap summarizes movement speed across the whole script using color.</p>
 <figure>
 <div class="shot"><img alt="The multi-axis timeline" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
 <figcaption>The green band on top is the heatmap; the graph beneath is the multi-axis timeline.</figcaption>
@@ -826,8 +816,7 @@
 </figure>
 </div>
 <h2 id="au-boost">150% volume boost<a aria-label="Link to this section" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">Experimental</span></h2>
-<p>For quiet recordings, volume can go <strong>up to 150%</strong>.
-              A peak limiter runs alongside it to stop sudden spikes.</p>
+<p>For quiet recordings, you can boost volume up to 150%. A peak limiter limits the maximum output signal level. Lower playback volume before enabling the boost.</p>
 <figure>
 <div class="shot"><video aria-label="Volume boost demo" data-src="../assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>With the 150% boost switched on.</figcaption>
@@ -863,8 +852,7 @@
 <!-- ============================================ 10 VR -->
 <article class="page" data-group="Everyday use" data-title="VR and 360° video" id="page-vr">
 <h1>VR and 360° video</h1>
-<p class="lede">Open a VR180 or 360° video and it looks stretched, or splits into two images.
-              Tell it which projection to use and it renders properly. <span class="pill pill--new">v0.6.0</span></p>
+<p class="lede">VR180 or 360° video may look stretched or split in flat mode. Select the projection and source layout that match the video.</p>
 <figure>
 <div class="shot"><video aria-label="VR180 playback demo" data-src="../assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>A VR180 video in projection mode, dragging to look around.</figcaption>
@@ -891,7 +879,7 @@
 <h2 id="vr-control">Looking around<a aria-label="Link to this section" class="anchor" href="#vr-control">#</a></h2>
 <ul>
 <li><strong>Drag</strong> — pull with the mouse to turn your view.</li>
-<li><strong>Zoom</strong> — pull in or push out to change the field of view.</li>
+<li><strong>Zoom</strong> — use the mouse wheel to adjust the field of view.</li>
 </ul>
 <div class="note">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Limits worth knowing</div>
@@ -899,7 +887,7 @@
 <li>On the desktop, SBS and top-and-bottom sources show <strong>one eye at a time</strong>.</li>
 <li>Stereoscopic WebXR output to a headset is not supported.</li>
 <li>Stitching dual-fisheye 360° footage and lens-specific fisheye calibration are not included.</li>
-<li>Video a projection cannot be applied to <strong>falls back to flat playback</strong> automatically. Nothing breaks.</li>
+<li>If projection cannot be applied, playback <strong>returns to flat mode</strong>. The original split layout or distortion may then remain visible.</li>
 </ul>
 </div>
 </article>
@@ -912,7 +900,7 @@
 <ol class="steps">
 <li>
 <h3>Find your connection key</h3>
-<p>Read the Connection Key from the device's own display or from its app.</p>
+<p>Connect The Handy to Wi-Fi, then find its <strong>Connection Key</strong> in the app or web interface used to configure the device.</p>
 </li>
 <li>
 <h3>Enter it in Settings → Device</h3>
@@ -935,9 +923,7 @@
                 playback begins the moment the upload and HSSP sync complete.
                 No more waiting for sync and then reaching for play.</p>
 </div>
-<p>If the motion runs slightly early or late across the board, correct it with the <strong>time offset</strong>.
-              If only one video is out, the script is the likelier cause — use the
-              <a href="#scripts">script offset</a> instead.</p>
+<p>If movement is consistently early or late across all videos, check the device <strong>time offset</strong>. If only one script is affected, adjust its <a href="#sc-offset">script offset</a>.</p>
 <h2 id="hd-diag">Network diagnostics<a aria-label="Link to this section" class="anchor" href="#hd-diag">#</a></h2>
 <p><strong>Settings → Handy Network Diagnostics</strong> measures your connection quality directly.
               If the motion keeps stuttering or lagging, start here.</p>
@@ -946,7 +932,7 @@
 <thead><tr><th>Setting</th><th>What it means</th></tr></thead>
 <tbody>
 <tr><td class="col-key"><strong>Median latency</strong></td><td>Round-trip time under normal conditions. Lower is better.</td></tr>
-<tr><td class="col-key"><strong>P95 latency</strong></td><td>The latency of the slowest 5%. A high figure means occasional large spikes.</td></tr>
+<tr><td class="col-key"><strong>P95 latency</strong></td><td>95% of measured requests had latency at or below this value. A value much higher than the median indicates occasional large delays.</td></tr>
 <tr><td class="col-key"><strong>Jitter</strong></td><td>How much the latency varies. The higher it is, the less stable sync becomes.</td></tr>
 <tr><td class="col-key"><strong>Success rate</strong></td><td>The proportion of requests that completed properly.</td></tr>
 <tr><td class="col-key"><strong>Server clock offset</strong></td><td>The difference between your machine's clock and the server's.</td></tr>
@@ -1043,12 +1029,10 @@
               ScriptPlayer+ reconnects.</p>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Order matters</div>
-<p>Launching the other app first and then trying to attach ScriptPlayer+ will fail.
-                <strong>Release the connection from ScriptPlayer+ first</strong>, then connect the other app.</p>
+<p>ScriptPlayer+ may be unable to connect while another app is connected to the built-in engine. <strong>Disconnect the app currently in control</strong>, then connect the app you want to use.</p>
 </div>
 <h2 id="if-watchdog">Per-device watchdogs<a aria-label="Link to this section" class="anchor" href="#if-watchdog">#</a></h2>
-<p>With several devices connected, one that went slow or kept failing used to drag the others down with it.
-              Since v0.6.0 <strong>each device has its own watchdog</strong>, so one bad device cannot hold up output to the rest.</p>
+<p>Each device has its own <strong>watchdog</strong> to monitor delayed responses and errors. This helps prevent a problem with one device from blocking output to others.</p>
 <h2 id="if-limits">What the Windows built-in engine covers<a aria-label="Link to this section" class="anchor" href="#if-limits">#</a></h2>
 <p>The Windows built-in engine handles these connections.</p>
 <ul>
@@ -1078,8 +1062,7 @@
 </ol>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>If the port briefly disappears</div>
-<p>Even if the scan comes back empty at startup, <strong>your saved COM path is kept</strong>.
-                Plugging the device in late does not wipe the setting.</p>
+<p>The <strong>saved port path is retained</strong> even if the initial scan finds nothing. Connecting the device later does not erase the port setting.</p>
 </div>
 <h2 id="fo-tune">Tuning the output<a aria-label="Link to this section" class="anchor" href="#fo-tune">#</a></h2>
 <p>Adjust these in <strong>Settings → Device</strong>.</p>
@@ -1133,8 +1116,8 @@
 <p>Resuming after a delayed serial write could make the device lurch as it caught up all at once.
               v0.5.1 and v0.6.0 hardened this.</p>
 <ul>
-<li>The resume transition now definitely completes once the configured <strong>start safety</strong> time has passed.</li>
-<li>Catch-up progress is <strong>capped</strong>, so no large jump occurs.</li>
+<li>The resume transition completes according to the configured <strong>playback start safety time</strong>.</li>
+<li>The amount of catch-up motion is <strong>limited</strong> to reduce sudden large movements after a delay.</li>
 <li>Getting stuck in the safety transition and never returning to the live script is fixed.</li>
 </ul>
 </article>
@@ -1162,8 +1145,7 @@
 <p>Type the <strong>six-digit pairing code</strong> shown on the remote and press <strong>Pair</strong>.</p>
 </li>
 </ol>
-<p>Once paired, it reports status, firmware, battery and token.
-              A remote you have paired once <strong>reconnects automatically</strong> thereafter.</p>
+<p>After pairing, you can check connection status, firmware and battery information reported by the device, and whether pairing information is saved. The app attempts to reconnect when a previously connected remote becomes available again.</p>
 <h2 id="rm-buttons">Button mapping<a aria-label="Link to this section" class="anchor" href="#rm-buttons">#</a></h2>
 <p>Each of the three buttons A, B and C can be given separate <strong>click, double-click and hold</strong> actions.
               The defaults are:</p>
@@ -1184,7 +1166,7 @@
 <h2 id="rm-apps">App and firmware<a aria-label="Link to this section" class="anchor" href="#rm-apps">#</a></h2>
 <ul>
 <li><strong>Get Android app</strong> — takes you to the app that turns a phone into the remote.</li>
-<li><strong>Open flasher</strong> — opens the tool for flashing the remote's firmware.</li>
+<li><strong>Open flasher</strong> — opens the tool for installing firmware on a dedicated remote.</li>
 </ul>
 </article>
 <!-- ============================================ 15 SAFETY -->
@@ -1208,15 +1190,14 @@
               You can turn it off under <strong>Show E-Stop button</strong> in <strong>Settings → Device</strong>.</p>
 <div class="note note--danger">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>Before you hide it</div>
-<p>Even hidden, <strong>the stop control in the Intiface manager remains</strong>.
-                But reaching it means changing screens first. Make sure you know where it is before hiding the button.</p>
+<p>The <strong>stop control in Intiface Device Manager</strong> remains available even if the button is hidden. It applies to Intiface devices and differs in scope from the global emergency stop. For other connection types, check how to stop the device before hiding the button.</p>
 </div>
 <figure>
 <div class="shot"><img alt="Show E-Stop button in Settings → Device" loading="lazy" src="../assets/img/settings-device-stroke.webp"/></div>
 <figcaption><strong>Show E-Stop button</strong> sits at the top of Settings → Device.</figcaption>
 </figure>
 <h2 id="sf-limits">Limits to set in advance<a aria-label="Link to this section" class="anchor" href="#sf-limits">#</a></h2>
-<p>The best way to avoid a problem is to make sure it never moves hard in the first place.</p>
+<p>When using a device or script for the first time, start with a reduced movement range and speed and check how the device responds.</p>
 <dl class="deflist">
 <div>
 <dt>Stroke range</dt>
@@ -1228,7 +1209,7 @@
 </div>
 <div>
 <dt>Playback Start Safety</dt>
-<dd>Instead of going full speed the instant playback starts, it eases to the script position over the time you set.</dd>
+<dd>FunOSR / SR devices move to the script starting position over the specified time before normal output begins. Set it to 0 to disable this transition.</dd>
 </div>
 <div>
 <dt>Centre-preserving range</dt>
@@ -1247,15 +1228,14 @@
 <ul>
 <li>The first time you play a new script, keep the <strong>range narrow</strong> and see what the motion is like.</li>
 <li>Check the heatmap for the <strong>red passages</strong> ahead of time. → <a href="#timeline">Timeline and heatmap</a></li>
-<li>Let your hand learn where the E-Stop button is.</li>
+<li>Before playback, locate the E-Stop button and check how to use it.</li>
 <li>Never leave a device running unattended.</li>
 </ul>
 </article>
 <!-- ============================================ 16 EXTERNAL -->
 <article class="page" data-group="Extras" data-title="External player" id="page-external">
 <h1>External player</h1>
-<p class="lede">Opens a file that will not play well inside ScriptPlayer+ in a player you already use,
-              while keeping device output running. <span class="pill pill--exp">Experimental</span></p>
+<p class="lede">Open media in another player. <strong>mpv and VLC</strong> can be controlled from ScriptPlayer+. Check the support table below before using an external player with synchronized device output. <span class="pill pill--exp">Experimental</span></p>
 <h2 id="ex-support">Supported players<a aria-label="Link to this section" class="anchor" href="#ex-support">#</a></h2>
 <ul>
 <li>JAVPlayer</li>
@@ -1294,7 +1274,7 @@
 <figcaption>Opening a video it cannot play produces this notice.</figcaption>
 </figure>
 <h2 id="ff-install">How to supply it<a aria-label="Link to this section" class="anchor" href="#ff-install">#</a></h2>
-<p>ScriptPlayer+ looks for FFmpeg in this order. Any one of them is enough.</p>
+<p>Use one of the methods below to make FFmpeg available. If an existing installation is not detected, select its executable in settings.</p>
 <ol class="steps">
 <li>
 <h3>Install from Settings <span class="pill">easiest</span></h3>
@@ -1321,8 +1301,7 @@
                 When FFmpeg is found, its version and path show in green, and <strong>Test connection</strong> verifies it.</figcaption>
 </figure>
 <h2 id="ff-mode">Choosing a compatibility mode<a aria-label="Link to this section" class="anchor" href="#ff-mode">#</a></h2>
-<p><strong>Video Compatibility Mode</strong> in <strong>Settings → Playback</strong> sets how far it intervenes.
-              Pick by symptom.</p>
+<p>Choose what FFmpeg processes in <strong>Settings → Playback → Video Compatibility Mode</strong>. Select a mode based on the symptoms below.</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Symptom</th><th>Choose</th></tr></thead>
@@ -1342,7 +1321,7 @@
 <figcaption>Compatibility playback at work.</figcaption>
 </figure>
 <div class="note">
-<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Why it is not bundled</div>
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Separate FFmpeg installation</div>
 <p>ScriptPlayer+ release packages contain no FFmpeg executable and no FFmpeg source.
                 Compatibility playback, thumbnail fallback and motion analysis <strong>use only an external executable</strong>.</p>
 </div>
@@ -1357,8 +1336,7 @@
               It carries information about where to look for scripts. It contains no executable code.</p>
 <div class="note note--tip">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>No code is executed</div>
-<p>ScriptPlayer+ never runs plugin code inside the app.
-                Because it only reads a data-only manifest, a plugin cannot take the app somewhere you did not ask for.</p>
+<p>ScriptPlayer+ reads a data manifest rather than executing plugin code. Check the permissions and publisher information shown during installation.</p>
 </div>
 <h2 id="pl-install">Installing and managing<a aria-label="Link to this section" class="anchor" href="#pl-install">#</a></h2>
 <p>Managed from the <strong>Plugins</strong> icon on the left rail.
@@ -1378,8 +1356,7 @@
 <!-- ============================================ 19 SHORTCUTS -->
 <article class="page" data-group="Reference" data-title="Keyboard shortcuts" id="page-shortcuts">
 <h1>Keyboard shortcuts</h1>
-<p class="lede">The default shortcuts, and how to rebind them.
-              Every action can be reassigned in <strong>Settings → Keyboard Shortcuts</strong>.</p>
+<p class="lede">This page lists default shortcuts and explains how to change them. Actions that support shortcuts can be reassigned in <strong>Settings → Keyboard shortcuts</strong>.</p>
 <h2 id="ks-default">Defaults<a aria-label="Link to this section" class="anchor" href="#ks-default">#</a></h2>
 <div class="table-wrap">
 <table>
@@ -1515,7 +1492,7 @@
               and the player, library, workspace, recent-media and sidebar state go with it.</p>
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Careful</div>
-<p>A reset also discards the per-media offsets and stroke ranges you tuned. Your actual files are not touched.</p>
+<p>Resetting also deletes saved script- and media-specific offsets and stroke ranges. Media files themselves are not deleted.</p>
 </div>
 </article>
 <!-- ============================================ 21 FORMATS -->
@@ -1574,8 +1551,7 @@
 ├─ Title B.mp4
 ├─ Title B.L0.funscript       ← multi-axis: linear
 └─ Title B.R0.funscript       ← multi-axis: rotation</code></pre>
-<p>Even with different names, you can connect them via <a href="#scripts">duration matching</a>
-              or the <a href="#scripts">Script Variants panel</a>.</p>
+<p>If names differ, check candidates using <a href="#sc-duration">duration-based search</a> or the <a href="#sc-variants">Script Variants panel</a>. After selecting a script, check that its movement matches the video.</p>
 </article>
 <!-- ============================================ 22 TROUBLESHOOTING -->
 <article class="page" data-group="Reference" data-title="Troubleshooting" id="page-troubleshooting">
@@ -1600,11 +1576,9 @@
 <li>If that still fails, open it in an <a href="#external">external player</a>.</li>
 </ol>
 <h3 id="ts-vrsplit">My VR video shows as two images</h3>
-<p>It is a side-by-side (SBS) source being played flat.
-              Set the projection to <strong>VR180 equirectangular</strong> and the source layout to <strong>side-by-side</strong>. → <a href="#vr">VR and 360° video</a></p>
+<p>An SBS or top-and-bottom video may be displayed in flat mode. Choose the <strong>source layout</strong> and projection that match the video. Not every split video is VR180. → <a href="#vr">VR and 360° video</a></p>
 <h3 id="ts-nothumb">Thumbnails are not being generated</h3>
-<p>Chromium cannot decode that video.
-              With <a href="#ffmpeg">FFmpeg</a> available, thumbnails are built by the fallback route instead.</p>
+<p>Check that FFmpeg is detected and try regenerating the thumbnail. If Chromium cannot decode the video, FFmpeg may be needed as a fallback. → <a href="#ffmpeg">FFmpeg compatibility playback</a></p>
 <h2 id="ts-scripts">Scripts<a aria-label="Link to this section" class="anchor" href="#ts-scripts">#</a></h2>
 <h3 id="ts-noscript">My script is not detected</h3>
 <ol>
@@ -1628,7 +1602,7 @@
 </ol>
 <h3 id="ts-stutter">The motion stutters or lags</h3>
 <ul>
-<li><strong>The Handy</strong> — run the <a href="#handy">network diagnostics</a> and look at latency and jitter. If they are poor, try a wired connection or a different network.</li>
+<li><strong>The Handy</strong> — check latency and jitter with <a href="#hd-diag">network diagnostics</a>. Check the PC network connection and Handy Wi-Fi signal, reduce other network activity such as downloads, then measure again.</li>
 <li><strong>FunOSR</strong> — lower the update rate. Set too high, it becomes less stable, not more.</li>
 <li><strong>Intiface</strong> — if you have several devices, test with just one connected.</li>
 </ul>
@@ -1639,12 +1613,10 @@
 <p>The built-in Intiface engine accepts <strong>one client only</strong>.
               Hand ownership over with the <strong>handoff</strong> control in the Intiface manager. → <a href="#intiface">Intiface / Buttplug</a></p>
 <h2 id="ts-reset">If none of that helps<a aria-label="Link to this section" class="anchor" href="#ts-reset">#</a></h2>
-<ol>
-<li>Try a reset from <strong>Settings → Recovery</strong>. → <a href="#playback">Playback</a></li>
-<li>Check you are on the latest version. → <a href="#install">Install</a></li>
+<ol><li>Check you are on the latest version. → <a href="#install">Install</a></li>
 <li>Ask on <a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>.
                 For a device problem, <a href="#handy">copy the diagnostics</a> and include them — it speeds things up a lot.</li>
-</ol>
+<li>If the earlier steps do not help, consider a reset in <strong>Settings → Recovery</strong>. Saved settings, offsets and stroke ranges will be deleted, so first check the <a href="#settings">reset scope</a>.</li></ol>
 </article>
 <!-- ============================================ 23 RELEASES -->
 <article class="page" data-group="Reference" data-title="Release history" id="page-releases">
@@ -1722,9 +1694,7 @@
 <p>Packages carry the EULA and consolidated third-party notices outside the application archive,
               and the Windows installer presents the EULA before installing.</p>
 <h2 id="ab-source">Source availability<a aria-label="Link to this section" class="anchor" href="#ab-source">#</a></h2>
-<p>ScriptPlayer+ ships as signed or packaged desktop binaries.
-              The public repository is used for <strong>releases, update metadata, documentation and issue tracking</strong>;
-              the full application source is not publicly distributed.</p>
+<p>ScriptPlayer+ is distributed as platform-specific installers and application packages. The public repository hosts <strong>releases, update information, documentation and issues</strong>; the full application source is not public.</p>
 <h2 id="ab-links">Links<a aria-label="Link to this section" class="anchor" href="#ab-links">#</a></h2>
 <div class="jump">
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank"><span class="num">↓</span><span><b>Download the latest version</b><span class="d">Windows · macOS · Linux packages</span></span></a>
