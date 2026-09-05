@@ -1,0 +1,17 @@
+{
+  "ScriptPlayer+는 컴퓨터에 저장된 영상·음원을 펀스크립트와 함께 재생하고, 스크립트에 맞춰 The Handy·Intiface·FunOSR 장치를 제어하는 데스크톱 플레이어입니다. 이 설명서에서 설치 방법부터 기본 사용법, 장치 연결과 문제 해결까지 알아보세요.": "ScriptPlayer+是一款桌面播放器，可将电脑中保存的视频、音频与funscript脚本一起播放，并按照脚本控制The Handy、Intiface和FunOSR设备。本指南介绍安装、基本操作、设备连接和故障排除。",
+  "파일 목록과 재생 화면, 스크립트 타임라인을 한눈에 확인할 수 있습니다.": "文件列表、播放画面和脚本时间轴一目了然。",
+  "처음이라면 설치 방법과 기본 사용법부터 살펴보세요. 사용 중 막히는 부분은 문제 해결에서 확인할 수 있습니다.": "初次使用，请先了解安装方法和基本操作。遇到问题时，可查阅故障排除指南。",
+  "<span class=\"num\">02</span><span><b>설치하기</b><span class=\"d\">운영체제에 맞는 설치 방법과 첫 실행 시 보안 경고 대처법</span></span>": "<span class=\"num\">02</span><span><b>安装</b><span class=\"d\">各操作系统的安装方法及首次启动时的安全警告处理</span></span>",
+  "<span class=\"num\">03</span><span><b>5분 만에 시작하기</b><span class=\"d\">폴더를 열고 스크립트와 장치를 연결하는 다섯 단계</span></span>": "<span class=\"num\">03</span><span><b>5分钟上手</b><span class=\"d\">打开文件夹、加载脚本并连接设备的五个步骤</span></span>",
+  "<span class=\"num\">04</span><span><b>화면 둘러보기</b><span class=\"d\">화면 구성과 주요 버튼의 기능</span></span>": "<span class=\"num\">04</span><span><b>界面导览</b><span class=\"d\">界面布局和主要按钮的功能</span></span>",
+  "<span class=\"num\">22</span><span><b>문제 해결</b><span class=\"d\">영상 재생이나 장치 연결에 문제가 있을 때 확인할 내용</span></span>": "<span class=\"num\">22</span><span><b>疑难解答</b><span class=\"d\">视频播放或设备连接出现问题时的排查方法</span></span>",
+  "MP4·MKV·MP3 등 다양한 영상과 음원을 재생하고, 함께 저장된 자막과 커버 아트를 불러옵니다.": "播放MP4、MKV、MP3等格式的视频和音频，并加载一同保存的字幕和封面。",
+  "타임라인에서 여러 축의 움직임을 함께 확인하고, 히트맵에서 스크립트의 움직임 강도를 색으로 살펴볼 수 있습니다.": "在时间轴中查看多个轴的动作，并通过热力图的颜色了解脚本的动作强度。",
+  "The Handy·Intiface / Buttplug·FunOSR 연결을 설정하고, 스크립트에 맞춰 장치를 움직일 수 있습니다.": "设置The Handy、Intiface / Buttplug或FunOSR连接，让设备按照脚本运行。",
+  "여러 폴더에 이름을 붙여 등록하고, 별점·재생 시간·스크립트 유무로 원하는 파일을 찾을 수 있습니다.": "为多个文件夹命名并添加到媒体库，按评分、时长或是否有脚本查找文件。",
+  "필요한 도움 찾기<a aria-label=\"이 항목 링크\" class=\"anchor\" href=\"#home-map\">#</a>": "查找帮助<a aria-label=\"本节链接\" class=\"anchor\" href=\"#home-map\">#</a>",
+  "<a class=\"nav-link\" href=\"#quickstart\"><span class=\"n\">03</span>빠르게 시작하기</a>": "<a class=\"nav-link\" href=\"#quickstart\"><span class=\"n\">03</span>快速入门</a>",
+  "빠르게 시작하기": "快速入门",
+  "<span class=\"num\">03</span><span><b>빠르게 시작하기</b><span class=\"d\">폴더를 열고 스크립트와 장치를 연결하는 다섯 단계</span></span>": "<span class=\"num\">03</span><span><b>快速入门</b><span class=\"d\">打开文件夹、加载脚本并连接设备的五个步骤</span></span>"
+}

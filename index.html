@@ -108,7 +108,7 @@
             <ul>
               <li><a class="nav-link" href="#home"><span class="n">01</span>홈</a></li>
               <li><a class="nav-link" href="#install"><span class="n">02</span>설치하기</a></li>
-              <li><a class="nav-link" href="#quickstart"><span class="n">03</span>5분 만에 시작하기</a></li>
+              <li><a class="nav-link" href="#quickstart"><span class="n">03</span>빠르게 시작하기</a></li>
               <li><a class="nav-link" href="#interface"><span class="n">04</span>화면 둘러보기</a></li>
             </ul>
           </div>
@@ -163,74 +163,66 @@
       <div class="main-col">
         <main class="content" id="main">
           <!-- ============================================ 01 HOME -->
-          <article class="page" id="page-home" data-title="홈" data-group="시작하기">
-            <div class="hero">
-              <h1>ScriptPlayer+ 사용 설명서</h1>
-              <p class="hero-lede">
-                내 컴퓨터에 있는 영상·음원과 펀스크립트를 함께 재생하고,
-                The&nbsp;Handy·Intiface·FunOSR 장치로 내보내는 데스크톱 플레이어입니다.
-                설치부터 장치 연결까지 순서대로 정리했습니다.
-              </p>
-              <div class="hero-cta">
-                <a class="btn btn--primary" href="#quickstart">5분 만에 시작하기</a>
-                <a class="btn" href="#install">설치 방법 보기</a>
-              </div>
-              <p class="hero-meta">Windows · macOS · Linux · 이 문서는 v0.6 계열을 기준으로 작성되었습니다.</p>
-            </div>
-
-            <figure>
-              <div class="shot">
-                <video data-src="assets/video/match-duration.mp4" muted loop playsinline preload="none" aria-label="ScriptPlayer+ 전체 화면 미리보기"></video>
-              </div>
-              <figcaption>플레이어 · 사이드바 · 타임라인이 한 화면에서 이어지는 기본 작업 흐름입니다.</figcaption>
-            </figure>
-
-            <h2 id="home-first">처음 오셨나요<a class="anchor" href="#home-first" aria-label="이 항목 링크">#</a></h2>
-            <p>이 세 문서만 순서대로 읽으면 바로 쓸 수 있습니다.</p>
-            <div class="jump">
-              <a href="#install"><span class="num">02</span><span><b>설치하기</b><span class="d">운영체제별 설치 방법과 처음 실행할 때 나오는 보안 경고 해결</span></span></a>
-              <a href="#quickstart"><span class="num">03</span><span><b>5분 만에 시작하기</b><span class="d">폴더 열기 → 스크립트 매칭 → 장치 연결까지 다섯 단계</span></span></a>
-              <a href="#interface"><span class="num">04</span><span><b>화면 둘러보기</b><span class="d">왼쪽 레일, 사이드바, 재생바 버튼이 각각 무슨 뜻인지</span></span></a>
-              <a href="#troubleshooting"><span class="num">22</span><span><b>문제 해결</b><span class="d">영상이 안 열릴 때, 장치가 안 움직일 때 먼저 볼 곳</span></span></a>
-            </div>
-
-            <h2 id="home-what">ScriptPlayer+로 할 수 있는 일<a class="anchor" href="#home-what" aria-label="이 항목 링크">#</a></h2>
-            <dl class="deflist">
-              <div>
-                <dt>영상·음원 재생</dt>
-                <dd>MP4·MKV·MP3 등 흔한 형식을 그대로 열고, 자막과 커버 아트까지 자동으로 찾아 붙입니다.</dd>
-              </div>
-              <div>
-                <dt>스크립트 시각화</dt>
-                <dd>여러 축을 동시에 보여 주는 타임라인과, 영상 전체의 강약을 색으로 보여 주는 히트맵을 제공합니다.</dd>
-              </div>
-              <div>
-                <dt>장치 연결</dt>
-                <dd>The Handy, Intiface / Buttplug 장치, FunOSR 시리얼 출력을 앱 하나에서 설정하고 내보냅니다.</dd>
-              </div>
-              <div>
-                <dt>라이브러리 정리</dt>
-                <dd>여러 폴더를 이름 붙여 등록하고, 별점·재생 시간·스크립트 유무로 걸러 볼 수 있습니다.</dd>
-              </div>
-            </dl>
-
-            <h2 id="home-map">문서 지도<a class="anchor" href="#home-map" aria-label="이 항목 링크">#</a></h2>
-            <p>필요한 곳부터 골라 읽어도 됩니다. 위쪽 검색창(<kbd>Ctrl</kbd>&nbsp;<kbd>K</kbd>)에서 바로 찾을 수도 있습니다.</p>
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th>이런 게 궁금하다면</th><th>이 문서로</th></tr></thead>
-                <tbody>
-                  <tr><td>설치했는데 “확인되지 않은 앱” 경고가 떠요</td><td><a href="#install">설치하기</a></td></tr>
-                  <tr><td>재생바의 <code>STR</code>, <code>AB</code>, <code>FIT</code> 이 뭔가요</td><td><a href="#interface">화면 둘러보기</a></td></tr>
-                  <tr><td>스크립트가 자동으로 안 잡혀요</td><td><a href="#scripts">스크립트 다루기</a></td></tr>
-                  <tr><td>영상과 움직임 타이밍이 안 맞아요</td><td><a href="#scripts">스크립트 다루기</a></td></tr>
-                  <tr><td>VR 영상이 두 개로 갈라져 보여요</td><td><a href="#vr">VR · 360 영상</a></td></tr>
-                  <tr><td>장치를 즉시 멈추고 싶어요</td><td><a href="#safety">안전과 비상 정지</a></td></tr>
-                  <tr><td>단축키를 바꾸고 싶어요</td><td><a href="#shortcuts">키보드 단축키</a></td></tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
+          <article class="page" data-group="시작하기" data-title="홈" id="page-home">
+<div class="hero">
+<h1>ScriptPlayer+ 사용 설명서</h1>
+<p class="hero-lede">ScriptPlayer+는 컴퓨터에 저장된 영상·음원을 펀스크립트와 함께 재생하고, 스크립트에 맞춰 The Handy·Intiface·FunOSR 장치를 제어하는 데스크톱 플레이어입니다. 이 설명서에서 설치 방법부터 기본 사용법, 장치 연결과 문제 해결까지 알아보세요.</p>
+<div class="hero-cta">
+<a class="btn btn--primary" href="#quickstart">빠르게 시작하기</a>
+<a class="btn" href="#install">설치 방법 보기</a>
+</div>
+<p class="hero-meta">Windows · macOS · Linux · 이 문서는 v0.6 계열을 기준으로 작성되었습니다.</p>
+</div>
+<figure>
+<div class="shot">
+<video aria-label="ScriptPlayer+ 전체 화면 미리보기" data-src="assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>파일 목록과 재생 화면, 스크립트 타임라인을 한눈에 확인할 수 있습니다.</figcaption>
+</figure>
+<h2 id="home-first">처음 오셨나요<a aria-label="이 항목 링크" class="anchor" href="#home-first">#</a></h2>
+<p>처음이라면 설치 방법과 기본 사용법부터 살펴보세요. 사용 중 막히는 부분은 문제 해결에서 확인할 수 있습니다.</p>
+<div class="jump">
+<a href="#install"><span class="num">02</span><span><b>설치하기</b><span class="d">운영체제에 맞는 설치 방법과 첫 실행 시 보안 경고 대처법</span></span></a>
+<a href="#quickstart"><span class="num">03</span><span><b>빠르게 시작하기</b><span class="d">폴더를 열고 스크립트와 장치를 연결하는 다섯 단계</span></span></a>
+<a href="#interface"><span class="num">04</span><span><b>화면 둘러보기</b><span class="d">화면 구성과 주요 버튼의 기능</span></span></a>
+<a href="#troubleshooting"><span class="num">22</span><span><b>문제 해결</b><span class="d">영상 재생이나 장치 연결에 문제가 있을 때 확인할 내용</span></span></a>
+</div>
+<h2 id="home-what">ScriptPlayer+로 할 수 있는 일<a aria-label="이 항목 링크" class="anchor" href="#home-what">#</a></h2>
+<dl class="deflist">
+<div>
+<dt>영상·음원 재생</dt>
+<dd>MP4·MKV·MP3 등 다양한 영상과 음원을 재생하고, 함께 저장된 자막과 커버 아트를 불러옵니다.</dd>
+</div>
+<div>
+<dt>스크립트 시각화</dt>
+<dd>타임라인에서 여러 축의 움직임을 함께 확인하고, 히트맵에서 스크립트의 움직임 강도를 색으로 살펴볼 수 있습니다.</dd>
+</div>
+<div>
+<dt>장치 연결</dt>
+<dd>The Handy·Intiface / Buttplug·FunOSR 연결을 설정하고, 스크립트에 맞춰 장치를 움직일 수 있습니다.</dd>
+</div>
+<div>
+<dt>라이브러리 정리</dt>
+<dd>여러 폴더에 이름을 붙여 등록하고, 별점·재생 시간·스크립트 유무로 원하는 파일을 찾을 수 있습니다.</dd>
+</div>
+</dl>
+<h2 id="home-map">필요한 도움 찾기<a aria-label="이 항목 링크" class="anchor" href="#home-map">#</a></h2>
+<p>필요한 곳부터 골라 읽어도 됩니다. 위쪽 검색창(<kbd>Ctrl</kbd> <kbd>K</kbd>)에서 바로 찾을 수도 있습니다.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>이런 게 궁금하다면</th><th>이 문서로</th></tr></thead>
+<tbody>
+<tr><td>설치했는데 “확인되지 않은 앱” 경고가 떠요</td><td><a href="#install">설치하기</a></td></tr>
+<tr><td>재생바의 <code>STR</code>, <code>AB</code>, <code>FIT</code> 이 뭔가요</td><td><a href="#interface">화면 둘러보기</a></td></tr>
+<tr><td>스크립트가 자동으로 안 잡혀요</td><td><a href="#scripts">스크립트 다루기</a></td></tr>
+<tr><td>영상과 움직임 타이밍이 안 맞아요</td><td><a href="#scripts">스크립트 다루기</a></td></tr>
+<tr><td>VR 영상이 두 개로 갈라져 보여요</td><td><a href="#vr">VR · 360 영상</a></td></tr>
+<tr><td>장치를 즉시 멈추고 싶어요</td><td><a href="#safety">안전과 비상 정지</a></td></tr>
+<tr><td>단축키를 바꾸고 싶어요</td><td><a href="#shortcuts">키보드 단축키</a></td></tr>
+</tbody>
+</table>
+</div>
+</article>
 
           <!-- ============================================ 02 INSTALL -->
           <article class="page" id="page-install" data-title="설치하기" data-group="시작하기">
@@ -366,8 +358,8 @@
           </article>
 
           <!-- ============================================ 03 QUICKSTART -->
-          <article class="page" id="page-quickstart" data-title="5분 만에 시작하기" data-group="시작하기">
-            <h1>5분 만에 시작하기</h1>
+          <article class="page" id="page-quickstart" data-title="빠르게 시작하기" data-group="시작하기">
+            <h1>빠르게 시작하기</h1>
             <p class="lede">
               설치를 끝냈다면 여기서부터입니다. 다섯 단계만 따라 하면 영상이 재생되고, 스크립트가 붙고, 장치가 움직입니다.
             </p>
