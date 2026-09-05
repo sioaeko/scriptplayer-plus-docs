@@ -1,0 +1,114 @@
+«ko»
+본문으로 건너뛰기
+«t»
+Skip to content
+«ko»
+<svg aria-hidden="true" height="15" width="15"><use href="#i-search"></use></svg>
+<span>문서 검색…</span>
+<span class="kbd-hint">Ctrl K</span>
+«t»
+<svg aria-hidden="true" height="15" width="15"><use href="#i-search"></use></svg>
+<span>Search the docs…</span>
+<span class="kbd-hint">Ctrl K</span>
+«ko»
+<svg aria-hidden="true" height="14" width="14"><use href="#i-download"></use></svg>
+          다운로드
+«t»
+<svg aria-hidden="true" height="14" width="14"><use href="#i-download"></use></svg>
+          Download
+«ko»
+설치 방법 보기
+«t»
+How to install
+«ko»
+<span class="num">02</span><span><b>설치하기</b><span class="d">운영체제별 설치 방법과 처음 실행할 때 나오는 보안 경고 해결</span></span>
+«t»
+<span class="num">02</span><span><b>Install</b><span class="d">Per-platform setup, and getting past the security warning on first launch</span></span>
+«ko»
+<span class="num">03</span><span><b>5분 만에 시작하기</b><span class="d">폴더 열기 → 스크립트 매칭 → 장치 연결까지 다섯 단계</span></span>
+«t»
+<span class="num">03</span><span><b>Start in 5 minutes</b><span class="d">Five steps: open a folder, match a script, connect a device</span></span>
+«ko»
+<span class="num">04</span><span><b>화면 둘러보기</b><span class="d">왼쪽 레일, 사이드바, 재생바 버튼이 각각 무슨 뜻인지</span></span>
+«t»
+<span class="num">04</span><span><b>Tour of the window</b><span class="d">What the left rail, the sidebar and every playback-bar button mean</span></span>
+«ko»
+<span class="num">22</span><span><b>문제 해결</b><span class="d">영상이 안 열릴 때, 장치가 안 움직일 때 먼저 볼 곳</span></span>
+«t»
+<span class="num">22</span><span><b>Troubleshooting</b><span class="d">Where to look first when a video will not open or a device will not move</span></span>
+«ko»
+GitHub Releases 최신 페이지
+«t»
+latest GitHub release page
+«ko»
+스크립트 오프셋
+«t»
+script offset
+«ko»
+FunOSR 공급자
+«t»
+FunOSR provider
+«ko»
+모바일 리모트
+«t»
+Mobile remote
+«ko»
+<code>내 영상 폴더/
+├─ 작품A.mp4
+├─ 작품A.funscript          ← 자동으로 잡힙니다
+├─ 작품A.srt                ← 자막도 자동으로 잡힙니다
+├─ 작품B.mp4
+├─ 작품B.L0.funscript       ← 다축: 선형 축
+└─ 작품B.R0.funscript       ← 다축: 회전 축</code>
+«t»
+<code>My video folder/
+├─ Title A.mp4
+├─ Title A.funscript          ← picked up automatically
+├─ Title A.srt                ← subtitles picked up too
+├─ Title B.mp4
+├─ Title B.L0.funscript       ← multi-axis: linear
+└─ Title B.R0.funscript       ← multi-axis: rotation</code>
+«ko»
+재생 시간으로 찾기
+«t»
+duration matching
+«ko»
+라이브 축 테스트
+«t»
+live axis test
+«ko»
+네트워크 진단
+«t»
+network diagnostics
+«ko»
+진단 정보를 복사해
+«t»
+copy the diagnostics
+«ko»
+<span class="num">↓</span><span><b>최신 버전 내려받기</b><span class="d">Windows · macOS · Linux 패키지</span></span>
+«t»
+<span class="num">↓</span><span><b>Download the latest version</b><span class="d">Windows · macOS · Linux packages</span></span>
+«ko»
+<span class="num">?</span><span><b>GitHub Issues</b><span class="d">버그 신고와 기능 제안</span></span>
+«t»
+<span class="num">?</span><span><b>GitHub Issues</b><span class="d">Bug reports and feature requests</span></span>
+«ko»
+<span class="num">◇</span><span><b>GitHub 저장소</b><span class="d">릴리스와 문서</span></span>
+«t»
+<span class="num">◇</span><span><b>GitHub repository</b><span class="d">Releases and documentation</span></span>
+«ko»
+<span class="num">♥</span><span><b>Patreon</b><span class="d">개발 소식과 후원</span></span>
+«t»
+<span class="num">♥</span><span><b>Patreon</b><span class="d">Development news and support</span></span>
+«ko»
+릴리스
+«t»
+Releases
+«ko»
+라이선스
+«t»
+License
+«ko»
+홈
+«t»
+Home

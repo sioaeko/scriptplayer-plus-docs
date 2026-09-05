@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ScriptPlayer+ Documentation</title>
+<meta content="The official ScriptPlayer+ guide. Installation, library, scripts, timeline and connecting The Handy, Intiface and FunOSR devices, written so a first-time user can follow along." name="description"/>
+<meta content="ScriptPlayer+ Documentation" property="og:title"/>
+<meta content="From installing to connecting a device — the easy ScriptPlayer+ guide and reference." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="dark" name="color-scheme"/>
+<meta content="#0a0c11" name="theme-color"/>
+<link href="../assets/img/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/img/icon.png" rel="alternate icon" type="image/png"/>
+<link href="../assets/img/icon-180.png" rel="apple-touch-icon"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet"/>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div aria-hidden="true" class="page-bg"></div>
+<!-- Icon set: Disarto Icons (MIT, (c) Disarto) — https://github.com/Disarto/disarto-icons
+         Inlined as <symbol> so same-document <use> works over file:// as well as http. -->
+<svg aria-hidden="true" class="icon-sprite" focusable="false">
+<symbol id="i-search" viewbox="0 0 24 24"><path d="m21.53 20.47-4.693-4.694a8.26 8.26 0 1 0-1.06 1.06l4.693 4.695a.75.75 0 1 0 1.06-1.062M3.75 10.5a6.75 6.75 0 1 1 6.75 6.75 6.76 6.76 0 0 1-6.75-6.75" fill="currentColor"></path></symbol>
+<symbol id="i-download" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M3 12.25a.75.75 0 0 1 .75.75v5c0 .69.56 1.25 1.25 1.25h14c.69 0 1.25-.56 1.25-1.25v-5a.75.75 0 0 1 1.5 0v5A2.75 2.75 0 0 1 19 20.75H5A2.75 2.75 0 0 1 2.25 18v-5a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M12 3.25a.75.75 0 0 1 .75.75v8.068l2.697-2.95a.75.75 0 1 1 1.107 1.013l-4 4.375a.75.75 0 0 1-1.107 0l-4-4.375A.75.75 0 0 1 8.553 9.12l2.696 2.95V4a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-menu" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M2.25 12a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75M2.25 6A.75.75 0 0 1 3 5.25h18a.75.75 0 0 1 0 1.5H3A.75.75 0 0 1 2.25 6M2.25 18a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-close" viewbox="0 0 24 24"><path d="M18.187 17.127a.75.75 0 0 1-1.06 1.06L12 13.061l-5.126 5.126a.75.75 0 1 1-1.061-1.06L10.939 12 5.812 6.873a.75.75 0 0 1 1.061-1.06L12 10.94l5.127-5.127a.75.75 0 0 1 1.06 1.06L13.06 12z" fill="currentColor"></path></symbol>
+<symbol id="i-arrow-up" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 3.25a.75.75 0 0 1 .53.22l7 7a.75.75 0 1 1-1.06 1.06l-5.72-5.72V20a.75.75 0 0 1-1.5 0V5.81l-5.72 5.72a.75.75 0 0 1-1.06-1.06l7-7a.75.75 0 0 1 .53-.22" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-gear" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M15.428 3.298a.25.25 0 0 0-.263.008l-2.532 1.672a1.15 1.15 0 0 1-1.267 0L8.834 3.307a.25.25 0 0 0-.262-.008L6.178 4.68a.25.25 0 0 0-.125.231l.182 3.028a1.15 1.15 0 0 1-.633 1.098l-2.714 1.356a.25.25 0 0 0-.138.224v2.764a.25.25 0 0 0 .138.223l2.714 1.357c.411.206.66.638.633 1.098l-.182 3.028a.25.25 0 0 0 .125.232l2.394 1.382a.25.25 0 0 0 .262-.008l2.532-1.671a1.15 1.15 0 0 1 1.267 0l2.532 1.67a.25.25 0 0 0 .262.009l2.394-1.382a.25.25 0 0 0 .124-.232l-.181-3.028a1.15 1.15 0 0 1 .633-1.097l2.714-1.357a.25.25 0 0 0 .139-.224v-2.764a.25.25 0 0 0-.139-.223l-2.713-1.357a1.15 1.15 0 0 1-.634-1.098l.182-3.028a.25.25 0 0 0-.124-.232zm-1.09-1.243a1.75 1.75 0 0 1 1.84-.056l2.394 1.382c.574.332.911.959.872 1.62L19.276 7.8l2.506 1.253c.593.296.968.902.968 1.565v2.764a1.75 1.75 0 0 1-.968 1.566L19.275 16.2l.168 2.797a1.75 1.75 0 0 1-.872 1.62l-2.394 1.383a1.75 1.75 0 0 1-1.839-.055L12 20.402l-2.34 1.544A1.75 1.75 0 0 1 7.823 22l-2.394-1.382a1.75 1.75 0 0 1-.872-1.62l.168-2.798-2.507-1.254a1.75 1.75 0 0 1-.967-1.565v-2.764c0-.663.375-1.269.967-1.565l2.507-1.254-.168-2.797a1.75 1.75 0 0 1 .872-1.62L7.822 2a1.75 1.75 0 0 1 1.839.055L12 3.599z" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M12 8.75a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5M7.25 12a4.75 4.75 0 1 1 9.5 0 4.75 4.75 0 0 1-9.5 0" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-book" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M17.5 2a3.75 3.75 0 0 1 3.75 3.75v13a3.75 3.75 0 0 1-3.75 3.75h-11a3.75 3.75 0 0 1-3.75-3.75v-13A3.75 3.75 0 0 1 6.5 2zm-11 14.5a2.25 2.25 0 0 0 0 4.5h11a2.25 2.25 0 0 0 2.25-2.25V16.5zm0-13a2.25 2.25 0 0 0-2.25 2.25v9.999A3.73 3.73 0 0 1 6.5 15h.25V3.5zM8.25 15h11.5V5.75A2.25 2.25 0 0 0 17.5 3.5H8.25z" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-puzzle" viewbox="0 0 24 24"><path d="M15.652 4.677a2.195 2.195 0 0 0-4.39 0c0 .309.065.602.181.869.245.56-.114 1.326-.856 1.326h-3.47a.244.244 0 0 0-.245.244v3.958c0 .742-.766 1.1-1.326.857a2.195 2.195 0 1 0 0 4.028l.107-.04c.546-.158 1.22.2 1.22.896v3.96c0 .134.109.244.243.244h13.658c.135 0 .244-.11.245-.245v-3.246a3.659 3.659 0 1 1 0-7.168V7.116a.244.244 0 0 0-.245-.244h-4.447c-.742 0-1.1-.765-.856-1.326l.078-.205a2.2 2.2 0 0 0 .103-.664m1.464 0q0 .376-.075.731h3.733c.943 0 1.707.765 1.707 1.708v3.958c0 .742-.764 1.1-1.325.857a2.195 2.195 0 1 0 0 4.028l.107-.04c.546-.159 1.218.2 1.218.896v3.96c0 .942-.764 1.706-1.707 1.706H7.116a1.71 1.71 0 0 1-1.708-1.707v-3.246q-.354.075-.731.076a3.658 3.658 0 1 1 .731-7.244V7.116c0-.943.765-1.708 1.708-1.708h2.758a3.658 3.658 0 1 1 7.242-.731" fill="currentColor"></path></symbol>
+<symbol id="i-sliders" viewbox="0 0 24 24"><path d="M21.25 5.5A2.25 2.25 0 0 0 19 3.25H5A2.25 2.25 0 0 0 2.75 5.5v2A2.25 2.25 0 0 0 5 9.75h14a2.25 2.25 0 0 0 2.25-2.25zm1.5 2A3.75 3.75 0 0 1 19 11.25H5A3.75 3.75 0 0 1 1.25 7.5v-2A3.75 3.75 0 0 1 5 1.75h14a3.75 3.75 0 0 1 3.75 3.75z" fill="currentColor"></path><path d="M19 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M8 17.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" fill="currentColor"></path><path d="M21.25 16.5A2.25 2.25 0 0 0 19 14.25H5a2.25 2.25 0 0 0-2.25 2.25v2A2.25 2.25 0 0 0 5 20.75h14a2.25 2.25 0 0 0 2.25-2.25zm1.5 2A3.75 3.75 0 0 1 19 22.25H5a3.75 3.75 0 0 1-3.75-3.75v-2A3.75 3.75 0 0 1 5 12.75h14a3.75 3.75 0 0 1 3.75 3.75z" fill="currentColor"></path></symbol>
+<symbol id="i-video" viewbox="0 0 24 24"><path d="M21.25 7A2.25 2.25 0 0 0 19 4.75H5A2.25 2.25 0 0 0 2.75 7v10A2.25 2.25 0 0 0 5 19.25h14A2.25 2.25 0 0 0 21.25 17zm1.5 10A3.75 3.75 0 0 1 19 20.75H5A3.75 3.75 0 0 1 1.25 17V7A3.75 3.75 0 0 1 5 3.25h14A3.75 3.75 0 0 1 22.75 7z" fill="currentColor"></path><path d="M14.487 12.509 10.7 15.033a.611.611 0 0 1-.95-.508v-5.05c0-.488.544-.779.95-.508l3.787 2.525a.61.61 0 0 1 0 1.017" fill="currentColor"></path></symbol>
+<symbol id="i-plug" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M16.343 2.343a.75.75 0 0 1 1.06 1.06L14.11 6.697l3.4 3.401 3.296-3.293a.75.75 0 0 1 1.06 1.06l-3.295 3.294 2.656 2.656a.75.75 0 1 1-1.06 1.06l-.425-.424-4.02 4.018a4.75 4.75 0 0 1-6.716 0l-1.103-1.102-4.326 4.326a.75.75 0 0 1-1.06-1.06l4.326-4.327-1.103-1.102a4.75 4.75 0 0 1 0-6.718l4.019-4.019-.425-.425a.751.751 0 0 1 1.06-1.061l2.656 2.655zM6.8 9.546a3.25 3.25 0 0 0 0 4.596l3.265 3.266a3.25 3.25 0 0 0 4.596 0l4.02-4.019-7.863-7.862z" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-info" viewbox="0 0 24 24"><path d="M21.25 12a9.25 9.25 0 1 0-18.5 0 9.25 9.25 0 0 0 18.5 0m1.5 0c0 5.937-4.813 10.75-10.75 10.75S1.25 17.937 1.25 12 6.063 1.25 12 1.25 22.75 6.063 22.75 12" fill="currentColor"></path><path d="M13 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0M11.25 16v-5a.25.25 0 0 0-.25-.25.75.75 0 0 1 0-1.5c.966 0 1.75.784 1.75 1.75v5c0 .138.112.25.25.25a.75.75 0 0 1 0 1.5A1.75 1.75 0 0 1 11.25 16" fill="currentColor"></path></symbol>
+<symbol id="i-bulb" viewbox="0 0 24 24"><path d="M15.5 20.25a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5zM18.25 10a6.25 6.25 0 1 0-10.365 4.702c.493.432.865 1.072.865 1.815 0 .405.328.733.733.733h5.034a.734.734 0 0 0 .733-.733c0-.743.372-1.383.865-1.815A6.23 6.23 0 0 0 18.25 10m1.5 0a7.73 7.73 0 0 1-2.648 5.831c-.236.207-.352.46-.352.686 0 1.233-1 2.233-2.233 2.233H9.483c-1.233 0-2.233-1-2.233-2.233 0-.227-.116-.479-.353-.686A7.75 7.75 0 1 1 19.75 10" fill="currentColor"></path><path d="M12.27 5.674a.75.75 0 0 1 .905-.554 5.03 5.03 0 0 1 3.705 3.705.75.75 0 0 1-1.458.35 3.53 3.53 0 0 0-2.597-2.596.75.75 0 0 1-.554-.905" fill="currentColor"></path></symbol>
+<symbol id="i-warn" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 7.75a.75.75 0 0 1 .75.75V13a.75.75 0 0 1-1.5 0V8.5a.75.75 0 0 1 .75-.75M12 15.75a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M13.088 4.456a1.25 1.25 0 0 0-2.177 0L3.335 17.885a1.25 1.25 0 0 0 1.089 1.864h15.151a1.25 1.25 0 0 0 1.089-1.864zm-3.484-.737c1.052-1.865 3.739-1.865 4.79 0l7.576 13.429c1.034 1.833-.29 4.101-2.395 4.101H4.424c-2.105 0-3.43-2.268-2.395-4.101z" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-danger" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M8.828 2.75c-.331 0-.649.132-.883.366L3.116 7.945a1.25 1.25 0 0 0-.366.883v6.344c0 .331.132.649.366.883l4.829 4.829c.234.234.552.366.883.366h6.344c.331 0 .649-.132.883-.366l4.829-4.829a1.25 1.25 0 0 0 .366-.883V8.828c0-.331-.132-.649-.366-.883l-4.829-4.829a1.25 1.25 0 0 0-.883-.366zm-1.944-.695a2.75 2.75 0 0 1 1.944-.805h6.344c.729 0 1.428.29 1.944.805l4.829 4.829a2.75 2.75 0 0 1 .805 1.944v6.344c0 .729-.29 1.428-.805 1.944l-4.829 4.829a2.75 2.75 0 0 1-1.944.805H8.828a2.75 2.75 0 0 1-1.944-.805l-4.829-4.829a2.75 2.75 0 0 1-.805-1.944V8.828c0-.729.29-1.428.805-1.944z" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M12 6.75a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0v-5a.75.75 0 0 1 .75-.75M12 15.25a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0V16a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path></symbol>
+</svg>
+<!-- ==================================================== TOP BAR -->
+<header class="topbar">
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" id="navToggle">
+<svg aria-hidden="true" height="20" width="20"><use href="#i-menu"></use></svg>
+</button>
+<a class="brand" href="#home">
+<img alt="" height="26" src="../assets/img/icon.svg" width="26"/>
+<span class="name">ScriptPlayer+</span>
+</a>
+<div class="topbar-spacer"></div>
+<button aria-label="Search the docs" class="search-btn" id="searchBtn"><svg aria-hidden="true" height="15" width="15"><use href="#i-search"></use></svg>
+<span>Search the docs…</span>
+<span class="kbd-hint">Ctrl K</span></button>
+<nav aria-label="Choose a language" class="lang-switch">
+<a data-lang="ko" href="../index.html" hreflang="ko">한국어</a>
+<a aria-current="true" data-lang="en" href="../en/index.html" hreflang="en">English</a>
+<a data-lang="ja" href="../ja/index.html" hreflang="ja">日本語</a>
+<a data-lang="zh" href="../zh/index.html" hreflang="zh">中文</a>
+</nav>
+<nav aria-label="Quick links" class="top-links">
+<a class="tlink" href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+<span>GitHub</span>
+<span class="stars">
+<svg aria-hidden="true" fill="currentColor" height="12" viewbox="0 0 24 24" width="12"><path d="m12 2.6 2.9 5.88 6.49.95-4.7 4.58 1.11 6.46L12 17.42 6.2 20.47l1.11-6.46-4.7-4.58 6.49-.95L12 2.6Z"></path></svg>
+<span id="ghStars">26</span>
+</span>
+</a>
+<a class="tlink" href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M22.957 7.21c-.004-3.064-2.391-5.576-5.191-6.482-3.478-1.125-8.064-.962-11.384.604C2.357 3.231 1.093 7.391 1.046 11.54c-.039 3.411.302 12.396 5.369 12.46 3.765.047 4.326-4.804 6.068-7.141 1.24-1.662 2.836-2.132 4.801-2.618 3.376-.836 5.678-3.501 5.673-7.031Z"></path></svg>
+<span>Patreon</span>
+</a>
+<a class="tlink tlink--dl" href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="14" width="14"><use href="#i-download"></use></svg>
+          Download</a>
+</nav>
+</header>
+<div class="nav-scrim" id="navScrim"></div>
+<div class="shell">
+<!-- ================================================== SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+<nav aria-label="Documentation contents">
+<div class="nav-group">
+<h4>Getting started</h4>
+<ul>
+<li><a class="nav-link" href="#home"><span class="n">01</span>Home</a></li>
+<li><a class="nav-link" href="#install"><span class="n">02</span>Install</a></li>
+<li><a class="nav-link" href="#quickstart"><span class="n">03</span>Start in 5 minutes</a></li>
+<li><a class="nav-link" href="#interface"><span class="n">04</span>Tour of the window</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>Everyday use</h4>
+<ul>
+<li><a class="nav-link" href="#library"><span class="n">05</span>Library</a></li>
+<li><a class="nav-link" href="#playback"><span class="n">06</span>Playback</a></li>
+<li><a class="nav-link" href="#scripts"><span class="n">07</span>Working with scripts</a></li>
+<li><a class="nav-link" href="#timeline"><span class="n">08</span>Timeline and heatmap</a></li>
+<li><a class="nav-link" href="#audio"><span class="n">09</span>Audio and subtitles</a></li>
+<li><a class="nav-link" href="#vr"><span class="n">10</span>VR and 360° video</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>Devices</h4>
+<ul>
+<li><a class="nav-link" href="#handy"><span class="n">11</span>The Handy</a></li>
+<li><a class="nav-link" href="#intiface"><span class="n">12</span>Intiface / Buttplug</a></li>
+<li><a class="nav-link" href="#funosr"><span class="n">13</span>FunOSR</a></li>
+<li><a class="nav-link" href="#remote"><span class="n">14</span>Mobile remote</a></li>
+<li><a class="nav-link" href="#safety"><span class="n">15</span>Safety and E-Stop</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>Extras</h4>
+<ul>
+<li><a class="nav-link" href="#external"><span class="n">16</span>External player</a></li>
+<li><a class="nav-link" href="#ffmpeg"><span class="n">17</span>FFmpeg playback</a></li>
+<li><a class="nav-link" href="#plugins"><span class="n">18</span>Plugins</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>Reference</h4>
+<ul>
+<li><a class="nav-link" href="#shortcuts"><span class="n">19</span>Keyboard shortcuts</a></li>
+<li><a class="nav-link" href="#settings"><span class="n">20</span>Settings guide</a></li>
+<li><a class="nav-link" href="#formats"><span class="n">21</span>Supported files</a></li>
+<li><a class="nav-link" href="#troubleshooting"><span class="n">22</span>Troubleshooting</a></li>
+<li><a class="nav-link" href="#releases"><span class="n">23</span>Release history</a></li>
+<li><a class="nav-link" href="#about"><span class="n">24</span>License and links</a></li>
+</ul>
+</div>
+</nav>
+</aside>
+<!-- ================================================== MAIN -->
+<div class="main-col">
+<main class="content" id="main">
+<!-- ============================================ 01 HOME -->
+<article class="page" data-group="Getting started" data-title="Home" id="page-home">
+<div class="hero">
+<h1>ScriptPlayer+ Documentation</h1>
+<p class="hero-lede">A desktop player that plays the video and audio already on your machine together with
+                its funscripts, and sends the motion out to The Handy, Intiface and FunOSR devices.
+                This guide runs in order, from installing to connecting a device.</p>
+<div class="hero-cta">
+<a class="btn btn--primary" href="#quickstart">Start in 5 minutes</a>
+<a class="btn" href="#install">How to install</a>
+</div>
+<p class="hero-meta">Windows · macOS · Linux · These docs describe the v0.6 series.</p>
+</div>
+<figure>
+<div class="shot">
+<video aria-label="ScriptPlayer+ full-window preview" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>The player, sidebar and timeline all in one window — the shape of everyday use.</figcaption>
+</figure>
+<h2 id="home-first">New here?<a aria-label="Link to this section" class="anchor" href="#home-first">#</a></h2>
+<p>Read these in order and you will be up and running.</p>
+<div class="jump">
+<a href="#install"><span class="num">02</span><span><b>Install</b><span class="d">Per-platform setup, and getting past the security warning on first launch</span></span></a>
+<a href="#quickstart"><span class="num">03</span><span><b>Start in 5 minutes</b><span class="d">Five steps: open a folder, match a script, connect a device</span></span></a>
+<a href="#interface"><span class="num">04</span><span><b>Tour of the window</b><span class="d">What the left rail, the sidebar and every playback-bar button mean</span></span></a>
+<a href="#troubleshooting"><span class="num">22</span><span><b>Troubleshooting</b><span class="d">Where to look first when a video will not open or a device will not move</span></span></a>
+</div>
+<h2 id="home-what">What ScriptPlayer+ does<a aria-label="Link to this section" class="anchor" href="#home-what">#</a></h2>
+<dl class="deflist">
+<div>
+<dt>Plays video and audio</dt>
+<dd>Opens the common formats — MP4, MKV, MP3 and more — and finds matching subtitles and cover art on its own.</dd>
+</div>
+<div>
+<dt>Shows the script</dt>
+<dd>A timeline that draws several axes at once, plus a heatmap that colours the intensity of the whole file.</dd>
+</div>
+<div>
+<dt>Drives your device</dt>
+<dd>Set up and output to The Handy, Intiface / Buttplug devices and FunOSR serial from a single app.</dd>
+</div>
+<div>
+<dt>Keeps a library</dt>
+<dd>Register several named folders, then filter by rating, duration or whether a script exists.</dd>
+</div>
+</dl>
+<h2 id="home-map">Where to look<a aria-label="Link to this section" class="anchor" href="#home-map">#</a></h2>
+<p>Start wherever you need. You can also jump straight there from the search box (<kbd>Ctrl</kbd> <kbd>K</kbd>).</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>If you are wondering</th><th>Go to</th></tr></thead>
+<tbody>
+<tr><td>It installed, but I get an “unrecognized app” warning</td><td><a href="#install">Install</a></td></tr>
+<tr><td>What are <code>STR</code>, <code>AB</code> and <code>FIT</code> on the playback bar?</td><td><a href="#interface">Tour of the window</a></td></tr>
+<tr><td>My script is not detected</td><td><a href="#scripts">Working with scripts</a></td></tr>
+<tr><td>The motion is out of sync with the video</td><td><a href="#scripts">Working with scripts</a></td></tr>
+<tr><td>My VR video shows as two side-by-side images</td><td><a href="#vr">VR and 360° video</a></td></tr>
+<tr><td>I need to stop the device right now</td><td><a href="#safety">Safety and E-Stop</a></td></tr>
+<tr><td>I want to change a shortcut</td><td><a href="#shortcuts">Keyboard shortcuts</a></td></tr>
+</tbody>
+</table>
+</div>
+</article>
+<!-- ============================================ 02 INSTALL -->
+<article class="page" data-group="Getting started" data-title="Install" id="page-install">
+<h1>Install</h1>
+<p class="lede">ScriptPlayer+ is installed from the Windows, macOS and Linux packages on GitHub Releases.
+              Your operating system may show a security warning the first time you run it; how to get past each one is below.</p>
+<h2 id="install-get">Download<a aria-label="Link to this section" class="anchor" href="#install-get">#</a></h2>
+<p>Every build is published on the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">latest GitHub release page</a>.
+              Pick the file for your operating system.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Platform</th><th>Package</th><th>Notes</th></tr></thead>
+<tbody>
+<tr>
+<td class="col-key"><span class="pill pill--win">Windows x64</span></td>
+<td>Installer (<code>.exe</code>) or portable <code>.zip</code></td>
+<td>To run without installing, take the portable ZIP and just unpack it.</td>
+</tr>
+<tr>
+<td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
+<td><code>.dmg</code> or <code>.zip</code></td>
+<td>Apple Silicon and Intel have separate files. Take the one that matches your Mac.</td>
+</tr>
+<tr>
+<td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
+<td><code>.deb</code> · <code>AppImage</code> · archive package</td>
+<td>On Ubuntu / Kubuntu 24.04 and newer, <strong>use the DEB</strong>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="install-windows">Windows<a aria-label="Link to this section" class="anchor" href="#install-windows">#</a></h2>
+<ol class="steps">
+<li>
+<h3>Run the installer</h3>
+<p>Running the downloaded <code>.exe</code> shows the licence agreement (EULA) first. Read it, accept, and the install continues.</p>
+</li>
+<li>
+<h3>If SmartScreen warns you</h3>
+<p>The Windows packages are not Authenticode signed, so Microsoft Defender SmartScreen may show
+                  <strong>“Windows protected your PC”</strong>.
+                  Click <strong>More info</strong> → <strong>Run anyway</strong> to continue.</p>
+</li>
+<li>
+<h3>If you use the portable ZIP</h3>
+<p>Run the executable inside the unpacked folder. Settings and caches are stored in your user folder.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="The Windows installer" loading="lazy" src="../assets/img/install-windows.webp"/></div>
+<figcaption>The Windows installer. It presents the EULA before installing.</figcaption>
+</figure>
+<h2 id="install-macos">macOS<a aria-label="Link to this section" class="anchor" href="#install-macos">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Minimum version</div>
+<p>The Electron runtime upgrade in v0.6.0 raised the minimum macOS version from <strong>Big Sur 11 to Monterey 12</strong>. v0.6 and later will not run on Big Sur.</p>
+</div>
+<ol class="steps">
+<li>
+<h3>Open the DMG and move the app</h3>
+<p>Open the <code>.dmg</code> and drag the ScriptPlayer+ icon into your <strong>Applications</strong> folder.</p>
+</li>
+<li>
+<h3>If it says the app cannot be opened</h3>
+<p>Gatekeeper may report that it cannot verify the developer.
+                  Go to <strong>System Settings → Privacy &amp; Security</strong> and press the
+                  <strong>“Open Anyway”</strong> button that appears near the bottom.</p>
+</li>
+</ol>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="The macOS DMG window" loading="lazy" src="../assets/img/install-mac-dmg.webp"/></div>
+<figcaption>Open the DMG and drag the app into Applications.</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="The macOS security warning" loading="lazy" src="../assets/img/install-mac-warning.webp"/></div>
+<figcaption>The Gatekeeper warning shown on first launch.</figcaption>
+</figure>
+</div>
+<figure>
+<div class="shot"><img alt="macOS Privacy &amp; Security settings" loading="lazy" src="../assets/img/install-mac-security.webp"/></div>
+<figcaption>Press “Open Anyway” in Privacy &amp; Security and it will launch directly from then on.</figcaption>
+</figure>
+<h2 id="install-linux">Linux<a aria-label="Link to this section" class="anchor" href="#install-linux">#</a></h2>
+<p>On Ubuntu / Kubuntu 24.04 and newer, <strong>use the DEB package</strong>.
+              Those releases restrict unprivileged user namespaces, and the Chromium sandbox needs an
+              executable-scoped AppArmor profile to work — a profile that ships only in the DEB.</p>
+<ul>
+<li><strong>DEB</strong> — installs the AppArmor profile with it. The safest choice on 24.04 and newer.</li>
+<li><strong>AppImage</strong> — moved to a static runtime in v0.6.0, so <code>libfuse.so.2</code> is no longer required.</li>
+<li><strong>Archive package</strong> — for distributions where unprivileged user namespaces are available.</li>
+</ul>
+<div class="note note--danger">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>The sandbox is never disabled</div>
+<p>ScriptPlayer+ refuses to fall back to <code>--no-sandbox</code> when it meets a system-wide namespace restriction.
+                If the portable AppImage or the archive package will not start, install the DEB instead.</p>
+</div>
+<h2 id="install-update">Updates<a aria-label="Link to this section" class="anchor" href="#install-update">#</a></h2>
+<p>When a new version ships, the app tells you. You can download and install straight from the notice,
+              and a hotfix released under the same version number is detected too.
+              How it checks is set in <strong>Settings → General</strong>.</p>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="Update notification" loading="lazy" src="../assets/img/update-notice.webp"/></div>
+<figcaption>The new-version notice. Release notes can be previewed inside the app.</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="Update settings" loading="lazy" src="../assets/img/update-setting.webp"/></div>
+<figcaption>Change how updates are checked in Settings → General.</figcaption>
+</figure>
+</div>
+</article>
+<!-- ============================================ 03 QUICKSTART -->
+<article class="page" data-group="Getting started" data-title="Start in 5 minutes" id="page-quickstart">
+<h1>Start in 5 minutes</h1>
+<p class="lede">Once it is installed, start here. Five steps and you have video playing, a script attached and a device moving.</p>
+<figure>
+<div class="shot"><img alt="ScriptPlayer+ on first launch" loading="lazy" src="../assets/img/ui-firstrun.webp"/></div>
+<figcaption>This empty window is what you get on first launch. “Open a folder or drag a video or audio file to start” is the starting point.</figcaption>
+</figure>
+<h2 id="qs-steps">The five steps<a aria-label="Link to this section" class="anchor" href="#qs-steps">#</a></h2>
+<ol class="steps">
+<li>
+<h3>Open the folder your media is in</h3>
+<p>Click <strong>Folder</strong> at the top left and pick the folder holding your videos.
+                  For a single file, you can just <strong>drag and drop</strong> it onto the window.</p>
+</li>
+<li>
+<h3>Pick a video from the list</h3>
+<p>Click a file in the sidebar list and playback starts immediately.
+                  A <strong>green document icon</strong> to the right of the name means a matching funscript was found.</p>
+</li>
+<li>
+<h3>Check the script actually loaded</h3>
+<p>If you can see the <strong>heatmap band</strong> and the <strong>timeline graph</strong> under the video, the script was read correctly.
+                  If not, switch them on with the <code>HM</code> and <code>TL</code> buttons on the playback bar.</p>
+</li>
+<li>
+<h3>Connect your device</h3>
+<p>Click the <strong>Device</strong> icon on the left rail, choose your device and connect.
+                  For per-device setup, see <a href="#handy">The Handy</a>, <a href="#intiface">Intiface</a>
+                  and <a href="#funosr">FunOSR</a>.</p>
+</li>
+<li>
+<h3>Play, then tune the intensity</h3>
+<p>Press <kbd>Space</kbd> to play. If the motion is too strong or too weak, narrow or widen the stroke range under <code>STR</code>.
+                  If the timing is off, adjust the offset from the <code>+0ms</code> button.</p>
+</li>
+</ol>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Worth knowing first</div>
+<ul>
+<li>A script is normally picked up automatically if it sits in the <strong>same folder under the same name</strong> as the video (<code>video.mp4</code> ↔ <code>video.funscript</code>).</li>
+<li>If you keep scripts in their own folder, set it as the <strong>script folder</strong> in Settings.</li>
+<li>The first time you use a device, it is safer to start with a <strong>narrow stroke range</strong>.</li>
+</ul>
+</div>
+<h2 id="qs-library">Using the library instead of opening folders<a aria-label="Link to this section" class="anchor" href="#qs-library">#</a></h2>
+<p>Rather than opening a folder every time, register the folders you use often in the <strong>library</strong> and browse them as thumbnail cards.
+              Start from the <strong>Library</strong> icon at the bottom of the left rail. See <a href="#library">Library</a> for the details.</p>
+<figure>
+<div class="shot">
+<video aria-label="Library screen demo" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>The library. Register several folders and skim them as cards.</figcaption>
+</figure>
+</article>
+<!-- ============================================ 04 INTERFACE -->
+<article class="page" data-group="Getting started" data-title="Tour of the window" id="page-interface">
+<h1>Tour of the window</h1>
+<p class="lede">The ScriptPlayer+ window has four parts: the <strong>left rail, the sidebar, the player and the playback bar</strong>.
+              The short lettered buttons on the playback bar are the easiest thing to misread, so every one of them is spelled out below.</p>
+<figure>
+<div class="shot"><img alt="The ScriptPlayer+ window layout" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
+<figcaption>Left to right: rail, sidebar, player — with the heatmap, timeline and playback bar along the bottom.</figcaption>
+</figure>
+<figure>
+<div class="shot">
+<video aria-label="A tour of the layout" data-src="../assets/video/overview.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>Moving between those areas in practice.</figcaption>
+</figure>
+<h2 id="ui-rail">The left rail<a aria-label="Link to this section" class="anchor" href="#ui-rail">#</a></h2>
+<p>The narrow vertical strip at the far left. It chooses what the sidebar shows. From the top down:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th><span class="vh">Icon</span></th><th>Name</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-video"></use></svg></td><td><strong>Files</strong></td><td>The default view: open a folder and browse the file list. Recent media lives here too.</td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-search"></use></svg></td><td><strong>Scripts</strong></td><td>Tools for finding and swapping the script that matches the current media.</td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-puzzle"></use></svg></td><td><strong>Plugins</strong></td><td>Manages script-source plugins you installed yourself. → <a href="#plugins">Plugins</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-plug"></use></svg></td><td><strong>Device</strong></td><td>Device connection and output settings for The Handy, FunOSR and others. → <a href="#handy">The Handy</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-sliders"></use></svg></td><td><strong>Intiface</strong></td><td>The dedicated Intiface / Buttplug workspace. → <a href="#intiface">Intiface / Buttplug</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-book"></use></svg></td><td><strong>Library</strong></td><td>The media library as thumbnail cards. → <a href="#library">Library</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-gear"></use></svg></td><td><strong>Settings</strong></td><td>At the bottom of the rail. You can also open it with <kbd>Ctrl</kbd> <kbd>,</kbd>. → <a href="#settings">Settings guide</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Collapsing the sidebar</div>
+<p>Click the already-selected rail icon once more and the sidebar collapses, widening the video. Click again to bring it back.</p>
+</div>
+<h2 id="ui-sidebar">The sidebar<a aria-label="Link to this section" class="anchor" href="#ui-sidebar">#</a></h2>
+<p>Taking the <strong>Files</strong> view, top to bottom:</p>
+<ul>
+<li><strong>Folder</strong> — opens a media folder. The small buttons beside it set the script folder, load or save a script, and re-scan.</li>
+<li><strong>Recent Media</strong> — files you opened recently. The <code>×</code> beside an entry clears one; the bin icon clears all.</li>
+<li><strong>Filter files…</strong> — filters by file name. The number on the right is how many files are currently shown.</li>
+<li><strong>Show multi-axis files only</strong> — shows only files that have a multi-axis script.</li>
+<li><strong>Show rated files only</strong> — shows only files you have rated.</li>
+<li><strong>Sorting</strong> — by <code>Path</code>, name, rating, duration or last-modified time, with <code>Asc</code>/<code>Desc</code> for direction.</li>
+<li><strong>Script Variants</strong> — the panel for choosing between several scripts that match the current media. → <a href="#scripts">Working with scripts</a></li>
+<li><strong>File list</strong> — files with a script carry a green document icon.</li>
+</ul>
+<h2 id="ui-playbar">Playback bar, button by button<a aria-label="Link to this section" class="anchor" href="#ui-playbar">#</a></h2>
+<p>The bottom row of the window. Playback controls sit on the left; view and script toggles on the right.
+              Here is what each abbreviation means.</p>
+<div class="legend">
+<div class="legend-row"><span class="legend-key">1x</span><span class="legend-desc"><b>Playback rate</b> — the <code>−</code> and <code>+</code> either side change the speed.</span></div>
+<div class="legend-row"><span class="legend-key">STR</span><span class="legend-desc"><b>Stroke</b> — narrows or widens how far the device travels, right there. The invert toggle is here too.</span></div>
+<div class="legend-row"><span class="legend-key">+0ms</span><span class="legend-desc"><b>Script offset</b> — pushes the motion earlier or later against the video, anywhere from <code>-60s to +60s</code>.</span></div>
+<div class="legend-row"><span class="legend-key">AB</span><span class="legend-desc"><b>Segment repeat</b> — mark point A and point B and only that stretch repeats.</span></div>
+<div class="legend-row"><span aria-label="Repeat icon" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></span><span class="legend-desc"><b>Repeat</b> — repeats just the file playing now. Moving on to the next file is the separate <code>Auto Next Play</code> setting.</span></div>
+<div class="legend-row"><span aria-label="Shuffle icon" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"></path><path d="m18 2 4 4-4 4"></path><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"></path><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"></path><path d="m18 14 4 4-4 4"></path></svg></span><span class="legend-desc"><b>Shuffle</b> — plays the list in random order.</span></div>
+<div class="legend-row"><span class="legend-key">EXT</span><span class="legend-desc"><b>External</b> — opens this file in an outside player such as mpv or VLC. → <a href="#external">External player</a></span></div>
+<div class="legend-row"><span class="legend-key">TL</span><span class="legend-desc"><b>Timeline</b> — shows or hides the script graph.</span></div>
+<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>Heatmap</b> — colours the intensity of the whole file as a band.</span></div>
+<div class="legend-row"><span class="legend-key">AV</span><span class="legend-desc"><b>Audio and subtitle tracks</b> — picks the embedded audio and subtitle track. → <a href="#audio">Audio and subtitles</a></span></div>
+<div class="legend-row"><span aria-label="Rating icon" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11.5 3.3a.6.6 0 0 1 1 0l2.2 4.5 4.9.7c.5.1.7.7.3 1l-3.5 3.5.8 4.9c.1.5-.4.9-.9.6L12 16.3l-4.4 2.3c-.4.2-1-.1-.9-.6l.8-4.9-3.5-3.5c-.4-.3-.2-.9.3-1l4.9-.7 2.3-4.6Z"></path></svg></span><span class="legend-desc"><b>Rating</b> — score the file without leaving playback. Used by library sorting and filters.</span></div>
+<div class="legend-row"><span class="legend-key">FIT</span><span class="legend-desc"><b>Fit</b> — scales the video so all of it is visible. Black bars may appear.</span></div>
+<div class="legend-row"><span class="legend-key">FILL</span><span class="legend-desc"><b>Fill</b> — fills the frame with no bars. The edges of the video may be cropped.</span></div>
+<div class="legend-row"><span aria-label="Fullscreen icon" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></span><span class="legend-desc"><b>Fullscreen</b> — the same as the <kbd>F</kbd> key.</span></div>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Note</div>
+<p>Open a VR or 360° video and a <strong>projection mode button</strong> joins the playback bar. → <a href="#vr">VR and 360° video</a></p>
+</div>
+<h2 id="ui-titlebar">The title bar<a aria-label="Link to this section" class="anchor" href="#ui-titlebar">#</a></h2>
+<p>The top of the window shows the app name and version, with a <strong>Stop all devices</strong> button on the right.
+              That is the emergency stop: it halts every connected device at once. → <a href="#safety">Safety and E-Stop</a></p>
+<figure>
+<div class="shot"><img alt="The Stop all devices button in the title bar" loading="lazy" src="../assets/img/ui-estop.webp"/></div>
+<figcaption><strong>Stop all devices</strong> at the top right is the global E-Stop. It can be hidden in Settings.</figcaption>
+</figure>
+</article>
+<!-- ============================================ 05 LIBRARY -->
+<article class="page" data-group="Everyday use" data-title="Library" id="page-library">
+<h1>Library</h1>
+<p class="lede">Once you have a lot of files, opening one folder at a time gets tedious. The library lets you register the folders
+              you use often and skim them all as thumbnail cards.</p>
+<figure>
+<div class="shot">
+<video aria-label="Library demo" data-src="../assets/video/library.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>The top of the library. Folders are managed from the search box and the <strong>Library folders</strong> button.</figcaption>
+</figure>
+<h2 id="lib-sources">Registering several folders<a aria-label="Link to this section" class="anchor" href="#lib-sources">#</a></h2>
+<p>Since v0.6.0 you can register <strong>several named library folders</strong>.
+              They are managed under <strong>Library folders</strong> in <strong>Settings → General</strong>.
+              Each one is handled independently, so switching one off leaves the rest untouched.</p>
+<ul>
+<li><strong>Add folder</strong> — adds a folder. The picker accepts several at once.</li>
+<li><strong>Name</strong> — give it something readable like <code>Local Library</code> or <code>NAS Library</code> instead of a path.</li>
+<li><strong>Toggle</strong> — switch a folder off to leave it out for a while. <strong>A disabled folder keeps its settings and is only excluded from scans.</strong></li>
+<li><strong>Bin</strong> — removes the registration only. Your actual files are untouched.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Library folders in Settings → General" loading="lazy" src="../assets/img/settings-general.webp"/></div>
+<figcaption>Settings → General. Every folder has its own name and enabled state. <strong>Script Storage Folder</strong> sits below them.</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>The script folder is here too</div>
+<p>The <strong>Script Storage Folder</strong> that collects downloaded scripts is set on the same screen.
+                Once it is set, both automatic script matching and plugin downloads use it. → <a href="#scripts">Working with scripts</a></p>
+</div>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>If you use a NAS</div>
+<p>Local and NAS catalogues are merged from cache into one deduplicated list.
+                On startup the cached contents appear first, then each folder is refreshed <strong>one after another</strong>.
+                Because folders are not read in parallel, the disk and network are not hammered all at once at launch.</p>
+</div>
+<h2 id="lib-filter">Filtering and sorting<a aria-label="Link to this section" class="anchor" href="#lib-filter">#</a></h2>
+<p>Filters are <strong>remembered</strong> and still applied next time you open the library.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Control</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Search</strong></td><td>Searches title and path.</td></tr>
+<tr><td class="col-key"><strong>Media type</strong></td><td>Splits the view into video only or audio only.</td></tr>
+<tr><td class="col-key"><strong>Script category</strong></td><td>Filters single-axis and multi-axis scripts separately.</td></tr>
+<tr><td class="col-key"><strong>Rating</strong></td><td>Shows only items you have scored.</td></tr>
+<tr><td class="col-key"><strong>Sort</strong></td><td>Sorts by path, file name, rating, duration or last-modified time.</td></tr>
+</tbody>
+</table>
+</div>
+<p>Sorting by duration needs the lengths first, and those are scanned automatically in the background.
+              With a lot of files you will see part of the list at first, filling in as it goes.</p>
+<h2 id="lib-cards">Working with cards<a aria-label="Link to this section" class="anchor" href="#lib-cards">#</a></h2>
+<ul>
+<li><strong>Card size</strong> — the slider changes how many fit on screen.</li>
+<li><strong>Thumbnail menu</strong> — change or regenerate the cover image straight from the card.</li>
+<li><strong>Rating</strong> — score from the card, or change it mid-playback with <code>☆</code> on the playback bar.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="Library thumbnail generation demo" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Thumbnails are generated in the background and fill in card by card. With many files they start empty and populate over time.</figcaption>
+</figure>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><video aria-label="Thumbnail menu demo" data-src="../assets/video/thumbnail-menu.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Manage the cover image from the thumbnail menu.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="Rating demo" data-src="../assets/video/rating.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Rate a file without leaving playback.</figcaption>
+</figure>
+</div>
+<h2 id="lib-hover">Hover preview<a aria-label="Link to this section" class="anchor" href="#lib-hover">#</a></h2>
+<p>Rest the pointer on an entry in the file list and a short video preview plays <strong>without opening the file</strong>.
+              You no longer have to open things one by one just to see what they are.</p>
+</article>
+<!-- ============================================ 06 PLAYBACK -->
+<article class="page" data-group="Everyday use" data-title="Playback" id="page-playback">
+<h1>Playback</h1>
+<p class="lede">The basics — playing and seeking — plus the things you reach for often: repeat, segment repeat and frame fitting.</p>
+<h2 id="pb-basic">Basic controls<a aria-label="Link to this section" class="anchor" href="#pb-basic">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Action</th><th>How</th></tr></thead>
+<tbody>
+<tr><td class="col-key">Play / pause</td><td><kbd>Space</kbd> or <kbd>K</kbd>, or ▶ on the playback bar</td></tr>
+<tr><td class="col-key">Seek 5 seconds</td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
+<tr><td class="col-key">Seek 10 seconds</td><td><kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd></td></tr>
+<tr><td class="col-key">Previous / next file</td><td>The ⏮ ⏭ buttons on the playback bar</td></tr>
+<tr><td class="col-key">Volume</td><td><kbd>↑</kbd> <kbd>↓</kbd> (5% steps)</td></tr>
+<tr><td class="col-key">Mute</td><td><kbd>M</kbd></td></tr>
+<tr><td class="col-key">Fullscreen</td><td><kbd>F</kbd></td></tr>
+</tbody>
+</table>
+</div>
+<p>The full list, and how to change it, is under <a href="#shortcuts">Keyboard shortcuts</a>.</p>
+<h2 id="pb-repeat">Repeat, Auto Next Play and shuffle<a aria-label="Link to this section" class="anchor" href="#pb-repeat">#</a></h2>
+<p>Three things that look alike but are not. They are easy to confuse at first, so here they are side by side.</p>
+<div class="cards cols-3">
+<div class="card">
+<h4>Repeat <code>🔁</code></h4>
+<p>Loops <strong>only the file playing now</strong>.</p>
+</div>
+<div class="card">
+<h4>Auto Next Play</h4>
+<p>When a file ends, <strong>moves on to the next one</strong>. Switched on in Settings.</p>
+</div>
+<div class="card">
+<h4>Shuffle <code>🔀</code></h4>
+<p>Plays the list in <strong>random order</strong>.</p>
+</div>
+</div>
+<figure>
+<div class="shot"><video aria-label="Auto Next Play demo" data-src="../assets/video/auto-next.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With Auto Next Play on, the next file follows when one ends.</figcaption>
+</figure>
+<h2 id="pb-ab">AB segment repeat<a aria-label="Link to this section" class="anchor" href="#pb-ab">#</a></h2>
+<p>For replaying one stretch of a video over and over.
+              Mark the start (A) and the end (B), and only that stretch loops.</p>
+<ol>
+<li>At the <strong>start</strong> of the stretch you want, set point A.</li>
+<li>At the <strong>end</strong> of it, set point B.</li>
+<li>The loop begins. Open the editor to fine-tune both points to exact values.</li>
+</ol>
+<p>Setting A, setting B and opening the editor can all be bound to keys. (<a href="#shortcuts">Keyboard shortcuts</a>)</p>
+<figure>
+<div class="shot"><video aria-label="Segment repeat demo" data-src="../assets/video/section-repeat.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Segment repeat in action.</figcaption>
+</figure>
+<h2 id="pb-fit">Fitting the frame — FIT and FILL<a aria-label="Link to this section" class="anchor" href="#pb-fit">#</a></h2>
+<p>When the video's aspect ratio differs from the window's, these decide which one wins.</p>
+<ul>
+<li><strong>FIT</strong> — scales so the whole video is visible. Black bars may appear above and below, or at the sides.</li>
+<li><strong>FILL</strong> — fills the frame completely. The edges of the video may be cropped.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="FIT / FILL demo" data-src="../assets/video/fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The same video under FIT and under FILL.</figcaption>
+</figure>
+<h2 id="pb-fullscreen">Fullscreen<a aria-label="Link to this section" class="anchor" href="#pb-fullscreen">#</a></h2>
+<p><kbd>F</kbd> enters fullscreen. The sidebar can still be summoned there, so you do not have to leave just to change file.</p>
+<p>Since v0.6.0 you can change how the fullscreen controls appear.</p>
+<ul>
+<li><strong>Reveal from the bottom edge only</strong> — so moving the pointer anywhere on screen does not raise the controls.</li>
+<li><strong>Background opacity</strong> — makes the ground behind the controls heavier or lighter.</li>
+<li><strong>Vertical position</strong> — sets how high the controls sit.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="Fullscreen sidebar demo" data-src="../assets/video/fullscreen-sidebar.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Summoning the sidebar while in fullscreen.</figcaption>
+</figure>
+<h2 id="pb-ontop">Keeping the window on top<a aria-label="Link to this section" class="anchor" href="#pb-ontop">#</a></h2>
+<p>To keep watching while you work in another window, pin the window in front of everything else.</p>
+<figure>
+<div class="shot"><img alt="Always-on-top setting" loading="lazy" src="../assets/img/always-on-top.webp"/></div>
+<figcaption>With always-on-top switched on.</figcaption>
+</figure>
+<h2 id="pb-recovery">Resetting and recovery<a aria-label="Link to this section" class="anchor" href="#pb-recovery">#</a></h2>
+<p>If you have changed enough settings to tangle things up, <strong>Settings → Recovery</strong> puts them back.
+              A full reset also clears cached durations, stroke ranges, and the player, library, workspace, recent-media and sidebar state.</p>
+<figure>
+<div class="shot"><video aria-label="Recovery menu demo" data-src="../assets/video/recovery.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The Settings → Recovery menu.</figcaption>
+</figure>
+</article>
+<!-- ============================================ 07 SCRIPTS -->
+<article class="page" data-group="Everyday use" data-title="Working with scripts" id="page-scripts">
+<h1>Working with scripts</h1>
+<p class="lede">What to reach for when a script is not detected, or is detected but out of sync, or drives the device too hard.
+              This one page covers most script problems.</p>
+<h2 id="sc-match">How a script gets found<a aria-label="Link to this section" class="anchor" href="#sc-match">#</a></h2>
+<p>ScriptPlayer+ looks for a matching script in this order.</p>
+<ol class="steps">
+<li>
+<h3>Same name, same folder</h3>
+<p>The most reliable arrangement. Put <code>video.funscript</code> beside <code>video.mp4</code> and it is picked up at once.</p>
+</li>
+<li>
+<h3>The configured script folder</h3>
+<p>If you keep scripts apart, point <strong>Settings → General → Script Storage Folder</strong> at that folder.
+                  (The small button beside <code>Folder</code> in the sidebar sets it too.) It is then scanned as well.</p>
+</li>
+<li>
+<h3>Scripts indexed by the library</h3>
+<p>Scripts already indexed by your registered library folders are candidates too.</p>
+</li>
+<li>
+<h3>A single candidate is chosen automatically</h3>
+<p>Even when the names do not match exactly, a candidate that narrows down to exactly one is selected for you.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="Script scan results" loading="lazy" src="../assets/img/script-scan.webp"/></div>
+<figcaption>Scan results are shown in the sidebar.</figcaption>
+</figure>
+<h2 id="sc-variants">The Script Variants panel<a aria-label="Link to this section" class="anchor" href="#sc-variants">#</a></h2>
+<p>Sometimes several scripts match the same video — a labelled alternate like <code>Soft</code> in brackets is the usual case.
+              The <strong>Script Variants</strong> panel in the sidebar swaps between them without stopping playback.</p>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="Script Variants panel" loading="lazy" src="../assets/img/script-variants.webp"/></div>
+<figcaption>When several variants are found they are listed.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="Switching script variants" data-src="../assets/video/script-variants.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The choice applies immediately.</figcaption>
+</figure>
+</div>
+<h2 id="sc-duration">Matching by duration<a aria-label="Link to this section" class="anchor" href="#sc-duration">#</a></h2>
+<p>Sometimes the right script has an entirely different name.
+              The <strong>duration-based search</strong> added in v0.6.0 ranks candidates by how closely the
+              script's timeline length matches the video's.</p>
+<ul>
+<li>It considers the media folder, the configured script folder and everything the library has indexed.</li>
+<li>Results are ordered by how close the lengths are, so work down from the top.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="Duration-based script search demo" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Candidates ranked by closest duration.</figcaption>
+</figure>
+<h2 id="sc-offset">When the timing is off — script offset<a aria-label="Link to this section" class="anchor" href="#sc-offset">#</a></h2><p><strong>Positive (+) values advance movement; negative (-) values delay it.</strong> If movement is about 0.2 seconds late, add <code>0.2 seconds</code> to the current value. If it is about 0.2 seconds early, subtract <code>0.2 seconds</code>. The input uses seconds: <code>0.2 seconds = 200ms</code>.</p>
+<p>Use this when the motion runs slightly ahead of or behind the video.
+              Adjust it from the <code>+0ms</code> button on the playback bar.</p>
+<ul>
+<li>The range is <strong><code>-60s</code> to <code>+60s</code></strong>.</li>
+<li>You can <strong>type a value</strong> in decimal seconds, or nudge it with the fine-step buttons.</li>
+<li>The offset is <strong>saved per script when possible, otherwise per media file</strong>. Reusing the same script may apply its saved offset.</li>
+<li>Increase, decrease and reset can all be bound to keys.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Script offset controls" loading="lazy" src="../assets/img/script-offset.webp"/></div>
+<figcaption>The offset field. Type a value or nudge it with the buttons.</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>How to land it</div>
+<p>Seek to a moment with an obvious movement, then nudge the offset while it plays.
+                You have it when the peaks in the timeline line up with what you see on screen.</p>
+</div>
+<h2 id="sc-stroke">When the motion is too strong — stroke range<a aria-label="Link to this section" class="anchor" href="#sc-stroke">#</a></h2>
+<p><code>STR</code> on the playback bar sets how far the device actually travels.
+              You can turn the intensity down or up without editing the script.</p>
+<p>The same settings are available in more detail under <strong>Settings → Device</strong>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Setting</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Stroke Range Min / Max</strong></td><td>Sets the lower and upper limits of travel, between <code>0%</code> and <code>100%</code>.</td></tr>
+<tr><td class="col-key"><strong>Range Extender</strong></td><td>Amplifies or reduces L0 movement around the <code>50%</code> centre, <em>before</em> the final stroke range is applied.</td></tr>
+<tr><td class="col-key"><strong>Inverse Stroke</strong></td><td>Flips the script's position values before they are sent to the device.</td></tr>
+<tr><td class="col-key"><strong>Amplitude setting behavior</strong> <span class="pill pill--new">v0.6.0</span></td><td>Chooses whether this is <strong>remembered per script</strong> or <strong>shared across all media</strong>.</td></tr>
+<tr><td class="col-key"><strong>Centre-preserving range</strong> <span class="pill pill--new">v0.6.0</span></td><td>For centre-based axes such as rotation, narrows the span while holding the centre.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="Stroke range options in Settings → Device" loading="lazy" src="../assets/img/settings-device-stroke.webp"/></div>
+<figcaption>The stroke range settings in Settings → Device.</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="Adjusting the stroke range" loading="lazy" src="../assets/img/stroke-range.webp"/></div>
+<figcaption>During playback, adjust it straight from <code>STR</code>.</figcaption>
+</figure>
+</div>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Starting out</div>
+<p>Start narrow and widen it as you get used to the motion. Pair it with a speed limit to be safer still. → <a href="#safety">Safety and E-Stop</a></p>
+</div>
+<h2 id="sc-gaps">Handling empty stretches<a aria-label="Link to this section" class="anchor" href="#sc-gaps">#</a></h2>
+<p>Options for scripts with long passages that contain no movement.</p>
+<ul>
+<li><strong>Fill gaps</strong> — fills the empty stretch with generated motion.</li>
+<li><strong>Automatic skipping</strong> — jumps past empty stretches. You can add a delay so it <strong>waits a moment</strong> instead of skipping instantly.</li>
+<li><strong>Sparse-script handling</strong> — smooths scripts whose points are far apart.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Gap filling settings" loading="lazy" src="../assets/img/fill-gaps.webp"/></div>
+<figcaption>The empty-stretch options.</figcaption>
+</figure>
+<h2 id="sc-random">When there is no script at all — random stroke<a aria-label="Link to this section" class="anchor" href="#sc-random">#</a></h2>
+<p>Motion can be generated for video that has no script.
+              The presets keep the base tease pattern and the stronger pattern separate.</p>
+<p>Generated motion offers <strong>smoothing</strong> at <code>Off</code>, <code>Light</code>, <code>Balanced</code> or <code>Strong</code>.
+              Direction changes ride an acceleration curve instead of snapping, which reads far more naturally.</p>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><video aria-label="Random pattern demo" data-src="../assets/video/random-pattern.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The random pattern presets.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="Random motion smoothing demo" data-src="../assets/video/random-smooth.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Generated motion with smoothing applied.</figcaption>
+</figure>
+</div>
+<h2 id="sc-motion">Generating a script from video<a aria-label="Link to this section" class="anchor" href="#sc-motion">#</a> <span class="pill pill--exp">Experimental</span></h2>
+<p>Since v0.4.0 the motion in a video can be analysed into a funscript and saved beside the media.
+              The analysis needs an external FFmpeg executable. → <a href="#ffmpeg">FFmpeg playback</a></p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Note</div>
+<p>Motion analysis is experimental. Quality varies a lot by source, and the result may need hand-editing.</p>
+</div>
+<h2 id="sc-multiaxis">Multi-axis scripts<a aria-label="Link to this section" class="anchor" href="#sc-multiaxis">#</a></h2>
+<p>Scripts that drive several axes at once are supported in three shapes.</p>
+<ul>
+<li>One file holding its axes in <code>axes[]</code></li>
+<li>One file holding its axes in <code>channels{}</code></li>
+<li>A separate file per axis (for example <code>video.L0.funscript</code>, <code>video.R0.funscript</code>)</li>
+</ul>
+<p>Since v0.6.0 you can <strong>replace the script source for a single axis</strong>.
+              You might keep a multi-axis bundle but swap only its <code>L0</code> for a different file.
+              <strong>Axis source linking</strong> — deriving one axis from another — is supported too (for example <code>L0 → R0</code>).</p>
+<p>For seeing a multi-axis script on screen, go to <a href="#timeline">Timeline and heatmap</a>.</p>
+<h2 id="sc-debug">Inspecting a script<a aria-label="Link to this section" class="anchor" href="#sc-debug">#</a></h2>
+<p>When a script behaves oddly, there is a view that shows exactly what values are arriving.</p>
+<figure>
+<div class="shot"><video aria-label="Script debug demo" data-src="../assets/video/script-debug.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The script inspection view.</figcaption>
+</figure>
+</article>
+<!-- ============================================ 08 TIMELINE -->
+<article class="page" data-group="Everyday use" data-title="Timeline and heatmap" id="page-timeline">
+<h1>Timeline and heatmap</h1>
+<p class="lede">Two ways to see a script. The timeline shows this moment; the heatmap shows the whole file.</p>
+<figure>
+<div class="shot"><img alt="The multi-axis timeline" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
+<figcaption>The green band on top is the heatmap; the graph beneath is the multi-axis timeline.</figcaption>
+</figure>
+<h2 id="tl-timeline">Timeline <code>TL</code><a aria-label="Link to this section" class="anchor" href="#tl-timeline">#</a></h2>
+<p>A live graph that scrolls with the playhead. Toggle it with <code>TL</code> on the playback bar.</p>
+<h3 id="tl-axes">Choosing axes</h3>
+<p>Open a multi-axis script and an <strong>AXES</strong> row appears above the timeline.</p>
+<ul>
+<li><strong>All</strong> — overlays every axis at once.</li>
+<li><strong>Axis buttons</strong> (<code>L0</code>, <code>L1</code>, <code>R0</code>, <code>R1</code> …) — toggle each one. The number beside a button is that axis's current value.</li>
+<li><strong>Double-click</strong> — solos that axis and hides the rest. Handy for studying one axis closely.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="All axes shown at once" data-src="../assets/video/multiaxis-all.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Every axis shown at once.</figcaption>
+</figure>
+<h3 id="tl-height">Resizing</h3>
+<p><strong>Drag the divider</strong> between the video and the timeline to change its height.
+              With many axes, giving it more room helps a lot.</p>
+<figure>
+<div class="shot"><video aria-label="Resizing the timeline" data-src="../assets/video/multiaxis-height.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Dragging the divider to resize the timeline.</figcaption>
+</figure>
+<h2 id="tl-heatmap">Heatmap <code>HM</code><a aria-label="Link to this section" class="anchor" href="#tl-heatmap">#</a></h2>
+<p>Compresses the whole file into a single horizontal band.
+              <strong>Colour means speed</strong> — green is slow, and it runs through yellow to red as it gets faster.</p>
+<p>It tells you where the intense passages are before you play, which makes jumping to the part you want easy.</p>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Note</div>
+<p>Heatmaps are not drawn in the library list or on cards. They appear only during playback.</p>
+</div>
+<h2 id="tl-settings">Timeline settings<a aria-label="Link to this section" class="anchor" href="#tl-settings">#</a></h2>
+<p><strong>Settings → Timeline</strong> lets you adjust:</p>
+<ul>
+<li>Contrast — draw the graph heavier or lighter</li>
+<li>Speed colouring on or off</li>
+<li>Default height</li>
+</ul>
+</article>
+<!-- ============================================ 09 AUDIO -->
+<article class="page" data-group="Everyday use" data-title="Audio and subtitles" id="page-audio">
+<h1>Audio and subtitles</h1>
+<p class="lede">Everything about sound and subtitles: playing audio files, boosting volume, loading subtitles and picking embedded tracks.</p>
+<h2 id="au-audio">Playing audio files<a aria-label="Link to this section" class="anchor" href="#au-audio">#</a></h2>
+<p>Audio such as MP3 or FLAC plays with a script attached exactly as video does.
+              With no picture to show, it displays <strong>cover art</strong> instead.</p>
+<p>Cover art is looked for in this order.</p>
+<ul>
+<li>An image embedded in the audio file's metadata</li>
+<li>An image file in the same work folder</li>
+</ul>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="Audio playback screen" loading="lazy" src="../assets/img/audio-mode.webp"/></div>
+<figcaption>Audio playback, with cover art shown.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="Audio track demo" data-src="../assets/video/av-audio.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Selecting an audio track.</figcaption>
+</figure>
+</div>
+<h2 id="au-boost">150% volume boost<a aria-label="Link to this section" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">Experimental</span></h2>
+<p>For quiet recordings, volume can go <strong>up to 150%</strong>.
+              A peak limiter runs alongside it to stop sudden spikes.</p>
+<figure>
+<div class="shot"><video aria-label="Volume boost demo" data-src="../assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With the 150% boost switched on.</figcaption>
+</figure>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Careful</div>
+<p>If you are wearing earphones, turn the volume down before switching the boost on.</p>
+</div>
+<h2 id="au-subs">Subtitles<a aria-label="Link to this section" class="anchor" href="#au-subs">#</a></h2>
+<h3 id="au-subs-ext">External subtitle files</h3>
+<p><code>.srt</code>, <code>.vtt</code> and <code>.txt</code> are supported.
+              A file named to match the video is <strong>found and attached automatically</strong>. If it is not, you can load one by hand.</p>
+<h3 id="au-subs-emb">Embedded subtitles</h3>
+<p>Text subtitle tracks inside the video file can be used too.
+              Pick one from the <code>AV</code> button — but <strong>an external FFmpeg must be installed</strong>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Subtitle kind</th><th>Supported</th></tr></thead>
+<tbody>
+<tr><td class="col-key">SRT, ASS/SSA, WebVTT, mov_text</td><td>Yes — these are text-based tracks.</td></tr>
+<tr><td class="col-key">PGS and DVD subtitles</td><td><strong>Listed, but cannot be shown.</strong> They are image-based, and are not rendered.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><video aria-label="Subtitle selection demo" data-src="../assets/video/av-subtitles.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Choosing a subtitle track from the <code>AV</code> button.</figcaption>
+</figure>
+<h2 id="au-tracks">Choosing an audio track<a aria-label="Link to this section" class="anchor" href="#au-tracks">#</a></h2>
+<p>For files carrying audio in several languages, pick the track from the <code>AV</code> button.
+              This needs an external FFmpeg as well. → <a href="#ffmpeg">FFmpeg playback</a></p>
+</article>
+<!-- ============================================ 10 VR -->
+<article class="page" data-group="Everyday use" data-title="VR and 360° video" id="page-vr">
+<h1>VR and 360° video</h1>
+<p class="lede">Open a VR180 or 360° video and it looks stretched, or splits into two images.
+              Tell it which projection to use and it renders properly. <span class="pill pill--new">v0.6.0</span></p>
+<figure>
+<div class="shot"><video aria-label="VR180 playback demo" data-src="../assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>A VR180 video in projection mode, dragging to look around.</figcaption>
+</figure>
+<h2 id="vr-modes">Supported projections<a aria-label="Link to this section" class="anchor" href="#vr-modes">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Projection</th><th>What kind of video</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>360° equirectangular</strong></td><td>Filmed in every direction. Laid flat, it looks like a world map.</td></tr>
+<tr><td class="col-key"><strong>VR180 equirectangular</strong></td><td>Only the forward 180 degrees. The most common form of VR video.</td></tr>
+<tr><td class="col-key"><strong>180° equidistant fisheye</strong></td><td>Filmed as a circle that bulges at the centre.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="vr-layout">Choosing the source layout<a aria-label="Link to this section" class="anchor" href="#vr-layout">#</a></h2>
+<p>Even within one projection, the two eyes can be packed in different ways.</p>
+<ul>
+<li><strong>Mono</strong> — a single image fills the frame.</li>
+<li><strong>Side-by-side (SBS)</strong> — one eye on the left, one on the right. Leave this unset and you see two images.</li>
+<li><strong>Top-and-bottom</strong> — one eye above, one below.</li>
+</ul>
+<p>For SBS and top-and-bottom sources you can choose <strong>which eye to watch</strong>.</p>
+<h2 id="vr-control">Looking around<a aria-label="Link to this section" class="anchor" href="#vr-control">#</a></h2>
+<ul>
+<li><strong>Drag</strong> — pull with the mouse to turn your view.</li>
+<li><strong>Zoom</strong> — pull in or push out to change the field of view.</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Limits worth knowing</div>
+<ul>
+<li>On the desktop, SBS and top-and-bottom sources show <strong>one eye at a time</strong>.</li>
+<li>Stereoscopic WebXR output to a headset is not supported.</li>
+<li>Stitching dual-fisheye 360° footage and lens-specific fisheye calibration are not included.</li>
+<li>Video a projection cannot be applied to <strong>falls back to flat playback</strong> automatically. Nothing breaks.</li>
+</ul>
+</div>
+</article>
+<!-- ============================================ 11 HANDY -->
+<article class="page" data-group="Devices" data-title="The Handy" id="page-handy">
+<h1>The Handy</h1>
+<p class="lede">The Handy works over the internet: the script is uploaded to a server and playback time is synchronised.
+              That means connection quality is felt directly.</p>
+<h2 id="hd-connect">Connecting<a aria-label="Link to this section" class="anchor" href="#hd-connect">#</a></h2>
+<ol class="steps">
+<li>
+<h3>Find your connection key</h3>
+<p>Read the Connection Key from the device's own display or from its app.</p>
+</li>
+<li>
+<h3>Enter it in Settings → Device</h3>
+<p>In <strong>Settings → Device</strong>, choose The Handy and paste the connection key.</p>
+</li>
+<li>
+<h3>Confirm the connection</h3>
+<p>The status changes once connected. Start a video and the script uploads and synchronises on its own.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="Device tab demo" data-src="../assets/video/device-tab.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Choosing and connecting a device from the Device screen.</figcaption>
+</figure>
+<h2 id="hd-sync">Sync and time offset<a aria-label="Link to this section" class="anchor" href="#hd-sync">#</a></h2>
+<p>The Handy uses API v2. On playback it uploads the script and synchronises position against the server clock.</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Start playing as soon as upload finishes</div>
+<p>Switch on <strong>Auto Play After Handy Sync</strong> in <strong>Settings → Playback</strong> and
+                playback begins the moment the upload and HSSP sync complete.
+                No more waiting for sync and then reaching for play.</p>
+</div>
+<p>If the motion runs slightly early or late across the board, correct it with the <strong>time offset</strong>.
+              If only one video is out, the script is the likelier cause — use the
+              <a href="#scripts">script offset</a> instead.</p>
+<h2 id="hd-diag">Network diagnostics<a aria-label="Link to this section" class="anchor" href="#hd-diag">#</a></h2>
+<p><strong>Settings → Handy Network Diagnostics</strong> measures your connection quality directly.
+              If the motion keeps stuttering or lagging, start here.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Setting</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Median latency</strong></td><td>Round-trip time under normal conditions. Lower is better.</td></tr>
+<tr><td class="col-key"><strong>P95 latency</strong></td><td>The latency of the slowest 5%. A high figure means occasional large spikes.</td></tr>
+<tr><td class="col-key"><strong>Jitter</strong></td><td>How much the latency varies. The higher it is, the less stable sync becomes.</td></tr>
+<tr><td class="col-key"><strong>Success rate</strong></td><td>The proportion of requests that completed properly.</td></tr>
+<tr><td class="col-key"><strong>Server clock offset</strong></td><td>The difference between your machine's clock and the server's.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><video aria-label="Handy network diagnostics demo" data-src="../assets/video/handy-diagnostics.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The network diagnostics screen.</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Sharing the results</div>
+<p>The results can be copied and attached to a support request, which makes describing the problem far easier.</p>
+</div>
+<figure>
+<div class="shot"><img alt="Copying device diagnostics" loading="lazy" src="../assets/img/device-diagnostics.webp"/></div>
+<figcaption>The button that copies the diagnostics.</figcaption>
+</figure>
+<h2 id="hd-compat">Compatibility mode<a aria-label="Link to this section" class="anchor" href="#hd-compat">#</a></h2>
+<p>There is a compatibility mode for older or slower-responding hardware.
+              If the default settings behave erratically, try switching it on.</p>
+<figure>
+<div class="shot"><img alt="Handy compatibility mode setting" loading="lazy" src="../assets/img/handy-compat.webp"/></div>
+<figcaption>The Handy compatibility option.</figcaption>
+</figure>
+</article>
+<!-- ============================================ 12 INTIFACE -->
+<article class="page" data-group="Devices" data-title="Intiface / Buttplug" id="page-intiface">
+<h1>Intiface / Buttplug</h1>
+<p class="lede">Intiface is relay software that brings devices from many makers under one protocol.
+              Since v0.6.0 ScriptPlayer+ has a <strong>dedicated workspace</strong> for it, so there is no separate window to juggle.</p>
+<h2 id="if-mode">Two ways to connect<a aria-label="Link to this section" class="anchor" href="#if-mode">#</a></h2>
+<div class="cards cols-2">
+<div class="card">
+<h4>Built-in engine</h4>
+<p>Uses the lightweight engine inside ScriptPlayer+. <strong>Nothing else to install</strong>, so it is the simplest route.</p>
+</div>
+<div class="card">
+<h4>External Intiface Central</h4>
+<p>Connects to an Intiface Central you already run. It reaches more devices and more settings.</p>
+</div>
+</div>
+<h2 id="if-connect">Connecting<a aria-label="Link to this section" class="anchor" href="#if-connect">#</a></h2>
+<p>The <strong>Intiface</strong> icon on the left rail opens the <strong>Intiface Device Manager</strong>.
+              Across the top it shows four steps — <strong>1 Connect → 2 Find device → 3 Configure → 4 Playback</strong> —
+              along with where you are and what to do next.</p>
+<figure>
+<div class="shot"><img alt="The Intiface Device Manager" loading="lazy" src="../assets/img/intiface-manager.webp"/></div>
+<figcaption>The Intiface Device Manager. Engine, server, discovery and output status run along the top right.</figcaption>
+</figure>
+<ol class="steps">
+<li>
+<h3>Connect — choose how</h3>
+<p>Pick <strong>Built-in engine</strong> or <strong>External Central</strong>.
+                  The built-in engine shows its address (<code>ws://127.0.0.1:…</code>); for external you enter the address to reach.</p>
+</li>
+<li>
+<h3>Find device — scan</h3>
+<p>Starting a scan looks for Bluetooth, HID and any configured serial devices.
+                  Keep the device <strong>powered on and ready to pair</strong> while it runs. You can select several at once.</p>
+</li>
+<li>
+<h3>Configure — output mapping</h3>
+<p>Under <strong>Output mapping</strong>, choose a device and map each usable feature to a script axis.</p>
+</li>
+<li>
+<h3>Playback</h3>
+<p>Play a video and output goes out on the axes you mapped. Battery level is shown here too.</p>
+</li>
+</ol>
+<p>The rail icon also reports state as <strong>idle, busy, connected or error</strong>.</p>
+<figure>
+<div class="shot"><video aria-label="Connecting several devices" data-src="../assets/video/more-devices.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Several devices can be selected and used together.</figcaption>
+</figure>
+<h2 id="if-mapping">Feature mapping<a aria-label="Link to this section" class="anchor" href="#if-mapping">#</a></h2>
+<p>Buttplug devices expose three kinds of feature. Each can be attached to the axis you want.</p>
+<ul>
+<li><strong>Linear</strong> — back-and-forth travel. Usually mapped to <code>L0</code>.</li>
+<li><strong>Rotate</strong> — rotation. Usually mapped to <code>R0</code>.</li>
+<li><strong>Scalar</strong> — anything expressed as a single magnitude, such as vibration strength.</li>
+</ul>
+<p>If you need an axis the script does not contain, <strong>axis source linking</strong> can derive it from another.
+              For instance, driving the <code>R0</code> output from <code>L0</code>'s movement.</p>
+<h2 id="if-handoff">Sharing with another app<a aria-label="Link to this section" class="anchor" href="#if-handoff">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>The built-in engine takes one client</div>
+<p>The built-in Intiface engine accepts <strong>only one Buttplug client at a time</strong>.
+                ScriptPlayer+ and another app cannot control it simultaneously.</p>
+</div>
+<p>That is what <strong>handoff</strong> is for. Press <strong>Allow FapTap / external app</strong> in the
+              Intiface Device Manager and the engine keeps running while ScriptPlayer+ alone releases its connection.
+              Another client such as FapTap can then attach to the same address, and once it disconnects
+              ScriptPlayer+ reconnects.</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Order matters</div>
+<p>Launching the other app first and then trying to attach ScriptPlayer+ will fail.
+                <strong>Release the connection from ScriptPlayer+ first</strong>, then connect the other app.</p>
+</div>
+<h2 id="if-watchdog">Per-device watchdogs<a aria-label="Link to this section" class="anchor" href="#if-watchdog">#</a></h2>
+<p>With several devices connected, one that went slow or kept failing used to drag the others down with it.
+              Since v0.6.0 <strong>each device has its own watchdog</strong>, so one bad device cannot hold up output to the rest.</p>
+<h2 id="if-limits">What the Windows built-in engine covers<a aria-label="Link to this section" class="anchor" href="#if-limits">#</a></h2>
+<p>The Windows built-in engine handles these connections.</p>
+<ul>
+<li>Bluetooth LE</li>
+<li>HID</li>
+<li><strong>One explicitly selected Bluetooth RFCOMM COM port</strong> — mapped as TCode v0.3 at 115200 baud.</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Limits of that serial path</div>
+<p>It exposes only the <strong>single linear-axis definition</strong> that FunOSR SR1 uses.
+                For USB serial adapters, or the full multi-axis serial mapping of an SR6, use the
+                <a href="#funosr">FunOSR provider</a> directly or an external Intiface Central.</p>
+</div>
+</article>
+<!-- ============================================ 13 FUNOSR -->
+<article class="page" data-group="Devices" data-title="FunOSR" id="page-funosr">
+<h1>FunOSR</h1>
+<p class="lede">FunOSR sends signals straight down a serial (COM) port.
+              With no relay software in between, latency is lower and multi-axis mapping can be tuned finely.</p>
+<h2 id="fo-connect">Choosing a port<a aria-label="Link to this section" class="anchor" href="#fo-connect">#</a></h2>
+<p>In <strong>Settings → Device</strong>, choose FunOSR and select the COM port.
+              Port detection improved in v0.6.0 and now suggests likely ports in this order.</p>
+<ol>
+<li>Ports explicitly identified as FunOSR</li>
+<li>CH340 / CH341 adapters</li>
+<li>USB identifier <code>1A86:7523</code></li>
+</ol>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>If the port briefly disappears</div>
+<p>Even if the scan comes back empty at startup, <strong>your saved COM path is kept</strong>.
+                Plugging the device in late does not wipe the setting.</p>
+</div>
+<h2 id="fo-tune">Tuning the output<a aria-label="Link to this section" class="anchor" href="#fo-tune">#</a></h2>
+<p>Adjust these in <strong>Settings → Device</strong>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Setting</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Update rate</strong></td><td>How many commands are sent per second. Pushing it too high can actually destabilise things.</td></tr>
+<tr><td class="col-key"><strong>Axis mapping</strong></td><td>Connects script axes to the device's physical axes.</td></tr>
+<tr><td class="col-key"><strong>Motion smoothing</strong></td><td>Smooths the movement.</td></tr>
+<tr><td class="col-key"><strong>Custom speed limit</strong></td><td>Caps an axis's top speed in <strong>spm</strong> (full strokes per minute). You can also choose whether it follows the global limit or its own.</td></tr>
+<tr><td class="col-key"><strong>Pause / Stop Behavior</strong></td><td>Decides what the device does when playback pauses, stops or changes media (for example <code>Return home</code>).</td></tr>
+<tr><td class="col-key"><strong>Home Return Speed</strong></td><td>How fast it returns home. Higher values move back more slowly.</td></tr>
+<tr><td class="col-key"><strong>Playback Start Safety</strong></td><td>On starting playback, FunOSR / SR devices move to the script position <strong>gradually over this time</strong> before normal output begins. <code>0</code> disables it.</td></tr>
+<tr><td class="col-key"><strong>Reconnect</strong></td><td>Reattaches automatically if the connection drops.</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="FunOSR options in Settings → Device" loading="lazy" src="../assets/img/settings-device-funosr.webp"/></div>
+<figcaption>Speed limit, Twist quiet mode, stop behaviour and start safety all on one screen.</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="Speed limit demo" data-src="../assets/video/speed-limit.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With a speed limit applied.</figcaption>
+</figure>
+<h2 id="fo-test">Testing axes and centring<a aria-label="Link to this section" class="anchor" href="#fo-test">#</a></h2>
+<p>You do not need to play a video to check an axis is wired correctly.
+              In the <strong>Device Test Panel</strong> at the bottom of Settings → Device, the
+              <code>L0</code>, <code>V0</code>, <code>V1</code> and <code>R0</code> buttons send a short
+              command straight to that axis. <code>Stop</code> halts it at once, and the
+              <strong>centre command</strong> returns it to the middle.</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Checking for swapped axes</div>
+<p>If pressing <code>L0</code> makes it rotate, the axis mapping is wrong.
+                Pressing each button in turn tells you immediately what is wired where.</p>
+</div>
+<p>To see which file a script actually came from and how it was read, switch on
+              <strong>Show Script Debug Info</strong>. The player then displays the script path, its source,
+              its axes and the stored offset.</p>
+<figure>
+<div class="shot"><video aria-label="Device test demo" data-src="../assets/video/device-test.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Driving an axis by hand to confirm the connection.</figcaption>
+</figure>
+<h2 id="fo-sr1">SR1 options<a aria-label="Link to this section" class="anchor" href="#fo-sr1">#</a></h2>
+<ul>
+<li><strong>Bluetooth COM output</strong> — a 25 Hz cap plus TCode interpolation for smoother output. No keep-alive traffic while idle.</li>
+<li><strong>SR1 2.0 Twist quiet mode</strong> — limits the R0 rotation speed to cut motor noise.</li>
+</ul>
+<h2 id="fo-pause">Pause and resume<a aria-label="Link to this section" class="anchor" href="#fo-pause">#</a></h2>
+<p>Resuming after a delayed serial write could make the device lurch as it caught up all at once.
+              v0.5.1 and v0.6.0 hardened this.</p>
+<ul>
+<li>The resume transition now definitely completes once the configured <strong>start safety</strong> time has passed.</li>
+<li>Catch-up progress is <strong>capped</strong>, so no large jump occurs.</li>
+<li>Getting stuck in the safety transition and never returning to the live script is fixed.</li>
+</ul>
+</article>
+<!-- ============================================ 14 REMOTE -->
+<article class="page" data-group="Devices" data-title="Mobile remote" id="page-remote">
+<h1>Mobile and controller remote</h1>
+<p class="lede">Playback can be driven from a dedicated Bluetooth remote or from your phone —
+              for play, pause and skipping to the next file without touching the keyboard.</p>
+<figure>
+<div class="shot"><img alt="Mobile/Controller Remote settings" loading="lazy" src="../assets/img/ui-settings-remote.webp"/></div>
+<figcaption>The Settings → Mobile/Controller Remote screen.</figcaption>
+</figure>
+<h2 id="rm-prepare">Before connecting<a aria-label="Link to this section" class="anchor" href="#rm-prepare">#</a></h2><p><strong>Android phone:</strong> Install the app using <strong>Get Android app</strong> in settings, then open its remote screen. Enable Bluetooth and grant the nearby-device permissions requested by the app. Turn on the <strong>BLE switch</strong> on the remote screen to make it available for connection, and note the displayed device name.</p><p><strong>Dedicated remote:</strong> Turn on a device with supported firmware installed. If firmware installation is needed, first follow the instructions for that device in <strong>Open flasher</strong> in settings. Enable Bluetooth on the PC, then follow the pairing steps below.</p><h2 id="rm-pair">Pairing<a aria-label="Link to this section" class="anchor" href="#rm-pair">#</a></h2>
+<ol class="steps">
+<li>
+<h3>Open Settings</h3>
+<p>Go to <strong>Settings → Mobile/Controller Remote</strong>.</p>
+</li>
+<li>
+<h3>Connect</h3>
+<p>On the PC, click <strong>Connect</strong> and select the name shown on your phone or your dedicated remote in the device picker.</p>
+</li>
+<li>
+<h3>Enter the six-digit code</h3>
+<p>Type the <strong>six-digit pairing code</strong> shown on the remote and press <strong>Pair</strong>.</p>
+</li>
+</ol>
+<p>Once paired, it reports status, firmware, battery and token.
+              A remote you have paired once <strong>reconnects automatically</strong> thereafter.</p>
+<h2 id="rm-buttons">Button mapping<a aria-label="Link to this section" class="anchor" href="#rm-buttons">#</a></h2>
+<p>Each of the three buttons A, B and C can be given separate <strong>click, double-click and hold</strong> actions.
+              The defaults are:</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Button</th><th>Click</th><th>Double click</th><th>Hold</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>A</strong></td><td>Play / pause</td><td>None</td><td>None</td></tr>
+<tr><td class="col-key"><strong>B</strong></td><td>Next video</td><td>None</td><td>None</td></tr>
+<tr><td class="col-key"><strong>C</strong></td><td>Previous video</td><td>None</td><td>None</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Varies by device</div>
+<p>On hardware missing some buttons, such as the M5Stick S3, unsupported mappings are neither listed nor transmitted.</p>
+</div>
+<h2 id="rm-apps">App and firmware<a aria-label="Link to this section" class="anchor" href="#rm-apps">#</a></h2>
+<ul>
+<li><strong>Get Android app</strong> — takes you to the app that turns a phone into the remote.</li>
+<li><strong>Open flasher</strong> — opens the tool for flashing the remote's firmware.</li>
+</ul>
+</article>
+<!-- ============================================ 15 SAFETY -->
+<article class="page" data-group="Devices" data-title="Safety and E-Stop" id="page-safety">
+<h1>Safety and E-Stop</h1>
+<p class="lede">If you are using a device, you must be able to stop it instantly. This page covers how, and the limits you can set in advance.
+              <strong>If this is your first device, read this page first.</strong></p>
+<h2 id="sf-estop">Global emergency stop (E-Stop)<a aria-label="Link to this section" class="anchor" href="#sf-estop">#</a> <span class="pill pill--new">v0.6.0</span></h2>
+<p>The <strong>Stop all devices</strong> button at the top right of the window.
+              <strong>Regardless</strong> of which provider is currently selected, it sends a stop request to every connected device.</p>
+<ul>
+<li>It quiesces playback and issues a stop to <strong>all</strong> of Handy, Intiface and FunOSR.</li>
+<li>Stop requests are bounded, so nothing waits indefinitely.</li>
+<li>A device that failed or timed out <strong>stays visible</strong> so you can retry it.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="The Stop all devices button" loading="lazy" src="../assets/img/ui-estop.webp"/></div>
+<figcaption><strong>Stop all devices</strong> at the top right is the global E-Stop.</figcaption>
+</figure>
+<p>The button appears in the title bar and in fullscreen <strong>while a device is connected</strong>.
+              You can turn it off under <strong>Show E-Stop button</strong> in <strong>Settings → Device</strong>.</p>
+<div class="note note--danger">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>Before you hide it</div>
+<p>Even hidden, <strong>the stop control in the Intiface manager remains</strong>.
+                But reaching it means changing screens first. Make sure you know where it is before hiding the button.</p>
+</div>
+<figure>
+<div class="shot"><img alt="Show E-Stop button in Settings → Device" loading="lazy" src="../assets/img/settings-device-stroke.webp"/></div>
+<figcaption><strong>Show E-Stop button</strong> sits at the top of Settings → Device.</figcaption>
+</figure>
+<h2 id="sf-limits">Limits to set in advance<a aria-label="Link to this section" class="anchor" href="#sf-limits">#</a></h2>
+<p>The best way to avoid a problem is to make sure it never moves hard in the first place.</p>
+<dl class="deflist">
+<div>
+<dt>Stroke range</dt>
+<dd>Narrow the travel from <code>STR</code> on the playback bar. Start narrow. → <a href="#sc-stroke">Working with scripts</a></dd>
+</div>
+<div>
+<dt>Custom speed limit</dt>
+<dd>Caps top speed per axis in <code>spm</code>. Particularly useful with FunOSR. → <a href="#fo-tune">FunOSR</a></dd>
+</div>
+<div>
+<dt>Playback Start Safety</dt>
+<dd>Instead of going full speed the instant playback starts, it eases to the script position over the time you set.</dd>
+</div>
+<div>
+<dt>Centre-preserving range</dt>
+<dd>For centre-based axes such as rotation, it holds the centre and reduces only the span.</dd>
+</div>
+</dl>
+<h2 id="sf-oneprovider">One provider at a time<a aria-label="Link to this section" class="anchor" href="#sf-oneprovider">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Current limitation</div>
+<p>Device output uses <strong>one active provider at a time</strong>.
+                Driving Handy and Intiface / FunOSR simultaneously is not supported yet.</p>
+</div>
+<p>When you switch provider, the new connection attaches after the old one has been torn down.
+              v0.6.0 fixed a case where moving from FunOSR to Handy or Intiface could stall on that cleanup.</p>
+<h2 id="sf-habits">Habits worth keeping<a aria-label="Link to this section" class="anchor" href="#sf-habits">#</a></h2>
+<ul>
+<li>The first time you play a new script, keep the <strong>range narrow</strong> and see what the motion is like.</li>
+<li>Check the heatmap for the <strong>red passages</strong> ahead of time. → <a href="#timeline">Timeline and heatmap</a></li>
+<li>Let your hand learn where the E-Stop button is.</li>
+<li>Never leave a device running unattended.</li>
+</ul>
+</article>
+<!-- ============================================ 16 EXTERNAL -->
+<article class="page" data-group="Extras" data-title="External player" id="page-external">
+<h1>External player</h1>
+<p class="lede">Opens a file that will not play well inside ScriptPlayer+ in a player you already use,
+              while keeping device output running. <span class="pill pill--exp">Experimental</span></p>
+<h2 id="ex-support">Supported players<a aria-label="Link to this section" class="anchor" href="#ex-support">#</a></h2>
+<ul>
+<li>JAVPlayer</li>
+<li>JAVPlayerEZ</li>
+<li>mpv</li>
+<li>PotPlayer</li>
+<li>VLC</li>
+<li>Custom executable</li>
+</ul>
+<p>Configure it in <strong>Settings → External Viewer</strong>. During playback, <code>EXT</code> on the playback bar hands the file over.</p>
+<h2 id="ex-limits">What differs between players<a aria-label="Link to this section" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">Swipe the table sideways to see all columns.</p><div class="table-wrap"><table><thead><tr><th>Player</th><th>Play / pause</th><th>Position / speed control</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>Supported</td><td>Supported — control from ScriptPlayer+</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Keyboard-based control on Windows</td><td>Not supported</td></tr><tr><td>Custom executable</td><td>Launch only</td><td>Not supported</td></tr></tbody></table></div><p>Based on v0.6.1. For synchronization, choose <strong>mpv or VLC</strong> and control playback, pause and seeking from ScriptPlayer+. Do not assume changes made directly in the external player are reflected back. Keyboard-based control can vary with the external app’s shortcuts and window state.</p>
+<p>If you have configured mpv or VLC, it opens that player automatically when Chromium playback fails.
+              When you drag the timeline, it synchronises <strong>once, when the drag is committed</strong>.</p>
+</article>
+<!-- ============================================ 17 FFMPEG -->
+<article class="page" data-group="Extras" data-title="FFmpeg playback" id="page-ffmpeg">
+<h1>FFmpeg playback</h1>
+<p class="lede">Some features need an external FFmpeg executable.
+              FFmpeg is <strong>not bundled</strong> with ScriptPlayer+, so you have to supply it.
+              <span class="pill pill--exp">Experimental</span></p>
+<h2 id="ff-why">When you need it<a aria-label="Link to this section" class="anchor" href="#ff-why">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Control</th><th>What FFmpeg does</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Compatibility playback</strong></td><td>Plays video in codecs the browser engine cannot open.</td></tr>
+<tr><td class="col-key"><strong>Embedded subtitles</strong></td><td>Extracts text subtitle tracks from inside the video. → <a href="#audio">Audio and subtitles</a></td></tr>
+<tr><td class="col-key"><strong>Audio track selection</strong></td><td>Picks one of several audio tracks.</td></tr>
+<tr><td class="col-key"><strong>Thumbnail fallback</strong></td><td>Builds thumbnails and hover previews for video Chromium cannot decode.</td></tr>
+<tr><td class="col-key"><strong>Motion analysis</strong></td><td>Used when generating a script from video. → <a href="#scripts">Working with scripts</a></td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="Video compatibility warning" loading="lazy" src="../assets/img/video-warning.webp"/></div>
+<figcaption>Opening a video it cannot play produces this notice.</figcaption>
+</figure>
+<h2 id="ff-install">How to supply it<a aria-label="Link to this section" class="anchor" href="#ff-install">#</a></h2>
+<p>ScriptPlayer+ looks for FFmpeg in this order. Any one of them is enough.</p>
+<ol class="steps">
+<li>
+<h3>Install from Settings <span class="pill">easiest</span></h3>
+<p>A button in Settings installs it through your operating system's package manager —
+                  <code>winget</code> on Windows, <code>Homebrew</code> on macOS, a supported package manager on Linux.
+                  It runs <strong>only when you press it yourself</strong>.</p>
+</li>
+<li>
+<h3>The <code>FFMPEG_PATH</code> environment variable</h3>
+<p>Point this variable at the executable and it will be used.</p>
+</li>
+<li>
+<h3>A common install location or the system <code>PATH</code></h3>
+<p>If FFmpeg is already installed, it is usually found automatically.</p>
+</li>
+<li>
+<h3>Select it yourself</h3>
+<p>Choose the FFmpeg executable in Settings. The sure route when auto-detection fails.</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="FFmpeg settings in Settings → Playback" loading="lazy" src="../assets/img/settings-playback.webp"/></div>
+<figcaption>The <strong>FFmpeg setup and status</strong> area in Settings → Playback.
+                When FFmpeg is found, its version and path show in green, and <strong>Test connection</strong> verifies it.</figcaption>
+</figure>
+<h2 id="ff-mode">Choosing a compatibility mode<a aria-label="Link to this section" class="anchor" href="#ff-mode">#</a></h2>
+<p><strong>Video Compatibility Mode</strong> in <strong>Settings → Playback</strong> sets how far it intervenes.
+              Pick by symptom.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Symptom</th><th>Choose</th></tr></thead>
+<tbody>
+<tr><td class="col-key">Plays fine</td><td><code>Auto</code> — steps in only when needed. The default.</td></tr>
+<tr><td class="col-key"><strong>Picture but no sound</strong></td><td>Audio compatibility — only the sound goes through FFmpeg.</td></tr>
+<tr><td class="col-key"><strong>Black picture, or will not open at all</strong></td><td>Full compatibility — the video goes through FFmpeg too.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Reopen after changing it</div>
+<p>Changing the compatibility mode takes effect only after you <strong>close and reopen the video</strong>.</p>
+</div>
+<figure>
+<div class="shot"><video aria-label="FFmpeg compatibility playback demo" data-src="../assets/video/ffmpeg-compat.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Compatibility playback at work.</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Why it is not bundled</div>
+<p>ScriptPlayer+ release packages contain no FFmpeg executable and no FFmpeg source.
+                Compatibility playback, thumbnail fallback and motion analysis <strong>use only an external executable</strong>.</p>
+</div>
+</article>
+<!-- ============================================ 18 PLUGINS -->
+<article class="page" data-group="Extras" data-title="Plugins" id="page-plugins">
+<h1>Plugins</h1>
+<p class="lede">A way to add script sources yourself.
+              <strong>No provider is bundled, recommended or enabled by default.</strong> You install one when you want one.</p>
+<h2 id="pl-what">What a .funplugin is<a aria-label="Link to this section" class="anchor" href="#pl-what">#</a></h2>
+<p>A <code>.funplugin</code> file is <strong>nothing but a JSON manifest</strong>.
+              It carries information about where to look for scripts. It contains no executable code.</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>No code is executed</div>
+<p>ScriptPlayer+ never runs plugin code inside the app.
+                Because it only reads a data-only manifest, a plugin cannot take the app somewhere you did not ask for.</p>
+</div>
+<h2 id="pl-install">Installing and managing<a aria-label="Link to this section" class="anchor" href="#pl-install">#</a></h2>
+<p>Managed from the <strong>Plugins</strong> icon on the left rail.
+              Installation validates the following.</p>
+<ul>
+<li><strong>Manifest validation</strong> — strict checking that the format is correct.</li>
+<li><strong>Permissions</strong> — shows what it is asking for.</li>
+<li><strong>Signature</strong> — verified if the publisher supplied one. (Optional.)</li>
+<li><strong>Trust information</strong> — surfaces all of the above so you can see it.</li>
+</ul>
+<h2 id="pl-download">Downloaded scripts<a aria-label="Link to this section" class="anchor" href="#pl-download">#</a></h2>
+<p>Scripts fetched by a plugin are saved to your configured <strong>script folder</strong>,
+              or to a folder the app manages if you have not set one.
+              When a download finishes it is <strong>applied to the current media immediately</strong>.</p>
+<p>Concurrent downloads each show their own progress.</p>
+</article>
+<!-- ============================================ 19 SHORTCUTS -->
+<article class="page" data-group="Reference" data-title="Keyboard shortcuts" id="page-shortcuts">
+<h1>Keyboard shortcuts</h1>
+<p class="lede">The default shortcuts, and how to rebind them.
+              Every action can be reassigned in <strong>Settings → Keyboard Shortcuts</strong>.</p>
+<h2 id="ks-default">Defaults<a aria-label="Link to this section" class="anchor" href="#ks-default">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Key</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><kbd>Space</kbd> / <kbd>K</kbd></td><td>Play / pause</td></tr>
+<tr><td class="col-key"><kbd>←</kbd> / <kbd>→</kbd></td><td>Back / forward 5 seconds</td></tr>
+<tr><td class="col-key"><kbd>Shift</kbd> + <kbd>←</kbd> / <kbd>→</kbd></td><td>Back / forward 10 seconds</td></tr>
+<tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Volume up / down 5%</td></tr>
+<tr><td class="col-key"><kbd>F</kbd></td><td>Toggle fullscreen</td></tr>
+<tr><td class="col-key"><kbd>M</kbd></td><td>Toggle mute</td></tr>
+<tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>Open Settings</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="Keyboard shortcut settings" loading="lazy" src="../assets/img/shortcuts.webp"/></div>
+<figcaption>The Settings → Keyboard Shortcuts screen.</figcaption>
+</figure>
+<h2 id="ks-all">Actions you can bind<a aria-label="Link to this section" class="anchor" href="#ks-all">#</a></h2>
+<p>Beyond the defaults above, you can bind keys to the following.
+              Moving what you use most onto comfortable keys makes a real difference.</p>
+<h3 id="ks-play">Playback</h3>
+<ul>
+<li>Play / pause</li>
+<li>Back 5s · forward 5s</li>
+<li>Back 10s · forward 10s</li>
+<li>Previous video · next video</li>
+<li>Go to start · go to end</li>
+<li>Set segment repeat start · set end · open the editor</li>
+</ul>
+<h3 id="ks-sound">Sound</h3>
+<ul>
+<li>Volume up · down</li>
+<li>Toggle mute</li>
+</ul>
+<h3 id="ks-screen">Display</h3>
+<ul>
+<li>Toggle fullscreen</li>
+</ul>
+<h3 id="ks-script">Script</h3>
+<ul>
+<li>Decrease · increase the stroke range</li>
+<li>Decrease · increase · reset the script offset</li>
+</ul>
+<h3 id="ks-app">App</h3>
+<ul>
+<li>Open a folder</li>
+<li>Open Settings</li>
+</ul>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Recommended</div>
+<p>If you use a device, bind <strong>decrease / increase stroke range</strong> to keys.
+                You can then change the intensity mid-playback without moving the mouse.</p>
+</div>
+</article>
+<!-- ============================================ 20 SETTINGS -->
+<article class="page" data-group="Reference" data-title="Settings guide" id="page-settings">
+<h1>Settings guide</h1>
+<p class="lede">The Settings window has eleven tabs. Open it with <kbd>Ctrl</kbd> + <kbd>,</kbd> or the gear icon at the bottom of the left rail.
+              Use this page to find which tab holds what.</p><p>This page is a guide to the settings tabs. Follow the linked articles for instructions and limitations for each feature.</p>
+<figure>
+<div class="shot"><img alt="The Settings window" loading="lazy" src="../assets/img/ui-settings-remote.webp"/></div>
+<figcaption>The Settings window, with its tab list on the left.</figcaption>
+</figure>
+<h2 id="st-tabs">Tab by tab<a aria-label="Link to this section" class="anchor" href="#st-tabs">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Tab</th><th>What lives here</th></tr></thead>
+<tbody>
+<tr>
+<td class="col-key"><strong>General</strong></td>
+<td>Language, <strong>Library folders</strong> (add, name, enable or disable),
+                      <strong>Script Storage Folder</strong>, and how updates are checked. → <a href="#library">Library</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Playback</strong></td>
+<td><strong>Auto Next Play</strong>, <strong>Video Compatibility Mode</strong> and the FFmpeg executable path,
+                      <strong>Audio volume boost</strong> (150%), <strong>Auto Play After Handy Sync</strong>,
+                      and automatic gap skipping with its delay. → <a href="#ffmpeg">FFmpeg playback</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Appearance</strong></td>
+<td>Display options, how fullscreen controls reveal plus their opacity and vertical position, and window options such as always-on-top.</td>
+</tr>
+<tr>
+<td class="col-key"><strong>Timeline</strong></td>
+<td>Graph settings: contrast, speed colouring and default height. → <a href="#timeline">Timeline and heatmap</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>External Viewer</strong></td>
+<td>Paths and launch options for mpv, VLC, PotPlayer and the rest. → <a href="#external">External player</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Device</strong></td>
+<td>The busiest tab. <strong>Show E-Stop button</strong>,
+                      <strong>Amplitude setting behavior</strong>, <strong>Stroke Range Min/Max</strong>,
+                      <strong>Range Extender</strong>, <strong>Inverse Stroke</strong>,
+                      <strong>Custom speed limit</strong>, <strong>FunOSR Twist Quiet Mode</strong>,
+                      <strong>Pause / Stop Behavior</strong>, <strong>Home Return Speed</strong>,
+                      <strong>Playback Start Safety</strong>, <strong>Show Script Debug Info</strong> and
+                      <strong>Device Test Panel</strong>, plus The Handy connection key and the FunOSR COM port.
+                      → <a href="#handy">The Handy</a> · <a href="#funosr">FunOSR</a> · <a href="#safety">Safety and E-Stop</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Handy Network Diagnostics</strong></td>
+<td>Measures latency, jitter, success rate and server clock offset. → <a href="#handy">The Handy</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Mobile/Controller Remote</strong></td>
+<td>Remote pairing and the A/B/C button mapping. → <a href="#remote">Mobile remote</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Keyboard Shortcuts</strong></td>
+<td>Key bindings for every action. → <a href="#shortcuts">Keyboard shortcuts</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Recovery</strong></td>
+<td>Resetting settings and clearing caches. → <a href="#playback">Playback</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>About</strong></td>
+<td>Version, licence and third-party notices.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="st-ffmpeg">The FFmpeg path<a aria-label="Link to this section" class="anchor" href="#st-ffmpeg">#</a></h2>
+<p>The FFmpeg executable path appears as a single row in Settings; you can select it yourself or install through a package manager.
+              The details are under <a href="#ffmpeg">FFmpeg playback</a>.</p>
+<h2 id="st-reset">Resetting<a aria-label="Link to this section" class="anchor" href="#st-reset">#</a></h2>
+<p>The full reset on the <strong>Recovery</strong> tab clears more than settings: cached durations, stroke ranges,
+              and the player, library, workspace, recent-media and sidebar state go with it.</p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Careful</div>
+<p>A reset also discards the per-media offsets and stroke ranges you tuned. Your actual files are not touched.</p>
+</div>
+</article>
+<!-- ============================================ 21 FORMATS -->
+<article class="page" data-group="Reference" data-title="Supported files" id="page-formats">
+<h1>Supported files</h1>
+<p class="lede">What you can open.</p>
+<h2 id="fm-media">Media<a aria-label="Link to this section" class="anchor" href="#fm-media">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Type</th><th>Extensions</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Video</strong></td><td><code>mp4</code> · <code>mkv</code> · <code>avi</code> · <code>webm</code> · <code>mov</code> · <code>wmv</code></td></tr>
+<tr><td class="col-key"><strong>Audio</strong></td><td><code>mp3</code> · <code>wav</code> · <code>flac</code> · <code>m4a</code> · <code>aac</code> · <code>ogg</code> · <code>opus</code> · <code>wma</code></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>The right extension is no guarantee</div>
+<p>Two files with the same container extension can hold different codecs.
+                If one will not play, set up <a href="#ffmpeg">FFmpeg playback</a>.</p>
+</div>
+<h2 id="fm-scripts">Scripts<a aria-label="Link to this section" class="anchor" href="#fm-scripts">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Format</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><code>.funscript</code></td><td>The most common funscript format.</td></tr>
+<tr><td class="col-key"><code>.json</code></td><td>A JSON file with the same structure as a funscript.</td></tr>
+<tr><td class="col-key"><code>.csv</code></td><td>A script stored as a table.</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="fm-multiaxis">Multi-axis bundles</h3>
+<ul>
+<li>One file holding its axes in <code>axes[]</code></li>
+<li>One file holding its axes in <code>channels{}</code></li>
+<li>One file per axis — for example <code>video.L0.funscript</code>, <code>video.R0.funscript</code></li>
+</ul>
+<h2 id="fm-subs">Subtitles<a aria-label="Link to this section" class="anchor" href="#fm-subs">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Type</th><th>Supported</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>External subtitle files</strong></td><td><code>.srt</code> · <code>.vtt</code> · <code>.txt</code></td></tr>
+<tr><td class="col-key"><strong>Embedded text subtitles</strong></td><td>SRT · ASS/SSA · WebVTT · mov_text — <strong>external FFmpeg required</strong></td></tr>
+<tr><td class="col-key"><strong>Image-based subtitles</strong></td><td>PGS and DVD subtitles are listed but <strong>cannot be displayed</strong>.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="fm-naming">Naming layout<a aria-label="Link to this section" class="anchor" href="#fm-naming">#</a></h2>
+<p>This is the layout automatic matching handles best.</p>
+<pre><code>My video folder/
+├─ Title A.mp4
+├─ Title A.funscript          ← picked up automatically
+├─ Title A.srt                ← subtitles picked up too
+├─ Title B.mp4
+├─ Title B.L0.funscript       ← multi-axis: linear
+└─ Title B.R0.funscript       ← multi-axis: rotation</code></pre>
+<p>Even with different names, you can connect them via <a href="#scripts">duration matching</a>
+              or the <a href="#scripts">Script Variants panel</a>.</p>
+</article>
+<!-- ============================================ 22 TROUBLESHOOTING -->
+<article class="page" data-group="Reference" data-title="Troubleshooting" id="page-troubleshooting">
+<h1>Troubleshooting</h1>
+<p class="lede">Common symptoms and the order to check things. Work down from the top.</p>
+<h2 id="ts-install">Installing and launching<a aria-label="Link to this section" class="anchor" href="#ts-install">#</a></h2>
+<h3 id="ts-smartscreen">Windows shows a “protected your PC” warning</h3>
+<p>That is SmartScreen reacting to the Windows packages not being Authenticode signed.
+              Click <strong>More info → Run anyway</strong> to install.</p>
+<h3 id="ts-gatekeeper">The app will not open on macOS</h3>
+<p>Press <strong>“Open Anyway”</strong> in <strong>System Settings → Privacy &amp; Security</strong>.
+              Also check that you are on macOS <strong>Monterey 12 or newer</strong>.</p>
+<h3 id="ts-linux">It will not run on Linux</h3>
+<p>On Ubuntu / Kubuntu 24.04 or newer, install the <strong>DEB package</strong>.
+              The AppImage and archive packages cannot get around a system-wide user-namespace restriction,
+              and ScriptPlayer+ will not launch itself with <code>--no-sandbox</code>.</p>
+<h2 id="ts-playback">Playback<a aria-label="Link to this section" class="anchor" href="#ts-playback">#</a></h2>
+<h3 id="ts-novideo">The video will not open, or I only get sound</h3>
+<ol>
+<li>Check the extension is on the supported list. → <a href="#formats">Supported files</a></li>
+<li>The container may be right but the codec different. Supply <a href="#ffmpeg">FFmpeg</a> and turn on compatibility playback.</li>
+<li>If that still fails, open it in an <a href="#external">external player</a>.</li>
+</ol>
+<h3 id="ts-vrsplit">My VR video shows as two images</h3>
+<p>It is a side-by-side (SBS) source being played flat.
+              Set the projection to <strong>VR180 equirectangular</strong> and the source layout to <strong>side-by-side</strong>. → <a href="#vr">VR and 360° video</a></p>
+<h3 id="ts-nothumb">Thumbnails are not being generated</h3>
+<p>Chromium cannot decode that video.
+              With <a href="#ffmpeg">FFmpeg</a> available, thumbnails are built by the fallback route instead.</p>
+<h2 id="ts-scripts">Scripts<a aria-label="Link to this section" class="anchor" href="#ts-scripts">#</a></h2>
+<h3 id="ts-noscript">My script is not detected</h3>
+<ol>
+<li>Check the script sits in the <strong>same folder under the same name</strong> as the video.</li>
+<li>If you keep them apart, set the <strong>script folder</strong> from the sidebar.</li>
+<li>Press <strong>re-scan</strong> in the sidebar.</li>
+<li>If the names are completely different, use <a href="#scripts">duration matching</a>.</li>
+</ol>
+<h3 id="ts-offset">The motion runs ahead of or behind the video</h3>
+<p>Adjust the <a href="#sc-offset">script offset</a> using <code>+0ms</code> on the playback bar. Increase it if movement is late; decrease it if early. It is saved per script when possible, otherwise per media file. If all media has the same delay, also check the device time offset. → <a href="#handy">The Handy</a></p>
+<h3 id="ts-variant">It found one, but I want a different script</h3>
+<p>Swap it from the <strong>Script Variants</strong> panel in the sidebar. → <a href="#scripts">Working with scripts</a></p>
+<h2 id="ts-device">Devices<a aria-label="Link to this section" class="anchor" href="#ts-device">#</a></h2>
+<h3 id="ts-nomove">The device does not move at all</h3>
+<ol>
+<li>Confirm a script actually loaded. Can you see the timeline graph?</li>
+<li>Check the device status reads <strong>connected</strong>.</li>
+<li>Make sure the stroke range is not <strong>narrowed down close to zero</strong>. → <a href="#scripts">Working with scripts</a></li>
+<li>Check you are not still in an E-Stop state. → <a href="#safety">Safety and E-Stop</a></li>
+<li>On FunOSR, use the <a href="#funosr">live axis test</a> to see whether the hardware responds at all.</li>
+</ol>
+<h3 id="ts-stutter">The motion stutters or lags</h3>
+<ul>
+<li><strong>The Handy</strong> — run the <a href="#handy">network diagnostics</a> and look at latency and jitter. If they are poor, try a wired connection or a different network.</li>
+<li><strong>FunOSR</strong> — lower the update rate. Set too high, it becomes less stable, not more.</li>
+<li><strong>Intiface</strong> — if you have several devices, test with just one connected.</li>
+</ul>
+<h3 id="ts-switch">I cannot switch to another device</h3>
+<p>Output uses <strong>one provider at a time</strong>.
+              Tearing down the previous connection can take a moment, so wait a few seconds and try again. → <a href="#safety">Safety and E-Stop</a></p>
+<h3 id="ts-faptap">Another app cannot reach my Intiface device</h3>
+<p>The built-in Intiface engine accepts <strong>one client only</strong>.
+              Hand ownership over with the <strong>handoff</strong> control in the Intiface manager. → <a href="#intiface">Intiface / Buttplug</a></p>
+<h2 id="ts-reset">If none of that helps<a aria-label="Link to this section" class="anchor" href="#ts-reset">#</a></h2>
+<ol>
+<li>Try a reset from <strong>Settings → Recovery</strong>. → <a href="#playback">Playback</a></li>
+<li>Check you are on the latest version. → <a href="#install">Install</a></li>
+<li>Ask on <a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>.
+                For a device problem, <a href="#handy">copy the diagnostics</a> and include them — it speeds things up a lot.</li>
+</ol>
+</article>
+<!-- ============================================ 23 RELEASES -->
+<article class="page" data-group="Reference" data-title="Release history" id="page-releases">
+<h1>Release history</h1>
+<p class="lede">What changed in the major versions.
+              The complete list is on <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>.</p>
+<h2 id="rl-060">v0.6.0 — library, VR, Intiface<a aria-label="Link to this section" class="anchor" href="#rl-060">#</a></h2>
+<p>A release focused on large libraries, script discovery, multi-axis control and safe device recovery.</p>
+<ul>
+<li><strong>Multiple named library folders</strong> with independent enable/disable, merged local and NAS caches, sequential background refresh</li>
+<li>Persistent library filters and separate <strong>single-axis / multi-axis</strong> script categories</li>
+<li><strong>Duration-ranked</strong> alternative-script discovery and per-axis script source replacement</li>
+<li>In-player <strong>rating</strong>, plus configurable fullscreen control reveal, opacity and position</li>
+<li><strong>360° equirectangular, VR180, SBS, top-and-bottom and 180° fisheye</strong> viewing with eye selection and safe flat fallback</li>
+<li>A <strong>dedicated Intiface workspace</strong> with embedded-engine or external-Central mode, multi-device selection, feature mapping and battery status</li>
+<li>Axis source linking, centre-preserving axis ranges, and global or per-script stroke-range scope</li>
+<li>A provider-independent <strong>global E-Stop</strong>, per-device Intiface watchdogs, and more reliable FunOSR ↔ Handy/Intiface switching</li>
+<li>Better detection of CH340/CH341 and USB <code>1A86:7523</code> adapters</li>
+<li>Removed the AppImage FUSE2 dependency and added a DEB AppArmor profile</li>
+<li>Minimum macOS raised to <strong>Monterey 12</strong></li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 hotfix</div>
+<p>Fixed the Files sidebar being cut off in short windows.
+                The filters, Script Variants panel and file list now scroll together as one sidebar, so
+                <strong>Match by Duration</strong> and <strong>Axis Script Sources</strong> stay reachable even when the panel grows tall.</p>
+</div>
+<h2 id="rl-050">v0.5.0 — library rebuild<a aria-label="Link to this section" class="anchor" href="#rl-050">#</a></h2>
+<ul>
+<li>Reworked library screen and thumbnail menu</li>
+<li>Better handling of script variants</li>
+<li>Cleaner audio and subtitle track selection</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 hotfix</div>
+<p>Fixed a FunOSR / SR serial playback problem.
+                Pause and resume no longer get stuck in the safety transition, and catch-up after a delayed serial write is now capped.</p>
+</div>
+<h2 id="rl-040">v0.4.0 — plugins split out, motion generation<a aria-label="Link to this section" class="anchor" href="#rl-040">#</a></h2>
+<ul>
+<li><strong>Removed the built-in script-source provider</strong> from the default install — nothing is bundled, recommended or enabled now.</li>
+<li>Added a <strong>Plugins workspace</strong> for data-only <code>.funplugin</code> manifests</li>
+<li><strong>Funscript generation</strong> from video motion analysis (experimental)</li>
+<li>Per-axis range, inversion, offset, interpolation and speed-limit profiles</li>
+<li>FFmpeg-based thumbnail fallback</li>
+<li>Recent-media shortcuts and better external subtitle discovery</li>
+</ul>
+<h2 id="rl-030">v0.3.0 — library and multi-axis timeline<a aria-label="Link to this section" class="anchor" href="#rl-030">#</a></h2>
+<ul>
+<li>A new <strong>library workspace</strong> with thumbnail cards, search, filters and adjustable card size</li>
+<li>Player, library and settings unified into one <strong>workspace rail</strong></li>
+<li><strong>Multi-axis timeline</strong> — several axes at once, All and per-axis toggles, double-click solo, drag to resize</li>
+<li>Added Handy <strong>network diagnostics</strong></li>
+<li>Random motion smoothing: <code>Off / Light / Balanced / Strong</code></li>
+<li>Audio volume boost to <strong>150%</strong> (experimental)</li>
+<li>Automatic remote reconnection and steadier pairing</li>
+</ul>
+<h2 id="rl-early">v0.1.x – v0.2.x — early versions<a aria-label="Link to this section" class="anchor" href="#rl-early">#</a></h2>
+<ul>
+<li>Added the Script Variants panel</li>
+<li>Split <strong>Repeat</strong> from <strong>Auto Next Play</strong></li>
+<li>Tidied the random stroke preset names</li>
+<li>Lighter folder scans and cache invalidation</li>
+<li>Added segment repeat, hover preview and the recovery menu</li>
+<li>Same-version hotfix detection and in-app release notes</li>
+</ul>
+</article>
+<!-- ============================================ 24 ABOUT -->
+<article class="page" data-group="Reference" data-title="License and links" id="page-about">
+<h1>License and links</h1>
+<p class="lede">The distribution terms, and where to get help.</p>
+<h2 id="ab-license">License<a aria-label="Link to this section" class="anchor" href="#ab-license">#</a></h2>
+<p>ScriptPlayer+ is proprietary software distributed under the <strong>ScriptPlayer+ End User License Agreement (EULA)</strong>.
+              Commercial use, redistribution, modification and reuse of project media all require <strong>separate written permission</strong> from the copyright holder.</p>
+<p>Packages carry the EULA and consolidated third-party notices outside the application archive,
+              and the Windows installer presents the EULA before installing.</p>
+<h2 id="ab-source">Source availability<a aria-label="Link to this section" class="anchor" href="#ab-source">#</a></h2>
+<p>ScriptPlayer+ ships as signed or packaged desktop binaries.
+              The public repository is used for <strong>releases, update metadata, documentation and issue tracking</strong>;
+              the full application source is not publicly distributed.</p>
+<h2 id="ab-links">Links<a aria-label="Link to this section" class="anchor" href="#ab-links">#</a></h2>
+<div class="jump">
+<a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank"><span class="num">↓</span><span><b>Download the latest version</b><span class="d">Windows · macOS · Linux packages</span></span></a>
+<a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank"><span class="num">?</span><span><b>GitHub Issues</b><span class="d">Bug reports and feature requests</span></span></a>
+<a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank"><span class="num">◇</span><span><b>GitHub repository</b><span class="d">Releases and documentation</span></span></a>
+<a href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank"><span class="num">♥</span><span><b>Patreon</b><span class="d">Development news and support</span></span></a>
+</div>
+<h2 id="ab-thanks">Acknowledgments<a aria-label="Link to this section" class="anchor" href="#ab-thanks">#</a></h2>
+<p>FunOSR serial device hardware was provided by the manufacturer, <strong>FunOSR</strong>.
+              Thank you for supplying the test equipment used during development.</p>
+<h2 id="ab-tech">Tech stack<a aria-label="Link to this section" class="anchor" href="#ab-tech">#</a></h2>
+<p>Electron · React · TypeScript · Tailwind CSS · Vite</p>
+<h2 id="ab-credits">Used in these docs<a aria-label="Link to this section" class="anchor" href="#ab-credits">#</a></h2>
+<dl class="deflist">
+<div>
+<dt>Icon</dt>
+<dd><a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
+                  — MIT licence, © Disarto.</dd>
+</div>
+<div>
+<dt>Body typeface</dt>
+<dd>
+<a href="https://sunn.us/suit/" rel="noopener noreferrer" target="_blank">SUIT</a>
+                  — SIL Open Font License 1.1, © SUNN.
+                </dd>
+</div>
+<div>
+<dt>Screenshots and video</dt>
+<dd>Recorded and captured from ScriptPlayer+ itself. Reuse requires permission from the copyright holder.</dd>
+</div>
+</dl>
+<h2 id="ab-docs">About these docs<a aria-label="Link to this section" class="anchor" href="#ab-docs">#</a></h2>
+<p>This site describes the ScriptPlayer+ v0.6 series.
+              Screens and wording may differ once the app updates, so check the
+              <a href="#releases">release history</a> and GitHub Releases for the latest changes.</p>
+</article>
+<!-- pager gets injected here -->
+<nav aria-label="Previous / next page" class="pager" id="pager"></nav>
+</main>
+<!-- ================================================ TOC -->
+<aside aria-label="On this page" class="toc" id="toc">
+<h5>On this page</h5>
+<ul id="tocList"></ul>
+</aside>
+</div>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<p>© ScriptPlayer+ · License: ScriptPlayer+ EULA · Docs based on v0.6.x</p>
+<div class="footer-links">
+<a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">Releases</a>
+<a href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank">Patreon</a>
+<a href="#about">License</a>
+</div>
+</div>
+</footer>
+<!-- ================================================== SEARCH -->
+<div aria-label="Search the docs" aria-modal="true" class="search-overlay" id="searchOverlay" role="dialog">
+<div class="search-box">
+<div class="search-input-row">
+<svg aria-hidden="true" height="17" width="17"><use href="#i-search"></use></svg>
+<input autocomplete="off" id="searchInput" placeholder="Type what you are looking for…" spellcheck="false" type="text"/>
+<span class="search-esc">ESC</span>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</div>
+<!-- ================================================== LIGHTBOX -->
+<div aria-label="Enlarged image" aria-modal="true" class="lightbox" id="lightbox" role="dialog">
+<button aria-label="Close" class="lightbox-close" id="lightboxClose">
+<svg aria-hidden="true" height="18" width="18"><use href="#i-close"></use></svg>
+</button>
+</div>
+<button aria-label="Back to top" class="totop" id="toTop">
+<svg aria-hidden="true" height="18" width="18"><use href="#i-arrow-up"></use></svg>
+</button>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

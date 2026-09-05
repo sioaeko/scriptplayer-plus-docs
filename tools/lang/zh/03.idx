@@ -1,0 +1,327 @@
+@640|<strong>清单校验</strong> — 严格检查格式是否正确。
+@641|<strong>权限确认</strong> — 显示它请求了什么。
+@642|<strong>签名</strong> — 若发布者提供了签名则进行验证。（可选）
+@643|<strong>信任信息展示</strong> — 把以上结果呈现给用户查看。
+@644|下载的脚本<a aria-label="本节链接" class="anchor" href="#pl-download">#</a>
+@645|通过插件获取的脚本会保存到你指定的<strong>脚本文件夹</strong>；若未指定，则保存到应用管理的目录。下载完成后会<strong>立即应用</strong>到当前正在播放的媒体。
+@646|同时下载多个时，各自的进度会分别显示。
+@647|键盘快捷键
+@648|默认快捷键一览，以及改成自己想要的按键的方法。所有动作都可以在<strong>设置 → 键盘快捷键</strong>中重新指定。
+@649|默认快捷键<a aria-label="本节链接" class="anchor" href="#ks-default">#</a>
+@650|按键
+@651|后退 / 前进 5 秒
+@652|后退 / 前进 10 秒
+@653|音量提高 / 降低 5%
+@654|切换全屏
+@655|切换静音
+@656|设置 → 键盘快捷键界面。
+@657|可以绑定快捷键的动作<a aria-label="本节链接" class="anchor" href="#ks-all">#</a>
+@658|除上面的默认值之外，还可以为以下动作绑定按键。把常用功能移到顺手的键上会快很多。
+@659|播放
+@660|后退 5 秒 · 前进 5 秒
+@661|后退 10 秒 · 前进 10 秒
+@662|上一个视频 · 下一个视频
+@663|跳到开头 · 跳到结尾
+@664|设定区间循环起点 · 设定终点 · 打开编辑器
+@665|声音
+@666|提高音量 · 降低音量
+@667|画面
+@668|脚本
+@669|收窄 · 放宽行程范围
+@670|减小 · 增大 · 重置脚本偏移
+@671|应用
+@672|打开文件夹
+@673|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>推荐
+@674|如果你使用设备，建议把<strong>收窄/放宽行程范围</strong>绑定到键盘上。播放中无需移动鼠标就能立刻调整力度。
+@675|设置一览
+@676|设置窗口分为十一个标签页。用 <kbd>Ctrl</kbd> + <kbd>,</kbd> 或左侧栏最下方的齿轮图标打开。哪个设置在哪个标签页，可以在这里查。
+@677|设置窗口，左侧是标签页列表。
+@678|各标签页的内容<a aria-label="本节链接" class="anchor" href="#st-tabs">#</a>
+@679|标签页
+@680|这里能做什么
+@681|<strong>常规</strong>
+@682|语言、<strong>Library folders</strong>（媒体库文件夹的添加、命名、启用/停用）、<strong>Script Storage Folder</strong>，以及更新检查方式。 → <a href="#library">媒体库</a>
+@683|<strong>播放</strong>
+@684|<strong>Auto Next Play</strong>、<strong>Video Compatibility Mode</strong> 与 FFmpeg 可执行文件路径、<strong>Audio volume boost</strong>（150%）、<strong>Auto Play After Handy Sync</strong>，以及空白区间的自动跳过与延迟。 → <a href="#ffmpeg">FFmpeg 兼容播放</a>
+@685|<strong>外观</strong>
+@686|显示相关项、全屏控件的显示方式、不透明度与竖直位置，以及窗口置顶等窗口选项。
+@687|<strong>时间线</strong>
+@688|时间线对比度、按速度着色、默认高度等图形设置。 → <a href="#timeline">时间线与热力图</a>
+@689|<strong>外部播放器</strong>
+@690|mpv、VLC、PotPlayer 等外部播放器的路径与启动选项。 → <a href="#external">外部播放器</a>
+@691|项目最多的标签页。包含 <strong>Show E-Stop button</strong>、<strong>Amplitude setting behavior</strong>、<strong>Stroke Range Min/Max</strong>、<strong>Range Extender</strong>、<strong>Inverse Stroke</strong>、<strong>Custom speed limit</strong>、<strong>FunOSR Twist Quiet Mode</strong>、<strong>Pause / Stop Behavior</strong>、<strong>Home Return Speed</strong>、<strong>Playback Start Safety</strong>、<strong>Show Script Debug Info</strong>、<strong>Device Test Panel</strong>，以及 The Handy 的连接密钥和 FunOSR 的 COM 端口。 → <a href="#handy">The Handy</a> · <a href="#funosr">FunOSR</a> · <a href="#safety">安全与紧急停止</a>
+@692|<strong>Handy 网络诊断</strong>
+@693|测量延迟、抖动、成功率与服务器时钟偏差。 → <a href="#handy">The Handy</a>
+@694|<strong>手机/手柄遥控</strong>
+@695|遥控器配对与 A、B、C 按键映射。 → <a href="#remote">手机遥控</a>
+@696|<strong>键盘快捷键</strong>
+@697|所有动作的按键绑定。 → <a href="#shortcuts">键盘快捷键</a>
+@698|<strong>恢复</strong>
+@699|重置设置与清理缓存。 → <a href="#playback">播放</a>
+@700|<strong>关于</strong>
+@701|版本、许可与第三方声明。
+@702|FFmpeg 路径<a aria-label="本节链接" class="anchor" href="#st-ffmpeg">#</a>
+@703|FFmpeg 可执行文件的路径在设置中显示为一行，你可以自行选择，也可以通过包管理器安装。详情见<a href="#ffmpeg">FFmpeg 兼容播放</a>。
+@704|重置<a aria-label="本节链接" class="anchor" href="#st-reset">#</a>
+@705|<strong>恢复</strong>标签页中的整体重置不只清设置，还会一并清理缓存的时长、行程范围，以及播放器、媒体库、工作区、最近媒体和侧边栏的状态。
+@706|重置后，你为各个媒体调好的偏移和行程范围也会消失。实际文件不会被删除。
+@707|支持的文件格式
+@708|整理了可以打开哪些文件。
+@709|媒体<a aria-label="本节链接" class="anchor" href="#fm-media">#</a>
+@710|类型
+@711|扩展名
+@712|<strong>视频</strong>
+@713|<strong>音频</strong>
+@714|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>扩展名对得上也可能打不开
+@715|容器扩展名相同，里面的编码格式也可能不同。若无法播放，请准备<a href="#ffmpeg">FFmpeg 兼容播放</a>。
+@716|脚本<a aria-label="本节链接" class="anchor" href="#fm-scripts">#</a>
+@717|格式
+@718|最常见的脚本格式。
+@719|与脚本结构相同的 JSON 文件。
+@720|以表格形式保存的脚本。
+@721|多轴包
+@722|在一个文件中用 <code>axes[]</code> 收纳各轴
+@723|在一个文件中用 <code>channels{}</code> 收纳各轴
+@724|每个轴一个文件 — 例如 <code>视频.L0.funscript</code>、<code>视频.R0.funscript</code>
+@725|字幕<a aria-label="本节链接" class="anchor" href="#fm-subs">#</a>
+@726|支持情况
+@727|<strong>外部字幕文件</strong>
+@728|<strong>内嵌文本字幕</strong>
+@729|SRT · ASS/SSA · WebVTT · mov_text — <strong>需要外部 FFmpeg</strong>
+@730|<strong>图像类字幕</strong>
+@731|PGS、DVD 字幕会列出但<strong>无法显示。</strong>
+@732|文件命名方式<a aria-label="本节链接" class="anchor" href="#fm-naming">#</a>
+@733|自动匹配效果最好的摆放方式如下。
+@734|<code>我的视频文件夹/
+├─ 作品A.mp4
+├─ 作品A.funscript          ← 会被自动识别
+├─ 作品A.srt                ← 字幕也会被自动识别
+├─ 作品B.mp4
+├─ 作品B.L0.funscript       ← 多轴：线性轴
+└─ 作品B.R0.funscript       ← 多轴：旋转轴</code>
+@735|即使名称不同，也可以通过<a href="#scripts">按时长查找</a>或<a href="#scripts">脚本变体面板</a>关联起来。
+@736|疑难解答
+@737|收集了常见症状与排查顺序。请从上往下依次尝试。
+@738|安装与启动<a aria-label="本节链接" class="anchor" href="#ts-install">#</a>
+@739|Windows 上出现“已保护你的电脑”警告
+@740|这是因为 Windows 安装包没有 Authenticode 签名，SmartScreen 才给出的提示。点击<strong>更多信息 → 仍要运行</strong>即可安装。
+@741|macOS 上应用打不开
+@742|请在<strong>系统设置 → 隐私与安全性</strong>中点击<strong>“仍要打开”</strong>。也请确认你的系统为 macOS <strong>Monterey 12 或更高</strong>。
+@743|Linux 上无法启动
+@744|如果是 Ubuntu / Kubuntu 24.04 及以上，请安装 <strong>DEB 包</strong>。AppImage 与压缩包无法绕过系统的用户命名空间限制，而 ScriptPlayer+ 也不会用 <code>--no-sandbox</code> 自动启动。
+@745|播放<a aria-label="本节链接" class="anchor" href="#ts-playback">#</a>
+@746|视频打不开，或者只有声音
+@747|先确认扩展名在支持列表中。 → <a href="#formats">支持的文件格式</a>
+@748|容器对得上但编码格式可能不同。请准备 <a href="#ffmpeg">FFmpeg</a> 并开启兼容播放。
+@749|若仍然不行，试着用<a href="#external">外部播放器</a>打开。
+@750|VR 视频显示成两半
+@751|这是左右分割（SBS）的视频被按平面播放了。请把投影方式设为 <strong>VR180 等距圆柱</strong>，源画面布局设为<strong>左右分割</strong>。 → <a href="#vr">VR 与 360 度视频</a>
+@752|缩略图生成不出来
+@753|这是 Chromium 无法解码该视频的情况。只要有 <a href="#ffmpeg">FFmpeg</a>，就会用备用方式生成缩略图。
+@754|脚本<a aria-label="本节链接" class="anchor" href="#ts-scripts">#</a>
+@755|脚本没有被自动识别
+@756|确认脚本与视频在<strong>同一文件夹、同一文件名</strong>。
+@757|如果单独存放，请在侧边栏指定<strong>脚本文件夹</strong>。
+@758|在侧边栏点一下<strong>重新扫描</strong>。
+@759|如果名称完全不同，请使用<a href="#scripts">按时长查找</a>。
+@760|动作比视频快或慢
+@761|请在播放栏的 <code>+0ms</code> 中调整<a href="#scripts">脚本偏移</a>，该数值按媒体分别保存。如果不是某个视频，而是<strong>整体都稳定地</strong>偏移，请检查设备端的时间偏移。 → <a href="#handy">The Handy</a>
+@762|识别到了，但我想用另一个脚本
+@763|可以在侧边栏的 <strong>Script Variants</strong> 面板中替换。 → <a href="#scripts">使用脚本</a>
+@764|设备<a aria-label="本节链接" class="anchor" href="#ts-device">#</a>
+@765|设备完全不动
+@766|确认脚本确实已加载。能看到时间线图形吗？
+@767|确认设备的连接状态是<strong>已连接</strong>。
+@768|确认行程范围没有被<strong>收窄到接近 0</strong>。 → <a href="#scripts">使用脚本</a>
+@769|确认没有仍处于紧急停止状态。 → <a href="#safety">安全与紧急停止</a>
+@770|如果是 FunOSR，用<a href="#funosr">实时轴测试</a>看硬件本身是否有反应。
+@771|动作卡顿或延迟
+@772|<strong>The Handy</strong> — 运行<a href="#handy">网络诊断</a>查看延迟与抖动。数值不佳时请尝试有线连接或换一个网络。
+@773|<strong>FunOSR</strong> — 试着降低更新速率。设得过高反而更不稳定。
+@774|<strong>Intiface</strong> — 如果同时用了多台设备，请只留一台再试。
+@775|无法切换到别的设备
+@776|输出<strong>一次只使用一个提供方</strong>。清理上一个连接可能需要一点时间，请等几秒再试。 → <a href="#safety">安全与紧急停止</a>
+@777|其他应用找不到 Intiface 设备
+@778|内置的 Intiface 引擎<strong>只接受一个客户端</strong>。请用 Intiface 管理界面的<strong>移交</strong>控件把控制权交出去。 → <a href="#intiface">Intiface / Buttplug</a>
+@779|以上都不管用时<a aria-label="本节链接" class="anchor" href="#ts-reset">#</a>
+@780|在<strong>设置 → 恢复</strong>中尝试重置。 → <a href="#playback">播放</a>
+@781|确认是否为最新版本。 → <a href="#install">安装</a>
+@782|到 <a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a> 提问。如果是设备问题，<a href="#handy">复制诊断信息</a>一起附上会快得多。
+@783|版本记录
+@784|整理了各主要版本的变化。完整列表在 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>。
+@785|v0.6.0 — 媒体库 · VR · Intiface<a aria-label="本节链接" class="anchor" href="#rl-060">#</a>
+@786|这一版聚焦于大型媒体库、脚本查找、多轴控制以及安全的设备恢复。
+@787|可命名的<strong>多个媒体库文件夹</strong>与独立启用/停用、本地与 NAS 缓存合并、顺序后台刷新
+@788|会保存的媒体库筛选条件，以及<strong>单轴 / 多轴</strong>脚本分类
+@789|<strong>按时长排序</strong>的备选脚本查找，以及按轴替换脚本来源
+@790|播放界面内的<strong>评分</strong>，以及全屏控件的显示、不透明度与位置设置
+@791|<strong>360 度等距圆柱、VR180、SBS、上下分割、180 度鱼眼</strong>视频观看与眼别选择，并可安全回退到平面
+@792|可选内置引擎或外部 Central 的 <strong>Intiface 专用工作区</strong>，多设备选择、功能映射与电量显示
+@793|轴来源联动、保持中心的轴范围，以及全局或按脚本应用的行程范围
+@794|与提供方无关的<strong>全局 E-Stop</strong>、按设备的 Intiface 看门狗，以及更可靠的 FunOSR ↔ Handy/Intiface 切换
+@795|改进对 CH340/CH341 与 USB <code>1A86:7523</code> 适配器的识别
+@796|移除 AppImage 的 FUSE2 依赖，并为 DEB 增加 AppArmor 配置
+@797|最低 macOS 版本提升至 <strong>Monterey 12</strong>
+@798|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 热修复
+@799|修复了窗口高度较小时文件侧边栏被截断的问题。筛选器、脚本变体面板与文件列表现在作为同一个侧边栏一起滚动，即使面板变高，<strong>按时长匹配</strong>与<strong>按轴脚本来源</strong>依然可以触达。
+@800|v0.5.0 — 媒体库重构<a aria-label="本节链接" class="anchor" href="#rl-050">#</a>
+@801|媒体库界面改版与缩略图菜单
+@802|改进脚本变体的处理
+@803|梳理音轨与字幕轨的选择流程
+@804|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 热修复
+@805|修复了 FunOSR / SR 串口播放的问题。让暂停与继续不再卡在安全过渡状态，并为串口写入延迟后的追赶量设置了上限。
+@806|v0.4.0 — 插件分离与运动生成<a aria-label="本节链接" class="anchor" href="#rl-040">#</a>
+@807|从默认安装中<strong>移除内置脚本提供方</strong> — 现在没有任何默认包含、推荐或启用的提供方。
+@808|为纯数据的 <code>.funplugin</code> 清单新增<strong>插件工作区</strong>
+@809|通过视频运动分析<strong>生成脚本</strong>（实验功能）
+@810|按轴的范围、反转、偏移、插值与速度限制配置
+@811|基于 FFmpeg 的缩略图备用生成
+@812|最近媒体快捷入口，以及外部字幕查找的改进
+@813|v0.3.0 — 媒体库与多轴时间线<a aria-label="本节链接" class="anchor" href="#rl-030">#</a>
+@814|新增带缩略图卡片、搜索、筛选与卡片尺寸调整的<strong>媒体库工作区</strong>
+@815|把播放器、媒体库与设置整合到同一个<strong>工作区侧栏</strong>
+@816|<strong>多轴时间线</strong> — 多轴同时显示、All/单轴开关、双击独显、拖动调整高度
+@817|新增 Handy <strong>网络诊断</strong>
+@818|随机运动平滑 <code>Off / Light / Balanced / Strong</code>
+@819|音频音量增强 <strong>150%</strong>（实验功能）
+@820|遥控器自动重连与配对稳定性提升
+@821|v0.1.x ～ v0.2.x — 早期版本<a aria-label="本节链接" class="anchor" href="#rl-early">#</a>
+@822|新增脚本变体面板
+@823|把<strong>循环</strong>与 <strong>Auto Next Play</strong> 拆开
+@824|整理随机行程的预设名称
+@825|减轻文件夹扫描负担并使缓存失效
+@826|新增区间循环、悬停预览与恢复菜单
+@827|同版本热修复检测与应用内发布说明
+@828|许可与链接
+@829|发布条款，以及可以获得帮助的地方。
+@830|许可<a aria-label="本节链接" class="anchor" href="#ab-license">#</a>
+@831|ScriptPlayer+ 是依据 <strong>ScriptPlayer+ End User License Agreement（EULA）</strong>发布的专有软件。商业使用、再分发、修改以及再利用项目媒体，都需要著作权人的<strong>另行书面许可</strong>。
+@832|发布包中把 EULA 与第三方声明放在应用归档之外一并提供，Windows 安装程序会在安装前先显示 EULA。
+@833|源码公开范围<a aria-label="本节链接" class="anchor" href="#ab-source">#</a>
+@834|ScriptPlayer+ 以已签名或已打包的桌面二进制形式发布。公开仓库用于<strong>发布、更新元数据、文档与问题跟踪</strong>，完整的应用源码并不公开分发。
+@835|链接<a aria-label="本节链接" class="anchor" href="#ab-links">#</a>
+@836|<span class="num">↓</span><span><b>下载最新版本</b><span class="d">Windows · macOS · Linux 安装包</span></span>
+@837|<span class="num">?</span><span><b>GitHub Issues</b><span class="d">问题反馈与功能建议</span></span>
+@838|<span class="num">◇</span><span><b>GitHub 仓库</b><span class="d">发布与文档</span></span>
+@839|<span class="num">♥</span><span><b>Patreon</b><span class="d">开发动态与支持</span></span>
+@840|致谢<a aria-label="本节链接" class="anchor" href="#ab-thanks">#</a>
+@841|FunOSR 串口设备的硬件由制造商 <strong>FunOSR</strong> 提供。感谢在开发期间提供测试所用的设备。
+@842|技术栈<a aria-label="本节链接" class="anchor" href="#ab-tech">#</a>
+@843|本文档使用的资源<a aria-label="本节链接" class="anchor" href="#ab-credits">#</a>
+@844|图标
+@845|<a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
+                  — MIT 许可，© Disarto.
+@846|正文字体
+@847|截图与视频
+@848|来自 ScriptPlayer+ 的实际界面录制与截图。再利用需获得著作权人许可。
+@849|关于本文档<a aria-label="本节链接" class="anchor" href="#ab-docs">#</a>
+@850|本站以 ScriptPlayer+ v0.6 系列为准。应用更新后界面与说明可能有所不同，最新变化请一并查看<a href="#releases">版本记录</a>与 GitHub Releases。
+@851|本页目录
+@852|© ScriptPlayer+ · 许可：ScriptPlayer+ EULA · 文档基于 v0.6.x
+@853|发布
+@854|许可
+@855|ScriptPlayer+ 官方指南。从安装、媒体库、脚本、时间线，到连接 The Handy、Intiface 与 FunOSR 设备，写得让初次使用者也能跟着做。
+@856|ScriptPlayer+ 使用手册
+@857|从安装到连接设备，初次使用者也能跟着做的 ScriptPlayer+ 入门指南与参考。
+@858|打开菜单
+@859|搜索文档
+@860|选择语言
+@861|快捷链接
+@862|文档目录
+@863|首页
+@864|开始使用
+@865|ScriptPlayer+ 全窗口预览
+@866|本节链接
+@867|安装
+@868|Windows 安装程序界面
+@869|macOS DMG 窗口
+@870|macOS 安全警告
+@871|macOS 隐私与安全性设置
+@872|更新提示
+@873|更新设置
+@874|5分钟上手
+@875|ScriptPlayer+ 首次启动界面
+@876|媒体库界面演示
+@877|界面导览
+@878|ScriptPlayer+ 的窗口布局
+@879|界面布局导览
+@880|循环图标
+@881|随机播放图标
+@882|评分图标
+@883|全屏图标
+@884|标题栏上的 Stop all devices 按钮
+@885|媒体库
+@886|日常使用
+@887|媒体库演示
+@888|设置·常规标签页中的媒体库文件夹列表
+@889|媒体库缩略图生成演示
+@890|缩略图菜单演示
+@891|评分演示
+@892|悬停预览演示
+@893|播放
+@894|自动播放下一个的演示
+@895|区间循环演示
+@896|FIT / FILL 演示
+@897|全屏侧边栏演示
+@898|窗口置顶设置
+@899|恢复菜单演示
+@900|使用脚本
+@901|脚本扫描结果
+@902|脚本变体面板
+@903|切换脚本变体的演示
+@904|按时长搜索脚本的演示
+@905|脚本偏移调整界面
+@906|设置·设备标签页中的行程范围项目
+@907|调整行程范围
+@908|间隙填充设置
+@909|随机模式演示
+@910|随机平滑演示
+@911|脚本调试演示
+@912|时间线与热力图
+@913|多轴时间线界面
+@914|同时显示全部轴的演示
+@915|时间线高度调整演示
+@916|音频与字幕
+@917|音频播放界面
+@918|音轨演示
+@919|音量增强演示
+@920|字幕选择演示
+@921|VR 与 360 度视频
+@922|VR180 播放演示
+@923|设备连接
+@924|设备标签页演示
+@925|Handy 网络诊断演示
+@926|复制设备诊断信息
+@927|Handy 兼容模式设置
+@928|Intiface Device Manager 界面
+@929|连接多台设备的演示
+@930|设置·设备标签页中的 FunOSR 相关项目
+@931|速度限制演示
+@932|设备测试演示
+@933|手机遥控
+@934|手机/手柄遥控设置界面
+@935|安全与紧急停止
+@936|Stop all devices 按钮
+@937|设置·设备标签页中的 Show E-Stop button 项目
+@938|外部播放器
+@939|扩展功能
+@940|FFmpeg 兼容播放
+@941|视频兼容警告
+@942|设置·播放标签页中的 FFmpeg 设置
+@943|FFmpeg 兼容播放演示
+@944|插件
+@945|键盘快捷键
+@946|参考
+@947|键盘快捷键设置界面
+@948|设置一览
+@949|设置窗口
+@950|支持的文件格式
+@951|疑难解答
+@952|版本记录
+@953|许可与链接
+@954|上一页 / 下一页
+@955|本页目录
+@956|请输入想查找的内容…
+@957|放大的图片
+@958|关闭
+@959|返回顶部

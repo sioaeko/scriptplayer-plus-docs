@@ -1,0 +1,327 @@
+@640|<strong>マニフェスト検査</strong> — 形式が正しいか厳密に確認します。
+@641|<strong>権限の確認</strong> — 何を要求しているか表示します。
+@642|<strong>署名</strong> — 発行元の署名があれば検証します。（任意）
+@643|<strong>信頼情報の表示</strong> — 上の結果をユーザーが見えるように示します。
+@644|ダウンロードしたスクリプト<a aria-label="この項目へのリンク" class="anchor" href="#pl-download">#</a>
+@645|プラグインで取得したスクリプトは、指定した<strong>スクリプトフォルダー</strong>に保存されます。指定していなければアプリが管理するフォルダーに保存されます。ダウンロードが終わると、いま再生中のメディアへ<strong>すぐ適用</strong>されます。
+@646|複数を同時に取得するときは、それぞれの進行状況が個別に表示されます。
+@647|キーボードショートカット
+@648|既定のショートカット一覧と、好きなキーに変える方法です。すべての動作は<strong>設定 → キーボードショートカット</strong>で再割り当てできます。
+@649|既定のショートカット<a aria-label="この項目へのリンク" class="anchor" href="#ks-default">#</a>
+@650|キー
+@651|5秒戻る / 進む
+@652|10秒戻る / 進む
+@653|音量を5%上げる / 下げる
+@654|全画面の切り替え
+@655|ミュートの切り替え
+@656|設定 → キーボードショートカットの画面です。
+@657|ショートカットを割り当てられる動作<a aria-label="この項目へのリンク" class="anchor" href="#ks-all">#</a>
+@658|上の既定値以外にも、次の動作へ好きなキーを割り当てられます。よく使う機能を押しやすいキーへ移しておくと、ぐっと速くなります。
+@659|再生
+@660|5秒戻る・5秒進む
+@661|10秒戻る・10秒進む
+@662|前の映像・次の映像
+@663|先頭へ・末尾へ
+@664|区間リピートの開始点指定・終了点指定・エディターを開く
+@665|音
+@666|音量を上げる・下げる
+@667|表示
+@668|スクリプト
+@669|ストローク範囲を狭める・広げる
+@670|スクリプトオフセットを減らす・増やす・リセット
+@671|アプリ
+@672|フォルダーを開く
+@673|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>おすすめ
+@674|デバイスを使うなら、<strong>ストローク範囲を狭める/広げる</strong>をキーボードに割り当てておきましょう。再生中にマウスを動かさず、強さをすぐ調整できます。
+@675|設定一覧
+@676|設定ウィンドウは11のタブに分かれています。<kbd>Ctrl</kbd> + <kbd>,</kbd> または左レール最下部の歯車アイコンで開きます。どの設定がどのタブにあるかはここで探してください。
+@677|設定ウィンドウ。左にタブの一覧があります。
+@678|タブごとの内容<a aria-label="この項目へのリンク" class="anchor" href="#st-tabs">#</a>
+@679|タブ
+@680|ここでできること
+@681|<strong>一般</strong>
+@682|言語、<strong>Library folders</strong>（ライブラリフォルダーの追加・名前・有効/無効）、<strong>Script Storage Folder</strong>、アップデートの確認方法です。 → <a href="#library">ライブラリ</a>
+@683|<strong>再生</strong>
+@684|<strong>Auto Next Play</strong>、<strong>Video Compatibility Mode</strong> と FFmpeg 実行ファイルのパス、<strong>Audio volume boost</strong>（150%）、<strong>Auto Play After Handy Sync</strong>、空白区間の自動スキップと遅延です。 → <a href="#ffmpeg">FFmpeg互換再生</a>
+@685|<strong>外観</strong>
+@686|表示、全画面コントロールの表示方法・不透明度・縦位置、常に手前に表示などのウィンドウ設定です。
+@687|<strong>タイムライン</strong>
+@688|タイムラインのコントラスト、速度による色分け、既定の高さなどグラフの設定です。 → <a href="#timeline">タイムラインとヒートマップ</a>
+@689|<strong>外部プレーヤー</strong>
+@690|mpv・VLC・PotPlayer など外部プレーヤーのパスと起動オプションです。 → <a href="#external">外部プレーヤー</a>
+@691|もっとも項目が多いタブです。<strong>Show E-Stop button</strong>、<strong>Amplitude setting behavior</strong>、<strong>Stroke Range Min/Max</strong>、<strong>Range Extender</strong>、<strong>Inverse Stroke</strong>、<strong>Custom speed limit</strong>、<strong>FunOSR Twist Quiet Mode</strong>、<strong>Pause / Stop Behavior</strong>、<strong>Home Return Speed</strong>、<strong>Playback Start Safety</strong>、<strong>Show Script Debug Info</strong>、<strong>Device Test Panel</strong>、そして The Handy の接続キーと FunOSR の COM ポートがあります。 → <a href="#handy">The Handy</a> · <a href="#funosr">FunOSR</a> · <a href="#safety">安全と緊急停止</a>
+@692|<strong>Handy ネットワーク診断</strong>
+@693|レイテンシ・ジッター・成功率・サーバー時計の誤差を測定します。 → <a href="#handy">The Handy</a>
+@694|<strong>モバイル/コントローラーリモート</strong>
+@695|リモートのペアリングと A・B・C ボタンの割り当てです。 → <a href="#remote">モバイルリモート</a>
+@696|<strong>キーボードショートカット</strong>
+@697|すべての動作のキー割り当てです。 → <a href="#shortcuts">キーボードショートカット</a>
+@698|<strong>復旧</strong>
+@699|設定のリセットとキャッシュの整理です。 → <a href="#playback">再生</a>
+@700|<strong>情報</strong>
+@701|バージョン、ライセンス、サードパーティ表記です。
+@702|FFmpeg のパス<a aria-label="この項目へのリンク" class="anchor" href="#st-ffmpeg">#</a>
+@703|FFmpeg 実行ファイルのパスは設定内で1行として表示され、自分で選ぶかパッケージマネージャーでインストールできます。詳しくは<a href="#ffmpeg">FFmpeg互換再生</a>にあります。
+@704|リセット<a aria-label="この項目へのリンク" class="anchor" href="#st-reset">#</a>
+@705|<strong>復旧</strong>タブの全体リセットは、設定だけでなくキャッシュした再生時間、ストローク範囲、プレーヤー・ライブラリ・ワークスペース・最近のメディア・サイドバーの状態までまとめて整理します。
+@706|リセットするとメディアごとに合わせたオフセットとストローク範囲も消えます。実際のファイルは削除されません。
+@707|対応ファイル形式
+@708|どんなファイルを開けるかをまとめました。
+@709|メディア<a aria-label="この項目へのリンク" class="anchor" href="#fm-media">#</a>
+@710|種類
+@711|拡張子
+@712|<strong>映像</strong>
+@713|<strong>音声</strong>
+@714|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>拡張子が合っていても開けないことがあります
+@715|コンテナの拡張子が同じでも、中のコーデックは違うことがあります。再生できない場合は<a href="#ffmpeg">FFmpeg互換再生</a>を用意してみてください。
+@716|スクリプト<a aria-label="この項目へのリンク" class="anchor" href="#fm-scripts">#</a>
+@717|形式
+@718|もっとも一般的なファンスクリプトの形式です。
+@719|ファンスクリプトと同じ構造の JSON ファイルです。
+@720|表形式で保存されたスクリプトです。
+@721|多軸バンドル
+@722|1つのファイルに <code>axes[]</code> で軸を収めた形式
+@723|1つのファイルに <code>channels{}</code> で軸を収めた形式
+@724|軸ごとにファイルが分かれた形式 — 例: <code>映像.L0.funscript</code>、<code>映像.R0.funscript</code>
+@725|字幕<a aria-label="この項目へのリンク" class="anchor" href="#fm-subs">#</a>
+@726|対応
+@727|<strong>外部字幕ファイル</strong>
+@728|<strong>内蔵テキスト字幕</strong>
+@729|SRT · ASS/SSA · WebVTT · mov_text — <strong>外部の FFmpeg が必要</strong>
+@730|<strong>画像ベースの字幕</strong>
+@731|PGS・DVD 字幕は一覧に出ますが<strong>表示できません。</strong>
+@732|ファイル名の付けかた<a aria-label="この項目へのリンク" class="anchor" href="#fm-naming">#</a>
+@733|自動照合がもっともうまく働く配置はこうです。
+@734|<code>マイ動画フォルダー/
+├─ 作品A.mp4
+├─ 作品A.funscript          ← 自動で認識されます
+├─ 作品A.srt                ← 字幕も自動で認識されます
+├─ 作品B.mp4
+├─ 作品B.L0.funscript       ← 多軸: リニア軸
+└─ 作品B.R0.funscript       ← 多軸: 回転軸</code>
+@735|名前が違っていても、<a href="#scripts">再生時間で探す</a>や<a href="#scripts">スクリプトバリアントパネル</a>で結び付けられます。
+@736|トラブルシューティング
+@737|よくある症状と確認の順番をまとめました。上から順に試してみてください。
+@738|インストール・起動<a aria-label="この項目へのリンク" class="anchor" href="#ts-install">#</a>
+@739|Windows で「PC が保護されました」と警告が出ます
+@740|Windows パッケージに Authenticode 署名がないため SmartScreen が出す案内です。<strong>詳細情報 → 実行</strong>を押せばインストールできます。
+@741|macOS でアプリが開きません
+@742|<strong>システム設定 → プライバシーとセキュリティ</strong>で<strong>「このまま開く」</strong>を押してください。macOS <strong>Monterey 12 以降</strong>が必要な点も確認してください。
+@743|Linux で起動しません
+@744|Ubuntu / Kubuntu 24.04 以降なら <strong>DEB パッケージ</strong>をインストールしてください。AppImage とアーカイブ版はシステムのユーザー名前空間の制限を回避できず、ScriptPlayer+ は <code>--no-sandbox</code> で自動起動することもありません。
+@745|再生<a aria-label="この項目へのリンク" class="anchor" href="#ts-playback">#</a>
+@746|映像が開かない、または音だけ出ます
+@747|拡張子が対応一覧にあるか確認します。 → <a href="#formats">対応ファイル形式</a>
+@748|コンテナは合っていてもコーデックが違うことがあります。<a href="#ffmpeg">FFmpeg</a> を用意して互換再生をオンにしてみてください。
+@749|それでもだめなら<a href="#external">外部プレーヤー</a>で開いてみます。
+@750|VR映像が2つに割れて見えます
+@751|左右分割（SBS）の映像が平面で再生されている状態です。投影方式を <strong>VR180 正距円筒</strong>に、元の配置を<strong>左右分割</strong>に指定してください。 → <a href="#vr">VR・360度映像</a>
+@752|サムネイルが作られません
+@753|Chromium がその映像をデコードできない場合です。<a href="#ffmpeg">FFmpeg</a> があれば代替の方法でサムネイルを作ります。
+@754|スクリプト<a aria-label="この項目へのリンク" class="anchor" href="#ts-scripts">#</a>
+@755|スクリプトが自動で認識されません
+@756|スクリプトが映像と<strong>同じフォルダーに同じ名前</strong>であるか確認します。
+@757|別にまとめているなら、サイドバーで<strong>スクリプトフォルダー</strong>を指定します。
+@758|サイドバーで<strong>再スキャン</strong>を押してみます。
+@759|名前がまったく違うなら<a href="#scripts">再生時間で探す</a>を使います。
+@760|動きが映像より早い、または遅いです
+@761|再生バーの <code>+0ms</code> から<a href="#scripts">スクリプトオフセット</a>を調整してください。値はメディアごとに保存されます。特定の映像ではなく<strong>全体が一定して</strong>ずれる場合は、デバイス側の時間オフセットを確認してください。 → <a href="#handy">The Handy</a>
+@762|認識はされたが別のスクリプトを使いたいです
+@763|サイドバーの <strong>Script Variants</strong> パネルで差し替えられます。 → <a href="#scripts">スクリプトを扱う</a>
+@764|デバイス<a aria-label="この項目へのリンク" class="anchor" href="#ts-device">#</a>
+@765|デバイスがまったく動きません
+@766|スクリプトが実際に読み込まれたか確認します。タイムラインのグラフは見えていますか？
+@767|デバイスの接続状態が<strong>接続済み</strong>か確認します。
+@768|ストローク範囲が<strong>0 に近いほど狭められていない</strong>か確認します。 → <a href="#scripts">スクリプトを扱う</a>
+@769|緊急停止を押したままの状態でないか確認します。 → <a href="#safety">安全と緊急停止</a>
+@770|FunOSR なら<a href="#funosr">ライブ軸テスト</a>でデバイス自体が反応するか見ます。
+@771|動きが途切れる、または遅れます
+@772|<strong>The Handy</strong> — <a href="#handy">ネットワーク診断</a>を実行してレイテンシとジッターを確認します。値が悪ければ有線接続や別のネットワークを試してください。
+@773|<strong>FunOSR</strong> — 更新レートを下げてみます。高すぎるとかえって不安定になります。
+@774|<strong>Intiface</strong> — デバイスを複数使っているなら、1台だけにして試します。
+@775|別のデバイスに切り替えられません
+@776|出力は<strong>一度に1つのプロバイダーのみ</strong>使用します。前の接続の片付けに少し時間がかかることがあるので、数秒待ってから再度お試しください。 → <a href="#safety">安全と緊急停止</a>
+@777|ほかのアプリが Intiface デバイスを認識できません
+@778|内蔵の Intiface エンジンは<strong>クライアントを1つだけ</strong>受け付けます。Intiface 管理画面の<strong>ハンドオフ</strong>コントロールで制御権を渡してください。 → <a href="#intiface">Intiface / Buttplug</a>
+@779|それでも解決しないとき<a aria-label="この項目へのリンク" class="anchor" href="#ts-reset">#</a>
+@780|<strong>設定 → 復旧</strong>でリセットを試します。 → <a href="#playback">再生</a>
+@781|最新バージョンか確認します。 → <a href="#install">インストール</a>
+@782|<a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>へお問い合わせください。デバイスの問題なら<a href="#handy">診断情報をコピーして</a>一緒に載せると、ぐっと早く進みます。
+@783|変更履歴
+@784|主要なバージョンで何が変わったかをまとめました。全一覧は <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a> にあります。
+@785|v0.6.0 — ライブラリ・VR・Intiface<a aria-label="この項目へのリンク" class="anchor" href="#rl-060">#</a>
+@786|大きなライブラリ、スクリプト探索、多軸制御、安全なデバイス復帰に重点を置いたリリースです。
+@787|名前を付けた<strong>複数のライブラリフォルダー</strong>と個別の有効/無効、ローカル・NAS キャッシュの統合、順次バックグラウンド更新
+@788|保存されるライブラリフィルターと<strong>単軸 / 多軸</strong>スクリプトの分類
+@789|<strong>再生時間ベース</strong>の代替スクリプト検索と、軸ごとのスクリプト差し替え
+@790|再生画面での<strong>評価</strong>、全画面コントロールの表示・不透明度・位置の設定
+@791|<strong>360度正距円筒・VR180・SBS・上下分割・180度魚眼</strong>映像の表示と眼の選択、安全な平面復帰
+@792|内蔵エンジンまたは外部 Central を選ぶ <strong>Intiface 専用ワークスペース</strong>、複数デバイス選択、機能マッピング、バッテリー表示
+@793|軸ソース連携、中心を保つ軸範囲、全体/スクリプト別のストローク範囲の適用
+@794|プロバイダーに依存しない<strong>グローバル E-Stop</strong>、デバイスごとの Intiface ウォッチドッグ、FunOSR ↔ Handy/Intiface 切り替えの安定化
+@795|CH340/CH341 および USB <code>1A86:7523</code> アダプターの認識改善
+@796|AppImage の FUSE2 依存の除去、DEB への AppArmor プロファイル追加
+@797|macOS の最低バージョンを <strong>Monterey 12</strong> に引き上げ
+@798|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 ホットフィックス
+@799|ウィンドウの高さが低いときにファイルサイドバーが切れる問題を修正しました。フィルター・スクリプトバリアントパネル・ファイル一覧が1つのサイドバーとして一緒にスクロールし、パネルが伸びても<strong>再生時間による照合</strong>と<strong>軸ごとのスクリプト出どころ</strong>に手が届きます。
+@800|v0.5.0 — ライブラリの再構成<a aria-label="この項目へのリンク" class="anchor" href="#rl-050">#</a>
+@801|ライブラリ画面の刷新とサムネイルメニュー
+@802|スクリプトバリアントの扱いを改善
+@803|音声・字幕トラック選択の流れを整理
+@804|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 ホットフィックス
+@805|FunOSR / SR のシリアル再生の問題を修正しました。一時停止・再開が安全移行の状態に留まらないようにし、遅延したシリアル書き込み後に取り戻す量へ上限を設けました。
+@806|v0.4.0 — プラグインの分離とモーション生成<a aria-label="この項目へのリンク" class="anchor" href="#rl-040">#</a>
+@807|既定のインストールから<strong>内蔵スクリプト提供元を削除</strong> — 既定で含まれる・推奨される・有効になる提供元はなくなりました。
+@808|データ専用 <code>.funplugin</code> マニフェストのための<strong>プラグインワークスペース</strong>を追加
+@809|映像のモーション解析による<strong>ファンスクリプト生成</strong>（実験的機能）
+@810|軸ごとの範囲・反転・オフセット・補間・速度制限プロファイル
+@811|FFmpeg によるサムネイルの代替生成
+@812|最近のメディアへのショートカット、外部字幕探索の改善
+@813|v0.3.0 — ライブラリと多軸タイムライン<a aria-label="この項目へのリンク" class="anchor" href="#rl-030">#</a>
+@814|サムネイルカード・検索・フィルター・カードサイズ調整を備えた<strong>ライブラリワークスペース</strong>を新設
+@815|プレーヤー・ライブラリ・設定を1つの<strong>ワークスペースレール</strong>に統合
+@816|<strong>多軸タイムライン</strong> — 複数軸の同時表示、All/個別トグル、ダブルクリックでソロ、ドラッグで高さ調整
+@817|Handy の<strong>ネットワーク診断</strong>を追加
+@818|ランダムモーションのスムージング <code>Off / Light / Balanced / Strong</code>
+@819|音声の音量ブースト <strong>150%</strong>（実験的機能）
+@820|リモートの自動再接続とペアリングの安定化
+@821|v0.1.x ～ v0.2.x — 初期バージョン<a aria-label="この項目へのリンク" class="anchor" href="#rl-early">#</a>
+@822|スクリプトバリアントパネルを追加
+@823|<strong>リピート</strong>と <strong>Auto Next Play</strong> を分離
+@824|ランダムストロークのプリセット名を整理
+@825|フォルダースキャンの軽量化とキャッシュ無効化
+@826|区間リピート、ホバープレビュー、復旧メニューを追加
+@827|同一バージョンのホットフィックス検出とアプリ内リリースノート
+@828|ライセンスとリンク
+@829|配布条件と、助けを得られる場所です。
+@830|ライセンス<a aria-label="この項目へのリンク" class="anchor" href="#ab-license">#</a>
+@831|ScriptPlayer+ は <strong>ScriptPlayer+ End User License Agreement（EULA）</strong>の条件で配布される専有ソフトウェアです。商用利用、再配布、改変、プロジェクトメディアの再利用には、著作権者の<strong>個別の書面による許可</strong>が必要です。
+@832|パッケージには EULA とサードパーティ表記がアプリケーションアーカイブの外に同梱されており、Windows のインストーラーはインストール前に EULA を表示します。
+@833|ソース公開の範囲<a aria-label="この項目へのリンク" class="anchor" href="#ab-source">#</a>
+@834|ScriptPlayer+ は署名済みまたはパッケージ化されたデスクトップバイナリとして配布されます。公開リポジトリは<strong>リリース・アップデートのメタデータ・ドキュメント・課題管理</strong>に使われ、アプリケーション全体のソースは公開配布していません。
+@835|リンク<a aria-label="この項目へのリンク" class="anchor" href="#ab-links">#</a>
+@836|<span class="num">↓</span><span><b>最新バージョンをダウンロード</b><span class="d">Windows · macOS · Linux パッケージ</span></span>
+@837|<span class="num">?</span><span><b>GitHub Issues</b><span class="d">不具合の報告と機能の提案</span></span>
+@838|<span class="num">◇</span><span><b>GitHub リポジトリ</b><span class="d">リリースとドキュメント</span></span>
+@839|<span class="num">♥</span><span><b>Patreon</b><span class="d">開発の近況と支援</span></span>
+@840|謝辞<a aria-label="この項目へのリンク" class="anchor" href="#ab-thanks">#</a>
+@841|FunOSR のシリアルデバイスのハードウェアは、製造元の <strong>FunOSR</strong> から提供いただきました。開発中のテストに使う機材をご支援いただき、ありがとうございます。
+@842|技術スタック<a aria-label="この項目へのリンク" class="anchor" href="#ab-tech">#</a>
+@843|このドキュメントで使ったもの<a aria-label="この項目へのリンク" class="anchor" href="#ab-credits">#</a>
+@844|アイコン
+@845|<a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
+                  — MIT ライセンス、© Disarto.
+@846|本文の書体
+@847|画面と映像
+@848|ScriptPlayer+ の実際の画面を録画・キャプチャしたものです。再利用には著作権者の許可が必要です。
+@849|このドキュメントについて<a aria-label="この項目へのリンク" class="anchor" href="#ab-docs">#</a>
+@850|このサイトは ScriptPlayer+ v0.6 系を基準に書かれています。アプリが更新されると画面や説明が異なる場合があるため、最新の変更点は<a href="#releases">変更履歴</a>と GitHub Releases を併せて確認してください。
+@851|このページ
+@852|© ScriptPlayer+ · ライセンス: ScriptPlayer+ EULA · ドキュメントは v0.6.x 基準
+@853|リリース
+@854|ライセンス
+@855|ScriptPlayer+ の公式ガイド。インストール、ライブラリ、スクリプト、タイムライン、The Handy・Intiface・FunOSR のデバイス接続まで、はじめての方でも追えるようにまとめました。
+@856|ScriptPlayer+ 取扱説明書
+@857|インストールからデバイス接続まで、はじめての方でも追える ScriptPlayer+ の入門ガイド＆リファレンス。
+@858|メニューを開く
+@859|ドキュメント検索
+@860|言語を選ぶ
+@861|クイックリンク
+@862|ドキュメントの目次
+@863|ホーム
+@864|はじめに
+@865|ScriptPlayer+ の全画面プレビュー
+@866|この項目へのリンク
+@867|インストール
+@868|Windows のインストーラー画面
+@869|macOS の DMG ウィンドウ
+@870|macOS のセキュリティ警告
+@871|macOS のプライバシーとセキュリティ設定
+@872|アップデート通知
+@873|アップデート設定
+@874|5分ではじめる
+@875|ScriptPlayer+ の初回起動画面
+@876|ライブラリ画面のデモ
+@877|画面の見かた
+@878|ScriptPlayer+ のウィンドウ構成
+@879|画面構成のツアー
+@880|リピートのアイコン
+@881|シャッフルのアイコン
+@882|評価のアイコン
+@883|全画面のアイコン
+@884|タイトルバーの Stop all devices ボタン
+@885|ライブラリ
+@886|基本の使いかた
+@887|ライブラリのデモ
+@888|設定・一般タブのライブラリフォルダー一覧
+@889|ライブラリのサムネイル生成デモ
+@890|サムネイルメニューのデモ
+@891|評価のデモ
+@892|ホバープレビューのデモ
+@893|再生
+@894|自動で次を再生するデモ
+@895|区間リピートのデモ
+@896|FIT / FILL のデモ
+@897|全画面サイドバーのデモ
+@898|常に手前に表示の設定
+@899|復旧メニューのデモ
+@900|スクリプトを扱う
+@901|スクリプトのスキャン結果
+@902|スクリプトバリアントパネル
+@903|スクリプトバリアントの切り替えデモ
+@904|再生時間ベースのスクリプト検索デモ
+@905|スクリプトオフセットの調整画面
+@906|設定・デバイスタブのストローク範囲の項目
+@907|ストローク範囲の調整
+@908|ギャップ補完の設定
+@909|ランダムパターンのデモ
+@910|ランダムスムージングのデモ
+@911|スクリプトデバッグのデモ
+@912|タイムラインとヒートマップ
+@913|多軸タイムラインの画面
+@914|全軸を同時表示するデモ
+@915|タイムラインの高さ調整デモ
+@916|音声と字幕
+@917|音声再生の画面
+@918|音声トラックのデモ
+@919|音量ブーストのデモ
+@920|字幕選択のデモ
+@921|VR・360度映像
+@922|VR180 再生のデモ
+@923|デバイス接続
+@924|デバイスタブのデモ
+@925|Handy ネットワーク診断のデモ
+@926|デバイス診断情報のコピー
+@927|Handy 互換モードの設定
+@928|Intiface Device Manager の画面
+@929|複数デバイス接続のデモ
+@930|設定・デバイスタブの FunOSR 関連項目
+@931|速度制限のデモ
+@932|デバイステストのデモ
+@933|モバイルリモート
+@934|モバイル/コントローラーリモートの設定画面
+@935|安全と緊急停止
+@936|Stop all devices ボタン
+@937|設定・デバイスタブの Show E-Stop button 項目
+@938|外部プレーヤー
+@939|拡張機能
+@940|FFmpeg互換再生
+@941|映像互換の警告
+@942|設定・再生タブの FFmpeg 設定
+@943|FFmpeg 互換再生のデモ
+@944|プラグイン
+@945|キーボードショートカット
+@946|リファレンス
+@947|キーボードショートカットの設定画面
+@948|設定一覧
+@949|設定ウィンドウ
+@950|対応ファイル形式
+@951|トラブルシューティング
+@952|変更履歴
+@953|ライセンスとリンク
+@954|前 / 次のページ
+@955|このページの目次
+@956|探したい内容を入力してください…
+@957|拡大画像
+@958|閉じる
+@959|先頭へ戻る

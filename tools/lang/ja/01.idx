@@ -1,0 +1,323 @@
+@0|ScriptPlayer+ 取扱説明書
+@1|本文へスキップ
+@2|<svg aria-hidden="true" height="15" width="15"><use href="#i-search"></use></svg>
+<span>ドキュメント検索…</span>
+<span class="kbd-hint">Ctrl K</span>
+@3|<svg aria-hidden="true" height="14" width="14"><use href="#i-download"></use></svg>
+          ダウンロード
+@4|はじめに
+@5|<a class="nav-link" href="#home"><span class="n">01</span>ホーム</a>
+@6|<a class="nav-link" href="#install"><span class="n">02</span>インストール</a>
+@7|<a class="nav-link" href="#quickstart"><span class="n">03</span>5分ではじめる</a>
+@8|<a class="nav-link" href="#interface"><span class="n">04</span>画面の見かた</a>
+@9|基本の使いかた
+@10|<a class="nav-link" href="#library"><span class="n">05</span>ライブラリ</a>
+@11|<a class="nav-link" href="#playback"><span class="n">06</span>再生</a>
+@12|<a class="nav-link" href="#scripts"><span class="n">07</span>スクリプトを扱う</a>
+@13|<a class="nav-link" href="#timeline"><span class="n">08</span>タイムラインとヒートマップ</a>
+@14|<a class="nav-link" href="#audio"><span class="n">09</span>音声と字幕</a>
+@15|<a class="nav-link" href="#vr"><span class="n">10</span>VR・360度映像</a>
+@16|デバイス接続
+@17|<a class="nav-link" href="#remote"><span class="n">14</span>モバイルリモート</a>
+@18|<a class="nav-link" href="#safety"><span class="n">15</span>安全と緊急停止</a>
+@19|拡張機能
+@20|<a class="nav-link" href="#external"><span class="n">16</span>外部プレーヤー</a>
+@21|<a class="nav-link" href="#ffmpeg"><span class="n">17</span>FFmpeg互換再生</a>
+@22|<a class="nav-link" href="#plugins"><span class="n">18</span>プラグイン</a>
+@23|リファレンス
+@24|<a class="nav-link" href="#shortcuts"><span class="n">19</span>キーボードショートカット</a>
+@25|<a class="nav-link" href="#settings"><span class="n">20</span>設定一覧</a>
+@26|<a class="nav-link" href="#formats"><span class="n">21</span>対応ファイル形式</a>
+@27|<a class="nav-link" href="#troubleshooting"><span class="n">22</span>トラブルシューティング</a>
+@28|<a class="nav-link" href="#releases"><span class="n">23</span>変更履歴</a>
+@29|<a class="nav-link" href="#about"><span class="n">24</span>ライセンスとリンク</a>
+@30|パソコンにある映像・音声とファンスクリプトを一緒に再生し、The&nbsp;Handy・Intiface・FunOSR デバイスへ出力するデスクトッププレーヤーです。インストールからデバイス接続まで順番にまとめました。
+@31|5分ではじめる
+@32|インストール方法を見る
+@33|Windows · macOS · Linux · このドキュメントは v0.6 系を基準にしています。
+@34|プレーヤー・サイドバー・タイムラインが一画面でつながる、基本の作業の流れです。
+@35|はじめての方へ<a aria-label="この項目へのリンク" class="anchor" href="#home-first">#</a>
+@36|この3つを順番に読めば、すぐ使いはじめられます。
+@37|<span class="num">02</span><span><b>インストール</b><span class="d">OSごとの手順と、初回起動時に出るセキュリティ警告の対処</span></span>
+@38|<span class="num">03</span><span><b>5分ではじめる</b><span class="d">フォルダーを開く → スクリプトの一致 → デバイス接続までの5ステップ</span></span>
+@39|<span class="num">04</span><span><b>画面の見かた</b><span class="d">左レール・サイドバー・再生バーの各ボタンの意味</span></span>
+@40|<span class="num">22</span><span><b>トラブルシューティング</b><span class="d">映像が開かないとき、デバイスが動かないときに最初に見る場所</span></span>
+@41|ScriptPlayer+ でできること<a aria-label="この項目へのリンク" class="anchor" href="#home-what">#</a>
+@42|映像・音声の再生
+@43|MP4・MKV・MP3 など一般的な形式をそのまま開き、字幕やカバー画像まで自動で探して読み込みます。
+@44|スクリプトの可視化
+@45|複数の軸を同時に描くタイムラインと、ファイル全体の強弱を色で示すヒートマップを備えています。
+@46|デバイス接続
+@47|The Handy、Intiface / Buttplug デバイス、FunOSR のシリアル出力をひとつのアプリで設定し出力します。
+@48|ライブラリの整理
+@49|複数のフォルダーに名前を付けて登録し、評価・再生時間・スクリプトの有無で絞り込めます。
+@50|ドキュメントの地図<a aria-label="この項目へのリンク" class="anchor" href="#home-map">#</a>
+@51|必要なところから読んでも大丈夫です。上の検索ボックス（<kbd>Ctrl</kbd>&nbsp;<kbd>K</kbd>）からも直接探せます。
+@52|こんなときは
+@53|参照先
+@54|インストールしたら「確認されていないアプリ」と警告が出る
+@55|<a href="#install">インストール</a>
+@56|再生バーの <code>STR</code>・<code>AB</code>・<code>FIT</code> とは？
+@57|<a href="#interface">画面の見かた</a>
+@58|スクリプトが自動で認識されない
+@59|<a href="#scripts">スクリプトを扱う</a>
+@60|映像と動きのタイミングが合わない
+@61|VR映像が左右2つに割れて見える
+@62|<a href="#vr">VR・360度映像</a>
+@63|デバイスをすぐ止めたい
+@64|<a href="#safety">安全と緊急停止</a>
+@65|ショートカットを変えたい
+@66|<a href="#shortcuts">キーボードショートカット</a>
+@67|インストール
+@68|ScriptPlayer+ は GitHub Releases にある Windows・macOS・Linux 向けパッケージからインストールします。初回起動時に OS がセキュリティ警告を出すことがあるため、その対処も併せて記載しています。
+@69|ダウンロード<a aria-label="この項目へのリンク" class="anchor" href="#install-get">#</a>
+@70|すべてのビルドは <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releases の最新ページ</a>で公開されます。お使いの OS に合うファイルを選んでください。
+@71|プラットフォーム
+@72|パッケージ
+@73|備考
+@74|インストーラー（<code>.exe</code>）またはポータブル <code>.zip</code>
+@75|インストールせずに使うなら、ポータブル ZIP を展開するだけで動きます。
+@76|<code>.dmg</code> または <code>.zip</code>
+@77|Apple Silicon 用と Intel 用が別にあります。お使いの機種に合うほうを選んでください。
+@78|<code>.deb</code> · <code>AppImage</code> · アーカイブ版
+@79|Ubuntu / Kubuntu 24.04 以降は <strong>DEB を推奨</strong>します。
+@80|Windows<a aria-label="この項目へのリンク" class="anchor" href="#install-windows">#</a>
+@81|インストーラーを実行する
+@82|ダウンロードした <code>.exe</code> を実行すると、まず使用許諾契約（EULA）が表示されます。内容を確認して同意するとインストールが進みます。
+@83|SmartScreen の警告が出たら
+@84|Windows パッケージには Authenticode 署名が入っていないため、Microsoft Defender SmartScreen が<strong>「Windows によって PC が保護されました」</strong>のような表示を出すことがあります。<strong>詳細情報</strong> → <strong>実行</strong>を押すとインストールを続けられます。
+@85|ポータブル ZIP を使う場合
+@86|展開したフォルダー内の実行ファイルをそのまま起動します。設定とキャッシュはユーザーフォルダーに保存されます。
+@87|Windows のインストーラー。インストール前に EULA を表示します。
+@88|macOS<a aria-label="この項目へのリンク" class="anchor" href="#install-macos">#</a>
+@89|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>最低バージョン
+@90|v0.6.0 から Electron ランタイムが上がり、必要な macOS の最低バージョンが <strong>Big Sur 11 から Monterey 12</strong> になりました。Big Sur では v0.6 以降を使えません。
+@91|DMG を開いてアプリを移動する
+@92|<code>.dmg</code> を開き、ScriptPlayer+ のアイコンを<strong>アプリケーション</strong>フォルダーへドラッグします。
+@93|「開けません」と警告が出たら
+@94|Gatekeeper が開発元を確認できないという警告を出すことがあります。<strong>システム設定 → プライバシーとセキュリティ</strong>を開き、下に現れる<strong>「このまま開く」</strong>ボタンを押すと起動できます。
+@95|DMG を開いてアプリケーションフォルダーへドラッグします。
+@96|初回起動時に表示される Gatekeeper の警告です。
+@97|プライバシーとセキュリティで「このまま開く」を押せば、次回からはそのまま起動します。
+@98|Linux<a aria-label="この項目へのリンク" class="anchor" href="#install-linux">#</a>
+@99|Ubuntu / Kubuntu 24.04 以降では <strong>DEB パッケージの使用を推奨</strong>します。これらのバージョンは非特権ユーザー名前空間を制限しており、Chromium のサンドボックスが動くには実行ファイル単位の AppArmor プロファイルが必要で、それは DEB パッケージにのみ含まれています。
+@100|<strong>DEB</strong> — AppArmor プロファイルも一緒にインストールします。24.04 以降ではもっとも安全な選択です。
+@101|<strong>AppImage</strong> — v0.6.0 から静的ランタイムになり、<code>libfuse.so.2</code> は不要になりました。
+@102|<strong>アーカイブ版</strong> — ユーザー名前空間が利用できるディストリビューションで使えます。
+@103|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>サンドボックスは無効化しません
+@104|ScriptPlayer+ は、システム全体の名前空間制限に遭遇しても <code>--no-sandbox</code> で自動的に回避することはありません。ポータブル AppImage やアーカイブ版が起動しない場合は DEB パッケージを入れてください。
+@105|アップデート<a aria-label="この項目へのリンク" class="anchor" href="#install-update">#</a>
+@106|新しいバージョンが出るとアプリ内で通知します。通知からそのままダウンロードしてインストールでき、同じバージョン番号で出たホットフィックスも検出します。確認方法は<strong>設定 → 一般</strong>で調整します。
+@107|新バージョンの通知。リリースノートをアプリ内で確認できます。
+@108|設定 → 一般でアップデートの確認方法を変更します。
+@109|インストールが終わったらここからです。5つのステップで映像が再生され、スクリプトが読み込まれ、デバイスが動きます。
+@110|初回起動時はこの空の画面が表示されます。「Open a folder or drag a video or audio file to start」が出発点です。
+@111|5つのステップ<a aria-label="この項目へのリンク" class="anchor" href="#qs-steps">#</a>
+@112|メディアがあるフォルダーを開く
+@113|左上の <strong>Folder</strong> ボタンを押して、映像が入っているフォルダーを選びます。1つのファイルをすぐ見たいだけなら、ウィンドウへ<strong>ドラッグ＆ドロップ</strong>しても開けます。
+@114|一覧から映像を選ぶ
+@115|サイドバーのファイル一覧でファイルをクリックすると、すぐ再生が始まります。ファイル名の右に<strong>緑のドキュメントアイコン</strong>があれば、対応するファンスクリプトが見つかったという意味です。
+@116|スクリプトが読み込まれたか確認する
+@117|映像の下に<strong>ヒートマップの帯</strong>と<strong>タイムラインのグラフ</strong>が見えていれば、スクリプトは正しく読み込まれています。見えない場合は再生バーの <code>HM</code>・<code>TL</code> ボタンで表示してみてください。
+@118|デバイスを接続する
+@119|左レールの<strong>デバイス</strong>アイコンを押し、使うデバイスを選んで接続します。デバイスごとの詳しい設定は <a href="#handy">The Handy</a>、<a href="#intiface">Intiface</a>、<a href="#funosr">FunOSR</a> を参照してください。
+@120|再生して強さを合わせる
+@121|<kbd>Space</kbd> で再生します。動きが強すぎる・弱すぎるときは再生バーの <code>STR</code> でストローク範囲を狭めたり広げたりします。タイミングがずれていれば <code>+0ms</code> ボタンでオフセットを調整します。
+@122|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>先に知っておくとよいこと
+@123|スクリプトは通常、映像と<strong>同じフォルダーに同じ名前</strong>で置けば自動で認識されます。（<code>映像.mp4</code> ↔ <code>映像.funscript</code>）
+@124|スクリプトを別のフォルダーにまとめているなら、設定で<strong>スクリプトフォルダー</strong>として指定しておきましょう。
+@125|デバイスを初めて使うときは、<strong>ストローク範囲を狭く</strong>して始めるほうが安全です。
+@126|フォルダーの代わりにライブラリを使う<a aria-label="この項目へのリンク" class="anchor" href="#qs-library">#</a>
+@127|毎回フォルダーを開く代わりに、よく使うフォルダーを<strong>ライブラリ</strong>に登録しておけばサムネイルカードで一覧できます。左レール最下部の<strong>ライブラリ</strong>アイコンから始めます。詳しくは<a href="#library">ライブラリ</a>をご覧ください。
+@128|ライブラリ画面。複数のフォルダーを登録してカードで見渡せます。
+@129|画面の見かた
+@130|ScriptPlayer+ の画面は大きく<strong>左レール・サイドバー・プレーヤー・再生バー</strong>の4つに分かれます。なかでも再生バーの短い英字ボタンは最初わかりにくいので、下にすべて書き出しました。
+@131|左からレール・サイドバー・プレーヤー、そして下にヒートマップ・タイムライン・再生バーが並びます。
+@132|各エリアを実際に行き来する様子です。
+@133|左レール<a aria-label="この項目へのリンク" class="anchor" href="#ui-rail">#</a>
+@134|画面のいちばん左にある細い縦の帯です。サイドバーに何を表示するかを選ぶ場所で、上から順に次のとおりです。
+@135|<span class="vh">アイコン</span>
+@136|名前
+@137|役割
+@138|<strong>ファイル</strong>
+@139|フォルダーを開いてファイル一覧を見る基本画面です。最近再生した一覧もここにあります。
+@140|<strong>スクリプト</strong>
+@141|いまのメディアに合うスクリプトを探して差し替えるツールです。
+@142|<strong>プラグイン</strong>
+@143|自分でインストールしたスクリプト提供元プラグインを管理します。 → <a href="#plugins">プラグイン</a>
+@144|<strong>デバイス</strong>
+@145|The Handy・FunOSR などの接続と出力設定です。 → <a href="#handy">The Handy</a>
+@146|Intiface / Buttplug 専用のワークスペースです。 → <a href="#intiface">Intiface / Buttplug</a>
+@147|<strong>ライブラリ</strong>
+@148|サムネイルカードで見るメディアライブラリです。 → <a href="#library">ライブラリ</a>
+@149|<strong>設定</strong>
+@150|レールの最下部にあります。<kbd>Ctrl</kbd>&nbsp;<kbd>,</kbd> でも開きます。 → <a href="#settings">設定一覧</a>
+@151|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>サイドバーを折りたたむ
+@152|すでに選ばれているレールのアイコンをもう一度押すと、サイドバーが折りたたまれて映像が広がります。もう一度押すと戻ります。
+@153|サイドバー<a aria-label="この項目へのリンク" class="anchor" href="#ui-sidebar">#</a>
+@154|<strong>ファイル</strong>画面を基準に、上から下へこう並んでいます。
+@155|<strong>Folder</strong> — メディアフォルダーを開きます。隣の小さなボタンでスクリプトフォルダーの指定、スクリプトの読み込み・保存、再スキャンを行います。
+@156|<strong>Recent Media</strong> — 最近開いたファイルの一覧です。項目横の <code>×</code> で1件ずつ、ごみ箱アイコンで全件消せます。
+@157|<strong>Filter files…</strong> — ファイル名で絞り込みます。右の数字は現在表示されているファイル数です。
+@158|<strong>Show multi-axis files only</strong> — 多軸スクリプトがあるファイルだけ表示します。
+@159|<strong>Show rated files only</strong> — 評価を付けたファイルだけ表示します。
+@160|<strong>並べ替え</strong> — <code>Path</code>（パス）をはじめ、名前・評価・再生時間・更新日時で並べ替え、<code>Asc</code>/<code>Desc</code> で方向を変えます。
+@161|<strong>Script Variants</strong> — いまのメディアに合うスクリプトが複数あるときに選ぶパネルです。 → <a href="#scripts">スクリプトを扱う</a>
+@162|<strong>ファイル一覧</strong> — スクリプトがあるファイルには緑のドキュメントアイコンが付きます。
+@163|再生バーのボタン辞典<a aria-label="この項目へのリンク" class="anchor" href="#ui-playbar">#</a>
+@164|画面最下部の行です。左が再生操作、右が表示・スクリプト関連のトグルです。短い英字略号の意味は次のとおりです。
+@165|<b>再生速度</b> — 両側の <code>−</code> <code>+</code> で速度を調整します。
+@166|<b>ストローク（Stroke）</b> — デバイスが動く範囲をその場で狭めたり広げたりします。反転トグルもここにあります。
+@167|<b>スクリプトオフセット</b> — 映像と動きの時間差を前後にずらします。<code>-60秒 ～ +60秒</code>の範囲で調整できます。
+@168|<b>区間リピート</b> — A地点とB地点を指定し、その間だけを繰り返し再生します。
+@169|<b>リピート</b> — いま再生中のファイルだけを繰り返します。次のファイルへ自動で進むのは <code>Auto Next Play</code> の設定です。
+@170|<b>シャッフル</b> — 一覧をランダムな順で再生します。
+@171|<b>外部プレーヤー（External）</b> — mpv・VLC などの外部プレーヤーでこのファイルを開きます。 → <a href="#external">外部プレーヤー</a>
+@172|<b>タイムライン（Timeline）</b> — スクリプトのグラフを表示・非表示します。
+@173|<b>ヒートマップ（Heatmap）</b> — ファイル全体の強弱を色の帯で示します。
+@174|<b>音声・字幕トラック</b> — 内蔵の音声トラックと字幕トラックを選びます。 → <a href="#audio">音声と字幕</a>
+@175|<b>評価</b> — 再生画面のままスコアを付けられます。ライブラリの並べ替えや絞り込みに使われます。
+@176|<b>フィット</b> — 映像全体が見えるように合わせます。黒い余白が出ることがあります。
+@177|<b>フィル</b> — 余白なく画面を埋めます。映像の端が切れることがあります。
+@178|<b>全画面</b> — <kbd>F</kbd> キーと同じです。
+@179|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>参考
+@180|VR・360度映像を開くと、再生バーに<strong>投影方式ボタン</strong>も表示されます。 → <a href="#vr">VR・360度映像</a>
+@181|タイトルバー<a aria-label="この項目へのリンク" class="anchor" href="#ui-titlebar">#</a>
+@182|ウィンドウ最上部にアプリ名とバージョンが表示され、右に <strong>Stop all devices</strong> ボタンがあります。接続中のすべてのデバイスを一度に止める緊急停止ボタンです。 → <a href="#safety">安全と緊急停止</a>
+@183|右上の <strong>Stop all devices</strong> がグローバル緊急停止です。設定で隠すこともできます。
+@184|ライブラリ
+@185|ファイルが増えるとフォルダーを1つずつ開くのが面倒になります。ライブラリはよく使うフォルダーを登録して、サムネイルカードでまとめて見渡せるようにします。
+@186|ライブラリ画面の上部。検索ボックスと <strong>Library folders</strong> ボタンでフォルダーを管理します。
+@187|複数のフォルダーを登録する<a aria-label="この項目へのリンク" class="anchor" href="#lib-sources">#</a>
+@188|v0.6.0 から<strong>名前を付けたライブラリフォルダーを複数</strong>登録できます。<strong>設定 → 一般</strong>の <strong>Library folders</strong> で管理します。各フォルダーは独立して扱われるため、1つを無効にしても残りはそのままです。
+@189|<strong>Add folder</strong> — フォルダーを追加します。選択ダイアログで複数まとめて選べます。
+@190|<strong>名前</strong> — パスの代わりに <code>Local Library</code>、<code>NAS Library</code> のようにわかりやすい名前を付けます。
+@191|<strong>トグル</strong> — 一時的に外したいときにオフにします。<strong>無効にしたフォルダーは設定がそのまま保存され、スキャン対象からのみ外れます。</strong>
+@192|<strong>ごみ箱</strong> — 登録を解除するだけで、実際のファイルは削除しません。
+@193|設定 → 一般。フォルダーごとに名前と有効・無効の状態があります。下に <strong>Script Storage Folder</strong> も並んでいます。
+@194|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>スクリプトフォルダーもここで
+@195|ダウンロードしたスクリプトをまとめる <strong>Script Storage Folder</strong> も同じ画面で指定します。ここを設定しておくと、スクリプトの自動照合とプラグインのダウンロードがどちらもこのフォルダーを使います。 → <a href="#scripts">スクリプトを扱う</a>
+@196|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>NAS を使う場合
+@197|ローカルと NAS の一覧はキャッシュ上で統合され、重複なく1つに見えます。起動時はまずキャッシュの内容を表示し、そのあとフォルダーを<strong>1つずつ順番に</strong>更新します。複数のフォルダーを同時に読まないため、起動時にディスクやネットワークへ負荷が集中しにくくなります。
+@198|絞り込みと並べ替え<a aria-label="この項目へのリンク" class="anchor" href="#lib-filter">#</a>
+@199|フィルターは<strong>保存され</strong>、次に開いたときも維持されます。
+@200|機能
+@201|説明
+@202|<strong>検索</strong>
+@203|タイトルとパスで探します。
+@204|<strong>メディア種別</strong>
+@205|映像のみ / 音声のみに分けて表示します。
+@206|<strong>スクリプト分類</strong>
+@207|単軸スクリプトと多軸スクリプトを分けて絞り込めます。
+@208|<strong>評価</strong>
+@209|スコアを付けた項目だけ表示します。
+@210|<strong>並べ替え</strong>
+@211|パス・ファイル名・評価・再生時間・更新日時で並べ替えます。
+@212|再生時間で並べ替えるには長さが必要ですが、これはバックグラウンドで自動的にスキャンされます。ファイルが多いと最初は一部だけ表示され、徐々に埋まっていきます。
+@213|カードを扱う<a aria-label="この項目へのリンク" class="anchor" href="#lib-cards">#</a>
+@214|<strong>カードサイズ</strong> — スライダーで一画面に表示する数を調整します。
+@215|<strong>サムネイルメニュー</strong> — カードから代表画像を変更したり作り直したりできます。
+@216|<strong>評価</strong> — カードでスコアを付け、再生中も再生バーの <code>☆</code> から変更できます。
+@217|サムネイルはバックグラウンドで生成され、カードに順に埋まっていきます。ファイルが多いと最初は空で、徐々に埋まります。
+@218|サムネイルメニューで代表画像を管理します。
+@219|再生画面のまま評価を付けられます。
+@220|ホバープレビュー<a aria-label="この項目へのリンク" class="anchor" href="#lib-hover">#</a>
+@221|ファイル一覧で項目にマウスを乗せると、<strong>ファイルを開かずに</strong>短い映像プレビューが再生されます。どんな映像かを確かめるために1つずつ開く必要が減ります。
+@222|一覧でマウスを乗せるとすぐプレビューが出ます。
+@223|再生
+@224|再生やシークといった基本動作と、リピート・区間リピート・画面フィットのようによく使う機能をまとめました。
+@225|基本操作<a aria-label="この項目へのリンク" class="anchor" href="#pb-basic">#</a>
+@226|動作
+@227|操作
+@228|再生 / 一時停止
+@229|<kbd>Space</kbd> または <kbd>K</kbd>、再生バーの ▶ ボタン
+@230|5秒移動
+@231|10秒移動
+@232|前 / 次のファイル
+@233|再生バーの ⏮ ⏭ ボタン
+@234|音量
+@235|<kbd>↑</kbd> <kbd>↓</kbd>（5%ずつ）
+@236|ミュート
+@237|全画面
+@238|全一覧と変更方法は<a href="#shortcuts">キーボードショートカット</a>にあります。
+@239|リピート・自動で次を再生・シャッフル<a aria-label="この項目へのリンク" class="anchor" href="#pb-repeat">#</a>
+@240|似ているようで別物の3つです。最初は混同しやすいので分けて説明します。
+@241|リピート <code>🔁</code>
+@242|いま再生中の<strong>このファイルだけ</strong>を繰り返します。
+@243|ファイルが終わると<strong>次のファイルへ自動で進みます。</strong>設定でオンにします。
+@244|シャッフル <code>🔀</code>
+@245|一覧を<strong>ランダムな順</strong>で再生します。
+@246|Auto Next Play をオンにすると、ファイルの終わりで次のファイルへつながります。
+@247|AB区間リピート<a aria-label="この項目へのリンク" class="anchor" href="#pb-ab">#</a>
+@248|映像の特定の区間だけを繰り返し見たいときに使います。開始点（A）と終了点（B）を指定すると、その間だけが繰り返されます。
+@249|繰り返したい区間の<strong>開始</strong>位置で A 地点を指定します。
+@250|区間の<strong>終了</strong>位置で B 地点を指定します。
+@251|区間リピートが始まります。エディターを開けば地点を正確な値に整えられます。
+@252|A・B の指定とエディターを開く操作は、すべてショートカットに割り当てられます。（<a href="#shortcuts">キーボードショートカット</a>）
+@253|区間リピートの動作例です。
+@254|画面フィット — FIT と FILL<a aria-label="この項目へのリンク" class="anchor" href="#pb-fit">#</a>
+@255|映像の比率とウィンドウの比率が違うとき、どちらを優先するかを選ぶボタンです。
+@256|<strong>FIT</strong> — 映像全体が見えるように合わせます。上下または左右に黒い余白が出ることがあります。
+@257|<strong>FILL</strong> — 画面をすべて埋めます。映像の端が切れることがあります。
+@258|同じ映像を FIT と FILL で見たときの違いです。
+@259|全画面<a aria-label="この項目へのリンク" class="anchor" href="#pb-fullscreen">#</a>
+@260|<kbd>F</kbd> で全画面になります。全画面でもサイドバーを呼び出せるので、ファイルを変えるために抜ける必要がありません。
+@261|v0.6.0 から全画面コントロールの表示方法を設定で変更できます。
+@262|<strong>下端からのみ表示</strong>する — 画面のどこでマウスを動かしてもコントロールが出ないようにします。
+@263|<strong>背景の不透明度</strong> — コントロール背後の背景を濃くしたり薄くしたりします。
+@264|<strong>縦位置</strong> — コントロールが出る高さを調整します。
+@265|全画面のままサイドバーを呼び出す様子です。
+@266|常に手前に表示する<a aria-label="この項目へのリンク" class="anchor" href="#pb-ontop">#</a>
+@267|ほかのウィンドウを使いながら再生画面を見続けたいとき、ウィンドウを常に最前面に固定できます。
+@268|常に手前に表示をオンにした状態です。
+@269|やり直しと復旧<a aria-label="この項目へのリンク" class="anchor" href="#pb-recovery">#</a>
+@270|設定をいろいろ触って分からなくなったら、<strong>設定 → 復旧</strong>で初期状態に戻せます。全体リセットではキャッシュした再生時間、ストローク範囲、プレーヤー・ライブラリ・ワークスペース・最近のメディア・サイドバーの状態もまとめて片付けられます。
+@271|設定 → 復旧のメニューです。
+@272|スクリプトを扱う
+@273|スクリプトが自動で認識されない、認識されたがタイミングが合わない、動きが強すぎる——そんなときにどこを触るかをまとめました。このページだけでスクリプト関連の問題はほとんど解決します。
+@274|スクリプトはどう見つかるのか<a aria-label="この項目へのリンク" class="anchor" href="#sc-match">#</a>
+@275|ScriptPlayer+ は次の順で一致するスクリプトを探します。
+@276|同じフォルダーの同じ名前
+@277|もっとも確実な方法です。<code>映像.mp4</code> の隣に <code>映像.funscript</code> を置けばすぐ認識されます。
+@278|指定したスクリプトフォルダー
+@279|スクリプトを別にまとめているなら、<strong>設定 → 一般 → Script Storage Folder</strong> でそのフォルダーを指定します。（サイドバーの <code>Folder</code> 横の小さなボタンでも指定できます。）以降はそのフォルダーも一緒にスキャンします。
+@280|ライブラリが収集したスクリプト
+@281|登録済みのライブラリフォルダーがインデックスしたスクリプトも候補に入ります。
+@282|候補が1つだけなら自動選択
+@283|名前が完全に一致しなくても、明確に1つに絞られれば自動的に選ばれます。
+@284|スクリプトのスキャン結果はサイドバーで確認できます。
+@285|スクリプトバリアントパネル<a aria-label="この項目へのリンク" class="anchor" href="#sc-variants">#</a>
+@286|同じ映像に合うスクリプトが複数あることがあります。<code>Soft</code> のように括弧でラベルが付いたバリアントが代表例です。そんなときはサイドバーの <strong>Script Variants</strong> パネルから、再生を止めずにすぐ差し替えられます。
+@287|複数のバリアントが見つかると一覧で表示されます。
+@288|選んだ瞬間に適用されます。
+@289|再生時間で探す<a aria-label="この項目へのリンク" class="anchor" href="#sc-duration">#</a>
+@290|名前がまったく違うのに内容は合っているスクリプトを探したいことがあります。v0.6.0 で入った<strong>再生時間ベースの検索</strong>は、スクリプトのタイムライン長が映像の長さにどれだけ近いかで候補を順位付けします。
+@291|映像があるフォルダー、指定したスクリプトフォルダー、ライブラリがインデックスしたスクリプトをすべて候補にします。
+@292|長さが近い順に並ぶので、上の候補から試せばよいです。
+@293|長さが近い順に候補を並べます。
+@294|タイミングが合わないとき — スクリプトオフセット<a aria-label="この項目へのリンク" class="anchor" href="#sc-offset">#</a>
+@295|映像より動きが少し早い、または遅いときに使います。再生バーの <code>+0ms</code> ボタンから調整します。
+@296|範囲は <strong><code>-60秒</code>から<code>+60秒</code></strong>までです。
+@297|小数秒単位で<strong>直接入力</strong>でき、微調整ボタンで少しずつ動かすこともできます。
+@298|オフセットは<strong>メディアごとに保存</strong>されるので、一度合わせれば次に開いたときも維持されます。
+@299|増やす・減らす・リセットはすべてショートカットに割り当てられます。
+@300|オフセット入力欄。値を直接入れるか、ボタンで微調整します。
+@301|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>合わせるコツ
+@302|目立つ動きがある地点へ移動しておき、再生しながらオフセットを少しずつ動かしてみてください。タイムラインのグラフの山と画面の動きが重なる地点が正解です。
+@303|動きが強すぎるとき — ストローク範囲<a aria-label="この項目へのリンク" class="anchor" href="#sc-stroke">#</a>
+@304|再生バーの <code>STR</code> でデバイスが実際に動く範囲を調整します。スクリプトを編集せずに強さを下げたり上げたりできます。
+@305|同じ設定を<strong>設定 → デバイス</strong>でさらに細かく扱えます。
+@306|項目
+@307|動きの下限と上限を <code>0%</code>～<code>100%</code> の間で決めます。
+@308|最終的なストローク範囲を適用する<em>前に</em>、<code>50%</code> の中心を基準に L0 の動きを大きくしたり小さくしたりします。
+@309|デバイスへ送る前に、スクリプトの位置の値を上下反転します。
+@310|この値を<strong>スクリプトごとに個別に記憶</strong>するか、すべてのメディアで<strong>1つを共有</strong>するかを選びます。
+@311|<strong>中心を保つ範囲</strong> <span class="pill pill--new">v0.6.0</span>
+@312|回転軸のように中心が基準の軸は、中心を保ったまま幅だけを縮めます。
+@313|設定 → デバイスのストローク範囲の項目です。
+@314|再生中は <code>STR</code> からそのまま調整します。
+@315|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>はじめて使うとき
+@316|範囲を狭くして始め、慣れてきたら少しずつ広げてください。速度制限も併用するとより安全です。 → <a href="#safety">安全と緊急停止</a>
+@317|空白区間の扱い<a aria-label="この項目へのリンク" class="anchor" href="#sc-gaps">#</a>
+@318|スクリプトに動きのない長い区間があるときに使うオプションです。
+@319|<strong>ギャップ補完（Fill gaps）</strong> — 空白区間を生成した動きで埋めます。

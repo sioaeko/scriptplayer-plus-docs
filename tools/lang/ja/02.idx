@@ -1,0 +1,320 @@
+@320|<strong>自動スキップ</strong> — 空白区間を飛ばします。すぐ飛ばさず<strong>少し待ってから</strong>飛ばすように遅延を設定できます。
+@321|<strong>疎なスクリプトの補正</strong> — 点がまばらなスクリプトをなめらかに整えます。
+@322|空白区間の処理オプションです。
+@323|スクリプトがまったくないとき — ランダムストローク<a aria-label="この項目へのリンク" class="anchor" href="#sc-random">#</a>
+@324|スクリプトがない映像でも動きを生成できます。プリセットは基本の焦らしパターンと、より強いパターンが分かれています。
+@325|生成された動きは<strong>なめらかさ（スムージング）</strong>を <code>Off</code>・<code>Light</code>・<code>Balanced</code>・<code>Strong</code> から選べます。方向が急に折り返さず加減速のカーブを描くため、ずっと自然です。
+@326|ランダムパターンのプリセットです。
+@327|スムージングを適用して動きをなめらかにした様子です。
+@328|映像からスクリプトを作る<a aria-label="この項目へのリンク" class="anchor" href="#sc-motion">#</a> <span class="pill pill--exp">実験的機能</span>
+@329|v0.4.0 から、映像の動きを解析してファンスクリプトを作り、メディアの隣に保存できます。解析には外部の FFmpeg 実行ファイルが必要です。 → <a href="#ffmpeg">FFmpeg互換再生</a>
+@330|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>参考
+@331|モーション解析は実験的機能です。結果の品質は映像によって大きく変わり、生成されたスクリプトは手で整える必要がある場合があります。
+@332|多軸スクリプト<a aria-label="この項目へのリンク" class="anchor" href="#sc-multiaxis">#</a>
+@333|複数の軸を同時に使うスクリプトは、次の3つの形式に対応しています。
+@334|1つのファイル内に <code>axes[]</code> で軸を収めた形式
+@335|1つのファイル内に <code>channels{}</code> で軸を収めた形式
+@336|軸ごとにファイルが分かれた形式（例: <code>映像.L0.funscript</code>、<code>映像.R0.funscript</code>）
+@337|v0.6.0 からは<strong>軸ごとにスクリプトの出どころを差し替え</strong>られます。たとえば多軸バンドルをそのまま使いながら、<code>L0</code> 軸だけ別ファイルに置き換えられます。ある軸の動きを別の軸から引く<strong>軸ソース連携</strong>にも対応します。（例: <code>L0 → R0</code>）
+@338|多軸スクリプトを画面で見る方法は<a href="#timeline">タイムラインとヒートマップ</a>にあります。
+@339|スクリプトを点検する<a aria-label="この項目へのリンク" class="anchor" href="#sc-debug">#</a>
+@340|スクリプトの動きがおかしいとき、どんな値が入ってきているかを確認できる画面があります。
+@341|スクリプト点検画面です。
+@342|タイムラインとヒートマップ
+@343|スクリプトを目で確かめる2つの方法です。タイムラインはいまこの瞬間を、ヒートマップはファイル全体を示します。
+@344|上の緑の帯がヒートマップ、下のグラフが多軸タイムラインです。
+@345|タイムライン <code>TL</code><a aria-label="この項目へのリンク" class="anchor" href="#tl-timeline">#</a>
+@346|再生位置に沿って流れるリアルタイムのグラフです。再生バーの <code>TL</code> ボタンで表示・非表示します。
+@347|軸を選ぶ
+@348|多軸スクリプトを開くと、タイムラインの上に <strong>AXES</strong> の行が現れます。
+@349|<strong>All</strong> — すべての軸を一度に重ねて表示します。
+@350|<strong>軸ボタン</strong>（<code>L0</code>、<code>L1</code>、<code>R0</code>、<code>R1</code> …） — 押して個別に表示・非表示します。ボタン横の数字はいまのその軸の値です。
+@351|<strong>ダブルクリック</strong> — その軸だけを残してほかを隠します。1つの軸をじっくり見るときに便利です。
+@352|すべての軸を同時に表示した様子です。
+@353|高さの調整
+@354|映像とタイムラインの境界を<strong>上下にドラッグ</strong>するとタイムラインの高さが変わります。軸が多いときは広げておくとぐっと見やすくなります。
+@355|境界をドラッグしてタイムラインの高さを調整します。
+@356|ヒートマップ <code>HM</code><a aria-label="この項目へのリンク" class="anchor" href="#tl-heatmap">#</a>
+@357|ファイル全体を1本の横帯に圧縮して示します。<strong>色は速度を表します</strong> — 緑が遅く、黄を経て赤へ進むほど速くなります。
+@358|どこが激しい区間かを再生前に把握できるので、見たい位置へ直接飛ぶときに便利です。
+@359|ライブラリの一覧やカードにはヒートマップは表示されません。ヒートマップは再生画面でのみ見られます。
+@360|タイムラインの設定<a aria-label="この項目へのリンク" class="anchor" href="#tl-settings">#</a>
+@361|<strong>設定 → タイムライン</strong>で次を調整できます。
+@362|表示コントラスト — グラフを濃くまたは薄く
+@363|速度による色分けのオン / オフ
+@364|既定の高さ
+@365|音声と字幕
+@366|音声ファイルの再生、音量ブースト、字幕の読み込みと内蔵トラックの選択まで、音と字幕に関する内容です。
+@367|音声ファイルの再生<a aria-label="この項目へのリンク" class="anchor" href="#au-audio">#</a>
+@368|MP3・FLAC のような音声も、映像とまったく同じようにスクリプトを付けて再生できます。映像がないので代わりに<strong>カバー画像</strong>を表示します。
+@369|カバー画像は次の順で探します。
+@370|音声ファイル内のメタデータ画像
+@371|同じ作品フォルダー内の画像ファイル
+@372|音声再生画面。カバー画像が表示されます。
+@373|音声トラックを選ぶ動作です。
+@374|音量ブースト 150%<a aria-label="この項目へのリンク" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">実験的機能</span>
+@375|録音が小さくて聞き取りにくい音源のために、<strong>最大150%まで</strong>音量を上げられます。ピークリミッターが同時に働き、急に大きく跳ねるのを防ぎます。
+@376|150% の音量ブーストをオンにした様子です。
+@377|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>注意
+@378|イヤホンを使っているなら、ブーストをオンにする前に音量を下げてください。
+@379|字幕<a aria-label="この項目へのリンク" class="anchor" href="#au-subs">#</a>
+@380|外部字幕ファイル
+@381|<code>.srt</code>、<code>.vtt</code>、<code>.txt</code> に対応します。映像と同じ名前なら<strong>自動で見つけて読み込みます。</strong>自動で認識されない場合は手動で読み込むこともできます。
+@382|内蔵字幕
+@383|映像ファイル内のテキスト字幕トラックも使えます。再生バーの <code>AV</code> ボタンから選びます。ただし<strong>外部の FFmpeg がインストールされている必要があります。</strong>
+@384|字幕の種類
+@385|対応
+@386|対応 — テキストベースのトラックです。
+@387|PGS、DVD 字幕
+@388|<strong>一覧には出ますが表示できません。</strong>画像ベースの字幕のため描画しません。
+@389|<code>AV</code> ボタンから字幕トラックを選びます。
+@390|音声トラックを選ぶ<a aria-label="この項目へのリンク" class="anchor" href="#au-tracks">#</a>
+@391|複数言語の音声が入っているファイルなら、<code>AV</code> ボタンからトラックを選べます。この機能も外部の FFmpeg が必要です。 → <a href="#ffmpeg">FFmpeg互換再生</a>
+@392|VR・360度映像
+@393|VR180 や360度映像を開くと、画面が不自然に伸びたり2つに割れて見えたりします。投影方式を指定すれば正しく見られます。 <span class="pill pill--new">v0.6.0</span>
+@394|VR180 映像を投影モードで再生し、ドラッグして視点を動かす様子です。
+@395|対応する投影方式<a aria-label="この項目へのリンク" class="anchor" href="#vr-modes">#</a>
+@396|方式
+@397|どんな映像か
+@398|<strong>360度 正距円筒</strong><br/>(Equirectangular)
+@399|全方位を撮った映像です。平面に広げると世界地図のように見えます。
+@400|<strong>VR180 正距円筒</strong>
+@401|前方180度だけを撮った映像です。VR映像でもっとも一般的です。
+@402|<strong>180度 等距離魚眼</strong><br/>(Fisheye)
+@403|中心が膨らんだ円形で撮られた映像です。
+@404|元の配置を選ぶ<a aria-label="この項目へのリンク" class="anchor" href="#vr-layout">#</a>
+@405|同じ投影方式でも、両眼の映像がどう収められているかは異なります。
+@406|<strong>モノ（Mono）</strong> — 1画面に1つの映像だけが入っています。
+@407|<strong>左右分割（SBS）</strong> — 左右にそれぞれ片眼ずつ入っています。指定しないと2つに割れて見えます。
+@408|<strong>上下分割（Top-and-Bottom）</strong> — 上下にそれぞれ片眼ずつ入っています。
+@409|SBS や上下分割の映像では、<strong>どちらの眼を見るか</strong>を選べます。
+@410|見る操作<a aria-label="この項目へのリンク" class="anchor" href="#vr-control">#</a>
+@411|<strong>ドラッグ</strong> — マウスで引いて視点を回します。
+@412|<strong>拡大 / 縮小</strong> — 引き寄せたり押し出したりして視野角を調整します。
+@413|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>知っておきたい制限
+@414|デスクトップ画面では、SBS・上下分割の映像は<strong>片眼のみ</strong>表示します。
+@415|ヘッドセットへ送る WebXR の立体出力には対応していません。
+@416|デュアル魚眼の360度映像をつなぎ合わせる機能と、レンズ別の魚眼補正は含まれていません。
+@417|投影を適用できない映像は自動的に<strong>平面再生へ戻ります。</strong>表示が壊れることはありません。
+@418|The Handy はインターネットを経由して動作します。スクリプトをサーバーへアップロードし再生時刻を合わせる方式のため、接続品質が体感に直接影響します。
+@419|接続する<a aria-label="この項目へのリンク" class="anchor" href="#hd-connect">#</a>
+@420|接続キーを確認する
+@421|The Handy 本体の画面またはアプリで接続キー（Connection Key）を確認します。
+@422|設定 → デバイスに入力する
+@423|ScriptPlayer+ の<strong>設定 → デバイス</strong>で The Handy を選び、接続キーを入力します。
+@424|接続を確認する
+@425|接続されると状態表示が変わります。映像を再生すると、スクリプトが自動でアップロードされ同期します。
+@426|デバイス画面でデバイスを選んで接続します。
+@427|同期と時間オフセット<a aria-label="この項目へのリンク" class="anchor" href="#hd-sync">#</a>
+@428|The Handy は API v2 で動作します。再生を始めるとスクリプトをアップロードし、サーバーの時計に合わせて再生位置を同期します。
+@429|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>アップロードが終わったら自動で再生する
+@430|<strong>設定 → 再生</strong>の <strong>Auto Play After Handy Sync</strong> をオンにすると、アップロードと HSSP 同期が終わった瞬間に再生が始まります。毎回同期の完了を待って再生ボタンを押す必要がなくなります。
+@431|全体的に動きが少し早い、または遅いときは<strong>時間オフセット</strong>で補正します。特定の映像だけずれる場合はスクリプト側の問題である可能性が高いので、代わりに<a href="#scripts">スクリプトオフセット</a>を使ってください。
+@432|ネットワーク診断<a aria-label="この項目へのリンク" class="anchor" href="#hd-diag">#</a>
+@433|<strong>設定 → Handy ネットワーク診断</strong>で接続品質を実際に測定できます。動きがよく途切れたり遅れたりするなら、ここから確認してください。
+@434|意味
+@435|<strong>中央値レイテンシ</strong>
+@436|通常時の往復時間です。低いほど良好です。
+@437|<strong>P95 レイテンシ</strong>
+@438|遅い側5%のレイテンシです。この値が大きいと、ときどき大きく跳ねるという意味です。
+@439|<strong>ジッター</strong>
+@440|レイテンシのばらつきです。大きいほど同期が不安定になります。
+@441|<strong>成功率</strong>
+@442|リクエストが正しくやり取りされた割合です。
+@443|<strong>サーバー時計の誤差</strong>
+@444|自分のパソコンの時計とサーバーの時計の差です。
+@445|ネットワーク診断の画面です。
+@446|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>診断結果を共有する
+@447|診断結果はコピーして問い合わせに添付できます。状況を説明するのがぐっと楽になります。
+@448|診断情報をコピーするボタンです。
+@449|互換モード<a aria-label="この項目へのリンク" class="anchor" href="#hd-compat">#</a>
+@450|旧型のハードウェアや反応の遅い機器のための互換モードがあります。既定の設定で動作が不安定なら、このモードを試してください。
+@451|Handy の互換モードのオプションです。
+@452|Intiface は複数メーカーのデバイスを1つの規格でまとめる中継ソフトウェアです。v0.6.0 から ScriptPlayer+ 内に<strong>専用のワークスペース</strong>ができ、別の窓を行き来せずに扱えます。
+@453|2つの接続方式<a aria-label="この項目へのリンク" class="anchor" href="#if-mode">#</a>
+@454|内蔵エンジン
+@455|ScriptPlayer+ に入っている軽量エンジンを使います。<strong>別途インストールするものがなく</strong>もっとも手軽です。
+@456|外部の Intiface Central
+@457|すでに使っている Intiface Central へ接続します。より多くのデバイスと設定を扱えます。
+@458|接続する<a aria-label="この項目へのリンク" class="anchor" href="#if-connect">#</a>
+@459|左レールの <strong>Intiface</strong> アイコンを押すと <strong>Intiface Device Manager</strong> が開きます。画面上部に <strong>1 Connect → 2 Find device → 3 Configure → 4 Playback</strong> の4ステップが表示され、いまどの段階かと次に何をするかを併せて示します。
+@460|Intiface Device Manager。右上にエンジン・サーバー・検索・出力の状態が一列に出ます。
+@461|Connect — 接続方式を選ぶ
+@462|<strong>Built-in engine</strong> と <strong>External Central</strong> のどちらかを選びます。内蔵エンジンならアドレス（<code>ws://127.0.0.1:…</code>）が表示され、外部を選ぶ場合は接続先アドレスを入力します。
+@463|Find device — デバイス検索
+@464|スキャンを始めると Bluetooth・HID・設定済みのシリアルデバイスを探します。<strong>デバイスの電源を入れ、ペアリング待ちの状態で</strong>お待ちください。複数のデバイスを同時に選べます。
+@465|Configure — 出力マッピング
+@466|<strong>Output mapping</strong> でデバイスを選び、使える機能をそれぞれどのスクリプト軸に割り当てるか指定します。
+@467|Playback — 再生
+@468|映像を再生すると、割り当てた軸へ出力されます。バッテリー残量もこの画面で確認できます。
+@469|接続状態はレールのアイコンにも<strong>未接続・処理中・接続済み・エラー</strong>として表示されます。
+@470|複数のデバイスを同時に選んで使えます。
+@471|機能マッピング<a aria-label="この項目へのリンク" class="anchor" href="#if-mapping">#</a>
+@472|Buttplug デバイスの機能は3種類に分かれます。それぞれ好きな軸に割り当てられます。
+@473|<strong>リニア（Linear）</strong> — 前後に動く動作。通常は <code>L0</code> 軸を割り当てます。
+@474|<strong>ローテート（Rotate）</strong> — 回転する動作。通常は <code>R0</code> 軸を割り当てます。
+@475|<strong>スカラー（Scalar）</strong> — 振動の強さのように、大きさ1つで表される動作です。
+@476|スクリプトにない軸が必要なら、<strong>軸ソース連携</strong>で別の軸から値を引けます。たとえば <code>L0</code> の動きを <code>R0</code> の出力として使う、といった具合です。
+@477|ほかのアプリと併用する<a aria-label="この項目へのリンク" class="anchor" href="#if-handoff">#</a>
+@478|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>内蔵エンジンは一度に1つだけ
+@479|内蔵の Intiface エンジンは <strong>Buttplug クライアントを1つだけ</strong>受け付けます。ScriptPlayer+ とほかのアプリが同時に制御することはできません。
+@480|そのために<strong>ハンドオフ</strong>機能があります。Intiface Device Manager の <strong>Allow FapTap / external app</strong> ボタンを押すと、エンジンは動いたままで ScriptPlayer+ だけが接続を手放します。その間に FapTap のような別のクライアントが同じアドレスへ接続でき、そのアプリが切断すると ScriptPlayer+ が再接続します。
+@481|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>順番が大切です
+@482|ほかのアプリを先に立ち上げてから ScriptPlayer+ を接続しようとすると失敗します。<strong>まず ScriptPlayer+ 側で接続を手放してから</strong>、ほかのアプリを接続してください。
+@483|デバイスごとのウォッチドッグ<a aria-label="この項目へのリンク" class="anchor" href="#if-watchdog">#</a>
+@484|デバイスを複数使うとき、1つが遅くなったり失敗を繰り返したりすると、ほかのデバイスまで引きずられて止まることがありました。v0.6.0 からは<strong>デバイスごとに独立したウォッチドッグ</strong>が付き、問題のある1台のせいで残りの出力が止まることはありません。
+@485|Windows 内蔵エンジンの範囲<a aria-label="この項目へのリンク" class="anchor" href="#if-limits">#</a>
+@486|Windows 用の内蔵エンジンが扱える接続は次のとおりです。
+@487|明示的に指定した <strong>Bluetooth RFCOMM COM ポート1つ</strong> — TCode v0.3、115200 baud としてマッピングされます。
+@488|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>このシリアル経路の制限
+@489|この経路は FunOSR SR1 が使う<strong>単一のリニア軸定義</strong>だけを公開します。USB シリアルアダプターや SR6 の完全な多軸シリアルマッピングが必要な場合は、<a href="#funosr">FunOSR プロバイダー</a>を直接使うか、外部の Intiface Central を使ってください。
+@490|FunOSR はシリアル（COM）ポートへ直接信号を送る方式です。中継ソフトウェアを通らないため遅延が少なく、多軸マッピングを細かく扱えます。
+@491|ポートを選ぶ<a aria-label="この項目へのリンク" class="anchor" href="#fo-connect">#</a>
+@492|<strong>設定 → デバイス</strong>で FunOSR を選び、COM ポートを指定します。v0.6.0 からポート認識が改善され、次の順で適切なポートを先に提案します。
+@493|FunOSR として明確に識別されるポート
+@494|CH340 / CH341 アダプター
+@495|USB 識別子 <code>1A86:7523</code>
+@496|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>ポートが一時的に見えなくても
+@497|起動時に検索結果が空でも、<strong>保存した COM パスは維持されます。</strong>デバイスを後から挿しても設定が失われません。
+@498|出力の調整<a aria-label="この項目へのリンク" class="anchor" href="#fo-tune">#</a>
+@499|<strong>設定 → デバイス</strong>で次を調整します。
+@500|<strong>更新レート</strong>
+@501|1秒あたり何回コマンドを送るかを決めます。上げすぎるとかえって不安定になることがあります。
+@502|<strong>軸マッピング</strong>
+@503|スクリプトの軸をデバイスの実際の軸へ結び付けます。
+@504|<strong>モーションスムージング</strong>
+@505|動きをなめらかに整えます。
+@506|軸ごとの最高速度を <strong>spm</strong>（1分あたりのフルストローク回数）単位で制限します。全体の制限に従うか軸ごとに設定するかも選べます。
+@507|再生が止まったときやメディアが変わったときのデバイスの動作を決めます。（例: <code>Return home</code> — 元の位置へ戻る）
+@508|元の位置へ戻る速さです。値を大きくするとゆっくり戻ります。
+@509|再生を始めるとき、FunOSR / SR デバイスがスクリプトの位置まで<strong>この時間をかけてゆっくり</strong>移動したあと通常出力に入ります。<code>0</code> にすると無効です。
+@510|<strong>再接続</strong>
+@511|接続が切れたとき自動的に接続し直します。
+@512|速度制限・Twist 静音モード・停止動作・安全開始時間が1画面にまとまっています。
+@513|速度制限を適用した様子です。
+@514|軸テストと中央合わせ<a aria-label="この項目へのリンク" class="anchor" href="#fo-test">#</a>
+@515|軸が正しくつながっているか確かめるために映像を再生する必要はありません。設定 → デバイス最下部の <strong>Device Test Panel</strong> で <code>L0</code>・<code>V0</code>・<code>V1</code>・<code>R0</code> のボタンを押すと、その軸へ短いコマンドを直接送れます。<code>Stop</code> で即座に止まり、<strong>中央位置コマンド</strong>で真ん中へ戻します。
+@516|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>軸が入れ替わっていないか確かめるとき
+@517|<code>L0</code> を押したのに回転が動くなら、軸マッピングが間違っています。このパネルで1つずつ押せば、どの軸がどこにつながっているかすぐわかります。
+@518|スクリプトが実際にどのファイルからどう読み込まれたかを確認するには、<strong>Show Script Debug Info</strong> をオンにしてください。再生画面にスクリプトのパス・出どころ・軸の一覧・保存されたオフセットが表示されます。
+@519|軸を直接動かして接続を確認します。
+@520|SR1 関連のオプション<a aria-label="この項目へのリンク" class="anchor" href="#fo-sr1">#</a>
+@521|<strong>Bluetooth COM 出力</strong> — 25Hz の上限と TCode 補間を適用してよりなめらかに出力します。待機中は保持信号を送りません。
+@522|<strong>SR1 2.0 Twist 静音モード</strong> — R0 の回転速度の上限を調整して騒音を抑えます。
+@523|一時停止と再開<a aria-label="この項目へのリンク" class="anchor" href="#fo-pause">#</a>
+@524|シリアル送信が遅れたあとに再生を再開すると、遅れた分を一気に取り戻そうとしてデバイスが大きく跳ねることがあります。v0.5.1 と v0.6.0 でこの部分が強化されました。
+@525|再開への移行は、設定した<strong>安全開始時間</strong>が過ぎれば確実に完了します。
+@526|遅れた進行量は<strong>上限を設けて</strong>取り戻すため、大きな飛びは起きません。
+@527|安全移行の状態に留まってスクリプトへ戻れなくなる問題が解決されました。
+@528|モバイル・コントローラーリモート
+@529|専用の Bluetooth リモコンやスマートフォンで再生を操作できます。キーボードに手を伸ばさずに再生・停止・次のファイルへ進めたいときに使います。
+@530|設定 → モバイル/コントローラーリモートの画面です。
+@531|ペアリングする<a aria-label="この項目へのリンク" class="anchor" href="#rm-pair">#</a>
+@532|設定を開く
+@533|<strong>設定 → モバイル/コントローラーリモート</strong>へ進みます。
+@534|接続
+@535|<strong>Connect</strong> を押してリモートを先に接続します。
+@536|6桁のコードを入力
+@537|リモートの画面に出た<strong>6桁のペアリングコード</strong>を入力し、<strong>Pair</strong> を押します。
+@538|ペアリングが終わると状態・ファームウェア・バッテリー・トークンの情報が表示されます。一度接続したリモートは次回から<strong>自動的に再接続</strong>されます。
+@539|ボタンの割り当て<a aria-label="この項目へのリンク" class="anchor" href="#rm-buttons">#</a>
+@540|A・B・C の3つのボタンに、それぞれ<strong>クリック・ダブルクリック・長押し</strong>の動作を個別に割り当てられます。既定値は次のとおりです。
+@541|ボタン
+@542|クリック
+@543|ダブルクリック
+@544|長押し
+@545|なし
+@546|次の映像
+@547|前の映像
+@548|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>機器によって異なります
+@549|M5Stick S3 のように一部のボタンがない機器では、対応していない割り当ては一覧に表示されず、送信もされません。
+@550|アプリとファームウェア<a aria-label="この項目へのリンク" class="anchor" href="#rm-apps">#</a>
+@551|<strong>Get Android app</strong> — スマートフォンをリモコンとして使うアプリへ移動します。
+@552|<strong>Open flasher</strong> — リモート機器のファームウェアを書き込むツールを開きます。
+@553|安全と緊急停止
+@554|デバイスを使う以上、いつでもすぐ止められる必要があります。このページはその方法と、あらかじめ設定できる制限を扱います。<strong>デバイスを初めて使うなら、まずこのページを読んでください。</strong>
+@555|グローバル緊急停止（E-Stop）<a aria-label="この項目へのリンク" class="anchor" href="#sf-estop">#</a> <span class="pill pill--new">v0.6.0</span>
+@556|ウィンドウ右上の <strong>Stop all devices</strong> ボタンです。いまどのプロバイダーを使っているかに<strong>関係なく</strong>、接続中のすべてのデバイスへ停止要求を送ります。
+@557|再生を止め、Handy・Intiface・FunOSR の<strong>すべて</strong>へ停止コマンドを送ります。
+@558|停止要求には制限時間があり、無限に待つことはありません。
+@559|失敗またはタイムアウトしたデバイスは<strong>一覧に残り</strong>、再試行できます。
+@560|右上の <strong>Stop all devices</strong> がグローバル緊急停止ボタンです。
+@561|このボタンは<strong>デバイスが接続されているとき</strong>にタイトルバーと全画面に現れます。表示するかどうかは<strong>設定 → デバイス</strong>の <strong>Show E-Stop button</strong> でオフにできます。
+@562|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>ボタンを隠す前に
+@563|隠していても<strong>Intiface 管理画面の停止コントロールはそのまま残ります。</strong>ただしそちらは画面を一度移動しないと届きません。隠す前にその場所を必ず確認しておいてください。
+@564|設定 → デバイスの最上部に <strong>Show E-Stop button</strong> があります。
+@565|あらかじめ設定する制限<a aria-label="この項目へのリンク" class="anchor" href="#sf-limits">#</a>
+@566|事故を防ぐいちばんの方法は、そもそも強く動かないようにしておくことです。
+@567|ストローク範囲
+@568|再生バーの <code>STR</code> で動きの幅を狭めます。最初は狭くして始めてください。 → <a href="#sc-stroke">スクリプトを扱う</a>
+@569|軸ごとの最高速度を <code>spm</code> 単位で制限します。FunOSR でとくに有用です。 → <a href="#fo-tune">FunOSR</a>
+@570|再生を始めるとすぐ全速力にはならず、指定した時間をかけてスクリプトの位置までゆっくり移動します。
+@571|中心を保つ範囲
+@572|回転軸のように中心が基準の軸は、中心を保ったまま幅だけを縮めます。
+@573|一度に1つのプロバイダー<a aria-label="この項目へのリンク" class="anchor" href="#sf-oneprovider">#</a>
+@574|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>現在の制限
+@575|デバイス出力は<strong>一度に1つのプロバイダーのみ</strong>使用します。Handy と Intiface / FunOSR を同時に出力することはまだできません。
+@576|プロバイダーを切り替えるときは、前の接続が片付いたあとに新しい接続がつながります。v0.6.0 で、FunOSR から Handy や Intiface へ移るときに片付け処理で切り替えが止まる問題が解決されました。
+@577|おすすめの習慣<a aria-label="この項目へのリンク" class="anchor" href="#sf-habits">#</a>
+@578|新しいスクリプトを初めて再生するときは、<strong>範囲を狭く</strong>してどんな動きかを先に確かめます。
+@579|ヒートマップで<strong>赤い区間</strong>がどこかを先に確認します。 → <a href="#timeline">タイムラインとヒートマップ</a>
+@580|E-Stop ボタンの位置を手に覚えさせておきます。
+@581|デバイスを動かしたまま席を離れないでください。
+@582|外部プレーヤー
+@583|ScriptPlayer+ 内でうまく再生できないファイルを、すでに使っているほかのプレーヤーで開きながら、デバイス出力はそのまま維持する機能です。 <span class="pill pill--exp">実験的機能</span>
+@584|対応するプレーヤー<a aria-label="この項目へのリンク" class="anchor" href="#ex-support">#</a>
+@585|ユーザー指定の実行ファイル
+@586|設定は<strong>設定 → 外部プレーヤー</strong>で行います。再生中は再生バーの <code>EXT</code> ボタンでそのまま引き渡せます。
+@587|プレーヤーごとの違い<a aria-label="この項目へのリンク" class="anchor" href="#ex-limits">#</a>
+@588|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>知っておいてください
+@589|外部プレーヤーモードは対応対象を<strong>すべて起動できますが</strong>、再生制御と同期がどこまで届くかは<strong>プレーヤーごとに異なります。</strong>再生・停止まで追従するものもあれば、起動するだけのものもあります。
+@590|mpv や VLC を指定しておけば、Chromium 再生が失敗したときに自動でそのプレーヤーを開きます。タイムラインをドラッグして位置を移した場合は、ドラッグが<strong>終わったときに一度だけ</strong>同期します。
+@591|FFmpeg互換再生
+@592|一部の機能は外部の FFmpeg 実行ファイルがないと動きません。FFmpeg は ScriptPlayer+ に<strong>含まれていない</strong>ため、別途用意する必要があります。 <span class="pill pill--exp">実験的機能</span>
+@593|いつ必要か<a aria-label="この項目へのリンク" class="anchor" href="#ff-why">#</a>
+@594|FFmpeg の役割
+@595|<strong>互換再生</strong>
+@596|ブラウザエンジンが開けないコーデックの映像を再生します。
+@597|<strong>内蔵字幕</strong>
+@598|映像内のテキスト字幕トラックを取り出します。 → <a href="#audio">音声と字幕</a>
+@599|<strong>音声トラックの選択</strong>
+@600|複数の音声トラックから1つを選びます。
+@601|<strong>サムネイルの代替生成</strong>
+@602|Chromium がデコードできない映像のサムネイル・ホバープレビューを作ります。
+@603|<strong>モーション解析</strong>
+@604|映像からスクリプトを作るときに使います。 → <a href="#scripts">スクリプトを扱う</a>
+@605|再生できない映像を開くと、こうした案内が出ます。
+@606|用意する方法<a aria-label="この項目へのリンク" class="anchor" href="#ff-install">#</a>
+@607|ScriptPlayer+ は次の順で FFmpeg を探します。いずれか1つを満たせば十分です。
+@608|設定から自動インストール <span class="pill">もっとも簡単</span>
+@609|設定画面のボタンから、OS のパッケージマネージャー経由でインストールできます。Windows は <code>winget</code>、macOS は <code>Homebrew</code>、Linux は対応するパッケージマネージャーを使います。<strong>ユーザーが自分で押したときだけ</strong>実行されます。
+@610|環境変数 <code>FFMPEG_PATH</code>
+@611|実行ファイルのパスをこの環境変数に指定しておけば、それを使います。
+@612|一般的なインストール先またはシステムの <code>PATH</code>
+@613|すでに FFmpeg がインストールされていれば、たいてい自動で見つかります。
+@614|自分で選ぶ
+@615|設定で FFmpeg の実行ファイルを直接指定します。自動検索が失敗したときの確実な方法です。
+@616|設定 → 再生の <strong>FFmpeg 設定と状態</strong>の領域です。FFmpeg が見つかるとバージョンとパスが緑で表示され、<strong>Test connection</strong> で確認できます。
+@617|互換モードを選ぶ<a aria-label="この項目へのリンク" class="anchor" href="#ff-mode">#</a>
+@618|<strong>設定 → 再生</strong>の <strong>Video Compatibility Mode</strong> で、どこまで介入するかを決めます。症状に応じて選んでください。
+@619|症状
+@620|選ぶもの
+@621|問題なく再生できる
+@622|<code>Auto</code> — 必要なときだけ自動で介入します。既定値です。
+@623|<strong>映像は出るが音が出ない</strong>
+@624|音声互換モード — 音だけを FFmpeg で処理します。
+@625|<strong>画面が黒い、またはまったく開かない</strong>
+@626|完全互換モード — 映像まで FFmpeg で処理します。
+@627|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>変更後は開き直しが必要です
+@628|互換モードを変えたら、<strong>映像を閉じて開き直す</strong>と適用されます。
+@629|互換再生が動いている様子です。
+@630|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>パッケージに含まれない理由
+@631|ScriptPlayer+ のリリースパッケージには FFmpeg の実行ファイルも FFmpeg のソースも入っていません。互換再生・サムネイルの代替生成・モーション解析は<strong>すべて外部の実行ファイルのみ</strong>を使います。
+@632|プラグイン
+@633|スクリプトの提供元を自分で追加する機能です。<strong>既定で含まれる、あるいは推奨される提供元はひとつもありません。</strong>必要なときに自分でインストールして使います。
+@634|.funplugin とは<a aria-label="この項目へのリンク" class="anchor" href="#pl-what">#</a>
+@635|<code>.funplugin</code> ファイルは<strong>JSON マニフェストにすぎません</strong>。どこでスクリプトを探すかという情報だけが入っており、実行コードは含まれていません。
+@636|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>コードは実行しません
+@637|ScriptPlayer+ はプラグインのコードをアプリ内で実行しません。データ専用のマニフェストだけを読むため、プラグインがアプリを勝手に操作することはできません。
+@638|インストールと管理<a aria-label="この項目へのリンク" class="anchor" href="#pl-install">#</a>
+@639|左レールの<strong>プラグイン</strong>アイコンで管理します。インストール時に次が検証されます。

@@ -1,0 +1,627 @@
+«ko»
+스크립트 다루기
+«t»
+Working with scripts
+«ko»
+스크립트가 자동으로 안 잡히거나, 잡혔는데 타이밍이 안 맞거나, 움직임이 너무 셀 때
+              어디를 만져야 하는지 정리했습니다. 이 문서 하나면 스크립트 관련 문제는 대부분 해결됩니다.
+«t»
+What to reach for when a script is not detected, or is detected but out of sync, or drives the device too hard.
+              This one page covers most script problems.
+«ko»
+스크립트는 어떻게 찾아지나<a aria-label="이 항목 링크" class="anchor" href="#sc-match">#</a>
+«t»
+How a script gets found<a aria-label="Link to this section" class="anchor" href="#sc-match">#</a>
+«ko»
+ScriptPlayer+는 다음 순서로 짝이 맞는 스크립트를 찾습니다.
+«t»
+ScriptPlayer+ looks for a matching script in this order.
+«ko»
+같은 폴더의 같은 이름
+«t»
+Same name, same folder
+«ko»
+가장 확실한 방법입니다. <code>영상.mp4</code> 옆에 <code>영상.funscript</code>를 두면 바로 잡힙니다.
+«t»
+The most reliable arrangement. Put <code>video.funscript</code> beside <code>video.mp4</code> and it is picked up at once.
+«ko»
+지정한 스크립트 폴더
+«t»
+The configured script folder
+«ko»
+스크립트를 따로 모아 뒀다면 <strong>설정 → 일반 → Script Storage Folder</strong>에서 그 폴더를 지정합니다.
+                  (사이드바 <code>Folder</code> 옆의 작은 버튼으로도 지정할 수 있습니다.) 이후 그 폴더도 함께 검사합니다.
+«t»
+If you keep scripts apart, point <strong>Settings → General → Script Storage Folder</strong> at that folder.
+                  (The small button beside <code>Folder</code> in the sidebar sets it too.) It is then scanned as well.
+«ko»
+라이브러리가 수집한 스크립트
+«t»
+Scripts indexed by the library
+«ko»
+등록해 둔 라이브러리 폴더들이 색인해 놓은 스크립트도 후보에 들어갑니다.
+«t»
+Scripts already indexed by your registered library folders are candidates too.
+«ko»
+후보가 하나뿐이면 자동 선택
+«t»
+A single candidate is chosen automatically
+«ko»
+이름이 정확히 같지 않아도, 명확하게 하나로 좁혀지면 자동으로 골라 줍니다.
+«t»
+Even when the names do not match exactly, a candidate that narrows down to exactly one is selected for you.
+«ko»
+스크립트 검사 결과를 사이드바에서 확인할 수 있습니다.
+«t»
+Scan results are shown in the sidebar.
+«ko»
+스크립트 변형 패널<a aria-label="이 항목 링크" class="anchor" href="#sc-variants">#</a>
+«t»
+The Script Variants panel<a aria-label="Link to this section" class="anchor" href="#sc-variants">#</a>
+«ko»
+같은 영상에 맞는 스크립트가 여러 개일 때가 있습니다.
+              <code>Soft</code>처럼 괄호로 라벨이 붙은 변형본이 대표적입니다.
+              이럴 때 사이드바의 <strong>Script Variants</strong> 패널에서 재생을 멈추지 않고 바로 바꿔 낄 수 있습니다.
+«t»
+Sometimes several scripts match the same video — a labelled alternate like <code>Soft</code> in brackets is the usual case.
+              The <strong>Script Variants</strong> panel in the sidebar swaps between them without stopping playback.
+«ko»
+여러 변형이 잡히면 목록으로 보여 줍니다.
+«t»
+When several variants are found they are listed.
+«ko»
+고르는 즉시 적용됩니다.
+«t»
+The choice applies immediately.
+«ko»
+재생 시간으로 찾기<a aria-label="이 항목 링크" class="anchor" href="#sc-duration">#</a>
+«t»
+Matching by duration<a aria-label="Link to this section" class="anchor" href="#sc-duration">#</a>
+«ko»
+이름이 전혀 다른데 내용은 맞는 스크립트를 찾아야 할 때가 있습니다.
+              v0.6.0에 들어온 <strong>재생 시간 기반 검색</strong>은 스크립트 타임라인의 길이가
+              영상 길이와 얼마나 비슷한지로 후보의 순위를 매깁니다.
+«t»
+Sometimes the right script has an entirely different name.
+              The <strong>duration-based search</strong> added in v0.6.0 ranks candidates by how closely the
+              script's timeline length matches the video's.
+«ko»
+영상이 있는 폴더, 지정한 스크립트 폴더, 라이브러리가 색인한 스크립트를 모두 후보로 봅니다.
+«t»
+It considers the media folder, the configured script folder and everything the library has indexed.
+«ko»
+길이가 비슷한 순서로 정렬해 보여 주므로, 위쪽 후보부터 시도하면 됩니다.
+«t»
+Results are ordered by how close the lengths are, so work down from the top.
+«ko»
+길이가 가까운 순으로 후보를 정렬해 줍니다.
+«t»
+Candidates ranked by closest duration.
+«ko»
+타이밍이 안 맞을 때 — 스크립트 오프셋<a aria-label="이 항목 링크" class="anchor" href="#sc-offset">#</a>
+«t»
+When the timing is off — script offset<a aria-label="Link to this section" class="anchor" href="#sc-offset">#</a>
+«ko»
+영상보다 움직임이 조금 빠르거나 느릴 때 씁니다.
+              재생바의 <code>+0ms</code> 버튼을 눌러 조정합니다.
+«t»
+Use this when the motion runs slightly ahead of or behind the video.
+              Adjust it from the <code>+0ms</code> button on the playback bar.
+«ko»
+범위는 <strong><code>-60초</code>부터 <code>+60초</code></strong>까지입니다.
+«t»
+The range is <strong><code>-60s</code> to <code>+60s</code></strong>.
+«ko»
+소수점 초 단위로 <strong>직접 입력</strong>할 수 있고, 미세 조정 버튼으로 조금씩 옮길 수도 있습니다.
+«t»
+You can <strong>type a value</strong> in decimal seconds, or nudge it with the fine-step buttons.
+«ko»
+오프셋은 <strong>미디어별로 저장</strong>되므로, 한 번 맞춰 두면 다음에 열 때도 유지됩니다.
+«t»
+The offset is <strong>stored per media file</strong>, so once you have it right it stays right.
+«ko»
+늘리기·줄이기·초기화 모두 단축키로 지정할 수 있습니다.
+«t»
+Increase, decrease and reset can all be bound to keys.
+«ko»
+오프셋 입력 창. 직접 값을 넣거나 버튼으로 미세 조정합니다.
+«t»
+The offset field. Type a value or nudge it with the buttons.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>맞추는 요령
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>How to land it
+«ko»
+눈에 띄는 동작이 있는 지점으로 이동해 두고, 재생하면서 오프셋을 조금씩 옮겨 보세요.
+                타임라인 그래프의 봉우리와 화면 속 움직임이 겹치는 지점이 정답입니다.
+«t»
+Seek to a moment with an obvious movement, then nudge the offset while it plays.
+                You have it when the peaks in the timeline line up with what you see on screen.
+«ko»
+움직임이 너무 셀 때 — 스트로크 범위<a aria-label="이 항목 링크" class="anchor" href="#sc-stroke">#</a>
+«t»
+When the motion is too strong — stroke range<a aria-label="Link to this section" class="anchor" href="#sc-stroke">#</a>
+«ko»
+재생바의 <code>STR</code>에서 장치가 실제로 움직이는 범위를 조절합니다.
+              스크립트를 고치지 않고도 세기를 낮추거나 높일 수 있습니다.
+«t»
+<code>STR</code> on the playback bar sets how far the device actually travels.
+              You can turn the intensity down or up without editing the script.
+«ko»
+같은 설정을 <strong>설정 → 디바이스</strong>에서도 더 자세히 다룰 수 있습니다.
+«t»
+The same settings are available in more detail under <strong>Settings → Device</strong>.
+«ko»
+항목
+«t»
+Setting
+«ko»
+움직임의 아래 한계와 위 한계를 <code>0%</code>~<code>100%</code> 사이에서 정합니다.
+«t»
+Sets the lower and upper limits of travel, between <code>0%</code> and <code>100%</code>.
+«ko»
+최종 스트로크 범위를 적용하기 <em>전에</em>, <code>50%</code> 중심을 기준으로 L0 움직임을 키우거나 줄입니다.
+«t»
+Amplifies or reduces L0 movement around the <code>50%</code> centre, <em>before</em> the final stroke range is applied.
+«ko»
+장치로 보내기 전에 스크립트의 위치 값을 위아래로 뒤집습니다.
+«t»
+Flips the script's position values before they are sent to the device.
+«ko»
+이 값을 <strong>스크립트마다 따로 기억</strong>할지, 모든 미디어에 <strong>하나로 공유</strong>할지 고릅니다.
+«t»
+Chooses whether this is <strong>remembered per script</strong> or <strong>shared across all media</strong>.
+«ko»
+<strong>중심 유지 범위</strong> <span class="pill pill--new">v0.6.0</span>
+«t»
+<strong>Centre-preserving range</strong> <span class="pill pill--new">v0.6.0</span>
+«ko»
+회전축처럼 가운데가 기준인 축은 중심을 유지한 채 폭만 줄입니다.
+«t»
+For centre-based axes such as rotation, narrows the span while holding the centre.
+«ko»
+설정 → 디바이스의 스트로크 범위 항목입니다.
+«t»
+The stroke range settings in Settings → Device.
+«ko»
+재생 중에는 <code>STR</code>에서 바로 조절합니다.
+«t»
+During playback, adjust it straight from <code>STR</code>.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>처음 쓸 때
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Starting out
+«ko»
+범위를 좁게 잡고 시작해서 익숙해지면 조금씩 넓히세요. 속도 제한도 함께 쓰면 더 안전합니다. → <a href="#safety">안전과 비상 정지</a>
+«t»
+Start narrow and widen it as you get used to the motion. Pair it with a speed limit to be safer still. → <a href="#safety">Safety and E-Stop</a>
+«ko»
+빈 구간 다루기<a aria-label="이 항목 링크" class="anchor" href="#sc-gaps">#</a>
+«t»
+Handling empty stretches<a aria-label="Link to this section" class="anchor" href="#sc-gaps">#</a>
+«ko»
+스크립트에 움직임이 없는 긴 구간이 있을 때 쓰는 옵션들입니다.
+«t»
+Options for scripts with long passages that contain no movement.
+«ko»
+<strong>갭 채우기(Fill gaps)</strong> — 빈 구간을 만들어 낸 움직임으로 채웁니다.
+«t»
+<strong>Fill gaps</strong> — fills the empty stretch with generated motion.
+«ko»
+<strong>자동 스킵</strong> — 빈 구간을 건너뜁니다. 바로 넘기지 않고 <strong>잠시 기다렸다가</strong> 넘기도록 지연을 줄 수 있습니다.
+«t»
+<strong>Automatic skipping</strong> — jumps past empty stretches. You can add a delay so it <strong>waits a moment</strong> instead of skipping instantly.
+«ko»
+<strong>희소 스크립트 보정</strong> — 점이 드문드문한 스크립트를 부드럽게 다듬습니다.
+«t»
+<strong>Sparse-script handling</strong> — smooths scripts whose points are far apart.
+«ko»
+빈 구간 처리 옵션입니다.
+«t»
+The empty-stretch options.
+«ko»
+스크립트가 아예 없을 때 — 랜덤 스트로크<a aria-label="이 항목 링크" class="anchor" href="#sc-random">#</a>
+«t»
+When there is no script at all — random stroke<a aria-label="Link to this section" class="anchor" href="#sc-random">#</a>
+«ko»
+스크립트가 없는 영상에서도 움직임을 만들어 낼 수 있습니다.
+              프리셋은 기본 애태우기 패턴과 더 강한 패턴이 구분되어 있습니다.
+«t»
+Motion can be generated for video that has no script.
+              The presets keep the base tease pattern and the stronger pattern separate.
+«ko»
+생성된 움직임은 <strong>부드럽기(스무딩)</strong>를 <code>Off</code> · <code>Light</code> · <code>Balanced</code> · <code>Strong</code> 중에서 고를 수 있습니다.
+              방향이 갑자기 꺾이지 않고 가속·감속 곡선을 타므로 훨씬 자연스럽습니다.
+«t»
+Generated motion offers <strong>smoothing</strong> at <code>Off</code>, <code>Light</code>, <code>Balanced</code> or <code>Strong</code>.
+              Direction changes ride an acceleration curve instead of snapping, which reads far more naturally.
+«ko»
+랜덤 패턴 프리셋입니다.
+«t»
+The random pattern presets.
+«ko»
+스무딩을 적용해 움직임을 부드럽게 만든 모습입니다.
+«t»
+Generated motion with smoothing applied.
+«ko»
+영상에서 스크립트 만들기<a aria-label="이 항목 링크" class="anchor" href="#sc-motion">#</a> <span class="pill pill--exp">실험 기능</span>
+«t»
+Generating a script from video<a aria-label="Link to this section" class="anchor" href="#sc-motion">#</a> <span class="pill pill--exp">Experimental</span>
+«ko»
+v0.4.0부터 영상의 움직임을 분석해 펀스크립트를 만들고, 미디어 옆에 저장할 수 있습니다.
+              분석에는 외부 FFmpeg 실행 파일이 필요합니다. → <a href="#ffmpeg">FFmpeg 호환 재생</a>
+«t»
+Since v0.4.0 the motion in a video can be analysed into a funscript and saved beside the media.
+              The analysis needs an external FFmpeg executable. → <a href="#ffmpeg">FFmpeg playback</a>
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>참고
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Note
+«ko»
+모션 분석은 실험 기능입니다. 결과 품질은 영상에 따라 크게 달라지며, 만들어진 스크립트는 손으로 다듬어야 할 수 있습니다.
+«t»
+Motion analysis is experimental. Quality varies a lot by source, and the result may need hand-editing.
+«ko»
+다축 스크립트<a aria-label="이 항목 링크" class="anchor" href="#sc-multiaxis">#</a>
+«t»
+Multi-axis scripts<a aria-label="Link to this section" class="anchor" href="#sc-multiaxis">#</a>
+«ko»
+여러 축을 동시에 쓰는 스크립트는 다음 세 가지 형태를 지원합니다.
+«t»
+Scripts that drive several axes at once are supported in three shapes.
+«ko»
+한 파일 안에 <code>axes[]</code>로 축을 담은 형식
+«t»
+One file holding its axes in <code>axes[]</code>
+«ko»
+한 파일 안에 <code>channels{}</code>로 축을 담은 형식
+«t»
+One file holding its axes in <code>channels{}</code>
+«ko»
+축마다 파일이 따로 있는 형식 (예: <code>영상.L0.funscript</code>, <code>영상.R0.funscript</code>)
+«t»
+A separate file per axis (for example <code>video.L0.funscript</code>, <code>video.R0.funscript</code>)
+«ko»
+v0.6.0부터는 <strong>축별로 스크립트 소스를 바꿔 낄 수</strong> 있습니다.
+              예를 들어 다축 번들을 그대로 쓰면서 <code>L0</code> 축만 다른 파일로 교체할 수 있습니다.
+              한 축의 움직임을 다른 축에서 끌어오는 <strong>축 소스 연동</strong>도 지원합니다. (예: <code>L0 → R0</code>)
+«t»
+Since v0.6.0 you can <strong>replace the script source for a single axis</strong>.
+              You might keep a multi-axis bundle but swap only its <code>L0</code> for a different file.
+              <strong>Axis source linking</strong> — deriving one axis from another — is supported too (for example <code>L0 → R0</code>).
+«ko»
+다축 스크립트를 화면에서 보는 방법은 <a href="#timeline">타임라인과 히트맵</a>에 있습니다.
+«t»
+For seeing a multi-axis script on screen, go to <a href="#timeline">Timeline and heatmap</a>.
+«ko»
+스크립트 점검하기<a aria-label="이 항목 링크" class="anchor" href="#sc-debug">#</a>
+«t»
+Inspecting a script<a aria-label="Link to this section" class="anchor" href="#sc-debug">#</a>
+«ko»
+스크립트가 이상하게 동작할 때, 어떤 값이 들어오고 있는지 확인할 수 있는 화면이 있습니다.
+«t»
+When a script behaves oddly, there is a view that shows exactly what values are arriving.
+«ko»
+스크립트 점검 화면입니다.
+«t»
+The script inspection view.
+«ko»
+타임라인과 히트맵
+«t»
+Timeline and heatmap
+«ko»
+스크립트를 눈으로 확인하는 두 가지 방법입니다. 타임라인은 지금 이 순간을, 히트맵은 영상 전체를 보여 줍니다.
+«t»
+Two ways to see a script. The timeline shows this moment; the heatmap shows the whole file.
+«ko»
+위쪽 초록색 띠가 히트맵, 아래쪽 그래프가 다축 타임라인입니다.
+«t»
+The green band on top is the heatmap; the graph beneath is the multi-axis timeline.
+«ko»
+타임라인 <code>TL</code><a aria-label="이 항목 링크" class="anchor" href="#tl-timeline">#</a>
+«t»
+Timeline <code>TL</code><a aria-label="Link to this section" class="anchor" href="#tl-timeline">#</a>
+«ko»
+재생 위치를 따라 흐르는 실시간 그래프입니다. 재생바의 <code>TL</code> 버튼으로 켜고 끕니다.
+«t»
+A live graph that scrolls with the playhead. Toggle it with <code>TL</code> on the playback bar.
+«ko»
+축 고르기
+«t»
+Choosing axes
+«ko»
+다축 스크립트를 열면 타임라인 위에 <strong>AXES</strong> 줄이 나타납니다.
+«t»
+Open a multi-axis script and an <strong>AXES</strong> row appears above the timeline.
+«ko»
+<strong>All</strong> — 모든 축을 한 번에 겹쳐 봅니다.
+«t»
+<strong>All</strong> — overlays every axis at once.
+«ko»
+<strong>축 버튼</strong>(<code>L0</code>, <code>L1</code>, <code>R0</code>, <code>R1</code> …) — 눌러서 개별로 켜고 끕니다. 버튼 옆 숫자는 지금 그 축의 값입니다.
+«t»
+<strong>Axis buttons</strong> (<code>L0</code>, <code>L1</code>, <code>R0</code>, <code>R1</code> …) — toggle each one. The number beside a button is that axis's current value.
+«ko»
+<strong>더블클릭</strong> — 그 축만 남기고 나머지를 숨깁니다. 한 축만 자세히 볼 때 편합니다.
+«t»
+<strong>Double-click</strong> — solos that axis and hides the rest. Handy for studying one axis closely.
+«ko»
+모든 축을 동시에 표시한 모습입니다.
+«t»
+Every axis shown at once.
+«ko»
+높이 조절
+«t»
+Resizing
+«ko»
+영상과 타임라인 사이 경계를 <strong>위아래로 끌면</strong> 타임라인 높이가 바뀝니다.
+              축이 많을 때 넓게 펴 두면 훨씬 보기 좋습니다.
+«t»
+<strong>Drag the divider</strong> between the video and the timeline to change its height.
+              With many axes, giving it more room helps a lot.
+«ko»
+경계를 끌어 타임라인 높이를 조절합니다.
+«t»
+Dragging the divider to resize the timeline.
+«ko»
+히트맵 <code>HM</code><a aria-label="이 항목 링크" class="anchor" href="#tl-heatmap">#</a>
+«t»
+Heatmap <code>HM</code><a aria-label="Link to this section" class="anchor" href="#tl-heatmap">#</a>
+«ko»
+영상 전체를 하나의 가로 띠로 압축해 보여 줍니다.
+              <strong>색이 속도를 뜻합니다</strong> — 초록 쪽이 느리고, 노랑을 지나 빨강으로 갈수록 빠릅니다.
+«t»
+Compresses the whole file into a single horizontal band.
+              <strong>Colour means speed</strong> — green is slow, and it runs through yellow to red as it gets faster.
+«ko»
+어디가 격한 구간인지 재생하기 전에 알 수 있어서, 원하는 지점으로 바로 건너뛸 때 유용합니다.
+«t»
+It tells you where the intense passages are before you play, which makes jumping to the part you want easy.
+«ko»
+라이브러리 목록과 카드에는 히트맵이 표시되지 않습니다. 히트맵은 재생 화면에서만 볼 수 있습니다.
+«t»
+Heatmaps are not drawn in the library list or on cards. They appear only during playback.
+«ko»
+타임라인 설정<a aria-label="이 항목 링크" class="anchor" href="#tl-settings">#</a>
+«t»
+Timeline settings<a aria-label="Link to this section" class="anchor" href="#tl-settings">#</a>
+«ko»
+<strong>설정 → 타임라인</strong>에서 다음을 조정할 수 있습니다.
+«t»
+<strong>Settings → Timeline</strong> lets you adjust:
+«ko»
+표시 대비 — 그래프를 더 진하게 또는 옅게
+«t»
+Contrast — draw the graph heavier or lighter
+«ko»
+속도 색상 표시 켜기 / 끄기
+«t»
+Speed colouring on or off
+«ko»
+기본 높이
+«t»
+Default height
+«ko»
+오디오와 자막
+«t»
+Audio and subtitles
+«ko»
+음원 파일 재생, 볼륨 증폭, 자막 불러오기와 내장 트랙 선택까지 소리·자막에 관한 내용입니다.
+«t»
+Everything about sound and subtitles: playing audio files, boosting volume, loading subtitles and picking embedded tracks.
+«ko»
+음원 파일 재생<a aria-label="이 항목 링크" class="anchor" href="#au-audio">#</a>
+«t»
+Playing audio files<a aria-label="Link to this section" class="anchor" href="#au-audio">#</a>
+«ko»
+MP3·FLAC 같은 음원도 영상과 똑같이 스크립트를 붙여 재생할 수 있습니다.
+              영상이 없으므로 대신 <strong>커버 아트</strong>를 화면에 띄웁니다.
+«t»
+Audio such as MP3 or FLAC plays with a script attached exactly as video does.
+              With no picture to show, it displays <strong>cover art</strong> instead.
+«ko»
+커버 아트는 다음 순서로 찾습니다.
+«t»
+Cover art is looked for in this order.
+«ko»
+음원 파일 안에 들어 있는 메타데이터 이미지
+«t»
+An image embedded in the audio file's metadata
+«ko»
+같은 작품 폴더 안의 이미지 파일
+«t»
+An image file in the same work folder
+«ko»
+음원 재생 화면. 커버 아트가 표시됩니다.
+«t»
+Audio playback, with cover art shown.
+«ko»
+오디오 트랙 선택 동작입니다.
+«t»
+Selecting an audio track.
+«ko»
+볼륨 증폭 150%<a aria-label="이 항목 링크" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">실험 기능</span>
+«t»
+150% volume boost<a aria-label="Link to this section" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">Experimental</span>
+«ko»
+녹음이 작아 잘 안 들리는 음원을 위해 <strong>최대 150%까지</strong> 볼륨을 올릴 수 있습니다.
+              피크 리미터가 함께 동작해 갑자기 크게 튀는 것을 막아 줍니다.
+«t»
+For quiet recordings, volume can go <strong>up to 150%</strong>.
+              A peak limiter runs alongside it to stop sudden spikes.
+«ko»
+150% 볼륨 증폭을 켠 모습입니다.
+«t»
+With the 150% boost switched on.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>주의
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Careful
+«ko»
+이어폰을 쓰고 있다면 증폭을 켜기 전에 볼륨을 먼저 낮추세요.
+«t»
+If you are wearing earphones, turn the volume down before switching the boost on.
+«ko»
+자막<a aria-label="이 항목 링크" class="anchor" href="#au-subs">#</a>
+«t»
+Subtitles<a aria-label="Link to this section" class="anchor" href="#au-subs">#</a>
+«ko»
+외부 자막 파일
+«t»
+External subtitle files
+«ko»
+<code>.srt</code>, <code>.vtt</code>, <code>.txt</code> 파일을 지원합니다.
+              영상과 이름이 같으면 <strong>자동으로 찾아 붙습니다.</strong> 자동으로 안 잡히면 직접 불러올 수도 있습니다.
+«t»
+<code>.srt</code>, <code>.vtt</code> and <code>.txt</code> are supported.
+              A file named to match the video is <strong>found and attached automatically</strong>. If it is not, you can load one by hand.
+«ko»
+내장 자막
+«t»
+Embedded subtitles
+«ko»
+영상 파일 안에 들어 있는 텍스트 자막 트랙도 쓸 수 있습니다.
+              재생바의 <code>AV</code> 버튼에서 고릅니다. 다만 <strong>외부 FFmpeg가 설치되어 있어야 합니다.</strong>
+«t»
+Text subtitle tracks inside the video file can be used too.
+              Pick one from the <code>AV</code> button — but <strong>an external FFmpeg must be installed</strong>.
+«ko»
+자막 종류
+«t»
+Subtitle kind
+«ko»
+지원 여부
+«t»
+Supported
+«ko»
+지원 — 텍스트 기반 트랙입니다.
+«t»
+Yes — these are text-based tracks.
+«ko»
+PGS, DVD 자막
+«t»
+PGS and DVD subtitles
+«ko»
+<strong>목록에는 보이지만 표시할 수 없습니다.</strong> 이미지 기반 자막이라 렌더링하지 않습니다.
+«t»
+<strong>Listed, but cannot be shown.</strong> They are image-based, and are not rendered.
+«ko»
+<code>AV</code> 버튼에서 자막 트랙을 고릅니다.
+«t»
+Choosing a subtitle track from the <code>AV</code> button.
+«ko»
+오디오 트랙 고르기<a aria-label="이 항목 링크" class="anchor" href="#au-tracks">#</a>
+«t»
+Choosing an audio track<a aria-label="Link to this section" class="anchor" href="#au-tracks">#</a>
+«ko»
+여러 언어 오디오가 들어 있는 파일이면 <code>AV</code> 버튼에서 트랙을 고를 수 있습니다.
+              이 기능도 외부 FFmpeg가 필요합니다. → <a href="#ffmpeg">FFmpeg 호환 재생</a>
+«t»
+For files carrying audio in several languages, pick the track from the <code>AV</code> button.
+              This needs an external FFmpeg as well. → <a href="#ffmpeg">FFmpeg playback</a>
+«ko»
+VR · 360 영상
+«t»
+VR and 360° video
+«ko»
+VR180이나 360도 영상을 열면 화면이 이상하게 늘어나거나 두 개로 갈라져 보입니다.
+              투영 방식을 지정해 주면 정상적으로 볼 수 있습니다. <span class="pill pill--new">v0.6.0</span>
+«t»
+Open a VR180 or 360° video and it looks stretched, or splits into two images.
+              Tell it which projection to use and it renders properly. <span class="pill pill--new">v0.6.0</span>
+«ko»
+VR180 영상을 투영 모드로 재생하고 드래그해 시점을 옮기는 모습입니다.
+«t»
+A VR180 video in projection mode, dragging to look around.
+«ko»
+지원하는 투영 방식<a aria-label="이 항목 링크" class="anchor" href="#vr-modes">#</a>
+«t»
+Supported projections<a aria-label="Link to this section" class="anchor" href="#vr-modes">#</a>
+«ko»
+방식
+«t»
+Projection
+«ko»
+어떤 영상인가
+«t»
+What kind of video
+«ko»
+<strong>360° 등장방형</strong><br/>(Equirectangular)
+«t»
+<strong>360° equirectangular</strong>
+«ko»
+사방이 다 찍힌 전방위 영상입니다. 펼쳐 놓으면 세계지도처럼 보입니다.
+«t»
+Filmed in every direction. Laid flat, it looks like a world map.
+«ko»
+<strong>VR180 등장방형</strong>
+«t»
+<strong>VR180 equirectangular</strong>
+«ko»
+앞쪽 180도만 찍힌 영상입니다. VR 영상에서 가장 흔합니다.
+«t»
+Only the forward 180 degrees. The most common form of VR video.
+«ko»
+<strong>180° 등거리 어안</strong><br/>(Fisheye)
+«t»
+<strong>180° equidistant fisheye</strong>
+«ko»
+가운데가 볼록한 원형으로 찍힌 영상입니다.
+«t»
+Filmed as a circle that bulges at the centre.
+«ko»
+원본 배치 고르기<a aria-label="이 항목 링크" class="anchor" href="#vr-layout">#</a>
+«t»
+Choosing the source layout<a aria-label="Link to this section" class="anchor" href="#vr-layout">#</a>
+«ko»
+같은 투영 방식이라도 두 눈 영상이 어떻게 담겨 있는지가 다릅니다.
+«t»
+Even within one projection, the two eyes can be packed in different ways.
+«ko»
+<strong>모노(Mono)</strong> — 한 화면에 하나의 영상만 들어 있습니다.
+«t»
+<strong>Mono</strong> — a single image fills the frame.
+«ko»
+<strong>좌우 분할(SBS)</strong> — 왼쪽·오른쪽에 각각 한 눈씩 들어 있습니다. 지정하지 않으면 두 개로 갈라져 보입니다.
+«t»
+<strong>Side-by-side (SBS)</strong> — one eye on the left, one on the right. Leave this unset and you see two images.
+«ko»
+<strong>상하 분할(Top-and-Bottom)</strong> — 위·아래에 각각 한 눈씩 들어 있습니다.
+«t»
+<strong>Top-and-bottom</strong> — one eye above, one below.
+«ko»
+SBS나 상하 분할 영상은 <strong>어느 쪽 눈을 볼지</strong> 고를 수 있습니다.
+«t»
+For SBS and top-and-bottom sources you can choose <strong>which eye to watch</strong>.
+«ko»
+보는 방법<a aria-label="이 항목 링크" class="anchor" href="#vr-control">#</a>
+«t»
+Looking around<a aria-label="Link to this section" class="anchor" href="#vr-control">#</a>
+«ko»
+<strong>드래그</strong> — 마우스로 끌어 시점을 돌립니다.
+«t»
+<strong>Drag</strong> — pull with the mouse to turn your view.
+«ko»
+<strong>확대 / 축소</strong> — 화면을 당기거나 밀어 시야각을 조절합니다.
+«t»
+<strong>Zoom</strong> — pull in or push out to change the field of view.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>알아 두면 좋은 한계
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Limits worth knowing
+«ko»
+데스크톱 화면에서는 SBS·상하 분할 영상의 <strong>한쪽 눈만</strong> 표시합니다.
+«t»
+On the desktop, SBS and top-and-bottom sources show <strong>one eye at a time</strong>.
+«ko»
+헤드셋으로 보내는 WebXR 입체 출력은 지원하지 않습니다.
+«t»
+Stereoscopic WebXR output to a headset is not supported.
+«ko»
+듀얼 어안 360도 영상을 이어 붙이는 기능과 렌즈별 어안 보정은 들어 있지 않습니다.
+«t»
+Stitching dual-fisheye 360° footage and lens-specific fisheye calibration are not included.
+«ko»
+투영을 적용할 수 없는 영상은 자동으로 <strong>평면 재생으로 되돌아갑니다.</strong> 화면이 깨지지는 않습니다.
+«t»
+Video a projection cannot be applied to <strong>falls back to flat playback</strong> automatically. Nothing breaks.

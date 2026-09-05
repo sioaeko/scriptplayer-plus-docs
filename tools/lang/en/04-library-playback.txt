@@ -1,0 +1,372 @@
+«ko»
+라이브러리
+«t»
+Library
+«ko»
+파일이 많아지면 폴더를 하나씩 여는 게 번거로워집니다. 라이브러리는 자주 쓰는 폴더들을 등록해 두고
+              썸네일 카드로 한 번에 훑어볼 수 있게 해 줍니다.
+«t»
+Once you have a lot of files, opening one folder at a time gets tedious. The library lets you register the folders
+              you use often and skim them all as thumbnail cards.
+«ko»
+라이브러리 화면 위쪽. 검색창과 <strong>Library folders</strong> 버튼으로 폴더를 관리합니다.
+«t»
+The top of the library. Folders are managed from the search box and the <strong>Library folders</strong> button.
+«ko»
+여러 폴더 등록하기<a aria-label="이 항목 링크" class="anchor" href="#lib-sources">#</a>
+«t»
+Registering several folders<a aria-label="Link to this section" class="anchor" href="#lib-sources">#</a>
+«ko»
+v0.6.0부터 <strong>이름을 붙인 라이브러리 폴더를 여러 개</strong> 등록할 수 있습니다.
+              <strong>설정 → 일반</strong>의 <strong>Library folders</strong>에서 관리합니다.
+              각 폴더는 독립적으로 다루어져서, 하나를 꺼도 나머지는 그대로 남습니다.
+«t»
+Since v0.6.0 you can register <strong>several named library folders</strong>.
+              They are managed under <strong>Library folders</strong> in <strong>Settings → General</strong>.
+              Each one is handled independently, so switching one off leaves the rest untouched.
+«ko»
+<strong>Add folder</strong> — 폴더를 추가합니다. 선택 창에서 여러 개를 한 번에 고를 수 있습니다.
+«t»
+<strong>Add folder</strong> — adds a folder. The picker accepts several at once.
+«ko»
+<strong>이름</strong> — 경로 대신 <code>Local Library</code>, <code>NAS Library</code>처럼 알아보기 쉬운 이름을 붙입니다.
+«t»
+<strong>Name</strong> — give it something readable like <code>Local Library</code> or <code>NAS Library</code> instead of a path.
+«ko»
+<strong>토글</strong> — 잠시 빼고 싶을 때 끕니다. <strong>꺼 둔 폴더는 설정이 그대로 저장되고 검사 대상에서만 빠집니다.</strong>
+«t»
+<strong>Toggle</strong> — switch a folder off to leave it out for a while. <strong>A disabled folder keeps its settings and is only excluded from scans.</strong>
+«ko»
+<strong>휴지통</strong> — 등록만 해제할 뿐, 실제 파일은 지우지 않습니다.
+«t»
+<strong>Bin</strong> — removes the registration only. Your actual files are untouched.
+«ko»
+설정 → 일반. 폴더마다 이름과 켜기/끄기 상태가 따로 있습니다. 아래쪽에 <strong>Script Storage Folder</strong>도 함께 있습니다.
+«t»
+Settings → General. Every folder has its own name and enabled state. <strong>Script Storage Folder</strong> sits below them.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>스크립트 폴더도 여기서
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>The script folder is here too
+«ko»
+내려받은 스크립트를 모아 둘 <strong>Script Storage Folder</strong>도 같은 화면에서 지정합니다.
+                여기를 지정해 두면 스크립트 자동 매칭과 플러그인 내려받기가 모두 이 폴더를 씁니다. → <a href="#scripts">스크립트 다루기</a>
+«t»
+The <strong>Script Storage Folder</strong> that collects downloaded scripts is set on the same screen.
+                Once it is set, both automatic script matching and plugin downloads use it. → <a href="#scripts">Working with scripts</a>
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>NAS를 쓰는 경우
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>If you use a NAS
+«ko»
+로컬과 NAS 목록은 캐시에서 합쳐져 중복 없이 하나로 보입니다.
+                시작할 때는 캐시된 내용을 먼저 보여 주고, 그다음 폴더들을 <strong>순서대로 하나씩</strong> 갱신합니다.
+                여러 폴더를 동시에 읽지 않기 때문에 시작할 때 디스크·네트워크가 한꺼번에 몰리는 일이 줄어듭니다.
+«t»
+Local and NAS catalogues are merged from cache into one deduplicated list.
+                On startup the cached contents appear first, then each folder is refreshed <strong>one after another</strong>.
+                Because folders are not read in parallel, the disk and network are not hammered all at once at launch.
+«ko»
+거르기와 정렬<a aria-label="이 항목 링크" class="anchor" href="#lib-filter">#</a>
+«t»
+Filtering and sorting<a aria-label="Link to this section" class="anchor" href="#lib-filter">#</a>
+«ko»
+필터는 <strong>저장되어</strong> 다음에 열 때도 유지됩니다.
+«t»
+Filters are <strong>remembered</strong> and still applied next time you open the library.
+«ko»
+기능
+«t»
+Control
+«ko»
+설명
+«t»
+What it does
+«ko»
+<strong>검색</strong>
+«t»
+<strong>Search</strong>
+«ko»
+제목과 경로로 찾습니다.
+«t»
+Searches title and path.
+«ko»
+<strong>미디어 종류</strong>
+«t»
+<strong>Media type</strong>
+«ko»
+영상만 / 음원만 보기로 나눕니다.
+«t»
+Splits the view into video only or audio only.
+«ko»
+<strong>스크립트 분류</strong>
+«t»
+<strong>Script category</strong>
+«ko»
+단일 축 스크립트와 다축 스크립트를 따로 걸러 볼 수 있습니다.
+«t»
+Filters single-axis and multi-axis scripts separately.
+«ko»
+<strong>별점</strong>
+«t»
+<strong>Rating</strong>
+«ko»
+점수를 매긴 항목만 봅니다.
+«t»
+Shows only items you have scored.
+«ko»
+<strong>정렬</strong>
+«t»
+<strong>Sort</strong>
+«ko»
+경로 · 파일명 · 별점 · 재생 시간 · 수정 시간 기준으로 정렬합니다.
+«t»
+Sorts by path, file name, rating, duration or last-modified time.
+«ko»
+재생 시간 정렬을 쓰려면 길이를 먼저 알아야 하는데, 이는 백그라운드에서 자동으로 검사합니다.
+              파일이 많으면 처음에는 일부만 표시되다가 점점 채워집니다.
+«t»
+Sorting by duration needs the lengths first, and those are scanned automatically in the background.
+              With a lot of files you will see part of the list at first, filling in as it goes.
+«ko»
+카드 다루기<a aria-label="이 항목 링크" class="anchor" href="#lib-cards">#</a>
+«t»
+Working with cards<a aria-label="Link to this section" class="anchor" href="#lib-cards">#</a>
+«ko»
+<strong>카드 크기</strong> — 슬라이더로 한 화면에 보이는 개수를 조절합니다.
+«t»
+<strong>Card size</strong> — the slider changes how many fit on screen.
+«ko»
+<strong>썸네일 메뉴</strong> — 카드에서 바로 대표 이미지를 바꾸거나 다시 만들 수 있습니다.
+«t»
+<strong>Thumbnail menu</strong> — change or regenerate the cover image straight from the card.
+«ko»
+<strong>별점</strong> — 카드에서 점수를 매기고, 재생 중에도 재생바 <code>☆</code>로 바꿀 수 있습니다.
+«t»
+<strong>Rating</strong> — score from the card, or change it mid-playback with <code>☆</code> on the playback bar.
+«ko»
+썸네일은 백그라운드에서 만들어져 카드에 차례로 채워집니다. 파일이 많으면 처음에는 비어 있다가 점점 채워집니다.
+«t»
+Thumbnails are generated in the background and fill in card by card. With many files they start empty and populate over time.
+«ko»
+썸네일 메뉴에서 대표 이미지를 관리합니다.
+«t»
+Manage the cover image from the thumbnail menu.
+«ko»
+재생 화면에서 바로 별점을 매길 수 있습니다.
+«t»
+Rate a file without leaving playback.
+«ko»
+호버 미리보기<a aria-label="이 항목 링크" class="anchor" href="#lib-hover">#</a>
+«t»
+Hover preview<a aria-label="Link to this section" class="anchor" href="#lib-hover">#</a>
+«ko»
+파일 목록에서 항목 위에 마우스를 올려 두면 <strong>파일을 열지 않고도</strong> 짧은 영상 미리보기가 재생됩니다.
+              어떤 영상인지 확인하려고 하나씩 열어 볼 필요가 줄어듭니다.
+«t»
+Rest the pointer on an entry in the file list and a short video preview plays <strong>without opening the file</strong>.
+              You no longer have to open things one by one just to see what they are.
+«ko»
+목록에서 마우스를 올리면 바로 미리보기가 뜹니다.
+«t»
+Hover in the list and the preview appears.
+«ko»
+재생 다루기
+«t»
+Playback
+«ko»
+재생·탐색 같은 기본 동작과, 반복·구간 반복·화면 맞춤처럼 자주 쓰게 되는 기능들을 모았습니다.
+«t»
+The basics — playing and seeking — plus the things you reach for often: repeat, segment repeat and frame fitting.
+«ko»
+기본 조작<a aria-label="이 항목 링크" class="anchor" href="#pb-basic">#</a>
+«t»
+Basic controls<a aria-label="Link to this section" class="anchor" href="#pb-basic">#</a>
+«ko»
+동작
+«t»
+Action
+«ko»
+방법
+«t»
+How
+«ko»
+재생 / 일시정지
+«t»
+Play / pause
+«ko»
+<kbd>Space</kbd> 또는 <kbd>K</kbd>, 재생바의 ▶ 버튼
+«t»
+<kbd>Space</kbd> or <kbd>K</kbd>, or ▶ on the playback bar
+«ko»
+5초 이동
+«t»
+Seek 5 seconds
+«ko»
+10초 이동
+«t»
+Seek 10 seconds
+«ko»
+이전 / 다음 파일
+«t»
+Previous / next file
+«ko»
+재생바의 ⏮ ⏭ 버튼
+«t»
+The ⏮ ⏭ buttons on the playback bar
+«ko»
+볼륨
+«t»
+Volume
+«ko»
+<kbd>↑</kbd> <kbd>↓</kbd> (5%씩)
+«t»
+<kbd>↑</kbd> <kbd>↓</kbd> (5% steps)
+«ko»
+음소거
+«t»
+Mute
+«ko»
+전체화면
+«t»
+Fullscreen
+«ko»
+전체 목록과 변경 방법은 <a href="#shortcuts">키보드 단축키</a>에 있습니다.
+«t»
+The full list, and how to change it, is under <a href="#shortcuts">Keyboard shortcuts</a>.
+«ko»
+반복 · 자동 다음 재생 · 랜덤<a aria-label="이 항목 링크" class="anchor" href="#pb-repeat">#</a>
+«t»
+Repeat, Auto Next Play and shuffle<a aria-label="Link to this section" class="anchor" href="#pb-repeat">#</a>
+«ko»
+비슷해 보이지만 서로 다른 세 가지입니다. 처음에 헷갈리기 쉬운 부분이라 나눠 설명합니다.
+«t»
+Three things that look alike but are not. They are easy to confuse at first, so here they are side by side.
+«ko»
+반복 <code>🔁</code>
+«t»
+Repeat <code>🔁</code>
+«ko»
+지금 재생 중인 <strong>이 파일 하나만</strong> 계속 반복합니다.
+«t»
+Loops <strong>only the file playing now</strong>.
+«ko»
+파일이 끝나면 <strong>다음 파일로 자동으로 넘어갑니다.</strong> 설정에서 켭니다.
+«t»
+When a file ends, <strong>moves on to the next one</strong>. Switched on in Settings.
+«ko»
+랜덤 <code>🔀</code>
+«t»
+Shuffle <code>🔀</code>
+«ko»
+목록을 <strong>무작위 순서</strong>로 재생합니다.
+«t»
+Plays the list in <strong>random order</strong>.
+«ko»
+Auto Next Play를 켜면 파일이 끝날 때 다음 파일로 이어집니다.
+«t»
+With Auto Next Play on, the next file follows when one ends.
+«ko»
+AB 구간 반복<a aria-label="이 항목 링크" class="anchor" href="#pb-ab">#</a>
+«t»
+AB segment repeat<a aria-label="Link to this section" class="anchor" href="#pb-ab">#</a>
+«ko»
+영상의 특정 구간만 계속 돌려 보고 싶을 때 씁니다.
+              시작점(A)과 끝점(B)을 찍으면 그 사이만 반복됩니다.
+«t»
+For replaying one stretch of a video over and over.
+              Mark the start (A) and the end (B), and only that stretch loops.
+«ko»
+반복하고 싶은 구간의 <strong>시작</strong> 위치에서 A 지점을 지정합니다.
+«t»
+At the <strong>start</strong> of the stretch you want, set point A.
+«ko»
+구간의 <strong>끝</strong> 위치에서 B 지점을 지정합니다.
+«t»
+At the <strong>end</strong> of it, set point B.
+«ko»
+구간 반복이 시작됩니다. 편집기를 열면 지점을 정확한 값으로 다듬을 수 있습니다.
+«t»
+The loop begins. Open the editor to fine-tune both points to exact values.
+«ko»
+A·B 지정과 편집기 열기는 모두 단축키로 지정할 수 있습니다. (<a href="#shortcuts">키보드 단축키</a>)
+«t»
+Setting A, setting B and opening the editor can all be bound to keys. (<a href="#shortcuts">Keyboard shortcuts</a>)
+«ko»
+구간 반복 동작 예시입니다.
+«t»
+Segment repeat in action.
+«ko»
+화면 맞춤 — FIT과 FILL<a aria-label="이 항목 링크" class="anchor" href="#pb-fit">#</a>
+«t»
+Fitting the frame — FIT and FILL<a aria-label="Link to this section" class="anchor" href="#pb-fit">#</a>
+«ko»
+영상 비율과 창 비율이 다를 때 어느 쪽을 우선할지 고르는 버튼입니다.
+«t»
+When the video's aspect ratio differs from the window's, these decide which one wins.
+«ko»
+<strong>FIT</strong> — 영상이 전부 보이게 맞춥니다. 위아래나 좌우에 검은 여백이 생길 수 있습니다.
+«t»
+<strong>FIT</strong> — scales so the whole video is visible. Black bars may appear above and below, or at the sides.
+«ko»
+<strong>FILL</strong> — 화면을 꽉 채웁니다. 영상 가장자리가 잘릴 수 있습니다.
+«t»
+<strong>FILL</strong> — fills the frame completely. The edges of the video may be cropped.
+«ko»
+같은 영상을 FIT과 FILL로 봤을 때의 차이입니다.
+«t»
+The same video under FIT and under FILL.
+«ko»
+전체화면<a aria-label="이 항목 링크" class="anchor" href="#pb-fullscreen">#</a>
+«t»
+Fullscreen<a aria-label="Link to this section" class="anchor" href="#pb-fullscreen">#</a>
+«ko»
+<kbd>F</kbd>로 전체화면에 들어갑니다. 전체화면에서도 사이드바를 불러올 수 있어 파일을 바꾸려고 나올 필요가 없습니다.
+«t»
+<kbd>F</kbd> enters fullscreen. The sidebar can still be summoned there, so you do not have to leave just to change file.
+«ko»
+v0.6.0부터 전체화면 컨트롤의 표시 방식을 설정에서 바꿀 수 있습니다.
+«t»
+Since v0.6.0 you can change how the fullscreen controls appear.
+«ko»
+<strong>아래쪽에서만 나타나게</strong> 하기 — 화면 아무 데나 마우스를 움직여도 컨트롤이 뜨지 않게 합니다.
+«t»
+<strong>Reveal from the bottom edge only</strong> — so moving the pointer anywhere on screen does not raise the controls.
+«ko»
+<strong>배경 투명도</strong> — 컨트롤 뒤 배경을 더 진하게 또는 옅게 합니다.
+«t»
+<strong>Background opacity</strong> — makes the ground behind the controls heavier or lighter.
+«ko»
+<strong>세로 위치</strong> — 컨트롤이 뜨는 높이를 조정합니다.
+«t»
+<strong>Vertical position</strong> — sets how high the controls sit.
+«ko»
+전체화면 상태에서 사이드바를 불러오는 모습입니다.
+«t»
+Summoning the sidebar while in fullscreen.
+«ko»
+항상 위에 두기<a aria-label="이 항목 링크" class="anchor" href="#pb-ontop">#</a>
+«t»
+Keeping the window on top<a aria-label="Link to this section" class="anchor" href="#pb-ontop">#</a>
+«ko»
+다른 창을 쓰면서도 재생 화면을 계속 보고 싶을 때, 창을 항상 맨 앞에 고정할 수 있습니다.
+«t»
+To keep watching while you work in another window, pin the window in front of everything else.
+«ko»
+항상 위 옵션을 켠 상태입니다.
+«t»
+With always-on-top switched on.
+«ko»
+되돌리기 · 복구<a aria-label="이 항목 링크" class="anchor" href="#pb-recovery">#</a>
+«t»
+Resetting and recovery<a aria-label="Link to this section" class="anchor" href="#pb-recovery">#</a>
+«ko»
+설정을 이것저것 만지다 꼬였다면 <strong>설정 → 복구</strong>에서 초기 상태로 되돌릴 수 있습니다.
+              전체 초기화를 하면 캐시된 재생 시간, 스트로크 범위, 플레이어·라이브러리·작업 공간·최근 미디어·사이드바 상태가 함께 정리됩니다.
+«t»
+If you have changed enough settings to tangle things up, <strong>Settings → Recovery</strong> puts them back.
+              A full reset also clears cached durations, stroke ranges, and the player, library, workspace, recent-media and sidebar state.
+«ko»
+설정 → 복구 메뉴입니다.
+«t»
+The Settings → Recovery menu.

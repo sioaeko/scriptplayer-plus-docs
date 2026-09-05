@@ -1,0 +1,320 @@
+@320|<strong>自动跳过</strong> — 跳过空白区间。可以设置延迟，让它<strong>稍等一会儿</strong>再跳，而不是立刻跳过。
+@321|<strong>稀疏脚本补正</strong> — 把点位稀疏的脚本整理得更平滑。
+@322|空白区间的处理选项。
+@323|完全没有脚本时 — 随机行程<a aria-label="本节链接" class="anchor" href="#sc-random">#</a>
+@324|即使视频没有脚本，也能生成动作。预设中把基础的挑逗模式与更强的模式分开了。
+@325|生成的动作可在 <code>Off</code>、<code>Light</code>、<code>Balanced</code>、<code>Strong</code> 之间选择<strong>平滑度</strong>。方向不会突然折返，而是走加减速曲线，因此自然得多。
+@326|随机模式的预设。
+@327|应用平滑后让动作更柔和的样子。
+@328|从视频生成脚本<a aria-label="本节链接" class="anchor" href="#sc-motion">#</a> <span class="pill pill--exp">实验功能</span>
+@329|从 v0.4.0 起，可以分析视频中的动作生成脚本并保存在媒体旁边。分析需要外部的 FFmpeg 可执行文件。 → <a href="#ffmpeg">FFmpeg 兼容播放</a>
+@330|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>提示
+@331|运动分析属于实验功能。结果质量随视频差异很大，生成的脚本可能需要手动修整。
+@332|多轴脚本<a aria-label="本节链接" class="anchor" href="#sc-multiaxis">#</a>
+@333|同时驱动多个轴的脚本支持以下三种形式。
+@334|在一个文件中用 <code>axes[]</code> 收纳各轴
+@335|在一个文件中用 <code>channels{}</code> 收纳各轴
+@336|每个轴一个文件（例如 <code>视频.L0.funscript</code>、<code>视频.R0.funscript</code>）
+@337|从 v0.6.0 起可以<strong>按轴替换脚本来源</strong>。例如沿用多轴包，但只把 <code>L0</code> 轴换成另一个文件。也支持从别的轴取值的<strong>轴来源联动</strong>（例如 <code>L0 → R0</code>）。
+@338|在界面上查看多轴脚本的方法见<a href="#timeline">时间线与热力图</a>。
+@339|检查脚本<a aria-label="本节链接" class="anchor" href="#sc-debug">#</a>
+@340|脚本表现异常时，有一个界面可以查看实际传入的数值。
+@341|脚本检查界面。
+@342|时间线与热力图
+@343|查看脚本的两种方式。时间线显示当下这一刻，热力图显示整个文件。
+@344|上方的绿色色带是热力图，下方的图形是多轴时间线。
+@345|时间线 <code>TL</code><a aria-label="本节链接" class="anchor" href="#tl-timeline">#</a>
+@346|随播放位置滚动的实时图形。用播放栏的 <code>TL</code> 按钮开关。
+@347|选择轴
+@348|打开多轴脚本后，时间线上方会出现 <strong>AXES</strong> 一行。
+@349|<strong>All</strong> — 把所有轴一次叠加显示。
+@350|<strong>轴按钮</strong>（<code>L0</code>、<code>L1</code>、<code>R0</code>、<code>R1</code> …） — 逐个开关。按钮旁的数字是该轴当前的数值。
+@351|<strong>双击</strong> — 只保留该轴、隐藏其余。想仔细看某一个轴时很方便。
+@352|所有轴同时显示的样子。
+@353|调整高度
+@354|<strong>上下拖动</strong>视频与时间线之间的分隔线即可改变时间线高度。轴较多时拉宽会好看很多。
+@355|拖动分隔线调整时间线高度。
+@356|热力图 <code>HM</code><a aria-label="本节链接" class="anchor" href="#tl-heatmap">#</a>
+@357|把整个文件压缩成一条横向色带。<strong>颜色代表速度</strong> — 绿色较慢，经过黄色越往红色越快。
+@358|播放前就能知道哪里是激烈段落，想直接跳到某处时很有用。
+@359|媒体库列表和卡片上不显示热力图。热力图只在播放界面可见。
+@360|时间线设置<a aria-label="本节链接" class="anchor" href="#tl-settings">#</a>
+@361|<strong>设置 → 时间线</strong>中可以调整以下项目。
+@362|显示对比度 — 让图形更深或更浅
+@363|按速度着色的开 / 关
+@364|默认高度
+@365|音频与字幕
+@366|关于声音和字幕的内容：音频文件播放、音量增强、载入字幕以及选择内嵌轨道。
+@367|播放音频文件<a aria-label="本节链接" class="anchor" href="#au-audio">#</a>
+@368|MP3、FLAC 这类音频也能像视频一样附上脚本播放。因为没有画面，会改为显示<strong>封面图</strong>。
+@369|封面图按以下顺序查找。
+@370|音频文件内元数据中的图片
+@371|同一作品文件夹内的图片文件
+@372|音频播放界面，显示封面图。
+@373|选择音轨的操作。
+@374|音量增强 150%<a aria-label="本节链接" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">实验功能</span>
+@375|针对录音过小、听不清的音源，音量最多可提升到<strong>150%</strong>。同时会启用峰值限制器，防止突然爆音。
+@376|开启 150% 音量增强后的样子。
+@377|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>注意
+@378|如果你戴着耳机，请先把音量调低再开启增强。
+@379|字幕<a aria-label="本节链接" class="anchor" href="#au-subs">#</a>
+@380|外部字幕文件
+@381|支持 <code>.srt</code>、<code>.vtt</code>、<code>.txt</code>。与视频同名时会<strong>自动找到并载入。</strong>若未自动识别，也可以手动载入。
+@382|内嵌字幕
+@383|视频文件内的文本字幕轨也可以使用，从播放栏的 <code>AV</code> 按钮选择。不过<strong>必须已安装外部 FFmpeg。</strong>
+@384|字幕类型
+@385|是否支持
+@386|支持 — 属于文本类轨道。
+@387|PGS、DVD 字幕
+@388|<strong>会列出但无法显示。</strong>它们是图像类字幕，不做渲染。
+@389|从 <code>AV</code> 按钮选择字幕轨。
+@390|选择音轨<a aria-label="本节链接" class="anchor" href="#au-tracks">#</a>
+@391|如果文件内含多语言音频，可从 <code>AV</code> 按钮选择音轨。该功能同样需要外部 FFmpeg。 → <a href="#ffmpeg">FFmpeg 兼容播放</a>
+@392|VR 与 360 度视频
+@393|打开 VR180 或 360 度视频时，画面会不自然地拉伸或分成两半。指定投影方式后就能正常观看。 <span class="pill pill--new">v0.6.0</span>
+@394|以投影模式播放 VR180 视频，并拖动改变视角的样子。
+@395|支持的投影方式<a aria-label="本节链接" class="anchor" href="#vr-modes">#</a>
+@396|方式
+@397|适用于哪种视频
+@398|<strong>360 度等距圆柱</strong><br/>(Equirectangular)
+@399|拍摄了全方位的视频。平铺展开后看起来像世界地图。
+@400|<strong>VR180 等距圆柱</strong>
+@401|只拍摄了前方 180 度的视频。在 VR 视频中最常见。
+@402|<strong>180 度等距鱼眼</strong><br/>(Fisheye)
+@403|以中心凸起的圆形拍摄的视频。
+@404|选择源画面布局<a aria-label="本节链接" class="anchor" href="#vr-layout">#</a>
+@405|即使投影方式相同，两眼画面的排布方式也可能不同。
+@406|<strong>单目（Mono）</strong> — 一屏中只有一个画面。
+@407|<strong>左右分割（SBS）</strong> — 左右各放一只眼的画面。不指定就会看到分成两半。
+@408|<strong>上下分割（Top-and-Bottom）</strong> — 上下各放一只眼的画面。
+@409|对 SBS 和上下分割的视频，可以选择<strong>观看哪只眼</strong>。
+@410|观看操作<a aria-label="本节链接" class="anchor" href="#vr-control">#</a>
+@411|<strong>拖动</strong> — 用鼠标拖动转动视角。
+@412|<strong>放大 / 缩小</strong> — 拉近或推远来调整视场角。
+@413|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>值得了解的限制
+@414|在桌面画面上，SBS 与上下分割的视频<strong>一次只显示一只眼</strong>。
+@415|不支持向头显输出的 WebXR 立体显示。
+@416|不包含拼接双鱼眼 360 度视频的功能，也不含按镜头的鱼眼校准。
+@417|无法应用投影的视频会自动<strong>回退到平面播放</strong>，画面不会出错。
+@418|The Handy 通过互联网工作。它把脚本上传到服务器并对齐播放时刻，因此连接质量会直接影响体感。
+@419|连接<a aria-label="本节链接" class="anchor" href="#hd-connect">#</a>
+@420|查看连接密钥
+@421|在 The Handy 机身屏幕或其应用中查看连接密钥（Connection Key）。
+@422|在设置 → 设备中输入
+@423|在 ScriptPlayer+ 的<strong>设置 → 设备</strong>中选择 The Handy 并填入连接密钥。
+@424|确认连接
+@425|连接成功后状态显示会变化。播放视频时脚本会自动上传并同步。
+@426|在设备界面选择并连接设备。
+@427|同步与时间偏移<a aria-label="本节链接" class="anchor" href="#hd-sync">#</a>
+@428|The Handy 使用 API v2。开始播放时会上传脚本，并按服务器时钟同步播放位置。
+@429|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>上传完成后自动播放
+@430|开启<strong>设置 → 播放</strong>中的 <strong>Auto Play After Handy Sync</strong>，上传与 HSSP 同步一结束就会立即开始播放，不必每次等同步完成再去按播放。
+@431|如果整体上动作偏早或偏晚，用<strong>时间偏移</strong>校正。若只有某个视频对不上，多半是脚本本身的问题，请改用<a href="#scripts">脚本偏移</a>。
+@432|网络诊断<a aria-label="本节链接" class="anchor" href="#hd-diag">#</a>
+@433|在<strong>设置 → Handy 网络诊断</strong>中可以实测连接质量。若动作总是卡顿或延迟，请从这里开始排查。
+@434|含义
+@435|<strong>延迟中位数</strong>
+@436|正常情况下的往返时间。越低越好。
+@437|<strong>P95 延迟</strong>
+@438|较慢那 5% 的延迟。该值偏大说明偶尔会大幅波动。
+@439|<strong>抖动</strong>
+@440|延迟的波动程度。越大同步越不稳定。
+@441|<strong>成功率</strong>
+@442|请求正常往返的比例。
+@443|<strong>服务器时钟偏差</strong>
+@444|你的电脑时钟与服务器时钟之间的差值。
+@445|网络诊断界面。
+@446|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>分享诊断结果
+@447|诊断结果可以复制后附在反馈里，这样说明问题会轻松得多。
+@448|复制诊断信息的按钮。
+@449|兼容模式<a aria-label="本节链接" class="anchor" href="#hd-compat">#</a>
+@450|为较旧的硬件或响应较慢的设备提供了兼容模式。若默认设置下表现不稳定，可以试着开启。
+@451|Handy 兼容模式选项。
+@452|Intiface 是把多家厂商的设备统一到同一规范的中继软件。从 v0.6.0 起 ScriptPlayer+ 内置了<strong>专用工作区</strong>，不必在多个窗口间来回切换。
+@453|两种连接方式<a aria-label="本节链接" class="anchor" href="#if-mode">#</a>
+@454|内置引擎
+@455|使用 ScriptPlayer+ 内含的轻量引擎。<strong>无需额外安装</strong>，最为简便。
+@456|外部 Intiface Central
+@457|连接到你已在使用的 Intiface Central，可以支持更多设备和设置。
+@458|连接<a aria-label="本节链接" class="anchor" href="#if-connect">#</a>
+@459|点击左侧栏的 <strong>Intiface</strong> 图标会打开 <strong>Intiface Device Manager</strong>。界面上方显示 <strong>1 Connect → 2 Find device → 3 Configure → 4 Playback</strong> 四个步骤，并同时告知当前处于哪一步、下一步该做什么。
+@460|Intiface Device Manager。右上角一行显示引擎、服务器、搜索与输出状态。
+@461|Connect — 选择连接方式
+@462|在 <strong>Built-in engine</strong> 与 <strong>External Central</strong> 之间选择。用内置引擎会显示地址（<code>ws://127.0.0.1:…</code>），选外部则需填入要连接的地址。
+@463|Find device — 搜索设备
+@464|开始扫描后会查找 Bluetooth、HID 以及已配置的串口设备。请让<strong>设备保持开机、处于待配对状态</strong>并稍等。可以同时选中多台设备。
+@465|Configure — 输出映射
+@466|在 <strong>Output mapping</strong> 中选择设备，并指定每个可用功能对应哪个脚本轴。
+@467|Playback — 播放
+@468|播放视频后就会按映射的轴输出。电池电量也能在此界面查看。
+@469|连接状态也会在侧栏图标上显示为<strong>未连接、处理中、已连接、错误</strong>。
+@470|可以同时选中多台设备一起使用。
+@471|功能映射<a aria-label="本节链接" class="anchor" href="#if-mapping">#</a>
+@472|Buttplug 设备的功能分为三类，每一类都可以绑定到你想要的轴。
+@473|<strong>线性（Linear）</strong> — 前后往复的动作，通常绑定 <code>L0</code> 轴。
+@474|<strong>旋转（Rotate）</strong> — 转动的动作，通常绑定 <code>R0</code> 轴。
+@475|<strong>标量（Scalar）</strong> — 像振动强度这样用单一数值表示的动作。
+@476|如果需要脚本里没有的轴，可以用<strong>轴来源联动</strong>从别的轴取值。例如把 <code>L0</code> 的动作用作 <code>R0</code> 的输出。
+@477|与其他应用共用<a aria-label="本节链接" class="anchor" href="#if-handoff">#</a>
+@478|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>内置引擎一次只接一个
+@479|内置的 Intiface 引擎<strong>一次只接受一个 Buttplug 客户端</strong>。ScriptPlayer+ 与其他应用无法同时控制它。
+@480|因此提供了<strong>移交</strong>功能。点击 Intiface Device Manager 中的 <strong>Allow FapTap / external app</strong> 按钮，引擎会继续运行，而只有 ScriptPlayer+ 放开连接。期间 FapTap 等其他客户端可以连到同一地址；该应用断开后，ScriptPlayer+ 会重新连接。
+@481|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>顺序很重要
+@482|先启动其他应用、再想把 ScriptPlayer+ 接上，是会失败的。请<strong>先从 ScriptPlayer+ 放开连接</strong>，然后再连接其他应用。
+@483|按设备的看门狗<a aria-label="本节链接" class="anchor" href="#if-watchdog">#</a>
+@484|使用多台设备时，若其中一台变慢或反复失败，过去会把其他设备一起拖住。从 v0.6.0 起<strong>每台设备都有独立的看门狗</strong>，一台出问题不会阻塞其余设备的输出。
+@485|Windows 内置引擎的范围<a aria-label="本节链接" class="anchor" href="#if-limits">#</a>
+@486|Windows 版内置引擎可处理的连接如下。
+@487|一个显式指定的 <strong>Bluetooth RFCOMM COM 端口</strong> — 按 TCode v0.3、115200 波特率映射。
+@488|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>该串口路径的限制
+@489|该路径只暴露 FunOSR SR1 使用的<strong>单一线性轴定义</strong>。如果需要 USB 串口适配器或 SR6 的完整多轴串口映射，请直接使用<a href="#funosr">FunOSR 提供方</a>或外部 Intiface Central。
+@490|FunOSR 直接向串口（COM）发送信号。不经过中继软件，延迟更低，也能更细致地处理多轴映射。
+@491|选择端口<a aria-label="本节链接" class="anchor" href="#fo-connect">#</a>
+@492|在<strong>设置 → 设备</strong>中选择 FunOSR 并指定 COM 端口。从 v0.6.0 起端口识别有所改进，会按以下顺序优先推荐合适的端口。
+@493|被明确识别为 FunOSR 的端口
+@494|CH340 / CH341 适配器
+@495|USB 标识 <code>1A86:7523</code>
+@496|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>端口暂时看不到也不要紧
+@497|即使启动时搜索结果为空，<strong>已保存的 COM 路径依然保留</strong>。设备插得晚也不会丢失设置。
+@498|调整输出<a aria-label="本节链接" class="anchor" href="#fo-tune">#</a>
+@499|在<strong>设置 → 设备</strong>中调整以下项目。
+@500|<strong>更新速率</strong>
+@501|决定每秒发送多少次指令。设得过高反而可能不稳定。
+@502|<strong>轴映射</strong>
+@503|把脚本的轴与设备的实际轴对应起来。
+@504|<strong>运动平滑</strong>
+@505|把动作整理得更平滑。
+@506|以 <strong>spm</strong>（每分钟完整行程次数）为单位限制各轴的最高速度。也可以选择该轴是沿用全局限制还是单独设置。
+@507|决定播放暂停、停止或切换媒体时设备的行为。（例如 <code>Return home</code> — 回到原位）
+@508|回到原位的速度。数值越大回得越慢。
+@509|开始播放时，FunOSR / SR 设备会<strong>用这段时间缓慢</strong>移动到脚本位置，然后才进入正常输出。设为 <code>0</code> 则关闭。
+@510|<strong>重新连接</strong>
+@511|连接断开时自动重连。
+@512|速度限制、Twist 静音模式、停止行为与安全启动时间集中在同一界面。
+@513|应用速度限制后的样子。
+@514|轴测试与居中<a aria-label="本节链接" class="anchor" href="#fo-test">#</a>
+@515|要确认轴是否接对，并不需要播放视频。在设置 → 设备最下方的 <strong>Device Test Panel</strong> 中点击 <code>L0</code>、<code>V0</code>、<code>V1</code>、<code>R0</code> 按钮，就能直接向该轴发送一条短指令。<code>Stop</code> 可立即停止，<strong>居中指令</strong>会让它回到中间。
+@516|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>确认轴是否接反了
+@517|如果按 <code>L0</code> 却是旋转在动，说明轴映射错了。用这个面板逐个按一遍，立刻就能知道哪个轴接到了哪里。
+@518|想确认脚本究竟来自哪个文件、是怎么读取的，请开启 <strong>Show Script Debug Info</strong>。播放界面会显示脚本路径、来源、轴列表和已保存的偏移。
+@519|直接驱动轴来确认连接。
+@520|SR1 相关选项<a aria-label="本节链接" class="anchor" href="#fo-sr1">#</a>
+@521|<strong>Bluetooth COM 输出</strong> — 应用 25Hz 上限与 TCode 插值，让输出更顺滑。空闲时不发送保持信号。
+@522|<strong>SR1 2.0 Twist 静音模式</strong> — 调整 R0 旋转速度上限以降低噪音。
+@523|暂停与继续<a aria-label="本节链接" class="anchor" href="#fo-pause">#</a>
+@524|串口发送延迟后再继续播放，设备可能因为要一次追回落后的量而大幅跳动。v0.5.1 与 v0.6.0 加强了这一部分。
+@525|只要设定的<strong>安全启动时间</strong>过去，继续播放的过渡就一定会结束。
+@526|落后的进度会<strong>设有上限</strong>地追回，因此不会出现大跳。
+@527|修复了卡在安全过渡状态、无法回到脚本的问题。
+@528|手机与手柄遥控
+@529|可以用专用蓝牙遥控器或手机操作播放。适合不想伸手去按键盘就完成播放、暂停、切换下一个文件的场景。
+@530|设置 → 手机/手柄遥控界面。
+@531|配对<a aria-label="本节链接" class="anchor" href="#rm-pair">#</a>
+@532|打开设置
+@533|进入<strong>设置 → 手机/手柄遥控</strong>。
+@534|连接
+@535|先点 <strong>Connect</strong> 连接遥控器。
+@536|输入 6 位验证码
+@537|输入遥控器屏幕上显示的<strong>6 位配对码</strong>，然后点 <strong>Pair</strong>。
+@538|配对完成后会显示状态、固件、电池和令牌信息。配对过一次的遥控器之后会<strong>自动重连</strong>。
+@539|按键映射<a aria-label="本节链接" class="anchor" href="#rm-buttons">#</a>
+@540|A、B、C 三个按键可以分别设定<strong>单击、双击、长按</strong>的动作。默认值如下。
+@541|按键
+@542|单击
+@543|双击
+@544|长按
+@545|无
+@546|下一个视频
+@547|上一个视频
+@548|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>因设备而异
+@549|在 M5Stick S3 这类缺少部分按键的设备上，不支持的映射既不会出现在列表中，也不会被发送。
+@550|应用与固件<a aria-label="本节链接" class="anchor" href="#rm-apps">#</a>
+@551|<strong>Get Android app</strong> — 前往把手机当作遥控器使用的应用。
+@552|<strong>Open flasher</strong> — 打开为遥控设备刷写固件的工具。
+@553|安全与紧急停止
+@554|既然要用设备，就必须随时能立刻让它停下。本页讲的是停止的方法，以及可以事先设定的限制。<strong>如果这是你第一次使用设备，请先读这一页。</strong>
+@555|全局紧急停止（E-Stop）<a aria-label="本节链接" class="anchor" href="#sf-estop">#</a> <span class="pill pill--new">v0.6.0</span>
+@556|窗口右上角的 <strong>Stop all devices</strong> 按钮。<strong>无论</strong>当前选用哪个提供方，它都会向所有已连接的设备发送停止请求。
+@557|它会停止播放，并向 Handy、Intiface、FunOSR <strong>全部</strong>发送停止指令。
+@558|停止请求有时限，不会无限等待。
+@559|失败或超时的设备会<strong>留在列表中</strong>，可以重试。
+@560|右上角的 <strong>Stop all devices</strong> 就是全局紧急停止按钮。
+@561|该按钮会在<strong>设备已连接时</strong>出现在标题栏和全屏界面。是否显示可在<strong>设置 → 设备</strong>的 <strong>Show E-Stop button</strong> 中关闭。
+@562|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>隐藏按钮之前
+@563|即使隐藏，<strong>Intiface 管理界面中的停止控件依然保留</strong>。但那边需要先切换界面才能到达。隐藏之前请务必确认它的位置。
+@564|<strong>Show E-Stop button</strong> 位于设置 → 设备的最上方。
+@565|事先设定的限制<a aria-label="本节链接" class="anchor" href="#sf-limits">#</a>
+@566|防止意外的最好办法，是一开始就不让它动得太猛。
+@567|行程范围
+@568|用播放栏的 <code>STR</code> 收窄运动幅度。一开始请调窄。 → <a href="#sc-stroke">使用脚本</a>
+@569|以 <code>spm</code> 为单位限制各轴的最高速度。在 FunOSR 上尤其有用。 → <a href="#fo-tune">FunOSR</a>
+@570|开始播放时不会立刻全速，而是在指定时间内缓慢移动到脚本位置。
+@571|保持中心的范围
+@572|像旋转轴这种以中心为基准的轴，会保持中心不变，只收窄幅度。
+@573|一次只用一个提供方<a aria-label="本节链接" class="anchor" href="#sf-oneprovider">#</a>
+@574|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>当前限制
+@575|设备输出<strong>一次只使用一个提供方</strong>。目前还不支持同时向 Handy 和 Intiface / FunOSR 输出。
+@576|切换提供方时，会在旧连接清理完成后再接上新连接。v0.6.0 修复了从 FunOSR 切到 Handy 或 Intiface 时被清理流程卡住的问题。
+@577|建议的习惯<a aria-label="本节链接" class="anchor" href="#sf-habits">#</a>
+@578|第一次播放新脚本时，先<strong>把范围调窄</strong>，看看动作是什么样的。
+@579|先在热力图上确认<strong>红色区段</strong>在哪里。 → <a href="#timeline">时间线与热力图</a>
+@580|让手记住 E-Stop 按钮的位置。
+@581|不要让设备开着就离开座位。
+@582|外部播放器
+@583|把在 ScriptPlayer+ 里播放不顺的文件，改用你已经在用的其他播放器打开，同时保持设备输出照常运行。 <span class="pill pill--exp">实验功能</span>
+@584|支持的播放器<a aria-label="本节链接" class="anchor" href="#ex-support">#</a>
+@585|自定义可执行文件
+@586|在<strong>设置 → 外部播放器</strong>中配置。播放过程中可用播放栏的 <code>EXT</code> 按钮直接交接。
+@587|各播放器的差异<a aria-label="本节链接" class="anchor" href="#ex-limits">#</a>
+@588|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>请注意
+@589|外部播放器模式<strong>能启动所有支持的目标</strong>，但播放控制与同步做到多深<strong>各播放器不同</strong>。有的会跟随播放与暂停，有的只是启动而已。
+@590|如果已指定 mpv 或 VLC，当 Chromium 播放失败时会自动打开该播放器。拖动时间线改变位置时，只在拖动<strong>结束时同步一次</strong>。
+@591|FFmpeg 兼容播放
+@592|部分功能需要外部的 FFmpeg 可执行文件才能工作。FFmpeg <strong>并未随 ScriptPlayer+ 一起提供</strong>，需要你自行准备。 <span class="pill pill--exp">实验功能</span>
+@593|什么时候需要<a aria-label="本节链接" class="anchor" href="#ff-why">#</a>
+@594|FFmpeg 的作用
+@595|<strong>兼容播放</strong>
+@596|播放浏览器引擎无法打开的编码格式视频。
+@597|<strong>内嵌字幕</strong>
+@598|从视频内部取出文本字幕轨。 → <a href="#audio">音频与字幕</a>
+@599|<strong>选择音轨</strong>
+@600|从多条音轨中选择一条。
+@601|<strong>缩略图备用生成</strong>
+@602|为 Chromium 无法解码的视频生成缩略图与悬停预览。
+@603|<strong>运动分析</strong>
+@604|从视频生成脚本时使用。 → <a href="#scripts">使用脚本</a>
+@605|打开无法播放的视频时会出现这样的提示。
+@606|准备方法<a aria-label="本节链接" class="anchor" href="#ff-install">#</a>
+@607|ScriptPlayer+ 按以下顺序查找 FFmpeg，满足其中任意一项即可。
+@608|从设置中自动安装 <span class="pill">最简单</span>
+@609|可以通过设置界面的按钮，用系统的包管理器安装。Windows 用 <code>winget</code>，macOS 用 <code>Homebrew</code>，Linux 使用受支持的包管理器。<strong>只有你亲自点击时</strong>才会执行。
+@610|环境变量 <code>FFMPEG_PATH</code>
+@611|把可执行文件路径写进这个环境变量，就会使用它。
+@612|常见安装路径或系统 <code>PATH</code>
+@613|如果已经安装了 FFmpeg，通常会自动找到。
+@614|自行选择
+@615|在设置中直接指定 FFmpeg 可执行文件。自动搜索失败时最可靠的办法。
+@616|设置 → 播放中的 <strong>FFmpeg 设置与状态</strong>区域。找到 FFmpeg 后会以绿色显示版本和路径，并可用 <strong>Test connection</strong> 验证。
+@617|选择兼容模式<a aria-label="本节链接" class="anchor" href="#ff-mode">#</a>
+@618|在<strong>设置 → 播放</strong>的 <strong>Video Compatibility Mode</strong> 中决定介入程度。请按症状选择。
+@619|症状
+@620|应选
+@621|播放正常
+@622|<code>Auto</code> — 只在需要时自动介入。这是默认值。
+@623|<strong>有画面但没声音</strong>
+@624|音频兼容模式 — 只用 FFmpeg 处理声音。
+@625|<strong>画面全黑或根本打不开</strong>
+@626|完全兼容模式 — 连视频也用 FFmpeg 处理。
+@627|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>更改后需要重新打开
+@628|更改兼容模式后，需要<strong>关闭视频再重新打开</strong>才会生效。
+@629|兼容播放运行中的样子。
+@630|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>为什么不随包提供
+@631|ScriptPlayer+ 的发布包中不含 FFmpeg 可执行文件，也不含 FFmpeg 源码。兼容播放、缩略图备用生成与运动分析<strong>都只使用外部可执行文件</strong>。
+@632|插件
+@633|自行添加脚本来源的功能。<strong>默认不包含、也不推荐任何提供方。</strong>需要时由你自己安装使用。
+@634|什么是 .funplugin<a aria-label="本节链接" class="anchor" href="#pl-what">#</a>
+@635|<code>.funplugin</code> 文件<strong>只是一个 JSON 清单</strong>。里面只包含到哪里查找脚本的信息，不含任何可执行代码。
+@636|<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>不会执行代码
+@637|ScriptPlayer+ 不会在应用内运行插件的代码。因为只读取纯数据清单，插件无法擅自操控应用。
+@638|安装与管理<a aria-label="本节链接" class="anchor" href="#pl-install">#</a>
+@639|在左侧栏的<strong>插件</strong>图标中管理。安装时会验证以下内容。

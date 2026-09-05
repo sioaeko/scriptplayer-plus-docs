@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>ScriptPlayer+ 使用手册</title>
+<meta content="ScriptPlayer+ 官方指南。从安装、媒体库、脚本、时间线，到连接 The Handy、Intiface 与 FunOSR 设备，写得让初次使用者也能跟着做。" name="description"/>
+<meta content="ScriptPlayer+ 使用手册" property="og:title"/>
+<meta content="从安装到连接设备，初次使用者也能跟着做的 ScriptPlayer+ 入门指南与参考。" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="dark" name="color-scheme"/>
+<meta content="#0a0c11" name="theme-color"/>
+<link href="../assets/img/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../assets/img/icon.png" rel="alternate icon" type="image/png"/>
+<link href="../assets/img/icon-180.png" rel="apple-touch-icon"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet"/>
+<link href="../assets/css/site.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div aria-hidden="true" class="page-bg"></div>
+<!-- Icon set: Disarto Icons (MIT, (c) Disarto) — https://github.com/Disarto/disarto-icons
+         Inlined as <symbol> so same-document <use> works over file:// as well as http. -->
+<svg aria-hidden="true" class="icon-sprite" focusable="false">
+<symbol id="i-search" viewbox="0 0 24 24"><path d="m21.53 20.47-4.693-4.694a8.26 8.26 0 1 0-1.06 1.06l4.693 4.695a.75.75 0 1 0 1.06-1.062M3.75 10.5a6.75 6.75 0 1 1 6.75 6.75 6.76 6.76 0 0 1-6.75-6.75" fill="currentColor"></path></symbol>
+<symbol id="i-download" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M3 12.25a.75.75 0 0 1 .75.75v5c0 .69.56 1.25 1.25 1.25h14c.69 0 1.25-.56 1.25-1.25v-5a.75.75 0 0 1 1.5 0v5A2.75 2.75 0 0 1 19 20.75H5A2.75 2.75 0 0 1 2.25 18v-5a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M12 3.25a.75.75 0 0 1 .75.75v8.068l2.697-2.95a.75.75 0 1 1 1.107 1.013l-4 4.375a.75.75 0 0 1-1.107 0l-4-4.375A.75.75 0 0 1 8.553 9.12l2.696 2.95V4a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-menu" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M2.25 12a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75M2.25 6A.75.75 0 0 1 3 5.25h18a.75.75 0 0 1 0 1.5H3A.75.75 0 0 1 2.25 6M2.25 18a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-close" viewbox="0 0 24 24"><path d="M18.187 17.127a.75.75 0 0 1-1.06 1.06L12 13.061l-5.126 5.126a.75.75 0 1 1-1.061-1.06L10.939 12 5.812 6.873a.75.75 0 0 1 1.061-1.06L12 10.94l5.127-5.127a.75.75 0 0 1 1.06 1.06L13.06 12z" fill="currentColor"></path></symbol>
+<symbol id="i-arrow-up" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 3.25a.75.75 0 0 1 .53.22l7 7a.75.75 0 1 1-1.06 1.06l-5.72-5.72V20a.75.75 0 0 1-1.5 0V5.81l-5.72 5.72a.75.75 0 0 1-1.06-1.06l7-7a.75.75 0 0 1 .53-.22" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-gear" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M15.428 3.298a.25.25 0 0 0-.263.008l-2.532 1.672a1.15 1.15 0 0 1-1.267 0L8.834 3.307a.25.25 0 0 0-.262-.008L6.178 4.68a.25.25 0 0 0-.125.231l.182 3.028a1.15 1.15 0 0 1-.633 1.098l-2.714 1.356a.25.25 0 0 0-.138.224v2.764a.25.25 0 0 0 .138.223l2.714 1.357c.411.206.66.638.633 1.098l-.182 3.028a.25.25 0 0 0 .125.232l2.394 1.382a.25.25 0 0 0 .262-.008l2.532-1.671a1.15 1.15 0 0 1 1.267 0l2.532 1.67a.25.25 0 0 0 .262.009l2.394-1.382a.25.25 0 0 0 .124-.232l-.181-3.028a1.15 1.15 0 0 1 .633-1.097l2.714-1.357a.25.25 0 0 0 .139-.224v-2.764a.25.25 0 0 0-.139-.223l-2.713-1.357a1.15 1.15 0 0 1-.634-1.098l.182-3.028a.25.25 0 0 0-.124-.232zm-1.09-1.243a1.75 1.75 0 0 1 1.84-.056l2.394 1.382c.574.332.911.959.872 1.62L19.276 7.8l2.506 1.253c.593.296.968.902.968 1.565v2.764a1.75 1.75 0 0 1-.968 1.566L19.275 16.2l.168 2.797a1.75 1.75 0 0 1-.872 1.62l-2.394 1.383a1.75 1.75 0 0 1-1.839-.055L12 20.402l-2.34 1.544A1.75 1.75 0 0 1 7.823 22l-2.394-1.382a1.75 1.75 0 0 1-.872-1.62l.168-2.798-2.507-1.254a1.75 1.75 0 0 1-.967-1.565v-2.764c0-.663.375-1.269.967-1.565l2.507-1.254-.168-2.797a1.75 1.75 0 0 1 .872-1.62L7.822 2a1.75 1.75 0 0 1 1.839.055L12 3.599z" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M12 8.75a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5M7.25 12a4.75 4.75 0 1 1 9.5 0 4.75 4.75 0 0 1-9.5 0" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-book" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M17.5 2a3.75 3.75 0 0 1 3.75 3.75v13a3.75 3.75 0 0 1-3.75 3.75h-11a3.75 3.75 0 0 1-3.75-3.75v-13A3.75 3.75 0 0 1 6.5 2zm-11 14.5a2.25 2.25 0 0 0 0 4.5h11a2.25 2.25 0 0 0 2.25-2.25V16.5zm0-13a2.25 2.25 0 0 0-2.25 2.25v9.999A3.73 3.73 0 0 1 6.5 15h.25V3.5zM8.25 15h11.5V5.75A2.25 2.25 0 0 0 17.5 3.5H8.25z" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-puzzle" viewbox="0 0 24 24"><path d="M15.652 4.677a2.195 2.195 0 0 0-4.39 0c0 .309.065.602.181.869.245.56-.114 1.326-.856 1.326h-3.47a.244.244 0 0 0-.245.244v3.958c0 .742-.766 1.1-1.326.857a2.195 2.195 0 1 0 0 4.028l.107-.04c.546-.158 1.22.2 1.22.896v3.96c0 .134.109.244.243.244h13.658c.135 0 .244-.11.245-.245v-3.246a3.659 3.659 0 1 1 0-7.168V7.116a.244.244 0 0 0-.245-.244h-4.447c-.742 0-1.1-.765-.856-1.326l.078-.205a2.2 2.2 0 0 0 .103-.664m1.464 0q0 .376-.075.731h3.733c.943 0 1.707.765 1.707 1.708v3.958c0 .742-.764 1.1-1.325.857a2.195 2.195 0 1 0 0 4.028l.107-.04c.546-.159 1.218.2 1.218.896v3.96c0 .942-.764 1.706-1.707 1.706H7.116a1.71 1.71 0 0 1-1.708-1.707v-3.246q-.354.075-.731.076a3.658 3.658 0 1 1 .731-7.244V7.116c0-.943.765-1.708 1.708-1.708h2.758a3.658 3.658 0 1 1 7.242-.731" fill="currentColor"></path></symbol>
+<symbol id="i-sliders" viewbox="0 0 24 24"><path d="M21.25 5.5A2.25 2.25 0 0 0 19 3.25H5A2.25 2.25 0 0 0 2.75 5.5v2A2.25 2.25 0 0 0 5 9.75h14a2.25 2.25 0 0 0 2.25-2.25zm1.5 2A3.75 3.75 0 0 1 19 11.25H5A3.75 3.75 0 0 1 1.25 7.5v-2A3.75 3.75 0 0 1 5 1.75h14a3.75 3.75 0 0 1 3.75 3.75z" fill="currentColor"></path><path d="M19 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M8 17.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" fill="currentColor"></path><path d="M21.25 16.5A2.25 2.25 0 0 0 19 14.25H5a2.25 2.25 0 0 0-2.25 2.25v2A2.25 2.25 0 0 0 5 20.75h14a2.25 2.25 0 0 0 2.25-2.25zm1.5 2A3.75 3.75 0 0 1 19 22.25H5a3.75 3.75 0 0 1-3.75-3.75v-2A3.75 3.75 0 0 1 5 12.75h14a3.75 3.75 0 0 1 3.75 3.75z" fill="currentColor"></path></symbol>
+<symbol id="i-video" viewbox="0 0 24 24"><path d="M21.25 7A2.25 2.25 0 0 0 19 4.75H5A2.25 2.25 0 0 0 2.75 7v10A2.25 2.25 0 0 0 5 19.25h14A2.25 2.25 0 0 0 21.25 17zm1.5 10A3.75 3.75 0 0 1 19 20.75H5A3.75 3.75 0 0 1 1.25 17V7A3.75 3.75 0 0 1 5 3.25h14A3.75 3.75 0 0 1 22.75 7z" fill="currentColor"></path><path d="M14.487 12.509 10.7 15.033a.611.611 0 0 1-.95-.508v-5.05c0-.488.544-.779.95-.508l3.787 2.525a.61.61 0 0 1 0 1.017" fill="currentColor"></path></symbol>
+<symbol id="i-plug" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M16.343 2.343a.75.75 0 0 1 1.06 1.06L14.11 6.697l3.4 3.401 3.296-3.293a.75.75 0 0 1 1.06 1.06l-3.295 3.294 2.656 2.656a.75.75 0 1 1-1.06 1.06l-.425-.424-4.02 4.018a4.75 4.75 0 0 1-6.716 0l-1.103-1.102-4.326 4.326a.75.75 0 0 1-1.06-1.06l4.326-4.327-1.103-1.102a4.75 4.75 0 0 1 0-6.718l4.019-4.019-.425-.425a.751.751 0 0 1 1.06-1.061l2.656 2.655zM6.8 9.546a3.25 3.25 0 0 0 0 4.596l3.265 3.266a3.25 3.25 0 0 0 4.596 0l4.02-4.019-7.863-7.862z" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-info" viewbox="0 0 24 24"><path d="M21.25 12a9.25 9.25 0 1 0-18.5 0 9.25 9.25 0 0 0 18.5 0m1.5 0c0 5.937-4.813 10.75-10.75 10.75S1.25 17.937 1.25 12 6.063 1.25 12 1.25 22.75 6.063 22.75 12" fill="currentColor"></path><path d="M13 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0M11.25 16v-5a.25.25 0 0 0-.25-.25.75.75 0 0 1 0-1.5c.966 0 1.75.784 1.75 1.75v5c0 .138.112.25.25.25a.75.75 0 0 1 0 1.5A1.75 1.75 0 0 1 11.25 16" fill="currentColor"></path></symbol>
+<symbol id="i-bulb" viewbox="0 0 24 24"><path d="M15.5 20.25a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1 0-1.5zM18.25 10a6.25 6.25 0 1 0-10.365 4.702c.493.432.865 1.072.865 1.815 0 .405.328.733.733.733h5.034a.734.734 0 0 0 .733-.733c0-.743.372-1.383.865-1.815A6.23 6.23 0 0 0 18.25 10m1.5 0a7.73 7.73 0 0 1-2.648 5.831c-.236.207-.352.46-.352.686 0 1.233-1 2.233-2.233 2.233H9.483c-1.233 0-2.233-1-2.233-2.233 0-.227-.116-.479-.353-.686A7.75 7.75 0 1 1 19.75 10" fill="currentColor"></path><path d="M12.27 5.674a.75.75 0 0 1 .905-.554 5.03 5.03 0 0 1 3.705 3.705.75.75 0 0 1-1.458.35 3.53 3.53 0 0 0-2.597-2.596.75.75 0 0 1-.554-.905" fill="currentColor"></path></symbol>
+<symbol id="i-warn" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M12 7.75a.75.75 0 0 1 .75.75V13a.75.75 0 0 1-1.5 0V8.5a.75.75 0 0 1 .75-.75M12 15.75a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0v-.5a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M13.088 4.456a1.25 1.25 0 0 0-2.177 0L3.335 17.885a1.25 1.25 0 0 0 1.089 1.864h15.151a1.25 1.25 0 0 0 1.089-1.864zm-3.484-.737c1.052-1.865 3.739-1.865 4.79 0l7.576 13.429c1.034 1.833-.29 4.101-2.395 4.101H4.424c-2.105 0-3.43-2.268-2.395-4.101z" fill="currentColor" fill-rule="evenodd"></path></symbol>
+<symbol id="i-danger" viewbox="0 0 24 24"><path clip-rule="evenodd" d="M8.828 2.75c-.331 0-.649.132-.883.366L3.116 7.945a1.25 1.25 0 0 0-.366.883v6.344c0 .331.132.649.366.883l4.829 4.829c.234.234.552.366.883.366h6.344c.331 0 .649-.132.883-.366l4.829-4.829a1.25 1.25 0 0 0 .366-.883V8.828c0-.331-.132-.649-.366-.883l-4.829-4.829a1.25 1.25 0 0 0-.883-.366zm-1.944-.695a2.75 2.75 0 0 1 1.944-.805h6.344c.729 0 1.428.29 1.944.805l4.829 4.829a2.75 2.75 0 0 1 .805 1.944v6.344c0 .729-.29 1.428-.805 1.944l-4.829 4.829a2.75 2.75 0 0 1-1.944.805H8.828a2.75 2.75 0 0 1-1.944-.805l-4.829-4.829a2.75 2.75 0 0 1-.805-1.944V8.828c0-.729.29-1.428.805-1.944z" fill="currentColor" fill-rule="evenodd"></path><path clip-rule="evenodd" d="M12 6.75a.75.75 0 0 1 .75.75v5a.75.75 0 0 1-1.5 0v-5a.75.75 0 0 1 .75-.75M12 15.25a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-1.5 0V16a.75.75 0 0 1 .75-.75" fill="currentColor" fill-rule="evenodd"></path></symbol>
+</svg>
+<!-- ==================================================== TOP BAR -->
+<header class="topbar">
+<button aria-expanded="false" aria-label="打开菜单" class="nav-toggle" id="navToggle">
+<svg aria-hidden="true" height="20" width="20"><use href="#i-menu"></use></svg>
+</button>
+<a class="brand" href="#home">
+<img alt="" height="26" src="../assets/img/icon.svg" width="26"/>
+<span class="name">ScriptPlayer+</span>
+</a>
+<div class="topbar-spacer"></div>
+<button aria-label="搜索文档" class="search-btn" id="searchBtn"><svg aria-hidden="true" height="15" width="15"><use href="#i-search"></use></svg>
+<span>搜索文档…</span>
+<span class="kbd-hint">Ctrl K</span></button>
+<nav aria-label="选择语言" class="lang-switch">
+<a data-lang="ko" href="../index.html" hreflang="ko">한국어</a>
+<a data-lang="en" href="../en/index.html" hreflang="en">English</a>
+<a data-lang="ja" href="../ja/index.html" hreflang="ja">日本語</a>
+<a aria-current="true" data-lang="zh" href="../zh/index.html" hreflang="zh">中文</a>
+</nav>
+<nav aria-label="快捷链接" class="top-links">
+<a class="tlink" href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
+<span>GitHub</span>
+<span class="stars">
+<svg aria-hidden="true" fill="currentColor" height="12" viewbox="0 0 24 24" width="12"><path d="m12 2.6 2.9 5.88 6.49.95-4.7 4.58 1.11 6.46L12 17.42 6.2 20.47l1.11-6.46-4.7-4.58 6.49-.95L12 2.6Z"></path></svg>
+<span id="ghStars">26</span>
+</span>
+</a>
+<a class="tlink" href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" height="15" viewbox="0 0 24 24" width="15"><path d="M22.957 7.21c-.004-3.064-2.391-5.576-5.191-6.482-3.478-1.125-8.064-.962-11.384.604C2.357 3.231 1.093 7.391 1.046 11.54c-.039 3.411.302 12.396 5.369 12.46 3.765.047 4.326-4.804 6.068-7.141 1.24-1.662 2.836-2.132 4.801-2.618 3.376-.836 5.678-3.501 5.673-7.031Z"></path></svg>
+<span>Patreon</span>
+</a>
+<a class="tlink tlink--dl" href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" height="14" width="14"><use href="#i-download"></use></svg>
+          下载</a>
+</nav>
+</header>
+<div class="nav-scrim" id="navScrim"></div>
+<div class="shell">
+<!-- ================================================== SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+<nav aria-label="文档目录">
+<div class="nav-group">
+<h4>开始使用</h4>
+<ul>
+<li><a class="nav-link" href="#home"><span class="n">01</span>首页</a></li>
+<li><a class="nav-link" href="#install"><span class="n">02</span>安装</a></li>
+<li><a class="nav-link" href="#quickstart"><span class="n">03</span>5分钟上手</a></li>
+<li><a class="nav-link" href="#interface"><span class="n">04</span>界面导览</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>日常使用</h4>
+<ul>
+<li><a class="nav-link" href="#library"><span class="n">05</span>媒体库</a></li>
+<li><a class="nav-link" href="#playback"><span class="n">06</span>播放</a></li>
+<li><a class="nav-link" href="#scripts"><span class="n">07</span>使用脚本</a></li>
+<li><a class="nav-link" href="#timeline"><span class="n">08</span>时间线与热力图</a></li>
+<li><a class="nav-link" href="#audio"><span class="n">09</span>音频与字幕</a></li>
+<li><a class="nav-link" href="#vr"><span class="n">10</span>VR 与 360 度视频</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>设备连接</h4>
+<ul>
+<li><a class="nav-link" href="#handy"><span class="n">11</span>The Handy</a></li>
+<li><a class="nav-link" href="#intiface"><span class="n">12</span>Intiface / Buttplug</a></li>
+<li><a class="nav-link" href="#funosr"><span class="n">13</span>FunOSR</a></li>
+<li><a class="nav-link" href="#remote"><span class="n">14</span>手机遥控</a></li>
+<li><a class="nav-link" href="#safety"><span class="n">15</span>安全与紧急停止</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>扩展功能</h4>
+<ul>
+<li><a class="nav-link" href="#external"><span class="n">16</span>外部播放器</a></li>
+<li><a class="nav-link" href="#ffmpeg"><span class="n">17</span>FFmpeg 兼容播放</a></li>
+<li><a class="nav-link" href="#plugins"><span class="n">18</span>插件</a></li>
+</ul>
+</div>
+<div class="nav-group">
+<h4>参考</h4>
+<ul>
+<li><a class="nav-link" href="#shortcuts"><span class="n">19</span>键盘快捷键</a></li>
+<li><a class="nav-link" href="#settings"><span class="n">20</span>设置指南</a></li>
+<li><a class="nav-link" href="#formats"><span class="n">21</span>支持的文件格式</a></li>
+<li><a class="nav-link" href="#troubleshooting"><span class="n">22</span>疑难解答</a></li>
+<li><a class="nav-link" href="#releases"><span class="n">23</span>版本记录</a></li>
+<li><a class="nav-link" href="#about"><span class="n">24</span>许可与链接</a></li>
+</ul>
+</div>
+</nav>
+</aside>
+<!-- ================================================== MAIN -->
+<div class="main-col">
+<main class="content" id="main">
+<!-- ============================================ 01 HOME -->
+<article class="page" data-group="开始使用" data-title="首页" id="page-home">
+<div class="hero">
+<h1>ScriptPlayer+ 使用手册</h1>
+<p class="hero-lede">把电脑里的视频和音频与它们的脚本一起播放，并把动作输出到 The Handy、Intiface 和 FunOSR 设备的桌面播放器。本指南按顺序讲解，从安装一直到连接设备。</p>
+<div class="hero-cta">
+<a class="btn btn--primary" href="#quickstart">5分钟上手</a>
+<a class="btn" href="#install">查看安装方法</a>
+</div>
+<p class="hero-meta">Windows · macOS · Linux · 本文档以 v0.6 系列为准。</p>
+</div>
+<figure>
+<div class="shot">
+<video aria-label="ScriptPlayer+ 全窗口预览" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>播放器、侧边栏与时间线在同一个窗口里衔接，这就是日常使用的样子。</figcaption>
+</figure>
+<h2 id="home-first">第一次使用？<a aria-label="本节链接" class="anchor" href="#home-first">#</a></h2>
+<p>按顺序读完这三篇，就能直接上手。</p>
+<div class="jump">
+<a href="#install"><span class="num">02</span><span><b>安装</b><span class="d">各系统的安装步骤，以及首次启动时安全警告的处理</span></span></a>
+<a href="#quickstart"><span class="num">03</span><span><b>5分钟上手</b><span class="d">打开文件夹 → 匹配脚本 → 连接设备，共五步</span></span></a>
+<a href="#interface"><span class="num">04</span><span><b>界面导览</b><span class="d">左侧栏、侧边栏与播放栏上每个按钮的含义</span></span></a>
+<a href="#troubleshooting"><span class="num">22</span><span><b>疑难解答</b><span class="d">视频打不开、设备不动时先看这里</span></span></a>
+</div>
+<h2 id="home-what">ScriptPlayer+ 能做什么<a aria-label="本节链接" class="anchor" href="#home-what">#</a></h2>
+<dl class="deflist">
+<div>
+<dt>播放视频与音频</dt>
+<dd>直接打开 MP4、MKV、MP3 等常见格式，并自动找到匹配的字幕和封面图。</dd>
+</div>
+<div>
+<dt>脚本可视化</dt>
+<dd>时间线可同时绘制多个轴，热力图用颜色显示整个文件的强弱。</dd>
+</div>
+<div>
+<dt>设备连接</dt>
+<dd>在同一个应用里设置并输出到 The Handy、Intiface / Buttplug 设备和 FunOSR 串口。</dd>
+</div>
+<div>
+<dt>整理媒体库</dt>
+<dd>注册多个带名称的文件夹，再按评分、时长或有无脚本筛选。</dd>
+</div>
+</dl>
+<h2 id="home-map">文档导航<a aria-label="本节链接" class="anchor" href="#home-map">#</a></h2>
+<p>从需要的地方读起也没问题。也可以用上方的搜索框（<kbd>Ctrl</kbd> <kbd>K</kbd>）直接查找。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>如果你想知道</th><th>前往</th></tr></thead>
+<tbody>
+<tr><td>安装后出现“无法验证的应用”警告</td><td><a href="#install">安装</a></td></tr>
+<tr><td>播放栏上的 <code>STR</code>、<code>AB</code>、<code>FIT</code> 是什么？</td><td><a href="#interface">界面导览</a></td></tr>
+<tr><td>脚本没有被自动识别</td><td><a href="#scripts">使用脚本</a></td></tr>
+<tr><td>视频与动作的时间对不上</td><td><a href="#scripts">使用脚本</a></td></tr>
+<tr><td>VR 视频显示成左右两半</td><td><a href="#vr">VR 与 360 度视频</a></td></tr>
+<tr><td>想立刻让设备停下</td><td><a href="#safety">安全与紧急停止</a></td></tr>
+<tr><td>想改快捷键</td><td><a href="#shortcuts">键盘快捷键</a></td></tr>
+</tbody>
+</table>
+</div>
+</article>
+<!-- ============================================ 02 INSTALL -->
+<article class="page" data-group="开始使用" data-title="安装" id="page-install">
+<h1>安装</h1>
+<p class="lede">ScriptPlayer+ 从 GitHub Releases 上的 Windows、macOS 和 Linux 安装包安装。首次运行时系统可能弹出安全警告，下面一并给出处理方法。</p>
+<h2 id="install-get">下载<a aria-label="本节链接" class="anchor" href="#install-get">#</a></h2>
+<p>所有构建都发布在 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releases 最新页面</a>。请选择与你系统相符的文件。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>平台</th><th>安装包</th><th>备注</th></tr></thead>
+<tbody>
+<tr>
+<td class="col-key"><span class="pill pill--win">Windows x64</span></td>
+<td>安装程序（<code>.exe</code>）或便携版 <code>.zip</code></td>
+<td>若不想安装，下载便携版 ZIP 解压即可运行。</td>
+</tr>
+<tr>
+<td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
+<td><code>.dmg</code> 或 <code>.zip</code></td>
+<td>Apple Silicon 与 Intel 的文件是分开的，请选与你机器相符的那个。</td>
+</tr>
+<tr>
+<td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
+<td><code>.deb</code> · <code>AppImage</code> · 压缩包</td>
+<td>Ubuntu / Kubuntu 24.04 及以上<strong>建议使用 DEB</strong>。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="install-windows">Windows<a aria-label="本节链接" class="anchor" href="#install-windows">#</a></h2>
+<ol class="steps">
+<li>
+<h3>运行安装程序</h3>
+<p>运行下载的 <code>.exe</code> 会先显示最终用户许可协议（EULA）。确认并同意后安装继续。</p>
+</li>
+<li>
+<h3>如果 SmartScreen 弹出警告</h3>
+<p>Windows 安装包没有 Authenticode 签名，因此 Microsoft Defender SmartScreen 可能显示<strong>“Windows 已保护你的电脑”</strong>之类的提示。点击<strong>更多信息</strong> → <strong>仍要运行</strong>即可继续安装。</p>
+</li>
+<li>
+<h3>使用便携版 ZIP 时</h3>
+<p>直接运行解压后文件夹里的可执行文件。设置和缓存会保存在用户目录中。</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="Windows 安装程序界面" loading="lazy" src="../assets/img/install-windows.webp"/></div>
+<figcaption>Windows 安装程序，会在安装前显示 EULA。</figcaption>
+</figure>
+<h2 id="install-macos">macOS<a aria-label="本节链接" class="anchor" href="#install-macos">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>最低版本</div>
+<p>从 v0.6.0 起 Electron 运行时升级，所需的最低 macOS 版本由 <strong>Big Sur 11 提高到 Monterey 12</strong>。Big Sur 无法运行 v0.6 及以后的版本。</p>
+</div>
+<ol class="steps">
+<li>
+<h3>打开 DMG 并移动应用</h3>
+<p>打开 <code>.dmg</code>，把 ScriptPlayer+ 图标拖到<strong>应用程序</strong>文件夹。</p>
+</li>
+<li>
+<h3>如果提示“无法打开”</h3>
+<p>Gatekeeper 可能提示无法验证开发者。进入<strong>系统设置 → 隐私与安全性</strong>，点击下方出现的<strong>“仍要打开”</strong>按钮即可运行。</p>
+</li>
+</ol>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="macOS DMG 窗口" loading="lazy" src="../assets/img/install-mac-dmg.webp"/></div>
+<figcaption>打开 DMG，把应用拖到应用程序文件夹。</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="macOS 安全警告" loading="lazy" src="../assets/img/install-mac-warning.webp"/></div>
+<figcaption>首次启动时出现的 Gatekeeper 警告。</figcaption>
+</figure>
+</div>
+<figure>
+<div class="shot"><img alt="macOS 隐私与安全性设置" loading="lazy" src="../assets/img/install-mac-security.webp"/></div>
+<figcaption>在隐私与安全性中点击“仍要打开”，之后就能直接启动。</figcaption>
+</figure>
+<h2 id="install-linux">Linux<a aria-label="本节链接" class="anchor" href="#install-linux">#</a></h2>
+<p>Ubuntu / Kubuntu 24.04 及以上<strong>建议使用 DEB 安装包</strong>。这些版本限制了非特权用户命名空间，而 Chromium 沙箱需要针对可执行文件的 AppArmor 配置，该配置只包含在 DEB 中。</p>
+<ul>
+<li><strong>DEB</strong> — 会一并安装 AppArmor 配置。在 24.04 及以上是最稳妥的选择。</li>
+<li><strong>AppImage</strong> — 从 v0.6.0 起改为静态运行时，不再需要 <code>libfuse.so.2</code>。</li>
+<li><strong>压缩包</strong> — 适用于用户命名空间可用的发行版。</li>
+</ul>
+<div class="note note--danger">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>不会关闭沙箱</div>
+<p>遇到系统级的命名空间限制时，ScriptPlayer+ 不会用 <code>--no-sandbox</code> 自动绕过。如果便携版 AppImage 或压缩包无法启动，请改装 DEB。</p>
+</div>
+<h2 id="install-update">更新<a aria-label="本节链接" class="anchor" href="#install-update">#</a></h2>
+<p>有新版本时应用内会提示。可以直接从提示下载安装，同一版本号发布的热修复也会被识别。检查方式在<strong>设置 → 常规</strong>中调整。</p>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="更新提示" loading="lazy" src="../assets/img/update-notice.webp"/></div>
+<figcaption>新版本提示，可在应用内预览发布说明。</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="更新设置" loading="lazy" src="../assets/img/update-setting.webp"/></div>
+<figcaption>在设置 → 常规中更改更新检查方式。</figcaption>
+</figure>
+</div>
+</article>
+<!-- ============================================ 03 QUICKSTART -->
+<article class="page" data-group="开始使用" data-title="5分钟上手" id="page-quickstart">
+<h1>5分钟上手</h1>
+<p class="lede">安装完成后从这里开始。五步之后视频就会播放、脚本会加载、设备会动起来。</p>
+<figure>
+<div class="shot"><img alt="ScriptPlayer+ 首次启动界面" loading="lazy" src="../assets/img/ui-firstrun.webp"/></div>
+<figcaption>首次启动时是这样的空白界面。“Open a folder or drag a video or audio file to start”就是起点。</figcaption>
+</figure>
+<h2 id="qs-steps">五个步骤<a aria-label="本节链接" class="anchor" href="#qs-steps">#</a></h2>
+<ol class="steps">
+<li>
+<h3>打开存放媒体的文件夹</h3>
+<p>点左上角的 <strong>Folder</strong> 按钮，选择存放视频的文件夹。若只想快速看一个文件，也可以直接<strong>拖放</strong>到窗口里。</p>
+</li>
+<li>
+<h3>从列表中选择视频</h3>
+<p>在侧边栏文件列表中点击文件即会立即开始播放。文件名右侧出现<strong>绿色文档图标</strong>，表示已找到匹配的脚本。</p>
+</li>
+<li>
+<h3>确认脚本已加载</h3>
+<p>若视频下方能看到<strong>热力图色带</strong>和<strong>时间线图形</strong>，说明脚本已正确读取。若看不到，请用播放栏的 <code>HM</code>、<code>TL</code> 按钮打开。</p>
+</li>
+<li>
+<h3>连接设备</h3>
+<p>点击左侧栏的<strong>设备</strong>图标，选择并连接你的设备。各设备的详细设置请参阅 <a href="#handy">The Handy</a>、<a href="#intiface">Intiface</a>、<a href="#funosr">FunOSR</a>。</p>
+</li>
+<li>
+<h3>播放并调整力度</h3>
+<p>按 <kbd>Space</kbd> 播放。若动作太强或太弱，在播放栏的 <code>STR</code> 中收窄或放宽行程范围。若时间对不上，用 <code>+0ms</code> 按钮调整偏移。</p>
+</li>
+</ol>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>先了解这几点</div>
+<ul>
+<li>脚本通常放在与视频<strong>同一文件夹、同一文件名</strong>下就会被自动识别。（<code>视频.mp4</code> ↔ <code>视频.funscript</code>）</li>
+<li>如果脚本单独存放，请在设置中指定为<strong>脚本文件夹</strong>。</li>
+<li>第一次使用设备时，<strong>把行程范围调窄</strong>再开始更安全。</li>
+</ul>
+</div>
+<h2 id="qs-library">用媒体库代替逐个打开文件夹<a aria-label="本节链接" class="anchor" href="#qs-library">#</a></h2>
+<p>与其每次都去打开文件夹，不如把常用文件夹注册到<strong>媒体库</strong>，用缩略图卡片一览。从左侧栏最下方的<strong>媒体库</strong>图标开始。详情见<a href="#library">媒体库</a>。</p>
+<figure>
+<div class="shot">
+<video aria-label="媒体库界面演示" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>媒体库界面。可注册多个文件夹并用卡片浏览。</figcaption>
+</figure>
+</article>
+<!-- ============================================ 04 INTERFACE -->
+<article class="page" data-group="开始使用" data-title="界面导览" id="page-interface">
+<h1>界面导览</h1>
+<p class="lede">ScriptPlayer+ 的界面大致分为<strong>左侧栏、侧边栏、播放器和播放栏</strong>四部分。播放栏上那些简短的英文按钮最容易看不懂，下面全部列出。</p>
+<figure>
+<div class="shot"><img alt="ScriptPlayer+ 的窗口布局" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
+<figcaption>从左到右是侧栏、侧边栏、播放器，下方依次是热力图、时间线和播放栏。</figcaption>
+</figure>
+<figure>
+<div class="shot">
+<video aria-label="界面布局导览" data-src="../assets/video/overview.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>在各区域之间实际切换的样子。</figcaption>
+</figure>
+<h2 id="ui-rail">左侧栏<a aria-label="本节链接" class="anchor" href="#ui-rail">#</a></h2>
+<p>界面最左侧的窄竖条，用来选择侧边栏显示什么内容。自上而下依次为：</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th><span class="vh">图标</span></th><th>名称</th><th>作用</th></tr></thead>
+<tbody>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-video"></use></svg></td><td><strong>文件</strong></td><td>打开文件夹、浏览文件列表的基本界面。最近播放列表也在这里。</td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-search"></use></svg></td><td><strong>脚本</strong></td><td>查找并替换当前媒体所匹配脚本的工具。</td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-puzzle"></use></svg></td><td><strong>插件</strong></td><td>管理你自行安装的脚本来源插件。 → <a href="#plugins">插件</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-plug"></use></svg></td><td><strong>设备</strong></td><td>The Handy、FunOSR 等设备的连接与输出设置。 → <a href="#handy">The Handy</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-sliders"></use></svg></td><td><strong>Intiface</strong></td><td>Intiface / Buttplug 专用工作区。 → <a href="#intiface">Intiface / Buttplug</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-book"></use></svg></td><td><strong>媒体库</strong></td><td>以缩略图卡片呈现的媒体库。 → <a href="#library">媒体库</a></td></tr>
+<tr><td class="col-icon"><svg aria-hidden="true" class="rail-ico" height="19" width="19"><use href="#i-gear"></use></svg></td><td><strong>设置</strong></td><td>位于侧栏底部，也可以按<kbd>Ctrl</kbd> <kbd>,</kbd>打开。→ <a href="#settings">设置指南</a></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>折叠侧边栏</div>
+<p>再点一次已选中的侧栏图标，侧边栏就会折叠，画面随之变宽。再点一次会展开。</p>
+</div>
+<h2 id="ui-sidebar">侧边栏<a aria-label="本节链接" class="anchor" href="#ui-sidebar">#</a></h2>
+<p>以<strong>文件</strong>界面为例，自上而下是这样排列的。</p>
+<ul>
+<li><strong>Folder</strong> — 打开媒体文件夹。旁边的小按钮用于指定脚本文件夹、载入或保存脚本、重新扫描。</li>
+<li><strong>Recent Media</strong> — 最近打开过的文件列表。条目旁的 <code>×</code> 逐个清除，垃圾桶图标全部清除。</li>
+<li><strong>Filter files…</strong> — 按文件名筛选。右侧数字是当前显示的文件数量。</li>
+<li><strong>Show multi-axis files only</strong> — 只显示有多轴脚本的文件。</li>
+<li><strong>Show rated files only</strong> — 只显示已评分的文件。</li>
+<li><strong>排序</strong> — 可按 <code>Path</code>（路径）以及名称、评分、时长、修改时间排序，并用 <code>Asc</code>/<code>Desc</code> 切换方向。</li>
+<li><strong>Script Variants</strong> — 当前媒体匹配到多个脚本时用来选择的面板。 → <a href="#scripts">使用脚本</a></li>
+<li><strong>文件列表</strong> — 有脚本的文件会带一个绿色文档图标。</li>
+</ul>
+<h2 id="ui-playbar">播放栏按钮词典<a aria-label="本节链接" class="anchor" href="#ui-playbar">#</a></h2>
+<p>界面最下面一行。左侧是播放控制，右侧是画面与脚本相关的开关。各英文缩写含义如下。</p>
+<div class="legend">
+<div class="legend-row"><span class="legend-key">1x</span><span class="legend-desc"><b>播放速度</b> — 用两侧的 <code>−</code> <code>+</code> 调整倍速。</span></div>
+<div class="legend-row"><span class="legend-key">STR</span><span class="legend-desc"><b>行程（Stroke）</b> — 就地收窄或放宽设备的运动范围。反转开关也在这里。</span></div>
+<div class="legend-row"><span class="legend-key">+0ms</span><span class="legend-desc"><b>脚本偏移</b> — 把动作相对视频前移或后移，可在 <code>-60秒 ～ +60秒</code> 范围内调整。</span></div>
+<div class="legend-row"><span class="legend-key">AB</span><span class="legend-desc"><b>区间循环</b> — 标记 A 点和 B 点，只循环这一段。</span></div>
+<div class="legend-row"><span aria-label="循环图标" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m17 2 4 4-4 4"></path><path d="M3 11v-1a4 4 0 0 1 4-4h14"></path><path d="m7 22-4-4 4-4"></path><path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></span><span class="legend-desc"><b>循环</b> — 只重复当前正在播放的这个文件。自动跳到下一个文件是另一个 <code>Auto Next Play</code> 设置。</span></div>
+<div class="legend-row"><span aria-label="随机播放图标" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"></path><path d="m18 2 4 4-4 4"></path><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"></path><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"></path><path d="m18 14 4 4-4 4"></path></svg></span><span class="legend-desc"><b>随机播放</b> — 以随机顺序播放列表。</span></div>
+<div class="legend-row"><span class="legend-key">EXT</span><span class="legend-desc"><b>外部播放器（External）</b> — 用 mpv、VLC 等外部播放器打开该文件。 → <a href="#external">外部播放器</a></span></div>
+<div class="legend-row"><span class="legend-key">TL</span><span class="legend-desc"><b>时间线（Timeline）</b> — 显示或隐藏脚本图形。</span></div>
+<div class="legend-row"><span class="legend-key">HM</span><span class="legend-desc"><b>热力图（Heatmap）</b> — 用色带显示整个文件的强弱。</span></div>
+<div class="legend-row"><span class="legend-key">AV</span><span class="legend-desc"><b>音轨与字幕轨</b> — 选择内嵌音轨和字幕轨。 → <a href="#audio">音频与字幕</a></span></div>
+<div class="legend-row"><span aria-label="评分图标" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M11.5 3.3a.6.6 0 0 1 1 0l2.2 4.5 4.9.7c.5.1.7.7.3 1l-3.5 3.5.8 4.9c.1.5-.4.9-.9.6L12 16.3l-4.4 2.3c-.4.2-1-.1-.9-.6l.8-4.9-3.5-3.5c-.4-.3-.2-.9.3-1l4.9-.7 2.3-4.6Z"></path></svg></span><span class="legend-desc"><b>评分</b> — 不离开播放界面就能打分。媒体库的排序和筛选会用到。</span></div>
+<div class="legend-row"><span class="legend-key">FIT</span><span class="legend-desc"><b>适应</b> — 缩放到能看到整个画面。可能出现黑边。</span></div>
+<div class="legend-row"><span class="legend-key">FILL</span><span class="legend-desc"><b>填充</b> — 无黑边铺满画面。画面边缘可能被裁掉。</span></div>
+<div class="legend-row"><span aria-label="全屏图标" class="legend-key legend-key--icon" role="img"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"></path><path d="M21 8V5a2 2 0 0 0-2-2h-3"></path><path d="M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M16 21h3a2 2 0 0 0 2-2v-3"></path></svg></span><span class="legend-desc"><b>全屏</b> — 与 <kbd>F</kbd> 键相同。</span></div>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>提示</div>
+<p>打开 VR 或 360 度视频时，播放栏还会出现<strong>投影方式按钮</strong>。 → <a href="#vr">VR 与 360 度视频</a></p>
+</div>
+<h2 id="ui-titlebar">标题栏<a aria-label="本节链接" class="anchor" href="#ui-titlebar">#</a></h2>
+<p>窗口最上方显示应用名和版本，右侧有 <strong>Stop all devices</strong> 按钮。这是一次停止所有已连接设备的紧急停止按钮。 → <a href="#safety">安全与紧急停止</a></p>
+<figure>
+<div class="shot"><img alt="标题栏上的 Stop all devices 按钮" loading="lazy" src="../assets/img/ui-estop.webp"/></div>
+<figcaption>右上角的 <strong>Stop all devices</strong> 就是全局紧急停止，也可以在设置中隐藏。</figcaption>
+</figure>
+</article>
+<!-- ============================================ 05 LIBRARY -->
+<article class="page" data-group="日常使用" data-title="媒体库" id="page-library">
+<h1>媒体库</h1>
+<p class="lede">文件一多，逐个打开文件夹就很麻烦。媒体库让你注册常用文件夹，用缩略图卡片一次浏览。</p>
+<figure>
+<div class="shot">
+<video aria-label="媒体库演示" data-src="../assets/video/library.mp4" loop="" muted="" playsinline="" preload="none"></video>
+</div>
+<figcaption>媒体库界面上方。用搜索框和 <strong>Library folders</strong> 按钮管理文件夹。</figcaption>
+</figure>
+<h2 id="lib-sources">注册多个文件夹<a aria-label="本节链接" class="anchor" href="#lib-sources">#</a></h2>
+<p>从 v0.6.0 起可以注册<strong>多个带名称的媒体库文件夹</strong>，在<strong>设置 → 常规</strong>的 <strong>Library folders</strong> 中管理。每个文件夹独立处理，关掉一个不影响其余。</p>
+<ul>
+<li><strong>Add folder</strong> — 添加文件夹。选择对话框可一次选多个。</li>
+<li><strong>名称</strong> — 用 <code>Local Library</code>、<code>NAS Library</code> 这类易读的名字代替路径。</li>
+<li><strong>开关</strong> — 想暂时排除时关掉即可。<strong>关闭的文件夹会保留其设置，只是不再参与扫描。</strong></li>
+<li><strong>垃圾桶</strong> — 仅解除注册，不会删除实际文件。</li>
+</ul>
+<figure>
+<div class="shot"><img alt="设置·常规标签页中的媒体库文件夹列表" loading="lazy" src="../assets/img/settings-general.webp"/></div>
+<figcaption>设置 → 常规。每个文件夹都有各自的名称和启用状态。下方还有 <strong>Script Storage Folder</strong>。</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>脚本文件夹也在这里</div>
+<p>用来存放已下载脚本的 <strong>Script Storage Folder</strong> 也在同一界面指定。设定之后，脚本自动匹配和插件下载都会使用这个文件夹。 → <a href="#scripts">使用脚本</a></p>
+</div>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>使用 NAS 时</div>
+<p>本地与 NAS 的目录会在缓存中合并成一份去重后的列表。启动时先显示缓存内容，然后<strong>逐个依次</strong>刷新各文件夹。由于不会同时读取多个文件夹，启动时磁盘与网络的压力不会集中爆发。</p>
+</div>
+<h2 id="lib-filter">筛选与排序<a aria-label="本节链接" class="anchor" href="#lib-filter">#</a></h2>
+<p>筛选条件会被<strong>保存</strong>，下次打开时依然生效。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>功能</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>搜索</strong></td><td>按标题和路径查找。</td></tr>
+<tr><td class="col-key"><strong>媒体类型</strong></td><td>分为只看视频 / 只看音频。</td></tr>
+<tr><td class="col-key"><strong>脚本分类</strong></td><td>可分别筛选单轴脚本和多轴脚本。</td></tr>
+<tr><td class="col-key"><strong>评分</strong></td><td>只显示已打分的条目。</td></tr>
+<tr><td class="col-key"><strong>排序</strong></td><td>按路径、文件名、评分、时长或修改时间排序。</td></tr>
+</tbody>
+</table>
+</div>
+<p>按时长排序需要先知道长度，这会在后台自动扫描。文件较多时一开始只显示一部分，随后逐渐填满。</p>
+<h2 id="lib-cards">使用卡片<a aria-label="本节链接" class="anchor" href="#lib-cards">#</a></h2>
+<ul>
+<li><strong>卡片尺寸</strong> — 用滑块调整一屏显示的数量。</li>
+<li><strong>缩略图菜单</strong> — 可直接在卡片上更换或重新生成封面图。</li>
+<li><strong>评分</strong> — 在卡片上打分，播放中也能用播放栏的 <code>☆</code> 修改。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="媒体库缩略图生成演示" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>缩略图在后台生成，逐张填入卡片。文件较多时一开始为空，随后逐渐填满。</figcaption>
+</figure>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><video aria-label="缩略图菜单演示" data-src="../assets/video/thumbnail-menu.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>在缩略图菜单中管理封面图。</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="评分演示" data-src="../assets/video/rating.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>不离开播放界面就能打分。</figcaption>
+</figure>
+</div>
+<h2 id="lib-hover">悬停预览<a aria-label="本节链接" class="anchor" href="#lib-hover">#</a></h2>
+<p>把鼠标停在文件列表的条目上，就会<strong>无需打开文件</strong>播放一段短视频预览。不必再为确认内容而逐个打开。</p>
+</article>
+<!-- ============================================ 06 PLAYBACK -->
+<article class="page" data-group="日常使用" data-title="播放" id="page-playback">
+<h1>播放</h1>
+<p class="lede">收录了播放、快进这类基本操作，以及循环、区间循环、画面适应等常用功能。</p>
+<h2 id="pb-basic">基本操作<a aria-label="本节链接" class="anchor" href="#pb-basic">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>动作</th><th>操作方式</th></tr></thead>
+<tbody>
+<tr><td class="col-key">播放 / 暂停</td><td><kbd>Space</kbd> 或 <kbd>K</kbd>，播放栏的 ▶ 按钮</td></tr>
+<tr><td class="col-key">快进/退 5 秒</td><td><kbd>←</kbd> <kbd>→</kbd></td></tr>
+<tr><td class="col-key">快进/退 10 秒</td><td><kbd>Shift</kbd> + <kbd>←</kbd> <kbd>→</kbd></td></tr>
+<tr><td class="col-key">上一个 / 下一个文件</td><td>播放栏的 ⏮ ⏭ 按钮</td></tr>
+<tr><td class="col-key">音量</td><td><kbd>↑</kbd> <kbd>↓</kbd>（每次 5%）</td></tr>
+<tr><td class="col-key">静音</td><td><kbd>M</kbd></td></tr>
+<tr><td class="col-key">全屏</td><td><kbd>F</kbd></td></tr>
+</tbody>
+</table>
+</div>
+<p>完整列表与修改方法见<a href="#shortcuts">键盘快捷键</a>。</p>
+<h2 id="pb-repeat">循环 · 自动播放下一个 · 随机<a aria-label="本节链接" class="anchor" href="#pb-repeat">#</a></h2>
+<p>看起来相似但其实是三件不同的事。刚开始容易混淆，所以分开说明。</p>
+<div class="cards cols-3">
+<div class="card">
+<h4>循环 <code>🔁</code></h4>
+<p>只重复<strong>当前正在播放的这个文件</strong>。</p>
+</div>
+<div class="card">
+<h4>Auto Next Play</h4>
+<p>文件结束后<strong>自动跳到下一个文件。</strong>在设置中开启。</p>
+</div>
+<div class="card">
+<h4>随机 <code>🔀</code></h4>
+<p>以<strong>随机顺序</strong>播放列表。</p>
+</div>
+</div>
+<figure>
+<div class="shot"><video aria-label="自动播放下一个的演示" data-src="../assets/video/auto-next.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>开启 Auto Next Play 后，一个文件结束就接着播下一个。</figcaption>
+</figure>
+<h2 id="pb-ab">AB 区间循环<a aria-label="本节链接" class="anchor" href="#pb-ab">#</a></h2>
+<p>想反复观看视频某一段时使用。标记起点（A）和终点（B）后，只有这一段会循环。</p>
+<ol>
+<li>在想循环区间的<strong>起始</strong>位置设定 A 点。</li>
+<li>在区间的<strong>结束</strong>位置设定 B 点。</li>
+<li>区间循环随即开始。打开编辑器可把两点调到精确数值。</li>
+</ol>
+<p>设定 A、B 以及打开编辑器都可以绑定快捷键。（<a href="#shortcuts">键盘快捷键</a>）</p>
+<figure>
+<div class="shot"><video aria-label="区间循环演示" data-src="../assets/video/section-repeat.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>区间循环的运行示例。</figcaption>
+</figure>
+<h2 id="pb-fit">画面适应 — FIT 与 FILL<a aria-label="本节链接" class="anchor" href="#pb-fit">#</a></h2>
+<p>当视频比例与窗口比例不同时，用来决定优先哪一边的按钮。</p>
+<ul>
+<li><strong>FIT</strong> — 缩放到能看到整个画面。上下或左右可能出现黑边。</li>
+<li><strong>FILL</strong> — 铺满整个画面。画面边缘可能被裁掉。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="FIT / FILL 演示" data-src="../assets/video/fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>同一视频在 FIT 与 FILL 下的差别。</figcaption>
+</figure>
+<h2 id="pb-fullscreen">全屏<a aria-label="本节链接" class="anchor" href="#pb-fullscreen">#</a></h2>
+<p>按 <kbd>F</kbd> 进入全屏。全屏下仍可唤出侧边栏，不必为换文件而退出。</p>
+<p>从 v0.6.0 起可在设置中更改全屏控件的显示方式。</p>
+<ul>
+<li><strong>仅从底部边缘出现</strong> — 这样在画面任意处移动鼠标都不会唤出控件。</li>
+<li><strong>背景不透明度</strong> — 让控件背后的底色更深或更浅。</li>
+<li><strong>竖直位置</strong> — 调整控件出现的高度。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="全屏侧边栏演示" data-src="../assets/video/fullscreen-sidebar.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>在全屏状态下唤出侧边栏的样子。</figcaption>
+</figure>
+<h2 id="pb-ontop">窗口置顶<a aria-label="本节链接" class="anchor" href="#pb-ontop">#</a></h2>
+<p>想一边用别的窗口一边继续看播放画面时，可以把窗口固定在最前面。</p>
+<figure>
+<div class="shot"><img alt="窗口置顶设置" loading="lazy" src="../assets/img/always-on-top.webp"/></div>
+<figcaption>开启置顶后的状态。</figcaption>
+</figure>
+<h2 id="pb-recovery">重置与恢复<a aria-label="本节链接" class="anchor" href="#pb-recovery">#</a></h2>
+<p>如果改了太多设置而弄乱了，可以在<strong>设置 → 恢复</strong>里回到初始状态。整体重置还会一并清理缓存的时长、行程范围，以及播放器、媒体库、工作区、最近媒体和侧边栏的状态。</p>
+<figure>
+<div class="shot"><video aria-label="恢复菜单演示" data-src="../assets/video/recovery.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>设置 → 恢复的菜单。</figcaption>
+</figure>
+</article>
+<!-- ============================================ 07 SCRIPTS -->
+<article class="page" data-group="日常使用" data-title="使用脚本" id="page-scripts">
+<h1>使用脚本</h1>
+<p class="lede">脚本没被自动识别、识别了但时间对不上、动作太强——这些情况该动哪里，都整理在这里。这一页基本能解决大部分脚本问题。</p>
+<h2 id="sc-match">脚本是怎么被找到的<a aria-label="本节链接" class="anchor" href="#sc-match">#</a></h2>
+<p>ScriptPlayer+ 按以下顺序查找匹配的脚本。</p>
+<ol class="steps">
+<li>
+<h3>同一文件夹、同一文件名</h3>
+<p>最可靠的做法。把 <code>视频.funscript</code> 放在 <code>视频.mp4</code> 旁边即会立刻识别。</p>
+</li>
+<li>
+<h3>指定的脚本文件夹</h3>
+<p>若脚本单独存放，请在<strong>设置 → 常规 → Script Storage Folder</strong> 中指定该文件夹。（侧边栏 <code>Folder</code> 旁的小按钮也能指定。）之后该文件夹也会一并扫描。</p>
+</li>
+<li>
+<h3>媒体库收录的脚本</h3>
+<p>已注册的媒体库文件夹所索引的脚本也会作为候选。</p>
+</li>
+<li>
+<h3>只有一个候选时自动选择</h3>
+<p>即使名称并不完全相同，只要能明确收敛到一个，也会自动为你选中。</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="脚本扫描结果" loading="lazy" src="../assets/img/script-scan.webp"/></div>
+<figcaption>脚本扫描结果可在侧边栏查看。</figcaption>
+</figure>
+<h2 id="sc-variants">脚本变体面板<a aria-label="本节链接" class="anchor" href="#sc-variants">#</a></h2>
+<p>同一视频有时会匹配到多个脚本，像 <code>Soft</code> 这种用括号标注的变体最为常见。这时可在侧边栏的 <strong>Script Variants</strong> 面板中不停止播放直接替换。</p>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="脚本变体面板" loading="lazy" src="../assets/img/script-variants.webp"/></div>
+<figcaption>找到多个变体时会以列表显示。</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="切换脚本变体的演示" data-src="../assets/video/script-variants.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>选中后立即生效。</figcaption>
+</figure>
+</div>
+<h2 id="sc-duration">按时长查找<a aria-label="本节链接" class="anchor" href="#sc-duration">#</a></h2>
+<p>有时需要找名称完全不同但内容对得上的脚本。v0.6.0 引入的<strong>按时长搜索</strong>会根据脚本时间线长度与视频长度的接近程度为候选排序。</p>
+<ul>
+<li>会把视频所在文件夹、指定的脚本文件夹以及媒体库已索引的脚本都作为候选。</li>
+<li>结果按长度接近程度排列，从上往下试即可。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="按时长搜索脚本的演示" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>按时长最接近的顺序排列候选。</figcaption>
+</figure>
+<h2 id="sc-offset">时间对不上时 — 脚本偏移<a aria-label="本节链接" class="anchor" href="#sc-offset">#</a></h2><p><strong>正值（+）使动作提前，负值（-）使动作延后。</strong>如果动作比视频晚约0.2秒，就在当前值上加<code>0.2秒</code>；如果早约0.2秒，就减去<code>0.2秒</code>。输入框以秒为单位：<code>0.2秒 = 200ms</code>。</p>
+<p>当动作比视频稍快或稍慢时使用。点播放栏的 <code>+0ms</code> 按钮进行调整。</p>
+<ul>
+<li>范围是 <strong><code>-60秒</code>到<code>+60秒</code></strong>。</li>
+<li>可以按小数秒<strong>直接输入</strong>，也能用微调按钮一点点挪动。</li>
+<li>偏移量<strong>优先按脚本保存，否则按媒体文件保存</strong>。再次使用同一脚本时，可能会应用已保存的偏移量。</li>
+<li>增大、减小和重置都可以绑定快捷键。</li>
+</ul>
+<figure>
+<div class="shot"><img alt="脚本偏移调整界面" loading="lazy" src="../assets/img/script-offset.webp"/></div>
+<figcaption>偏移输入框。可直接填入数值，或用按钮微调。</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>对齐技巧</div>
+<p>先跳到有明显动作的位置，一边播放一边小幅调整偏移。当时间线图形的波峰与画面里的动作重合时，就对了。</p>
+</div>
+<h2 id="sc-stroke">动作太强时 — 行程范围<a aria-label="本节链接" class="anchor" href="#sc-stroke">#</a></h2>
+<p>播放栏的 <code>STR</code> 用来调整设备实际运动的范围。无需修改脚本就能降低或提高力度。</p>
+<p>同样的设置也可以在<strong>设置 → 设备</strong>中更细致地调整。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>项目</th><th>作用</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>Stroke Range Min / Max</strong></td><td>在 <code>0%</code>～<code>100%</code> 之间设定运动的下限与上限。</td></tr>
+<tr><td class="col-key"><strong>Range Extender</strong></td><td>在应用最终行程范围<em>之前</em>，以 <code>50%</code> 中心为基准放大或缩小 L0 的运动。</td></tr>
+<tr><td class="col-key"><strong>Inverse Stroke</strong></td><td>在发送到设备之前，把脚本的位置数值上下翻转。</td></tr>
+<tr><td class="col-key"><strong>Amplitude setting behavior</strong> <span class="pill pill--new">v0.6.0</span></td><td>选择这个数值是<strong>按脚本分别记住</strong>，还是在所有媒体间<strong>共用一份</strong>。</td></tr>
+<tr><td class="col-key"><strong>保持中心的范围</strong> <span class="pill pill--new">v0.6.0</span></td><td>像旋转轴这种以中心为基准的轴，会保持中心不变，只收窄幅度。</td></tr>
+</tbody>
+</table>
+</div>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="设置·设备标签页中的行程范围项目" loading="lazy" src="../assets/img/settings-device-stroke.webp"/></div>
+<figcaption>设置 → 设备中的行程范围项目。</figcaption>
+</figure>
+<figure>
+<div class="shot"><img alt="调整行程范围" loading="lazy" src="../assets/img/stroke-range.webp"/></div>
+<figcaption>播放过程中直接从 <code>STR</code> 调整。</figcaption>
+</figure>
+</div>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>初次使用时</div>
+<p>先把范围调窄再开始，熟悉之后逐步放宽。配合速度限制会更安全。 → <a href="#safety">安全与紧急停止</a></p>
+</div>
+<h2 id="sc-gaps">处理空白区间<a aria-label="本节链接" class="anchor" href="#sc-gaps">#</a></h2>
+<p>当脚本中存在较长的无动作区间时使用的选项。</p>
+<ul>
+<li><strong>间隙填充（Fill gaps）</strong> — 用生成的动作填补空白区间。</li>
+<li><strong>自动跳过</strong> — 跳过空白区间。可以设置延迟，让它<strong>稍等一会儿</strong>再跳，而不是立刻跳过。</li>
+<li><strong>稀疏脚本补正</strong> — 把点位稀疏的脚本整理得更平滑。</li>
+</ul>
+<figure>
+<div class="shot"><img alt="间隙填充设置" loading="lazy" src="../assets/img/fill-gaps.webp"/></div>
+<figcaption>空白区间的处理选项。</figcaption>
+</figure>
+<h2 id="sc-random">完全没有脚本时 — 随机行程<a aria-label="本节链接" class="anchor" href="#sc-random">#</a></h2>
+<p>即使视频没有脚本，也能生成动作。预设中把基础的挑逗模式与更强的模式分开了。</p>
+<p>生成的动作可在 <code>Off</code>、<code>Light</code>、<code>Balanced</code>、<code>Strong</code> 之间选择<strong>平滑度</strong>。方向不会突然折返，而是走加减速曲线，因此自然得多。</p>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><video aria-label="随机模式演示" data-src="../assets/video/random-pattern.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>随机模式的预设。</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="随机平滑演示" data-src="../assets/video/random-smooth.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>应用平滑后让动作更柔和的样子。</figcaption>
+</figure>
+</div>
+<h2 id="sc-motion">从视频生成脚本<a aria-label="本节链接" class="anchor" href="#sc-motion">#</a> <span class="pill pill--exp">实验功能</span></h2>
+<p>从 v0.4.0 起，可以分析视频中的动作生成脚本并保存在媒体旁边。分析需要外部的 FFmpeg 可执行文件。 → <a href="#ffmpeg">FFmpeg 兼容播放</a></p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>提示</div>
+<p>运动分析属于实验功能。结果质量随视频差异很大，生成的脚本可能需要手动修整。</p>
+</div>
+<h2 id="sc-multiaxis">多轴脚本<a aria-label="本节链接" class="anchor" href="#sc-multiaxis">#</a></h2>
+<p>同时驱动多个轴的脚本支持以下三种形式。</p>
+<ul>
+<li>在一个文件中用 <code>axes[]</code> 收纳各轴</li>
+<li>在一个文件中用 <code>channels{}</code> 收纳各轴</li>
+<li>每个轴一个文件（例如 <code>视频.L0.funscript</code>、<code>视频.R0.funscript</code>）</li>
+</ul>
+<p>从 v0.6.0 起可以<strong>按轴替换脚本来源</strong>。例如沿用多轴包，但只把 <code>L0</code> 轴换成另一个文件。也支持从别的轴取值的<strong>轴来源联动</strong>（例如 <code>L0 → R0</code>）。</p>
+<p>在界面上查看多轴脚本的方法见<a href="#timeline">时间线与热力图</a>。</p>
+<h2 id="sc-debug">检查脚本<a aria-label="本节链接" class="anchor" href="#sc-debug">#</a></h2>
+<p>脚本表现异常时，有一个界面可以查看实际传入的数值。</p>
+<figure>
+<div class="shot"><video aria-label="脚本调试演示" data-src="../assets/video/script-debug.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>脚本检查界面。</figcaption>
+</figure>
+</article>
+<!-- ============================================ 08 TIMELINE -->
+<article class="page" data-group="日常使用" data-title="时间线与热力图" id="page-timeline">
+<h1>时间线与热力图</h1>
+<p class="lede">查看脚本的两种方式。时间线显示当下这一刻，热力图显示整个文件。</p>
+<figure>
+<div class="shot"><img alt="多轴时间线界面" loading="lazy" src="../assets/img/ui-player-multiaxis.webp"/></div>
+<figcaption>上方的绿色色带是热力图，下方的图形是多轴时间线。</figcaption>
+</figure>
+<h2 id="tl-timeline">时间线 <code>TL</code><a aria-label="本节链接" class="anchor" href="#tl-timeline">#</a></h2>
+<p>随播放位置滚动的实时图形。用播放栏的 <code>TL</code> 按钮开关。</p>
+<h3 id="tl-axes">选择轴</h3>
+<p>打开多轴脚本后，时间线上方会出现 <strong>AXES</strong> 一行。</p>
+<ul>
+<li><strong>All</strong> — 把所有轴一次叠加显示。</li>
+<li><strong>轴按钮</strong>（<code>L0</code>、<code>L1</code>、<code>R0</code>、<code>R1</code> …） — 逐个开关。按钮旁的数字是该轴当前的数值。</li>
+<li><strong>双击</strong> — 只保留该轴、隐藏其余。想仔细看某一个轴时很方便。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="同时显示全部轴的演示" data-src="../assets/video/multiaxis-all.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>所有轴同时显示的样子。</figcaption>
+</figure>
+<h3 id="tl-height">调整高度</h3>
+<p><strong>上下拖动</strong>视频与时间线之间的分隔线即可改变时间线高度。轴较多时拉宽会好看很多。</p>
+<figure>
+<div class="shot"><video aria-label="时间线高度调整演示" data-src="../assets/video/multiaxis-height.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>拖动分隔线调整时间线高度。</figcaption>
+</figure>
+<h2 id="tl-heatmap">热力图 <code>HM</code><a aria-label="本节链接" class="anchor" href="#tl-heatmap">#</a></h2>
+<p>把整个文件压缩成一条横向色带。<strong>颜色代表速度</strong> — 绿色较慢，经过黄色越往红色越快。</p>
+<p>播放前就能知道哪里是激烈段落，想直接跳到某处时很有用。</p>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>提示</div>
+<p>媒体库列表和卡片上不显示热力图。热力图只在播放界面可见。</p>
+</div>
+<h2 id="tl-settings">时间线设置<a aria-label="本节链接" class="anchor" href="#tl-settings">#</a></h2>
+<p><strong>设置 → 时间线</strong>中可以调整以下项目。</p>
+<ul>
+<li>显示对比度 — 让图形更深或更浅</li>
+<li>按速度着色的开 / 关</li>
+<li>默认高度</li>
+</ul>
+</article>
+<!-- ============================================ 09 AUDIO -->
+<article class="page" data-group="日常使用" data-title="音频与字幕" id="page-audio">
+<h1>音频与字幕</h1>
+<p class="lede">关于声音和字幕的内容：音频文件播放、音量增强、载入字幕以及选择内嵌轨道。</p>
+<h2 id="au-audio">播放音频文件<a aria-label="本节链接" class="anchor" href="#au-audio">#</a></h2>
+<p>MP3、FLAC 这类音频也能像视频一样附上脚本播放。因为没有画面，会改为显示<strong>封面图</strong>。</p>
+<p>封面图按以下顺序查找。</p>
+<ul>
+<li>音频文件内元数据中的图片</li>
+<li>同一作品文件夹内的图片文件</li>
+</ul>
+<div class="media-grid cols-2">
+<figure>
+<div class="shot"><img alt="音频播放界面" loading="lazy" src="../assets/img/audio-mode.webp"/></div>
+<figcaption>音频播放界面，显示封面图。</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="音轨演示" data-src="../assets/video/av-audio.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>选择音轨的操作。</figcaption>
+</figure>
+</div>
+<h2 id="au-boost">音量增强 150%<a aria-label="本节链接" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">实验功能</span></h2>
+<p>针对录音过小、听不清的音源，音量最多可提升到<strong>150%</strong>。同时会启用峰值限制器，防止突然爆音。</p>
+<figure>
+<div class="shot"><video aria-label="音量增强演示" data-src="../assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>开启 150% 音量增强后的样子。</figcaption>
+</figure>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>注意</div>
+<p>如果你戴着耳机，请先把音量调低再开启增强。</p>
+</div>
+<h2 id="au-subs">字幕<a aria-label="本节链接" class="anchor" href="#au-subs">#</a></h2>
+<h3 id="au-subs-ext">外部字幕文件</h3>
+<p>支持 <code>.srt</code>、<code>.vtt</code>、<code>.txt</code>。与视频同名时会<strong>自动找到并载入。</strong>若未自动识别，也可以手动载入。</p>
+<h3 id="au-subs-emb">内嵌字幕</h3>
+<p>视频文件内的文本字幕轨也可以使用，从播放栏的 <code>AV</code> 按钮选择。不过<strong>必须已安装外部 FFmpeg。</strong></p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>字幕类型</th><th>是否支持</th></tr></thead>
+<tbody>
+<tr><td class="col-key">SRT, ASS/SSA, WebVTT, mov_text</td><td>支持 — 属于文本类轨道。</td></tr>
+<tr><td class="col-key">PGS、DVD 字幕</td><td><strong>会列出但无法显示。</strong>它们是图像类字幕，不做渲染。</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><video aria-label="字幕选择演示" data-src="../assets/video/av-subtitles.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>从 <code>AV</code> 按钮选择字幕轨。</figcaption>
+</figure>
+<h2 id="au-tracks">选择音轨<a aria-label="本节链接" class="anchor" href="#au-tracks">#</a></h2>
+<p>如果文件内含多语言音频，可从 <code>AV</code> 按钮选择音轨。该功能同样需要外部 FFmpeg。 → <a href="#ffmpeg">FFmpeg 兼容播放</a></p>
+</article>
+<!-- ============================================ 10 VR -->
+<article class="page" data-group="日常使用" data-title="VR 与 360 度视频" id="page-vr">
+<h1>VR 与 360 度视频</h1>
+<p class="lede">打开 VR180 或 360 度视频时，画面会不自然地拉伸或分成两半。指定投影方式后就能正常观看。 <span class="pill pill--new">v0.6.0</span></p>
+<figure>
+<div class="shot"><video aria-label="VR180 播放演示" data-src="../assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>以投影模式播放 VR180 视频，并拖动改变视角的样子。</figcaption>
+</figure>
+<h2 id="vr-modes">支持的投影方式<a aria-label="本节链接" class="anchor" href="#vr-modes">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>方式</th><th>适用于哪种视频</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>360 度等距圆柱</strong><br/>(Equirectangular)</td><td>拍摄了全方位的视频。平铺展开后看起来像世界地图。</td></tr>
+<tr><td class="col-key"><strong>VR180 等距圆柱</strong></td><td>只拍摄了前方 180 度的视频。在 VR 视频中最常见。</td></tr>
+<tr><td class="col-key"><strong>180 度等距鱼眼</strong><br/>(Fisheye)</td><td>以中心凸起的圆形拍摄的视频。</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="vr-layout">选择源画面布局<a aria-label="本节链接" class="anchor" href="#vr-layout">#</a></h2>
+<p>即使投影方式相同，两眼画面的排布方式也可能不同。</p>
+<ul>
+<li><strong>单目（Mono）</strong> — 一屏中只有一个画面。</li>
+<li><strong>左右分割（SBS）</strong> — 左右各放一只眼的画面。不指定就会看到分成两半。</li>
+<li><strong>上下分割（Top-and-Bottom）</strong> — 上下各放一只眼的画面。</li>
+</ul>
+<p>对 SBS 和上下分割的视频，可以选择<strong>观看哪只眼</strong>。</p>
+<h2 id="vr-control">观看操作<a aria-label="本节链接" class="anchor" href="#vr-control">#</a></h2>
+<ul>
+<li><strong>拖动</strong> — 用鼠标拖动转动视角。</li>
+<li><strong>放大 / 缩小</strong> — 拉近或推远来调整视场角。</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>值得了解的限制</div>
+<ul>
+<li>在桌面画面上，SBS 与上下分割的视频<strong>一次只显示一只眼</strong>。</li>
+<li>不支持向头显输出的 WebXR 立体显示。</li>
+<li>不包含拼接双鱼眼 360 度视频的功能，也不含按镜头的鱼眼校准。</li>
+<li>无法应用投影的视频会自动<strong>回退到平面播放</strong>，画面不会出错。</li>
+</ul>
+</div>
+</article>
+<!-- ============================================ 11 HANDY -->
+<article class="page" data-group="设备连接" data-title="The Handy" id="page-handy">
+<h1>The Handy</h1>
+<p class="lede">The Handy 通过互联网工作。它把脚本上传到服务器并对齐播放时刻，因此连接质量会直接影响体感。</p>
+<h2 id="hd-connect">连接<a aria-label="本节链接" class="anchor" href="#hd-connect">#</a></h2>
+<ol class="steps">
+<li>
+<h3>查看连接密钥</h3>
+<p>在 The Handy 机身屏幕或其应用中查看连接密钥（Connection Key）。</p>
+</li>
+<li>
+<h3>在设置 → 设备中输入</h3>
+<p>在 ScriptPlayer+ 的<strong>设置 → 设备</strong>中选择 The Handy 并填入连接密钥。</p>
+</li>
+<li>
+<h3>确认连接</h3>
+<p>连接成功后状态显示会变化。播放视频时脚本会自动上传并同步。</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="设备标签页演示" data-src="../assets/video/device-tab.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>在设备界面选择并连接设备。</figcaption>
+</figure>
+<h2 id="hd-sync">同步与时间偏移<a aria-label="本节链接" class="anchor" href="#hd-sync">#</a></h2>
+<p>The Handy 使用 API v2。开始播放时会上传脚本，并按服务器时钟同步播放位置。</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>上传完成后自动播放</div>
+<p>开启<strong>设置 → 播放</strong>中的 <strong>Auto Play After Handy Sync</strong>，上传与 HSSP 同步一结束就会立即开始播放，不必每次等同步完成再去按播放。</p>
+</div>
+<p>如果整体上动作偏早或偏晚，用<strong>时间偏移</strong>校正。若只有某个视频对不上，多半是脚本本身的问题，请改用<a href="#scripts">脚本偏移</a>。</p>
+<h2 id="hd-diag">网络诊断<a aria-label="本节链接" class="anchor" href="#hd-diag">#</a></h2>
+<p>在<strong>设置 → Handy 网络诊断</strong>中可以实测连接质量。若动作总是卡顿或延迟，请从这里开始排查。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>项目</th><th>含义</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>延迟中位数</strong></td><td>正常情况下的往返时间。越低越好。</td></tr>
+<tr><td class="col-key"><strong>P95 延迟</strong></td><td>较慢那 5% 的延迟。该值偏大说明偶尔会大幅波动。</td></tr>
+<tr><td class="col-key"><strong>抖动</strong></td><td>延迟的波动程度。越大同步越不稳定。</td></tr>
+<tr><td class="col-key"><strong>成功率</strong></td><td>请求正常往返的比例。</td></tr>
+<tr><td class="col-key"><strong>服务器时钟偏差</strong></td><td>你的电脑时钟与服务器时钟之间的差值。</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><video aria-label="Handy 网络诊断演示" data-src="../assets/video/handy-diagnostics.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>网络诊断界面。</figcaption>
+</figure>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>分享诊断结果</div>
+<p>诊断结果可以复制后附在反馈里，这样说明问题会轻松得多。</p>
+</div>
+<figure>
+<div class="shot"><img alt="复制设备诊断信息" loading="lazy" src="../assets/img/device-diagnostics.webp"/></div>
+<figcaption>复制诊断信息的按钮。</figcaption>
+</figure>
+<h2 id="hd-compat">兼容模式<a aria-label="本节链接" class="anchor" href="#hd-compat">#</a></h2>
+<p>为较旧的硬件或响应较慢的设备提供了兼容模式。若默认设置下表现不稳定，可以试着开启。</p>
+<figure>
+<div class="shot"><img alt="Handy 兼容模式设置" loading="lazy" src="../assets/img/handy-compat.webp"/></div>
+<figcaption>Handy 兼容模式选项。</figcaption>
+</figure>
+</article>
+<!-- ============================================ 12 INTIFACE -->
+<article class="page" data-group="设备连接" data-title="Intiface / Buttplug" id="page-intiface">
+<h1>Intiface / Buttplug</h1>
+<p class="lede">Intiface 是把多家厂商的设备统一到同一规范的中继软件。从 v0.6.0 起 ScriptPlayer+ 内置了<strong>专用工作区</strong>，不必在多个窗口间来回切换。</p>
+<h2 id="if-mode">两种连接方式<a aria-label="本节链接" class="anchor" href="#if-mode">#</a></h2>
+<div class="cards cols-2">
+<div class="card">
+<h4>内置引擎</h4>
+<p>使用 ScriptPlayer+ 内含的轻量引擎。<strong>无需额外安装</strong>，最为简便。</p>
+</div>
+<div class="card">
+<h4>外部 Intiface Central</h4>
+<p>连接到你已在使用的 Intiface Central，可以支持更多设备和设置。</p>
+</div>
+</div>
+<h2 id="if-connect">连接<a aria-label="本节链接" class="anchor" href="#if-connect">#</a></h2>
+<p>点击左侧栏的 <strong>Intiface</strong> 图标会打开 <strong>Intiface Device Manager</strong>。界面上方显示 <strong>1 Connect → 2 Find device → 3 Configure → 4 Playback</strong> 四个步骤，并同时告知当前处于哪一步、下一步该做什么。</p>
+<figure>
+<div class="shot"><img alt="Intiface Device Manager 界面" loading="lazy" src="../assets/img/intiface-manager.webp"/></div>
+<figcaption>Intiface Device Manager。右上角一行显示引擎、服务器、搜索与输出状态。</figcaption>
+</figure>
+<ol class="steps">
+<li>
+<h3>Connect — 选择连接方式</h3>
+<p>在 <strong>Built-in engine</strong> 与 <strong>External Central</strong> 之间选择。用内置引擎会显示地址（<code>ws://127.0.0.1:…</code>），选外部则需填入要连接的地址。</p>
+</li>
+<li>
+<h3>Find device — 搜索设备</h3>
+<p>开始扫描后会查找 Bluetooth、HID 以及已配置的串口设备。请让<strong>设备保持开机、处于待配对状态</strong>并稍等。可以同时选中多台设备。</p>
+</li>
+<li>
+<h3>Configure — 输出映射</h3>
+<p>在 <strong>Output mapping</strong> 中选择设备，并指定每个可用功能对应哪个脚本轴。</p>
+</li>
+<li>
+<h3>Playback — 播放</h3>
+<p>播放视频后就会按映射的轴输出。电池电量也能在此界面查看。</p>
+</li>
+</ol>
+<p>连接状态也会在侧栏图标上显示为<strong>未连接、处理中、已连接、错误</strong>。</p>
+<figure>
+<div class="shot"><video aria-label="连接多台设备的演示" data-src="../assets/video/more-devices.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>可以同时选中多台设备一起使用。</figcaption>
+</figure>
+<h2 id="if-mapping">功能映射<a aria-label="本节链接" class="anchor" href="#if-mapping">#</a></h2>
+<p>Buttplug 设备的功能分为三类，每一类都可以绑定到你想要的轴。</p>
+<ul>
+<li><strong>线性（Linear）</strong> — 前后往复的动作，通常绑定 <code>L0</code> 轴。</li>
+<li><strong>旋转（Rotate）</strong> — 转动的动作，通常绑定 <code>R0</code> 轴。</li>
+<li><strong>标量（Scalar）</strong> — 像振动强度这样用单一数值表示的动作。</li>
+</ul>
+<p>如果需要脚本里没有的轴，可以用<strong>轴来源联动</strong>从别的轴取值。例如把 <code>L0</code> 的动作用作 <code>R0</code> 的输出。</p>
+<h2 id="if-handoff">与其他应用共用<a aria-label="本节链接" class="anchor" href="#if-handoff">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>内置引擎一次只接一个</div>
+<p>内置的 Intiface 引擎<strong>一次只接受一个 Buttplug 客户端</strong>。ScriptPlayer+ 与其他应用无法同时控制它。</p>
+</div>
+<p>因此提供了<strong>移交</strong>功能。点击 Intiface Device Manager 中的 <strong>Allow FapTap / external app</strong> 按钮，引擎会继续运行，而只有 ScriptPlayer+ 放开连接。期间 FapTap 等其他客户端可以连到同一地址；该应用断开后，ScriptPlayer+ 会重新连接。</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>顺序很重要</div>
+<p>先启动其他应用、再想把 ScriptPlayer+ 接上，是会失败的。请<strong>先从 ScriptPlayer+ 放开连接</strong>，然后再连接其他应用。</p>
+</div>
+<h2 id="if-watchdog">按设备的看门狗<a aria-label="本节链接" class="anchor" href="#if-watchdog">#</a></h2>
+<p>使用多台设备时，若其中一台变慢或反复失败，过去会把其他设备一起拖住。从 v0.6.0 起<strong>每台设备都有独立的看门狗</strong>，一台出问题不会阻塞其余设备的输出。</p>
+<h2 id="if-limits">Windows 内置引擎的范围<a aria-label="本节链接" class="anchor" href="#if-limits">#</a></h2>
+<p>Windows 版内置引擎可处理的连接如下。</p>
+<ul>
+<li>Bluetooth LE</li>
+<li>HID</li>
+<li>一个显式指定的 <strong>Bluetooth RFCOMM COM 端口</strong> — 按 TCode v0.3、115200 波特率映射。</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>该串口路径的限制</div>
+<p>该路径只暴露 FunOSR SR1 使用的<strong>单一线性轴定义</strong>。如果需要 USB 串口适配器或 SR6 的完整多轴串口映射，请直接使用<a href="#funosr">FunOSR 提供方</a>或外部 Intiface Central。</p>
+</div>
+</article>
+<!-- ============================================ 13 FUNOSR -->
+<article class="page" data-group="设备连接" data-title="FunOSR" id="page-funosr">
+<h1>FunOSR</h1>
+<p class="lede">FunOSR 直接向串口（COM）发送信号。不经过中继软件，延迟更低，也能更细致地处理多轴映射。</p>
+<h2 id="fo-connect">选择端口<a aria-label="本节链接" class="anchor" href="#fo-connect">#</a></h2>
+<p>在<strong>设置 → 设备</strong>中选择 FunOSR 并指定 COM 端口。从 v0.6.0 起端口识别有所改进，会按以下顺序优先推荐合适的端口。</p>
+<ol>
+<li>被明确识别为 FunOSR 的端口</li>
+<li>CH340 / CH341 适配器</li>
+<li>USB 标识 <code>1A86:7523</code></li>
+</ol>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>端口暂时看不到也不要紧</div>
+<p>即使启动时搜索结果为空，<strong>已保存的 COM 路径依然保留</strong>。设备插得晚也不会丢失设置。</p>
+</div>
+<h2 id="fo-tune">调整输出<a aria-label="本节链接" class="anchor" href="#fo-tune">#</a></h2>
+<p>在<strong>设置 → 设备</strong>中调整以下项目。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>项目</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>更新速率</strong></td><td>决定每秒发送多少次指令。设得过高反而可能不稳定。</td></tr>
+<tr><td class="col-key"><strong>轴映射</strong></td><td>把脚本的轴与设备的实际轴对应起来。</td></tr>
+<tr><td class="col-key"><strong>运动平滑</strong></td><td>把动作整理得更平滑。</td></tr>
+<tr><td class="col-key"><strong>Custom speed limit</strong></td><td>以 <strong>spm</strong>（每分钟完整行程次数）为单位限制各轴的最高速度。也可以选择该轴是沿用全局限制还是单独设置。</td></tr>
+<tr><td class="col-key"><strong>Pause / Stop Behavior</strong></td><td>决定播放暂停、停止或切换媒体时设备的行为。（例如 <code>Return home</code> — 回到原位）</td></tr>
+<tr><td class="col-key"><strong>Home Return Speed</strong></td><td>回到原位的速度。数值越大回得越慢。</td></tr>
+<tr><td class="col-key"><strong>Playback Start Safety</strong></td><td>开始播放时，FunOSR / SR 设备会<strong>用这段时间缓慢</strong>移动到脚本位置，然后才进入正常输出。设为 <code>0</code> 则关闭。</td></tr>
+<tr><td class="col-key"><strong>重新连接</strong></td><td>连接断开时自动重连。</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="设置·设备标签页中的 FunOSR 相关项目" loading="lazy" src="../assets/img/settings-device-funosr.webp"/></div>
+<figcaption>速度限制、Twist 静音模式、停止行为与安全启动时间集中在同一界面。</figcaption>
+</figure>
+<figure>
+<div class="shot"><video aria-label="速度限制演示" data-src="../assets/video/speed-limit.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>应用速度限制后的样子。</figcaption>
+</figure>
+<h2 id="fo-test">轴测试与居中<a aria-label="本节链接" class="anchor" href="#fo-test">#</a></h2>
+<p>要确认轴是否接对，并不需要播放视频。在设置 → 设备最下方的 <strong>Device Test Panel</strong> 中点击 <code>L0</code>、<code>V0</code>、<code>V1</code>、<code>R0</code> 按钮，就能直接向该轴发送一条短指令。<code>Stop</code> 可立即停止，<strong>居中指令</strong>会让它回到中间。</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>确认轴是否接反了</div>
+<p>如果按 <code>L0</code> 却是旋转在动，说明轴映射错了。用这个面板逐个按一遍，立刻就能知道哪个轴接到了哪里。</p>
+</div>
+<p>想确认脚本究竟来自哪个文件、是怎么读取的，请开启 <strong>Show Script Debug Info</strong>。播放界面会显示脚本路径、来源、轴列表和已保存的偏移。</p>
+<figure>
+<div class="shot"><video aria-label="设备测试演示" data-src="../assets/video/device-test.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>直接驱动轴来确认连接。</figcaption>
+</figure>
+<h2 id="fo-sr1">SR1 相关选项<a aria-label="本节链接" class="anchor" href="#fo-sr1">#</a></h2>
+<ul>
+<li><strong>Bluetooth COM 输出</strong> — 应用 25Hz 上限与 TCode 插值，让输出更顺滑。空闲时不发送保持信号。</li>
+<li><strong>SR1 2.0 Twist 静音模式</strong> — 调整 R0 旋转速度上限以降低噪音。</li>
+</ul>
+<h2 id="fo-pause">暂停与继续<a aria-label="本节链接" class="anchor" href="#fo-pause">#</a></h2>
+<p>串口发送延迟后再继续播放，设备可能因为要一次追回落后的量而大幅跳动。v0.5.1 与 v0.6.0 加强了这一部分。</p>
+<ul>
+<li>只要设定的<strong>安全启动时间</strong>过去，继续播放的过渡就一定会结束。</li>
+<li>落后的进度会<strong>设有上限</strong>地追回，因此不会出现大跳。</li>
+<li>修复了卡在安全过渡状态、无法回到脚本的问题。</li>
+</ul>
+</article>
+<!-- ============================================ 14 REMOTE -->
+<article class="page" data-group="设备连接" data-title="手机遥控" id="page-remote">
+<h1>手机与手柄遥控</h1>
+<p class="lede">可以用专用蓝牙遥控器或手机操作播放。适合不想伸手去按键盘就完成播放、暂停、切换下一个文件的场景。</p>
+<figure>
+<div class="shot"><img alt="手机/手柄遥控设置界面" loading="lazy" src="../assets/img/ui-settings-remote.webp"/></div>
+<figcaption>设置 → 手机/手柄遥控界面。</figcaption>
+</figure>
+<h2 id="rm-prepare">连接前的准备<a aria-label="链接到此节" class="anchor" href="#rm-prepare">#</a></h2><p><strong>Android手机：</strong>通过设置中的<strong>Get Android app</strong>安装应用，然后在手机上打开遥控页面。开启蓝牙并允许应用请求的附近设备权限。打开遥控页面上的<strong>BLE开关</strong>，使手机进入等待连接状态，并记下显示的设备名称。</p><p><strong>专用遥控器：</strong>开启已安装受支持固件的设备。如果需要安装固件，请先通过设置中的<strong>Open flasher</strong>按对应设备的说明操作。也要开启电脑蓝牙，然后执行下方配对步骤。</p><h2 id="rm-pair">配对<a aria-label="本节链接" class="anchor" href="#rm-pair">#</a></h2>
+<ol class="steps">
+<li>
+<h3>打开设置</h3>
+<p>进入<strong>设置 → 手机/手柄遥控</strong>。</p>
+</li>
+<li>
+<h3>连接</h3>
+<p>在电脑上点击<strong>Connect</strong>，然后在设备选择窗口中选择手机上显示的名称或专用遥控器。</p>
+</li>
+<li>
+<h3>输入 6 位验证码</h3>
+<p>输入遥控器屏幕上显示的<strong>6 位配对码</strong>，然后点 <strong>Pair</strong>。</p>
+</li>
+</ol>
+<p>配对完成后会显示状态、固件、电池和令牌信息。配对过一次的遥控器之后会<strong>自动重连</strong>。</p>
+<h2 id="rm-buttons">按键映射<a aria-label="本节链接" class="anchor" href="#rm-buttons">#</a></h2>
+<p>A、B、C 三个按键可以分别设定<strong>单击、双击、长按</strong>的动作。默认值如下。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>按键</th><th>单击</th><th>双击</th><th>长按</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>A</strong></td><td>播放 / 暂停</td><td>无</td><td>无</td></tr>
+<tr><td class="col-key"><strong>B</strong></td><td>下一个视频</td><td>无</td><td>无</td></tr>
+<tr><td class="col-key"><strong>C</strong></td><td>上一个视频</td><td>无</td><td>无</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>因设备而异</div>
+<p>在 M5Stick S3 这类缺少部分按键的设备上，不支持的映射既不会出现在列表中，也不会被发送。</p>
+</div>
+<h2 id="rm-apps">应用与固件<a aria-label="本节链接" class="anchor" href="#rm-apps">#</a></h2>
+<ul>
+<li><strong>Get Android app</strong> — 前往把手机当作遥控器使用的应用。</li>
+<li><strong>Open flasher</strong> — 打开为遥控设备刷写固件的工具。</li>
+</ul>
+</article>
+<!-- ============================================ 15 SAFETY -->
+<article class="page" data-group="设备连接" data-title="安全与紧急停止" id="page-safety">
+<h1>安全与紧急停止</h1>
+<p class="lede">既然要用设备，就必须随时能立刻让它停下。本页讲的是停止的方法，以及可以事先设定的限制。<strong>如果这是你第一次使用设备，请先读这一页。</strong></p>
+<h2 id="sf-estop">全局紧急停止（E-Stop）<a aria-label="本节链接" class="anchor" href="#sf-estop">#</a> <span class="pill pill--new">v0.6.0</span></h2>
+<p>窗口右上角的 <strong>Stop all devices</strong> 按钮。<strong>无论</strong>当前选用哪个提供方，它都会向所有已连接的设备发送停止请求。</p>
+<ul>
+<li>它会停止播放，并向 Handy、Intiface、FunOSR <strong>全部</strong>发送停止指令。</li>
+<li>停止请求有时限，不会无限等待。</li>
+<li>失败或超时的设备会<strong>留在列表中</strong>，可以重试。</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Stop all devices 按钮" loading="lazy" src="../assets/img/ui-estop.webp"/></div>
+<figcaption>右上角的 <strong>Stop all devices</strong> 就是全局紧急停止按钮。</figcaption>
+</figure>
+<p>该按钮会在<strong>设备已连接时</strong>出现在标题栏和全屏界面。是否显示可在<strong>设置 → 设备</strong>的 <strong>Show E-Stop button</strong> 中关闭。</p>
+<div class="note note--danger">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-danger"></use></svg>隐藏按钮之前</div>
+<p>即使隐藏，<strong>Intiface 管理界面中的停止控件依然保留</strong>。但那边需要先切换界面才能到达。隐藏之前请务必确认它的位置。</p>
+</div>
+<figure>
+<div class="shot"><img alt="设置·设备标签页中的 Show E-Stop button 项目" loading="lazy" src="../assets/img/settings-device-stroke.webp"/></div>
+<figcaption><strong>Show E-Stop button</strong> 位于设置 → 设备的最上方。</figcaption>
+</figure>
+<h2 id="sf-limits">事先设定的限制<a aria-label="本节链接" class="anchor" href="#sf-limits">#</a></h2>
+<p>防止意外的最好办法，是一开始就不让它动得太猛。</p>
+<dl class="deflist">
+<div>
+<dt>行程范围</dt>
+<dd>用播放栏的 <code>STR</code> 收窄运动幅度。一开始请调窄。 → <a href="#sc-stroke">使用脚本</a></dd>
+</div>
+<div>
+<dt>Custom speed limit</dt>
+<dd>以 <code>spm</code> 为单位限制各轴的最高速度。在 FunOSR 上尤其有用。 → <a href="#fo-tune">FunOSR</a></dd>
+</div>
+<div>
+<dt>Playback Start Safety</dt>
+<dd>开始播放时不会立刻全速，而是在指定时间内缓慢移动到脚本位置。</dd>
+</div>
+<div>
+<dt>保持中心的范围</dt>
+<dd>像旋转轴这种以中心为基准的轴，会保持中心不变，只收窄幅度。</dd>
+</div>
+</dl>
+<h2 id="sf-oneprovider">一次只用一个提供方<a aria-label="本节链接" class="anchor" href="#sf-oneprovider">#</a></h2>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>当前限制</div>
+<p>设备输出<strong>一次只使用一个提供方</strong>。目前还不支持同时向 Handy 和 Intiface / FunOSR 输出。</p>
+</div>
+<p>切换提供方时，会在旧连接清理完成后再接上新连接。v0.6.0 修复了从 FunOSR 切到 Handy 或 Intiface 时被清理流程卡住的问题。</p>
+<h2 id="sf-habits">建议的习惯<a aria-label="本节链接" class="anchor" href="#sf-habits">#</a></h2>
+<ul>
+<li>第一次播放新脚本时，先<strong>把范围调窄</strong>，看看动作是什么样的。</li>
+<li>先在热力图上确认<strong>红色区段</strong>在哪里。 → <a href="#timeline">时间线与热力图</a></li>
+<li>让手记住 E-Stop 按钮的位置。</li>
+<li>不要让设备开着就离开座位。</li>
+</ul>
+</article>
+<!-- ============================================ 16 EXTERNAL -->
+<article class="page" data-group="扩展功能" data-title="外部播放器" id="page-external">
+<h1>外部播放器</h1>
+<p class="lede">把在 ScriptPlayer+ 里播放不顺的文件，改用你已经在用的其他播放器打开，同时保持设备输出照常运行。 <span class="pill pill--exp">实验功能</span></p>
+<h2 id="ex-support">支持的播放器<a aria-label="本节链接" class="anchor" href="#ex-support">#</a></h2>
+<ul>
+<li>JAVPlayer</li>
+<li>JAVPlayerEZ</li>
+<li>mpv</li>
+<li>PotPlayer</li>
+<li>VLC</li>
+<li>自定义可执行文件</li>
+</ul>
+<p>在<strong>设置 → 外部播放器</strong>中配置。播放过程中可用播放栏的 <code>EXT</code> 按钮直接交接。</p>
+<h2 id="ex-limits">各播放器的差异<a aria-label="本节链接" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">左右滑动表格可查看所有列。</p><div class="table-wrap"><table><thead><tr><th>播放器</th><th>播放／暂停</th><th>播放位置／速度控制</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>支持</td><td>支持 — 从ScriptPlayer+操作</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windows上支持通过按键控制</td><td>不支持</td></tr><tr><td>自定义可执行文件</td><td>仅支持启动</td><td>不支持</td></tr></tbody></table></div><p>以v0.6.1为准。需要同步时请选择<strong>mpv或VLC</strong>，并从ScriptPlayer+控制播放、暂停和跳转。不要假定直接在外部播放器中所做的更改会反向同步。按键控制的效果可能因外部应用的快捷键设置和窗口状态而异。</p>
+<p>如果已指定 mpv 或 VLC，当 Chromium 播放失败时会自动打开该播放器。拖动时间线改变位置时，只在拖动<strong>结束时同步一次</strong>。</p>
+</article>
+<!-- ============================================ 17 FFMPEG -->
+<article class="page" data-group="扩展功能" data-title="FFmpeg 兼容播放" id="page-ffmpeg">
+<h1>FFmpeg 兼容播放</h1>
+<p class="lede">部分功能需要外部的 FFmpeg 可执行文件才能工作。FFmpeg <strong>并未随 ScriptPlayer+ 一起提供</strong>，需要你自行准备。 <span class="pill pill--exp">实验功能</span></p>
+<h2 id="ff-why">什么时候需要<a aria-label="本节链接" class="anchor" href="#ff-why">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>功能</th><th>FFmpeg 的作用</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>兼容播放</strong></td><td>播放浏览器引擎无法打开的编码格式视频。</td></tr>
+<tr><td class="col-key"><strong>内嵌字幕</strong></td><td>从视频内部取出文本字幕轨。 → <a href="#audio">音频与字幕</a></td></tr>
+<tr><td class="col-key"><strong>选择音轨</strong></td><td>从多条音轨中选择一条。</td></tr>
+<tr><td class="col-key"><strong>缩略图备用生成</strong></td><td>为 Chromium 无法解码的视频生成缩略图与悬停预览。</td></tr>
+<tr><td class="col-key"><strong>运动分析</strong></td><td>从视频生成脚本时使用。 → <a href="#scripts">使用脚本</a></td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="视频兼容警告" loading="lazy" src="../assets/img/video-warning.webp"/></div>
+<figcaption>打开无法播放的视频时会出现这样的提示。</figcaption>
+</figure>
+<h2 id="ff-install">准备方法<a aria-label="本节链接" class="anchor" href="#ff-install">#</a></h2>
+<p>ScriptPlayer+ 按以下顺序查找 FFmpeg，满足其中任意一项即可。</p>
+<ol class="steps">
+<li>
+<h3>从设置中自动安装 <span class="pill">最简单</span></h3>
+<p>可以通过设置界面的按钮，用系统的包管理器安装。Windows 用 <code>winget</code>，macOS 用 <code>Homebrew</code>，Linux 使用受支持的包管理器。<strong>只有你亲自点击时</strong>才会执行。</p>
+</li>
+<li>
+<h3>环境变量 <code>FFMPEG_PATH</code></h3>
+<p>把可执行文件路径写进这个环境变量，就会使用它。</p>
+</li>
+<li>
+<h3>常见安装路径或系统 <code>PATH</code></h3>
+<p>如果已经安装了 FFmpeg，通常会自动找到。</p>
+</li>
+<li>
+<h3>自行选择</h3>
+<p>在设置中直接指定 FFmpeg 可执行文件。自动搜索失败时最可靠的办法。</p>
+</li>
+</ol>
+<figure>
+<div class="shot"><img alt="设置·播放标签页中的 FFmpeg 设置" loading="lazy" src="../assets/img/settings-playback.webp"/></div>
+<figcaption>设置 → 播放中的 <strong>FFmpeg 设置与状态</strong>区域。找到 FFmpeg 后会以绿色显示版本和路径，并可用 <strong>Test connection</strong> 验证。</figcaption>
+</figure>
+<h2 id="ff-mode">选择兼容模式<a aria-label="本节链接" class="anchor" href="#ff-mode">#</a></h2>
+<p>在<strong>设置 → 播放</strong>的 <strong>Video Compatibility Mode</strong> 中决定介入程度。请按症状选择。</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>症状</th><th>应选</th></tr></thead>
+<tbody>
+<tr><td class="col-key">播放正常</td><td><code>Auto</code> — 只在需要时自动介入。这是默认值。</td></tr>
+<tr><td class="col-key"><strong>有画面但没声音</strong></td><td>音频兼容模式 — 只用 FFmpeg 处理声音。</td></tr>
+<tr><td class="col-key"><strong>画面全黑或根本打不开</strong></td><td>完全兼容模式 — 连视频也用 FFmpeg 处理。</td></tr>
+</tbody>
+</table>
+</div>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>更改后需要重新打开</div>
+<p>更改兼容模式后，需要<strong>关闭视频再重新打开</strong>才会生效。</p>
+</div>
+<figure>
+<div class="shot"><video aria-label="FFmpeg 兼容播放演示" data-src="../assets/video/ffmpeg-compat.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>兼容播放运行中的样子。</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>为什么不随包提供</div>
+<p>ScriptPlayer+ 的发布包中不含 FFmpeg 可执行文件，也不含 FFmpeg 源码。兼容播放、缩略图备用生成与运动分析<strong>都只使用外部可执行文件</strong>。</p>
+</div>
+</article>
+<!-- ============================================ 18 PLUGINS -->
+<article class="page" data-group="扩展功能" data-title="插件" id="page-plugins">
+<h1>插件</h1>
+<p class="lede">自行添加脚本来源的功能。<strong>默认不包含、也不推荐任何提供方。</strong>需要时由你自己安装使用。</p>
+<h2 id="pl-what">什么是 .funplugin<a aria-label="本节链接" class="anchor" href="#pl-what">#</a></h2>
+<p><code>.funplugin</code> 文件<strong>只是一个 JSON 清单</strong>。里面只包含到哪里查找脚本的信息，不含任何可执行代码。</p>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>不会执行代码</div>
+<p>ScriptPlayer+ 不会在应用内运行插件的代码。因为只读取纯数据清单，插件无法擅自操控应用。</p>
+</div>
+<h2 id="pl-install">安装与管理<a aria-label="本节链接" class="anchor" href="#pl-install">#</a></h2>
+<p>在左侧栏的<strong>插件</strong>图标中管理。安装时会验证以下内容。</p>
+<ul>
+<li><strong>清单校验</strong> — 严格检查格式是否正确。</li>
+<li><strong>权限确认</strong> — 显示它请求了什么。</li>
+<li><strong>签名</strong> — 若发布者提供了签名则进行验证。（可选）</li>
+<li><strong>信任信息展示</strong> — 把以上结果呈现给用户查看。</li>
+</ul>
+<h2 id="pl-download">下载的脚本<a aria-label="本节链接" class="anchor" href="#pl-download">#</a></h2>
+<p>通过插件获取的脚本会保存到你指定的<strong>脚本文件夹</strong>；若未指定，则保存到应用管理的目录。下载完成后会<strong>立即应用</strong>到当前正在播放的媒体。</p>
+<p>同时下载多个时，各自的进度会分别显示。</p>
+</article>
+<!-- ============================================ 19 SHORTCUTS -->
+<article class="page" data-group="参考" data-title="键盘快捷键" id="page-shortcuts">
+<h1>键盘快捷键</h1>
+<p class="lede">默认快捷键一览，以及改成自己想要的按键的方法。所有动作都可以在<strong>设置 → 键盘快捷键</strong>中重新指定。</p>
+<h2 id="ks-default">默认快捷键<a aria-label="本节链接" class="anchor" href="#ks-default">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>按键</th><th>动作</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><kbd>Space</kbd> / <kbd>K</kbd></td><td>播放 / 暂停</td></tr>
+<tr><td class="col-key"><kbd>←</kbd> / <kbd>→</kbd></td><td>后退 / 前进 5 秒</td></tr>
+<tr><td class="col-key"><kbd>Shift</kbd> + <kbd>←</kbd> / <kbd>→</kbd></td><td>后退 / 前进 10 秒</td></tr>
+<tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>音量提高 / 降低 5%</td></tr>
+<tr><td class="col-key"><kbd>F</kbd></td><td>切换全屏</td></tr>
+<tr><td class="col-key"><kbd>M</kbd></td><td>切换静音</td></tr>
+<tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>打开设置</td></tr>
+</tbody>
+</table>
+</div>
+<figure>
+<div class="shot"><img alt="键盘快捷键设置界面" loading="lazy" src="../assets/img/shortcuts.webp"/></div>
+<figcaption>设置 → 键盘快捷键界面。</figcaption>
+</figure>
+<h2 id="ks-all">可以绑定快捷键的动作<a aria-label="本节链接" class="anchor" href="#ks-all">#</a></h2>
+<p>除上面的默认值之外，还可以为以下动作绑定按键。把常用功能移到顺手的键上会快很多。</p>
+<h3 id="ks-play">播放</h3>
+<ul>
+<li>播放 / 暂停</li>
+<li>后退 5 秒 · 前进 5 秒</li>
+<li>后退 10 秒 · 前进 10 秒</li>
+<li>上一个视频 · 下一个视频</li>
+<li>跳到开头 · 跳到结尾</li>
+<li>设定区间循环起点 · 设定终点 · 打开编辑器</li>
+</ul>
+<h3 id="ks-sound">声音</h3>
+<ul>
+<li>提高音量 · 降低音量</li>
+<li>切换静音</li>
+</ul>
+<h3 id="ks-screen">画面</h3>
+<ul>
+<li>切换全屏</li>
+</ul>
+<h3 id="ks-script">脚本</h3>
+<ul>
+<li>收窄 · 放宽行程范围</li>
+<li>减小 · 增大 · 重置脚本偏移</li>
+</ul>
+<h3 id="ks-app">应用</h3>
+<ul>
+<li>打开文件夹</li>
+<li>打开设置</li>
+</ul>
+<div class="note note--tip">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>推荐</div>
+<p>如果你使用设备，建议把<strong>收窄/放宽行程范围</strong>绑定到键盘上。播放中无需移动鼠标就能立刻调整力度。</p>
+</div>
+</article>
+<!-- ============================================ 20 SETTINGS -->
+<article class="page" data-group="参考" data-title="设置指南" id="page-settings">
+<h1>设置指南</h1>
+<p class="lede">设置窗口分为十一个标签页。用 <kbd>Ctrl</kbd> + <kbd>,</kbd> 或左侧栏最下方的齿轮图标打开。哪个设置在哪个标签页，可以在这里查。</p><p>本页按设置选项卡提供概览。各功能的操作方法和注意事项请参阅链接的文档。</p>
+<figure>
+<div class="shot"><img alt="设置窗口" loading="lazy" src="../assets/img/ui-settings-remote.webp"/></div>
+<figcaption>设置窗口，左侧是标签页列表。</figcaption>
+</figure>
+<h2 id="st-tabs">各标签页的内容<a aria-label="本节链接" class="anchor" href="#st-tabs">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>标签页</th><th>这里能做什么</th></tr></thead>
+<tbody>
+<tr>
+<td class="col-key"><strong>常规</strong></td>
+<td>语言、<strong>Library folders</strong>（媒体库文件夹的添加、命名、启用/停用）、<strong>Script Storage Folder</strong>，以及更新检查方式。 → <a href="#library">媒体库</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>播放</strong></td>
+<td><strong>Auto Next Play</strong>、<strong>Video Compatibility Mode</strong> 与 FFmpeg 可执行文件路径、<strong>Audio volume boost</strong>（150%）、<strong>Auto Play After Handy Sync</strong>，以及空白区间的自动跳过与延迟。 → <a href="#ffmpeg">FFmpeg 兼容播放</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>外观</strong></td>
+<td>显示相关项、全屏控件的显示方式、不透明度与竖直位置，以及窗口置顶等窗口选项。</td>
+</tr>
+<tr>
+<td class="col-key"><strong>时间线</strong></td>
+<td>时间线对比度、按速度着色、默认高度等图形设置。 → <a href="#timeline">时间线与热力图</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>外部播放器</strong></td>
+<td>mpv、VLC、PotPlayer 等外部播放器的路径与启动选项。 → <a href="#external">外部播放器</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>设备</strong></td>
+<td>项目最多的标签页。包含 <strong>Show E-Stop button</strong>、<strong>Amplitude setting behavior</strong>、<strong>Stroke Range Min/Max</strong>、<strong>Range Extender</strong>、<strong>Inverse Stroke</strong>、<strong>Custom speed limit</strong>、<strong>FunOSR Twist Quiet Mode</strong>、<strong>Pause / Stop Behavior</strong>、<strong>Home Return Speed</strong>、<strong>Playback Start Safety</strong>、<strong>Show Script Debug Info</strong>、<strong>Device Test Panel</strong>，以及 The Handy 的连接密钥和 FunOSR 的 COM 端口。 → <a href="#handy">The Handy</a> · <a href="#funosr">FunOSR</a> · <a href="#safety">安全与紧急停止</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>Handy 网络诊断</strong></td>
+<td>测量延迟、抖动、成功率与服务器时钟偏差。 → <a href="#handy">The Handy</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>手机/手柄遥控</strong></td>
+<td>遥控器配对与 A、B、C 按键映射。 → <a href="#remote">手机遥控</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>键盘快捷键</strong></td>
+<td>所有动作的按键绑定。 → <a href="#shortcuts">键盘快捷键</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>恢复</strong></td>
+<td>重置设置与清理缓存。 → <a href="#playback">播放</a></td>
+</tr>
+<tr>
+<td class="col-key"><strong>关于</strong></td>
+<td>版本、许可与第三方声明。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="st-ffmpeg">FFmpeg 路径<a aria-label="本节链接" class="anchor" href="#st-ffmpeg">#</a></h2>
+<p>FFmpeg 可执行文件的路径在设置中显示为一行，你可以自行选择，也可以通过包管理器安装。详情见<a href="#ffmpeg">FFmpeg 兼容播放</a>。</p>
+<h2 id="st-reset">重置<a aria-label="本节链接" class="anchor" href="#st-reset">#</a></h2>
+<p><strong>恢复</strong>标签页中的整体重置不只清设置，还会一并清理缓存的时长、行程范围，以及播放器、媒体库、工作区、最近媒体和侧边栏的状态。</p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>注意</div>
+<p>重置后，你为各个媒体调好的偏移和行程范围也会消失。实际文件不会被删除。</p>
+</div>
+</article>
+<!-- ============================================ 21 FORMATS -->
+<article class="page" data-group="参考" data-title="支持的文件格式" id="page-formats">
+<h1>支持的文件格式</h1>
+<p class="lede">整理了可以打开哪些文件。</p>
+<h2 id="fm-media">媒体<a aria-label="本节链接" class="anchor" href="#fm-media">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>扩展名</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>视频</strong></td><td><code>mp4</code> · <code>mkv</code> · <code>avi</code> · <code>webm</code> · <code>mov</code> · <code>wmv</code></td></tr>
+<tr><td class="col-key"><strong>音频</strong></td><td><code>mp3</code> · <code>wav</code> · <code>flac</code> · <code>m4a</code> · <code>aac</code> · <code>ogg</code> · <code>opus</code> · <code>wma</code></td></tr>
+</tbody>
+</table>
+</div>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>扩展名对得上也可能打不开</div>
+<p>容器扩展名相同，里面的编码格式也可能不同。若无法播放，请准备<a href="#ffmpeg">FFmpeg 兼容播放</a>。</p>
+</div>
+<h2 id="fm-scripts">脚本<a aria-label="本节链接" class="anchor" href="#fm-scripts">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>格式</th><th>说明</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><code>.funscript</code></td><td>最常见的脚本格式。</td></tr>
+<tr><td class="col-key"><code>.json</code></td><td>与脚本结构相同的 JSON 文件。</td></tr>
+<tr><td class="col-key"><code>.csv</code></td><td>以表格形式保存的脚本。</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="fm-multiaxis">多轴包</h3>
+<ul>
+<li>在一个文件中用 <code>axes[]</code> 收纳各轴</li>
+<li>在一个文件中用 <code>channels{}</code> 收纳各轴</li>
+<li>每个轴一个文件 — 例如 <code>视频.L0.funscript</code>、<code>视频.R0.funscript</code></li>
+</ul>
+<h2 id="fm-subs">字幕<a aria-label="本节链接" class="anchor" href="#fm-subs">#</a></h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>类型</th><th>支持</th></tr></thead>
+<tbody>
+<tr><td class="col-key"><strong>外部字幕文件</strong></td><td><code>.srt</code> · <code>.vtt</code> · <code>.txt</code></td></tr>
+<tr><td class="col-key"><strong>内嵌文本字幕</strong></td><td>SRT · ASS/SSA · WebVTT · mov_text — <strong>需要外部 FFmpeg</strong></td></tr>
+<tr><td class="col-key"><strong>图像类字幕</strong></td><td>PGS、DVD 字幕会列出但<strong>无法显示。</strong></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="fm-naming">文件命名方式<a aria-label="本节链接" class="anchor" href="#fm-naming">#</a></h2>
+<p>自动匹配效果最好的摆放方式如下。</p>
+<pre><code>我的视频文件夹/
+├─ 作品A.mp4
+├─ 作品A.funscript          ← 会被自动识别
+├─ 作品A.srt                ← 字幕也会被自动识别
+├─ 作品B.mp4
+├─ 作品B.L0.funscript       ← 多轴：线性轴
+└─ 作品B.R0.funscript       ← 多轴：旋转轴</code></pre>
+<p>即使名称不同，也可以通过<a href="#scripts">按时长查找</a>或<a href="#scripts">脚本变体面板</a>关联起来。</p>
+</article>
+<!-- ============================================ 22 TROUBLESHOOTING -->
+<article class="page" data-group="参考" data-title="疑难解答" id="page-troubleshooting">
+<h1>疑难解答</h1>
+<p class="lede">收集了常见症状与排查顺序。请从上往下依次尝试。</p>
+<h2 id="ts-install">安装与启动<a aria-label="本节链接" class="anchor" href="#ts-install">#</a></h2>
+<h3 id="ts-smartscreen">Windows 上出现“已保护你的电脑”警告</h3>
+<p>这是因为 Windows 安装包没有 Authenticode 签名，SmartScreen 才给出的提示。点击<strong>更多信息 → 仍要运行</strong>即可安装。</p>
+<h3 id="ts-gatekeeper">macOS 上应用打不开</h3>
+<p>请在<strong>系统设置 → 隐私与安全性</strong>中点击<strong>“仍要打开”</strong>。也请确认你的系统为 macOS <strong>Monterey 12 或更高</strong>。</p>
+<h3 id="ts-linux">Linux 上无法启动</h3>
+<p>如果是 Ubuntu / Kubuntu 24.04 及以上，请安装 <strong>DEB 包</strong>。AppImage 与压缩包无法绕过系统的用户命名空间限制，而 ScriptPlayer+ 也不会用 <code>--no-sandbox</code> 自动启动。</p>
+<h2 id="ts-playback">播放<a aria-label="本节链接" class="anchor" href="#ts-playback">#</a></h2>
+<h3 id="ts-novideo">视频打不开，或者只有声音</h3>
+<ol>
+<li>先确认扩展名在支持列表中。 → <a href="#formats">支持的文件格式</a></li>
+<li>容器对得上但编码格式可能不同。请准备 <a href="#ffmpeg">FFmpeg</a> 并开启兼容播放。</li>
+<li>若仍然不行，试着用<a href="#external">外部播放器</a>打开。</li>
+</ol>
+<h3 id="ts-vrsplit">VR 视频显示成两半</h3>
+<p>这是左右分割（SBS）的视频被按平面播放了。请把投影方式设为 <strong>VR180 等距圆柱</strong>，源画面布局设为<strong>左右分割</strong>。 → <a href="#vr">VR 与 360 度视频</a></p>
+<h3 id="ts-nothumb">缩略图生成不出来</h3>
+<p>这是 Chromium 无法解码该视频的情况。只要有 <a href="#ffmpeg">FFmpeg</a>，就会用备用方式生成缩略图。</p>
+<h2 id="ts-scripts">脚本<a aria-label="本节链接" class="anchor" href="#ts-scripts">#</a></h2>
+<h3 id="ts-noscript">脚本没有被自动识别</h3>
+<ol>
+<li>确认脚本与视频在<strong>同一文件夹、同一文件名</strong>。</li>
+<li>如果单独存放，请在侧边栏指定<strong>脚本文件夹</strong>。</li>
+<li>在侧边栏点一下<strong>重新扫描</strong>。</li>
+<li>如果名称完全不同，请使用<a href="#scripts">按时长查找</a>。</li>
+</ol>
+<h3 id="ts-offset">动作比视频快或慢</h3>
+<p>通过播放栏的<code>+0ms</code>调整<a href="#sc-offset">脚本偏移</a>。动作晚了就增大数值，早了就减小。优先按脚本保存，否则按媒体文件保存。如果所有媒体都存在相同延迟，也请检查设备的时间偏移。→ <a href="#handy">The Handy</a></p>
+<h3 id="ts-variant">识别到了，但我想用另一个脚本</h3>
+<p>可以在侧边栏的 <strong>Script Variants</strong> 面板中替换。 → <a href="#scripts">使用脚本</a></p>
+<h2 id="ts-device">设备<a aria-label="本节链接" class="anchor" href="#ts-device">#</a></h2>
+<h3 id="ts-nomove">设备完全不动</h3>
+<ol>
+<li>确认脚本确实已加载。能看到时间线图形吗？</li>
+<li>确认设备的连接状态是<strong>已连接</strong>。</li>
+<li>确认行程范围没有被<strong>收窄到接近 0</strong>。 → <a href="#scripts">使用脚本</a></li>
+<li>确认没有仍处于紧急停止状态。 → <a href="#safety">安全与紧急停止</a></li>
+<li>如果是 FunOSR，用<a href="#funosr">实时轴测试</a>看硬件本身是否有反应。</li>
+</ol>
+<h3 id="ts-stutter">动作卡顿或延迟</h3>
+<ul>
+<li><strong>The Handy</strong> — 运行<a href="#handy">网络诊断</a>查看延迟与抖动。数值不佳时请尝试有线连接或换一个网络。</li>
+<li><strong>FunOSR</strong> — 试着降低更新速率。设得过高反而更不稳定。</li>
+<li><strong>Intiface</strong> — 如果同时用了多台设备，请只留一台再试。</li>
+</ul>
+<h3 id="ts-switch">无法切换到别的设备</h3>
+<p>输出<strong>一次只使用一个提供方</strong>。清理上一个连接可能需要一点时间，请等几秒再试。 → <a href="#safety">安全与紧急停止</a></p>
+<h3 id="ts-faptap">其他应用找不到 Intiface 设备</h3>
+<p>内置的 Intiface 引擎<strong>只接受一个客户端</strong>。请用 Intiface 管理界面的<strong>移交</strong>控件把控制权交出去。 → <a href="#intiface">Intiface / Buttplug</a></p>
+<h2 id="ts-reset">以上都不管用时<a aria-label="本节链接" class="anchor" href="#ts-reset">#</a></h2>
+<ol>
+<li>在<strong>设置 → 恢复</strong>中尝试重置。 → <a href="#playback">播放</a></li>
+<li>确认是否为最新版本。 → <a href="#install">安装</a></li>
+<li>到 <a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a> 提问。如果是设备问题，<a href="#handy">复制诊断信息</a>一起附上会快得多。</li>
+</ol>
+</article>
+<!-- ============================================ 23 RELEASES -->
+<article class="page" data-group="参考" data-title="版本记录" id="page-releases">
+<h1>版本记录</h1>
+<p class="lede">整理了各主要版本的变化。完整列表在 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>。</p>
+<h2 id="rl-060">v0.6.0 — 媒体库 · VR · Intiface<a aria-label="本节链接" class="anchor" href="#rl-060">#</a></h2>
+<p>这一版聚焦于大型媒体库、脚本查找、多轴控制以及安全的设备恢复。</p>
+<ul>
+<li>可命名的<strong>多个媒体库文件夹</strong>与独立启用/停用、本地与 NAS 缓存合并、顺序后台刷新</li>
+<li>会保存的媒体库筛选条件，以及<strong>单轴 / 多轴</strong>脚本分类</li>
+<li><strong>按时长排序</strong>的备选脚本查找，以及按轴替换脚本来源</li>
+<li>播放界面内的<strong>评分</strong>，以及全屏控件的显示、不透明度与位置设置</li>
+<li><strong>360 度等距圆柱、VR180、SBS、上下分割、180 度鱼眼</strong>视频观看与眼别选择，并可安全回退到平面</li>
+<li>可选内置引擎或外部 Central 的 <strong>Intiface 专用工作区</strong>，多设备选择、功能映射与电量显示</li>
+<li>轴来源联动、保持中心的轴范围，以及全局或按脚本应用的行程范围</li>
+<li>与提供方无关的<strong>全局 E-Stop</strong>、按设备的 Intiface 看门狗，以及更可靠的 FunOSR ↔ Handy/Intiface 切换</li>
+<li>改进对 CH340/CH341 与 USB <code>1A86:7523</code> 适配器的识别</li>
+<li>移除 AppImage 的 FUSE2 依赖，并为 DEB 增加 AppArmor 配置</li>
+<li>最低 macOS 版本提升至 <strong>Monterey 12</strong></li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 热修复</div>
+<p>修复了窗口高度较小时文件侧边栏被截断的问题。筛选器、脚本变体面板与文件列表现在作为同一个侧边栏一起滚动，即使面板变高，<strong>按时长匹配</strong>与<strong>按轴脚本来源</strong>依然可以触达。</p>
+</div>
+<h2 id="rl-050">v0.5.0 — 媒体库重构<a aria-label="本节链接" class="anchor" href="#rl-050">#</a></h2>
+<ul>
+<li>媒体库界面改版与缩略图菜单</li>
+<li>改进脚本变体的处理</li>
+<li>梳理音轨与字幕轨的选择流程</li>
+</ul>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 热修复</div>
+<p>修复了 FunOSR / SR 串口播放的问题。让暂停与继续不再卡在安全过渡状态，并为串口写入延迟后的追赶量设置了上限。</p>
+</div>
+<h2 id="rl-040">v0.4.0 — 插件分离与运动生成<a aria-label="本节链接" class="anchor" href="#rl-040">#</a></h2>
+<ul>
+<li>从默认安装中<strong>移除内置脚本提供方</strong> — 现在没有任何默认包含、推荐或启用的提供方。</li>
+<li>为纯数据的 <code>.funplugin</code> 清单新增<strong>插件工作区</strong></li>
+<li>通过视频运动分析<strong>生成脚本</strong>（实验功能）</li>
+<li>按轴的范围、反转、偏移、插值与速度限制配置</li>
+<li>基于 FFmpeg 的缩略图备用生成</li>
+<li>最近媒体快捷入口，以及外部字幕查找的改进</li>
+</ul>
+<h2 id="rl-030">v0.3.0 — 媒体库与多轴时间线<a aria-label="本节链接" class="anchor" href="#rl-030">#</a></h2>
+<ul>
+<li>新增带缩略图卡片、搜索、筛选与卡片尺寸调整的<strong>媒体库工作区</strong></li>
+<li>把播放器、媒体库与设置整合到同一个<strong>工作区侧栏</strong></li>
+<li><strong>多轴时间线</strong> — 多轴同时显示、All/单轴开关、双击独显、拖动调整高度</li>
+<li>新增 Handy <strong>网络诊断</strong></li>
+<li>随机运动平滑 <code>Off / Light / Balanced / Strong</code></li>
+<li>音频音量增强 <strong>150%</strong>（实验功能）</li>
+<li>遥控器自动重连与配对稳定性提升</li>
+</ul>
+<h2 id="rl-early">v0.1.x ～ v0.2.x — 早期版本<a aria-label="本节链接" class="anchor" href="#rl-early">#</a></h2>
+<ul>
+<li>新增脚本变体面板</li>
+<li>把<strong>循环</strong>与 <strong>Auto Next Play</strong> 拆开</li>
+<li>整理随机行程的预设名称</li>
+<li>减轻文件夹扫描负担并使缓存失效</li>
+<li>新增区间循环、悬停预览与恢复菜单</li>
+<li>同版本热修复检测与应用内发布说明</li>
+</ul>
+</article>
+<!-- ============================================ 24 ABOUT -->
+<article class="page" data-group="参考" data-title="许可与链接" id="page-about">
+<h1>许可与链接</h1>
+<p class="lede">发布条款，以及可以获得帮助的地方。</p>
+<h2 id="ab-license">许可<a aria-label="本节链接" class="anchor" href="#ab-license">#</a></h2>
+<p>ScriptPlayer+ 是依据 <strong>ScriptPlayer+ End User License Agreement（EULA）</strong>发布的专有软件。商业使用、再分发、修改以及再利用项目媒体，都需要著作权人的<strong>另行书面许可</strong>。</p>
+<p>发布包中把 EULA 与第三方声明放在应用归档之外一并提供，Windows 安装程序会在安装前先显示 EULA。</p>
+<h2 id="ab-source">源码公开范围<a aria-label="本节链接" class="anchor" href="#ab-source">#</a></h2>
+<p>ScriptPlayer+ 以已签名或已打包的桌面二进制形式发布。公开仓库用于<strong>发布、更新元数据、文档与问题跟踪</strong>，完整的应用源码并不公开分发。</p>
+<h2 id="ab-links">链接<a aria-label="本节链接" class="anchor" href="#ab-links">#</a></h2>
+<div class="jump">
+<a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank"><span class="num">↓</span><span><b>下载最新版本</b><span class="d">Windows · macOS · Linux 安装包</span></span></a>
+<a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank"><span class="num">?</span><span><b>GitHub Issues</b><span class="d">问题反馈与功能建议</span></span></a>
+<a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank"><span class="num">◇</span><span><b>GitHub 仓库</b><span class="d">发布与文档</span></span></a>
+<a href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank"><span class="num">♥</span><span><b>Patreon</b><span class="d">开发动态与支持</span></span></a>
+</div>
+<h2 id="ab-thanks">致谢<a aria-label="本节链接" class="anchor" href="#ab-thanks">#</a></h2>
+<p>FunOSR 串口设备的硬件由制造商 <strong>FunOSR</strong> 提供。感谢在开发期间提供测试所用的设备。</p>
+<h2 id="ab-tech">技术栈<a aria-label="本节链接" class="anchor" href="#ab-tech">#</a></h2>
+<p>Electron · React · TypeScript · Tailwind CSS · Vite</p>
+<h2 id="ab-credits">本文档使用的资源<a aria-label="本节链接" class="anchor" href="#ab-credits">#</a></h2>
+<dl class="deflist">
+<div>
+<dt>图标</dt>
+<dd><a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
+                  — MIT 许可，© Disarto.</dd>
+</div>
+<div>
+<dt>正文字体</dt>
+<dd>
+<a href="https://sunn.us/suit/" rel="noopener noreferrer" target="_blank">SUIT</a>
+                  — SIL Open Font License 1.1, © SUNN.
+                </dd>
+</div>
+<div>
+<dt>截图与视频</dt>
+<dd>来自 ScriptPlayer+ 的实际界面录制与截图。再利用需获得著作权人许可。</dd>
+</div>
+</dl>
+<h2 id="ab-docs">关于本文档<a aria-label="本节链接" class="anchor" href="#ab-docs">#</a></h2>
+<p>本站以 ScriptPlayer+ v0.6 系列为准。应用更新后界面与说明可能有所不同，最新变化请一并查看<a href="#releases">版本记录</a>与 GitHub Releases。</p>
+</article>
+<!-- pager gets injected here -->
+<nav aria-label="上一页 / 下一页" class="pager" id="pager"></nav>
+</main>
+<!-- ================================================ TOC -->
+<aside aria-label="本页目录" class="toc" id="toc">
+<h5>本页目录</h5>
+<ul id="tocList"></ul>
+</aside>
+</div>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<p>© ScriptPlayer+ · 许可：ScriptPlayer+ EULA · 文档基于 v0.6.x</p>
+<div class="footer-links">
+<a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">发布</a>
+<a href="https://www.patreon.com/c/sioaeko0" rel="noopener noreferrer" target="_blank">Patreon</a>
+<a href="#about">许可</a>
+</div>
+</div>
+</footer>
+<!-- ================================================== SEARCH -->
+<div aria-label="搜索文档" aria-modal="true" class="search-overlay" id="searchOverlay" role="dialog">
+<div class="search-box">
+<div class="search-input-row">
+<svg aria-hidden="true" height="17" width="17"><use href="#i-search"></use></svg>
+<input autocomplete="off" id="searchInput" placeholder="请输入想查找的内容…" spellcheck="false" type="text"/>
+<span class="search-esc">ESC</span>
+</div>
+<div class="search-results" id="searchResults"></div>
+</div>
+</div>
+<!-- ================================================== LIGHTBOX -->
+<div aria-label="放大的图片" aria-modal="true" class="lightbox" id="lightbox" role="dialog">
+<button aria-label="关闭" class="lightbox-close" id="lightboxClose">
+<svg aria-hidden="true" height="18" width="18"><use href="#i-close"></use></svg>
+</button>
+</div>
+<button aria-label="返回顶部" class="totop" id="toTop">
+<svg aria-hidden="true" height="18" width="18"><use href="#i-arrow-up"></use></svg>
+</button>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>

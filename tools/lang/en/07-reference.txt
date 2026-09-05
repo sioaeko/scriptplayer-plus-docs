@@ -1,0 +1,1180 @@
+«ko»
+외부 플레이어
+«t»
+External player
+«ko»
+ScriptPlayer+ 안에서 재생이 잘 안 되는 파일을, 이미 쓰고 있는 다른 플레이어로 열면서
+              장치 출력은 그대로 유지하는 기능입니다. <span class="pill pill--exp">실험 기능</span>
+«t»
+Opens a file that will not play well inside ScriptPlayer+ in a player you already use,
+              while keeping device output running. <span class="pill pill--exp">Experimental</span>
+«ko»
+지원하는 플레이어<a aria-label="이 항목 링크" class="anchor" href="#ex-support">#</a>
+«t»
+Supported players<a aria-label="Link to this section" class="anchor" href="#ex-support">#</a>
+«ko»
+사용자 지정 실행 파일
+«t»
+A custom executable
+«ko»
+설정은 <strong>설정 → 외부 플레이어</strong>에서 합니다. 재생 중에는 재생바의 <code>EXT</code> 버튼으로 바로 넘길 수 있습니다.
+«t»
+Configure it in <strong>Settings → External Viewer</strong>. During playback, <code>EXT</code> on the playback bar hands the file over.
+«ko»
+플레이어마다 다른 점<a aria-label="이 항목 링크" class="anchor" href="#ex-limits">#</a>
+«t»
+What differs between players<a aria-label="Link to this section" class="anchor" href="#ex-limits">#</a>
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>알아 두세요
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Worth knowing
+«ko»
+외부 플레이어 모드는 지원 대상을 <strong>모두 실행할 수 있지만</strong>,
+                재생 제어와 동기화가 얼마나 깊게 되는지는 <strong>플레이어마다 다릅니다.</strong>
+                어떤 플레이어는 재생·정지까지 따라오고, 어떤 플레이어는 실행만 됩니다.
+«t»
+External viewer mode <strong>launches every supported target</strong>, but
+                how deeply transport control and synchronisation reach <strong>varies by player</strong>.
+                Some follow play and pause; others merely launch.
+«ko»
+mpv나 VLC를 지정해 두었다면, Chromium 재생이 실패했을 때 자동으로 그 플레이어를 열어 줍니다.
+              타임라인을 끌어 위치를 옮긴 경우, 드래그가 <strong>끝났을 때 한 번만</strong> 동기화합니다.
+«t»
+If you have configured mpv or VLC, it opens that player automatically when Chromium playback fails.
+              When you drag the timeline, it synchronises <strong>once, when the drag is committed</strong>.
+«ko»
+FFmpeg 호환 재생
+«t»
+FFmpeg playback
+«ko»
+일부 기능은 외부 FFmpeg 실행 파일이 있어야 동작합니다.
+              FFmpeg는 ScriptPlayer+에 <strong>포함되어 있지 않으므로</strong> 따로 준비해야 합니다.
+              <span class="pill pill--exp">실험 기능</span>
+«t»
+Some features need an external FFmpeg executable.
+              FFmpeg is <strong>not bundled</strong> with ScriptPlayer+, so you have to supply it.
+              <span class="pill pill--exp">Experimental</span>
+«ko»
+언제 필요한가<a aria-label="이 항목 링크" class="anchor" href="#ff-why">#</a>
+«t»
+When you need it<a aria-label="Link to this section" class="anchor" href="#ff-why">#</a>
+«ko»
+FFmpeg가 하는 일
+«t»
+What FFmpeg does
+«ko»
+<strong>호환 재생</strong>
+«t»
+<strong>Compatibility playback</strong>
+«ko»
+브라우저 엔진이 못 여는 코덱의 영상을 재생합니다.
+«t»
+Plays video in codecs the browser engine cannot open.
+«ko»
+<strong>내장 자막</strong>
+«t»
+<strong>Embedded subtitles</strong>
+«ko»
+영상 안의 텍스트 자막 트랙을 꺼내 옵니다. → <a href="#audio">오디오와 자막</a>
+«t»
+Extracts text subtitle tracks from inside the video. → <a href="#audio">Audio and subtitles</a>
+«ko»
+<strong>오디오 트랙 선택</strong>
+«t»
+<strong>Audio track selection</strong>
+«ko»
+여러 오디오 트랙 중 하나를 고릅니다.
+«t»
+Picks one of several audio tracks.
+«ko»
+<strong>썸네일 대체 생성</strong>
+«t»
+<strong>Thumbnail fallback</strong>
+«ko»
+Chromium이 디코딩하지 못하는 영상의 썸네일·호버 미리보기를 만듭니다.
+«t»
+Builds thumbnails and hover previews for video Chromium cannot decode.
+«ko»
+<strong>모션 분석</strong>
+«t»
+<strong>Motion analysis</strong>
+«ko»
+영상에서 스크립트를 만들 때 씁니다. → <a href="#scripts">스크립트 다루기</a>
+«t»
+Used when generating a script from video. → <a href="#scripts">Working with scripts</a>
+«ko»
+재생할 수 없는 영상을 열면 이런 안내가 나옵니다.
+«t»
+Opening a video it cannot play produces this notice.
+«ko»
+준비하는 방법<a aria-label="이 항목 링크" class="anchor" href="#ff-install">#</a>
+«t»
+How to supply it<a aria-label="Link to this section" class="anchor" href="#ff-install">#</a>
+«ko»
+ScriptPlayer+는 다음 순서로 FFmpeg를 찾습니다. 어느 하나만 충족하면 됩니다.
+«t»
+ScriptPlayer+ looks for FFmpeg in this order. Any one of them is enough.
+«ko»
+설정에서 자동 설치 <span class="pill">가장 쉬움</span>
+«t»
+Install from Settings <span class="pill">easiest</span>
+«ko»
+설정 화면의 버튼으로 운영체제 패키지 관리자를 통해 설치할 수 있습니다.
+                  Windows는 <code>winget</code>, macOS는 <code>Homebrew</code>, Linux는 지원되는 패키지 관리자를 씁니다.
+                  <strong>사용자가 직접 눌렀을 때만</strong> 실행됩니다.
+«t»
+A button in Settings installs it through your operating system's package manager —
+                  <code>winget</code> on Windows, <code>Homebrew</code> on macOS, a supported package manager on Linux.
+                  It runs <strong>only when you press it yourself</strong>.
+«ko»
+환경 변수 <code>FFMPEG_PATH</code>
+«t»
+The <code>FFMPEG_PATH</code> environment variable
+«ko»
+실행 파일 경로를 이 환경 변수에 지정해 두면 그것을 씁니다.
+«t»
+Point this variable at the executable and it will be used.
+«ko»
+일반 설치 경로 또는 시스템 <code>PATH</code>
+«t»
+A common install location or the system <code>PATH</code>
+«ko»
+이미 FFmpeg가 설치되어 있다면 대개 자동으로 찾습니다.
+«t»
+If FFmpeg is already installed, it is usually found automatically.
+«ko»
+직접 고르기
+«t»
+Select it yourself
+«ko»
+설정에서 FFmpeg 실행 파일을 직접 지정합니다. 자동 검색이 실패했을 때 확실한 방법입니다.
+«t»
+Choose the FFmpeg executable in Settings. The sure route when auto-detection fails.
+«ko»
+설정 → 재생의 <strong>FFmpeg 설정 및 상태</strong> 영역입니다.
+                FFmpeg를 찾으면 버전과 경로가 초록색으로 표시되고, <strong>Test connection</strong>으로 확인할 수 있습니다.
+«t»
+The <strong>FFmpeg setup and status</strong> area in Settings → Playback.
+                When FFmpeg is found, its version and path show in green, and <strong>Test connection</strong> verifies it.
+«ko»
+호환 모드 고르기<a aria-label="이 항목 링크" class="anchor" href="#ff-mode">#</a>
+«t»
+Choosing a compatibility mode<a aria-label="Link to this section" class="anchor" href="#ff-mode">#</a>
+«ko»
+<strong>설정 → 재생</strong>의 <strong>Video Compatibility Mode</strong>에서 얼마나 개입할지 정합니다.
+              증상에 따라 고르세요.
+«t»
+<strong>Video Compatibility Mode</strong> in <strong>Settings → Playback</strong> sets how far it intervenes.
+              Pick by symptom.
+«ko»
+증상
+«t»
+Symptom
+«ko»
+고를 것
+«t»
+Choose
+«ko»
+잘 재생됨
+«t»
+Plays fine
+«ko»
+<code>Auto</code> — 필요할 때만 알아서 개입합니다. 기본값입니다.
+«t»
+<code>Auto</code> — steps in only when needed. The default.
+«ko»
+<strong>화면은 나오는데 소리가 안 남</strong>
+«t»
+<strong>Picture but no sound</strong>
+«ko»
+오디오 호환 모드 — 소리만 FFmpeg로 처리합니다.
+«t»
+Audio compatibility — only the sound goes through FFmpeg.
+«ko»
+<strong>화면이 검거나 아예 안 열림</strong>
+«t»
+<strong>Black picture, or will not open at all</strong>
+«ko»
+전체 호환 모드 — 영상까지 FFmpeg로 처리합니다.
+«t»
+Full compatibility — the video goes through FFmpeg too.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>바꾼 뒤에는 다시 열어야 합니다
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Reopen after changing it
+«ko»
+호환 모드를 바꾸면 <strong>영상을 닫고 다시 열어야</strong> 적용됩니다.
+«t»
+Changing the compatibility mode takes effect only after you <strong>close and reopen the video</strong>.
+«ko»
+호환 재생이 동작하는 모습입니다.
+«t»
+Compatibility playback at work.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>패키지에 포함되지 않는 이유
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Why it is not bundled
+«ko»
+ScriptPlayer+ 릴리스 패키지에는 FFmpeg 실행 파일이나 FFmpeg 소스가 들어 있지 않습니다.
+                호환 재생·썸네일 대체·모션 분석은 <strong>모두 외부 실행 파일만</strong> 사용합니다.
+«t»
+ScriptPlayer+ release packages contain no FFmpeg executable and no FFmpeg source.
+                Compatibility playback, thumbnail fallback and motion analysis <strong>use only an external executable</strong>.
+«ko»
+플러그인
+«t»
+Plugins
+«ko»
+스크립트 공급자를 직접 추가하는 기능입니다.
+              <strong>기본으로 포함되거나 추천되는 공급자는 하나도 없습니다.</strong> 필요할 때 직접 설치해서 씁니다.
+«t»
+A way to add script sources yourself.
+              <strong>No provider is bundled, recommended or enabled by default.</strong> You install one when you want one.
+«ko»
+.funplugin이란<a aria-label="이 항목 링크" class="anchor" href="#pl-what">#</a>
+«t»
+What a .funplugin is<a aria-label="Link to this section" class="anchor" href="#pl-what">#</a>
+«ko»
+<code>.funplugin</code> 파일은 <strong>JSON 매니페스트일 뿐</strong>입니다.
+              어디에서 스크립트를 찾을지에 대한 정보만 담겨 있고, 실행 코드는 들어 있지 않습니다.
+«t»
+A <code>.funplugin</code> file is <strong>nothing but a JSON manifest</strong>.
+              It carries information about where to look for scripts. It contains no executable code.
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>코드를 실행하지 않습니다
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>No code is executed
+«ko»
+ScriptPlayer+는 플러그인의 코드를 앱 안에서 실행하지 않습니다.
+                데이터 전용 매니페스트만 읽기 때문에, 플러그인이 앱을 마음대로 조작할 수 없습니다.
+«t»
+ScriptPlayer+ never runs plugin code inside the app.
+                Because it only reads a data-only manifest, a plugin cannot take the app somewhere you did not ask for.
+«ko»
+설치와 관리<a aria-label="이 항목 링크" class="anchor" href="#pl-install">#</a>
+«t»
+Installing and managing<a aria-label="Link to this section" class="anchor" href="#pl-install">#</a>
+«ko»
+왼쪽 레일의 <strong>플러그인</strong> 아이콘에서 관리합니다.
+              설치할 때 다음이 검증됩니다.
+«t»
+Managed from the <strong>Plugins</strong> icon on the left rail.
+              Installation validates the following.
+«ko»
+<strong>매니페스트 검사</strong> — 형식이 올바른지 엄격하게 확인합니다.
+«t»
+<strong>Manifest validation</strong> — strict checking that the format is correct.
+«ko»
+<strong>권한 확인</strong> — 무엇을 요구하는지 표시합니다.
+«t»
+<strong>Permissions</strong> — shows what it is asking for.
+«ko»
+<strong>서명</strong> — 게시자 서명이 있으면 확인합니다. (선택 사항)
+«t»
+<strong>Signature</strong> — verified if the publisher supplied one. (Optional.)
+«ko»
+<strong>신뢰 정보 표시</strong> — 위 결과를 사용자가 볼 수 있게 보여 줍니다.
+«t»
+<strong>Trust information</strong> — surfaces all of the above so you can see it.
+«ko»
+내려받은 스크립트<a aria-label="이 항목 링크" class="anchor" href="#pl-download">#</a>
+«t»
+Downloaded scripts<a aria-label="Link to this section" class="anchor" href="#pl-download">#</a>
+«ko»
+플러그인으로 받은 스크립트는 지정해 둔 <strong>스크립트 폴더</strong>에 저장됩니다.
+              지정하지 않았다면 앱이 관리하는 폴더에 저장됩니다.
+              내려받기가 끝나면 지금 재생 중인 미디어에 <strong>즉시 적용</strong>됩니다.
+«t»
+Scripts fetched by a plugin are saved to your configured <strong>script folder</strong>,
+              or to a folder the app manages if you have not set one.
+              When a download finishes it is <strong>applied to the current media immediately</strong>.
+«ko»
+여러 개를 동시에 받을 때는 각각의 진행률이 따로 표시됩니다.
+«t»
+Concurrent downloads each show their own progress.
+«ko»
+키보드 단축키
+«t»
+Keyboard shortcuts
+«ko»
+기본 단축키 목록과, 원하는 키로 바꾸는 방법입니다.
+              모든 동작은 <strong>설정 → 키보드 단축키</strong>에서 재지정할 수 있습니다.
+«t»
+The default shortcuts, and how to rebind them.
+              Every action can be reassigned in <strong>Settings → Keyboard Shortcuts</strong>.
+«ko»
+기본 단축키<a aria-label="이 항목 링크" class="anchor" href="#ks-default">#</a>
+«t»
+Defaults<a aria-label="Link to this section" class="anchor" href="#ks-default">#</a>
+«ko»
+키
+«t»
+Key
+«ko»
+5초 뒤로 / 앞으로
+«t»
+Back / forward 5 seconds
+«ko»
+10초 뒤로 / 앞으로
+«t»
+Back / forward 10 seconds
+«ko»
+볼륨 5% 올리기 / 내리기
+«t»
+Volume up / down 5%
+«ko»
+전체화면 전환
+«t»
+Toggle fullscreen
+«ko»
+음소거 전환
+«t»
+Toggle mute
+«ko»
+설정 → 키보드 단축키 화면입니다.
+«t»
+The Settings → Keyboard Shortcuts screen.
+«ko»
+단축키를 지정할 수 있는 동작<a aria-label="이 항목 링크" class="anchor" href="#ks-all">#</a>
+«t»
+Actions you can bind<a aria-label="Link to this section" class="anchor" href="#ks-all">#</a>
+«ko»
+위 기본값 외에도 다음 동작들에 원하는 키를 붙일 수 있습니다.
+              자주 쓰는 기능은 손이 편한 키로 옮겨 두면 훨씬 빨라집니다.
+«t»
+Beyond the defaults above, you can bind keys to the following.
+              Moving what you use most onto comfortable keys makes a real difference.
+«ko»
+재생
+«t»
+Playback
+«ko»
+5초 뒤로 · 5초 앞으로
+«t»
+Back 5s · forward 5s
+«ko»
+10초 뒤로 · 10초 앞으로
+«t»
+Back 10s · forward 10s
+«ko»
+이전 영상 · 다음 영상
+«t»
+Previous video · next video
+«ko»
+맨 앞으로 · 맨 뒤로
+«t»
+Go to start · go to end
+«ko»
+구간 반복 시작점 지정 · 끝점 지정 · 편집기 열기
+«t»
+Set segment repeat start · set end · open the editor
+«ko»
+소리
+«t»
+Sound
+«ko»
+볼륨 올리기 · 내리기
+«t»
+Volume up · down
+«ko»
+화면
+«t»
+Display
+«ko»
+스크립트
+«t»
+Script
+«ko»
+스트로크 범위 줄이기 · 늘리기
+«t»
+Decrease · increase the stroke range
+«ko»
+스크립트 오프셋 줄이기 · 늘리기 · 초기화
+«t»
+Decrease · increase · reset the script offset
+«ko»
+앱
+«t»
+App
+«ko»
+폴더 열기
+«t»
+Open a folder
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>추천
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>Recommended
+«ko»
+장치를 쓴다면 <strong>스트로크 범위 줄이기/늘리기</strong>를 키보드에 붙여 두세요.
+                재생 중에 마우스를 옮기지 않고 세기를 바로 조절할 수 있습니다.
+«t»
+If you use a device, bind <strong>decrease / increase stroke range</strong> to keys.
+                You can then change the intensity mid-playback without moving the mouse.
+«ko»
+설정 전체 목록
+«t»
+Settings reference
+«ko»
+설정 창은 열한 개 탭으로 나뉘어 있습니다. <kbd>Ctrl</kbd> + <kbd>,</kbd> 또는 왼쪽 레일 맨 아래 톱니 아이콘으로 엽니다.
+              어떤 설정이 어느 탭에 있는지 여기서 찾으세요.
+«t»
+The Settings window has eleven tabs. Open it with <kbd>Ctrl</kbd> + <kbd>,</kbd> or the gear icon at the bottom of the left rail.
+              Use this page to find which tab holds what.
+«ko»
+설정 창. 왼쪽에 탭 목록이 있습니다.
+«t»
+The Settings window, with its tab list on the left.
+«ko»
+탭별 내용<a aria-label="이 항목 링크" class="anchor" href="#st-tabs">#</a>
+«t»
+Tab by tab<a aria-label="Link to this section" class="anchor" href="#st-tabs">#</a>
+«ko»
+탭
+«t»
+Tab
+«ko»
+여기서 하는 일
+«t»
+What lives here
+«ko»
+<strong>일반</strong>
+«t»
+<strong>General</strong>
+«ko»
+언어, <strong>Library folders</strong>(라이브러리 폴더 추가·이름·켜기/끄기),
+                      <strong>Script Storage Folder</strong>, 업데이트 확인 방식입니다. → <a href="#library">라이브러리</a>
+«t»
+Language, <strong>Library folders</strong> (add, name, enable or disable),
+                      <strong>Script Storage Folder</strong>, and how updates are checked. → <a href="#library">Library</a>
+«ko»
+<strong>재생</strong>
+«t»
+<strong>Playback</strong>
+«ko»
+<strong>Auto Next Play</strong>, <strong>Video Compatibility Mode</strong>와 FFmpeg 실행 파일 경로,
+                      <strong>Audio volume boost</strong>(150%), <strong>Auto Play After Handy Sync</strong>,
+                      빈 구간 자동 스킵과 지연입니다. → <a href="#ffmpeg">FFmpeg 호환 재생</a>
+«t»
+<strong>Auto Next Play</strong>, <strong>Video Compatibility Mode</strong> and the FFmpeg executable path,
+                      <strong>Audio volume boost</strong> (150%), <strong>Auto Play After Handy Sync</strong>,
+                      and automatic gap skipping with its delay. → <a href="#ffmpeg">FFmpeg playback</a>
+«ko»
+<strong>외관</strong>
+«t»
+<strong>Appearance</strong>
+«ko»
+화면 표시, 전체화면 컨트롤의 표시 방식·투명도·세로 위치, 항상 위 같은 창 옵션입니다.
+«t»
+Display options, how fullscreen controls reveal plus their opacity and vertical position, and window options such as always-on-top.
+«ko»
+<strong>타임라인</strong>
+«t»
+<strong>Timeline</strong>
+«ko»
+타임라인 대비, 속도 색상 표시, 기본 높이 등 그래프 설정입니다. → <a href="#timeline">타임라인과 히트맵</a>
+«t»
+Graph settings: contrast, speed colouring and default height. → <a href="#timeline">Timeline and heatmap</a>
+«ko»
+<strong>외부 플레이어</strong>
+«t»
+<strong>External Viewer</strong>
+«ko»
+mpv·VLC·PotPlayer 등 외부 플레이어 경로와 실행 옵션입니다. → <a href="#external">외부 플레이어</a>
+«t»
+Paths and launch options for mpv, VLC, PotPlayer and the rest. → <a href="#external">External player</a>
+«ko»
+가장 항목이 많은 탭입니다. <strong>Show E-Stop button</strong>,
+                      <strong>Amplitude setting behavior</strong>, <strong>Stroke Range Min/Max</strong>,
+                      <strong>Range Extender</strong>, <strong>Inverse Stroke</strong>,
+                      <strong>Custom speed limit</strong>, <strong>FunOSR Twist Quiet Mode</strong>,
+                      <strong>Pause / Stop Behavior</strong>, <strong>Home Return Speed</strong>,
+                      <strong>Playback Start Safety</strong>, <strong>Show Script Debug Info</strong>,
+                      <strong>Device Test Panel</strong>, 그리고 The Handy 연결 키와 FunOSR COM 포트가 있습니다.
+                      → <a href="#handy">The Handy</a> · <a href="#funosr">FunOSR</a> · <a href="#safety">안전과 비상 정지</a>
+«t»
+The busiest tab. <strong>Show E-Stop button</strong>,
+                      <strong>Amplitude setting behavior</strong>, <strong>Stroke Range Min/Max</strong>,
+                      <strong>Range Extender</strong>, <strong>Inverse Stroke</strong>,
+                      <strong>Custom speed limit</strong>, <strong>FunOSR Twist Quiet Mode</strong>,
+                      <strong>Pause / Stop Behavior</strong>, <strong>Home Return Speed</strong>,
+                      <strong>Playback Start Safety</strong>, <strong>Show Script Debug Info</strong> and
+                      <strong>Device Test Panel</strong>, plus The Handy connection key and the FunOSR COM port.
+                      → <a href="#handy">The Handy</a> · <a href="#funosr">FunOSR</a> · <a href="#safety">Safety and E-Stop</a>
+«ko»
+<strong>Handy 네트워크 진단</strong>
+«t»
+<strong>Handy Network Diagnostics</strong>
+«ko»
+지연·지터·성공률·서버 시계 오차를 측정합니다. → <a href="#handy">The Handy</a>
+«t»
+Measures latency, jitter, success rate and server clock offset. → <a href="#handy">The Handy</a>
+«ko»
+<strong>모바일/컨트롤러 리모트</strong>
+«t»
+<strong>Mobile/Controller Remote</strong>
+«ko»
+리모트 페어링과 A·B·C 버튼 매핑입니다. → <a href="#remote">모바일 리모트</a>
+«t»
+Remote pairing and the A/B/C button mapping. → <a href="#remote">Mobile remote</a>
+«ko»
+<strong>키보드 단축키</strong>
+«t»
+<strong>Keyboard Shortcuts</strong>
+«ko»
+모든 동작의 키 지정입니다. → <a href="#shortcuts">키보드 단축키</a>
+«t»
+Key bindings for every action. → <a href="#shortcuts">Keyboard shortcuts</a>
+«ko»
+<strong>복구</strong>
+«t»
+<strong>Recovery</strong>
+«ko»
+설정 초기화와 캐시 정리입니다. → <a href="#playback">재생 다루기</a>
+«t»
+Resetting settings and clearing caches. → <a href="#playback">Playback</a>
+«ko»
+<strong>정보</strong>
+«t»
+<strong>About</strong>
+«ko»
+버전, 라이선스, 서드파티 고지입니다.
+«t»
+Version, licence and third-party notices.
+«ko»
+FFmpeg 경로<a aria-label="이 항목 링크" class="anchor" href="#st-ffmpeg">#</a>
+«t»
+The FFmpeg path<a aria-label="Link to this section" class="anchor" href="#st-ffmpeg">#</a>
+«ko»
+FFmpeg 실행 파일 경로는 설정 안에서 한 줄로 표시되며, 직접 고르거나 패키지 관리자로 설치할 수 있습니다.
+              자세한 내용은 <a href="#ffmpeg">FFmpeg 호환 재생</a>에 있습니다.
+«t»
+The FFmpeg executable path appears as a single row in Settings; you can select it yourself or install through a package manager.
+              The details are under <a href="#ffmpeg">FFmpeg playback</a>.
+«ko»
+초기화<a aria-label="이 항목 링크" class="anchor" href="#st-reset">#</a>
+«t»
+Resetting<a aria-label="Link to this section" class="anchor" href="#st-reset">#</a>
+«ko»
+<strong>복구</strong> 탭의 전체 초기화는 설정뿐 아니라 캐시된 재생 시간, 스트로크 범위,
+              플레이어·라이브러리·작업 공간·최근 미디어·사이드바 상태까지 함께 정리합니다.
+«t»
+The full reset on the <strong>Recovery</strong> tab clears more than settings: cached durations, stroke ranges,
+              and the player, library, workspace, recent-media and sidebar state go with it.
+«ko»
+초기화하면 미디어별로 맞춰 둔 오프셋과 스트로크 범위도 사라집니다. 실제 파일은 지워지지 않습니다.
+«t»
+A reset also discards the per-media offsets and stroke ranges you tuned. Your actual files are not touched.
+«ko»
+지원 파일 형식
+«t»
+Supported files
+«ko»
+어떤 파일을 열 수 있는지 정리했습니다.
+«t»
+What you can open.
+«ko»
+미디어<a aria-label="이 항목 링크" class="anchor" href="#fm-media">#</a>
+«t»
+Media<a aria-label="Link to this section" class="anchor" href="#fm-media">#</a>
+«ko»
+종류
+«t»
+Type
+«ko»
+확장자
+«t»
+Extensions
+«ko»
+<strong>영상</strong>
+«t»
+<strong>Video</strong>
+«ko»
+<strong>오디오</strong>
+«t»
+<strong>Audio</strong>
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>확장자가 맞아도 안 열릴 수 있습니다
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>The right extension is no guarantee
+«ko»
+컨테이너 확장자가 같아도 안에 든 코덱은 다를 수 있습니다.
+                재생이 안 되면 <a href="#ffmpeg">FFmpeg 호환 재생</a>을 준비해 보세요.
+«t»
+Two files with the same container extension can hold different codecs.
+                If one will not play, set up <a href="#ffmpeg">FFmpeg playback</a>.
+«ko»
+스크립트<a aria-label="이 항목 링크" class="anchor" href="#fm-scripts">#</a>
+«t»
+Scripts<a aria-label="Link to this section" class="anchor" href="#fm-scripts">#</a>
+«ko»
+형식
+«t»
+Format
+«ko»
+가장 일반적인 펀스크립트 형식입니다.
+«t»
+The most common funscript format.
+«ko»
+펀스크립트와 같은 구조의 JSON 파일입니다.
+«t»
+A JSON file with the same structure as a funscript.
+«ko»
+표 형태로 저장된 스크립트입니다.
+«t»
+A script stored as a table.
+«ko»
+다축 번들
+«t»
+Multi-axis bundles
+«ko»
+한 파일에 <code>axes[]</code>로 축을 담은 형식
+«t»
+One file holding its axes in <code>axes[]</code>
+«ko»
+한 파일에 <code>channels{}</code>로 축을 담은 형식
+«t»
+One file holding its axes in <code>channels{}</code>
+«ko»
+축마다 파일이 나뉜 형식 — 예: <code>영상.L0.funscript</code>, <code>영상.R0.funscript</code>
+«t»
+One file per axis — for example <code>video.L0.funscript</code>, <code>video.R0.funscript</code>
+«ko»
+자막<a aria-label="이 항목 링크" class="anchor" href="#fm-subs">#</a>
+«t»
+Subtitles<a aria-label="Link to this section" class="anchor" href="#fm-subs">#</a>
+«ko»
+지원
+«t»
+Support
+«ko»
+<strong>외부 자막 파일</strong>
+«t»
+<strong>External subtitle files</strong>
+«ko»
+<strong>내장 텍스트 자막</strong>
+«t»
+<strong>Embedded text subtitles</strong>
+«ko»
+SRT · ASS/SSA · WebVTT · mov_text — <strong>외부 FFmpeg 필요</strong>
+«t»
+SRT · ASS/SSA · WebVTT · mov_text — <strong>external FFmpeg required</strong>
+«ko»
+<strong>이미지 기반 자막</strong>
+«t»
+<strong>Image-based subtitles</strong>
+«ko»
+PGS · DVD 자막은 목록에 보이지만 <strong>표시할 수 없습니다.</strong>
+«t»
+PGS and DVD subtitles are listed but <strong>cannot be displayed</strong>.
+«ko»
+파일 이름 규칙<a aria-label="이 항목 링크" class="anchor" href="#fm-naming">#</a>
+«t»
+Naming layout<a aria-label="Link to this section" class="anchor" href="#fm-naming">#</a>
+«ko»
+자동 매칭이 가장 잘 되는 배치는 이렇습니다.
+«t»
+This is the layout automatic matching handles best.
+«ko»
+이름이 다르더라도 <a href="#scripts">재생 시간으로 찾기</a>나
+              <a href="#scripts">스크립트 변형 패널</a>로 연결할 수 있습니다.
+«t»
+Even with different names, you can connect them via <a href="#scripts">duration matching</a>
+              or the <a href="#scripts">Script Variants panel</a>.
+«ko»
+문제 해결
+«t»
+Troubleshooting
+«ko»
+자주 나오는 증상과 확인 순서를 모았습니다. 위에서부터 차례로 시도해 보세요.
+«t»
+Common symptoms and the order to check things. Work down from the top.
+«ko»
+설치 · 실행<a aria-label="이 항목 링크" class="anchor" href="#ts-install">#</a>
+«t»
+Installing and launching<a aria-label="Link to this section" class="anchor" href="#ts-install">#</a>
+«ko»
+Windows에서 “PC 보호” 경고가 뜹니다
+«t»
+Windows shows a “protected your PC” warning
+«ko»
+Windows 패키지에 Authenticode 서명이 없어서 SmartScreen이 띄우는 안내입니다.
+              <strong>추가 정보 → 실행</strong>을 누르면 설치할 수 있습니다.
+«t»
+That is SmartScreen reacting to the Windows packages not being Authenticode signed.
+              Click <strong>More info → Run anyway</strong> to install.
+«ko»
+macOS에서 앱이 열리지 않습니다
+«t»
+The app will not open on macOS
+«ko»
+<strong>시스템 설정 → 개인정보 보호 및 보안</strong>에서 <strong>“확인 없이 열기”</strong>를 누르세요.
+              macOS <strong>Monterey 12 이상</strong>이 필요하다는 점도 확인해 주세요.
+«t»
+Press <strong>“Open Anyway”</strong> in <strong>System Settings → Privacy &amp; Security</strong>.
+              Also check that you are on macOS <strong>Monterey 12 or newer</strong>.
+«ko»
+Linux에서 실행되지 않습니다
+«t»
+It will not run on Linux
+«ko»
+Ubuntu / Kubuntu 24.04 이상이라면 <strong>DEB 패키지</strong>를 설치하세요.
+              AppImage와 압축 패키지는 시스템의 사용자 네임스페이스 제한을 우회하지 못하고,
+              ScriptPlayer+는 <code>--no-sandbox</code>로 자동 실행하지 않습니다.
+«t»
+On Ubuntu / Kubuntu 24.04 or newer, install the <strong>DEB package</strong>.
+              The AppImage and archive packages cannot get around a system-wide user-namespace restriction,
+              and ScriptPlayer+ will not launch itself with <code>--no-sandbox</code>.
+«ko»
+재생<a aria-label="이 항목 링크" class="anchor" href="#ts-playback">#</a>
+«t»
+Playback<a aria-label="Link to this section" class="anchor" href="#ts-playback">#</a>
+«ko»
+영상이 열리지 않거나 소리만 납니다
+«t»
+The video will not open, or I only get sound
+«ko»
+확장자는 지원 목록에 있는지 확인합니다. → <a href="#formats">지원 파일 형식</a>
+«t»
+Check the extension is on the supported list. → <a href="#formats">Supported files</a>
+«ko»
+컨테이너는 맞아도 코덱이 다를 수 있습니다. <a href="#ffmpeg">FFmpeg</a>를 준비하고 호환 재생을 켜 보세요.
+«t»
+The container may be right but the codec different. Supply <a href="#ffmpeg">FFmpeg</a> and turn on compatibility playback.
+«ko»
+그래도 안 되면 <a href="#external">외부 플레이어</a>로 열어 봅니다.
+«t»
+If that still fails, open it in an <a href="#external">external player</a>.
+«ko»
+VR 영상이 두 개로 갈라져 보입니다
+«t»
+My VR video shows as two images
+«ko»
+좌우 분할(SBS) 영상인데 평면으로 재생되고 있는 것입니다.
+              투영 방식을 <strong>VR180 등장방형</strong>으로, 원본 배치를 <strong>좌우 분할</strong>로 지정하세요. → <a href="#vr">VR · 360 영상</a>
+«t»
+It is a side-by-side (SBS) source being played flat.
+              Set the projection to <strong>VR180 equirectangular</strong> and the source layout to <strong>side-by-side</strong>. → <a href="#vr">VR and 360° video</a>
+«ko»
+썸네일이 안 만들어집니다
+«t»
+Thumbnails are not being generated
+«ko»
+Chromium이 그 영상을 디코딩하지 못하는 경우입니다.
+              <a href="#ffmpeg">FFmpeg</a>가 있으면 대체 방식으로 썸네일을 만들어 줍니다.
+«t»
+Chromium cannot decode that video.
+              With <a href="#ffmpeg">FFmpeg</a> available, thumbnails are built by the fallback route instead.
+«ko»
+스크립트<a aria-label="이 항목 링크" class="anchor" href="#ts-scripts">#</a>
+«t»
+Scripts<a aria-label="Link to this section" class="anchor" href="#ts-scripts">#</a>
+«ko»
+스크립트가 자동으로 안 잡힙니다
+«t»
+My script is not detected
+«ko»
+스크립트가 영상과 <strong>같은 폴더에 같은 이름</strong>으로 있는지 확인합니다.
+«t»
+Check the script sits in the <strong>same folder under the same name</strong> as the video.
+«ko»
+따로 모아 뒀다면 사이드바에서 <strong>스크립트 폴더</strong>를 지정합니다.
+«t»
+If you keep them apart, set the <strong>script folder</strong> from the sidebar.
+«ko»
+사이드바에서 <strong>다시 검사</strong>를 눌러 봅니다.
+«t»
+Press <strong>re-scan</strong> in the sidebar.
+«ko»
+이름이 전혀 다르다면 <a href="#scripts">재생 시간으로 찾기</a>를 씁니다.
+«t»
+If the names are completely different, use <a href="#scripts">duration matching</a>.
+«ko»
+움직임이 영상보다 빠르거나 느립니다
+«t»
+The motion runs ahead of or behind the video
+«ko»
+재생바 <code>+0ms</code>에서 <a href="#scripts">스크립트 오프셋</a>을 조정하세요.
+              값은 미디어별로 저장됩니다.
+              특정 영상이 아니라 <strong>전체가 일정하게</strong> 밀린다면 장치 쪽 시간 오프셋을 확인하세요. → <a href="#handy">The Handy</a>
+«t»
+Adjust the <a href="#scripts">script offset</a> from <code>+0ms</code> on the playback bar.
+              The value is stored per media file.
+              If <strong>everything</strong> is out by the same amount rather than one video, check the device's time offset. → <a href="#handy">The Handy</a>
+«ko»
+잡히긴 했는데 다른 스크립트를 쓰고 싶습니다
+«t»
+It found one, but I want a different script
+«ko»
+사이드바의 <strong>Script Variants</strong> 패널에서 바꿔 낄 수 있습니다. → <a href="#scripts">스크립트 다루기</a>
+«t»
+Swap it from the <strong>Script Variants</strong> panel in the sidebar. → <a href="#scripts">Working with scripts</a>
+«ko»
+장치<a aria-label="이 항목 링크" class="anchor" href="#ts-device">#</a>
+«t»
+Devices<a aria-label="Link to this section" class="anchor" href="#ts-device">#</a>
+«ko»
+장치가 전혀 안 움직입니다
+«t»
+The device does not move at all
+«ko»
+스크립트가 실제로 붙었는지 확인합니다. 타임라인 그래프가 보이나요?
+«t»
+Confirm a script actually loaded. Can you see the timeline graph?
+«ko»
+장치 연결 상태가 <strong>연결됨</strong>인지 확인합니다.
+«t»
+Check the device status reads <strong>connected</strong>.
+«ko»
+스트로크 범위가 <strong>0에 가깝게 좁혀져 있지</strong> 않은지 확인합니다. → <a href="#scripts">스크립트 다루기</a>
+«t»
+Make sure the stroke range is not <strong>narrowed down close to zero</strong>. → <a href="#scripts">Working with scripts</a>
+«ko»
+비상 정지를 눌러 둔 상태가 아닌지 확인합니다. → <a href="#safety">안전과 비상 정지</a>
+«t»
+Check you are not still in an E-Stop state. → <a href="#safety">Safety and E-Stop</a>
+«ko»
+FunOSR라면 <a href="#funosr">라이브 축 테스트</a>로 장치 자체가 반응하는지 봅니다.
+«t»
+On FunOSR, use the <a href="#funosr">live axis test</a> to see whether the hardware responds at all.
+«ko»
+움직임이 끊기거나 밀립니다
+«t»
+The motion stutters or lags
+«ko»
+<strong>The Handy</strong> — <a href="#handy">네트워크 진단</a>을 돌려 지연과 지터를 확인합니다. 값이 나쁘면 유선 연결이나 다른 네트워크를 시도하세요.
+«t»
+<strong>The Handy</strong> — run the <a href="#handy">network diagnostics</a> and look at latency and jitter. If they are poor, try a wired connection or a different network.
+«ko»
+<strong>FunOSR</strong> — 업데이트 레이트를 낮춰 봅니다. 너무 높으면 오히려 불안정해집니다.
+«t»
+<strong>FunOSR</strong> — lower the update rate. Set too high, it becomes less stable, not more.
+«ko»
+<strong>Intiface</strong> — 장치를 여러 개 쓰고 있다면 하나만 남기고 시험해 봅니다.
+«t»
+<strong>Intiface</strong> — if you have several devices, test with just one connected.
+«ko»
+다른 장치로 바꿀 수 없습니다
+«t»
+I cannot switch to another device
+«ko»
+출력은 <strong>한 번에 하나의 공급자만</strong> 사용합니다.
+              이전 연결이 정리되는 데 잠시 걸릴 수 있으니 몇 초 기다렸다가 다시 시도하세요. → <a href="#safety">안전과 비상 정지</a>
+«t»
+Output uses <strong>one provider at a time</strong>.
+              Tearing down the previous connection can take a moment, so wait a few seconds and try again. → <a href="#safety">Safety and E-Stop</a>
+«ko»
+다른 앱이 Intiface 장치를 못 잡습니다
+«t»
+Another app cannot reach my Intiface device
+«ko»
+내장 Intiface 엔진은 <strong>클라이언트를 하나만</strong> 받습니다.
+              Intiface 관리 화면의 <strong>핸드오프</strong> 컨트롤로 제어권을 넘겨주세요. → <a href="#intiface">Intiface / Buttplug</a>
+«t»
+The built-in Intiface engine accepts <strong>one client only</strong>.
+              Hand ownership over with the <strong>handoff</strong> control in the Intiface manager. → <a href="#intiface">Intiface / Buttplug</a>
+«ko»
+그래도 안 될 때<a aria-label="이 항목 링크" class="anchor" href="#ts-reset">#</a>
+«t»
+If none of that helps<a aria-label="Link to this section" class="anchor" href="#ts-reset">#</a>
+«ko»
+<strong>설정 → 복구</strong>에서 초기화를 시도합니다. → <a href="#playback">재생 다루기</a>
+«t»
+Try a reset from <strong>Settings → Recovery</strong>. → <a href="#playback">Playback</a>
+«ko»
+최신 버전인지 확인합니다. → <a href="#install">설치하기</a>
+«t»
+Check you are on the latest version. → <a href="#install">Install</a>
+«ko»
+<a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>에 문의합니다.
+                장치 문제라면 <a href="#handy">진단 정보를 복사해</a> 함께 올리면 훨씬 빠릅니다.
+«t»
+Ask on <a href="https://github.com/sioaeko/scriptplayer-plus/issues" rel="noopener noreferrer" target="_blank">GitHub Issues</a>.
+                For a device problem, <a href="#handy">copy the diagnostics</a> and include them — it speeds things up a lot.
+«ko»
+버전 기록
+«t»
+Release history
+«ko»
+주요 버전에서 무엇이 달라졌는지 정리했습니다.
+              전체 목록은 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>에 있습니다.
+«t»
+What changed in the major versions.
+              The complete list is on <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>.
+«ko»
+v0.6.0 — 라이브러리 · VR · Intiface<a aria-label="이 항목 링크" class="anchor" href="#rl-060">#</a>
+«t»
+v0.6.0 — library, VR, Intiface<a aria-label="Link to this section" class="anchor" href="#rl-060">#</a>
+«ko»
+큰 라이브러리, 스크립트 탐색, 다축 제어, 안전한 장치 복구에 초점을 맞춘 릴리스입니다.
+«t»
+A release focused on large libraries, script discovery, multi-axis control and safe device recovery.
+«ko»
+이름을 붙인 <strong>라이브러리 폴더 여러 개</strong>와 개별 켜기/끄기, 로컬·NAS 캐시 병합, 순차 백그라운드 갱신
+«t»
+<strong>Multiple named library folders</strong> with independent enable/disable, merged local and NAS caches, sequential background refresh
+«ko»
+저장되는 라이브러리 필터와 <strong>단일 축 / 다축</strong> 스크립트 분류
+«t»
+Persistent library filters and separate <strong>single-axis / multi-axis</strong> script categories
+«ko»
+<strong>재생 시간 기반</strong> 대체 스크립트 검색과 축별 스크립트 소스 교체
+«t»
+<strong>Duration-ranked</strong> alternative-script discovery and per-axis script source replacement
+«ko»
+재생 화면 <strong>별점</strong>, 전체화면 컨트롤 표시·투명도·위치 설정
+«t»
+In-player <strong>rating</strong>, plus configurable fullscreen control reveal, opacity and position
+«ko»
+<strong>360° 등장방형 · VR180 · SBS · 상하 분할 · 180° 어안</strong> 영상 보기와 눈 선택, 안전한 평면 복귀
+«t»
+<strong>360° equirectangular, VR180, SBS, top-and-bottom and 180° fisheye</strong> viewing with eye selection and safe flat fallback
+«ko»
+내장 엔진 또는 외부 Central을 고르는 <strong>Intiface 전용 작업 공간</strong>, 다중 장치 선택, 기능 매핑, 배터리 표시
+«t»
+A <strong>dedicated Intiface workspace</strong> with embedded-engine or external-Central mode, multi-device selection, feature mapping and battery status
+«ko»
+축 소스 연동, 중심 유지 축 범위, 전역/스크립트별 스트로크 범위 적용
+«t»
+Axis source linking, centre-preserving axis ranges, and global or per-script stroke-range scope
+«ko»
+공급자와 무관한 <strong>전역 E-Stop</strong>, 장치별 Intiface 워치독, FunOSR ↔ Handy/Intiface 전환 안정화
+«t»
+A provider-independent <strong>global E-Stop</strong>, per-device Intiface watchdogs, and more reliable FunOSR ↔ Handy/Intiface switching
+«ko»
+CH340/CH341 및 USB <code>1A86:7523</code> 어댑터 인식 개선
+«t»
+Better detection of CH340/CH341 and USB <code>1A86:7523</code> adapters
+«ko»
+AppImage의 FUSE2 의존성 제거, DEB AppArmor 프로필 추가
+«t»
+Removed the AppImage FUSE2 dependency and added a DEB AppArmor profile
+«ko»
+최소 macOS 버전이 <strong>Monterey 12</strong>로 상향
+«t»
+Minimum macOS raised to <strong>Monterey 12</strong>
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 핫픽스
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 hotfix
+«ko»
+창 높이가 낮을 때 파일 사이드바가 잘리던 문제를 고쳤습니다.
+                필터·스크립트 변형 패널·파일 목록이 하나의 사이드바로 함께 스크롤되고,
+                패널이 길어져도 <strong>재생 시간 매칭</strong>과 <strong>축별 스크립트 소스</strong>에 접근할 수 있습니다.
+«t»
+Fixed the Files sidebar being cut off in short windows.
+                The filters, Script Variants panel and file list now scroll together as one sidebar, so
+                <strong>Match by Duration</strong> and <strong>Axis Script Sources</strong> stay reachable even when the panel grows tall.
+«ko»
+v0.5.0 — 라이브러리 재구성<a aria-label="이 항목 링크" class="anchor" href="#rl-050">#</a>
+«t»
+v0.5.0 — library rebuild<a aria-label="Link to this section" class="anchor" href="#rl-050">#</a>
+«ko»
+라이브러리 화면 개편과 썸네일 메뉴
+«t»
+Reworked library screen and thumbnail menu
+«ko»
+스크립트 변형 다루기 개선
+«t»
+Better handling of script variants
+«ko»
+오디오·자막 트랙 선택 흐름 정리
+«t»
+Cleaner audio and subtitle track selection
+«ko»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 핫픽스
+«t»
+<svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 hotfix
+«ko»
+FunOSR / SR 시리얼 재생 문제를 고쳤습니다.
+                일시정지·재개가 안전 전환 상태에 갇히지 않도록 하고, 지연된 시리얼 쓰기 뒤 따라잡는 양에 상한을 두었습니다.
+«t»
+Fixed a FunOSR / SR serial playback problem.
+                Pause and resume no longer get stuck in the safety transition, and catch-up after a delayed serial write is now capped.
+«ko»
+v0.4.0 — 플러그인 분리와 모션 생성<a aria-label="이 항목 링크" class="anchor" href="#rl-040">#</a>
+«t»
+v0.4.0 — plugins split out, motion generation<a aria-label="Link to this section" class="anchor" href="#rl-040">#</a>
+«ko»
+기본 설치에서 <strong>내장 스크립트 공급자 제거</strong> — 이제 기본 포함·추천·활성화되는 공급자가 없습니다.
+«t»
+<strong>Removed the built-in script-source provider</strong> from the default install — nothing is bundled, recommended or enabled now.
+«ko»
+데이터 전용 <code>.funplugin</code> 매니페스트를 위한 <strong>플러그인 작업 공간</strong> 추가
+«t»
+Added a <strong>Plugins workspace</strong> for data-only <code>.funplugin</code> manifests
+«ko»
+영상 모션 분석으로 <strong>펀스크립트 생성</strong> (실험 기능)
+«t»
+<strong>Funscript generation</strong> from video motion analysis (experimental)
+«ko»
+축별 범위 · 반전 · 오프셋 · 보간 · 속도 제한 프로필
+«t»
+Per-axis range, inversion, offset, interpolation and speed-limit profiles
+«ko»
+FFmpeg 기반 썸네일 대체 생성
+«t»
+FFmpeg-based thumbnail fallback
+«ko»
+최근 미디어 바로가기, 외부 자막 탐색 개선
+«t»
+Recent-media shortcuts and better external subtitle discovery
+«ko»
+v0.3.0 — 라이브러리와 다축 타임라인<a aria-label="이 항목 링크" class="anchor" href="#rl-030">#</a>
+«t»
+v0.3.0 — library and multi-axis timeline<a aria-label="Link to this section" class="anchor" href="#rl-030">#</a>
+«ko»
+썸네일 카드 · 검색 · 필터 · 카드 크기 조절이 있는 <strong>라이브러리 작업 공간</strong> 신설
+«t»
+A new <strong>library workspace</strong> with thumbnail cards, search, filters and adjustable card size
+«ko»
+플레이어 · 라이브러리 · 설정을 하나의 <strong>작업 공간 레일</strong>로 통합
+«t»
+Player, library and settings unified into one <strong>workspace rail</strong>
+«ko»
+<strong>다축 타임라인</strong> — 여러 축 동시 표시, All/개별 토글, 더블클릭 솔로, 드래그 높이 조절
+«t»
+<strong>Multi-axis timeline</strong> — several axes at once, All and per-axis toggles, double-click solo, drag to resize
+«ko»
+Handy <strong>네트워크 진단</strong> 추가
+«t»
+Added Handy <strong>network diagnostics</strong>
+«ko»
+랜덤 모션 스무딩 <code>Off / Light / Balanced / Strong</code>
+«t»
+Random motion smoothing: <code>Off / Light / Balanced / Strong</code>
+«ko»
+오디오 볼륨 증폭 <strong>150%</strong> (실험 기능)
+«t»
+Audio volume boost to <strong>150%</strong> (experimental)
+«ko»
+리모트 자동 재연결과 페어링 안정화
+«t»
+Automatic remote reconnection and steadier pairing
+«ko»
+v0.1.x ~ v0.2.x — 초기 버전<a aria-label="이 항목 링크" class="anchor" href="#rl-early">#</a>
+«t»
+v0.1.x – v0.2.x — early versions<a aria-label="Link to this section" class="anchor" href="#rl-early">#</a>
+«ko»
+스크립트 변형 패널 추가
+«t»
+Added the Script Variants panel
+«ko»
+<strong>반복</strong>과 <strong>Auto Next Play</strong>를 분리
+«t»
+Split <strong>Repeat</strong> from <strong>Auto Next Play</strong>
+«ko»
+랜덤 스트로크 프리셋 이름 정리
+«t»
+Tidied the random stroke preset names
+«ko»
+폴더 스캔 경량화와 캐시 무효화
+«t»
+Lighter folder scans and cache invalidation
+«ko»
+구간 반복, 호버 미리보기, 복구 메뉴 추가
+«t»
+Added segment repeat, hover preview and the recovery menu
+«ko»
+같은 버전 핫픽스 감지와 인앱 릴리스 노트
+«t»
+Same-version hotfix detection and in-app release notes
+«ko»
+라이선스와 링크
+«t»
+License and links
+«ko»
+배포 조건과 도움을 받을 수 있는 곳입니다.
+«t»
+The distribution terms, and where to get help.
+«ko»
+라이선스<a aria-label="이 항목 링크" class="anchor" href="#ab-license">#</a>
+«t»
+License<a aria-label="Link to this section" class="anchor" href="#ab-license">#</a>
+«ko»
+ScriptPlayer+는 <strong>ScriptPlayer+ End User License Agreement(EULA)</strong> 조건으로 배포되는 독점 소프트웨어입니다.
+              상업적 사용, 재배포, 수정, 프로젝트 미디어 재사용에는 저작권자의 <strong>별도 서면 허가</strong>가 필요합니다.
+«t»
+ScriptPlayer+ is proprietary software distributed under the <strong>ScriptPlayer+ End User License Agreement (EULA)</strong>.
+              Commercial use, redistribution, modification and reuse of project media all require <strong>separate written permission</strong> from the copyright holder.
+«ko»
+패키지에는 EULA와 서드파티 고지가 애플리케이션 아카이브 바깥에 함께 들어 있고,
+              Windows 설치 프로그램은 설치 전에 EULA를 먼저 보여 줍니다.
+«t»
+Packages carry the EULA and consolidated third-party notices outside the application archive,
+              and the Windows installer presents the EULA before installing.
+«ko»
+소스 공개 범위<a aria-label="이 항목 링크" class="anchor" href="#ab-source">#</a>
+«t»
+Source availability<a aria-label="Link to this section" class="anchor" href="#ab-source">#</a>
+«ko»
+ScriptPlayer+는 서명되거나 패키징된 데스크톱 바이너리로 배포됩니다.
+              공개 저장소는 <strong>릴리스 · 업데이트 메타데이터 · 문서 · 이슈 추적</strong>에 쓰이며,
+              전체 애플리케이션 소스는 공개 배포하지 않습니다.
+«t»
+ScriptPlayer+ ships as signed or packaged desktop binaries.
+              The public repository is used for <strong>releases, update metadata, documentation and issue tracking</strong>;
+              the full application source is not publicly distributed.
+«ko»
+링크<a aria-label="이 항목 링크" class="anchor" href="#ab-links">#</a>
+«t»
+Links<a aria-label="Link to this section" class="anchor" href="#ab-links">#</a>
+«ko»
+감사의 말<a aria-label="이 항목 링크" class="anchor" href="#ab-thanks">#</a>
+«t»
+Acknowledgments<a aria-label="Link to this section" class="anchor" href="#ab-thanks">#</a>
+«ko»
+FunOSR 시리얼 장치 하드웨어는 제조사 <strong>FunOSR</strong>에서 제공해 주셨습니다.
+              개발 중 테스트에 쓰인 장비를 지원해 주셔서 감사합니다.
+«t»
+FunOSR serial device hardware was provided by the manufacturer, <strong>FunOSR</strong>.
+              Thank you for supplying the test equipment used during development.
+«ko»
+기술 스택<a aria-label="이 항목 링크" class="anchor" href="#ab-tech">#</a>
+«t»
+Tech stack<a aria-label="Link to this section" class="anchor" href="#ab-tech">#</a>
+«ko»
+이 문서에 쓰인 것<a aria-label="이 항목 링크" class="anchor" href="#ab-credits">#</a>
+«t»
+Used in these docs<a aria-label="Link to this section" class="anchor" href="#ab-credits">#</a>
+«ko»
+<a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
+                  — MIT 라이선스, © Disarto.
+«t»
+<a href="https://github.com/Disarto/disarto-icons" rel="noopener noreferrer" target="_blank">Disarto Icons</a>
+                  — MIT licence, © Disarto.
+«ko»
+본문 글꼴
+«t»
+Body typeface
+«ko»
+화면과 영상
+«t»
+Screenshots and video
+«ko»
+ScriptPlayer+ 실제 화면을 녹화·캡처한 것입니다. 재사용에는 저작권자의 허가가 필요합니다.
+«t»
+Recorded and captured from ScriptPlayer+ itself. Reuse requires permission from the copyright holder.
+«ko»
+이 문서에 대해<a aria-label="이 항목 링크" class="anchor" href="#ab-docs">#</a>
+«t»
+About these docs<a aria-label="Link to this section" class="anchor" href="#ab-docs">#</a>
+«ko»
+이 사이트는 ScriptPlayer+ v0.6 계열을 기준으로 작성되었습니다.
+              앱이 업데이트되면 화면과 설명이 다를 수 있으니, 최신 변경 사항은
+              <a href="#releases">버전 기록</a>과 GitHub Releases를 함께 확인해 주세요.
+«t»
+This site describes the ScriptPlayer+ v0.6 series.
+              Screens and wording may differ once the app updates, so check the
+              <a href="#releases">release history</a> and GitHub Releases for the latest changes.
+«ko»
+지원하는 플레이어<a aria-label="이 항목 링크" class="anchor" href="#ex-support">#</a>
+«t»
+Supported players<a aria-label="Link to this section" class="anchor" href="#ex-support">#</a>
+«ko»
+연결하기<a aria-label="이 항목 링크" class="anchor" href="#if-connect">#</a>
+«t»
+Connecting<a aria-label="Link to this section" class="anchor" href="#if-connect">#</a>
+«ko»
+축별 최대 속도를 <strong>spm</strong>(분당 전체 스트로크 횟수) 단위로 제한합니다. 전역 제한을 쓸지 축마다 따로 쓸지도 고를 수 있습니다.
+«t»
+Caps an axis's top speed in <strong>spm</strong> (full strokes per minute). You can also choose whether it follows the global limit or its own.
