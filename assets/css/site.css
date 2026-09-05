@@ -801,6 +801,10 @@ figure {
   margin: 1.6rem 0 1.8rem;
 }
 
+.figure-compact {
+  max-width: 300px;
+}
+
 .shot {
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -961,25 +965,26 @@ a.card:hover {
 .steps > li {
   counter-increment: step;
   position: relative;
-  margin: 0 0 0.85rem;
-  padding: 1.15rem 1.25rem 1.15rem 3.6rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--surface);
+  margin: 0;
+  padding: 0 0 1.6rem 2.6rem;
+}
+
+.steps > li:last-child {
+  padding-bottom: 0;
 }
 
 .steps > li::before {
   content: counter(step);
   position: absolute;
-  left: 1.15rem;
-  top: 1.1rem;
+  inset-inline-start: 0;
+  top: 0;
   width: 1.7rem;
   height: 1.7rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--violet-soft);
-  border: 1px solid rgba(167, 139, 250, 0.35);
+  background: var(--bg-soft);
+  border: 1px solid var(--line-strong);
   color: var(--violet-bright);
   font-family: var(--mono);
   font-size: 0.8rem;
@@ -1706,6 +1711,15 @@ td strong {
 
 .table-scroll-hint {
   display: none;
+}
+
+.steps > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0.85rem;
+  top: 2.05rem;
+  bottom: 0.35rem;
+  border-inline-start: 1px solid var(--line);
 }
 
 @media (max-width: 600px) {
