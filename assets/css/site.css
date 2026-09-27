@@ -33,6 +33,9 @@
   --sidebar-w: 268px;
   --toc-w: 208px;
   --content-max: 820px;
+  /* one reading width for prose, lists, steps and callouts, so their right
+     edges line up instead of stepping in and out down the page */
+  --measure: 45rem;
 
   --font: "SUIT Variable", "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic",
@@ -570,13 +573,13 @@ svg use {
   font-weight: 800;
 }
 
-.lede {
+.content .lede {
   text-wrap: pretty;
   margin: 0 0 2.4rem;
   font-size: 1.06rem;
   line-height: 1.68;
   color: var(--text-2);
-  max-width: 62ch;
+  max-width: var(--measure);
 }
 
 .content h2 {
@@ -615,7 +618,7 @@ svg use {
 .content p {
   margin: 0 0 1rem;
   color: var(--text-2);
-  max-width: 68ch;
+  max-width: var(--measure);
 }
 
 .content > p strong,
@@ -625,11 +628,15 @@ li strong {
 }
 
 .content ul,
+.content ul {
+  max-width: var(--measure);
+}
+
 .content ol {
   margin: 0 0 1.15rem;
   padding-left: 1.25rem;
   color: var(--text-2);
-  max-width: 68ch;
+  max-width: var(--measure);
 }
 
 .content li {
@@ -737,7 +744,7 @@ kbd {
   border-radius: 0 var(--radius) var(--radius) 0;
   background: var(--surface);
   font-size: 0.92rem;
-  max-width: 68ch;
+  max-width: var(--measure);
 }
 
 .note > :last-child {
@@ -922,7 +929,7 @@ a.card:hover {
 .deflist {
   margin: 1.5rem 0 1.8rem;
   border-top: 1px solid var(--line);
-  max-width: 68ch;
+  max-width: var(--measure);
 }
 
 .deflist > div {
@@ -959,7 +966,7 @@ a.card:hover {
   list-style: none;
   margin: 1.6rem 0 2rem;
   padding: 0;
-  max-width: none;
+  max-width: var(--measure);
 }
 
 .steps > li {
