@@ -143,8 +143,9 @@
 <div class="hero-cta">
 <a class="btn btn--primary" href="#quickstart">クイックスタート</a>
 <a class="btn" href="#install">インストール方法を見る</a>
+<a class="btn" href="../releases/">リリースのお知らせ</a>
 </div>
-<p class="hero-meta">Windows · macOS · Linux · このドキュメントは v0.6 系を基準にしています。</p>
+<p class="hero-meta">Windows · macOS · Linux · 正式版 v0.7.0 準拠 · 2026.10.15 更新</p>
 </div>
 <figure>
 <div class="shot">
@@ -201,7 +202,8 @@
 <h1>インストール</h1>
 <p class="lede">ScriptPlayer+ は GitHub Releases にある Windows・macOS・Linux 向けパッケージからインストールします。初回起動時に OS がセキュリティ警告を出すことがあるため、その対処も併せて記載しています。</p>
 <h2 id="install-get">ダウンロード<a aria-label="この項目へのリンク" class="anchor" href="#install-get">#</a></h2>
-<p>すべてのビルドは <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releases の最新ページ</a>で公開されます。お使いの OS に合うファイルを選んでください。</p>
+<p>最新の正式版<strong>v0.7.0</strong>は、<a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releasesの最新版ページ</a>からダウンロードできます。
+              お使いのOSに合ったファイルを選んでください。</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>プラットフォーム</th><th>パッケージ</th><th>備考</th></tr></thead>
@@ -212,9 +214,9 @@
 <td>インストールせずに使うなら、ポータブル ZIP を展開するだけで動きます。</td>
 </tr>
 <tr>
-<td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
+<td class="col-key"><span class="pill pill--mac">macOS Apple Silicon (arm64)</span></td>
 <td><code>.dmg</code> または <code>.zip</code></td>
-<td>Apple Silicon 用と Intel 用が別にあります。お使いの機種に合うほうを選んでください。</td>
+<td>v0.6.3以降、Intel Mac向けの新しいビルドは提供していません。最新のmacOSパッケージはApple Silicon向けです。</td>
 </tr>
 <tr>
 <td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
@@ -284,7 +286,10 @@
 <p>ScriptPlayer+ は、システム全体の名前空間制限に遭遇しても <code>--no-sandbox</code> で自動的に回避することはありません。ポータブル AppImage やアーカイブ版が起動しない場合は DEB パッケージを入れてください。</p>
 </div>
 <h2 id="install-update">アップデート<a aria-label="この項目へのリンク" class="anchor" href="#install-update">#</a></h2>
-<p>新しいバージョンが出るとアプリ内で通知します。通知からそのままダウンロードしてインストールでき、同じバージョン番号で出たホットフィックスも検出します。確認方法は<strong>設定 → 一般</strong>で調整します。</p>
+<p>新しい正式版は、アプリ内の更新通知で確認できます。同じバージョン番号でパッケージのみが差し替えられた場合、通知されないことがあるため、リリースのお知らせにある手動インストールの案内を確認してください。
+              更新確認の動作は<strong>設定 → 一般</strong>で変更できます。</p>
+<p>更新前にアプリを終了し、ユーザーデータフォルダーをバックアップしてください。Windowsのインストーラー版とZIP版は、保存先を別に設定しない限り同じ設定を使います。詳しい手順は<a href="https://github.com/sioaeko/scriptplayer-plus/blob/master/docs/UPDATE_AND_RECOVERY_KO.md" rel="noopener noreferrer" target="_blank">更新・復旧ガイド</a>を確認してください。</p>
+<p><strong>v0.7.1-beta.1は手動ダウンロード用のWindowsテスト版</strong>です。特定のHandyスクリプト読み込みエラーを修正しています。正式版の自動更新対象はv0.7.0のままです。該当するエラーが出る場合は、<a href="../releases/v0.7.1-beta.1.html">テスト版の案内</a>を確認してください。</p>
 <div class="media-grid cols-2">
 <figure>
 <div class="shot"><img alt="アップデート通知" loading="lazy" src="../assets/img/update-notice.webp"/></div>
@@ -435,7 +440,7 @@
 <li><strong>Add folder</strong> — フォルダーを追加します。選択ダイアログで複数まとめて選べます。</li>
 <li><strong>名前</strong> — パスの代わりに <code>Local Library</code>、<code>NAS Library</code> のようにわかりやすい名前を付けます。</li>
 <li><strong>トグル</strong> — 一時的に外したいときにオフにします。<strong>無効にしたフォルダーは設定がそのまま保存され、スキャン対象からのみ外れます。</strong></li>
-<li><strong>ごみ箱</strong> — 登録を解除するだけで、実際のファイルは削除しません。</li>
+<li><strong>登録フォルダー横のゴミ箱</strong> — フォルダーの登録のみを解除します。実際のファイルは削除しません。</li>
 </ul>
 <figure>
 <div class="shot"><img alt="設定・一般タブのライブラリフォルダー一覧" loading="lazy" src="../assets/img/settings-general.webp"/></div>
@@ -455,15 +460,78 @@
 <table>
 <thead><tr><th>機能</th><th>説明</th></tr></thead>
 <tbody>
-<tr><td class="col-key"><strong>検索</strong></td><td>タイトルとパスで探します。</td></tr>
+<tr><td class="col-key"><strong>検索</strong></td><td>ファイル名・パス・タグで検索します。</td></tr>
 <tr><td class="col-key"><strong>メディア種別</strong></td><td>映像のみ / 音声のみに分けて表示します。</td></tr>
 <tr><td class="col-key"><strong>スクリプト分類</strong></td><td>単軸スクリプトと多軸スクリプトを分けて絞り込めます。</td></tr>
 <tr><td class="col-key"><strong>評価</strong></td><td>スコアを付けた項目だけ表示します。</td></tr>
-<tr><td class="col-key"><strong>並べ替え</strong></td><td>パス・ファイル名・評価・再生時間・更新日時で並べ替えます。</td></tr>
+<tr><td class="col-key"><strong>並べ替え</strong></td><td>パス・ファイル名・評価・再生時間・更新日時・<strong>再生回数</strong>で並べ替えます。</td></tr>
+<tr><td class="col-key"><strong>表示方法</strong></td><td><strong>All files</strong>はすべてのファイルを一つの一覧に表示し、<strong>Folders</strong>はフォルダーごとに開いて表示します。</td></tr>
 </tbody>
 </table>
 </div>
 <p>再生時間で並べ替えるには長さが必要ですが、これはバックグラウンドで自動的にスキャンされます。ファイルが多いと最初は一部だけ表示され、徐々に埋まっていきます。</p>
+<h3>再生回数で並べ替える</h3>
+<p>v0.6.3以降は動画ごとの再生回数を記録します。並べ替えで<strong>Play count</strong>を選ぶと、再生回数の多い順・少ない順に表示できます。
+              カードやファイル一覧には、<code>Played 3 times</code>のように回数が表示されます。</p>
+<ul>
+<li>実際に<strong>5秒以上再生</strong>すると1回として数えます。10秒未満の動画では、長さの半分が基準です。</li>
+<li>同じファイルを開いている間は、一時停止・シーク・繰り返し再生をしても回数は増えません。</li>
+<li>記録は再起動後も保持され、<strong>更新後から</strong>蓄積されます。ファイルのパスが変わると別の動画として扱います。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="再生回数での並べ替えデモ" data-src="../assets/video/library-playcount.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>並べ替えを<strong>Play count</strong>に変更し、方向ボタンで再生回数の多い順・少ない順を切り替えます。</figcaption>
+</figure>
+<h2 id="lib-speed">スクリプトの速度で探す<a aria-label="この項目へのリンク" class="anchor" href="#lib-speed">#</a></h2>
+<p>ライブラリ上部の<strong>Speed &amp; groups</strong>を開くと、自動で一致したスクリプトの<strong>平均移動速度</strong>で動画を絞り込めます。
+              動きの遅いスクリプトや速いスクリプトだけを集めたいときに使います。</p>
+<ol>
+<li><strong>Analyze / refresh scripts</strong>を押してスクリプトを解析します。横に<code>5/5 checked · 0 unavailable</code>のように進行状況が表示されます。</li>
+<li><strong>Script speed</strong>で範囲を選びます — <code>Slow</code>（100 %/s未満）・<code>Medium</code>（100–200 %/s）・<code>Fast</code>（200 %/s以上）・<code>Custom range</code>（直接入力）・<code>Speed unknown</code>（解析値なし）。</li>
+<li>カードに解析した軸と平均速度が<code>L0 · 50.2 %/s average</code>のように表示されます。</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="スクリプト速度での検索デモ" data-src="../assets/video/library-speed.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><strong>Script speed</strong>を変更すると、選んだ速度帯の動画だけが表示されます。</figcaption>
+</figure>
+<div class="deflist">
+<div><dt>速度はどのように測りますか？</dt><dd>元のスクリプトの最初の点から最後の点まで、停止区間も含めた平均です。複数の軸が一つのファイルに含まれる場合は<code>L0</code>を優先します。再生速度やRange Extenderの設定は反映しません。</dd></div>
+<div><dt>解析はいつ行いますか？</dt><dd>ボタンを押したときだけ実行し、途中で停止できます。再生中やライブラリ以外の画面では一時停止します。結果は保存され、次回からすぐに表示されます。</dd></div>
+<div><dt>スクリプトを編集した場合</dt><dd><strong>Analyze / refresh scripts</strong>をもう一度押してください。サイズと更新日時が変わっていないファイルは保存済みの結果を再利用します。解析値がないファイルは速度範囲での絞り込みから除外されます。</dd></div>
+</div>
+<h2 id="lib-groups">検索結果をグループとして保存する<a aria-label="この項目へのリンク" class="anchor" href="#lib-groups">#</a></h2>
+<p>現在の検索結果に名前を付けて<strong>グループ</strong>として保存し、後からプレイリストとして開けます。
+              同じ<strong>Speed &amp; groups</strong>欄で操作します。</p>
+<ol>
+<li>フィルターと検索で目的の一覧を作り、<strong>New group name</strong>に名前を入力します。</li>
+<li><strong>Save N results as group</strong>を押します。</li>
+<li>保存したグループを選び、<strong>Open group</strong>を押すとプレイリストとして開きます。<strong>Rename group</strong>で名前を変更し、<strong>Remove group</strong>で削除できます。</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="グループ保存のデモ" data-src="../assets/video/library-groups.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>遅いスクリプトだけに絞った結果を<code>Slow picks</code>グループとして保存し、再び開く様子です。</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>通常のグループは保存時の一覧です</div>
+<p>通常のグループには<strong>保存した時点の検索結果</strong>が入ります。後から条件に合うファイルが増えても、自動では追加されません。
+                グループを削除しても、動画やスクリプトのファイルは残ります。</p>
+</div>
+<h2 id="lib-smart">タグとスマートグループ<a aria-label="この項目へのリンク" class="anchor" href="#lib-smart">#</a></h2>
+<p>v0.7.0以降は、カードメニューの<strong>タグを編集</strong>で、カンマ区切りのタグを付けられます。<strong>タグと再生状態</strong>で、タグや再生済みかどうかによる絞り込みができます。複数のタグを選ぶと、選択したタグをすべて持つ項目だけを表示します。</p>
+<p>タグはアプリ内に保存され、メディアやスクリプトのファイルは変更しません。ファイルのパスを基準に記録するため、アプリ外で名前や場所を変えても自動では追従しません。</p>
+<ol class="steps">
+<li><h3>条件を選ぶ</h3><p>ライブラリで検索語・タグ・評価・再生回数・スクリプト速度などの条件を選びます。</p></li>
+<li><h3>条件をスマートグループとして保存する</h3><p><strong>スマートグループ名</strong>を入力し、<strong>現在の条件を保存</strong>を押します。後から<strong>条件を適用</strong>で呼び出したり、<strong>保存した条件を更新</strong>で変更したりできます。</p></li>
+<li><h3>結果を確認する</h3><p>スマートグループは<strong>有効なライブラリ全体</strong>から条件に合う項目を探します。タグ・評価・再生回数・解析結果が変わると、結果も変わります。</p></li>
+</ol>
+<p><strong>一致する項目をプレイリストで開く</strong>で開いた一覧は、その時点の項目に固定されます。プレイリストモードではスマートグループの編集や適用はできないため、ライブラリに戻って操作してください。</p>
+<h2 id="lib-remove">一覧から除外する・ファイルを整理する<a aria-label="この項目へのリンク" class="anchor" href="#lib-remove">#</a></h2>
+<ul>
+<li><strong>ライブラリから除外</strong> — 実際のファイルはそのまま残し、一覧から非表示にします。更新後も除外状態は維持されます。</li>
+<li><strong>除外したファイルを管理 → 復元 / すべて復元</strong> — 非表示にした項目を再表示します。元のライブラリフォルダーが接続され、有効になっている必要があります。</li>
+<li><strong>ゴミ箱に移動</strong> — 実際のメディアファイルをゴミ箱へ移します。確認画面の<strong>関連スクリプト（任意）</strong>で選択したスクリプトだけを一緒に移します。他の動画でも使っているスクリプトではないか、先に確認してください。</li>
+</ul>
+<p>ファイル一覧の並べ替えは、通常は一覧全体に適用されます。フォルダー構造を維持したい場合は<strong>フォルダー内で並べ替え</strong>を有効にしてください。前・次のファイルの再生も、選んだ並び順に従います。</p>
 <h2 id="lib-cards">カードを扱う<a aria-label="この項目へのリンク" class="anchor" href="#lib-cards">#</a></h2>
 <ul>
 <li><strong>カードサイズ</strong> — スライダーで一画面に表示する数を調整します。</li>
@@ -484,6 +552,8 @@
 <figcaption>再生画面のまま評価を付けられます。</figcaption>
 </figure>
 </div>
+<h2 id="lib-storage">HDD・NASで再生が途切れる場合<a aria-label="この項目へのリンク" class="anchor" href="#lib-storage">#</a></h2>
+<p>設定の<strong>低速ストレージ互換モード（Slow Storage Compatibility）</strong>を有効にすると、ドライブごとのサムネイル処理を一つに制限し、再生中のドライブでのサムネイル生成を保留してディスクへのアクセスを減らします。初期設定はオフです。Windowsでは設定を変更した後、動画を開き直してください。</p>
 <h2 id="lib-hover">ホバープレビュー<a aria-label="この項目へのリンク" class="anchor" href="#lib-hover">#</a></h2>
 <p>ファイル一覧で項目にマウスを乗せると、<strong>ファイルを開かずに</strong>短い映像プレビューが再生されます。どんな映像かを確かめるために1つずつ開く必要が減ります。</p>
 </article>
@@ -578,8 +648,11 @@
 <article class="page" data-group="基本の使いかた" data-title="スクリプトを扱う" id="page-scripts">
 <h1>スクリプトを扱う</h1>
 <p class="lede">スクリプトの検索と読み込みから、タイミングや動作範囲の調整まで説明します。自動で読み込まれない場合や動きが想定と異なる場合は、該当する項目を確認してください。</p>
+<h2 id="sc-manual">スクリプトを手動で関連付けて保存する<a aria-label="この項目へのリンク" class="anchor" href="#sc-manual">#</a></h2>
+<p>ファイルメニューの<strong>スクリプトを選択...</strong>、またはスクリプトファイルのドロップで、現在の動画に関連付けられます。v0.7.0以降はファイル名を変更しなくても関連付けを記憶し、同じ動画を再び開いたときに優先して使います。</p>
+<p><strong>手動スクリプトを解除</strong>を選ぶと自動検索に戻ります。プレイリストの書き出し・読み込みにも、手動で指定した関連付けが含まれます。動画やスクリプトをアプリ外で移動・名前変更した場合は、関連付けをやり直す必要があることがあります。</p>
 <h2 id="sc-match">スクリプトの自動検索<a aria-label="この項目へのリンク" class="anchor" href="#sc-match">#</a></h2>
-<p>ScriptPlayer+ は次の順で一致するスクリプトを探します。</p>
+<p>手動で関連付けたスクリプトがない場合は、次の場所から一致するスクリプトを探します。</p>
 <ol class="steps">
 <li>
 <h3>同じフォルダーの同じ名前</h3>
@@ -668,6 +741,25 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>はじめて使うとき</div>
 <p>範囲を狭くして始め、慣れてきたら少しずつ広げてください。速度制限も併用するとより安全です。 → <a href="#safety">安全と緊急停止</a></p>
 </div>
+<h2 id="sc-axis-response">軸ごとの振幅と応答曲線<a aria-label="この項目へのリンク" class="anchor" href="#sc-axis-response">#</a></h2>
+<p><strong>設定 → デバイス → 軸別モーション処理</strong>で軸を選び、<strong>振幅・応答曲線</strong>で調整します。軸ごとに振幅、出力下限・上限、応答曲線を調整できます。</p>
+<ul>
+<li><strong>軸の振幅 (%)</strong> — 0–500%で調整します。初期値は100%です。出力下限・上限で最終的な動作範囲を制限できます。</li>
+<li><strong>応答曲線</strong> — 線形、階段、対数、3次多項式、平方根、漸近圧縮（tanh）から選びます。曲線の適用率とパラメーターで応答を調整します。</li>
+<li><strong>位置変換プレビュー</strong> — 入力位置がどの出力位置に変わるかを表示します。プレビューだけではデバイスは動きません。<strong>振幅・曲線をリセット</strong>で初期値に戻せます。</li>
+</ul>
+<p>増幅した動きの端を滑らかに抑えたい場合は、tanh曲線を使ってください。この場合は<strong>Range Extenderを100%</strong>にして、軸の振幅で増幅することを推奨します。</p>
+<h2 id="sc-video-profile">動画ごとにモーション設定を保存する<a aria-label="この項目へのリンク" class="anchor" href="#sc-video-profile">#</a></h2>
+<p><strong>この動画専用の設定を使う</strong>を有効にすると、現在の動画の軸ごとの範囲・反転・振幅・曲線・補間・オフセット・速度制限を個別に保存します。<strong>全体設定に戻す</strong>を選ぶと、共通設定を再び使います。</p>
+<p>動画専用設定が有効な場合、再生バーの<strong>STR</strong>によるクイック調整と設定画面は、同じ動画プロファイルの範囲・反転を変更します。編集前に<strong>全体設定を編集中 / この動画の設定を編集中</strong>の表示を確認してください。</p>
+<p><strong>Range Extenderは動画別プロファイルに含まれません。</strong>従来のスクリプト別・共通の振幅記憶設定とは別の機能です。動画別モーション設定はファイルのパスを基準に保存するため、アプリ外でファイルを移動したり名前を変えたりしても自動では追従しません。</p>
+<h2 id="sc-extender">Range Extenderのモード<a aria-label="この項目へのリンク" class="anchor" href="#sc-extender">#</a></h2>
+<p>Range Extenderは50–500%で調整でき、数値を直接入力することもできます。選んだモードはスクリプトの振幅記憶設定と一緒に保存され、最終的な出力範囲と速度制限も引き続き適用されます。</p>
+<ul>
+<li><strong>Standard</strong> — 従来の方法で増幅し、範囲を超えた部分を切り詰めます。</li>
+<li><strong>Preserve Detail</strong> — 連続した曲線で変換し、端が平らに切り詰められる現象を抑えます。</li>
+<li><strong>Endpoints</strong> — 元の位置が50%未満なら選択した最小値、50%以上なら最大値を出力します。</li>
+</ul>
 <h2 id="sc-gaps">空白区間の扱い<a aria-label="この項目へのリンク" class="anchor" href="#sc-gaps">#</a></h2>
 <p>スクリプトに動きのない長い区間があるときに使うオプションです。</p>
 <ul>
@@ -698,6 +790,13 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>参考</div>
 <p>モーション解析は実験的機能です。結果の品質は映像によって大きく変わり、生成されたスクリプトは手で整える必要がある場合があります。</p>
 </div>
+<h2 id="sc-roll-pitch">独立したランダムRoll・Pitch<a aria-label="この項目へのリンク" class="anchor" href="#sc-roll-pitch">#</a></h2>
+<p>L0スクリプトにランダムな<strong>Roll(R1)・Pitch(R2)</strong>の動きを加えられます。二つの軸の有効・無効、元の速度、範囲を個別に設定します。初期設定はオフです。</p>
+<p>該当する軸の実際のスクリプトや軸ソース連動がある場合は、そちらを優先します。ランダムな動きにも、軸ごとの範囲・反転・速度制限が適用されます。</p>
+<h2 id="sc-jev">Jev生成とスクリプトのレビュー<a aria-label="この項目へのリンク" class="anchor" href="#sc-jev">#</a></h2>
+<p><strong>スクリプトツール → Jev生成</strong>は、ランダムパターン、短い動画の解析補助、既存のfunscriptの区間レビューを提供する実験的な機能です。動画解析とレビューは<strong>0.5–24秒の区間</strong>を対象とします。</p>
+<p>別途<strong>TypeSafe APIキー</strong>が必要で、生成・レビュー時に有料のリクエストが発生します。休止だけのパターンは例外です。動画・音声・ローカルパスは送信されず、プレビューではデバイスは動きません。</p>
+<p>レビューでは元の曲線と緩和した曲線を比較し、区間ごとの選択を変更または復元してから保存します。<strong>選択した区間だけを0秒から書き出すため、対応する動画クリップと一緒に使ってください。</strong>長い動画全体の生成や、区間を全体のスクリプトに結合する機能は含まれません。自動的に品質が向上することが実証された機能ではありません。</p>
 <h2 id="sc-multiaxis">多軸スクリプト<a aria-label="この項目へのリンク" class="anchor" href="#sc-multiaxis">#</a></h2>
 <p>複数の軸を同時に使うスクリプトは、次の3つの形式に対応しています。</p>
 <ul>
@@ -861,8 +960,8 @@
 <p>The HandyをWi-Fiに接続し、機器の設定に使うアプリまたはWeb設定画面で<strong>接続キー（Connection Key）</strong>を確認します。</p>
 </li>
 <li>
-<h3>設定 → デバイスに入力する</h3>
-<p>ScriptPlayer+ の<strong>設定 → デバイス</strong>で The Handy を選び、接続キーを入力します。</p>
+<h3>Handyを追加する</h3>
+<p>左側の<strong>デバイス → The Handy → Handy デバイス</strong>でデバイス名と接続キーを入力し、<strong>追加して接続</strong>を押します。</p>
 </li>
 <li>
 <h3>接続を確認する</h3>
@@ -873,6 +972,14 @@
 <div class="shot"><video aria-label="デバイスタブのデモ" data-src="../assets/video/device-tab.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>デバイス画面でデバイスを選んで接続します。</figcaption>
 </figure>
+<h2 id="hd-multiple">複数のHandyの接続と個別の出力操作<a aria-label="この項目へのリンク" class="anchor" href="#hd-multiple">#</a></h2>
+<p>Handyは<strong>最大8台まで登録</strong>でき、同じ動画とスクリプトに連動します。準備できたデバイスから開始し、後から準備ができたデバイスは現在の再生位置から参加します。登録上限は、すべてのデバイスの機械的な同時動作を保証するものではありません。</p>
+<ul>
+<li><strong>範囲・同期</strong> — デバイスごとに出力範囲0–100%と時間オフセット±5,000msを調整します。正の値は動きを早め、負の値は遅らせます。</li>
+<li><strong>出力停止 / 出力再開 / 再試行</strong> — デバイスごとに操作します。手動で出力を停止したデバイスは、動画の再生を再開しても自動では再開しません。</li>
+<li><strong>すべてのHandy出力を停止</strong> — 接続中のすべてのHandyに停止を要求します。停止を確認できなかったデバイスは、停止を再確認するまで再生しません。</li>
+<li><strong>保存したデバイスに自動接続</strong> — 必要に応じて有効にするオプションです。キーとデバイス設定はOSの暗号化機能で保存します。暗号化が使えない場合、新しいキーはその実行中のみ保持されます。</li>
+</ul>
 <h2 id="hd-sync">同期と時間オフセット<a aria-label="この項目へのリンク" class="anchor" href="#hd-sync">#</a></h2>
 <p>The Handy は API v2 で動作します。再生を始めるとスクリプトをアップロードし、サーバーの時計に合わせて再生位置を同期します。</p>
 <div class="note note--tip">
@@ -880,6 +987,10 @@
 <p><strong>設定 → 再生</strong>の <strong>Auto Play After Handy Sync</strong> をオンにすると、アップロードと HSSP 同期が終わった瞬間に再生が始まります。毎回同期の完了を待って再生ボタンを押す必要がなくなります。</p>
 </div>
 <p>すべての動画で動きが一定に早い、または遅い場合は、デバイスの<strong>時間オフセット</strong>を確認してください。特定のスクリプトだけがずれる場合は<a href="#sc-offset">スクリプトオフセット</a>を調整します。</p>
+<p>v0.7.0はバッファリング・シーク・次の項目の再生・動画や音声の繰り返しに合わせてHandyの出力を調整します。別の動画に移るときは、新しいスクリプトの準備に時間がかかることがあります。繰り返しではアップロード済みのスクリプトを再利用しますが、クラウドへの再生命令が必要なため、境界で動きが途切れないことは保証していません。</p>
+<h2 id="hd-loading">特定のスクリプトの準備に失敗する場合<a aria-label="この項目へのリンク" class="anchor" href="#hd-loading">#</a></h2>
+<p>特定のファイルで<code>HSSP setup failed: error loading stream data</code>が繰り返し出る場合は、<a href="../releases/v0.7.1-beta.1.html">v0.7.1-beta.1テスト版の案内</a>を確認してください。このテスト版は該当するエラーの場合に限り、開始前の固定位置区間に同じ位置の補助点を一つ追加し、1回だけ再アップロードします。元のタイミング・位置・待機区間は維持します。</p>
+<p>テスト版はWindows x64 ZIPのみの提供で、正式版とは別です。実機のHandyで確認したのはアップロードと準備までで、実際の動作再生は検証していません。問題が続く場合は、診断情報と再現状況を併せて送ってください。</p>
 <h2 id="hd-diag">ネットワーク診断<a aria-label="この項目へのリンク" class="anchor" href="#hd-diag">#</a></h2>
 <p><strong>設定 → Handy ネットワーク診断</strong>で接続品質を実際に測定できます。動きがよく途切れたり遅れたりするなら、ここから確認してください。</p>
 <div class="table-wrap">
@@ -1029,6 +1140,7 @@
 <div class="shot"><video aria-label="速度制限のデモ" data-src="../assets/video/speed-limit.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>速度制限を適用した様子です。</figcaption>
 </figure>
+<p>シリアル出力では<strong>R0静音フィルター</strong>と<strong>変更された軸のみ送信</strong>も使えます。変更された軸だけを送る設定でも、定期的な全体更新と停止命令は維持されます。STRパネルで元の範囲・出力範囲・クリッピング情報を確認できます。</p>
 <h2 id="fo-test">軸テストと中央合わせ<a aria-label="この項目へのリンク" class="anchor" href="#fo-test">#</a></h2>
 <p>軸が正しくつながっているか確かめるために映像を再生する必要はありません。設定 → デバイス最下部の <strong>Device Test Panel</strong> で <code>L0</code>・<code>V0</code>・<code>V1</code>・<code>R0</code> のボタンを押すと、その軸へ短いコマンドを直接送れます。<code>Stop</code> で即座に止まり、<strong>中央位置コマンド</strong>で真ん中へ戻します。</p>
 <div class="note note--tip">
@@ -1171,7 +1283,7 @@
 <li>カスタム実行ファイル</li>
 </ul>
 <p>設定は<strong>設定 → 外部プレーヤー</strong>で行います。再生中は再生バーの <code>EXT</code> ボタンでそのまま引き渡せます。</p>
-<h2 id="ex-limits">プレーヤーごとの違い<a aria-label="この項目へのリンク" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">表を左右にスクロールするとすべての列を確認できます。</p><div class="table-wrap"><table><thead><tr><th>プレイヤー</th><th>再生・一時停止</th><th>再生位置・速度の制御</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>対応</td><td>対応 — ScriptPlayer+側で操作</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windowsでキー入力による制御に対応</td><td>非対応</td></tr><tr><td>カスタム実行ファイル</td><td>起動のみ</td><td>非対応</td></tr></tbody></table></div><p>v0.6.1を基準にしています。同期が必要なら<strong>mpvまたはVLC</strong>を選び、ScriptPlayer+側で再生・一時停止・シークを操作してください。外部プレイヤーで直接変更した状態が逆方向にも反映されるとは限りません。キー入力方式は外部アプリのショートカット設定やウィンドウの状態によって動作が異なる場合があります。</p>
+<h2 id="ex-limits">プレーヤーごとの違い<a aria-label="この項目へのリンク" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">表を左右にスクロールするとすべての列を確認できます。</p><div class="table-wrap"><table><thead><tr><th>プレイヤー</th><th>再生・一時停止</th><th>再生位置・速度の制御</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>対応</td><td>対応 — ScriptPlayer+側で操作</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windowsでキー入力による制御に対応</td><td>非対応</td></tr><tr><td>カスタム実行ファイル</td><td>起動のみ</td><td>非対応</td></tr></tbody></table></div><p>v0.7.0を基準としています。同期が必要な場合は<strong>mpvまたはVLC</strong>を選び、ScriptPlayer+から再生・一時停止・シークを操作してください。外部プレーヤーで直接変更した状態が逆方向にも反映されるとは限りません。キー入力方式の動作は、外部アプリのショートカット設定やウィンドウの状態によって変わることがあります。</p>
 <p>mpv や VLC を指定しておけば、Chromium 再生が失敗したときに自動でそのプレーヤーを開きます。タイムラインをドラッグして位置を移した場合は、ドラッグが<strong>終わったときに一度だけ</strong>同期します。</p>
 </article>
 <!-- ============================================ 17 FFMPEG -->
@@ -1281,6 +1393,7 @@
 <tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>音量を5%上げる / 下げる</td></tr>
 <tr><td class="col-key"><kbd>F</kbd></td><td>全画面の切り替え</td></tr>
 <tr><td class="col-key"><kbd>M</kbd></td><td>ミュートの切り替え</td></tr>
+<tr><td class="col-key"><kbd>0</kbd>–<kbd>9</kbd></td><td>動画・音声の0–90%の位置へ移動します。文字入力中は動作せず、既存のカスタムショートカットを優先します。</td></tr>
 <tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>設定を開く</td></tr>
 </tbody>
 </table>
@@ -1512,6 +1625,16 @@
 <article class="page" data-group="リファレンス" data-title="変更履歴" id="page-releases">
 <h1>変更履歴</h1>
 <p class="lede">主要なバージョンで何が変わったかをまとめました。全一覧は <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a> にあります。</p>
+<h2 id="rl-070">v0.7.0 — 動画別モーション設定とライブラリ整理<a aria-label="この項目へのリンク" class="anchor" href="#rl-070">#</a></h2>
+<p><strong>現在の正式版</strong>です。軸ごとの振幅・応答曲線と動画別モーション設定、手動スクリプト関連付けの保存、タグ・スマートグループ、ファイルの除外・復元、選択したスクリプトのゴミ箱への移動を追加しました。Handyのバッファリング・シーク・繰り返し処理と、FFmpeg/HLSの復旧・診断も改善しました。</p>
+<p>変更点と更新時の注意事項は、<a href="../releases/v0.7.0.html">v0.7.0リリースのお知らせ</a>で確認してください。</p>
+<h3>v0.7.1-beta.1 — Handyスクリプト読み込みテスト版</h3>
+<p>特定のHSSP読み込みエラーを修正した<strong>Windows手動ダウンロード用のプレリリース</strong>です。正式版の自動更新対象はv0.7.0です。<a href="../releases/v0.7.1-beta.1.html">テスト版のインストール・確認方法</a>を別途案内しています。</p>
+<h2 id="rl-063">v0.6.3 — 複数のHandyとライブラリ検索<a aria-label="この項目へのリンク" class="anchor" href="#rl-063">#</a></h2>
+<p>複数のHandyの接続、再生回数、スクリプト速度フィルター、通常のグループ保存、Range Extenderのモード、独立したランダムRoll・Pitch、Jev生成・レビューを追加しました。このバージョン以降、macOSの新しいビルドはApple Silicon向けのみ提供します。</p>
+<p>初期のv0.6.3には、保存したグループを開いた後にプレイリストを空にすると、ライブラリも空になる問題がありました。同じバージョン番号でパッケージが差し替えられているため、初期のパッケージをお使いの場合は最新の正式版に更新してください。</p>
+<h2 id="rl-062">v0.6.2 — 再生・ライブラリの安定性向上<a aria-label="この項目へのリンク" class="anchor" href="#rl-062">#</a></h2>
+<p>低速ストレージへの対応、ファイル検索・字幕・デバイス切り替えを改善し、ランタイム依存関係とパッケージングの検査を強化しました。詳細は<a href="https://github.com/sioaeko/scriptplayer-plus/releases/tag/v0.6.2" rel="noopener noreferrer" target="_blank">v0.6.2の変更履歴</a>を確認してください。</p>
 <h2 id="rl-060">v0.6.0 — ライブラリ・VR・Intiface<a aria-label="この項目へのリンク" class="anchor" href="#rl-060">#</a></h2>
 <p>大きなライブラリ、スクリプト探索、多軸制御、安全なデバイス復帰に重点を置いたリリースです。</p>
 <ul>
@@ -1610,7 +1733,7 @@
 </div>
 </dl>
 <h2 id="ab-docs">このドキュメントについて<a aria-label="この項目へのリンク" class="anchor" href="#ab-docs">#</a></h2>
-<p>このサイトは ScriptPlayer+ v0.6 系を基準に書かれています。アプリが更新されると画面や説明が異なる場合があるため、最新の変更点は<a href="#releases">変更履歴</a>と GitHub Releases を併せて確認してください。</p>
+<p>このサイトは2026年10月15日に確認した正式版<strong>v0.7.0</strong>を基準に作成しています。既存の画面例は以前のバージョンで撮影しているため、現在のアプリの配置や文言とは異なる場合があります。最新の変更は<a href="../releases/">リリースのお知らせ</a>と<a href="#releases">バージョン履歴</a>で確認してください。</p>
 </article>
 <!-- pager gets injected here -->
 <nav aria-label="前 / 次のページ" class="pager" id="pager"></nav>
@@ -1624,7 +1747,7 @@
 </div>
 <footer class="site-footer">
 <div class="footer-inner">
-<p>© ScriptPlayer+ · ライセンス: ScriptPlayer+ EULA · ドキュメントは v0.6.x 基準</p>
+<p>© ScriptPlayer+ · ライセンス: ScriptPlayer+ EULA · ドキュメント基準 v0.7.0</p>
 <div class="footer-links">
 <a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">リリース</a>

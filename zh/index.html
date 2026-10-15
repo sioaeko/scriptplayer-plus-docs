@@ -143,8 +143,9 @@
 <div class="hero-cta">
 <a class="btn btn--primary" href="#quickstart">快速入门</a>
 <a class="btn" href="#install">查看安装方法</a>
+<a class="btn" href="../releases/">版本公告</a>
 </div>
-<p class="hero-meta">Windows · macOS · Linux · 本文档以 v0.6 系列为准。</p>
+<p class="hero-meta">Windows · macOS · Linux · 基于正式版 v0.7.0 · 更新于 2026.10.15</p>
 </div>
 <figure>
 <div class="shot">
@@ -201,7 +202,7 @@
 <h1>安装</h1>
 <p class="lede">ScriptPlayer+ 从 GitHub Releases 上的 Windows、macOS 和 Linux 安装包安装。首次运行时系统可能弹出安全警告，下面一并给出处理方法。</p>
 <h2 id="install-get">下载<a aria-label="本节链接" class="anchor" href="#install-get">#</a></h2>
-<p>所有构建都发布在 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releases 最新页面</a>。请选择与你系统相符的文件。</p>
+<p>最新正式版 <strong>v0.7.0</strong> 可在 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releases 最新版本页面</a>下载。请选择适合您操作系统的文件。</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>平台</th><th>安装包</th><th>备注</th></tr></thead>
@@ -212,9 +213,9 @@
 <td>若不想安装，下载便携版 ZIP 解压即可运行。</td>
 </tr>
 <tr>
-<td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
+<td class="col-key"><span class="pill pill--mac">macOS Apple Silicon (arm64)</span></td>
 <td><code>.dmg</code> 或 <code>.zip</code></td>
-<td>Apple Silicon 与 Intel 的文件是分开的，请选与你机器相符的那个。</td>
+<td>从 v0.6.3 起，不再提供新的 Intel Mac 构建。最新 macOS 安装包仅适用于 Apple Silicon。</td>
 </tr>
 <tr>
 <td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
@@ -284,7 +285,9 @@
 <p>遇到系统级的命名空间限制时，ScriptPlayer+ 不会用 <code>--no-sandbox</code> 自动绕过。如果便携版 AppImage 或压缩包无法启动，请改装 DEB。</p>
 </div>
 <h2 id="install-update">更新<a aria-label="本节链接" class="anchor" href="#install-update">#</a></h2>
-<p>有新版本时应用内会提示。可以直接从提示下载安装，同一版本号发布的热修复也会被识别。检查方式在<strong>设置 → 常规</strong>中调整。</p>
+<p>新的正式版本会通过应用内更新通知提示。如果只是替换安装包而版本号不变，可能不会出现通知，请查看版本公告中的手动安装说明。更新检查方式可在<strong>设置 → 常规</strong>中调整。</p>
+<p>更新前，请退出应用并备份用户数据目录。Windows 安装版和 ZIP 版默认使用相同的设置，除非您另行隔离。具体步骤请参阅<a href="https://github.com/sioaeko/scriptplayer-plus/blob/master/docs/UPDATE_AND_RECOVERY_KO.md" rel="noopener noreferrer" target="_blank">更新与恢复指南（韩语）</a>。</p>
+<p><strong>v0.7.1-beta.1 是需要手动下载的 Windows 测试版</strong>，修复特定 Handy 脚本的加载错误。正式自动更新版本仍为 v0.7.0。如果遇到此错误，请查看<a href="../releases/v0.7.1-beta.1.html">测试版说明</a>。</p>
 <div class="media-grid cols-2">
 <figure>
 <div class="shot"><img alt="更新提示" loading="lazy" src="../assets/img/update-notice.webp"/></div>
@@ -435,7 +438,7 @@
 <li><strong>Add folder</strong> — 添加文件夹。选择对话框可一次选多个。</li>
 <li><strong>名称</strong> — 用 <code>Local Library</code>、<code>NAS Library</code> 这类易读的名字代替路径。</li>
 <li><strong>开关</strong> — 想暂时排除时关掉即可。<strong>关闭的文件夹会保留其设置，只是不再参与扫描。</strong></li>
-<li><strong>垃圾桶</strong> — 仅解除注册，不会删除实际文件。</li>
+<li><strong>已注册文件夹旁的回收站按钮</strong> — 仅取消文件夹注册，不删除实际文件。</li>
 </ul>
 <figure>
 <div class="shot"><img alt="设置·常规标签页中的媒体库文件夹列表" loading="lazy" src="../assets/img/settings-general.webp"/></div>
@@ -455,15 +458,74 @@
 <table>
 <thead><tr><th>功能</th><th>说明</th></tr></thead>
 <tbody>
-<tr><td class="col-key"><strong>搜索</strong></td><td>按标题和路径查找。</td></tr>
+<tr><td class="col-key"><strong>搜索</strong></td><td>按文件名、路径或标签搜索。</td></tr>
 <tr><td class="col-key"><strong>媒体类型</strong></td><td>分为只看视频 / 只看音频。</td></tr>
 <tr><td class="col-key"><strong>脚本分类</strong></td><td>可分别筛选单轴脚本和多轴脚本。</td></tr>
 <tr><td class="col-key"><strong>评分</strong></td><td>只显示已打分的条目。</td></tr>
-<tr><td class="col-key"><strong>排序</strong></td><td>按路径、文件名、评分、时长或修改时间排序。</td></tr>
+<tr><td class="col-key"><strong>排序</strong></td><td>按路径、文件名、评分、时长、修改时间或<strong>播放次数</strong>排序。</td></tr>
+<tr><td class="col-key"><strong>浏览方式</strong></td><td><strong>All files</strong> 将所有文件显示在同一列表中，<strong>Folders</strong> 则按文件夹逐层浏览。</td></tr>
 </tbody>
 </table>
 </div>
 <p>按时长排序需要先知道长度，这会在后台自动扫描。文件较多时一开始只显示一部分，随后逐渐填满。</p>
+<h3>按播放次数排序</h3>
+<p>从 v0.6.3 起，每个视频都会记录播放次数。选择 <strong>Play count</strong> 排序，可按播放次数从多到少或从少到多查看。卡片和文件列表会显示 <code>Played 3 times</code> 等次数信息。</p>
+<ul>
+<li>实际<strong>播放至少 5 秒</strong>才计为一次。对于不足 10 秒的视频，需播放其时长的一半。</li>
+<li>同一次打开期间，暂停、跳转和循环播放不会增加计数。</li>
+<li>记录会在重启后保留，并从<strong>更新之后</strong>开始累计。文件路径改变后，将视为另一个视频。</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="按播放次数排序演示" data-src="../assets/video/library-playcount.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>将排序切换为 <strong>Play count</strong>，再用方向按钮切换播放次数的升序和降序。</figcaption>
+</figure>
+<h2 id="lib-speed">按脚本速度查找<a aria-label="本节链接" class="anchor" href="#lib-speed">#</a></h2>
+<p>打开媒体库上方的 <strong>Speed &amp; groups</strong>，可按自动匹配脚本的<strong>平均移动速度</strong>筛选视频，便于集中查看动作较慢或较快的脚本。</p>
+<ol>
+<li>点击 <strong>Analyze / refresh scripts</strong> 分析脚本。旁边会显示 <code>5/5 checked · 0 unavailable</code> 等进度信息。</li>
+<li>在 <strong>Script speed</strong> 中选择范围：<code>Slow</code>（低于 100 %/s）、<code>Medium</code>（100–200 %/s）、<code>Fast</code>（200 %/s 及以上）、<code>Custom range</code>（手动输入）或 <code>Speed unknown</code>（无分析结果）。</li>
+<li>卡片会显示分析的轴与平均速度，例如 <code>L0 · 50.2 %/s average</code>。</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="按脚本速度搜索演示" data-src="../assets/video/library-speed.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>更改 <strong>Script speed</strong> 后，只显示符合该速度范围的视频。</figcaption>
+</figure>
+<div class="deflist">
+<div><dt>速度如何计算？</dt><dd>取原始脚本从第一个点到最后一个点之间的平均速度，包含停留区间。多轴合并文件优先使用 <code>L0</code>。播放倍速与 Range Extender 设置不参与计算。</dd></div>
+<div><dt>何时进行分析？</dt><dd>仅在点击按钮后分析，您可以随时取消。播放期间或离开媒体库后会暂停分析。结果会保存，下次可直接显示。</dd></div>
+<div><dt>修改脚本后怎么办？</dt><dd>再次点击 <strong>Analyze / refresh scripts</strong>。对于大小和修改时间均未变化的文件，会复用已保存的结果。没有分析值的文件不会出现在速度范围筛选结果中。</dd></div>
+</div>
+<h2 id="lib-groups">将搜索结果保存为分组<a aria-label="本节链接" class="anchor" href="#lib-groups">#</a></h2>
+<p>可以为当前搜索结果命名并保存为<strong>分组</strong>，稍后重新作为播放列表打开。这些操作也位于 <strong>Speed &amp; groups</strong> 区域。</p>
+<ol>
+<li>用筛选和搜索得到所需列表后，在 <strong>New group name</strong> 中输入名称。</li>
+<li>点击 <strong>Save N results as group</strong>。</li>
+<li>从列表中选择已保存的分组，点击 <strong>Open group</strong> 即可作为播放列表打开。使用 <strong>Rename group</strong> 或 <strong>Remove group</strong> 可重命名或删除分组。</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="保存分组演示" data-src="../assets/video/library-groups.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>将筛选出的慢速脚本保存为 <code>Slow picks</code> 分组，然后重新打开。</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>普通分组保存的是当时的列表</div>
+<p>普通分组包含<strong>保存时的结果列表</strong>。之后新增符合条件的文件也不会自动加入。删除分组不会删除视频或脚本文件。</p>
+</div>
+<h2 id="lib-smart">标签与智能分组<a aria-label="本节链接" class="anchor" href="#lib-smart">#</a></h2>
+<p>从 v0.7.0 起，可以在卡片菜单的<strong>编辑标签</strong>中输入以逗号分隔的标签。在<strong>标签与播放状态</strong>中按标签和是否播放过进行筛选。选择多个标签时，仅显示包含全部所选标签的项目。</p>
+<p>标签保存在应用内，不会修改媒体或脚本文件。标签按文件路径记录，因此在应用外重命名或移动文件后，不会自动跟随。</p>
+<ol class="steps">
+<li><h3>设置筛选条件</h3><p>在媒体库中选择搜索词、标签、评分、播放次数或脚本速度等条件。</p></li>
+<li><h3>将条件保存为智能分组</h3><p>输入<strong>智能分组名称</strong>后，点击<strong>保存当前条件</strong>。以后可通过<strong>应用条件</strong>重新调用，或通过<strong>更新已保存条件</strong>修改。</p></li>
+<li><h3>查看结果</h3><p>智能分组在<strong>整个已启用的媒体库</strong>中查找匹配项目。标签、评分、播放次数或分析结果变化后，结果也会变化。</p></li>
+</ol>
+<p>通过<strong>将匹配项目作为播放列表打开</strong>得到的列表，会固定为打开时的项目。播放列表模式下无法编辑或应用智能分组，请返回媒体库后操作。</p>
+<h2 id="lib-remove">排除项目与整理文件<a aria-label="本节链接" class="anchor" href="#lib-remove">#</a></h2>
+<ul>
+<li><strong>从媒体库排除</strong> — 保留实际文件，仅从列表中隐藏。刷新后仍保持排除状态。</li>
+<li><strong>管理已排除文件 → 恢复 / 全部恢复</strong> — 重新显示隐藏的项目。原媒体库文件夹必须已连接且已启用。</li>
+<li><strong>移到回收站</strong> — 将实际媒体文件移到回收站。仅同时移动确认窗口<strong>关联脚本（可选）</strong>中勾选的脚本。请先确认该脚本是否还被其他视频使用。</li>
+</ul>
+<p>文件排序默认应用于整个列表。如需保留文件夹结构，请启用<strong>文件夹内排序</strong>。上一项、下一项播放也遵循所选排序。</p>
 <h2 id="lib-cards">使用卡片<a aria-label="本节链接" class="anchor" href="#lib-cards">#</a></h2>
 <ul>
 <li><strong>卡片尺寸</strong> — 用滑块调整一屏显示的数量。</li>
@@ -484,6 +546,8 @@
 <figcaption>不离开播放界面就能打分。</figcaption>
 </figure>
 </div>
+<h2 id="lib-storage">HDD 或 NAS 播放卡顿时<a aria-label="本节链接" class="anchor" href="#lib-storage">#</a></h2>
+<p>启用设置中的<strong>慢速存储兼容模式（Slow Storage Compatibility）</strong>后，每个驱动器只运行一个缩略图任务，并暂停正在播放的驱动器上的缩略图生成，以减少磁盘访问。此选项默认关闭；Windows 用户更改后需重新打开视频。</p>
 <h2 id="lib-hover">悬停预览<a aria-label="本节链接" class="anchor" href="#lib-hover">#</a></h2>
 <p>把鼠标停在文件列表的条目上，就会<strong>无需打开文件</strong>播放一段短视频预览。不必再为确认内容而逐个打开。</p>
 </article>
@@ -578,8 +642,11 @@
 <article class="page" data-group="日常使用" data-title="使用脚本" id="page-scripts">
 <h1>使用脚本</h1>
 <p class="lede">本页介绍脚本查找、加载、时序和动作范围调整。脚本无法自动匹配或动作不符合预期时，请查看对应章节。</p>
+<h2 id="sc-manual">手动关联并记住脚本<a aria-label="本节链接" class="anchor" href="#sc-manual">#</a></h2>
+<p>使用文件菜单的<strong>选择脚本...</strong>或拖入脚本文件，可将其关联到当前视频。从 v0.7.0 起，无需重命名文件即可记住此关联，下次打开同一视频时会优先使用。</p>
+<p>选择<strong>清除手动脚本关联</strong>可恢复自动搜索。导出、导入播放列表时也会保留明确指定的关联。如果在应用外移动或重命名视频或脚本，可能需要重新关联。</p>
 <h2 id="sc-match">自动匹配脚本<a aria-label="链接到此节" class="anchor" href="#sc-match">#</a></h2>
-<p>ScriptPlayer+ 按以下顺序查找匹配的脚本。</p>
+<p>如果没有手动关联的脚本，会从以下位置查找匹配脚本。</p>
 <ol class="steps">
 <li>
 <h3>同一文件夹、同一文件名</h3>
@@ -668,6 +735,25 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>初次使用时</div>
 <p>先把范围调窄再开始，熟悉之后逐步放宽。配合速度限制会更安全。 → <a href="#safety">安全与紧急停止</a></p>
 </div>
+<h2 id="sc-axis-response">各轴振幅与响应曲线<a aria-label="本节链接" class="anchor" href="#sc-axis-response">#</a></h2>
+<p>在<strong>设置 → 设备 → 各轴运动处理</strong>中选择轴，然后在<strong>振幅 · 响应曲线</strong>中调整。可以为每个轴分别设置振幅、输出下限与上限以及响应曲线。</p>
+<ul>
+<li><strong>轴振幅 (%)</strong> — 可调范围为 0–500%，默认 100%。输出下限和上限用于限制最终运动范围。</li>
+<li><strong>响应曲线</strong> — 可选择线性、阶梯、对数、三次多项式、平方根或渐近压缩（tanh）。通过曲线应用比例和参数调整响应。</li>
+<li><strong>位置变换预览</strong> — 显示输入位置如何转换为输出位置。预览本身不会驱动设备。通过<strong>重置振幅与曲线</strong>可恢复默认值。</li>
+</ul>
+<p>如需柔和地压缩放大后的运动端点，可使用 tanh 曲线。此时建议将 <strong>Range Extender 保持为 100%</strong>，使用轴振幅进行放大。</p>
+<h2 id="sc-video-profile">为每个视频保存不同的运动设置<a aria-label="本节链接" class="anchor" href="#sc-video-profile">#</a></h2>
+<p>启用<strong>为此视频使用独立设置</strong>后，可为当前视频单独保存各轴范围、反转、振幅、曲线、插值、偏移和速度限制。选择<strong>恢复全局设置</strong>即可重新使用公共设置。</p>
+<p>启用视频专用设置时，播放栏的 <strong>STR</strong> 快速控制与设置页面会修改同一视频配置中的范围和反转。编辑前，请确认<strong>正在编辑全局设置 / 正在编辑当前视频专用设置</strong>的提示。</p>
+<p><strong>Range Extender 不包含在视频专用配置中。</strong>它与原有的按脚本或全局记忆振幅设置相互独立。视频运动设置按文件路径保存，不会自动跟随应用外的文件移动或重命名。</p>
+<h2 id="sc-extender">Range Extender 模式<a aria-label="本节链接" class="anchor" href="#sc-extender">#</a></h2>
+<p>Range Extender 可在 50–500% 之间调整，也可直接输入数字。所选模式随脚本的振幅记忆设置保存，最终输出范围和速度限制仍然有效。</p>
+<ul>
+<li><strong>Standard</strong> — 按原有方式放大，并裁切超出范围的部分。</li>
+<li><strong>Preserve Detail</strong> — 使用连续曲线转换，减少端点被裁切成平坦区段的现象。</li>
+<li><strong>Endpoints</strong> — 原始位置低于 50% 时输出所选最小值，达到或高于 50% 时输出最大值。</li>
+</ul>
 <h2 id="sc-gaps">处理空白区间<a aria-label="本节链接" class="anchor" href="#sc-gaps">#</a></h2>
 <p>当脚本中存在较长的无动作区间时使用的选项。</p>
 <ul>
@@ -698,6 +784,13 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>提示</div>
 <p>运动分析属于实验功能。结果质量随视频差异很大，生成的脚本可能需要手动修整。</p>
 </div>
+<h2 id="sc-roll-pitch">独立随机 Roll·Pitch<a aria-label="本节链接" class="anchor" href="#sc-roll-pitch">#</a></h2>
+<p>可以在 L0 脚本上添加随机 <strong>Roll(R1)·Pitch(R2)</strong> 动作。两轴的启用状态、源速度和范围可独立设置，默认均关闭。</p>
+<p>如果该轴已有实际脚本或轴源联动，则优先使用它们。随机运动仍受各轴范围、反转和速度限制约束。</p>
+<h2 id="sc-jev">Jev 生成与脚本审核<a aria-label="本节链接" class="anchor" href="#sc-jev">#</a></h2>
+<p><strong>脚本工具 → Jev 生成</strong>是一项实验功能，提供随机模式、短视频分析辅助和现有 funscript 区段审核。视频分析与审核针对<strong>0.5–24 秒的区段</strong>。</p>
+<p>需要单独的 <strong>TypeSafe API 密钥</strong>，生成或审核时会产生付费请求，仅包含休息的模式除外。不会发送视频、音频或本地路径，预览也不会驱动设备。</p>
+<p>审核时可比较原始曲线与柔化曲线，修改或恢复各区段的选择后再保存。<strong>仅导出所选区段，时间从 0 秒开始，请配合对应的视频片段使用</strong>。不包含长视频完整生成或将区段合并回完整脚本的功能，也尚未证明能自动提高质量。</p>
 <h2 id="sc-multiaxis">多轴脚本<a aria-label="本节链接" class="anchor" href="#sc-multiaxis">#</a></h2>
 <p>同时驱动多个轴的脚本支持以下三种形式。</p>
 <ul>
@@ -861,8 +954,8 @@
 <p>将The Handy连接到Wi-Fi，然后在用于配置设备的应用或网页设置界面中查看<strong>连接密钥（Connection Key）</strong>。</p>
 </li>
 <li>
-<h3>在设置 → 设备中输入</h3>
-<p>在 ScriptPlayer+ 的<strong>设置 → 设备</strong>中选择 The Handy 并填入连接密钥。</p>
+<h3>添加 Handy 设备</h3>
+<p>在左侧<strong>设备 → The Handy → Handy 设备</strong>中输入设备名称和连接密钥，然后点击<strong>添加并连接</strong>。</p>
 </li>
 <li>
 <h3>确认连接</h3>
@@ -873,6 +966,14 @@
 <div class="shot"><video aria-label="设备标签页演示" data-src="../assets/video/device-tab.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>在设备界面选择并连接设备。</figcaption>
 </figure>
+<h2 id="hd-multiple">连接多台 Handy 与独立输出<a aria-label="本节链接" class="anchor" href="#hd-multiple">#</a></h2>
+<p>Handy <strong>最多可注册 8 台</strong>，共同跟随同一视频和脚本。准备好的设备先开始，稍后准备好的设备加入当前播放位置。注册上限不代表所有设备的机械运动能完全同步。</p>
+<ul>
+<li><strong>范围·同步</strong> — 为每台设备调整 0–100% 输出范围和 ±5,000ms 时间偏移。正值使动作提前，负值使动作延后。</li>
+<li><strong>停止输出 / 恢复输出 / 重试</strong> — 独立控制每台设备。手动停止输出的设备不会因再次播放视频而自动恢复。</li>
+<li><strong>停止所有 Handy 输出</strong> — 向所有已连接的 Handy 请求停止。未确认停止的设备在重新确认前不会播放。</li>
+<li><strong>自动连接已保存设备</strong> — 按需启用。密钥与设备设置通过操作系统加密保存；如果无法使用加密，新密钥仅保留在本次会话中。</li>
+</ul>
 <h2 id="hd-sync">同步与时间偏移<a aria-label="本节链接" class="anchor" href="#hd-sync">#</a></h2>
 <p>The Handy 使用 API v2。开始播放时会上传脚本，并按服务器时钟同步播放位置。</p>
 <div class="note note--tip">
@@ -880,6 +981,10 @@
 <p>开启<strong>设置 → 播放</strong>中的 <strong>Auto Play After Handy Sync</strong>，上传与 HSSP 同步一结束就会立即开始播放，不必每次等同步完成再去按播放。</p>
 </div>
 <p>如果所有视频中的动作都固定提前或延后，请检查设备的<strong>时间偏移</strong>。如果仅某个脚本存在偏差，请调整其<a href="#sc-offset">脚本偏移</a>。</p>
+<p>v0.7.0 会配合缓冲、跳转、下一项播放以及视频和音频循环来调整 Handy 输出。切换到另一个视频时，可能仍需等待新脚本准备。循环播放会复用已上传脚本，但仍需云端播放命令，因此无法保证循环边界的动作完全连续。</p>
+<h2 id="hd-loading">特定脚本无法完成准备时<a aria-label="本节链接" class="anchor" href="#hd-loading">#</a></h2>
+<p>如果特定文件反复出现 <code>HSSP setup failed: error loading stream data</code>，请查看 <a href="../releases/v0.7.1-beta.1.html">v0.7.1-beta.1 测试版说明</a>。测试版仅在此错误发生时，在脚本开头的固定位置等待区间加入一个相同位置的辅助点，然后重新上传一次。原有时间、位置和等待区间保持不变。</p>
+<p>测试版仅提供 Windows x64 ZIP，与正式版分开发布。实际 Handy 验证仅覆盖上传与准备阶段，不包含机械动作播放。若问题持续，请提供诊断信息和复现情况。</p>
 <h2 id="hd-diag">网络诊断<a aria-label="本节链接" class="anchor" href="#hd-diag">#</a></h2>
 <p>在<strong>设置 → Handy 网络诊断</strong>中可以实测连接质量。若动作总是卡顿或延迟，请从这里开始排查。</p>
 <div class="table-wrap">
@@ -1029,6 +1134,7 @@
 <div class="shot"><video aria-label="速度限制演示" data-src="../assets/video/speed-limit.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>应用速度限制后的样子。</figcaption>
 </figure>
+<p>串口输出还提供 <strong>R0 静音过滤</strong>与<strong>仅发送变化的轴</strong>选项。即使只发送变化的轴，仍会保留定期完整刷新和停止命令。STR 面板可查看源范围、输出范围和裁切信息。</p>
 <h2 id="fo-test">轴测试与居中<a aria-label="本节链接" class="anchor" href="#fo-test">#</a></h2>
 <p>要确认轴是否接对，并不需要播放视频。在设置 → 设备最下方的 <strong>Device Test Panel</strong> 中点击 <code>L0</code>、<code>V0</code>、<code>V1</code>、<code>R0</code> 按钮，就能直接向该轴发送一条短指令。<code>Stop</code> 可立即停止，<strong>居中指令</strong>会让它回到中间。</p>
 <div class="note note--tip">
@@ -1171,7 +1277,7 @@
 <li>自定义可执行文件</li>
 </ul>
 <p>在<strong>设置 → 外部播放器</strong>中配置。播放过程中可用播放栏的 <code>EXT</code> 按钮直接交接。</p>
-<h2 id="ex-limits">各播放器的差异<a aria-label="本节链接" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">左右滑动表格可查看所有列。</p><div class="table-wrap"><table><thead><tr><th>播放器</th><th>播放／暂停</th><th>播放位置／速度控制</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>支持</td><td>支持 — 从ScriptPlayer+操作</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windows上支持通过按键控制</td><td>不支持</td></tr><tr><td>自定义可执行文件</td><td>仅支持启动</td><td>不支持</td></tr></tbody></table></div><p>以v0.6.1为准。需要同步时请选择<strong>mpv或VLC</strong>，并从ScriptPlayer+控制播放、暂停和跳转。不要假定直接在外部播放器中所做的更改会反向同步。按键控制的效果可能因外部应用的快捷键设置和窗口状态而异。</p>
+<h2 id="ex-limits">各播放器的差异<a aria-label="本节链接" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">左右滑动表格可查看所有列。</p><div class="table-wrap"><table><thead><tr><th>播放器</th><th>播放／暂停</th><th>播放位置／速度控制</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>支持</td><td>支持 — 从ScriptPlayer+操作</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windows上支持通过按键控制</td><td>不支持</td></tr><tr><td>自定义可执行文件</td><td>仅支持启动</td><td>不支持</td></tr></tbody></table></div><p>以下说明基于 v0.7.0。如需同步，请选择 <strong>mpv 或 VLC</strong>，并从 ScriptPlayer+ 控制播放、暂停和跳转。不要假定在外部播放器中直接更改的状态会反向同步。按键控制方式会受外部应用的快捷键设置和窗口状态影响。</p>
 <p>如果已指定 mpv 或 VLC，当 Chromium 播放失败时会自动打开该播放器。拖动时间线改变位置时，只在拖动<strong>结束时同步一次</strong>。</p>
 </article>
 <!-- ============================================ 17 FFMPEG -->
@@ -1281,6 +1387,7 @@
 <tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>音量提高 / 降低 5%</td></tr>
 <tr><td class="col-key"><kbd>F</kbd></td><td>切换全屏</td></tr>
 <tr><td class="col-key"><kbd>M</kbd></td><td>切换静音</td></tr>
+<tr><td class="col-key"><kbd>0</kbd>–<kbd>9</kbd></td><td>跳转到视频或音频的 0–90% 位置。输入文字时不会触发，已有的自定义快捷键优先。</td></tr>
 <tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>打开设置</td></tr>
 </tbody>
 </table>
@@ -1512,6 +1619,16 @@
 <article class="page" data-group="参考" data-title="版本记录" id="page-releases">
 <h1>版本记录</h1>
 <p class="lede">整理了各主要版本的变化。完整列表在 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>。</p>
+<h2 id="rl-070">v0.7.0 — 视频专用运动设置与媒体库整理<a aria-label="本节链接" class="anchor" href="#rl-070">#</a></h2>
+<p>这是<strong>当前正式版</strong>。新增各轴振幅与响应曲线、视频专用运动设置、手动脚本关联记忆、标签与智能分组、文件排除与恢复，以及将所选关联脚本移到回收站的功能。同时改善 Handy 缓冲、跳转与循环处理，以及 FFmpeg/HLS 恢复和诊断。</p>
+<p>请查看 <a href="../releases/v0.7.0.html">v0.7.0 版本公告</a>，了解变更内容和更新注意事项。</p>
+<h3>v0.7.1-beta.1 — Handy 脚本加载测试版</h3>
+<p>这是修复特定 HSSP 加载错误的<strong>Windows 手动下载预发布版本</strong>。正式自动更新版本仍为 v0.7.0。请单独参阅<a href="../releases/v0.7.1-beta.1.html">测试版安装与验证说明</a>。</p>
+<h2 id="rl-063">v0.6.3 — 多台 Handy 与媒体库搜索<a aria-label="本节链接" class="anchor" href="#rl-063">#</a></h2>
+<p>新增多台 Handy 连接、播放次数、脚本速度筛选、普通分组保存、Range Extender 模式、独立随机 Roll·Pitch 和 Jev 生成与审核。从此版本起，新的 macOS 构建仅适用于 Apple Silicon。</p>
+<p>早期 v0.6.3 在打开已保存分组后清空播放列表时，可能导致媒体库显示为空。修正版沿用了同一版本号；如果仍在使用早期安装包，请更新至最新正式版。</p>
+<h2 id="rl-062">v0.6.2 — 播放与媒体库稳定性改进<a aria-label="本节链接" class="anchor" href="#rl-062">#</a></h2>
+<p>改善慢速存储支持、文件查找、字幕和设备切换，并加强运行时依赖与打包检查。详情请查看 <a href="https://github.com/sioaeko/scriptplayer-plus/releases/tag/v0.6.2" rel="noopener noreferrer" target="_blank">v0.6.2 更新记录</a>。</p>
 <h2 id="rl-060">v0.6.0 — 媒体库 · VR · Intiface<a aria-label="本节链接" class="anchor" href="#rl-060">#</a></h2>
 <p>这一版聚焦于大型媒体库、脚本查找、多轴控制以及安全的设备恢复。</p>
 <ul>
@@ -1610,7 +1727,7 @@
 </div>
 </dl>
 <h2 id="ab-docs">关于本文档<a aria-label="本节链接" class="anchor" href="#ab-docs">#</a></h2>
-<p>本站以 ScriptPlayer+ v0.6 系列为准。应用更新后界面与说明可能有所不同，最新变化请一并查看<a href="#releases">版本记录</a>与 GitHub Releases。</p>
+<p>本站基于 2026 年 10 月 15 日确认的正式版 <strong>v0.7.0</strong> 编写。原有截图和视频来自较早版本，其布局或文字可能与当前应用不同。最新变更请查看<a href="../releases/">版本公告</a>和<a href="#releases">版本记录</a>。</p>
 </article>
 <!-- pager gets injected here -->
 <nav aria-label="上一页 / 下一页" class="pager" id="pager"></nav>
@@ -1624,7 +1741,7 @@
 </div>
 <footer class="site-footer">
 <div class="footer-inner">
-<p>© ScriptPlayer+ · 许可：ScriptPlayer+ EULA · 文档基于 v0.6.x</p>
+<p>© ScriptPlayer+ · 许可：ScriptPlayer+ EULA · 文档基于 v0.7.0</p>
 <div class="footer-links">
 <a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">发布</a>

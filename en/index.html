@@ -143,8 +143,9 @@
 <div class="hero-cta">
 <a class="btn btn--primary" href="#quickstart">Quick start</a>
 <a class="btn" href="#install">How to install</a>
+<a class="btn" href="../releases/">Release announcements</a>
 </div>
-<p class="hero-meta">Windows · macOS · Linux · These docs describe the v0.6 series.</p>
+<p class="hero-meta">Windows · macOS · Linux · For stable v0.7.0 · Updated 2026.10.15</p>
 </div>
 <figure>
 <div class="shot">
@@ -202,8 +203,7 @@
 <p class="lede">ScriptPlayer+ is installed from the Windows, macOS and Linux packages on GitHub Releases.
               Your operating system may show a security warning the first time you run it; how to get past each one is below.</p>
 <h2 id="install-get">Download<a aria-label="Link to this section" class="anchor" href="#install-get">#</a></h2>
-<p>Every build is published on the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">latest GitHub release page</a>.
-              Pick the file for your operating system.</p>
+<p>Download the latest stable release, <strong>v0.7.0</strong>, from the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">latest GitHub release page</a>. Choose the package for your operating system.</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Platform</th><th>Package</th><th>Notes</th></tr></thead>
@@ -214,9 +214,9 @@
 <td>To run without installing, take the portable ZIP and just unpack it.</td>
 </tr>
 <tr>
-<td class="col-key"><span class="pill pill--mac">macOS x64 / arm64</span></td>
+<td class="col-key"><span class="pill pill--mac">macOS Apple Silicon (arm64)</span></td>
 <td><code>.dmg</code> or <code>.zip</code></td>
-<td>Apple Silicon and Intel have separate files. Take the one that matches your Mac.</td>
+<td>New Intel Mac builds are no longer provided as of v0.6.3. Current macOS packages are for Apple Silicon.</td>
 </tr>
 <tr>
 <td class="col-key"><span class="pill pill--linux">Linux x64</span></td>
@@ -293,9 +293,9 @@
                 If the portable AppImage or the archive package will not start, install the DEB instead.</p>
 </div>
 <h2 id="install-update">Updates<a aria-label="Link to this section" class="anchor" href="#install-update">#</a></h2>
-<p>When a new version ships, the app tells you. You can download and install straight from the notice,
-              and a hotfix released under the same version number is detected too.
-              How it checks is set in <strong>Settings → General</strong>.</p>
+<p>New stable releases appear in the in-app update notification. A replacement package with the same version number may not trigger a notification, so check the release announcement for manual installation instructions. Adjust update checking in <strong>Settings → General</strong>.</p>
+<p>Before updating, close the app and back up the user data folder. The Windows installer and ZIP editions share settings unless you separate their data. See the <a href="https://github.com/sioaeko/scriptplayer-plus/blob/master/docs/UPDATE_AND_RECOVERY_KO.md" rel="noopener noreferrer" target="_blank">update and recovery guide</a> for the steps.</p>
+<p><strong>v0.7.1-beta.1 is a Windows test build for manual download</strong>. It fixes a specific Handy script loading error; the stable automatic-update release remains v0.7.0. If you encounter that error, see the <a href="../releases/v0.7.1-beta.1.html">test build announcement</a>.</p>
 <div class="media-grid cols-2">
 <figure>
 <div class="shot"><img alt="Update notification" loading="lazy" src="../assets/img/update-notice.webp"/></div>
@@ -457,7 +457,7 @@
 <li><strong>Add folder</strong> — adds a folder. The picker accepts several at once.</li>
 <li><strong>Name</strong> — give it something readable like <code>Local Library</code> or <code>NAS Library</code> instead of a path.</li>
 <li><strong>Toggle</strong> — switch a folder off to leave it out for a while. <strong>A disabled folder keeps its settings and is only excluded from scans.</strong></li>
-<li><strong>Bin</strong> — removes the registration only. Your actual files are untouched.</li>
+<li><strong>Trash icon beside a registered folder</strong> — removes the folder from the library settings without deleting any files.</li>
 </ul>
 <figure>
 <div class="shot"><img alt="Library folders in Settings → General" loading="lazy" src="../assets/img/settings-general.webp"/></div>
@@ -478,16 +478,75 @@
 <table>
 <thead><tr><th>Control</th><th>What it does</th></tr></thead>
 <tbody>
-<tr><td class="col-key"><strong>Search</strong></td><td>Searches title and path.</td></tr>
+<tr><td class="col-key"><strong>Search</strong></td><td>Search by file name, path or tag.</td></tr>
 <tr><td class="col-key"><strong>Media type</strong></td><td>Splits the view into video only or audio only.</td></tr>
 <tr><td class="col-key"><strong>Script category</strong></td><td>Filters single-axis and multi-axis scripts separately.</td></tr>
 <tr><td class="col-key"><strong>Rating</strong></td><td>Shows only items you have scored.</td></tr>
-<tr><td class="col-key"><strong>Sort</strong></td><td>Sorts by path, file name, rating, duration or last-modified time.</td></tr>
+<tr><td class="col-key"><strong>Sort</strong></td><td>Sort by path, file name, rating, duration, modification time or <strong>play count</strong>.</td></tr>
+<tr><td class="col-key"><strong>View mode</strong></td><td><strong>All files</strong> shows every file in one list; <strong>Folders</strong> lets you browse one folder at a time.</td></tr>
 </tbody>
 </table>
 </div>
 <p>Sorting by duration needs the lengths first, and those are scanned automatically in the background.
               With a lot of files you will see part of the list at first, filling in as it goes.</p>
+<h3>Sort by play count</h3>
+<p>Since v0.6.3, the app records a play count for each video. Choose <strong>Play count</strong> to sort from most played to least played, or vice versa. Cards and file rows show the count, such as <code>Played 3 times</code>.</p>
+<ul>
+<li>A video must actually <strong>play for at least 5 seconds</strong> to count as 1 play. For videos shorter than 10 seconds, the threshold is half the duration.</li>
+<li>Pausing, seeking or looping does not add more plays while the same video remains open.</li>
+<li>Counts survive restarts and accumulate <strong>from the update onward</strong>. A changed file path is treated as a different video.</li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="Play count sorting demo" data-src="../assets/video/library-playcount.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Select <strong>Play count</strong>, then use the direction button to switch between most played and least played.</figcaption>
+</figure>
+<h2 id="lib-speed">Find videos by script speed<a aria-label="Link to this section" class="anchor" href="#lib-speed">#</a></h2>
+<p>Open <strong>Speed &amp; groups</strong> at the top of the library to filter videos by the <strong>average movement speed</strong> of their automatically matched scripts. Use it to find slower or faster scripts.</p>
+<ol>
+<li>Click <strong>Analyze / refresh scripts</strong> to analyze scripts. Progress appears beside the button, for example <code>5/5 checked · 0 unavailable</code>.</li>
+<li>Choose a <strong>Script speed</strong> range: <code>Slow</code> (below 100 %/s), <code>Medium</code> (100–200 %/s), <code>Fast</code> (200 %/s or above), <code>Custom range</code> (enter a range) or <code>Speed unknown</code> (no analysis result).</li>
+<li>Cards show the analyzed axis and average speed, for example <code>L0 · 50.2 %/s average</code>.</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="Script speed filtering demo" data-src="../assets/video/library-speed.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Changing <strong>Script speed</strong> leaves only videos in the selected speed range.</figcaption>
+</figure>
+<div class="deflist">
+<div><dt>How is speed measured?</dt><dd>It is the average from the first point to the last point of the original script, including holds. For files containing multiple axes, <code>L0</code> takes priority. Playback speed and Range Extender settings are not included.</dd></div>
+<div><dt>When does analysis run?</dt><dd>Analysis starts only when you click the button, and you can stop it. It pauses during playback or when you leave the library. Results are saved and appear immediately on later visits.</dd></div>
+<div><dt>After editing a script</dt><dd>Click <strong>Analyze / refresh scripts</strong> again. Files with unchanged sizes and modification times reuse their saved results. Files without analysis results are excluded from speed-range filters.</dd></div>
+</div>
+<h2 id="lib-groups">Save search results as a group<a aria-label="Link to this section" class="anchor" href="#lib-groups">#</a></h2>
+<p>Save the current search results as a named <strong>group</strong> and reopen them as a playlist later. These controls are also in <strong>Speed &amp; groups</strong>.</p>
+<ol>
+<li>Use search and filters to create the list you want, then enter a <strong>New group name</strong>.</li>
+<li>Click <strong>Save N results as group</strong>.</li>
+<li>Select a saved group and click <strong>Open group</strong> to open it as a playlist. Use <strong>Rename group</strong> or <strong>Remove group</strong> to rename or delete it.</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="Saving a group demo" data-src="../assets/video/library-groups.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>This demo filters for slow scripts, saves the results as <code>Slow picks</code> and reopens the group.</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Regular groups preserve the list as saved</div>
+<p>A regular group contains <strong>the results at the moment you save it</strong>. New files that match the same filters are not added automatically. Removing a group leaves its video and script files untouched.</p>
+</div>
+<h2 id="lib-smart">Tags and smart groups<a aria-label="Link to this section" class="anchor" href="#lib-smart">#</a></h2>
+<p>Since v0.7.0, you can add comma-separated tags using <strong>Edit tags</strong> in a card menu. Use <strong>Tags and playback status</strong> to filter by tags and whether a video has been played. Selecting multiple tags shows only items with all of them.</p>
+<p>Tags are stored in the app without changing media or script files. They are tied to file paths and do not automatically follow files renamed or moved outside the app.</p>
+<ol class="steps">
+<li><h3>Choose your filters</h3><p>Set the search text, tags, ratings, play counts, script speeds and other library filters you want.</p></li>
+<li><h3>Save filters as a smart group</h3><p>Enter a <strong>Smart group name</strong> and click <strong>Save current filters</strong>. Later, use <strong>Apply filters</strong> to recall them or <strong>Update saved filters</strong> to change them.</p></li>
+<li><h3>Check the results</h3><p>A smart group finds matching items across <strong>all enabled libraries</strong>. Its results change as tags, ratings, play counts or analysis results change.</p></li>
+</ol>
+<p>A playlist opened with <strong>Open matches as playlist</strong> contains the items that matched at that time. Smart groups cannot be edited or applied in playlist mode; return to the library to use them.</p>
+<h2 id="lib-remove">Exclude entries or remove files<a aria-label="Link to this section" class="anchor" href="#lib-remove">#</a></h2>
+<ul>
+<li><strong>Exclude from library</strong> — hides an entry without changing its files. The exclusion remains after a refresh.</li>
+<li><strong>Manage excluded files → Restore / Restore all</strong> — shows hidden entries again. Their original library folder must be connected and enabled.</li>
+<li><strong>Move to trash</strong> — moves the media file to the system trash. Only scripts checked under <strong>Associated scripts (optional)</strong> in the confirmation dialog are moved with it. First check whether other videos use those scripts.</li>
+</ul>
+<p>By default, sorting applies to the entire file list. Enable <strong>Sort within folders</strong> to preserve the folder structure. Previous and next playback follow the selected sort order.</p>
 <h2 id="lib-cards">Working with cards<a aria-label="Link to this section" class="anchor" href="#lib-cards">#</a></h2>
 <ul>
 <li><strong>Card size</strong> — the slider changes how many fit on screen.</li>
@@ -508,6 +567,8 @@
 <figcaption>Rate a file without leaving playback.</figcaption>
 </figure>
 </div>
+<h2 id="lib-storage">If playback stutters on an HDD or NAS<a aria-label="Link to this section" class="anchor" href="#lib-storage">#</a></h2>
+<p>Enable <strong>Slow Storage Compatibility</strong> in settings to limit thumbnail work to one task per drive and suspend thumbnail generation on the drive currently used for playback. This reduces disk access. It is off by default. On Windows, reopen the video after changing it.</p>
 <h2 id="lib-hover">Hover preview<a aria-label="Link to this section" class="anchor" href="#lib-hover">#</a></h2>
 <p>Rest the pointer on an entry in the file list and a short video preview plays <strong>without opening the file</strong>.
               You no longer have to open things one by one just to see what they are.</p>
@@ -604,8 +665,11 @@
 <article class="page" data-group="Everyday use" data-title="Working with scripts" id="page-scripts">
 <h1>Working with scripts</h1>
 <p class="lede">Learn how to find and load scripts, adjust timing and control the movement range. Check the relevant section if a script is not matched automatically or movement differs from what you expect.</p>
+<h2 id="sc-manual">Remember manually selected scripts<a aria-label="Link to this section" class="anchor" href="#sc-manual">#</a></h2>
+<p>Use <strong>Select script...</strong> in the File menu or drop a script file to associate it with the current video. Since v0.7.0, the app remembers this association without requiring a file rename and gives it priority when you reopen the video.</p>
+<p>Select <strong>Clear manual script</strong> to return to automatic matching. Explicit script associations are also included in playlist exports and imports. If you move or rename a video or script outside the app, you may need to associate them again.</p>
 <h2 id="sc-match">Automatic script matching<a aria-label="Link to this section" class="anchor" href="#sc-match">#</a></h2>
-<p>ScriptPlayer+ looks for a matching script in this order.</p>
+<p>If no script has been associated manually, the app searches the following locations for a match.</p>
 <ol class="steps">
 <li>
 <h3>Same name, same folder</h3>
@@ -698,6 +762,25 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Starting out</div>
 <p>Start narrow and widen it as you get used to the motion. Pair it with a speed limit to be safer still. → <a href="#safety">Safety and E-Stop</a></p>
 </div>
+<h2 id="sc-axis-response">Per-axis amplitude and response curves<a aria-label="Link to this section" class="anchor" href="#sc-axis-response">#</a></h2>
+<p>Select an axis in <strong>Settings → Devices → Per-axis motion processing</strong>, then adjust <strong>Amplitude · Response curve</strong>. Each axis has independent amplitude, lower and upper output limits, and response curve settings.</p>
+<ul>
+<li><strong>Axis amplitude (%)</strong> — adjustable from 0–500%, with a default of 100%. Use the lower and upper output limits to constrain the final movement range.</li>
+<li><strong>Response curve</strong> — choose linear, steps, logarithmic, cubic (3rd-order polynomial), square root or asymptotic compression (tanh). Adjust the curve blend and parameters to control the response.</li>
+<li><strong>Position mapping preview</strong> — shows how input positions map to output positions. The preview does not move the device. Use <strong>Reset amplitude and curve</strong> to restore the defaults.</li>
+</ul>
+<p>Use a tanh curve for softer saturation at the ends of amplified motion. We recommend keeping <strong>Range Extender at 100%</strong> and applying amplification through axis amplitude.</p>
+<h2 id="sc-video-profile">Save different motion settings for each video<a aria-label="Link to this section" class="anchor" href="#sc-video-profile">#</a></h2>
+<p>Enable <strong>Use separate settings for this video</strong> to save per-axis range, inversion, amplitude, curve, interpolation, offset and speed limits for the current video. Select <strong>Revert to global settings</strong> to use the shared settings again.</p>
+<p>When video-specific settings are enabled, the playback bar's <strong>STR</strong> quick controls and the Settings screen edit range and inversion in the same video profile. Before editing, check the <strong>Editing global settings / Editing settings for this video</strong> indicator.</p>
+<p><strong>Range Extender is not included in per-video profiles.</strong> It uses separate per-script or shared amplitude-memory settings. Video-specific motion settings are tied to file paths and do not automatically follow files moved or renamed outside the app.</p>
+<h2 id="sc-extender">Range Extender modes<a aria-label="Link to this section" class="anchor" href="#sc-extender">#</a></h2>
+<p>Range Extender is adjustable from 50–500%, including by direct numeric entry. The selected mode is saved with the script amplitude-memory settings. Final output range and speed limits still apply.</p>
+<ul>
+<li><strong>Standard</strong> — uses the original amplification method and clips values outside the range.</li>
+<li><strong>Preserve Detail</strong> — applies a continuous curve to reduce flat clipping at the endpoints.</li>
+<li><strong>Endpoints</strong> — sends original positions below 50% to the selected minimum and positions at or above 50% to the selected maximum.</li>
+</ul>
 <h2 id="sc-gaps">Handling empty stretches<a aria-label="Link to this section" class="anchor" href="#sc-gaps">#</a></h2>
 <p>Options for scripts with long passages that contain no movement.</p>
 <ul>
@@ -731,6 +814,13 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Note</div>
 <p>Motion analysis is experimental. Quality varies a lot by source, and the result may need hand-editing.</p>
 </div>
+<h2 id="sc-roll-pitch">Independent random Roll and Pitch<a aria-label="Link to this section" class="anchor" href="#sc-roll-pitch">#</a></h2>
+<p>Add random <strong>Roll (R1) and Pitch (R2)</strong> movement to an L0 script. Each axis has independent enable, source speed and range controls. Both are off by default.</p>
+<p>An actual script or axis source mapping for that axis takes priority. Per-axis range, inversion and speed limits also apply to random movement.</p>
+<h2 id="sc-jev">Jev generation and script review<a aria-label="Link to this section" class="anchor" href="#sc-jev">#</a></h2>
+<p><strong>Script tools → Jev generation</strong> is an experimental feature for random patterns, short video analysis assistance and reviewing sections of an existing funscript. Video analysis and review cover <strong>sections of 0.5–24 seconds</strong>.</p>
+<p>A separate <strong>TypeSafe API key</strong> is required, and generation and review incur paid requests, except for patterns consisting only of rest. Video, audio and local paths are not sent. The preview does not move the device.</p>
+<p>During review, compare the original and softened curves, change or restore your choices for each section, then save. <strong>Only the selected section is exported, starting at 0 seconds, so use it with the corresponding video segment.</strong> This feature does not generate an entire long video's script or merge sections into a full script. Automatic quality improvement has not been validated.</p>
 <h2 id="sc-multiaxis">Multi-axis scripts<a aria-label="Link to this section" class="anchor" href="#sc-multiaxis">#</a></h2>
 <p>Scripts that drive several axes at once are supported in three shapes.</p>
 <ul>
@@ -903,8 +993,8 @@
 <p>Connect The Handy to Wi-Fi, then find its <strong>Connection Key</strong> in the app or web interface used to configure the device.</p>
 </li>
 <li>
-<h3>Enter it in Settings → Device</h3>
-<p>In <strong>Settings → Device</strong>, choose The Handy and paste the connection key.</p>
+<h3>Add a Handy device</h3>
+<p>In the left panel, open <strong>Devices → The Handy → Handy devices</strong>, enter a device name and Connection Key, then click <strong>Add and connect</strong>.</p>
 </li>
 <li>
 <h3>Confirm the connection</h3>
@@ -915,6 +1005,14 @@
 <div class="shot"><video aria-label="Device tab demo" data-src="../assets/video/device-tab.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>Choosing and connecting a device from the Device screen.</figcaption>
 </figure>
+<h2 id="hd-multiple">Multiple Handy devices and individual output controls<a aria-label="Link to this section" class="anchor" href="#hd-multiple">#</a></h2>
+<p>You can <strong>register up to 8 Handy devices</strong> to follow the same video and script. Ready devices start first; devices that finish preparing later join at the current playback position. This registration limit does not guarantee mechanically simultaneous movement across all devices.</p>
+<ul>
+<li><strong>Range and synchronization</strong> — adjust each device's output range from 0–100% and time offset within ±5,000ms. Positive offsets advance movement; negative offsets delay it.</li>
+<li><strong>Stop output / Resume output / Retry</strong> — control each device separately. A device whose output you stopped manually does not resume automatically when you replay the video.</li>
+<li><strong>Stop all Handy output</strong> — requests a stop on all connected Handy devices. A device that fails to confirm the stop cannot play again until a stop is confirmed.</li>
+<li><strong>Automatically connect saved devices</strong> — enable this option when needed. Keys and device settings are stored using OS encryption. If encryption is unavailable, new keys are kept only for the current app session.</li>
+</ul>
 <h2 id="hd-sync">Sync and time offset<a aria-label="Link to this section" class="anchor" href="#hd-sync">#</a></h2>
 <p>The Handy uses API v2. On playback it uploads the script and synchronises position against the server clock.</p>
 <div class="note note--tip">
@@ -924,6 +1022,10 @@
                 No more waiting for sync and then reaching for play.</p>
 </div>
 <p>If movement is consistently early or late across all videos, check the device <strong>time offset</strong>. If only one script is affected, adjust its <a href="#sc-offset">script offset</a>.</p>
+<p>v0.7.0 coordinates Handy output with buffering, seeking, next-item playback and video or audio looping. Switching videos may require time to prepare a new script. Loops reuse the uploaded script but still require cloud playback commands, so uninterrupted movement at the loop boundary is not guaranteed.</p>
+<h2 id="hd-loading">If a specific script fails to prepare<a aria-label="Link to this section" class="anchor" href="#hd-loading">#</a></h2>
+<p>If a particular file repeatedly produces <code>HSSP setup failed: error loading stream data</code>, see the <a href="../releases/v0.7.1-beta.1.html">v0.7.1-beta.1 test build announcement</a>. For this error only, the test build adds one same-position point within the initial hold and retries the upload once. Existing timing, positions and the initial hold are preserved.</p>
+<p>The test build is separate from the stable release and is available only as a Windows x64 ZIP. Verification on a physical Handy covered upload and preparation, not movement during playback. If the problem persists, send the diagnostic report and steps to reproduce it.</p>
 <h2 id="hd-diag">Network diagnostics<a aria-label="Link to this section" class="anchor" href="#hd-diag">#</a></h2>
 <p><strong>Settings → Handy Network Diagnostics</strong> measures your connection quality directly.
               If the motion keeps stuttering or lagging, start here.</p>
@@ -1089,6 +1191,7 @@
 <div class="shot"><video aria-label="Speed limit demo" data-src="../assets/video/speed-limit.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
 <figcaption>With a speed limit applied.</figcaption>
 </figure>
+<p>Serial output also offers an <strong>R0 quiet filter</strong> and <strong>Send changed axes only</strong>. Periodic full refreshes and stop commands remain active when sending only changed axes. The STR panel shows source and output ranges and clipping information.</p>
 <h2 id="fo-test">Testing axes and centring<a aria-label="Link to this section" class="anchor" href="#fo-test">#</a></h2>
 <p>You do not need to play a video to check an axis is wired correctly.
               In the <strong>Device Test Panel</strong> at the bottom of Settings → Device, the
@@ -1246,7 +1349,7 @@
 <li>Custom executable</li>
 </ul>
 <p>Configure it in <strong>Settings → External Viewer</strong>. During playback, <code>EXT</code> on the playback bar hands the file over.</p>
-<h2 id="ex-limits">What differs between players<a aria-label="Link to this section" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">Swipe the table sideways to see all columns.</p><div class="table-wrap"><table><thead><tr><th>Player</th><th>Play / pause</th><th>Position / speed control</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>Supported</td><td>Supported — control from ScriptPlayer+</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Keyboard-based control on Windows</td><td>Not supported</td></tr><tr><td>Custom executable</td><td>Launch only</td><td>Not supported</td></tr></tbody></table></div><p>Based on v0.6.1. For synchronization, choose <strong>mpv or VLC</strong> and control playback, pause and seeking from ScriptPlayer+. Do not assume changes made directly in the external player are reflected back. Keyboard-based control can vary with the external app’s shortcuts and window state.</p>
+<h2 id="ex-limits">What differs between players<a aria-label="Link to this section" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">Swipe the table sideways to see all columns.</p><div class="table-wrap"><table><thead><tr><th>Player</th><th>Play / pause</th><th>Position / speed control</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>Supported</td><td>Supported — control from ScriptPlayer+</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Keyboard-based control on Windows</td><td>Not supported</td></tr><tr><td>Custom executable</td><td>Launch only</td><td>Not supported</td></tr></tbody></table></div><p>This applies to v0.7.0. For synchronized output, select <strong>mpv or VLC</strong> and control playback, pause and seeking from ScriptPlayer+. Do not assume changes made directly in the external player will be reflected back. Keystroke control depends on the external app's shortcuts and window state.</p>
 <p>If you have configured mpv or VLC, it opens that player automatically when Chromium playback fails.
               When you drag the timeline, it synchronises <strong>once, when the drag is committed</strong>.</p>
 </article>
@@ -1368,6 +1471,7 @@
 <tr><td class="col-key"><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Volume up / down 5%</td></tr>
 <tr><td class="col-key"><kbd>F</kbd></td><td>Toggle fullscreen</td></tr>
 <tr><td class="col-key"><kbd>M</kbd></td><td>Toggle mute</td></tr>
+<tr><td class="col-key"><kbd>0</kbd>–<kbd>9</kbd></td><td>Jump to positions from 0–90% of the video or audio. These keys do not act while typing, and existing custom shortcuts take priority.</td></tr>
 <tr><td class="col-key"><kbd>Ctrl</kbd> + <kbd>,</kbd></td><td>Open Settings</td></tr>
 </tbody>
 </table>
@@ -1623,6 +1727,16 @@
 <h1>Release history</h1>
 <p class="lede">What changed in the major versions.
               The complete list is on <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>.</p>
+<h2 id="rl-070">v0.7.0 — Per-video motion settings and library organization<a aria-label="Link to this section" class="anchor" href="#rl-070">#</a></h2>
+<p>This is the <strong>current stable release</strong>. It adds per-axis amplitude and response curves, video-specific motion settings, remembered manual script associations, tags, smart groups, entry exclusion and restoration, and moving selected companion scripts to the trash. It also improves Handy buffering, seeking and looping, plus FFmpeg/HLS recovery and diagnostics.</p>
+<p>See the <a href="../releases/v0.7.0.html">v0.7.0 release announcement</a> for changes and update notes.</p>
+<h3>v0.7.1-beta.1 — Handy script loading test build</h3>
+<p>A <strong>Windows prerelease for manual download</strong> that fixes a specific HSSP loading error. The stable automatic-update release remains v0.7.0. See the separate <a href="../releases/v0.7.1-beta.1.html">installation and testing instructions</a>.</p>
+<h2 id="rl-063">v0.6.3 — Multiple Handy devices and library search<a aria-label="Link to this section" class="anchor" href="#rl-063">#</a></h2>
+<p>Added multiple Handy connections, play counts, script speed filters, saved regular groups, Range Extender modes, independent random Roll and Pitch, and Jev generation and review. From this version onward, new macOS builds are available only for Apple Silicon.</p>
+<p>The initial v0.6.3 package had an issue where clearing a playlist after opening a saved group left the library empty. A replacement package was published under the same version number. If you use the initial package, update to the latest stable release.</p>
+<h2 id="rl-062">v0.6.2 — Playback and library stability<a aria-label="Link to this section" class="anchor" href="#rl-062">#</a></h2>
+<p>Improved support for slow storage, file browsing, subtitles and device switching, and strengthened runtime dependency and packaging checks. See the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/tag/v0.6.2" rel="noopener noreferrer" target="_blank">v0.6.2 release notes</a> for details.</p>
 <h2 id="rl-060">v0.6.0 — library, VR, Intiface<a aria-label="Link to this section" class="anchor" href="#rl-060">#</a></h2>
 <p>A release focused on large libraries, script discovery, multi-axis control and safe device recovery.</p>
 <ul>
@@ -1727,9 +1841,7 @@
 </div>
 </dl>
 <h2 id="ab-docs">About these docs<a aria-label="Link to this section" class="anchor" href="#ab-docs">#</a></h2>
-<p>This site describes the ScriptPlayer+ v0.6 series.
-              Screens and wording may differ once the app updates, so check the
-              <a href="#releases">release history</a> and GitHub Releases for the latest changes.</p>
+<p>This site covers stable <strong>v0.7.0</strong>, checked on October 15, 2026. Existing screenshots were captured in earlier versions and may differ from the current app's layout or wording. See <a href="../releases/">release announcements</a> and the <a href="#releases">version history</a> for recent changes.</p>
 </article>
 <!-- pager gets injected here -->
 <nav aria-label="Previous / next page" class="pager" id="pager"></nav>
@@ -1743,7 +1855,7 @@
 </div>
 <footer class="site-footer">
 <div class="footer-inner">
-<p>© ScriptPlayer+ · License: ScriptPlayer+ EULA · Docs based on v0.6.x</p>
+<p>© ScriptPlayer+ · License: ScriptPlayer+ EULA · Documentation for v0.7.0</p>
 <div class="footer-links">
 <a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">Releases</a>
