@@ -143,9 +143,9 @@
 <div class="hero-cta">
 <a class="btn btn--primary" href="#quickstart">Quick start</a>
 <a class="btn" href="#install">How to install</a>
-<a class="btn" href="../releases/">Release announcements</a>
+<a class="btn" href="../releases/en/">Release announcements</a>
 </div>
-<p class="hero-meta">Windows · macOS · Linux · For stable v0.7.0 · Updated 2026.10.15</p>
+<p class="hero-meta">Windows · macOS · Linux · For stable v0.7.2 · Updated 2026.11.08</p>
 </div>
 <figure>
 <div class="shot">
@@ -203,7 +203,7 @@
 <p class="lede">ScriptPlayer+ is installed from the Windows, macOS and Linux packages on GitHub Releases.
               Your operating system may show a security warning the first time you run it; how to get past each one is below.</p>
 <h2 id="install-get">Download<a aria-label="Link to this section" class="anchor" href="#install-get">#</a></h2>
-<p>Download the latest stable release, <strong>v0.7.0</strong>, from the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">latest GitHub release page</a>. Choose the package for your operating system.</p>
+<p>Download the latest stable release, <strong>v0.7.2</strong>, from the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">latest GitHub release page</a>. Choose the package for your operating system.</p>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Platform</th><th>Package</th><th>Notes</th></tr></thead>
@@ -295,7 +295,7 @@
 <h2 id="install-update">Updates<a aria-label="Link to this section" class="anchor" href="#install-update">#</a></h2>
 <p>New stable releases appear in the in-app update notification. A replacement package with the same version number may not trigger a notification, so check the release announcement for manual installation instructions. Adjust update checking in <strong>Settings → General</strong>.</p>
 <p>Before updating, close the app and back up the user data folder. The Windows installer and ZIP editions share settings unless you separate their data. See the <a href="https://github.com/sioaeko/scriptplayer-plus/blob/master/docs/UPDATE_AND_RECOVERY_KO.md" rel="noopener noreferrer" target="_blank">update and recovery guide</a> for the steps.</p>
-<p><strong>v0.7.1-beta.1 is a Windows test build for manual download</strong>. It fixes a specific Handy script loading error; the stable automatic-update release remains v0.7.0. If you encounter that error, see the <a href="../releases/v0.7.1-beta.1.html">test build announcement</a>.</p>
+<p><strong>v0.7.1-beta.1 is a Windows test build for manual download</strong>. It fixes a specific Handy script loading error; the stable automatic-update release remains v0.7.0. If you encounter that error, see the <a href="../releases/en/v0.7.1-beta.1.html">test build announcement</a>.</p>
 <div class="media-grid cols-2">
 <figure>
 <div class="shot"><img alt="Update notification" loading="lazy" src="../assets/img/update-notice.webp"/></div>
@@ -546,6 +546,17 @@
 <li><strong>Manage excluded files → Restore / Restore all</strong> — shows hidden entries again. Their original library folder must be connected and enabled.</li>
 <li><strong>Move to trash</strong> — moves the media file to the system trash. Only scripts checked under <strong>Associated scripts (optional)</strong> in the confirmation dialog are moved with it. First check whether other videos use those scripts.</li>
 </ul>
+<h2 id="lib-unscripted">Remove files without scripts from the playlist<a aria-label="Link to this section" class="anchor" href="#lib-unscripted">#</a></h2>
+<p><strong>Remove files without scripts (N)</strong> in the file list menu takes every item without a script out of the playlist at once. The number in brackets is how many items will go, and a confirmation appears first. It works in both the modern and classic UI.</p>
+<ul>
+<li>From v0.7.2 it also covers <strong>audio</strong> such as WAV, MP3 and M4A. In v0.7.1 it removed videos only.</li>
+<li>Items with an automatically found script, a manually linked script or per-axis linked scripts stay.</li>
+<li>Items leave the playlist only. <strong>The original files are not deleted.</strong></li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="Remove files without scripts demo" data-src="../assets/video/playlist-audio-cleanup.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>From v0.7.2 unscripted audio goes too. Items with a linked script stay.</figcaption>
+</figure>
 <p>By default, sorting applies to the entire file list. Enable <strong>Sort within folders</strong> to preserve the folder structure. Previous and next playback follow the selected sort order.</p>
 <h2 id="lib-cards">Working with cards<a aria-label="Link to this section" class="anchor" href="#lib-cards">#</a></h2>
 <ul>
@@ -570,8 +581,12 @@
 <h2 id="lib-storage">If playback stutters on an HDD or NAS<a aria-label="Link to this section" class="anchor" href="#lib-storage">#</a></h2>
 <p>Enable <strong>Slow Storage Compatibility</strong> in settings to limit thumbnail work to one task per drive and suspend thumbnail generation on the drive currently used for playback. This reduces disk access. It is off by default. On Windows, reopen the video after changing it.</p>
 <h2 id="lib-hover">Hover preview<a aria-label="Link to this section" class="anchor" href="#lib-hover">#</a></h2>
-<p>Rest the pointer on an entry in the file list and a short video preview plays <strong>without opening the file</strong>.
-              You no longer have to open things one by one just to see what they are.</p>
+<p>From v0.7.2, hovering over an item in the file list shows a short silent preview <strong>without opening the file</strong>. Choose <strong>Video preview</strong> under <strong>Settings → Appearance → File list hover preview</strong>. The default is <strong>Still thumbnail</strong>.</p>
+<p>Previews play only while main playback is stopped or paused. They can strain a slow HDD or NAS, so switch back to Still thumbnail if playback stutters.</p>
+<figure>
+<div class="shot"><video aria-label="File list video preview demo" data-src="../assets/video/hover-preview.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With main playback stopped, hovering over a file plays a short silent preview.</figcaption>
+</figure>
 </article>
 <!-- ============================================ 06 PLAYBACK -->
 <article class="page" data-group="Everyday use" data-title="Playback" id="page-playback">
@@ -593,6 +608,17 @@
 </table>
 </div>
 <p>The full list, and how to change it, is under <a href="#shortcuts">Keyboard shortcuts</a>.</p>
+<h2 id="pb-script-only">Play a script without video<a aria-label="Link to this section" class="anchor" href="#pb-script-only">#</a></h2>
+<p><strong>Open script only</strong> in the file list opens a single <code>.funscript</code> file (from v0.7.1). It plays in <strong>Script only</strong> mode with no video or black screen, and you follow progress on the position bar and timeline. Device output follows the timeline, and repeat playback works.</p>
+<figure>
+<div class="shot"><video aria-label="Script-only playback demo" data-src="../assets/video/script-only.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>A funscript opened and played with no video. The position bar and timeline show progress.</figcaption>
+</figure>
+<h2 id="pb-cli">Open files from the command line<a aria-label="Link to this section" class="anchor" href="#pb-cli">#</a></h2>
+<p>From v0.7.2 you can add media or funscript paths after the executable to open them. If the app is already running, they open in that window. Several media files become a playlist, and the first item opens paused.</p>
+<pre><code>ScriptPlayerPlus.exe "D:\Videos\Example.mp4"
+ScriptPlayerPlus.exe "D:\Scripts\Pattern.funscript"
+scriptplayer-plus /path/to/first.mp4 /path/to/second.mp4</code></pre>
 <h2 id="pb-repeat">Repeat, Auto Next Play and shuffle<a aria-label="Link to this section" class="anchor" href="#pb-repeat">#</a></h2>
 <p>Three things that look alike but are not. They are easy to confuse at first, so here they are side by side.</p>
 <div class="cards cols-3">
@@ -653,6 +679,12 @@
 <figure>
 <div class="shot"><img alt="Always-on-top setting" loading="lazy" src="../assets/img/always-on-top.webp"/></div>
 <figcaption>With always-on-top switched on.</figcaption>
+</figure>
+<h2 id="pb-warnings">Hide playback warnings<a aria-label="Link to this section" class="anchor" href="#pb-warnings">#</a></h2>
+<p>Advisory playback warnings, such as compatibility warnings, can be closed for the current media only, or hidden for good with <strong>Don't show playback warnings</strong> (from v0.7.1). To see them again, turn on <strong>Settings → Playback → Show playback warnings</strong>. Actual errors and diagnostics are still shown with warnings off.</p>
+<figure>
+<div class="shot"><video aria-label="Show playback warnings setting demo" data-src="../assets/video/playback-warnings.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Turning <strong>Show playback warnings</strong> off and on in <strong>Settings → Playback</strong>. Diagnostics stay available with warnings off.</figcaption>
 </figure>
 <h2 id="pb-recovery">Resetting and recovery<a aria-label="Link to this section" class="anchor" href="#pb-recovery">#</a></h2>
 <p>If a settings change causes a problem, you can reset it in <strong>Settings → Recovery</strong>. A full reset clears saved settings, offsets, stroke ranges, cached durations and interface state. It does not delete media files. See the <a href="#settings">settings guide</a> for the reset scope.</p>
@@ -773,7 +805,12 @@
 <h2 id="sc-video-profile">Save different motion settings for each video<a aria-label="Link to this section" class="anchor" href="#sc-video-profile">#</a></h2>
 <p>Enable <strong>Use separate settings for this video</strong> to save per-axis range, inversion, amplitude, curve, interpolation, offset and speed limits for the current video. Select <strong>Revert to global settings</strong> to use the shared settings again.</p>
 <p>When video-specific settings are enabled, the playback bar's <strong>STR</strong> quick controls and the Settings screen edit range and inversion in the same video profile. Before editing, check the <strong>Editing global settings / Editing settings for this video</strong> indicator.</p>
-<p><strong>Range Extender is not included in per-video profiles.</strong> It uses separate per-script or shared amplitude-memory settings. Video-specific motion settings are tied to file paths and do not automatically follow files moved or renamed outside the app.</p>
+<p><strong>Range Extender is not included in per-video profiles.</strong> It uses separate per-script or shared amplitude-memory settings. Video-specific motion settings are saved by file path.</p>
+<p>From v0.7.1, video-specific settings are found again after you rename or move a file <strong>on the same disk</strong> and open it. The file must have been opened once in v0.7.1 or later before it was renamed. Copies on another disk and files whose contents changed are not matched automatically.</p>
+<figure>
+<div class="shot"><video aria-label="Video-specific settings kept demo" data-src="../assets/video/profile-rename.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>A video renamed on the same disk keeps its video-specific motion settings when opened again.</figcaption>
+</figure>
 <h2 id="sc-extender">Range Extender modes<a aria-label="Link to this section" class="anchor" href="#sc-extender">#</a></h2>
 <p>Range Extender is adjustable from 50–500%, including by direct numeric entry. The selected mode is saved with the script amplitude-memory settings. Final output range and speed limits still apply.</p>
 <ul>
@@ -813,6 +850,21 @@
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Note</div>
 <p>Motion analysis is experimental. Quality varies a lot by source, and the result may need hand-editing.</p>
+</div>
+<h2 id="sc-record">Record an axis with a slider<a aria-label="Link to this section" class="anchor" href="#sc-record">#</a></h2>
+<p>In the sidebar's <strong>Script tools → Record axis</strong>, record the movement of one axis with a slider while media plays (from v0.7.1). Recording follows the media timeline.</p>
+<ol>
+<li>Choose the axis to record (for example <code>L0</code>) and start playback.</li>
+<li>Move the slider during playback. Pausing ends the take.</li>
+<li>Check the <strong>recording</strong> graph and press <strong>Save as new file</strong> to save it as a separate funscript.</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="Axis recording demo" data-src="../assets/video/axis-recording.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Recording the <code>L0</code> axis with the slider during playback, checking the result graph and saving it as a new funscript.</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>Only slider input is recorded</div>
+<p>The device does not move while you record, and its actual movement is not recorded. Unsaved takes are lost when the app closes, so save first.</p>
 </div>
 <h2 id="sc-roll-pitch">Independent random Roll and Pitch<a aria-label="Link to this section" class="anchor" href="#sc-roll-pitch">#</a></h2>
 <p>Add random <strong>Roll (R1) and Pitch (R2)</strong> movement to an L0 script. Each axis has independent enable, source speed and range controls. Both are off by default.</p>
@@ -905,6 +957,11 @@
 <figcaption>Selecting an audio track.</figcaption>
 </figure>
 </div>
+<p>From v0.7.1, <a href="#pb-fit">FIT / FILL</a> applies to cover art too. FIT shows the whole image without cropping, and FILL fills the playback area.</p>
+<figure>
+<div class="shot"><video aria-label="Cover art FIT / FILL demo" data-src="../assets/video/audio-fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Cover art shown in full with <strong>FIT</strong>, or filling the screen with <strong>FILL</strong>.</figcaption>
+</figure>
 <h2 id="au-boost">150% volume boost<a aria-label="Link to this section" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">Experimental</span></h2>
 <p>For quiet recordings, you can boost volume up to 150%. A peak limiter limits the maximum output signal level. Lower playback volume before enabling the boost.</p>
 <figure>
@@ -1011,7 +1068,7 @@
 <li><strong>Range and synchronization</strong> — adjust each device's output range from 0–100% and time offset within ±5,000ms. Positive offsets advance movement; negative offsets delay it.</li>
 <li><strong>Stop output / Resume output / Retry</strong> — control each device separately. A device whose output you stopped manually does not resume automatically when you replay the video.</li>
 <li><strong>Stop all Handy output</strong> — requests a stop on all connected Handy devices. A device that fails to confirm the stop cannot play again until a stop is confirmed.</li>
-<li><strong>Automatically connect saved devices</strong> — enable this option when needed. Keys and device settings are stored using OS encryption. If encryption is unavailable, new keys are kept only for the current app session.</li>
+<li><strong>Automatically connect saved devices</strong> — enable this option when needed. Keys and device settings are stored using OS encryption. If encryption is unavailable, new keys are kept only for the current app session. From v0.7.2 the app connects at startup without the Device screen being opened, and a device you disconnected manually is not reconnected.</li>
 </ul>
 <h2 id="hd-sync">Sync and time offset<a aria-label="Link to this section" class="anchor" href="#hd-sync">#</a></h2>
 <p>The Handy uses API v2. On playback it uploads the script and synchronises position against the server clock.</p>
@@ -1024,7 +1081,7 @@
 <p>If movement is consistently early or late across all videos, check the device <strong>time offset</strong>. If only one script is affected, adjust its <a href="#sc-offset">script offset</a>.</p>
 <p>v0.7.0 coordinates Handy output with buffering, seeking, next-item playback and video or audio looping. Switching videos may require time to prepare a new script. Loops reuse the uploaded script but still require cloud playback commands, so uninterrupted movement at the loop boundary is not guaranteed.</p>
 <h2 id="hd-loading">If a specific script fails to prepare<a aria-label="Link to this section" class="anchor" href="#hd-loading">#</a></h2>
-<p>If a particular file repeatedly produces <code>HSSP setup failed: error loading stream data</code>, see the <a href="../releases/v0.7.1-beta.1.html">v0.7.1-beta.1 test build announcement</a>. For this error only, the test build adds one same-position point within the initial hold and retries the upload once. Existing timing, positions and the initial hold are preserved.</p>
+<p>If a particular file repeatedly produces <code>HSSP setup failed: error loading stream data</code>, see the <a href="../releases/en/v0.7.1-beta.1.html">v0.7.1-beta.1 test build announcement</a>. For this error only, the test build adds one same-position point within the initial hold and retries the upload once. Existing timing, positions and the initial hold are preserved.</p>
 <p>The test build is separate from the stable release and is available only as a Windows x64 ZIP. Verification on a physical Handy covered upload and preparation, not movement during playback. If the problem persists, send the diagnostic report and steps to reproduce it.</p>
 <h2 id="hd-diag">Network diagnostics<a aria-label="Link to this section" class="anchor" href="#hd-diag">#</a></h2>
 <p><strong>Settings → Handy Network Diagnostics</strong> measures your connection quality directly.
@@ -1119,6 +1176,12 @@
 </ul>
 <p>If you need an axis the script does not contain, <strong>axis source linking</strong> can derive it from another.
               For instance, driving the <code>R0</code> output from <code>L0</code>'s movement.</p>
+<h3 id="if-speed">Speed-driven devices — L0 as speed</h3>
+<p>For devices that only offer Scalar or Oscillate, such as Hismith, choose <strong>L0 as speed</strong> under <strong>Intiface → select the device → output mapping → output mode</strong> (from v0.7.2). <code>L0</code> values 0–100 pass through your output settings and are sent as speed 0–100%.</p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>Use it only with speed scripts</div>
+<p>It does not convert ordinary position scripts into movement speed. Use it with scripts made for speed. Pausing stops the device, and position tests are unavailable while this mode is in use. Physical Hismith operation is not yet verified.</p>
+</div>
 <h2 id="if-handoff">Sharing with another app<a aria-label="Link to this section" class="anchor" href="#if-handoff">#</a></h2>
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>The built-in engine takes one client</div>
@@ -1346,12 +1409,29 @@
 <li>mpv</li>
 <li>PotPlayer</li>
 <li>VLC</li>
+<li>HereSphere (beta)</li>
 <li>Custom executable</li>
 </ul>
 <p>Configure it in <strong>Settings → External Viewer</strong>. During playback, <code>EXT</code> on the playback bar hands the file over.</p>
 <h2 id="ex-limits">What differs between players<a aria-label="Link to this section" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">Swipe the table sideways to see all columns.</p><div class="table-wrap"><table><thead><tr><th>Player</th><th>Play / pause</th><th>Position / speed control</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>Supported</td><td>Supported — control from ScriptPlayer+</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Keyboard-based control on Windows</td><td>Not supported</td></tr><tr><td>Custom executable</td><td>Launch only</td><td>Not supported</td></tr></tbody></table></div><p>This applies to v0.7.0. For synchronized output, select <strong>mpv or VLC</strong> and control playback, pause and seeking from ScriptPlayer+. Do not assume changes made directly in the external player will be reflected back. Keystroke control depends on the external app's shortcuts and window state.</p>
 <p>If you have configured mpv or VLC, it opens that player automatically when Chromium playback fails.
               When you drag the timeline, it synchronises <strong>once, when the drag is committed</strong>.</p>
+<h2 id="ex-heresphere">HereSphere (beta)<a aria-label="Link to this section" class="anchor" href="#ex-heresphere">#</a></h2>
+<p>From v0.7.2 you can send a video to HereSphere running on a Quest or PC and keep play, pause, seeking and speed in step with ScriptPlayer+. ScriptPlayer+ still handles scripts and device output.</p>
+<ol>
+<li>Turn on <strong>Remote Control</strong> in HereSphere's settings.</li>
+<li>In <strong>Settings → External Viewer</strong>, select <strong>HereSphere (Beta)</strong> and enter the headset's or PC's IP under <strong>HereSphere address</strong>. Without a port, <code>23554</code> is used.</li>
+<li>Keep the computer and the headset on the same network, open a video and press <code>EXT</code> on the playback bar.</li>
+</ol>
+<figure>
+<div class="shot"><img alt="HereSphere external player settings" loading="lazy" src="../assets/img/heresphere-beta.webp"/></div>
+<figcaption>Select <strong>HereSphere (Beta)</strong> in <strong>Settings → External Viewer</strong> and enter the address.</figcaption>
+</figure>
+<p>Only the video you send is shared, through a temporary LAN link; your library and other folders are not exposed. If the connection drops, playback and device output stop.</p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>This is a beta feature</div>
+<p>It has been tested with a simulated connection only. Playback on a physical headset and device synchronization are not yet verified.</p>
+</div>
 </article>
 <!-- ============================================ 17 FFMPEG -->
 <article class="page" data-group="Extras" data-title="FFmpeg playback" id="page-ffmpeg">
@@ -1512,6 +1592,7 @@
 <h3 id="ks-script">Script</h3>
 <ul>
 <li>Decrease · increase the stroke range</li>
+<li>Lower · raise stroke minimum · lower · raise stroke maximum — each press moves that limit by 5 percentage points (from v0.7.2).</li>
 <li>Decrease · increase · reset the script offset</li>
 </ul>
 <h3 id="ks-app">App</h3>
@@ -1524,6 +1605,22 @@
 <p>If you use a device, bind <strong>decrease / increase stroke range</strong> to keys.
                 You can then change the intensity mid-playback without moving the mouse.</p>
 </div>
+<figure>
+<div class="shot"><video aria-label="Stroke minimum and maximum shortcuts demo" data-src="../assets/video/stroke-shortcuts.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Each press of an assigned key moves the stroke minimum or maximum by 5 percentage points.</figcaption>
+</figure>
+<h2 id="ks-gamepad">Adjust the stroke range with a gamepad<a aria-label="Link to this section" class="anchor" href="#ks-gamepad">#</a></h2>
+<p>From v0.7.2 the four actions that lower and raise the stroke minimum and maximum can also be bound to gamepad buttons. In <strong>Settings → Keyboard Shortcuts → Gamepad · stroke limits</strong>, click an assignment, then release and press a pad button.</p>
+<ul>
+<li>They start unassigned.</li>
+<li>Only buttons are supported, not sticks. Holding a button does not repeat.</li>
+<li>Assignments are saved per controller model and work while the player has focus and settings are closed.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Gamepad stroke limit settings" loading="lazy" src="../assets/img/gamepad-shortcuts.webp"/></div>
+<figcaption><strong>Gamepad · stroke limits</strong> in <strong>Settings → Keyboard Shortcuts</strong>. They start unassigned.</figcaption>
+</figure>
+<p>Gamepad input has been checked with simulated input only. If a real controller does not respond, try assigning a different button.</p>
 </article>
 <!-- ============================================ 20 SETTINGS -->
 <article class="page" data-group="Reference" data-title="Settings guide" id="page-settings">
@@ -1548,11 +1645,11 @@
 <td class="col-key"><strong>Playback</strong></td>
 <td><strong>Auto Next Play</strong>, <strong>Video Compatibility Mode</strong> and the FFmpeg executable path,
                       <strong>Audio volume boost</strong> (150%), <strong>Auto Play After Handy Sync</strong>,
-                      and automatic gap skipping with its delay. → <a href="#ffmpeg">FFmpeg playback</a></td>
+                      automatic gap skipping with its delay, and <strong>Show playback warnings</strong>. → <a href="#ffmpeg">FFmpeg playback</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>Appearance</strong></td>
-<td>Display options, how fullscreen controls reveal plus their opacity and vertical position, and window options such as always-on-top.</td>
+<td>Display, how fullscreen controls appear, their opacity and vertical position, window options such as always on top, and <strong>File list hover preview</strong>. → <a href="#lib-hover">Hover preview</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>Timeline</strong></td>
@@ -1560,7 +1657,7 @@
 </tr>
 <tr>
 <td class="col-key"><strong>External Viewer</strong></td>
-<td>Paths and launch options for mpv, VLC, PotPlayer and the rest. → <a href="#external">External player</a></td>
+<td>Paths and launch options for external players such as mpv, VLC and PotPlayer, and the HereSphere address. → <a href="#external">External players</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>Device</strong></td>
@@ -1587,7 +1684,7 @@
 </tr>
 <tr>
 <td class="col-key"><strong>Recovery</strong></td>
-<td>Resetting settings and clearing caches. → <a href="#playback">Playback</a></td>
+<td><strong>Export ratings / Import ratings</strong>, resetting settings and clearing caches. → <a href="#st-ratings">Ratings backup</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>About</strong></td>
@@ -1596,6 +1693,16 @@
 </tbody>
 </table>
 </div>
+<h2 id="st-ratings">Ratings backup<a aria-label="Link to this section" class="anchor" href="#st-ratings">#</a></h2>
+<p>From v0.7.2 you can export video and audio ratings to a file and import them again in <strong>Settings → Recovery</strong>. Back them up before a reset or a move to another computer.</p>
+<ul>
+<li><strong>Import ratings</strong> adds ratings from the backup and leaves existing ones unchanged, including ratings you cleared.</li>
+<li>The backup holds keys that identify media and <strong>can include file paths.</strong> Device connection keys are not included.</li>
+</ul>
+<figure>
+<div class="shot"><img alt="Ratings backup settings" loading="lazy" src="../assets/img/ratings-backup.webp"/></div>
+<figcaption>Ratings backup in <strong>Settings → Recovery</strong>. Importing keeps your existing ratings.</figcaption>
+</figure>
 <h2 id="st-ffmpeg">The FFmpeg path<a aria-label="Link to this section" class="anchor" href="#st-ffmpeg">#</a></h2>
 <p>The FFmpeg executable path appears as a single row in Settings; you can select it yourself or install through a package manager.
               The details are under <a href="#ffmpeg">FFmpeg playback</a>.</p>
@@ -1735,17 +1842,127 @@
 <h1>Release history</h1>
 <p class="lede">What changed in the major versions.
               The complete list is on <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a>.</p>
-<h2 id="rl-070">v0.7.0 — Per-video motion settings and library organization<a aria-label="Link to this section" class="anchor" href="#rl-070">#</a></h2>
-<p>This is the <strong>current stable release</strong>. It adds per-axis amplitude and response curves, video-specific motion settings, remembered manual script associations, tags, smart groups, entry exclusion and restoration, and moving selected companion scripts to the trash. It also improves Handy buffering, seeking and looping, plus FFmpeg/HLS recovery and diagnostics.</p>
-<p>See the <a href="../releases/v0.7.0.html">v0.7.0 release announcement</a> for changes and update notes.</p>
-<h3>v0.7.1-beta.1 — Handy script loading test build</h3>
-<p>A <strong>Windows prerelease for manual download</strong> that fixes a specific HSSP loading error. The stable automatic-update release remains v0.7.0. See the separate <a href="../releases/v0.7.1-beta.1.html">installation and testing instructions</a>.</p>
-<h2 id="rl-063">v0.6.3 — Multiple Handy devices and library search<a aria-label="Link to this section" class="anchor" href="#rl-063">#</a></h2>
+<h2 data-version="0.7.2" id="rl-072">v0.7.2 — Shortcuts, previews and HereSphere<a aria-label="Link to this section" class="anchor" href="#rl-072">#</a></h2>
+<p>This is the <strong>current stable release</strong>. Details are in the <a href="../releases/en/v0.7.2.html">v0.7.2 release announcement</a>.</p>
+<ul>
+<li><a href="#ks-gamepad">Keyboard and gamepad shortcuts</a> that move the stroke minimum and maximum by 5 percentage points</li>
+<li>Silent <a href="#lib-hover">video preview</a> in the file list (turn on in settings)</li>
+<li><a href="#st-ratings">Export and import ratings</a></li>
+<li><a href="#pb-cli">Open media and funscripts from the command line</a></li>
+<li><a href="#ex-heresphere">HereSphere integration</a> <span class="pill pill--exp">Beta</span></li>
+<li><a href="#if-speed">L0 as speed</a> for speed-driven devices such as Hismith</li>
+<li>Audio included in removing files without scripts; Handy auto-connect at app startup</li>
+<li>Fixes for rapid play and pause switching, stop and retry on speed devices, and copying diagnostics</li>
+<li>Security updates to Electron and related dependencies</li>
+</ul>
+<p>FunOSR SR1 3.0 has not been added to the supported-device list in this version, because the technical documentation needed to confirm compatibility is not yet available. This does not mean it is either compatible or incompatible with existing connection modes.</p>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="Stroke minimum and maximum shortcuts demo" data-src="../assets/video/stroke-shortcuts.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Each press of an assigned key moves the stroke minimum or maximum by 5 percentage points.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><img alt="Gamepad stroke limit settings" loading="lazy" src="../assets/img/gamepad-shortcuts.webp"/></div>
+<figcaption><strong>Gamepad · stroke limits</strong> in <strong>Settings → Keyboard Shortcuts</strong>. They start unassigned.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="File list video preview demo" data-src="../assets/video/hover-preview.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With main playback stopped, hovering over a file plays a short silent preview.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Remove files without scripts demo" data-src="../assets/video/playlist-audio-cleanup.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>From v0.7.2 unscripted audio goes too. Items with a linked script stay.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><img alt="Ratings backup settings" loading="lazy" src="../assets/img/ratings-backup.webp"/></div>
+<figcaption>Ratings backup in <strong>Settings → Recovery</strong>. Importing keeps your existing ratings.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><img alt="HereSphere external player settings" loading="lazy" src="../assets/img/heresphere-beta.webp"/></div>
+<figcaption>Select <strong>HereSphere (Beta)</strong> in <strong>Settings → External Viewer</strong> and enter the address.</figcaption>
+</figure>
+</div>
+</div>
+<h2 data-version="0.7.1" id="rl-071">v0.7.1 — Script-only playback and axis recording<a aria-label="Link to this section" class="anchor" href="#rl-071">#</a></h2>
+<p>Details are in the <a href="../releases/en/v0.7.1.html">v0.7.1 release announcement</a>.</p>
+<ul>
+<li><a href="#pb-script-only">Play a funscript</a> without video (including repeat)</li>
+<li><a href="#sc-record">Record one axis</a> with a slider and save it as a new funscript</li>
+<li><a href="#au-audio">FIT / FILL</a> for audio cover art</li>
+<li><a href="#lib-unscripted">Remove unscripted videos</a> from the playlist at once</li>
+<li><a href="#sc-video-profile">Recover video-specific settings</a> for files renamed or moved on the same disk</li>
+<li><a href="#pb-warnings">Hide advisory playback warnings</a></li>
+<li>Includes the Handy HSSP loading recovery from v0.7.1-beta.1</li>
+<li>Fixed old ratings attaching to another file that only shared its name and modification time</li>
+</ul>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="Script-only playback demo" data-src="../assets/video/script-only.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>A funscript opened and played with no video. The position bar and timeline show progress.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Axis recording demo" data-src="../assets/video/axis-recording.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Recording the <code>L0</code> axis with the slider during playback, checking the result graph and saving it as a new funscript.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Cover art FIT / FILL demo" data-src="../assets/video/audio-fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Cover art shown in full with <strong>FIT</strong>, or filling the screen with <strong>FILL</strong>.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Remove videos without scripts demo" data-src="../assets/video/playlist-cleanup.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>In v0.7.1, only videos without a script leave the playlist at once. The original files are not deleted.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Video-specific settings kept demo" data-src="../assets/video/profile-rename.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>A video renamed on the same disk keeps its video-specific motion settings when opened again.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Show playback warnings setting demo" data-src="../assets/video/playback-warnings.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Turning <strong>Show playback warnings</strong> off and on in <strong>Settings → Playback</strong>. Diagnostics stay available with warnings off.</figcaption>
+</figure>
+</div>
+</div>
+<h3 data-version="0.7.1-beta.1" id="rl-071-beta1">v0.7.1-beta.1 — Handy script loading test build</h3>
+<p>A Windows pre-release for manual download that fixed a specific HSSP loading error. The fix is part of the v0.7.1 stable release. <a href="../releases/en/v0.7.1-beta.1.html">Test build announcement</a></p>
+<h2 data-version="0.7.0" id="rl-070">v0.7.0 — Per-video motion settings and library organization<a aria-label="Link to this section" class="anchor" href="#rl-070">#</a></h2>
+<p>It adds per-axis amplitude and response curves, video-specific motion settings, remembered manual script associations, tags, smart groups, entry exclusion and restoration, and moving selected companion scripts to the trash. It also improves Handy buffering, seeking and looping, plus FFmpeg/HLS recovery and diagnostics.</p>
+<p>See the <a href="../releases/en/v0.7.0.html">v0.7.0 release announcement</a> for changes and update notes.</p>
+<h2 data-version="0.6.3" id="rl-063">v0.6.3 — Multiple Handy devices and library search<a aria-label="Link to this section" class="anchor" href="#rl-063">#</a></h2>
 <p>Added multiple Handy connections, play counts, script speed filters, saved regular groups, Range Extender modes, independent random Roll and Pitch, and Jev generation and review. From this version onward, new macOS builds are available only for Apple Silicon.</p>
 <p>The initial v0.6.3 package had an issue where clearing a playlist after opening a saved group left the library empty. A replacement package was published under the same version number. If you use the initial package, update to the latest stable release.</p>
-<h2 id="rl-062">v0.6.2 — Playback and library stability<a aria-label="Link to this section" class="anchor" href="#rl-062">#</a></h2>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="Multiple Handy devices demo" data-src="../assets/video/handy-multi.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Register several Handy devices and set each one’s output range and offset separately.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Script speed filtering demo" data-src="../assets/video/library-speed.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Changing <strong>Script speed</strong> leaves only videos in the selected speed range.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Saving a group demo" data-src="../assets/video/library-groups.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>This demo filters for slow scripts, saves the results as <code>Slow picks</code> and reopens the group.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Play count sorting demo" data-src="../assets/video/library-playcount.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Select <strong>Play count</strong>, then use the direction button to switch between most played and least played.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Range Extender modes demo" data-src="../assets/video/range-extender.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Switching between the <strong>Standard</strong>, <strong>Preserve detail</strong> and <strong>Endpoints</strong> modes to compare the output range.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Independent Roll and Pitch motion demo" data-src="../assets/video/roll-pitch.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With <strong>Roll (R1)</strong> and <strong>Pitch (R2)</strong> on, each axis moves on its own alongside the L0 script.</figcaption>
+</figure>
+</div>
+</div>
+<h2 data-version="0.6.2" id="rl-062">v0.6.2 — Playback and library stability<a aria-label="Link to this section" class="anchor" href="#rl-062">#</a></h2>
 <p>Improved support for slow storage, file browsing, subtitles and device switching, and strengthened runtime dependency and packaging checks. See the <a href="https://github.com/sioaeko/scriptplayer-plus/releases/tag/v0.6.2" rel="noopener noreferrer" target="_blank">v0.6.2 release notes</a> for details.</p>
-<h2 id="rl-060">v0.6.0 — library, VR, Intiface<a aria-label="Link to this section" class="anchor" href="#rl-060">#</a></h2>
+<h2 data-version="0.6.0 0.6.1" id="rl-060">v0.6.0 — library, VR, Intiface<a aria-label="Link to this section" class="anchor" href="#rl-060">#</a></h2>
 <p>A release focused on large libraries, script discovery, multi-axis control and safe device recovery.</p>
 <ul>
 <li><strong>Multiple named library folders</strong> with independent enable/disable, merged local and NAS caches, sequential background refresh</li>
@@ -1760,24 +1977,64 @@
 <li>Removed the AppImage FUSE2 dependency and added a DEB AppArmor profile</li>
 <li>Minimum macOS raised to <strong>Monterey 12</strong></li>
 </ul>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="Library demo" data-src="../assets/video/library.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The top of the library. Folders are managed from the search box and the <strong>Library folders</strong> button.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="VR180 playback demo" data-src="../assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>A VR180 video in projection mode, dragging to look around.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Connecting several devices" data-src="../assets/video/more-devices.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Several devices can be selected and used together.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Duration-based script search demo" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Candidates ranked by closest duration.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Rating demo" data-src="../assets/video/rating.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Rate a file without leaving playback.</figcaption>
+</figure>
+</div>
+</div>
 <div class="note">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 hotfix</div>
 <p>Fixed the Files sidebar being cut off in short windows.
                 The filters, Script Variants panel and file list now scroll together as one sidebar, so
                 <strong>Match by Duration</strong> and <strong>Axis Script Sources</strong> stay reachable even when the panel grows tall.</p>
 </div>
-<h2 id="rl-050">v0.5.0 — library rebuild<a aria-label="Link to this section" class="anchor" href="#rl-050">#</a></h2>
+<h2 data-version="0.5.0 0.5.1" id="rl-050">v0.5.0 — library rebuild<a aria-label="Link to this section" class="anchor" href="#rl-050">#</a></h2>
 <ul>
 <li>Reworked library screen and thumbnail menu</li>
 <li>Better handling of script variants</li>
 <li>Cleaner audio and subtitle track selection</li>
 </ul>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="Thumbnail menu demo" data-src="../assets/video/thumbnail-menu.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Manage the cover image from the thumbnail menu.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Switching script variants" data-src="../assets/video/script-variants.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The choice applies immediately.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Audio track demo" data-src="../assets/video/av-audio.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Selecting an audio track.</figcaption>
+</figure>
+</div>
+</div>
 <div class="note">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 hotfix</div>
 <p>Fixed a FunOSR / SR serial playback problem.
                 Pause and resume no longer get stuck in the safety transition, and catch-up after a delayed serial write is now capped.</p>
 </div>
-<h2 id="rl-040">v0.4.0 — plugins split out, motion generation<a aria-label="Link to this section" class="anchor" href="#rl-040">#</a></h2>
+<h2 data-version="0.4" id="rl-040">v0.4.0 — plugins split out, motion generation<a aria-label="Link to this section" class="anchor" href="#rl-040">#</a></h2>
 <ul>
 <li><strong>Removed the built-in script-source provider</strong> from the default install — nothing is bundled, recommended or enabled now.</li>
 <li>Added a <strong>Plugins workspace</strong> for data-only <code>.funplugin</code> manifests</li>
@@ -1786,7 +2043,7 @@
 <li>FFmpeg-based thumbnail fallback</li>
 <li>Recent-media shortcuts and better external subtitle discovery</li>
 </ul>
-<h2 id="rl-030">v0.3.0 — library and multi-axis timeline<a aria-label="Link to this section" class="anchor" href="#rl-030">#</a></h2>
+<h2 data-version="0.3" id="rl-030">v0.3.0 — library and multi-axis timeline<a aria-label="Link to this section" class="anchor" href="#rl-030">#</a></h2>
 <ul>
 <li>A new <strong>library workspace</strong> with thumbnail cards, search, filters and adjustable card size</li>
 <li>Player, library and settings unified into one <strong>workspace rail</strong></li>
@@ -1796,7 +2053,35 @@
 <li>Audio volume boost to <strong>150%</strong> (experimental)</li>
 <li>Automatic remote reconnection and steadier pairing</li>
 </ul>
-<h2 id="rl-early">v0.1.x – v0.2.x — early versions<a aria-label="Link to this section" class="anchor" href="#rl-early">#</a></h2>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="Library thumbnail generation demo" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Thumbnails are generated in the background and fill in card by card. With many files they start empty and populate over time.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="All axes shown at once" data-src="../assets/video/multiaxis-all.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Every axis shown at once.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Resizing the timeline" data-src="../assets/video/multiaxis-height.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Dragging the divider to resize the timeline.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Handy network diagnostics demo" data-src="../assets/video/handy-diagnostics.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>The network diagnostics screen.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Random motion smoothing demo" data-src="../assets/video/random-smooth.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>Generated motion with smoothing applied.</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Volume boost demo" data-src="../assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>With the 150% boost switched on.</figcaption>
+</figure>
+</div>
+</div>
+<h2 data-version="0.1 0.2" id="rl-early">v0.1.x – v0.2.x — early versions<a aria-label="Link to this section" class="anchor" href="#rl-early">#</a></h2>
 <ul>
 <li>Added the Script Variants panel</li>
 <li>Split <strong>Repeat</strong> from <strong>Auto Next Play</strong></li>
@@ -1849,7 +2134,7 @@
 </div>
 </dl>
 <h2 id="ab-docs">About these docs<a aria-label="Link to this section" class="anchor" href="#ab-docs">#</a></h2>
-<p>This site covers stable <strong>v0.7.0</strong>, checked on October 15, 2026. Existing screenshots were captured in earlier versions and may differ from the current app's layout or wording. See <a href="../releases/">release announcements</a> and the <a href="#releases">version history</a> for recent changes.</p>
+<p>This site covers stable <strong>v0.7.2</strong>, checked on November 8, 2026. Existing screenshots were captured in earlier versions and may differ from the current app's layout or wording. See <a href="../releases/en/">release announcements</a> and the <a href="#releases">version history</a> for recent changes.</p>
 </article>
 <!-- pager gets injected here -->
 <nav aria-label="Previous / next page" class="pager" id="pager"></nav>
@@ -1863,7 +2148,7 @@
 </div>
 <footer class="site-footer">
 <div class="footer-inner">
-<p>© ScriptPlayer+ · License: ScriptPlayer+ EULA · Documentation for v0.7.0</p>
+<p>© ScriptPlayer+ · License: ScriptPlayer+ EULA · Documentation for v0.7.2</p>
 <div class="footer-links">
 <a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">Releases</a>

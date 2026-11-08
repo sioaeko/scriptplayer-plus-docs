@@ -1,0 +1,30 @@
+«ko»
+Handy를 여러 대 등록하고 장치마다 출력 범위와 오프셋을 따로 맞춥니다.
+«t»
+注册多台 Handy，并为每台设备分别设置输出范围和偏移。
+
+«ko»
+<strong>Standard</strong> · <strong>Preserve detail</strong> · <strong>Endpoints</strong> 모드를 바꾸며 출력 범위를 비교합니다.
+«t»
+切换 <strong>Standard</strong>、<strong>Preserve detail</strong> 和 <strong>Endpoints</strong> 模式，比较输出范围。
+
+«ko»
+<strong>Roll (R1)</strong>과 <strong>Pitch (R2)</strong>를 켜면 L0 스크립트와 함께 따로 움직입니다.
+«t»
+开启 <strong>Roll (R1)</strong> 和 <strong>Pitch (R2)</strong> 后，两个轴会配合 L0 脚本各自独立运动。
+
+«ko»
+여러 Handy 연결 데모
+«t»
+多台 Handy 连接演示
+
+«ko»
+Range Extender 모드 데모
+«t»
+Range Extender 模式演示
+
+«ko»
+독립 Roll·Pitch 모션 데모
+«t»
+独立 Roll・Pitch 运动演示
+

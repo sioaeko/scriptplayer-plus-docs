@@ -2,7 +2,7 @@
 
 공지 주소: https://sioaeko.github.io/scriptplayer-plus-docs/releases/
 
-기존 사용 설명서와 별도로 관리하는 한국어 공지입니다. `releases/posts/`의 Markdown 파일로 목록과 개별 HTML을 생성합니다. 브라우저에서는 JavaScript나 GitHub API 없이 읽을 수 있습니다.
+기존 사용 설명서와 별도로 관리하는 공지입니다. 한국어 원문은 `releases/posts/`, 번역은 `releases/posts/en/`, `releases/posts/ja/`, `releases/posts/zh/`의 Markdown 파일이며, 언어별 목록과 개별 HTML을 `releases/`, `releases/en/`, `releases/ja/`, `releases/zh/`에 생성합니다. 브라우저에서는 JavaScript나 GitHub API 없이 읽을 수 있습니다.
 
 ## 최초 준비
 
@@ -39,6 +39,12 @@ python -m pip install -r tools/releases/requirements.txt
    http://localhost:8765/releases/ 에서 목록과 본문을 확인하세요. 예시 파일의 본문 주소는 `/releases/v1.2.3.html`입니다.
 
 4. 원본 Markdown과 생성된 HTML을 함께 커밋하고 `main`에 푸시하면 GitHub Pages에 반영됩니다. HTML은 생성 결과이므로 수정은 Markdown에서 진행하세요.
+
+## 번역 추가
+
+한국어 원문과 **같은 파일 이름**으로 `releases/posts/<언어>/`에 번역본을 만듭니다(예: `releases/posts/en/v1.2.3.md`). 메타데이터의 `date`와 `version`은 원문과 같게 두고 `title`, `summary`, 본문만 번역하세요. 같은 이름의 번역이 있으면 상단 언어 전환이 그 글로 연결되고, 없으면 해당 언어의 공지 목록으로 연결됩니다.
+
+사용 설명서 번역판(`en/`, `ja/`, `zh/`)의 공지 링크는 `tools/i18n.py build`가 같은 언어의 공지로 바꿉니다.
 
 ## 동작
 

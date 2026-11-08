@@ -18,25 +18,41 @@
       prev: "이전", next: "다음",
       titleSuffix: "ScriptPlayer+ 사용 설명서",
       noResults: "검색 결과가 없습니다.<br />다른 낱말로 찾아보세요.",
-      stars: function (n) { return "GitHub 저장소 — 스타 " + n + "개"; }
+      stars: function (n) { return "GitHub 저장소 — 스타 " + n + "개"; },
+      latest: "최신 버전",
+      demos: "데모 영상", prevDemo: "이전 데모", nextDemo: "다음 데모",
+      undocumented: function (v) { return "v" + v + " 변경 사항은 아직 이 페이지에 정리되지 않았습니다. "; },
+      releasesLink: "GitHub Releases에서 확인하기"
     },
     en: {
       prev: "Previous", next: "Next",
       titleSuffix: "ScriptPlayer+ Documentation",
       noResults: "No results.<br />Try a different word.",
-      stars: function (n) { return "GitHub repository — " + n + " stars"; }
+      stars: function (n) { return "GitHub repository — " + n + " stars"; },
+      latest: "Latest",
+      demos: "Demo videos", prevDemo: "Previous demo", nextDemo: "Next demo",
+      undocumented: function (v) { return "Changes for v" + v + " are not on this page yet. "; },
+      releasesLink: "See GitHub Releases"
     },
     ja: {
       prev: "前へ", next: "次へ",
       titleSuffix: "ScriptPlayer+ 取扱説明書",
       noResults: "検索結果がありません。<br />別の語句でお試しください。",
-      stars: function (n) { return "GitHub リポジトリ — スター " + n + " 件"; }
+      stars: function (n) { return "GitHub リポジトリ — スター " + n + " 件"; },
+      latest: "最新バージョン",
+      demos: "デモ動画", prevDemo: "前のデモ", nextDemo: "次のデモ",
+      undocumented: function (v) { return "v" + v + " の変更内容はまだこのページにまとめられていません。"; },
+      releasesLink: "GitHub Releases で確認"
     },
     zh: {
       prev: "上一页", next: "下一页",
       titleSuffix: "ScriptPlayer+ 使用手册",
       noResults: "没有搜索结果。<br />请换个词再试。",
-      stars: function (n) { return "GitHub 仓库 — " + n + " 个星标"; }
+      stars: function (n) { return "GitHub 仓库 — " + n + " 个星标"; },
+      latest: "最新版本",
+      demos: "演示视频", prevDemo: "上一个演示", nextDemo: "下一个演示",
+      undocumented: function (v) { return "v" + v + " 的更新内容尚未整理到本页。"; },
+      releasesLink: "前往 GitHub Releases 查看"
     }
   };
   var T = STRINGS[document.documentElement.lang] || STRINGS.ko;
@@ -55,10 +71,62 @@
     return "page-" + slug;
   }
 
+  /* The app links to "#v<installed version>" (e.g. #v0.7.0, #v0.7.1-beta.1).
+     Release headings list the versions they cover in data-version; a token
+     covers itself and its patch/pre-release suffixes ("0.4" covers 0.4.2). */
+  var VERSION_HASH = /^v?(\d+\.\d+(?:\.\d+)?(?:-[0-9a-z.]+)?)$/i;
+
+  function findRelease(ver) {
+    var best = null;
+    var bestLen = 0;
+    var heads = document.querySelectorAll("#page-releases [data-version]");
+    Array.prototype.forEach.call(heads, function (h) {
+      h.getAttribute("data-version").split(/\s+/).forEach(function (tok) {
+        var hit = ver === tok || ver.indexOf(tok + ".") === 0 || ver.indexOf(tok + "-") === 0;
+        if (hit && tok.length > bestLen) {
+          best = h;
+          bestLen = tok.length;
+        }
+      });
+    });
+    return best;
+  }
+
+  /** Say when the requested version has no section yet. */
+  function markUndocumented(ver, head) {
+    var page = document.getElementById("page-releases");
+    var old = page.querySelector(".note--undocumented");
+    if (old) old.remove();
+    if (head) return;
+    var note = document.createElement("div");
+    note.className = "note note--undocumented";
+    note.innerHTML =
+      '<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg></div><p></p>';
+    note.firstChild.appendChild(document.createTextNode("v" + ver));
+    var p = note.lastChild;
+    p.appendChild(document.createTextNode(T.undocumented(ver)));
+    var a = document.createElement("a");
+    a.href = "https://github.com/sioaeko/scriptplayer-plus/releases";
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.textContent = T.releasesLink;
+    p.appendChild(a);
+    var lede = page.querySelector(".lede");
+    page.insertBefore(note, lede ? lede.nextSibling : page.firstChild);
+  }
+
   /** Given any hash, resolve which page slug it belongs to and the heading (if any). */
   function resolve(hash) {
     var raw = (hash || "").replace(/^#/, "");
     if (!raw) return { slug: order[0], heading: null };
+
+    var ver = VERSION_HASH.exec(raw);
+    if (ver && document.getElementById("page-releases")) {
+      var v = ver[1].toLowerCase();
+      var head = findRelease(v);
+      markUndocumented(v, head);
+      return { slug: "releases", heading: head ? head.id : null };
+    }
 
     if (document.getElementById(pageIdOf(raw))) {
       return { slug: raw, heading: null };
@@ -237,6 +305,10 @@
 
       buildToc(page);
       buildPager(r.slug);
+      // reels measured while their page was hidden; let them recount
+      Array.prototype.forEach.call(page.querySelectorAll(".reel-track"), function (t) {
+        t.dispatchEvent(new Event("scroll"));
+      });
       currentSlug = r.slug;
 
       document.title =
@@ -258,7 +330,18 @@
     }
 
     syncToc();
+    syncLangLinks();
     closeNav();
+  }
+
+  // every language edition shares page and heading ids, so switching
+  // language keeps the reader on the same section
+  var langLinks = Array.prototype.slice.call(document.querySelectorAll(".lang-switch a"));
+  function syncLangLinks() {
+    langLinks.forEach(function (a) {
+      if (!a.dataset.base) a.dataset.base = a.getAttribute("href").split("#")[0];
+      a.setAttribute("href", a.dataset.base + location.hash);
+    });
   }
 
   window.addEventListener("hashchange", function () {
@@ -358,7 +441,7 @@
       var heads = page.querySelectorAll("h2[id], h3[id]");
       Array.prototype.forEach.call(heads, function (h) {
         var c = h.cloneNode(true);
-        var junk = c.querySelectorAll(".anchor");
+        var junk = c.querySelectorAll(".anchor, .pill");
         Array.prototype.forEach.call(junk, function (n) {
           n.remove();
         });
@@ -585,6 +668,105 @@
         /* keep the baked-in value */
       });
   })();
+
+  /* ---------- heading badges ---------- */
+
+  // Source headings put the badge after the hidden "#" link, which leaves an
+  // odd gap; move the link to the end so badges sit right after the text.
+  Array.prototype.forEach.call(document.querySelectorAll("h2 > .pill, h3 > .pill"), function (pill) {
+    var anchor = pill.parentElement.querySelector(".anchor");
+    if (anchor) pill.parentElement.appendChild(anchor);
+  });
+
+  (function () {
+    var newest = document.querySelector("#page-releases h2[data-version]");
+    if (!newest) return;
+    var pill = document.createElement("span");
+    pill.className = "pill pill--new";
+    pill.textContent = T.latest;
+    var anchor = newest.querySelector(".anchor");
+    newest.insertBefore(document.createTextNode(" "), anchor);
+    newest.insertBefore(pill, anchor);
+  })();
+
+  /* ---------- demo reels ---------- */
+
+  Array.prototype.forEach.call(document.querySelectorAll(".reel"), function (reel) {
+    var track = reel.querySelector(".reel-track");
+    var items = track.children;
+    if (items.length < 2) return;
+
+    track.tabIndex = 0;
+    track.setAttribute("aria-label", T.demos);
+
+    function button(label, glyph) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "reel-btn";
+      b.setAttribute("aria-label", label);
+      b.innerHTML = '<span aria-hidden="true">' + glyph + "</span>";
+      return b;
+    }
+    var prev = button(T.prevDemo, "&lsaquo;");
+    var next = button(T.nextDemo, "&rsaquo;");
+    var count = document.createElement("span");
+    count.className = "reel-count";
+    count.setAttribute("aria-live", "polite");
+    var bar = document.createElement("div");
+    bar.className = "reel-bar";
+    bar.appendChild(prev);
+    bar.appendChild(count);
+    bar.appendChild(next);
+    reel.appendChild(bar);
+
+    function offset(i) {
+      return items[i].offsetLeft - items[0].offsetLeft;
+    }
+    function current() {
+      // the last clip can't snap to the left edge, so the end of the track counts as last
+      if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 2) return items.length - 1;
+      var best = 0;
+      for (var i = 1; i < items.length; i++) {
+        if (Math.abs(offset(i) - track.scrollLeft) < Math.abs(offset(best) - track.scrollLeft)) best = i;
+      }
+      return best;
+    }
+    // while a smooth scroll is under way, steps count from where it is heading
+    var target = null;
+    var settle = 0;
+
+    function update() {
+      var i = target === null ? current() : target;
+      count.textContent = i + 1 + " / " + items.length;
+      prev.disabled = i === 0;
+      next.disabled = i === items.length - 1;
+    }
+    function go(step) {
+      var from = target === null ? current() : target;
+      target = Math.max(0, Math.min(items.length - 1, from + step));
+      track.scrollTo({ left: offset(target) });
+      update();
+    }
+    prev.addEventListener("click", function () { go(-1); });
+    next.addEventListener("click", function () { go(1); });
+
+    var pending = false;
+    track.addEventListener("scroll", function () {
+      clearTimeout(settle);
+      settle = setTimeout(function () {
+        target = null;
+        update();
+      }, 150);
+      if (pending) return;
+      pending = true;
+      requestAnimationFrame(function () {
+        pending = false;
+        update();
+      });
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
 
   /* ---------- init ---------- */
 

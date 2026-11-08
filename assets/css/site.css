@@ -856,6 +856,85 @@ figcaption {
   margin: 0;
 }
 
+/* swipeable demo strip: the next clip peeks in so it reads as scrollable */
+.reel {
+  max-width: var(--measure);
+  margin: 1.6rem 0 2rem;
+}
+
+.reel-track {
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.reel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.reel-track:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+}
+
+.reel-item {
+  flex: 0 0 86%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.reel-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.reel-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--text-2);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+
+.reel-btn:hover:not(:disabled) {
+  color: var(--text);
+  background: var(--surface-3);
+}
+
+.reel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.reel-count {
+  min-width: 3.2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel-track {
+    scroll-behavior: auto;
+  }
+}
+
 /* video placeholder before load */
 .shot video[data-src] {
   aspect-ratio: 16 / 9;
@@ -1150,6 +1229,16 @@ td strong {
   color: var(--text-2);
   background: var(--surface-2);
   vertical-align: middle;
+  /* middle aligns to the x-height; lift it to the optical center of the text */
+  position: relative;
+  top: -0.14em;
+}
+
+h1 .pill,
+h2 .pill,
+h3 .pill {
+  margin-left: 0.55rem;
+  top: -0.24em;
 }
 
 .pill--new {

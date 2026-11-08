@@ -325,10 +325,10 @@ def cmd_build(langs):
                     else:
                         missing.append(v)
 
-        # Release announcements are shared at the site root. Apply after
+        # Each language's announcements live in releases/<lang>/. Apply after
         # translation because translated block HTML can recreate these links.
         for a in soup.select('a[href^="releases/"]'):
-            a["href"] = "../" + a["href"]
+            a["href"] = "../releases/%s/" % lang + a["href"][len("releases/"):]
 
         # language switcher: mark the active entry, fix sibling links
         for a in soup.select(".lang-switch a"):

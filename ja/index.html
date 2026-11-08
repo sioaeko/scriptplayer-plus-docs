@@ -143,9 +143,9 @@
 <div class="hero-cta">
 <a class="btn btn--primary" href="#quickstart">クイックスタート</a>
 <a class="btn" href="#install">インストール方法を見る</a>
-<a class="btn" href="../releases/">リリースのお知らせ</a>
+<a class="btn" href="../releases/ja/">リリースのお知らせ</a>
 </div>
-<p class="hero-meta">Windows · macOS · Linux · 正式版 v0.7.0 準拠 · 2026.10.15 更新</p>
+<p class="hero-meta">Windows · macOS · Linux · 正式版 v0.7.2 準拠 · 2026.11.08 更新</p>
 </div>
 <figure>
 <div class="shot">
@@ -202,7 +202,7 @@
 <h1>インストール</h1>
 <p class="lede">ScriptPlayer+ は GitHub Releases にある Windows・macOS・Linux 向けパッケージからインストールします。初回起動時に OS がセキュリティ警告を出すことがあるため、その対処も併せて記載しています。</p>
 <h2 id="install-get">ダウンロード<a aria-label="この項目へのリンク" class="anchor" href="#install-get">#</a></h2>
-<p>最新の正式版<strong>v0.7.0</strong>は、<a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releasesの最新版ページ</a>からダウンロードできます。
+<p>最新の正式版<strong>v0.7.2</strong>は、<a href="https://github.com/sioaeko/scriptplayer-plus/releases/latest" rel="noopener noreferrer" target="_blank">GitHub Releasesの最新版ページ</a>からダウンロードできます。
               お使いのOSに合ったファイルを選んでください。</p>
 <div class="table-wrap">
 <table>
@@ -289,7 +289,7 @@
 <p>新しい正式版は、アプリ内の更新通知で確認できます。同じバージョン番号でパッケージのみが差し替えられた場合、通知されないことがあるため、リリースのお知らせにある手動インストールの案内を確認してください。
               更新確認の動作は<strong>設定 → 一般</strong>で変更できます。</p>
 <p>更新前にアプリを終了し、ユーザーデータフォルダーをバックアップしてください。Windowsのインストーラー版とZIP版は、保存先を別に設定しない限り同じ設定を使います。詳しい手順は<a href="https://github.com/sioaeko/scriptplayer-plus/blob/master/docs/UPDATE_AND_RECOVERY_KO.md" rel="noopener noreferrer" target="_blank">更新・復旧ガイド</a>を確認してください。</p>
-<p><strong>v0.7.1-beta.1は手動ダウンロード用のWindowsテスト版</strong>です。特定のHandyスクリプト読み込みエラーを修正しています。正式版の自動更新対象はv0.7.0のままです。該当するエラーが出る場合は、<a href="../releases/v0.7.1-beta.1.html">テスト版の案内</a>を確認してください。</p>
+<p><strong>v0.7.1-beta.1は手動ダウンロード用のWindowsテスト版</strong>です。特定のHandyスクリプト読み込みエラーを修正しています。正式版の自動更新対象はv0.7.0のままです。該当するエラーが出る場合は、<a href="../releases/ja/v0.7.1-beta.1.html">テスト版の案内</a>を確認してください。</p>
 <div class="media-grid cols-2">
 <figure>
 <div class="shot"><img alt="アップデート通知" loading="lazy" src="../assets/img/update-notice.webp"/></div>
@@ -531,6 +531,17 @@
 <li><strong>除外したファイルを管理 → 復元 / すべて復元</strong> — 非表示にした項目を再表示します。元のライブラリフォルダーが接続され、有効になっている必要があります。</li>
 <li><strong>ゴミ箱に移動</strong> — 実際のメディアファイルをゴミ箱へ移します。確認画面の<strong>関連スクリプト（任意）</strong>で選択したスクリプトだけを一緒に移します。他の動画でも使っているスクリプトではないか、先に確認してください。</li>
 </ul>
+<h2 id="lib-unscripted">プレイリストからスクリプトのないファイルを外す<a aria-label="この項目へのリンク" class="anchor" href="#lib-unscripted">#</a></h2>
+<p>ファイル一覧のメニューで <strong>スクリプトのないファイルを除外 (N)</strong> を押すと、スクリプトのない項目だけをプレイリストから一度に外します。かっこ内の数字は外れる項目の数で、実行前に確認が表示されます。モダン・クラシックの両方の画面で使えます。</p>
+<ul>
+<li>v0.7.2からはWAV・MP3・M4Aなどの<strong>音声も対象</strong>です。v0.7.1では動画だけを外していました。</li>
+<li>自動で見つかったスクリプト、手動で関連付けたスクリプト、軸別に関連付けたスクリプトがある項目は残ります。</li>
+<li>プレイリストから外れるだけで、<strong>元のファイルは削除しません。</strong></li>
+</ul>
+<figure>
+<div class="shot"><video aria-label="スクリプトのないファイルの除外デモ" data-src="../assets/video/playlist-audio-cleanup.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>v0.7.2からはスクリプトのない音声も一緒に外れます。スクリプトが関連付けられた項目は残ります。</figcaption>
+</figure>
 <p>ファイル一覧の並べ替えは、通常は一覧全体に適用されます。フォルダー構造を維持したい場合は<strong>フォルダー内で並べ替え</strong>を有効にしてください。前・次のファイルの再生も、選んだ並び順に従います。</p>
 <h2 id="lib-cards">カードを扱う<a aria-label="この項目へのリンク" class="anchor" href="#lib-cards">#</a></h2>
 <ul>
@@ -555,7 +566,12 @@
 <h2 id="lib-storage">HDD・NASで再生が途切れる場合<a aria-label="この項目へのリンク" class="anchor" href="#lib-storage">#</a></h2>
 <p>設定の<strong>低速ストレージ互換モード（Slow Storage Compatibility）</strong>を有効にすると、ドライブごとのサムネイル処理を一つに制限し、再生中のドライブでのサムネイル生成を保留してディスクへのアクセスを減らします。初期設定はオフです。Windowsでは設定を変更した後、動画を開き直してください。</p>
 <h2 id="lib-hover">ホバープレビュー<a aria-label="この項目へのリンク" class="anchor" href="#lib-hover">#</a></h2>
-<p>ファイル一覧で項目にマウスを乗せると、<strong>ファイルを開かずに</strong>短い映像プレビューが再生されます。どんな映像かを確かめるために1つずつ開く必要が減ります。</p>
+<p>v0.7.2から、ファイル一覧で項目にマウスを重ねると<strong>ファイルを開かずに</strong>音声なしの短いプレビューを見られます。<strong>設定 → 外観 → ファイル一覧のプレビュー</strong>で<strong>動画プレビュー</strong>を選んでください。初期設定は<strong>静止サムネイル</strong>です。</p>
+<p>プレビューはメイン再生が停止または一時停止している間だけ再生されます。遅いHDDやNASでは負担になることがあるので、再生が途切れる場合は静止サムネイルに戻してください。</p>
+<figure>
+<div class="shot"><video aria-label="ファイル一覧の動画プレビューのデモ" data-src="../assets/video/hover-preview.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>メイン再生を止めた状態でファイルにマウスを重ねると、音声なしの短いプレビューが再生されます。</figcaption>
+</figure>
 </article>
 <!-- ============================================ 06 PLAYBACK -->
 <article class="page" data-group="基本の使いかた" data-title="再生" id="page-playback">
@@ -577,6 +593,17 @@
 </table>
 </div>
 <p>全一覧と変更方法は<a href="#shortcuts">キーボードショートカット</a>にあります。</p>
+<h2 id="pb-script-only">動画なしでスクリプトだけを再生する<a aria-label="この項目へのリンク" class="anchor" href="#pb-script-only">#</a></h2>
+<p>ファイル一覧の<strong>スクリプトのみ開く</strong>で、<code>.funscript</code>ファイルだけを開けます（v0.7.1から）。動画や黒い画面なしで<strong>スクリプトのみ</strong>モードで再生され、位置バーとタイムラインで進行状況を確認します。デバイス出力はタイムラインに従い、リピート再生もできます。</p>
+<figure>
+<div class="shot"><video aria-label="スクリプトのみの再生のデモ" data-src="../assets/video/script-only.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>動画なしでファンスクリプトだけを開いて再生します。位置バーとタイムラインで進行状況を確認します。</figcaption>
+</figure>
+<h2 id="pb-cli">コマンドラインからファイルを開く<a aria-label="この項目へのリンク" class="anchor" href="#pb-cli">#</a></h2>
+<p>v0.7.2から、実行ファイルの後ろにメディアやファンスクリプトのパスを付けて開けます。アプリがすでに起動していれば、実行中のウィンドウで開きます。複数のメディアファイルを渡すとプレイリストになり、最初の項目が一時停止の状態で開きます。</p>
+<pre><code>ScriptPlayerPlus.exe "D:\Videos\Example.mp4"
+ScriptPlayerPlus.exe "D:\Scripts\Pattern.funscript"
+scriptplayer-plus /path/to/first.mp4 /path/to/second.mp4</code></pre>
 <h2 id="pb-repeat">リピート・自動で次を再生・シャッフル<a aria-label="この項目へのリンク" class="anchor" href="#pb-repeat">#</a></h2>
 <p>似ているようで別物の3つです。最初は混同しやすいので分けて説明します。</p>
 <div class="cards cols-3">
@@ -636,6 +663,12 @@
 <figure>
 <div class="shot"><img alt="常に手前に表示の設定" loading="lazy" src="../assets/img/always-on-top.webp"/></div>
 <figcaption>常に手前に表示をオンにした状態です。</figcaption>
+</figure>
+<h2 id="pb-warnings">再生の警告を隠す<a aria-label="この項目へのリンク" class="anchor" href="#pb-warnings">#</a></h2>
+<p>互換性の警告のような参考用の再生警告は、閉じるボタンで現在のメディアだけで隠すか、<strong>再生の警告を表示しない</strong>でずっと隠せます（v0.7.1から）。再び表示するには<strong>設定 → 再生 → 再生の警告を表示</strong>をオンにしてください。実際のエラーと診断情報は、警告をオフにしても表示されます。</p>
+<figure>
+<div class="shot"><video aria-label="再生の警告の表示設定のデモ" data-src="../assets/video/playback-warnings.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><strong>設定 → 再生</strong>で<strong>再生の警告を表示</strong>をオフ・オンにします。警告をオフにしても診断情報は確認できます。</figcaption>
 </figure>
 <h2 id="pb-recovery">やり直しと復旧<a aria-label="この項目へのリンク" class="anchor" href="#pb-recovery">#</a></h2>
 <p>設定変更後に問題が起きた場合は、<strong>設定 → 復旧</strong>で初期化できます。設定、オフセット、ストローク範囲、再生時間のキャッシュ、画面の状態が消去されます。メディアファイルは削除されません。範囲は<a href="#settings">設定ガイド</a>で確認してください。</p>
@@ -752,7 +785,12 @@
 <h2 id="sc-video-profile">動画ごとにモーション設定を保存する<a aria-label="この項目へのリンク" class="anchor" href="#sc-video-profile">#</a></h2>
 <p><strong>この動画専用の設定を使う</strong>を有効にすると、現在の動画の軸ごとの範囲・反転・振幅・曲線・補間・オフセット・速度制限を個別に保存します。<strong>全体設定に戻す</strong>を選ぶと、共通設定を再び使います。</p>
 <p>動画専用設定が有効な場合、再生バーの<strong>STR</strong>によるクイック調整と設定画面は、同じ動画プロファイルの範囲・反転を変更します。編集前に<strong>全体設定を編集中 / この動画の設定を編集中</strong>の表示を確認してください。</p>
-<p><strong>Range Extenderは動画別プロファイルに含まれません。</strong>従来のスクリプト別・共通の振幅記憶設定とは別の機能です。動画別モーション設定はファイルのパスを基準に保存するため、アプリ外でファイルを移動したり名前を変えたりしても自動では追従しません。</p>
+<p><strong>Range Extenderは動画別プロファイルに含まれません。</strong>従来のスクリプト別・共通の振幅記憶設定とは別の機能です。動画別モーション設定はファイルのパスを基準に保存します。</p>
+<p>v0.7.1からは、<strong>同じディスク内で</strong>ファイル名を変えたり移動したりした後に開き直しても、動画別の設定を見つけ直します。ただし、名前を変える前にそのファイルをv0.7.1以降で一度開いておく必要があります。別のディスクへコピーした場合や、ファイルの内容が変わった場合は自動では関連付けられません。</p>
+<figure>
+<div class="shot"><video aria-label="動画別設定の保持のデモ" data-src="../assets/video/profile-rename.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>同じディスク内で名前を変えた動画を開き直しても、動画別のモーション設定がそのまま残ります。</figcaption>
+</figure>
 <h2 id="sc-extender">Range Extenderのモード<a aria-label="この項目へのリンク" class="anchor" href="#sc-extender">#</a></h2>
 <p>Range Extenderは50–500%で調整でき、数値を直接入力することもできます。選んだモードはスクリプトの振幅記憶設定と一緒に保存され、最終的な出力範囲と速度制限も引き続き適用されます。</p>
 <ul>
@@ -789,6 +827,21 @@
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>参考</div>
 <p>モーション解析は実験的機能です。結果の品質は映像によって大きく変わり、生成されたスクリプトは手で整える必要がある場合があります。</p>
+</div>
+<h2 id="sc-record">スライダーで軸を録画する<a aria-label="この項目へのリンク" class="anchor" href="#sc-record">#</a></h2>
+<p>サイドバーの<strong>スクリプトツール → 軸を録画</strong>で、メディアを再生しながら1軸の動きをスライダーで直接録画できます（v0.7.1から）。録画はメディアのタイムラインを基準にします。</p>
+<ol>
+<li>録画する軸（例: <code>L0</code>）を選んで再生を始めます。</li>
+<li>再生中にスライダーを動かします。一時停止すると録画が終わります。</li>
+<li><strong>録画結果</strong>のグラフを確認し、<strong>新しいファイルとして保存</strong>を押すと別のファンスクリプトとして保存されます。</li>
+</ol>
+<figure>
+<div class="shot"><video aria-label="軸の録画のデモ" data-src="../assets/video/axis-recording.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>再生中にスライダーで<code>L0</code>軸を録画し、結果のグラフを確認してから新しいファンスクリプトとして保存します。</figcaption>
+</figure>
+<div class="note">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>記録するのはスライダーの入力だけです</div>
+<p>録画中にデバイスは動かず、デバイスの実際の動きも記録しません。保存していない録画結果はアプリを閉じると消えるので、先に保存してください。</p>
 </div>
 <h2 id="sc-roll-pitch">独立したランダムRoll・Pitch<a aria-label="この項目へのリンク" class="anchor" href="#sc-roll-pitch">#</a></h2>
 <p>L0スクリプトにランダムな<strong>Roll(R1)・Pitch(R2)</strong>の動きを加えられます。二つの軸の有効・無効、元の速度、範囲を個別に設定します。初期設定はオフです。</p>
@@ -876,6 +929,11 @@
 <figcaption>音声トラックを選ぶ動作です。</figcaption>
 </figure>
 </div>
+<p>v0.7.1から、カバーアートにも<a href="#pb-fit">FIT / FILL</a>が適用されます。FITは画像を切らずに全体を表示し、FILLは再生領域いっぱいに表示します。</p>
+<figure>
+<div class="shot"><video aria-label="カバーアートのFIT / FILLのデモ" data-src="../assets/video/audio-fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>音声のカバーアートを<strong>FIT</strong>で全体表示するか、<strong>FILL</strong>で画面いっぱいに表示します。</figcaption>
+</figure>
 <h2 id="au-boost">音量ブースト 150%<a aria-label="この項目へのリンク" class="anchor" href="#au-boost">#</a> <span class="pill pill--exp">実験的機能</span></h2>
 <p>録音音量が小さいファイルは最大150%まで増幅できます。ピークリミッターが出力信号の最大レベルを制限します。増幅を有効にする前に再生音量を下げてください。</p>
 <figure>
@@ -978,7 +1036,7 @@
 <li><strong>範囲・同期</strong> — デバイスごとに出力範囲0–100%と時間オフセット±5,000msを調整します。正の値は動きを早め、負の値は遅らせます。</li>
 <li><strong>出力停止 / 出力再開 / 再試行</strong> — デバイスごとに操作します。手動で出力を停止したデバイスは、動画の再生を再開しても自動では再開しません。</li>
 <li><strong>すべてのHandy出力を停止</strong> — 接続中のすべてのHandyに停止を要求します。停止を確認できなかったデバイスは、停止を再確認するまで再生しません。</li>
-<li><strong>保存したデバイスに自動接続</strong> — 必要に応じて有効にするオプションです。キーとデバイス設定はOSの暗号化機能で保存します。暗号化が使えない場合、新しいキーはその実行中のみ保持されます。</li>
+<li><strong>保存したデバイスに自動接続</strong> — 必要に応じて有効にするオプションです。キーとデバイス設定はOSの暗号化機能で保存します。暗号化が使えない場合、新しいキーはその実行中のみ保持されます。v0.7.2からは、デバイス画面を開かなくてもアプリの起動時に自動接続し、手動で切断したデバイスは再接続しません。</li>
 </ul>
 <h2 id="hd-sync">同期と時間オフセット<a aria-label="この項目へのリンク" class="anchor" href="#hd-sync">#</a></h2>
 <p>The Handy は API v2 で動作します。再生を始めるとスクリプトをアップロードし、サーバーの時計に合わせて再生位置を同期します。</p>
@@ -989,7 +1047,7 @@
 <p>すべての動画で動きが一定に早い、または遅い場合は、デバイスの<strong>時間オフセット</strong>を確認してください。特定のスクリプトだけがずれる場合は<a href="#sc-offset">スクリプトオフセット</a>を調整します。</p>
 <p>v0.7.0はバッファリング・シーク・次の項目の再生・動画や音声の繰り返しに合わせてHandyの出力を調整します。別の動画に移るときは、新しいスクリプトの準備に時間がかかることがあります。繰り返しではアップロード済みのスクリプトを再利用しますが、クラウドへの再生命令が必要なため、境界で動きが途切れないことは保証していません。</p>
 <h2 id="hd-loading">特定のスクリプトの準備に失敗する場合<a aria-label="この項目へのリンク" class="anchor" href="#hd-loading">#</a></h2>
-<p>特定のファイルで<code>HSSP setup failed: error loading stream data</code>が繰り返し出る場合は、<a href="../releases/v0.7.1-beta.1.html">v0.7.1-beta.1テスト版の案内</a>を確認してください。このテスト版は該当するエラーの場合に限り、開始前の固定位置区間に同じ位置の補助点を一つ追加し、1回だけ再アップロードします。元のタイミング・位置・待機区間は維持します。</p>
+<p>特定のファイルで<code>HSSP setup failed: error loading stream data</code>が繰り返し出る場合は、<a href="../releases/ja/v0.7.1-beta.1.html">v0.7.1-beta.1テスト版の案内</a>を確認してください。このテスト版は該当するエラーの場合に限り、開始前の固定位置区間に同じ位置の補助点を一つ追加し、1回だけ再アップロードします。元のタイミング・位置・待機区間は維持します。</p>
 <p>テスト版はWindows x64 ZIPのみの提供で、正式版とは別です。実機のHandyで確認したのはアップロードと準備までで、実際の動作再生は検証していません。問題が続く場合は、診断情報と再現状況を併せて送ってください。</p>
 <h2 id="hd-diag">ネットワーク診断<a aria-label="この項目へのリンク" class="anchor" href="#hd-diag">#</a></h2>
 <p><strong>設定 → Handy ネットワーク診断</strong>で接続品質を実際に測定できます。動きがよく途切れたり遅れたりするなら、ここから確認してください。</p>
@@ -1076,6 +1134,12 @@
 <li><strong>スカラー（Scalar）</strong> — 振動の強さのように、大きさ1つで表される動作です。</li>
 </ul>
 <p>スクリプトにない軸が必要なら、<strong>軸ソース連携</strong>で別の軸から値を引けます。たとえば <code>L0</code> の動きを <code>R0</code> の出力として使う、といった具合です。</p>
+<h3 id="if-speed">速度で動くデバイス — L0を速度として使用</h3>
+<p>HismithのようにScalar・Oscillate機能しかないデバイスでは、<strong>Intiface → デバイスを選択 → 出力マッピング → 出力方式</strong>で<strong>L0を速度として使用</strong>を選べます（v0.7.2から）。<code>L0</code>の値0–100が出力設定を経て、速度0–100%として送られます。</p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>速度用スクリプトにだけ使ってください</div>
+<p>通常の位置スクリプトを移動速度に変換する機能ではありません。速度用に作られたスクリプトに使ってください。一時停止するとデバイスを止め、この方式を使っている間は位置テストを使えません。実際のHismithでの動作はまだ検証していません。</p>
+</div>
 <h2 id="if-handoff">ほかのアプリと併用する<a aria-label="この項目へのリンク" class="anchor" href="#if-handoff">#</a></h2>
 <div class="note note--warn">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>内蔵エンジンは一度に1つだけ</div>
@@ -1280,11 +1344,28 @@
 <li>mpv</li>
 <li>PotPlayer</li>
 <li>VLC</li>
+<li>HereSphere（ベータ）</li>
 <li>カスタム実行ファイル</li>
 </ul>
 <p>設定は<strong>設定 → 外部プレーヤー</strong>で行います。再生中は再生バーの <code>EXT</code> ボタンでそのまま引き渡せます。</p>
 <h2 id="ex-limits">プレーヤーごとの違い<a aria-label="この項目へのリンク" class="anchor" href="#ex-limits">#</a></h2><p class="table-scroll-hint">表を左右にスクロールするとすべての列を確認できます。</p><div class="table-wrap"><table><thead><tr><th>プレイヤー</th><th>再生・一時停止</th><th>再生位置・速度の制御</th></tr></thead><tbody><tr><td>mpv / VLC</td><td>対応</td><td>対応 — ScriptPlayer+側で操作</td></tr><tr><td>JAVPlayer / JAVPlayerEZ / PotPlayer</td><td>Windowsでキー入力による制御に対応</td><td>非対応</td></tr><tr><td>カスタム実行ファイル</td><td>起動のみ</td><td>非対応</td></tr></tbody></table></div><p>v0.7.0を基準としています。同期が必要な場合は<strong>mpvまたはVLC</strong>を選び、ScriptPlayer+から再生・一時停止・シークを操作してください。外部プレーヤーで直接変更した状態が逆方向にも反映されるとは限りません。キー入力方式の動作は、外部アプリのショートカット設定やウィンドウの状態によって変わることがあります。</p>
 <p>mpv や VLC を指定しておけば、Chromium 再生が失敗したときに自動でそのプレーヤーを開きます。タイムラインをドラッグして位置を移した場合は、ドラッグが<strong>終わったときに一度だけ</strong>同期します。</p>
+<h2 id="ex-heresphere">HereSphere（ベータ）<a aria-label="この項目へのリンク" class="anchor" href="#ex-heresphere">#</a></h2>
+<p>v0.7.2から、QuestやPCで実行中のHereSphereへ動画を送り、再生・一時停止・シーク・再生速度をScriptPlayer+と合わせられます。スクリプトとデバイス出力は引き続きScriptPlayer+が担当します。</p>
+<ol>
+<li>HereSphereの設定で<strong>Remote Control</strong>をオンにします。</li>
+<li><strong>設定 → 外部プレーヤー</strong>で<strong>HereSphere (Beta)</strong>を選び、<strong>HereSphere のアドレス</strong>にヘッドセットまたはPCのIPを入力します。ポートを省略すると<code>23554</code>を使います。</li>
+<li>パソコンとヘッドセットを同じネットワークに置き、動画を開いてから再生バーの<code>EXT</code>を押します。</li>
+</ol>
+<figure>
+<div class="shot"><img alt="HereSphereの外部プレーヤー設定画面" loading="lazy" src="../assets/img/heresphere-beta.webp"/></div>
+<figcaption><strong>設定 → 外部プレーヤー</strong>で<strong>HereSphere (Beta)</strong>を選び、アドレスを入力します。</figcaption>
+</figure>
+<p>送った動画1本だけを一時的なLANリンクで共有し、ライブラリやほかのフォルダーは公開しません。接続が切れると再生とデバイス出力を止めます。</p>
+<div class="note note--warn">
+<div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-warn"></use></svg>ベータ機能です</div>
+<p>シミュレーションの接続でのみテストしています。実際のヘッドセットでの再生とデバイスの同期はまだ検証していません。</p>
+</div>
 </article>
 <!-- ============================================ 17 FFMPEG -->
 <article class="page" data-group="拡張機能" data-title="FFmpeg互換再生" id="page-ffmpeg">
@@ -1433,6 +1514,7 @@
 <h3 id="ks-script">スクリプト</h3>
 <ul>
 <li>ストローク範囲を狭める・広げる</li>
+<li>ストローク最小値を下げる · 上げる · 最大値を下げる · 上げる — 押すたびにその端の値を5パーセントポイントずつ変えます（v0.7.2から）。</li>
 <li>スクリプトオフセットを減らす・増やす・リセット</li>
 </ul>
 <h3 id="ks-app">アプリ</h3>
@@ -1444,6 +1526,22 @@
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-bulb"></use></svg>おすすめ</div>
 <p>デバイスを使うなら、<strong>ストローク範囲を狭める/広げる</strong>をキーボードに割り当てておきましょう。再生中にマウスを動かさず、強さをすぐ調整できます。</p>
 </div>
+<figure>
+<div class="shot"><video aria-label="ストローク最小値・最大値のショートカットのデモ" data-src="../assets/video/stroke-shortcuts.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>割り当てたキーを押すたびに、ストロークの最小値または最大値が5パーセントポイントずつ変わります。</figcaption>
+</figure>
+<h2 id="ks-gamepad">ゲームパッドでストローク範囲を調整する<a aria-label="この項目へのリンク" class="anchor" href="#ks-gamepad">#</a></h2>
+<p>v0.7.2から、ストロークの最小値・最大値を下げる・上げる4つの操作をゲームパッドのボタンにも割り当てられます。<strong>設定 → キーボードショートカット → ゲームパッド · ストローク上限・下限</strong>で割り当てボタンを押してから、パッドのボタンをいったん離して押してください。</p>
+<ul>
+<li>初期状態では未割り当てです。</li>
+<li>ボタンのみ対応で、スティックは使えません。長押ししてもリピートしません。</li>
+<li>割り当てはゲームパッドの機種ごとに保存され、プレーヤーにフォーカスがあり設定画面が閉じているときに動作します。</li>
+</ul>
+<figure>
+<div class="shot"><img alt="ゲームパッドのストローク範囲の設定画面" loading="lazy" src="../assets/img/gamepad-shortcuts.webp"/></div>
+<figcaption><strong>設定 → キーボードショートカット</strong>の<strong>ゲームパッド · ストローク上限・下限</strong>です。初期状態では未割り当てです。</figcaption>
+</figure>
+<p>ゲームパッドの動作はシミュレーションの入力でのみ確認しています。実際のコントローラーで反応しない場合は、別のボタンを割り当て直してみてください。</p>
 </article>
 <!-- ============================================ 20 SETTINGS -->
 <article class="page" data-group="リファレンス" data-title="設定ガイド" id="page-settings">
@@ -1464,11 +1562,11 @@
 </tr>
 <tr>
 <td class="col-key"><strong>再生</strong></td>
-<td><strong>Auto Next Play</strong>、<strong>Video Compatibility Mode</strong> と FFmpeg 実行ファイルのパス、<strong>Audio volume boost</strong>（150%）、<strong>Auto Play After Handy Sync</strong>、空白区間の自動スキップと遅延です。 → <a href="#ffmpeg">FFmpeg互換再生</a></td>
+<td><strong>Auto Next Play</strong>、<strong>Video Compatibility Mode</strong> と FFmpeg 実行ファイルのパス、<strong>Audio volume boost</strong>（150%）、<strong>Auto Play After Handy Sync</strong>、空白区間の自動スキップと遅延、<strong>再生の警告を表示</strong>です。 → <a href="#ffmpeg">FFmpeg互換再生</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>外観</strong></td>
-<td>表示、全画面コントロールの表示方法・不透明度・縦位置、常に手前に表示などのウィンドウ設定です。</td>
+<td>画面表示、全画面コントロールの表示方法・透明度・縦位置、常に手前に表示などのウィンドウオプション、<strong>ファイル一覧のプレビュー</strong>です。 → <a href="#lib-hover">ホバープレビュー</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>タイムライン</strong></td>
@@ -1476,7 +1574,7 @@
 </tr>
 <tr>
 <td class="col-key"><strong>外部プレーヤー</strong></td>
-<td>mpv・VLC・PotPlayer など外部プレーヤーのパスと起動オプションです。 → <a href="#external">外部プレーヤー</a></td>
+<td>mpv・VLC・PotPlayerなど外部プレーヤーのパスと起動オプション、HereSphereのアドレスです。 → <a href="#external">外部プレーヤー</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>デバイス</strong></td>
@@ -1496,7 +1594,7 @@
 </tr>
 <tr>
 <td class="col-key"><strong>復旧</strong></td>
-<td>設定のリセットとキャッシュの整理です。 → <a href="#playback">再生</a></td>
+<td><strong>評価をエクスポート / 評価をインポート</strong>、設定の初期化とキャッシュの整理です。 → <a href="#st-ratings">評価のバックアップ</a></td>
 </tr>
 <tr>
 <td class="col-key"><strong>情報</strong></td>
@@ -1505,6 +1603,16 @@
 </tbody>
 </table>
 </div>
+<h2 id="st-ratings">評価のバックアップ<a aria-label="この項目へのリンク" class="anchor" href="#st-ratings">#</a></h2>
+<p>v0.7.2から、<strong>設定 → 復旧</strong>で動画・音声の評価をファイルにエクスポートし、再びインポートできます。初期化や別のパソコンへの移行の前にバックアップしておきましょう。</p>
+<ul>
+<li><strong>評価をインポート</strong>はバックアップの評価を追加し、自分で消した評価を含め既存の評価は変えません。</li>
+<li>バックアップファイルにはメディアを識別する値が入り、<strong>ファイルパスが含まれることがあります。</strong>デバイスの接続キーは含まれません。</li>
+</ul>
+<figure>
+<div class="shot"><img alt="評価のバックアップの設定画面" loading="lazy" src="../assets/img/ratings-backup.webp"/></div>
+<figcaption><strong>設定 → 復旧</strong>の評価のバックアップです。インポートしても既存の評価はそのまま残ります。</figcaption>
+</figure>
 <h2 id="st-ffmpeg">FFmpeg のパス<a aria-label="この項目へのリンク" class="anchor" href="#st-ffmpeg">#</a></h2>
 <p>FFmpeg 実行ファイルのパスは設定内で1行として表示され、自分で選ぶかパッケージマネージャーでインストールできます。詳しくは<a href="#ffmpeg">FFmpeg互換再生</a>にあります。</p>
 <h2 id="st-reset">リセット<a aria-label="この項目へのリンク" class="anchor" href="#st-reset">#</a></h2>
@@ -1633,17 +1741,127 @@
 <article class="page" data-group="リファレンス" data-title="変更履歴" id="page-releases">
 <h1>変更履歴</h1>
 <p class="lede">主要なバージョンで何が変わったかをまとめました。全一覧は <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">GitHub Releases</a> にあります。</p>
-<h2 id="rl-070">v0.7.0 — 動画別モーション設定とライブラリ整理<a aria-label="この項目へのリンク" class="anchor" href="#rl-070">#</a></h2>
-<p><strong>現在の正式版</strong>です。軸ごとの振幅・応答曲線と動画別モーション設定、手動スクリプト関連付けの保存、タグ・スマートグループ、ファイルの除外・復元、選択したスクリプトのゴミ箱への移動を追加しました。Handyのバッファリング・シーク・繰り返し処理と、FFmpeg/HLSの復旧・診断も改善しました。</p>
-<p>変更点と更新時の注意事項は、<a href="../releases/v0.7.0.html">v0.7.0リリースのお知らせ</a>で確認してください。</p>
-<h3>v0.7.1-beta.1 — Handyスクリプト読み込みテスト版</h3>
-<p>特定のHSSP読み込みエラーを修正した<strong>Windows手動ダウンロード用のプレリリース</strong>です。正式版の自動更新対象はv0.7.0です。<a href="../releases/v0.7.1-beta.1.html">テスト版のインストール・確認方法</a>を別途案内しています。</p>
-<h2 id="rl-063">v0.6.3 — 複数のHandyとライブラリ検索<a aria-label="この項目へのリンク" class="anchor" href="#rl-063">#</a></h2>
+<h2 data-version="0.7.2" id="rl-072">v0.7.2 — ショートカット・プレビュー・HereSphere<a aria-label="この項目へのリンク" class="anchor" href="#rl-072">#</a></h2>
+<p><strong>現在の正式版</strong>です。詳しくは<a href="../releases/ja/v0.7.2.html">v0.7.2のリリースのお知らせ</a>をご覧ください。</p>
+<ul>
+<li>ストロークの最小値・最大値を5パーセントポイントずつ変える<a href="#ks-gamepad">キーボード・ゲームパッドのショートカット</a></li>
+<li>ファイル一覧の音声なしの<a href="#lib-hover">動画プレビュー</a>（設定でオン）</li>
+<li><a href="#st-ratings">評価のエクスポート・インポート</a></li>
+<li><a href="#pb-cli">コマンドラインからメディア・ファンスクリプトを開く</a></li>
+<li><a href="#ex-heresphere">HereSphere連携</a> <span class="pill pill--exp">ベータ</span></li>
+<li>Hismithのような速度型デバイス向けの<a href="#if-speed">L0を速度として使用</a></li>
+<li>スクリプトのないファイルの除外に音声を追加、アプリ起動時のHandy自動接続</li>
+<li>再生・一時停止のすばやい切り替え、速度型デバイスの停止・再試行、診断情報のコピーの修正</li>
+<li>Electronと関連する依存関係のセキュリティ更新</li>
+</ul>
+<p>FunOSR SR1 3.0は、互換性を確認するための技術資料がまだないため、今回のバージョンの対応デバイス一覧には追加していません。既存の接続方式と互換性がある、またはないという意味ではありません。</p>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="ストローク最小値・最大値のショートカットのデモ" data-src="../assets/video/stroke-shortcuts.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>割り当てたキーを押すたびに、ストロークの最小値または最大値が5パーセントポイントずつ変わります。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><img alt="ゲームパッドのストローク範囲の設定画面" loading="lazy" src="../assets/img/gamepad-shortcuts.webp"/></div>
+<figcaption><strong>設定 → キーボードショートカット</strong>の<strong>ゲームパッド · ストローク上限・下限</strong>です。初期状態では未割り当てです。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="ファイル一覧の動画プレビューのデモ" data-src="../assets/video/hover-preview.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>メイン再生を止めた状態でファイルにマウスを重ねると、音声なしの短いプレビューが再生されます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="スクリプトのないファイルの除外デモ" data-src="../assets/video/playlist-audio-cleanup.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>v0.7.2からはスクリプトのない音声も一緒に外れます。スクリプトが関連付けられた項目は残ります。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><img alt="評価のバックアップの設定画面" loading="lazy" src="../assets/img/ratings-backup.webp"/></div>
+<figcaption><strong>設定 → 復旧</strong>の評価のバックアップです。インポートしても既存の評価はそのまま残ります。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><img alt="HereSphereの外部プレーヤー設定画面" loading="lazy" src="../assets/img/heresphere-beta.webp"/></div>
+<figcaption><strong>設定 → 外部プレーヤー</strong>で<strong>HereSphere (Beta)</strong>を選び、アドレスを入力します。</figcaption>
+</figure>
+</div>
+</div>
+<h2 data-version="0.7.1" id="rl-071">v0.7.1 — スクリプトのみの再生と軸の録画<a aria-label="この項目へのリンク" class="anchor" href="#rl-071">#</a></h2>
+<p>詳しくは<a href="../releases/ja/v0.7.1.html">v0.7.1のリリースのお知らせ</a>をご覧ください。</p>
+<ul>
+<li>動画なしで<a href="#pb-script-only">ファンスクリプトだけを再生</a>（リピートを含む）</li>
+<li>スライダーで<a href="#sc-record">1軸を録画</a>し、新しいファンスクリプトとして保存</li>
+<li>音声のカバーアートに<a href="#au-audio">FIT / FILL</a>を適用</li>
+<li>プレイリストから<a href="#lib-unscripted">スクリプトのない動画を一度に除外</a></li>
+<li>同じディスク内で名前を変えたり移動したりしたファイルの<a href="#sc-video-profile">動画別設定を復元</a></li>
+<li>参考用の<a href="#pb-warnings">再生の警告を隠す</a></li>
+<li>v0.7.1-beta.1のHandy HSSP読み込みの復旧を含む</li>
+<li>古い評価がファイル名と更新日時だけが同じ別のファイルに付く問題を修正</li>
+</ul>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="スクリプトのみの再生のデモ" data-src="../assets/video/script-only.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>動画なしでファンスクリプトだけを開いて再生します。位置バーとタイムラインで進行状況を確認します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="軸の録画のデモ" data-src="../assets/video/axis-recording.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>再生中にスライダーで<code>L0</code>軸を録画し、結果のグラフを確認してから新しいファンスクリプトとして保存します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="カバーアートのFIT / FILLのデモ" data-src="../assets/video/audio-fit-fill.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>音声のカバーアートを<strong>FIT</strong>で全体表示するか、<strong>FILL</strong>で画面いっぱいに表示します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="スクリプトのない動画の除外デモ" data-src="../assets/video/playlist-cleanup.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>v0.7.1では、スクリプトのない動画だけをプレイリストから一度に外します。元のファイルは削除しません。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="動画別設定の保持のデモ" data-src="../assets/video/profile-rename.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>同じディスク内で名前を変えた動画を開き直しても、動画別のモーション設定がそのまま残ります。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="再生の警告の表示設定のデモ" data-src="../assets/video/playback-warnings.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><strong>設定 → 再生</strong>で<strong>再生の警告を表示</strong>をオフ・オンにします。警告をオフにしても診断情報は確認できます。</figcaption>
+</figure>
+</div>
+</div>
+<h3 data-version="0.7.1-beta.1" id="rl-071-beta1">v0.7.1-beta.1 — Handyスクリプト読み込みテスト版</h3>
+<p>特定のHSSP読み込みエラーを修正した、Windowsの手動ダウンロード用プレリリースでした。この修正はv0.7.1正式版に含まれています。<a href="../releases/ja/v0.7.1-beta.1.html">テスト版のお知らせ</a></p>
+<h2 data-version="0.7.0" id="rl-070">v0.7.0 — 動画別モーション設定とライブラリ整理<a aria-label="この項目へのリンク" class="anchor" href="#rl-070">#</a></h2>
+<p>軸ごとの振幅・応答曲線と動画別モーション設定、手動スクリプト関連付けの保存、タグ・スマートグループ、ファイルの除外・復元、選択したスクリプトのゴミ箱への移動を追加しました。Handyのバッファリング・シーク・繰り返し処理と、FFmpeg/HLSの復旧・診断も改善しました。</p>
+<p>変更点と更新時の注意事項は、<a href="../releases/ja/v0.7.0.html">v0.7.0リリースのお知らせ</a>で確認してください。</p>
+<h2 data-version="0.6.3" id="rl-063">v0.6.3 — 複数のHandyとライブラリ検索<a aria-label="この項目へのリンク" class="anchor" href="#rl-063">#</a></h2>
 <p>複数のHandyの接続、再生回数、スクリプト速度フィルター、通常のグループ保存、Range Extenderのモード、独立したランダムRoll・Pitch、Jev生成・レビューを追加しました。このバージョン以降、macOSの新しいビルドはApple Silicon向けのみ提供します。</p>
 <p>初期のv0.6.3には、保存したグループを開いた後にプレイリストを空にすると、ライブラリも空になる問題がありました。同じバージョン番号でパッケージが差し替えられているため、初期のパッケージをお使いの場合は最新の正式版に更新してください。</p>
-<h2 id="rl-062">v0.6.2 — 再生・ライブラリの安定性向上<a aria-label="この項目へのリンク" class="anchor" href="#rl-062">#</a></h2>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="複数の Handy 接続デモ" data-src="../assets/video/handy-multi.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>複数の Handy を登録し、デバイスごとに出力範囲とオフセットを個別に調整します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="スクリプト速度での検索デモ" data-src="../assets/video/library-speed.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><strong>Script speed</strong>を変更すると、選んだ速度帯の動画だけが表示されます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="グループ保存のデモ" data-src="../assets/video/library-groups.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>遅いスクリプトだけに絞った結果を<code>Slow picks</code>グループとして保存し、再び開く様子です。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="再生回数での並べ替えデモ" data-src="../assets/video/library-playcount.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>並べ替えを<strong>Play count</strong>に変更し、方向ボタンで再生回数の多い順・少ない順を切り替えます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Range Extender モードのデモ" data-src="../assets/video/range-extender.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><strong>Standard</strong>・<strong>Preserve detail</strong>・<strong>Endpoints</strong> のモードを切り替えて出力範囲を比べます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="独立した Roll・Pitch モーションのデモ" data-src="../assets/video/roll-pitch.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption><strong>Roll (R1)</strong> と <strong>Pitch (R2)</strong> をオンにすると、L0 スクリプトと合わせてそれぞれ独立して動きます。</figcaption>
+</figure>
+</div>
+</div>
+<h2 data-version="0.6.2" id="rl-062">v0.6.2 — 再生・ライブラリの安定性向上<a aria-label="この項目へのリンク" class="anchor" href="#rl-062">#</a></h2>
 <p>低速ストレージへの対応、ファイル検索・字幕・デバイス切り替えを改善し、ランタイム依存関係とパッケージングの検査を強化しました。詳細は<a href="https://github.com/sioaeko/scriptplayer-plus/releases/tag/v0.6.2" rel="noopener noreferrer" target="_blank">v0.6.2の変更履歴</a>を確認してください。</p>
-<h2 id="rl-060">v0.6.0 — ライブラリ・VR・Intiface<a aria-label="この項目へのリンク" class="anchor" href="#rl-060">#</a></h2>
+<h2 data-version="0.6.0 0.6.1" id="rl-060">v0.6.0 — ライブラリ・VR・Intiface<a aria-label="この項目へのリンク" class="anchor" href="#rl-060">#</a></h2>
 <p>大きなライブラリ、スクリプト探索、多軸制御、安全なデバイス復帰に重点を置いたリリースです。</p>
 <ul>
 <li>名前を付けた<strong>複数のライブラリフォルダー</strong>と個別の有効/無効、ローカル・NAS キャッシュの統合、順次バックグラウンド更新</li>
@@ -1658,21 +1876,61 @@
 <li>AppImage の FUSE2 依存の除去、DEB への AppArmor プロファイル追加</li>
 <li>macOS の最低バージョンを <strong>Monterey 12</strong> に引き上げ</li>
 </ul>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="ライブラリのデモ" data-src="../assets/video/library.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>ライブラリ画面の上部。検索ボックスと <strong>Library folders</strong> ボタンでフォルダーを管理します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="VR180 再生のデモ" data-src="../assets/video/vr180.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>VR180 映像を投影モードで再生し、ドラッグして視点を動かす様子です。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="複数デバイス接続のデモ" data-src="../assets/video/more-devices.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>複数のデバイスを同時に選んで使えます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="再生時間ベースのスクリプト検索デモ" data-src="../assets/video/match-duration.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>長さが近い順に候補を並べます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="評価のデモ" data-src="../assets/video/rating.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>再生画面のまま評価を付けられます。</figcaption>
+</figure>
+</div>
+</div>
 <div class="note">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.6.1 ホットフィックス</div>
 <p>ウィンドウの高さが低いときにファイルサイドバーが切れる問題を修正しました。フィルター・スクリプトバリアントパネル・ファイル一覧が1つのサイドバーとして一緒にスクロールし、パネルが伸びても<strong>再生時間による照合</strong>と<strong>軸ごとのスクリプト出どころ</strong>に手が届きます。</p>
 </div>
-<h2 id="rl-050">v0.5.0 — ライブラリの再構成<a aria-label="この項目へのリンク" class="anchor" href="#rl-050">#</a></h2>
+<h2 data-version="0.5.0 0.5.1" id="rl-050">v0.5.0 — ライブラリの再構成<a aria-label="この項目へのリンク" class="anchor" href="#rl-050">#</a></h2>
 <ul>
 <li>ライブラリ画面の刷新とサムネイルメニュー</li>
 <li>スクリプトバリアントの扱いを改善</li>
 <li>音声・字幕トラック選択の流れを整理</li>
 </ul>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="サムネイルメニューのデモ" data-src="../assets/video/thumbnail-menu.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>サムネイルメニューで代表画像を管理します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="スクリプトバリアントの切り替えデモ" data-src="../assets/video/script-variants.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>選んだ瞬間に適用されます。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="音声トラックのデモ" data-src="../assets/video/av-audio.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>音声トラックを選ぶ動作です。</figcaption>
+</figure>
+</div>
+</div>
 <div class="note">
 <div class="note-title"><svg aria-hidden="true" class="note-ico" height="15" width="15"><use href="#i-info"></use></svg>0.5.1 ホットフィックス</div>
 <p>FunOSR / SR のシリアル再生の問題を修正しました。一時停止・再開が安全移行の状態に留まらないようにし、遅延したシリアル書き込み後に取り戻す量へ上限を設けました。</p>
 </div>
-<h2 id="rl-040">v0.4.0 — プラグインの分離とモーション生成<a aria-label="この項目へのリンク" class="anchor" href="#rl-040">#</a></h2>
+<h2 data-version="0.4" id="rl-040">v0.4.0 — プラグインの分離とモーション生成<a aria-label="この項目へのリンク" class="anchor" href="#rl-040">#</a></h2>
 <ul>
 <li>既定のインストールから<strong>内蔵スクリプト提供元を削除</strong> — 既定で含まれる・推奨される・有効になる提供元はなくなりました。</li>
 <li>データ専用 <code>.funplugin</code> マニフェストのための<strong>プラグインワークスペース</strong>を追加</li>
@@ -1681,7 +1939,7 @@
 <li>FFmpeg によるサムネイルの代替生成</li>
 <li>最近のメディアへのショートカット、外部字幕探索の改善</li>
 </ul>
-<h2 id="rl-030">v0.3.0 — ライブラリと多軸タイムライン<a aria-label="この項目へのリンク" class="anchor" href="#rl-030">#</a></h2>
+<h2 data-version="0.3" id="rl-030">v0.3.0 — ライブラリと多軸タイムライン<a aria-label="この項目へのリンク" class="anchor" href="#rl-030">#</a></h2>
 <ul>
 <li>サムネイルカード・検索・フィルター・カードサイズ調整を備えた<strong>ライブラリワークスペース</strong>を新設</li>
 <li>プレーヤー・ライブラリ・設定を1つの<strong>ワークスペースレール</strong>に統合</li>
@@ -1691,7 +1949,35 @@
 <li>音声の音量ブースト <strong>150%</strong>（実験的機能）</li>
 <li>リモートの自動再接続とペアリングの安定化</li>
 </ul>
-<h2 id="rl-early">v0.1.x ～ v0.2.x — 初期バージョン<a aria-label="この項目へのリンク" class="anchor" href="#rl-early">#</a></h2>
+<div class="reel">
+<div class="reel-track">
+<figure class="reel-item">
+<div class="shot"><video aria-label="ライブラリのサムネイル生成デモ" data-src="../assets/video/library-thumbnail.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>サムネイルはバックグラウンドで生成され、カードに順に埋まっていきます。ファイルが多いと最初は空で、徐々に埋まります。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="全軸を同時表示するデモ" data-src="../assets/video/multiaxis-all.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>すべての軸を同時に表示した様子です。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="タイムラインの高さ調整デモ" data-src="../assets/video/multiaxis-height.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>境界をドラッグしてタイムラインの高さを調整します。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="Handy ネットワーク診断のデモ" data-src="../assets/video/handy-diagnostics.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>ネットワーク診断の画面です。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="ランダムスムージングのデモ" data-src="../assets/video/random-smooth.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>スムージングを適用して動きをなめらかにした様子です。</figcaption>
+</figure>
+<figure class="reel-item">
+<div class="shot"><video aria-label="音量ブーストのデモ" data-src="../assets/video/volume-boost.mp4" loop="" muted="" playsinline="" preload="none"></video></div>
+<figcaption>150% の音量ブーストをオンにした様子です。</figcaption>
+</figure>
+</div>
+</div>
+<h2 data-version="0.1 0.2" id="rl-early">v0.1.x ～ v0.2.x — 初期バージョン<a aria-label="この項目へのリンク" class="anchor" href="#rl-early">#</a></h2>
 <ul>
 <li>スクリプトバリアントパネルを追加</li>
 <li><strong>リピート</strong>と <strong>Auto Next Play</strong> を分離</li>
@@ -1741,7 +2027,7 @@
 </div>
 </dl>
 <h2 id="ab-docs">このドキュメントについて<a aria-label="この項目へのリンク" class="anchor" href="#ab-docs">#</a></h2>
-<p>このサイトは2026年10月15日に確認した正式版<strong>v0.7.0</strong>を基準に作成しています。既存の画面例は以前のバージョンで撮影しているため、現在のアプリの配置や文言とは異なる場合があります。最新の変更は<a href="../releases/">リリースのお知らせ</a>と<a href="#releases">バージョン履歴</a>で確認してください。</p>
+<p>このサイトは2026年11月8日に確認した正式版<strong>v0.7.2</strong>を基準に作成しています。既存の画面例は以前のバージョンで撮影しているため、現在のアプリの配置や文言とは異なる場合があります。最新の変更は<a href="../releases/ja/">リリースのお知らせ</a>と<a href="#releases">バージョン履歴</a>で確認してください。</p>
 </article>
 <!-- pager gets injected here -->
 <nav aria-label="前 / 次のページ" class="pager" id="pager"></nav>
@@ -1755,7 +2041,7 @@
 </div>
 <footer class="site-footer">
 <div class="footer-inner">
-<p>© ScriptPlayer+ · ライセンス: ScriptPlayer+ EULA · ドキュメント基準 v0.7.0</p>
+<p>© ScriptPlayer+ · ライセンス: ScriptPlayer+ EULA · ドキュメント基準 v0.7.2</p>
 <div class="footer-links">
 <a href="https://github.com/sioaeko/scriptplayer-plus" rel="noopener noreferrer" target="_blank">GitHub</a>
 <a href="https://github.com/sioaeko/scriptplayer-plus/releases" rel="noopener noreferrer" target="_blank">リリース</a>
