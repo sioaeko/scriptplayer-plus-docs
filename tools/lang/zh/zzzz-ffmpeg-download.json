@@ -1,0 +1,8 @@
+{
+ "Windows에서 직접 다운로드": "直接下载 Windows 版",
+ "<a href=\"https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip\" rel=\"noopener noreferrer\" target=\"_blank\">FFmpeg Windows Essentials ZIP 다운로드</a> — FFmpeg 공식 다운로드 페이지에서 안내하는 <a href=\"https://www.gyan.dev/ffmpeg/builds/\" rel=\"noopener noreferrer\" target=\"_blank\">Gyan Windows 빌드</a>입니다.": "<a href=\"https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip\" rel=\"noopener noreferrer\" target=\"_blank\">下载 FFmpeg Windows Essentials ZIP</a> — 由 FFmpeg 官方下载页列出的<a href=\"https://www.gyan.dev/ffmpeg/builds/\" rel=\"noopener noreferrer\" target=\"_blank\">Gyan Windows 构建站点</a>提供。",
+ "ZIP 파일을 내려받아 계속 사용할 폴더에 압축을 풉니다. 압축 파일 안에서 바로 실행하지 말고, 압축을 푼 폴더 전체를 보관하세요.": "下载 ZIP 并解压到之后会保留的文件夹。不要直接在压缩包内运行，请保留整个解压后的文件夹。",
+ "ScriptPlayer+의 <strong>설정 → 재생 → FFmpeg 실행 파일 선택</strong>에서 압축을 푼 폴더의 <code>bin/ffmpeg.exe</code>를 고릅니다.": "在 ScriptPlayer+ 的<strong>设置 → 播放</strong>中，使用 FFmpeg 可执行文件选择按钮，选择解压目录中的 <code>bin/ffmpeg.exe</code>。",
+ "<strong>연결 테스트</strong>를 눌러 버전과 경로가 표시되는지 확인합니다.": "点击连接测试，确认显示版本和路径。",
+ "macOS·Linux용 다운로드와 다른 배포본은 <a href=\"https://ffmpeg.org/download.html\" rel=\"noopener noreferrer\" target=\"_blank\">FFmpeg 공식 다운로드 페이지</a>에서 확인할 수 있습니다. 아래 자동 설치 방법도 사용할 수 있습니다.": "macOS、Linux 和其他构建版本可在 <a href=\"https://ffmpeg.org/download.html\" rel=\"noopener noreferrer\" target=\"_blank\">FFmpeg 官方下载页</a>获取，也可以使用下方的自动安装方法。"
+}
